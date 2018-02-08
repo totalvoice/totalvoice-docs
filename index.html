@@ -229,6 +229,9 @@
             <a href="#ligacoes" class="toc-h1 toc-link" data-title="ligacoes">Ligações</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#realizando-uma-ligacao" class="toc-h2 toc-link" data-title="realizando-uma-ligacao">Realizando uma ligação</a>
+                  </li>
+                  <li>
                     <a href="#http-request" class="toc-h2 toc-link" data-title="http-request">HTTP Request</a>
                   </li>
               </ul>
@@ -250,6 +253,16 @@
 <p>Bem vindo a documentação da TotalVoice, aqui você poderá encontrar alguns tutorias em diversas 
 linguagens que irão lhe auxiliar durante o desenvolvimento das suas integrações.</p>
 <h1 id='ligacoes'>Ligações</h1>
+<p>Nesta seção você encontrará exemplos de como trabalhar com ligações com a API da TotalVoice</p>
+
+<p><code>Access-Token: Token</code></p>
+
+<aside class="notice">
+ Você precisa substituir `access-token` pelo seu Token fornecido pela TotalVoice.
+</aside>
+<h3 id='realizando-uma-ligacao'>Realizando uma ligação</h3>
+<p>Para realizar uma ligação basta informar o número origem e o número destino, conforme os exemplos.</p>
+
 <blockquote>
 <p>Para realizar uma chamada telefônica, utilize este código:</p>
 </blockquote>
@@ -323,14 +336,6 @@ linguagens que irão lhe auxiliar durante o desenvolvimento das suas integraçõ
 <blockquote>
 <p>Você precisa substituir <code>{{access-token}}</code> pelo seu Token fornecido pela TotalVoice.</p>
 </blockquote>
-
-<p>Para realizar uma ligação basta informar o número origem e o número destino, conforme os exemplos.</p>
-
-<p><code>Access-Token: Token</code></p>
-
-<aside class="notice">
- Você precisa substituir `access-token` pelo seu Token fornecido pela TotalVoice.
-</aside>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>POST http://api2.totalvoice.com.br/chamada</code></p>
 <h1 id='tabela-status-api'>Tabela Status API</h1>
