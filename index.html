@@ -257,20 +257,20 @@ linguagens que irão lhe auxiliar durante o desenvolvimento.</p>
 </span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'{SEU-ACCESS-TOKEN}'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'{{access-token}}'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">chamada</span><span class="o">-&gt;</span><span class="na">ligar</span><span class="p">(</span><span class="s1">'NUMERO-A'</span><span class="p">,</span> <span class="s1">'NUMERO-B'</span><span class="p">);</span>
 
 <span class="k">echo</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getContent</span><span class="p">();</span>
-</code></pre><pre class="highlight plaintext"><code>const totalvoice = require('totalvoice-node');
-const client = new totalvoice("{{meu-access-token}}");
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"{{access-token}}"</span><span class="p">);</span>
 
-client.chamada.ligar("4832830151", "4811111111")
-    .then(function (data) {
-        console.log(data)
-    })
-    .catch(function (error) {
-        console.error('Erro: ', error)
-    });
+<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">ligar</span><span class="p">(</span><span class="s2">"4832830151"</span><span class="p">,</span> <span class="s2">"4811111111"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
 
 </span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
@@ -290,7 +290,7 @@ client.chamada.ligar("4832830151", "4811111111")
 </span><span class="p">}</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
 
-<span class="n">cliente</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"SEU_TOKEN"</span><span class="p">,</span> <span class="s">'HOST'</span><span class="p">)</span> <span class="c">#ex: api.totalvoice.com.br</span>
+<span class="n">cliente</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"{{access-token}}"</span><span class="p">,</span> <span class="s">'HOST'</span><span class="p">)</span> <span class="c">#ex: api.totalvoice.com.br</span>
 
 <span class="c">#Cria chamada</span>
 <span class="n">numero_origem</span> <span class="o">=</span> <span class="s">"48999999999"</span>
@@ -320,7 +320,7 @@ client.chamada.ligar("4832830151", "4811111111")
 <span class="o">}</span>
 </code></pre>
 <blockquote>
-<p>Você precisa substituir <code>access-token</code> pelo seu Token fornecido pela TotalVoice.</p>
+<p>Você precisa substituir <code>{{access-token}}</code> pelo seu Token fornecido pela TotalVoice.</p>
 </blockquote>
 
 <p>Para realizar uma ligação basta informar o número origem e o número destino, conforme os exemplos.</p>
