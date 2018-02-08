@@ -1,7 +1,7 @@
-# Erros
+# Tabela Status API
 
 <aside class="notice">
-Nesta seção, você poderá visualizar os erros retornados pela nossa API.
+Nesta seção, você poderá visualizar a tabela com os status que são retornados pela nossa API.
 </aside>
 
 Local | Código Erro | Tipo | Significado

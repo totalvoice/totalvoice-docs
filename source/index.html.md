@@ -15,7 +15,7 @@ toc_footers:
 
 includes:
   - ligacoes
-  - erros
+  - status_api
 
 search: true
 ---
