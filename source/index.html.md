@@ -33,15 +33,15 @@ linguagens que irão lhe auxiliar durante o desenvolvimento.
 
 use TotalVoice\Client as TotalVoiceClient;
 
-$client = new TotalVoiceClient('{SEU-ACCESS-TOKEN}');
+$client = new TotalVoiceClient('{{access-token}}');
 $response = $client->chamada->ligar('NUMERO-A', 'NUMERO-B');
 
 echo $response->getContent();
 ```
 
-```node
+```javascript
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("{{meu-access-token}}");
+const client = new totalvoice("{{access-token}}");
 
 client.chamada.ligar("4832830151", "4811111111")
     .then(function (data) {
@@ -51,6 +51,7 @@ client.chamada.ligar("4832830151", "4811111111")
         console.error('Erro: ', error)
     });
 ```
+
 ```go
 package main
 
@@ -74,7 +75,7 @@ func main() {
 ```python
 from totalvoice.cliente import Cliente
 
-cliente = Cliente("SEU_TOKEN", 'HOST') #ex: api.totalvoice.com.br
+cliente = Cliente("{{access-token}}", 'HOST') #ex: api.totalvoice.com.br
 
 #Cria chamada
 numero_origem = "48999999999"
@@ -107,7 +108,7 @@ public class Main {
 }
 ```
 
-> Você precisa substituir `access-token` pelo seu Token fornecido pela TotalVoice.
+> Você precisa substituir `{{access-token}}` pelo seu Token fornecido pela TotalVoice.
 
 Para realizar uma ligação basta informar o número origem e o número destino, conforme os exemplos.
 
