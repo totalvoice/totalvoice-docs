@@ -2,10 +2,11 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
+  - php
+  - node
+  - go
   - python
-  - javascript
+  - java
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -22,215 +23,102 @@ search: true
 Bem vindo a documentação da TotalVoice, aqui você poderá encontrar alguns tutorias em diversas 
 linguagens que irão lhe auxiliar durante o desenvolvimento.
 
-# Authentication
+# Ligações
 
-> To authorize, use this code:
+> Para realizar uma chamada telefônica, utilize este código:
 
-```ruby
-require 'kittn'
+```php
+<?php
+// Consideramos que já existe um autoloader compatível com a PSR-4 registrado
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+use TotalVoice\Client as TotalVoiceClient;
+
+$client = new TotalVoiceClient('{SEU-ACCESS-TOKEN}');
+$response = $client->chamada->ligar('NUMERO-A', 'NUMERO-B');
+
+echo $response->getContent();
+```
+
+```node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("{{meu-access-token}}");
+
+client.chamada.ligar("4832830151", "4811111111")
+    .then(function (data) {
+        console.log(data)
+    })
+    .catch(function (error) {
+        console.error('Erro: ', error)
+    });
+```
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/totalvoice/totalvoice-go"
+)
+
+func main() {
+    client := totalvoice.NewTotalVoiceClient("{{access-token}}")
+    response, err := client.Chamada.Criar("4811111111", "4822222222", nil)
+   
+    if err != nil {
+		panic(err)
+	}
+	fmt.Println(response)
+}
 ```
 
 ```python
-import kittn
+from totalvoice.cliente import Cliente
 
-api = kittn.authorize('meowmeowmeow')
+cliente = Cliente("SEU_TOKEN", 'HOST') #ex: api.totalvoice.com.br
+
+#Cria chamada
+numero_origem = "48999999999"
+numero_destino = "48900000000"
+response = cliente.chamada.enviar(numero_origem, numero_destino)
+print(response)
 ```
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+```java
+package br.com.totalvoice;
+
+import br.com.totalvoice.api.Chamada;
+import org.json.JSONObject;
+
+public class Main {
+    
+    public static void main(String args[]) {
+        
+        try {
+            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            Chamada chamada = new Chamada(client);
+
+            JSONObject result = chamada.ligar("NUMEROA", "NUMEROB");
+            System.out.println(result);
+
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+}
 ```
 
-```javascript
-const kittn = require('kittn');
+> Você precisa substituir `access-token` pelo seu Token fornecido pela TotalVoice.
 
-let api = kittn.authorize('meowmeowmeow');
-```
+Para realizar uma ligação basta informar o número origem e o número destino, conforme os exemplos.
 
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
+`Access-Token: Token`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+ Você precisa substituir `access-token` pelo seu Token fornecido pela TotalVoice.
 </aside>
 
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`POST http://api2.totalvoice.com.br/chamada`
 
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
 
