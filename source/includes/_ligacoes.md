@@ -1,5 +1,17 @@
 # Ligações
 
+Nesta seção você encontrará exemplos de como trabalhar com ligações com a API da TotalVoice
+
+`Access-Token: Token`
+
+<aside class="notice">
+ Você precisa substituir `access-token` pelo seu Token fornecido pela TotalVoice.
+</aside>
+
+### Realizando uma ligação
+
+Para realizar uma ligação basta informar o número origem e o número destino, conforme os exemplos.
+
 > Para realizar uma chamada telefônica, utilize este código:
 
 ```php
@@ -84,14 +96,6 @@ public class Main {
 ```
 
 > Você precisa substituir `{{access-token}}` pelo seu Token fornecido pela TotalVoice.
-
-Para realizar uma ligação basta informar o número origem e o número destino, conforme os exemplos.
-
-`Access-Token: Token`
-
-<aside class="notice">
- Você precisa substituir `access-token` pelo seu Token fornecido pela TotalVoice.
-</aside>
 
 ### HTTP Request
 
