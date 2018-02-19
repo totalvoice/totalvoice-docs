@@ -27,8 +27,14 @@ linguagens que irão lhe auxiliar durante o desenvolvimento das suas integraçõ
 
 Caso você não encontre algum material ou possui alguma dúvida técnica entre em contato conosco
 pelos nossos canais de comunicação/suporte.
-- Por e-mail: suporte@totalvoice.com.br
-- ou pelo nosso [Canal do Slack](https://totalvoice.herokuapp.com)
+
+ - Por e-mail: suporte@totalvoice.com.br
+ - ou pelo nosso [Canal do Slack](https://totalvoice.herokuapp.com)
+ 
+ Clicando nos links abaixo, você encontra a referência das principais funcionalidades que nosso
+ produto oferece pra você.
+ 
+ - [Efetuando ligações](/?php#ligacoes)
 
 
 
