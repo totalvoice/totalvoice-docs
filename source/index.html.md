@@ -25,6 +25,11 @@ search: true
 Bem vindo a documentação da TotalVoice, aqui você poderá encontrar alguns tutorias em diversas 
 linguagens que irão lhe auxiliar durante o desenvolvimento das suas integrações.
 
+Caso você não encontre algum material ou possui alguma dúvida técnica entre em contato conosco
+pelos nossos canais de comunicação/suporte.
+- Por e-mail: suporte@totalvoice.com.br
+- ou pelo nosso [Canal do Slack](https://totalvoice.herokuapp.com)
+
 
 
 
