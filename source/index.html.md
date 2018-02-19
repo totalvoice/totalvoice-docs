@@ -22,8 +22,13 @@ search: true
 
 # Introdução
 
-Bem vindo a documentação da TotalVoice, aqui você poderá encontrar alguns tutorias em diversas 
+**Bem vindo** a documentação da TotalVoice, aqui você poderá encontrar alguns tutorias em diversas 
 linguagens que irão lhe auxiliar durante o desenvolvimento das suas integrações.
+
+Primeiramente, já criou a sua Conta? ainda não? <a href="https://www.totalvoice.com.br/signup.php" target="_blank">Clicando aqui</a>
+você poderá criá-la facilmente. Após ter realizado o cadastro você receberá um `Access-Token`, este código será utilizado em todas as consultas realizadas em nossas API.
+
+### Dúvidas
 
 Caso você não encontre algum material ou possui alguma dúvida técnica entre em contato conosco
 pelos nossos canais de comunicação/suporte.
@@ -31,10 +36,12 @@ pelos nossos canais de comunicação/suporte.
  - Por e-mail: suporte@totalvoice.com.br
  - ou pelo nosso [Canal do Slack](https://totalvoice.herokuapp.com)
  
- Clicando nos links abaixo, você encontra a referência das principais funcionalidades que nosso
+### Funcionalidades
+ 
+ Clicando nos links abaixo, você encontrará a referência das principais funcionalidades que nosso
  produto oferece pra você.
  
- - [Efetuando ligações](/?php#ligacoes)
+ - [Efetuando ligações](/?php#efetuando-ligacoes)
 
 
 

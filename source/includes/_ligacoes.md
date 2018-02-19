@@ -1,4 +1,4 @@
-# Ligações
+# Efetuando Ligações
 
 Nesta seção você encontrará exemplos de como trabalhar com ligações com a API da TotalVoice
 
