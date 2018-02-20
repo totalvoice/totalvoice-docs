@@ -36,6 +36,18 @@ pelos nossos canais de comunicação/suporte.
  - Por e-mail: suporte@totalvoice.com.br
  - ou pelo nosso [Canal do Slack](https://totalvoice.herokuapp.com)
  
+### Avisos
+
+Ao decorrer desta documentação, você poderá encontrar algumas mensagens que irão lhe orientar com algumas informações. Elas seguirão o seguinte modelo:
+
+<aside class="notice">
+ **Info** a mensagem em azul, exibirá informações básicas
+</aside>
+
+<aside class="warning">
+ **Warning** a mensagem em vermelho, exibirá informações que podem ser essenciais para informação
+</aside>
+
 ### Funcionalidades
  
  Clicando nos links abaixo, você encontrará a referência das principais funcionalidades que nosso
