@@ -2,6 +2,8 @@
 @import 'normalize';
 @import 'variables';
 @import 'icon-font';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 // @import 'rtl'; // uncomment to switch to RTL format
 
 /*
@@ -59,7 +61,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
 
   // language selector for mobile devices
@@ -346,14 +348,14 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
+    font-size: 45px;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    background-color: #ffffff;
   }
 
   h1:first-child, div:first-child + h1 {
