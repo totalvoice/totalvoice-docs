@@ -32,6 +32,7 @@ GEM
       concurrent-ruby (~> 1.0)
     hashie (3.5.1)
     i18n (0.7.0)
+    json (2.1.0)
     kramdown (1.13.2)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -114,6 +115,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  json
   middleman (~> 4.2.1)
   middleman-autoprefixer (~> 2.7.0)
   middleman-sprockets (~> 4.1.0)
@@ -126,4 +128,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.14.5
+   1.16.1
