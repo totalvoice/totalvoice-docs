@@ -54,6 +54,18 @@ Ao decorrer desta documentação, você poderá encontrar algumas mensagens que 
  produto oferece pra você.
  
  - [Efetuando ligações](/?php#efetuando-ligacoes)
+ 
+### Glossário
+  
+ Você encontrará algumas palavras e termos ao decorrer desta documentação que poderão surgir dúvidas com relação aos seus significados. Elencamos
+ abaixo uma lista com suas definições:  
+  
+  - DID
+  - Webhook
+  - URA Ativa
+  - PernaA
+  - PernaB
+  
 
 
 
