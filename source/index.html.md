@@ -33,7 +33,7 @@ você poderá criá-la facilmente. Após ter realizado o cadastro você receber�
 Caso você não encontre algum material ou possui alguma dúvida técnica entre em contato conosco
 pelos nossos canais de comunicação/suporte.
 
- - Por e-mail: suporte@totalvoice.com.br
+ - por e-mail: suporte@totalvoice.com.br
  - ou pelo nosso [Canal do Slack](https://totalvoice.herokuapp.com)
  
 ### Avisos
