@@ -26,7 +26,7 @@ search: true
 linguagens que irão lhe auxiliar durante o desenvolvimento das suas integrações.
 
 Primeiramente, já criou a sua Conta? ainda não? <a href="https://www.totalvoice.com.br/signup.php" target="_blank">Clicando aqui</a>
-você poderá criá-la facilmente. Após ter realizado o cadastro você receberá um `Access-Token`, este código será utilizado em todas as consultas realizadas em nossas API.
+você poderá criá-la facilmente. Após ter realizado o cadastro você receberá um `Access-Token`, este código será utilizado em todas as consultas realizadas na nossa API.
 
 ### Dúvidas
 
