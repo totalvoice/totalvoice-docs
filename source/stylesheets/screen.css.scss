@@ -3,6 +3,11 @@
 @import 'variables';
 @import 'icon-font';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@font-face {
+  font-family: 'slate';
+  src: url('../fonts/slate.otf') format('opentype');
+}
+
 
 // @import 'rtl'; // uncomment to switch to RTL format
 
@@ -62,7 +67,6 @@ html, body {
   width: $nav-width;
   background-color: $nav-bg;
   font-size: 16px;
-  font-weight: bold;
 
   // language selector for mobile devices
   .lang-selector {
@@ -173,7 +177,7 @@ html, body {
 
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .toc-footer {
@@ -283,12 +287,14 @@ html, body {
   background-color: $lang-select-bg;
   width: 100%;
   font-weight: bold;
+  padding-left: 15px;
+
   a {
     display: block;
     float:left;
     color: $lang-select-text;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 5px 15px;
     line-height: 30px;
     outline: 0;
 
@@ -300,6 +306,10 @@ html, body {
     &.active {
       background-color: $lang-select-active-bg;
       color: $lang-select-active-text;
+    }
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 
@@ -348,13 +358,13 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 45px;
+    font-size: 35px;
+    font-weight: bold;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #eee;
     background-color: #ffffff;
   }
 
@@ -383,9 +393,10 @@ html, body {
 
   h3, h4, h5, h6 {
     @extend %header-font;
-    font-size: 15px;
+    font-size: 18px;
     margin-top: 2.5em;
     margin-bottom: 0.8em;
+    font-weight: bold;
   }
 
   h4, h5, h6 {
@@ -469,14 +480,17 @@ html, body {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
+    color: #6464d8;
     line-height: 1.6;
 
     &.warning {
       background-color: $aside-warning-bg;
+      color: #d55757;
     }
 
     &.success {
       background-color: $aside-success-bg;
+      color: #419045;
     }
   }
 
@@ -487,15 +501,15 @@ html, body {
   }
 
   aside.notice:before {
-    @extend %icon-info-sign;
+    //@extend %icon-info-sign;
   }
 
   aside.warning:before {
-    @extend %icon-exclamation-sign;
+    //@extend %icon-exclamation-sign;
   }
 
   aside.success:before {
-    @extend %icon-ok-sign;
+    //@extend %icon-ok-sign;
   }
 
   .search-highlight {

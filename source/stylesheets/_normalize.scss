@@ -88,6 +88,12 @@ template {
 
 a {
     background-color: transparent;
+    color: #0099e5;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 /**
