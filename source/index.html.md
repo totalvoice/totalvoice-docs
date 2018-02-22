@@ -57,10 +57,10 @@ Ao decorrer desta documentação, você poderá encontrar algumas mensagens que 
  
 ### Glossário
   
- Você encontrará algumas palavras e termos ao decorrer desta documentação que poderão surgir dúvidas com relação aos seus significados. Elencamos
+ Você encontrará algumas palavras e termos ao decorrer desta documentação que poderão surgir como dúvidas com relação aos seus significados. Elencamos
  abaixo uma lista com suas definições:  
   
-  - DID
+  - DID: 
   - Webhook
   - URA Ativa
   - PernaA
