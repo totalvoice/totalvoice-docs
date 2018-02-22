@@ -1,8 +1,38 @@
 # Áudio
 
 ### Criar um 
+Possibilita o envio de mensagens de voz (audio) / torpedos de voz
 
-> post audio
+> Exemplo
+
+```curl
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Access-Token: ACCESS_TOKEN' -d '{"numero_destino":"NUMERO_DESTINO","url_audio":"http://foo.bar/audio.mp3"}' 'https://api.totalvoice.com.br/audio'
+```
+```php
+<?php
+$response = $client->audio->enviar('NUMERO-DESTINO', 'http://foo.bar/audio.mp3');
+```
+```javascript--node
+var response = client.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
+```
+```go
+ response, err := client.Audio.Enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3", false, "")
+```
+```python
+response = cliente.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
+```
+```java
+Audio audio = new Audio(client);
+JSONObject result = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3");
+```
+
+#### Atributos
+| Nome           | Descrição      | Tipo           | Obrigatório
+| -------------- | -------------- | -------------- | --------------
+| Número Destino | Número do telefone que irá receber a chamada, formato DDD + Número exemplo: 4832830151 | String         | Sim
+| URL áudio      | URL do audio formato MP3, exemplo: http://foooo.bar/audio.mp3 | String         | Sim
+| Resposta Usuário | Flag para aguardar resposta do usuário | Boolean         | Não
+| Bina           | Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151 | String         | Não
 
 ### Recuperar os dados de 
 
