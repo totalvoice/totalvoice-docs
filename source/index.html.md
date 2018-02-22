@@ -16,8 +16,18 @@ toc_footers:
 includes:
   - autenticacao
   - erros
-  - ligacoes
   - status_api
+  - audio
+  - central_telefonica
+  - chamadas
+  - composto
+  - conferencias
+  - did
+  - gerenciar_contas
+  - minha_conta
+  - sms
+  - tts
+  - verificacao
 
 search: true
 ---
