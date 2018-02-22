@@ -2,6 +2,7 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
+  - curl
   - php
   - javascript--node: node
   - go
@@ -9,11 +10,12 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - java
 
 toc_footers:
-  - <a href='https://api2.totalvoice.com.br/painel' target="_blank">Entrar na minha Conta</a>
-  - <a href='https://www.totalvoice.com.br/signup.php' target="_blank">Criar minha Conta</a>
-  - <a href='https://github.com/lord/slate'>Documentação by Slate</a>
+  - <a href='https://api2.totalvoice.com.br/painel' target="_blank">Entrar</a>
+  - <a href='https://www.totalvoice.com.br/signup.php' target="_blank">Criar Conta</a>
 
 includes:
+  - autenticacao
+  - erros
   - ligacoes
   - status_api
 
@@ -41,11 +43,11 @@ pelos nossos canais de comunicação/suporte.
 Ao decorrer desta documentação, você poderá encontrar algumas mensagens que irão lhe orientar com algumas informações. Elas seguirão o seguinte modelo:
 
 <aside class="notice">
- **Info** a mensagem em azul, exibirá informações básicas
+ A mensagem em azul, exibirá informações básicas
 </aside>
 
 <aside class="warning">
- **Warning** a mensagem em vermelho, exibirá informações que podem ser essenciais para informação
+ A mensagem em vermelho, exibirá informações que podem ser essenciais para informação
 </aside>
 
 ### Funcionalidades

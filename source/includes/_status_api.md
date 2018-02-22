@@ -4,7 +4,7 @@
 Nesta seção, você poderá visualizar a tabela com os status que são retornados pela nossa API.
 </aside>
 
-Local | Código Erro | Tipo | Significado
+Local | Código | Tipo | Significado
 ----- | ----------- | ---- | ------------
 api	| 403 | FALHA_AUTH | “access token inválido”
 api	| 403 |	SEM_PERMISSAO |	 “conta desativada”
