@@ -1,12 +1,15 @@
 # Áudio
 
-### Criar um 
-Possibilita o envio de mensagens de voz (audio) / torpedos de voz
+### Criar um áudio
 
-> Exemplo
+> Exemplo Requisição
 
-```curl
-curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Access-Token: ACCESS_TOKEN' -d '{"numero_destino":"NUMERO_DESTINO","url_audio":"http://foo.bar/audio.mp3"}' 'https://api.totalvoice.com.br/audio'
+```shell--curl
+curl -X POST --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: ACCESS_TOKEN' \
+             -d '{"numero_destino":"NUMERO_DESTINO","url_audio":"http://foo.bar/audio.mp3"}' \
+             'https://api.totalvoice.com.br/audio'
 ```
 ```php
 <?php
@@ -19,30 +22,112 @@ var response = client.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
  response, err := client.Audio.Enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3", false, "")
 ```
 ```python
-response = cliente.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
+response = client.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
 ```
 ```java
 Audio audio = new Audio(client);
 JSONObject result = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3");
 ```
+> Exemplo Resposta
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "audio criado com sucesso",
+  "dados": {
+    "id": 4921
+  }
+}
+```
+Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determinado número.
 
 #### Atributos
-| Nome           | Descrição      | Tipo           | Obrigatório
-| -------------- | -------------- | -------------- | --------------
-| Número Destino | Número do telefone que irá receber a chamada, formato DDD + Número exemplo: 4832830151 | String         | Sim
-| URL áudio      | URL do audio formato MP3, exemplo: http://foooo.bar/audio.mp3 | String         | Sim
-| Resposta Usuário | Flag para aguardar resposta do usuário | Boolean         | Não
-| Bina           | Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151 | String         | Não
 
-### Recuperar os dados de 
+<table>
+    <tbody>
+        <tr>
+            <td>
+                Número Destino
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Número do telefone que irá receber a chamada, formato DDD + Número exemplo: 4832830151
+             </td>
+        </tr>
+        <tr>
+            <td>
+                URL áudio
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                URL do audio formato MP3, exemplo: http://foo.bar/audio.mp3
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+### Recuperar áudio
+
+Busca uma mensagem de áudio pelo seu ID
+
+> Exemplo Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Access-Token: ACCESS_TOKEN' 'https://api.totalvoice.com.br/audio/1'
+```
+```php
+<?php
+$response = $client->audio->buscaAudio(123);
+```
+```javascript--node
+var response = client.audio.buscar(123)
+```
+```go
+ response, err := client.Audio.Buscar(123)
+```
+```python
+response = client.audio.get_by_id(123)
+```
+```java
+Audio audio = new Audio(client);
+JSONObject result = audio.buscar(123);
+```
+> Exemplo Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "id": 432,
+    "numero_destino": "4832830151",
+    "data_criacao": "2016-03-27T15:12:44+03:00",
+    "data_inicio": "2016-03-27T15:12:49+03:00",
+    "tipo": "fixo",
+    "status": "atendida",
+    "duracao_segundos": 45,
+    "duracao": "00:00:45",
+    "duracao_cobrada_segundos": 60,
+    "duracao_cobrada": "00:00:60",
+    "duracao_falada_segundos": 35,
+    "duracao_falada": "00:00:35",
+    "preco": 0.12,
+    "url_audio": "http://fooooo.bar/audio.mp3",
+    "resposta_usuario": true,
+    "resposta": "8"
+  }
+}
+```
+
+### Editar um áudio
 
 > Exemplo
 
-### Editar um
-
-> Exemplo
-
-### Listar todos os 
+### Listar áudios 
 
 > Exemplo
 
