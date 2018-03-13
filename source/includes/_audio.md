@@ -65,6 +65,33 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
                 URL do audio formato MP3, exemplo: http://foo.bar/audio.mp3
             </td>
         </tr>
+        <tr>
+            <td>
+                Resposta do Usuário
+                <span class="required">Opcional</span>
+            </td>
+            <td>
+                Aguardar uma resposta do destinário
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gravar Áudio
+                <span class="required">Opcional</span>
+            </td>
+            <td>
+                Gravar a ligação
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Bina
+                <span class="required">Opcional</span>
+            </td>
+            <td>
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151
+            </td>
+        </tr>
     </tbody>
 </table>
 
