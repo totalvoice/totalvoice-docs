@@ -629,3 +629,22 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+.table-parameters {
+  
+  font-size: 14px;
+  
+  span {
+    display: block;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  span.required {      
+    color: #e09409;
+  }
+
+  span.optional {
+    color: #0c733f;
+  }
+}

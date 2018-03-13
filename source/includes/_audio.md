@@ -43,9 +43,9 @@ JSONObject result = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3");
 ```
 Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determinado número.
 
-#### Atributos
+#### Request
 
-<table>
+<table class="table-parameters">
     <tbody>
         <tr>
             <td>
@@ -68,7 +68,7 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
         <tr>
             <td>
                 Resposta do Usuário
-                <span class="required">Opcional</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
                 Aguardar uma resposta do destinário
@@ -77,7 +77,7 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
         <tr>
             <td>
                 Gravar Áudio
-                <span class="required">Opcional</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
                 Gravar a ligação
@@ -86,7 +86,7 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
         <tr>
             <td>
                 Bina
-                <span class="required">Opcional</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
                 Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151
@@ -95,9 +95,26 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
     </tbody>
 </table>
 
-### Recuperar áudio
+#### Response
 
-Busca uma mensagem de áudio pelo seu ID
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                ID
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Retorna o ID do Áudio
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+
+### Recuperar áudio
 
 > Exemplo Request
 
@@ -150,9 +167,177 @@ JSONObject result = audio.buscar(123);
 }
 ```
 
-### Editar um áudio
+Após o envio de mensagens de áudio, você poderá realizar a busca do registro pelo seu ID.
 
-> Exemplo
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                ID
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID do Áudio para recuperar os dados
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID do registro de Áudio.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                Número Destino
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Número do destinatário que foi enviado o áudio.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Data Criação
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Data e hora que foi criado o registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Data Inicio
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Data e hora que foi iniciado o processamento do áudio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tipo
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Tipo de telefone: fixo, móvel ou ramal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Status
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Status do registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração em Segundos
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Duração em segundos (inteiro) total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Duração total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração Cobrada em Segundos
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Duração em segundos para fins de cobrança
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração Cobrada
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Duração considerada para fins de cobrança
+            </td>
+        </tr>
+                <tr>
+            <td>
+                Duração Falada em Segundos
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Duração em segundos da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração Falada
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Duração da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Preço
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Valor cobrado pela chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                URL do Áudio
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                URL do Áudio enviado para a chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Resposta Usuário
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Aguarda a resposta do usuário: sim ou não
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Resposta
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Resposta
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
 
 ### Listar áudios 
 
