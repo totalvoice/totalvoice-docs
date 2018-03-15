@@ -1,6 +1,6 @@
 # Chamadas
 
-### Criar um 
+### Criar uma chamada
 
 > post audio
 
