@@ -2,12 +2,11 @@
 @import 'normalize';
 @import 'variables';
 @import 'icon-font';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @font-face {
-  font-family: 'slate';
-  src: url('../fonts/slate.otf') format('opentype');
+  font-family: 'slate-light';
+  src: url('../fonts/slate_light.otf') format('opentype');
 }
-
+@import url('https://fonts.googleapis.com/css?family=Lato|Merriweather|Open+Sans');
 
 // @import 'rtl'; // uncomment to switch to RTL format
 
@@ -66,7 +65,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 16px;
+  font-size: 17px;
 
   // language selector for mobile devices
   .lang-selector {
@@ -147,7 +146,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 26px;
   }
 
   li {
@@ -177,7 +176,7 @@ html, body {
 
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .toc-footer {
@@ -358,7 +357,7 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
@@ -415,7 +414,7 @@ html, body {
     th,td {
       text-align: left;
       vertical-align: top;
-      line-height: 1.6;
+      line-height: 1.4;
       code {
         white-space: nowrap;
       }
@@ -453,7 +452,7 @@ html, body {
   }
 
   p, li, dt, dd {
-    line-height: 1.6;
+    line-height: 1.4;
     margin-top: 0;
   }
 
@@ -481,11 +480,12 @@ html, body {
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
     color: #6464d8;
+    font-weight: bold;
     line-height: 1.6;
 
     &.warning {
       background-color: $aside-warning-bg;
-      color: #d55757;
+      color: #ed4a4a;
     }
 
     &.success {
