@@ -430,6 +430,12 @@ html, body {
       padding: 10px;
     }
 
+    td:first-child {
+      width: 130px;
+      text-align: right;
+      padding-right: 5px;
+    }
+
     tr:last-child {
       border-bottom: 1px solid #ccc;
     }
