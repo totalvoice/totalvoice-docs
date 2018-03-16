@@ -14,20 +14,20 @@ $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
 
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("{{access-token}}");
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
 ```
 
 ```go
-client := totalvoice.NewTotalVoiceClient("{{access-token}}")
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
 ```
 
 ```python
 from totalvoice.cliente import Cliente
-cliente = Cliente("{{access-token}}", 'api.totalvoice.com.br')
+cliente = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
 ```
 
 ```java
-TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
 ```
 
 > Não esqueça de alterar o Token de exemplo pelo seu Token.
