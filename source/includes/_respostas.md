@@ -3,7 +3,8 @@
 As respostas das requisições realizadas para a API TotalVoice utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
 sendo que os códigos iniciando com 2xx respondem pelo sucesso e os iniciando 4xx pelas falhas.
 
-Todo JSON retornado pela API segue um padrão, contendo um cabeçalho de resposta com informações sobre a requisição e os dados exclusivos de cada requisição são respondidos dentro do campo **dados**.
+Todo JSON retornado pela API segue um padrão, contendo um cabeçalho de resposta com informações sobre a 
+requisição e os dados próprios da resposta dentro do campo **dados**.
 
 > Exemplo JSON de retorno
 

@@ -65,7 +65,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 17px;
+  font-size: 15px;
 
   // language selector for mobile devices
   .lang-selector {
@@ -176,7 +176,7 @@ html, body {
 
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .toc-footer {
@@ -409,7 +409,6 @@ html, body {
   }
 
   table {
-    margin-bottom: 1em;
     overflow: auto;
     width: 49%;
 
