@@ -2,6 +2,37 @@
 
 ### Objeto áudio
 
+> Exemplo Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "id": 432,
+    "numero_destino": "4832830151",
+    "data_criacao": "2016-03-27T15:12:44+03:00",
+    "data_inicio": "2016-03-27T15:12:49+03:00",
+    "tipo": "fixo",
+    "status": "atendida",
+    "duracao_segundos": 45,
+    "duracao": "00:00:45",
+    "duracao_cobrada_segundos": 60,
+    "duracao_cobrada": "00:00:60",
+    "duracao_falada_segundos": 35,
+    "duracao_falada": "00:00:35",
+    "preco": 0.12,
+    "url_audio": "http://fooooo.bar/audio.mp3",
+    "resposta_usuario": true,
+    "resposta": "8"
+  }
+}
+```
+
+Definição do objeto Áudio
+
 #### Atributos
 
 <table class="table-parameters">
@@ -155,12 +186,22 @@
 
 ### Criar um áudio
 
+> </br>
+
+> Definição
+
+```text
+POST https://api.totalvoice.com.br/audio
+```
+
+> </br>
+
 > Exemplo Requisição
 
 ```shell--curl
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
-             --header 'Access-Token: ACCESS_TOKEN' \
+             --header 'Access-Token: {{access-token}}' \
              -d '{"numero_destino":"NUMERO_DESTINO","url_audio":"http://foo.bar/audio.mp3"}' \
              'https://api.totalvoice.com.br/audio'
 ```
@@ -271,10 +312,22 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
 
 ### Recuperar áudio
 
+> </br>
+
+> Definição
+
+```text
+GET https://api.totalvoice.com.br/audio/{id}
+```
+
+> </br>
+
 > Exemplo Request
 
 ```shell--curl
-curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Access-Token: ACCESS_TOKEN' 'https://api.totalvoice.com.br/audio/1'
+curl -X GET --header 'Content-Type: application/json' \
+            --header 'Accept: application/json' \
+            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/audio/1'
 ```
 ```php
 <?php
@@ -502,7 +555,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 > Definição
 
 ```text
-   GET https://api.totalvoice.com.br/audio/relatorio 
+GET https://api.totalvoice.com.br/audio/relatorio 
 ```
 
 > </br>
