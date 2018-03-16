@@ -239,6 +239,14 @@
           </li>
            <li>
             <a href="#respostas-da-api" class="toc-h1 toc-link" data-title="Respostas da API">Respostas da API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#codigos-http" class="toc-h2 toc-link" data-title="Códigos HTTP">Códigos HTTP</a>
+                  </li>
+                  <li>
+                    <a href="#codigos-de-motivos" class="toc-h2 toc-link" data-title="Códigos de Motivos">Códigos de Motivos</a>
+                  </li>
+              </ul>
           </li>
            <li style="margin-top: 20px;">
             <a href="#audio" class="toc-h1 toc-link" data-title="Áudio">Áudio</a>
@@ -477,11 +485,11 @@ pelos nossos canais de comunicação/suporte.</p>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"{{access-token}}"</span><span class="p">);</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"{{access-token}}"</span><span class="p">)</span><span class="x">
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
-<span class="n">cliente</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"{{access-token}}"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"{{access-token}}"</span><span class="o">);</span>
+<span class="n">cliente</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
 </code></pre>
 <blockquote>
 <p>Não esqueça de alterar o Token de exemplo pelo seu Token.</p>
@@ -501,11 +509,6 @@ na requisição HTTP através do cabeçalho, ou pela <em>Query String</em>. </p>
  compartilhe com ninguém fora da sua organização.
 </aside>
 <h1 id='respostas-da-api'>Respostas da API</h1>
-<p>As respostas das requisições realizadas para a API TotalVoice utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
-sendo que os códigos iniciando com 2xx respondem pelo sucesso e os iniciando 4xx pelas falhas.</p>
-
-<p>Todo JSON retornado pela API segue um padrão, contendo um cabeçalho de resposta com informações sobre a requisição e os dados exclusivos de cada requisição são respondidos dentro do campo <strong>dados</strong>.</p>
-
 <blockquote>
 <p>Exemplo JSON de retorno</p>
 </blockquote>
@@ -518,7 +521,10 @@ sendo que os códigos iniciando com 2xx respondem pelo sucesso e os iniciando 4x
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4921</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='formatacao-da-resposta-padrao'>Formatação da Resposta Padrão</h4>
+</span></code></pre>
+<p>Toda resposta retornada pela API, vem em formato JSON contendo um cabeçalho padrão,
+o cabeçalho contém as informações sobre a requisição e os dados próprios da resposta, que ficam dentro do campo <strong>dados</strong>.</p>
+<h4 id='atributos-da-resposta'>Atributos da Resposta</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -568,140 +574,120 @@ sendo que os códigos iniciando com 2xx respondem pelo sucesso e os iniciando 4x
         </tr>
     </tbody>
 </table>
-
+<h3 id='codigos-http'>Códigos HTTP</h3>
 <blockquote>
-<p>Códigos de Resposta HTTP</p>
+<p>Códigos HTTP utilizados</p>
 
 <table>
-<tr>
-<td>aaa</td>
-<td>bbb</td>
-</tr>
+    <tr>
+        <td>200</td>
+        <td>Os dados foram retornados com sucesso.</td>
+    </tr>
+    <tr>
+        <td>400</td>
+        <td>Formato do JSON enviado é inválido.</td>
+    </tr>
+    <tr>
+        <td>402</td>
+        <td>Sua conta não tem saldo suficiente.</td>
+    </tr>
+    <tr>
+        <td>403</td>
+        <td>Sua conta não tem permissão para realizar esse procedimento.</td>
+    </tr>
+    <tr>
+        <td>404</td>
+        <td>Objeto de sua pesquisa não foi encontrado.</td>
+    </tr>
+    <tr>
+        <td>405</td>
+        <td>Algum dos parâmetros enviados está inválido</td>
+    </tr>
+    <tr>
+        <td>500</td>
+        <td>Alguma coisa aconteceu internamente.</td>
+    </tr>
+    <tr>
+        <td>501</td>
+        <td>Ainda não implementamos essa funcionalidade (?).</td>
+    </tr>
 </table>
 </blockquote>
-<pre class="highlight plaintext"><code>Local | Código | Tipo | Significado
------ | ----------- | ---- | ------------
-api | 403 | FALHA_AUTH | “access token inválido”
-api | 403 | SEM_PERMISSAO |  “conta desativada”
-api | 402 | SALDO_INSUFICIENTE |     “saldo insuficiente”
-api | 501 | NAO_IMPLEMENTADO |   “não implementado”
-audio | 404 |   PARAMETRO_OBRIGATORIO |  “qual audio? informar ID /audio/ID”
-audio | 404 |   ELEMENTO_NAO_ENCONTRADO |    “audio não encontrado”
-audio | 200 |   SUCESSO |   dados retornados com sucesso
-audio | 405 |   PARAMETRO_INVALIDO |     “numero_destino inválido, formato DDD + Número”
-audio | 405 |   PARAMETRO_OBRIGATORIO |  “o parametro url_audio é obrigatório”
-audio | 405 |   PARAMETRO_INVALIDO |     “o parametro url_audio é inválido, formato esperado http://foooo.bar/audio.mp3”
-audio | 200 |   SUCESSO |   audio criado com sucesso
-chamada |   404 |   PARAMETRO_OBRIGATORIO |  “qual chamada? informar ID /chamada/ID”
-chamada |   404 |   ELEMENTO_NAO_ENCONTRADO |    “chamada não encontrada”
-chamada |   404 |   CHAMADA_SEM_GRAVACAO |   “chamada sem gravação solicitada”
-chamada |   200 |   SUCESSO |   dados retornados com sucesso
-chamada |   405 |   PARAMETRO_INVALIDO |     “numero_origem inválido, formato DDD + Número ex: 4832830151”
-chamada |   405 |   PARAMETRO_INVALIDO |     “numero_destino inválido, formato DDD + Número ex: 4832830151”
-chamada |   200 |   SUCESSO |   chamada criada com sucesso
-chamada |   405 |   PARAMETRO_INVALIDO |     “numero inválido, formato DDD + Número ex: 4832830151”
-chamada |   405 |   PARAMETRO_INVALIDO |     “modo inválido: 1=escuta, 2=sussurro, 3=conferência”
-chamada |   404 |   CHAMADA_NAO_ATIVA |  “a chamada não está ativa”
-chamada |   200 |   SUCESSO |   escuta criada com sucesso
-chamada |   200 |   SUCESSO |    “encerrando chamada”
-chamada |   404 |   CHAMADA_NAO_ATIVA |  “a chamada não está ativa”
-chamada |   405 |   PARAMETRO_INVALIDO |     “parametro inválido, informe perna ‘origem’ ou ‘destino'”
-chamada |   405 |   PARAMETRO_INVALIDO |     “numero inválido, formato DDD + Número ex: 4832830151”
-chamada |   200 |   SUCESSO |   transferindo chamada
-chamada |   404 |   CHAMADA_NAO_ATIVA | a chamada não está ativa
-chamada |   404 |   ELEMENTO_NAO_ENCONTRADO |    “chamada não encontrada”
-chamada |   200 |   SUCESSO |   dados retornados com sucesso
-chamada |   200 |   SUCESSO |   dados retornados com sucesso
-conta | 403 |   SEM_PERMISSAO |  “sem permissão para leitura de contas”
-conta | 404 |   ELEMENTO_NAO_ENCONTRADO |    “conta não encontrada”
-conta | 200 |   SUCESSO |   dados retornados com sucesso
-conta | 403 |   SEM_PERMISSAO |  “sem permissão para leitura de contas”
-conta | 404 |   ELEMENTO_NAO_ENCONTRADO |    “conta não encontrada”
-conta | 200 |   SUCESSO |   dados retornados com sucesso
-conta | 200 |   SUCESSO |   dados retornados com sucesso
-conta | 200 |   SUCESSO |   dados retornados com sucesso
-conta | 403 |   SEM_PERMISSAO |  “sem permissão para atualizar contas”
-conta | 404 |   ELEMENTO_NAO_ENCONTRADO |    “conta não encontrada”
-conta | 200 |   SUCESSO |    “Conta Removida com sucesso.”
-conta | 403 |   SEM_PERMISSAO |  “sem permissão para atualizar contas”
-conta | 404 |   ELEMENTO_NAO_ENCONTRADO |    “conta não encontrada”
-conta | 405 |   PARAMETRO_INVALIDO |     “o parametro login deve ser um endereço de email”
-conta | 405 |   PARAMETRO_INVALIDO |     “o parametro senha deve conter pelo menos 6 caracteres”
-conta | 409 |   REGISTRO_DUPLICADO |     “login duplicado”
-conta | 403 |   SEM_PERMISSAO |  “sem permissão para atualizar utilizar contas pós pago”
-conta | 409 |   SEM_PERMISSAO |  “Impossível atualizar pós para pré, consulte o suporte”
-conta | 200 |   SUCESSO |    “dados atualizados com sucesso”
-conta | 403 |   SEM_PERMISSAO |  “sem permissão para criar contas”
-conta | 405 |   PARAMETRO_OBRIGATORIO |  “o parametro nome é obrigatório”
-conta | 405 |   PARAMETRO_OBRIGATORIO |  “o parametro login é obrigatório”
-conta | 405 |   PARAMETRO_INVALIDO |     “o parametro login deve ser um endereço de email”
-conta | 405 |   PARAMETRO_INVALIDO |     “o parametro senha deve conter pelo menos 6 caracteres”
-conta | 409 |   REGISTRO_DUPLICADO |     “login duplicado”
-conta | 200 |   SUCESSO |   conta criada com sucesso
-conta | 403 |   SEM_PERMISSAO |  “sem permissão”
-conta | 200 |   SUCESSO | “crédito inserido com sucesso”
-ramal | 404 |   PARAMETRO_OBRIGATORIO |  “qual ramal? informar ID /ramal/ID”
-ramal | 404 |   ELEMENTO_NAO_ENCONTRADO |    “ramal não encontrado”
-ramal | 200 |   SUCESSO |   dados retornados com sucesso
-ramal | 200 |   SUCESSO |   dados retornados com sucesso
-ramal | 404 |   ELEMENTO_NAO_ENCONTRADO |    “ramal não encontrado”
-ramal | 200 |   SUCESSO |    “Ramal Removido”
-ramal | 404 |   CHAMADA_NAO_ATIVA |  “a chamada não está ativa”
-ramal | 405 |   PARAMETRO_INVALIDO |     “ramal inválido, informe o ramal com 3 ou 4 dígitos”
-ramal | 405 |   PARAMETRO_INVALIDO |     “login inválido”
-ramal | 405 |   PARAMETRO_INVALIDO |     “senha inválida”
-ramal | 405 |   PARAMETRO_INVALIDO |     “número da bina inválido, informar segundo o exemplo: 4832830151”
-ramal | 405 |   PARAMETRO_INVALIDO |     “login duplicado. Ja existe este login.”
-ramal | 405 |   PARAMETRO_INVALIDO |     “ramal inválido, já existe um ramal {ramal} cadastrado”
-ramal | 200 |   SUCESSO |   ramal criado com sucesso
-ramal | 405 |   PARAMETRO_INVALIDO |     “atenção, informe o id do ramal a ser atualizado /ramal/{id}”
-ramal | 405 |   PARAMETRO_INVALIDO |     “ramal inválido, informe o ramal com 3 ou 4 dígitos”
-ramal | 405 |   PARAMETRO_INVALIDO |     “login inválido”
-ramal | 405 |   PARAMETRO_INVALIDO |     “senha inválida”
-ramal | 405 |   PARAMETRO_INVALIDO |     “número da bina inválido, formato DDD + Número ex: 4832830151”
-ramal | 405 |   PARAMETRO_INVALIDO |     “não é possível alterar o login do ramal administrador”
-ramal | 405 |   PARAMETRO_INVALIDO |     “não é possível alterar a senha do ramal administrador”
-ramal | 405 |   PARAMETRO_INVALIDO |     “nada para atualizar”
-ramal | 405 |   PARAMETRO_INVALIDO |     “login e senha inválidos, tente novamente com outros dados”
-ramal | 405 |   PARAMETRO_INVALIDO |     “ramal inválido, já existe um ramal {ramal} cadastrado”
-ramal | 200 |   SUCESSO |    “dados atualizados com sucesso”
-saldo | 200 |   SUCESSO |   saldo atual
-sms |   404 |   PARAMETRO_OBRIGATORIO |  “qual sms? informar ID /sms/ID”
-sms |   200 |   SUCESSO |   dados retornados com sucesso
-sms |   404 |   ELEMENTO_NAO_ENCONTRADO |    “sms não encontrado”
-sms |   200 |   SUCESSO |   dados retornados com sucesso
-sms |   405 |   PARAMETRO_INVALIDO |     “numero_destino {numero} inválido, formato DDD + Número”
-sms |   405 |   PARAMETRO_OBRIGATORIO |  “o parametro mensagem é obrigatório”
-sms |   405 |   PARAMETRO_INVALIDO |     “o parametro mensagem não pode conter mais de 160 caracteres”
-sms |   405 |   PARAMETRO_INVALIDO |    “o parametro mensagem não pode conter mais de 16000 caracteres”
-sms |   405 |   PARAMETRO_INVALIDO |    “Mensagem bloqueada por SPAM.”
-sms |   403 |   SEM_PERMISSAO | “Limite diário de 50 atingido. Ative sua conta no painel para enviar sem limites.”
-sms |   403 |   SEM_PERMISSAO | “Limite diario de SMS esgotado. Caso precise aumentar seu número máximo de envios de SMS diários, entre em contato com suporte@totalvoice.com.br.”
-sms |   200 |   SUCESSO |   sms criado com sucesso
-tts |   404 |   PARAMETRO_OBRIGATORIO |  “qual tts? informar ID /tts/ID”
-tts |   404 |   ELEMENTO_NAO_ENCONTRADO |    “tts não encontrado”
-tts |   200 |   SUCESSO |   dados retornados com sucesso
-tts |   200 |   SUCESSO |   dados retornados com sucesso
-tts |   200 |   SUCESSO |   dados retornados com sucesso
-tts |   405 |   PARAMETRO_INVALIDO |     “numero_destino {numero} inválido, formato DDD + Número”
-tts |   405 |   PARAMETRO_OBRIGATORIO |  “o parametro mensagem é obrigatório”
-tts |   200 |   SUCESSO |   tts criado com sucesso
-webhook |   200 |   SUCESSO |   dados retornados com sucesso
-webhook |   405 |   PARAMETRO_OBRIGATORIO |  “o parametro webhook é obrigatório”
-webhook |   405 |   PARAMETRO_OBRIGATORIO |  “o parametro url é obrigatório”
-webhook |   405 |   PARAMETRO_INVALIDO |     “o parametro url é inválido, informar ex: http://foooo.bar/x/y”
-webhook |   405 |   PARAMETRO_INVALIDO |     “o parametro webhook é inválido. Webhooks válidos: {lista_webhooks}”
-webhook |   200 |   SUCESSO |    “webhook atualizado com sucesso”
-webhook |   405 |   PARAMETRO_OBRIGATORIO |  “o parametro webhook é obrigatório”
-webhook |   405 |   PARAMETRO_INVALIDO |     “o parametro webhook é inválido. Webhooks válidos: {lista_webhooks}”
-webhook |   200 |   SUCESSO |    “webhook apagado com sucesso”
-webphone |  405 |   PARAMETRO_INVALIDO |     “Parâmetro ligar_para inválido, formato DDD + Número ex: 4832830151”
-webphone |  200 |   SUCESSO |   url webphone
-webphone |  200 |   SUCESSO |   url webphone
-webphone |  200 |   SUCESSO |   url webphone
-webphone |  404 |   ELEMENTO_NAO_ENCONTRADO |    “ramal não encontrada”
-widget |    200 |   SUCESSO |   código widget
-</code></pre><h1 id='audio'>Áudio</h1><h3 id='objeto-audio'>Objeto Áudio</h3>
+
+<p>As respostas das requisições realizadas para a API TotalVoice utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
+sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, também utilizamos os códigos começando com 500 para apresentar falhas internas.</p>
+
+<p><br style="margin-top: 280px;"/>  </p>
+<h3 id='codigos-de-motivos'>Códigos de Motivos</h3>
+<blockquote>
+<p>Códigos de Motivos</p>
+
+<table>
+     <tr>
+         <td>0</td>
+         <td>Os dados foram retornados com sucesso.</td>
+     </tr>
+     <tr>
+         <td>8</td>
+         <td>Sua conta não tem permissão para realizar esse procedimento.</td>
+     </tr>
+     <tr>
+         <td>9</td>
+         <td>Sua conta não tem saldo suficiente.</td>
+     </tr>
+     <tr>
+         <td>10</td>
+         <td>Você não enviou todos os parâmetros obrigatórios.</td>
+     </tr>
+     <tr>
+         <td>11</td>
+         <td>Algum dos parâmetros enviados está inválido</td>
+     </tr>
+     <tr>
+         <td>20</td>
+         <td>Erro pois o registro iria ficar duplicado.</td>
+     </tr>
+     <tr>
+         <td>30</td>
+         <td>Esta funcionalidade ainda não foi implementada. (Avise-nos)</td>
+     </tr>
+     <tr>
+         <td>40</td>
+         <td>Houve uma falha na autenticação, seu Token está correto?</td>
+     </tr>
+    <tr>
+         <td>50</td>
+         <td>Erro interno dentro do nosso sistema.</td>
+     </tr>
+     <tr>
+         <td>60</td>
+         <td>Não encontramos o elemento que você está procurando.</td>
+     </tr>
+     <tr>
+         <td>70</td>
+         <td>A chamada requisitada não contém uma gravação.</td>
+     </tr>
+     <tr>
+         <td>80</td>
+         <td>A chamada solicitada não está ativa.</td>
+     </tr>
+     <tr>
+         <td>90</td>
+         <td>O caminho não foi encontrado.</td>
+     </tr>
+     <tr>
+         <td>100</td>
+         <td>A requisição solicitada é inválida.</td>
+     </tr>
+ </table>
+</blockquote>
+
+<p>Um dos parâmetros padrões que vem em toda resposta da API, é o motivo, onde detalhamos o motivo pelo qual a sua requisição
+ falhou (ou deu certo), na tabela ao lado temos a lista de motivos possíveis, e mais detalhes seguem no campo mensagem 
+ do cabeçalho.</p>
+
+<p>Utilize o atributo <strong>sucesso</strong> se for apenas para identificar se a requisição deu certo ou não.</p>
+<h1 id='audio'>Áudio</h1><h3 id='objeto-audio'>Objeto Áudio</h3>
 <blockquote>
 <p><br></p>
 
@@ -878,16 +864,12 @@ widget |    200 |   SUCESSO |   código widget
 </table>
 <h3 id='criar-um-audio'>Criar um áudio</h3>
 <blockquote>
-<p></br></p>
-
 <p>Definição</p>
 </blockquote>
 <pre class="highlight plaintext"><code>POST https://api.totalvoice.com.br/audio
 </code></pre>
 <blockquote>
-<p></br></p>
-
-<p>Exemplo Requisição</p>
+<p>Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
@@ -903,7 +885,7 @@ widget |    200 |   SUCESSO |   código widget
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"NUMERO_DESTINO"</span><span class="o">,</span> <span class="s">"http://foo.bar/audio.mp3"</span><span class="o">);</span>
 </code></pre>
 <blockquote>
-<p>Exemplo Resposta</p>
+<p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -916,8 +898,6 @@ widget |    200 |   SUCESSO |   código widget
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determinado número.</p>
-
-<p><code>POST /audio</code></p>
 <h4 id='request'>Request</h4>
 <table class="table-parameters">
     <tbody>
@@ -1001,16 +981,12 @@ widget |    200 |   SUCESSO |   código widget
 <br></p>
 <h3 id='recuperar-audio'>Recuperar áudio</h3>
 <blockquote>
-<p></br></p>
-
 <p>Definição</p>
 </blockquote>
 <pre class="highlight plaintext"><code>GET https://api.totalvoice.com.br/audio/{id}
 </code></pre>
 <blockquote>
-<p></br></p>
-
-<p>Exemplo Request</p>
+<p>Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
@@ -1024,7 +1000,7 @@ widget |    200 |   SUCESSO |   código widget
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="na">buscar</span><span class="o">(</span><span class="mi">123</span><span class="o">);</span>
 </code></pre>
 <blockquote>
-<p>Exemplo Response</p>
+<p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1052,9 +1028,7 @@ widget |    200 |   SUCESSO |   código widget
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Após o envio de mensagens de áudio, você poderá realizar a busca do registro pelo seu ID.</p>
-
-<p><code>GET /audio/{id}</code></p>
-<h4 id='request-2'>Request</h4>
+<h5 id='request-2'>Request</h5>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -1068,7 +1042,7 @@ widget |    200 |   SUCESSO |   código widget
         </tr>
     </tbody>
 </table>
-<h4 id='response-2'>Response</h4>
+<h5 id='response-2'>Response</h5>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -1114,16 +1088,12 @@ widget |    200 |   SUCESSO |   código widget
 <br></p>
 <h3 id='relatorio-audio'>Relatório áudio</h3>
 <blockquote>
-<p></br></p>
-
 <p>Definição</p>
 </blockquote>
 <pre class="highlight plaintext"><code>GET https://api.totalvoice.com.br/audio/relatorio
 </code></pre>
 <blockquote>
-<p></br></p>
-
-<p>Exemplo Request</p>
+<p>Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
@@ -1137,7 +1107,7 @@ widget |    200 |   SUCESSO |   código widget
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="na">relatorio</span><span class="o">(</span><span class="n">dataInicial</span><span class="o">,</span> <span class="n">dataFinal</span><span class="o">);</span>
 </code></pre>
 <blockquote>
-<p>Exemplo Response</p>
+<p>Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
@@ -1187,8 +1157,6 @@ widget |    200 |   SUCESSO |   código widget
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.</p>
-
-<p><code>GET /audio/relatorio?data_inicio=2018-03-10&amp;data_fim=2018-03-11</code></p>
 <h4 id='request-3'>Request</h4>
 <table class="table-parameters">
     <tbody>
