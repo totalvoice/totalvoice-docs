@@ -1,5 +1,12 @@
 # Respostas da API
 
+As respostas das requisições realizadas para a API TotalVoice utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
+sendo que os códigos iniciando com 2xx respondem pelo sucesso e os iniciando 4xx pelas falhas.
+
+Todo JSON retornado pela API segue um padrão, contendo um cabeçalho de resposta com informações sobre a requisição e os dados exclusivos de cada requisição são respondidos dentro do campo **dados**.
+
+> Exemplo JSON de retorno
+
 ```json
 {
   "status": 200,
@@ -12,11 +19,6 @@
 }
 ```
 
-As respostas das requisições realizadas para a API TotalVoice utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
-sendo que os códigos iniciando com 2xx respondem pelo sucesso e os iniciando 4xx pelas falhas.
-
-O JSON retornado pela API segue um padrão
-
 #### Formatação da Resposta Padrão
 
 <table class="table-parameters">
@@ -27,7 +29,7 @@ O JSON retornado pela API segue um padrão
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Código HTTP da resposta (mesmo respondido pelo padrão HTTP)
+                Código HTTP da resposta.
              </td>
         </tr>
         <tr>
@@ -36,7 +38,7 @@ O JSON retornado pela API segue um padrão
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                True se a resposta for sucesso ou false se tiver algum erro
+                Sucesso ou falha da requisição.
              </td>
         </tr>
         <tr>
@@ -45,7 +47,7 @@ O JSON retornado pela API segue um padrão
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Motivo 
+                Código do motivo da falha ou sucesso.
              </td>
         </tr>
         <tr>
@@ -54,7 +56,7 @@ O JSON retornado pela API segue um padrão
                 <span class="attribute">string</span>
             </td>
             <td>
-                Retorna o ID do Áudio
+                Mensagem de resposta contendo sucesso ou motivo de falha. 
              </td>
         </tr>
         <tr>
@@ -63,7 +65,7 @@ O JSON retornado pela API segue um padrão
                 <span class="attribute">object</span>
             </td>
             <td>
-                Retorna o ID do Áudio
+                Dados da resposta atribuídos a cada requisição.
              </td>
         </tr>
     </tbody>
