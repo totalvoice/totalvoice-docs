@@ -1455,7 +1455,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 ID
-                <span class="required">Obrigatório</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Retorna o ID do Áudio
@@ -1530,7 +1530,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 id
-                <span class="required">Obrigatório</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 ID do registro de Áudio.
@@ -1539,7 +1539,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Número Destino
-                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Número do destinatário que foi enviado o áudio.
@@ -1548,7 +1548,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Data Criação
-                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Data e hora que foi criado o registro
@@ -1557,7 +1557,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Data Inicio
-                <span class="optional">Opcional</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Data e hora que foi iniciado o processamento do áudio
@@ -1566,7 +1566,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Tipo
-                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Tipo de telefone: fixo, móvel ou ramal
@@ -1575,7 +1575,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Status
-                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Status do registro
@@ -1584,7 +1584,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Duração em Segundos
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração em segundos (inteiro) total da chamada desde o início do processamento
@@ -1593,7 +1593,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Duração
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração total da chamada desde o início do processamento
@@ -1602,7 +1602,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Duração Cobrada em Segundos
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração em segundos para fins de cobrança
@@ -1611,7 +1611,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Duração Cobrada
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração considerada para fins de cobrança
@@ -1620,7 +1620,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
                 <tr>
             <td>
                 Duração Falada em Segundos
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração em segundos da chamada desde que o destino atendeu
@@ -1629,7 +1629,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Duração Falada
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração da chamada desde que o destino atendeu
@@ -1638,7 +1638,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Preço
-                <span class="required">Obrigatório</span>
+                <span class="attribute">float</span>
             </td>
             <td>
                 Valor cobrado pela chamada
@@ -1647,7 +1647,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 URL do Áudio
-                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 URL do Áudio enviado para a chamada
@@ -1656,7 +1656,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Resposta Usuário
-                <span class="required">Obrigatório</span>
+                <span class="attribute">boolean</span>
             </td>
             <td>
                 Aguarda a resposta do usuário: sim ou não
@@ -1665,7 +1665,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         <tr>
             <td>
                 Resposta
-                <span class="optional">Opcional</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
