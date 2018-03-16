@@ -182,17 +182,13 @@ Definição do objeto Áudio
 
 ### Criar um áudio
 
-> </br>
-
 > Definição
 
 ```text
 POST https://api.totalvoice.com.br/audio
 ```
 
-> </br>
-
-> Exemplo Requisição
+> Request
 
 ```shell--curl
 curl -X POST --header 'Content-Type: application/json' \
@@ -218,7 +214,7 @@ response = client.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
 Audio audio = new Audio(client);
 JSONObject response = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3");
 ```
-> Exemplo Resposta
+> Response
 
 ```json
 {
@@ -232,8 +228,6 @@ JSONObject response = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
 }
 ```
 Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determinado número.
-
-`POST /audio`
 
 #### Request
 
@@ -322,17 +316,13 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
 
 ### Recuperar áudio
 
-> </br>
-
 > Definição
 
 ```text
 GET https://api.totalvoice.com.br/audio/{id}
 ```
 
-> </br>
-
-> Exemplo Request
+> Request
 
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
@@ -356,7 +346,7 @@ response = client.audio.get_by_id(123)
 Audio audio = new Audio(client);
 JSONObject response = audio.buscar(123);
 ```
-> Exemplo Response
+> Response
 
 ```json
 {
@@ -387,9 +377,7 @@ JSONObject response = audio.buscar(123);
 
 Após o envio de mensagens de áudio, você poderá realizar a busca do registro pelo seu ID.
 
-`GET /audio/{id}`
-
-#### Request
+##### Request
 
 <table class="table-parameters">
     <tbody>
@@ -405,7 +393,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
     </tbody>
 </table>
 
-#### Response
+##### Response
 
 <table class="table-parameters">
     <tbody>
@@ -452,7 +440,6 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 <br>
 
 ### Relatório áudio 
-> </br>
 
 > Definição
 
@@ -460,9 +447,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 GET https://api.totalvoice.com.br/audio/relatorio
 ```
 
-> </br>
-
-> Exemplo Request
+> Request
 
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
@@ -486,7 +471,7 @@ response = client.audio.get_relatorio(data_inicio, data_fim)
 Audio audio = new Audio(client);
 JSONObject response = audio.relatorio(dataInicial, dataFinal);
 ```
-> Exemplo Response
+> Response
 
 ```json
 {
@@ -538,8 +523,6 @@ JSONObject response = audio.relatorio(dataInicial, dataFinal);
 ```
 
 Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
-
-`GET /audio/relatorio?data_inicio=2018-03-10&data_fim=2018-03-11`
 
 #### Request
 

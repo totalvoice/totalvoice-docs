@@ -434,6 +434,7 @@ html, body {
 
     td:first-child {
       width: 130px;
+      min-width: 130px;
       text-align: right;
       padding-right: 5px;
     }
@@ -669,6 +670,14 @@ html, body {
 .table-parameters {
   
   font-size: 14px;
+
+  tr {
+    border-bottom: 1px solid #f1ecec;
+    td {
+      padding: 20px;
+      width: 100%;
+    }
+  }
 
   span {
     display: block;
