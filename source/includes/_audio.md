@@ -2,15 +2,12 @@
 
 ### Objeto áudio
 
-> Exemplo Response
+> <br>
+
+> JSON
 
 ```json
 {
-  "status": 200,
-  "sucesso": true,
-  "motivo": 0,
-  "mensagem": "dados retornados com sucesso",
-  "dados": {
     "id": 432,
     "numero_destino": "4832830151",
     "data_criacao": "2016-03-27T15:12:44+03:00",
@@ -27,7 +24,6 @@
     "url_audio": "http://fooooo.bar/audio.mp3",
     "resposta_usuario": true,
     "resposta": "8"
-  }
 }
 ```
 
@@ -48,7 +44,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Número Destino
+                numero_destino
                 <span class="attribute">string</span>
             </td>
             <td>
@@ -57,7 +53,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Data Criação
+                data_criacao
                 <span class="attribute">datetime</span>
             </td>
             <td>
@@ -66,7 +62,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Data Inicio
+                data_inicio
                 <span class="attribute">datetime</span>
             </td>
             <td>
@@ -75,7 +71,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Tipo
+                tipo
                 <span class="attribute">string</span>
             </td>
             <td>
@@ -84,7 +80,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Status
+                status
                 <span class="attribute">string</span>
             </td>
             <td>
@@ -93,7 +89,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Duração em Segundos
+                duracao_segundos
                 <span class="attribute">integer</span>
             </td>
             <td>
@@ -102,7 +98,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Duração
+                duracao
                 <span class="attribute">integer</span>
             </td>
             <td>
@@ -111,7 +107,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Duração Cobrada em Segundos
+                duracao_cobrada_segundos
                 <span class="attribute">integer</span>
             </td>
             <td>
@@ -120,7 +116,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Duração Cobrada
+                duracao_cobrada
                 <span class="attribute">integer</span>
             </td>
             <td>
@@ -129,7 +125,7 @@ Definição do objeto Áudio
         </tr>
                 <tr>
             <td>
-                Duração Falada em Segundos
+                duracao_falada_segundos
                 <span class="attribute">integer</span>
             </td>
             <td>
@@ -138,7 +134,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Duração Falada
+                duracao_falada
                 <span class="attribute">integer</span>
             </td>
             <td>
@@ -147,7 +143,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Preço
+                preco
                 <span class="attribute">float</span>
             </td>
             <td>
@@ -156,7 +152,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                URL do Áudio
+                url_audio
                 <span class="attribute">string</span>
             </td>
             <td>
@@ -165,7 +161,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Resposta Usuário
+                resposta_usuario
                 <span class="attribute">boolean</span>
             </td>
             <td>
@@ -174,7 +170,7 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
-                Resposta
+                resposta
                 <span class="attribute">string</span>
             </td>
             <td>
@@ -245,7 +241,7 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
     <tbody>
         <tr>
             <td>
-                Número Destino
+                numero_destino
                 <span class="required">Obrigatório</span>
             </td>
             <td>
@@ -254,7 +250,7 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
         </tr>
         <tr>
             <td>
-                URL áudio
+                url_audio
                 <span class="required">Obrigatório</span>
             </td>
             <td>
@@ -263,7 +259,7 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
         </tr>
         <tr>
             <td>
-                Resposta do Usuário
+                resposta_usuario
                 <span class="optional">Opcional</span>
             </td>
             <td>
@@ -272,7 +268,7 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
         </tr>
         <tr>
             <td>
-                Gravar Áudio
+                gravar_audio
                 <span class="optional">Opcional</span>
             </td>
             <td>
@@ -281,7 +277,7 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
         </tr>
         <tr>
             <td>
-                Bina
+                bina
                 <span class="optional">Opcional</span>
             </td>
             <td>
@@ -297,7 +293,7 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
     <tbody>
         <tr>
             <td>
-                ID
+                id
                 <span class="attribute">integer</span>
             </td>
             <td>
@@ -307,6 +303,20 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
     </tbody>
 </table>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 
@@ -401,151 +411,43 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
     <tbody>
         <tr>
             <td>
-                id
-                <span class="attribute">integer</span>
+                dados
+                <span class="attribute">object</span>
             </td>
             <td>
-                ID do registro de Áudio.
+                Retorna o objeto <a href="#objeto-audio">áudio</a>
              </td>
-        </tr>
-        <tr>
-            <td>
-                Número Destino
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Número do destinatário que foi enviado o áudio.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Data Criação
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data e hora que foi criado o registro
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Data Inicio
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data e hora que foi iniciado o processamento do áudio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Tipo
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Tipo de telefone: fixo, móvel ou ramal
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Status
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Status do registro
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração em Segundos
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração em segundos (inteiro) total da chamada desde o início do processamento
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração total da chamada desde o início do processamento
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração Cobrada em Segundos
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração em segundos para fins de cobrança
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração Cobrada
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração considerada para fins de cobrança
-            </td>
-        </tr>
-                <tr>
-            <td>
-                Duração Falada em Segundos
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração em segundos da chamada desde que o destino atendeu
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração Falada
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração da chamada desde que o destino atendeu
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Preço
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Valor cobrado pela chamada
-            </td>
-        </tr>
-        <tr>
-            <td>
-                URL do Áudio
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                URL do Áudio enviado para a chamada
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Resposta Usuário
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Aguarda a resposta do usuário: sim ou não
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Resposta
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
-            </td>
         </tr>
     </tbody>
 </table>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 
@@ -555,7 +457,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/audio/relatorio 
+GET https://api.totalvoice.com.br/audio/relatorio
 ```
 
 > </br>
@@ -637,13 +539,15 @@ JSONObject response = audio.relatorio(dataInicial, dataFinal);
 
 Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
 
+`GET /audio/relatorio?data_inicio=2018-03-10&data_fim=2018-03-11`
+
 #### Request
 
 <table class="table-parameters">
     <tbody>
         <tr>
             <td>
-                Data Inicial
+                data_inicio
                 <span class="required">Obrigatório</span>
             </td>
             <td>
@@ -652,7 +556,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
         </tr>
         <tr>
             <td>
-                Data Final
+                data_fim
                 <span class="required">Obrigatório</span>
             </td>
             <td>
@@ -668,147 +572,12 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
     <tbody>
         <tr>
             <td>
-                id
-                <span class="attribute">integer</span>
+                relatorio
+                <span class="attribute">array</span>
             </td>
             <td>
-                ID do registro de Áudio.
+                Retorna um array com objetos <a href="#objeto-audio">áudio</a>
              </td>
-        </tr>
-        <tr>
-            <td>
-                Número Destino
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Número do destinatário que foi enviado o áudio.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Data Criação
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data e hora que foi criado o registro
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Data Inicio
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data e hora que foi iniciado o processamento do áudio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Tipo
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Tipo de telefone: fixo, móvel ou ramal
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Status
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Status do registro
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração em Segundos
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração em segundos (inteiro) total da chamada desde o início do processamento
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração total da chamada desde o início do processamento
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração Cobrada em Segundos
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração em segundos para fins de cobrança
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração Cobrada
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração considerada para fins de cobrança
-            </td>
-        </tr>
-                <tr>
-            <td>
-                Duração Falada em Segundos
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração em segundos da chamada desde que o destino atendeu
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração Falada
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração da chamada desde que o destino atendeu
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Preço
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Valor cobrado pela chamada
-            </td>
-        </tr>
-        <tr>
-            <td>
-                URL do Áudio
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                URL do Áudio enviado para a chamada
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Resposta Usuário
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Aguarda a resposta do usuário: sim ou não
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Resposta
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
-            </td>
         </tr>
     </tbody>
 </table>
