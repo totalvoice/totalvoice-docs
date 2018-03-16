@@ -673,7 +673,7 @@ html, body {
   span {
     display: block;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 10px;
   }
 
   span.attribute {
@@ -686,5 +686,9 @@ html, body {
 
   span.optional {
     color: #0c733f;
+  }
+
+  span.type {
+    color: #0b8805;
   }
 }
