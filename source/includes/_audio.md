@@ -104,7 +104,7 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
         <tr>
             <td>
                 ID
-                <span class="required">Obrigatório</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Retorna o ID do Áudio
@@ -196,7 +196,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 id
-                <span class="required">Obrigatório</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 ID do registro de Áudio.
@@ -205,7 +205,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Número Destino
-                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Número do destinatário que foi enviado o áudio.
@@ -214,7 +214,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Data Criação
-                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Data e hora que foi criado o registro
@@ -223,7 +223,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Data Inicio
-                <span class="optional">Opcional</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Data e hora que foi iniciado o processamento do áudio
@@ -232,7 +232,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Tipo
-                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Tipo de telefone: fixo, móvel ou ramal
@@ -241,7 +241,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Status
-                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Status do registro
@@ -250,7 +250,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Duração em Segundos
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração em segundos (inteiro) total da chamada desde o início do processamento
@@ -259,7 +259,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Duração
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração total da chamada desde o início do processamento
@@ -268,7 +268,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Duração Cobrada em Segundos
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração em segundos para fins de cobrança
@@ -277,7 +277,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Duração Cobrada
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração considerada para fins de cobrança
@@ -286,7 +286,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
                 <tr>
             <td>
                 Duração Falada em Segundos
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração em segundos da chamada desde que o destino atendeu
@@ -295,7 +295,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Duração Falada
-                <span class="optional">Opcional</span>
+                <span class="attribute">integer</span>
             </td>
             <td>
                 Duração da chamada desde que o destino atendeu
@@ -304,7 +304,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Preço
-                <span class="required">Obrigatório</span>
+                <span class="attribute">float</span>
             </td>
             <td>
                 Valor cobrado pela chamada
@@ -313,7 +313,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 URL do Áudio
-                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 URL do Áudio enviado para a chamada
@@ -322,7 +322,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Resposta Usuário
-                <span class="required">Obrigatório</span>
+                <span class="attribute">boolean</span>
             </td>
             <td>
                 Aguarda a resposta do usuário: sim ou não
@@ -331,7 +331,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Resposta
-                <span class="optional">Opcional</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
