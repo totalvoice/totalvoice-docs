@@ -1,13 +1,13 @@
 # Introdução
 
-Os serviços da TotalVoice estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e
-os códigos de respostas HTTP para indicar erros na API. Suportamos cross-origin, aceitando interações de qualquer domínio com segurança.
-
 > Api Endpoint
 
-```all
+```text
 https://api.totalvoice.com.br
 ```
+
+Os serviços da TotalVoice estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e
+os códigos de respostas HTTP para indicar erros na API. Suportamos cross-origin, aceitando interações de qualquer domínio com segurança.
 
 Disponibilizamos bibliotecas em diversas linguagens para uma maior facilidade dos nossos usuários, você pode alterar a linguagem de referência
 da documentação clicando na linguagem desejada no canto superior direito da página.
