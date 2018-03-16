@@ -238,14 +238,14 @@
             <a href="#autenticacao" class="toc-h1 toc-link" data-title="Autenticação">Autenticação</a>
           </li>
            <li>
-            <a href="#erros" class="toc-h1 toc-link" data-title="Erros">Erros</a>
-          </li>
-           <li>
-            <a href="#tabela-status-api" class="toc-h1 toc-link" data-title="Tabela Status API">Tabela Status API</a>
+            <a href="#respostas-da-api" class="toc-h1 toc-link" data-title="Respostas da API">Respostas da API</a>
           </li>
            <li style="margin-top: 20px;">
             <a href="#audio" class="toc-h1 toc-link" data-title="Áudio">Áudio</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#objeto-audio" class="toc-h2 toc-link" data-title="Objeto áudio">Objeto áudio</a>
+                  </li>
                   <li>
                     <a href="#criar-um-audio" class="toc-h2 toc-link" data-title="Criar um áudio">Criar um áudio</a>
                   </li>
@@ -437,14 +437,14 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introducao'>Introdução</h1>
-<p>Os serviços da TotalVoice estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e
-os códigos de respostas HTTP para indicar erros na API. Suportamos cross-origin, aceitando interações de qualquer domínio com segurança.</p>
-
 <blockquote>
 <p>Api Endpoint</p>
 </blockquote>
 <pre class="highlight plaintext"><code>https://api.totalvoice.com.br
 </code></pre>
+<p>Os serviços da TotalVoice estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e
+os códigos de respostas HTTP para indicar erros na API. Suportamos cross-origin, aceitando interações de qualquer domínio com segurança.</p>
+
 <p>Disponibilizamos bibliotecas em diversas linguagens para uma maior facilidade dos nossos usuários, você pode alterar a linguagem de referência
 da documentação clicando na linguagem desejada no canto superior direito da página.</p>
 
@@ -497,20 +497,89 @@ na requisição HTTP através do cabeçalho, ou pela <em>Query String</em>. </p>
 <p>As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação na requisição HTTP transparentemente. </p>
 
 <aside class="warning">
- Seu Token deverá ser mantido em segredo, tome muito cuidado, não deixe ele exposto em um código público e nunca
+ Mantenha seu Token em segredo, tome muito cuidado, não deixe ele exposto em um código público e nunca
  compartilhe com ninguém fora da sua organização.
 </aside>
-<h1 id='erros'>Erros</h1>
-<p>Nesta seção você encontrará exemplos de como trabalhar com ligações com a API da TotalVoice</p>
+<h1 id='respostas-da-api'>Respostas da API</h1>
+<p>As respostas das requisições realizadas para a API TotalVoice utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
+sendo que os códigos iniciando com 2xx respondem pelo sucesso e os iniciando 4xx pelas falhas.</p>
 
-<p><code>Access-Token: Token</code></p>
+<p>Todo JSON retornado pela API segue um padrão, contendo um cabeçalho de resposta com informações sobre a requisição e os dados exclusivos de cada requisição são respondidos dentro do campo <strong>dados</strong>.</p>
 
 <blockquote>
-<p>Para realizar uma chamada telefônica, utilize este código:</p>
+<p>Exemplo JSON de retorno</p>
 </blockquote>
-<pre class="highlight plaintext"><code>
-&lt;table&gt;&lt;/table&gt;
-Local | Código | Tipo | Significado
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"audio criado com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4921</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h4 id='formatacao-da-resposta-padrao'>Formatação da Resposta Padrão</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                status
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Código HTTP da resposta.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                sucesso
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Sucesso ou falha da requisição.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                motivo
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Código do motivo da falha ou sucesso.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                mensagem
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Mensagem de resposta contendo sucesso ou motivo de falha. 
+             </td>
+        </tr>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Dados da resposta atribuídos a cada requisição.
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<blockquote>
+<p>Códigos de Resposta HTTP</p>
+
+<table>
+<tr>
+<td>aaa</td>
+<td>bbb</td>
+</tr>
+</table>
+</blockquote>
+<pre class="highlight plaintext"><code>Local | Código | Tipo | Significado
 ----- | ----------- | ---- | ------------
 api | 403 | FALHA_AUTH | “access token inválido”
 api | 403 | SEM_PERMISSAO |  “conta desativada”
@@ -632,747 +701,197 @@ webphone |  200 |   SUCESSO |   url webphone
 webphone |  200 |   SUCESSO |   url webphone
 webphone |  404 |   ELEMENTO_NAO_ENCONTRADO |    “ramal não encontrada”
 widget |    200 |   SUCESSO |   código widget
-</code></pre><h1 id='tabela-status-api'>Tabela Status API</h1>
-<aside class="notice">
-Nesta seção, você poderá visualizar a tabela com os status que são retornados pela nossa API.
-</aside>
-
-<table><thead>
-<tr>
-<th>Local</th>
-<th>Código</th>
-<th>Tipo</th>
-<th>Significado</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>api</td>
-<td>403</td>
-<td>FALHA_AUTH</td>
-<td>“access token inválido”</td>
-</tr>
-<tr>
-<td>api</td>
-<td>403</td>
-<td>SEM_PERMISSAO</td>
-<td>“conta desativada”</td>
-</tr>
-<tr>
-<td>api</td>
-<td>402</td>
-<td>SALDO_INSUFICIENTE</td>
-<td>“saldo insuficiente”</td>
-</tr>
-<tr>
-<td>api</td>
-<td>501</td>
-<td>NAO_IMPLEMENTADO</td>
-<td>“não implementado”</td>
-</tr>
-<tr>
-<td>audio</td>
-<td>404</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“qual audio? informar ID /audio/ID”</td>
-</tr>
-<tr>
-<td>audio</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“audio não encontrado”</td>
-</tr>
-<tr>
-<td>audio</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>audio</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“numero_destino inválido, formato DDD + Número”</td>
-</tr>
-<tr>
-<td>audio</td>
-<td>405</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“o parametro url_audio é obrigatório”</td>
-</tr>
-<tr>
-<td>audio</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“o parametro url_audio é inválido, formato esperado http://foooo.bar/audio.mp3”</td>
-</tr>
-<tr>
-<td>audio</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>audio criado com sucesso</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>404</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“qual chamada? informar ID /chamada/ID”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“chamada não encontrada”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>404</td>
-<td>CHAMADA_SEM_GRAVACAO</td>
-<td>“chamada sem gravação solicitada”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“numero_origem inválido, formato DDD + Número ex: 4832830151”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“numero_destino inválido, formato DDD + Número ex: 4832830151”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>chamada criada com sucesso</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“numero inválido, formato DDD + Número ex: 4832830151”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“modo inválido: 1=escuta, 2=sussurro, 3=conferência”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>404</td>
-<td>CHAMADA_NAO_ATIVA</td>
-<td>“a chamada não está ativa”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>escuta criada com sucesso</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>“encerrando chamada”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>404</td>
-<td>CHAMADA_NAO_ATIVA</td>
-<td>“a chamada não está ativa”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“parametro inválido, informe perna ‘origem’ ou ‘destino&#39;”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“numero inválido, formato DDD + Número ex: 4832830151”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>transferindo chamada</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>404</td>
-<td>CHAMADA_NAO_ATIVA</td>
-<td>a chamada não está ativa</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“chamada não encontrada”</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>chamada</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>403</td>
-<td>SEM_PERMISSAO</td>
-<td>“sem permissão para leitura de contas”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“conta não encontrada”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>403</td>
-<td>SEM_PERMISSAO</td>
-<td>“sem permissão para leitura de contas”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“conta não encontrada”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>403</td>
-<td>SEM_PERMISSAO</td>
-<td>“sem permissão para atualizar contas”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“conta não encontrada”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>“Conta Removida com sucesso.”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>403</td>
-<td>SEM_PERMISSAO</td>
-<td>“sem permissão para atualizar contas”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“conta não encontrada”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“o parametro login deve ser um endereço de email”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“o parametro senha deve conter pelo menos 6 caracteres”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>409</td>
-<td>REGISTRO_DUPLICADO</td>
-<td>“login duplicado”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>403</td>
-<td>SEM_PERMISSAO</td>
-<td>“sem permissão para atualizar utilizar contas pós pago”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>409</td>
-<td>SEM_PERMISSAO</td>
-<td>“Impossível atualizar pós para pré, consulte o suporte”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>“dados atualizados com sucesso”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>403</td>
-<td>SEM_PERMISSAO</td>
-<td>“sem permissão para criar contas”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>405</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“o parametro nome é obrigatório”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>405</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“o parametro login é obrigatório”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“o parametro login deve ser um endereço de email”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“o parametro senha deve conter pelo menos 6 caracteres”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>409</td>
-<td>REGISTRO_DUPLICADO</td>
-<td>“login duplicado”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>conta criada com sucesso</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>403</td>
-<td>SEM_PERMISSAO</td>
-<td>“sem permissão”</td>
-</tr>
-<tr>
-<td>conta</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>“crédito inserido com sucesso”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>404</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“qual ramal? informar ID /ramal/ID”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“ramal não encontrado”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“ramal não encontrado”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>“Ramal Removido”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>404</td>
-<td>CHAMADA_NAO_ATIVA</td>
-<td>“a chamada não está ativa”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“ramal inválido, informe o ramal com 3 ou 4 dígitos”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“login inválido”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“senha inválida”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“número da bina inválido, informar segundo o exemplo: 4832830151”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“login duplicado. Ja existe este login.”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“ramal inválido, já existe um ramal {ramal} cadastrado”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>ramal criado com sucesso</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“atenção, informe o id do ramal a ser atualizado /ramal/{id}”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“ramal inválido, informe o ramal com 3 ou 4 dígitos”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“login inválido”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“senha inválida”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“número da bina inválido, formato DDD + Número ex: 4832830151”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“não é possível alterar o login do ramal administrador”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“não é possível alterar a senha do ramal administrador”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“nada para atualizar”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“login e senha inválidos, tente novamente com outros dados”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“ramal inválido, já existe um ramal {ramal} cadastrado”</td>
-</tr>
-<tr>
-<td>ramal</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>“dados atualizados com sucesso”</td>
-</tr>
-<tr>
-<td>saldo</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>saldo atual</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>404</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“qual sms? informar ID /sms/ID”</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“sms não encontrado”</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“numero_destino {numero} inválido, formato DDD + Número”</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>405</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“o parametro mensagem é obrigatório”</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“o parametro mensagem não pode conter mais de 160 caracteres”</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“o parametro mensagem não pode conter mais de 16000 caracteres”</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“Mensagem bloqueada por SPAM.”</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>403</td>
-<td>SEM_PERMISSAO</td>
-<td>“Limite diário de 50 atingido. Ative sua conta no painel para enviar sem limites.”</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>403</td>
-<td>SEM_PERMISSAO</td>
-<td>“Limite diario de SMS esgotado. Caso precise aumentar seu número máximo de envios de SMS diários, entre em contato com suporte@totalvoice.com.br.”</td>
-</tr>
-<tr>
-<td>sms</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>sms criado com sucesso</td>
-</tr>
-<tr>
-<td>tts</td>
-<td>404</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“qual tts? informar ID /tts/ID”</td>
-</tr>
-<tr>
-<td>tts</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“tts não encontrado”</td>
-</tr>
-<tr>
-<td>tts</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>tts</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>tts</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>tts</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“numero_destino {numero} inválido, formato DDD + Número”</td>
-</tr>
-<tr>
-<td>tts</td>
-<td>405</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“o parametro mensagem é obrigatório”</td>
-</tr>
-<tr>
-<td>tts</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>tts criado com sucesso</td>
-</tr>
-<tr>
-<td>webhook</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>dados retornados com sucesso</td>
-</tr>
-<tr>
-<td>webhook</td>
-<td>405</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“o parametro webhook é obrigatório”</td>
-</tr>
-<tr>
-<td>webhook</td>
-<td>405</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“o parametro url é obrigatório”</td>
-</tr>
-<tr>
-<td>webhook</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“o parametro url é inválido, informar ex: http://foooo.bar/x/y”</td>
-</tr>
-<tr>
-<td>webhook</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“o parametro webhook é inválido. Webhooks válidos: {lista_webhooks}”</td>
-</tr>
-<tr>
-<td>webhook</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>“webhook atualizado com sucesso”</td>
-</tr>
-<tr>
-<td>webhook</td>
-<td>405</td>
-<td>PARAMETRO_OBRIGATORIO</td>
-<td>“o parametro webhook é obrigatório”</td>
-</tr>
-<tr>
-<td>webhook</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“o parametro webhook é inválido. Webhooks válidos: {lista_webhooks}”</td>
-</tr>
-<tr>
-<td>webhook</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>“webhook apagado com sucesso”</td>
-</tr>
-<tr>
-<td>webphone</td>
-<td>405</td>
-<td>PARAMETRO_INVALIDO</td>
-<td>“Parâmetro ligar_para inválido, formato DDD + Número ex: 4832830151”</td>
-</tr>
-<tr>
-<td>webphone</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>url webphone</td>
-</tr>
-<tr>
-<td>webphone</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>url webphone</td>
-</tr>
-<tr>
-<td>webphone</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>url webphone</td>
-</tr>
-<tr>
-<td>webphone</td>
-<td>404</td>
-<td>ELEMENTO_NAO_ENCONTRADO</td>
-<td>“ramal não encontrada”</td>
-</tr>
-<tr>
-<td>widget</td>
-<td>200</td>
-<td>SUCESSO</td>
-<td>código widget</td>
-</tr>
-</tbody></table>
-<h1 id='audio'>Áudio</h1><h3 id='criar-um-audio'>Criar um áudio</h3>
+</code></pre><h1 id='audio'>Áudio</h1><h3 id='objeto-audio'>Objeto áudio</h3>
 <blockquote>
+<p><br></p>
+
+<p>JSON</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atendida"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:45"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"duracao_cobrada_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"duracao_cobrada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:60"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"duracao_falada_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"duracao_falada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:35"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/audio.mp3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Definição do objeto Áudio</p>
+<h4 id='atributos'>Atributos</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro de Áudio.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                numero_destino
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número do destinatário que foi enviado o áudio.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_criacao
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi criado o registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_inicio
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi iniciado o processamento do áudio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                tipo
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Tipo de telefone: fixo, móvel ou ramal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                status
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Status do registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos (inteiro) total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_cobrada_segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos para fins de cobrança
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_cobrada
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração considerada para fins de cobrança
+            </td>
+        </tr>
+                <tr>
+            <td>
+                duracao_falada_segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_falada
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco
+                <span class="attribute">float</span>
+            </td>
+            <td>
+                Valor cobrado pela chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                url_audio
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                URL do Áudio enviado para a chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                resposta_usuario
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Aguarda a resposta do usuário: sim ou não
+            </td>
+        </tr>
+        <tr>
+            <td>
+                resposta
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3 id='criar-um-audio'>Criar um áudio</h3>
+<blockquote>
+<p></br></p>
+
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>POST https://api.totalvoice.com.br/audio
+</code></pre>
+<blockquote>
+<p></br></p>
+
 <p>Exemplo Requisição</p>
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-             --header <span class="s1">'Access-Token: ACCESS_TOKEN'</span> <span class="se">\</span>
+             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
              -d <span class="s1">'{"numero_destino":"NUMERO_DESTINO","url_audio":"http://foo.bar/audio.mp3"}'</span> <span class="se">\</span>
              <span class="s1">'https://api.totalvoice.com.br/audio'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
@@ -1404,7 +923,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
     <tbody>
         <tr>
             <td>
-                Número Destino
+                numero_destino
                 <span class="required">Obrigatório</span>
             </td>
             <td>
@@ -1413,7 +932,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         </tr>
         <tr>
             <td>
-                URL áudio
+                url_audio
                 <span class="required">Obrigatório</span>
             </td>
             <td>
@@ -1422,7 +941,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         </tr>
         <tr>
             <td>
-                Resposta do Usuário
+                resposta_usuario
                 <span class="optional">Opcional</span>
             </td>
             <td>
@@ -1431,7 +950,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         </tr>
         <tr>
             <td>
-                Gravar Áudio
+                gravar_audio
                 <span class="optional">Opcional</span>
             </td>
             <td>
@@ -1440,7 +959,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
         </tr>
         <tr>
             <td>
-                Bina
+                bina
                 <span class="optional">Opcional</span>
             </td>
             <td>
@@ -1454,7 +973,7 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
     <tbody>
         <tr>
             <td>
-                ID
+                id
                 <span class="attribute">integer</span>
             </td>
             <td>
@@ -1465,12 +984,37 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
 </table>
 
 <p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br></p>
 <h3 id='recuperar-audio'>Recuperar áudio</h3>
 <blockquote>
+<p></br></p>
+
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://api.totalvoice.com.br/audio/{id}
+</code></pre>
+<blockquote>
+<p></br></p>
+
 <p>Exemplo Request</p>
 </blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> --header <span class="s1">'Accept: application/json'</span> --header <span class="s1">'Access-Token: ACCESS_TOKEN'</span> <span class="s1">'https://api.totalvoice.com.br/audio/1'</span>
+<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://api.totalvoice.com.br/audio/1'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">audio</span><span class="o">-&gt;</span><span class="na">buscaAudio</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">audio</span><span class="p">.</span><span class="nx">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
@@ -1529,158 +1073,61 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
     <tbody>
         <tr>
             <td>
-                id
-                <span class="attribute">integer</span>
+                dados
+                <span class="attribute">object</span>
             </td>
             <td>
-                ID do registro de Áudio.
+                Retorna o objeto <a href="#objeto-audio">áudio</a>
              </td>
-        </tr>
-        <tr>
-            <td>
-                Número Destino
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Número do destinatário que foi enviado o áudio.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Data Criação
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Data e hora que foi criado o registro
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Data Inicio
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Data e hora que foi iniciado o processamento do áudio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Tipo
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Tipo de telefone: fixo, móvel ou ramal
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Status
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Status do registro
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração em Segundos
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração em segundos (inteiro) total da chamada desde o início do processamento
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração total da chamada desde o início do processamento
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração Cobrada em Segundos
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração em segundos para fins de cobrança
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração Cobrada
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração considerada para fins de cobrança
-            </td>
-        </tr>
-                <tr>
-            <td>
-                Duração Falada em Segundos
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração em segundos da chamada desde que o destino atendeu
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Duração Falada
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Duração da chamada desde que o destino atendeu
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Preço
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Valor cobrado pela chamada
-            </td>
-        </tr>
-        <tr>
-            <td>
-                URL do Áudio
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                URL do Áudio enviado para a chamada
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Resposta Usuário
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Aguarda a resposta do usuário: sim ou não
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Resposta
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
-            </td>
         </tr>
     </tbody>
 </table>
 
 <p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br></p>
 <h3 id='relatorio-audio'>Relatório áudio</h3>
 <blockquote>
+<p></br></p>
+
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://api.totalvoice.com.br/audio/relatorio
+</code></pre>
+<blockquote>
+<p></br></p>
+
 <p>Exemplo Request</p>
 </blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Accept: application/json'</span> --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://api.totalvoice.com.br/audio/relatorio?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
+<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
+            <span class="s1">'https://api.totalvoice.com.br/audio/relatorio?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">audio</span><span class="o">-&gt;</span><span class="na">relatorio</span><span class="p">(</span><span class="nv">$dataInicial</span><span class="p">,</span> <span class="nv">$dataFinal</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">audio</span><span class="p">.</span><span class="nx">relatorio</span><span class="p">(</span><span class="nx">data_inicial</span><span class="p">,</span> <span class="nx">data_final</span><span class="p">)</span>
@@ -1698,28 +1145,90 @@ Nesta seção, você poderá visualizar a tabela com os status que são retornad
   </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atendida"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:45"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"duracao_cobrada_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"duracao_cobrada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:60"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"duracao_falada_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"duracao_falada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:35"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/audio.mp3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="w">
+    </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atendida"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:45"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao_cobrada_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao_cobrada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:60"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao_falada_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao_falada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:35"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/audio.mp3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocupado"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:10"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao_cobrada_segundos"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao_cobrada"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao_falada_segundos"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duracao_falada"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"url_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/audio.mp3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados</p>
+<p>Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.</p>
 
-<p><code>GET /audio/relatorio</code></p>
+<p><code>GET /audio/relatorio?data_inicio=2018-03-10&amp;data_fim=2018-03-11</code></p>
+<h4 id='request-3'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                data_inicio
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_fim
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4 id='response-3'>Response</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-audio">áudio</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br></p>
 <h1 id='central-telefonica'>Central Telefônica</h1><h3 id='criar-um'>Criar um</h3>
 <blockquote>
 <p>post audio</p>
