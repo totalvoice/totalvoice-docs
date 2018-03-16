@@ -1,5 +1,158 @@
 # Áudio
 
+### Objeto áudio
+
+#### Atributos
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro de Áudio.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                Número Destino
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número do destinatário que foi enviado o áudio.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Data Criação
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi criado o registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Data Inicio
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi iniciado o processamento do áudio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tipo
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Tipo de telefone: fixo, móvel ou ramal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Status
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Status do registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração em Segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos (inteiro) total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração Cobrada em Segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos para fins de cobrança
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração Cobrada
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração considerada para fins de cobrança
+            </td>
+        </tr>
+                <tr>
+            <td>
+                Duração Falada em Segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração Falada
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Preço
+                <span class="attribute">float</span>
+            </td>
+            <td>
+                Valor cobrado pela chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                URL do Áudio
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                URL do Áudio enviado para a chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Resposta Usuário
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Aguarda a resposta do usuário: sim ou não
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Resposta
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 ### Criar um áudio
 
 > Exemplo Requisição
@@ -214,7 +367,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Data Criação
-                <span class="attribute">string</span>
+                <span class="attribute">datetime</span>
             </td>
             <td>
                 Data e hora que foi criado o registro
@@ -223,7 +376,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
         <tr>
             <td>
                 Data Inicio
-                <span class="attribute">string</span>
+                <span class="attribute">datetime</span>
             </td>
             <td>
                 Data e hora que foi iniciado o processamento do áudio
@@ -344,11 +497,22 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 <br>
 
 ### Relatório áudio 
+> </br>
+
+> Definição
+
+```text
+   GET https://api.totalvoice.com.br/audio/relatorio 
+```
+
+> </br>
 
 > Exemplo Request
 
 ```shell--curl
-curl -X GET --header 'Accept: application/json' --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/audio/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: {{access-token}}' \
+            'https://api.totalvoice.com.br/audio/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -376,26 +540,225 @@ JSONObject response = audio.relatorio(dataInicial, dataFinal);
   "motivo": 0,
   "mensagem": "dados retornados com sucesso",
   "dados": {
-    "id": 432,
-    "numero_destino": "4832830151",
-    "data_criacao": "2016-03-27T15:12:44+03:00",
-    "data_inicio": "2016-03-27T15:12:49+03:00",
-    "tipo": "fixo",
-    "status": "atendida",
-    "duracao_segundos": 45,
-    "duracao": "00:00:45",
-    "duracao_cobrada_segundos": 60,
-    "duracao_cobrada": "00:00:60",
-    "duracao_falada_segundos": 35,
-    "duracao_falada": "00:00:35",
-    "preco": 0.12,
-    "url_audio": "http://fooooo.bar/audio.mp3",
-    "resposta_usuario": true,
-    "resposta": "8"
+    "relatorio": [
+      {
+        "id": 432,
+        "numero_destino": "4832830151",
+        "data_criacao": "2016-03-27T15:12:44+03:00",
+        "data_inicio": "2016-03-27T15:12:49+03:00",
+        "tipo": "fixo",
+        "status": "atendida",
+        "duracao_segundos": 45,
+        "duracao": "00:00:45",
+        "duracao_cobrada_segundos": 60,
+        "duracao_cobrada": "00:00:60",
+        "duracao_falada_segundos": 35,
+        "duracao_falada": "00:00:35",
+        "preco": 0.12,
+        "url_audio": "http://fooooo.bar/audio.mp3",
+        "resposta_usuario": true,
+        "resposta": "8"
+      },
+      {
+        "id": 432,
+        "numero_destino": "4832830151",
+        "data_criacao": "2016-03-27T15:12:44+03:00",
+        "data_inicio": "2016-03-27T15:12:49+03:00",
+        "tipo": "fixo",
+        "status": "ocupado",
+        "duracao_segundos": 10,
+        "duracao": "00:00:10",
+        "duracao_cobrada_segundos": null,
+        "duracao_cobrada": null,
+        "duracao_falada_segundos": null,
+        "duracao_falada": null,
+        "preco": 0,
+        "url_audio": "http://fooooo.bar/audio.mp3",
+        "resposta_usuario": true,
+        "resposta": null
+      }
+    ]
   }
 }
 ```
 
-Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados
+Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
 
-`GET /audio/relatorio`
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                Data Inicial
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Data Final
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro de Áudio.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                Número Destino
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número do destinatário que foi enviado o áudio.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Data Criação
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi criado o registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Data Inicio
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi iniciado o processamento do áudio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tipo
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Tipo de telefone: fixo, móvel ou ramal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Status
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Status do registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração em Segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos (inteiro) total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração Cobrada em Segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos para fins de cobrança
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração Cobrada
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração considerada para fins de cobrança
+            </td>
+        </tr>
+                <tr>
+            <td>
+                Duração Falada em Segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Duração Falada
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Preço
+                <span class="attribute">float</span>
+            </td>
+            <td>
+                Valor cobrado pela chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                URL do Áudio
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                URL do Áudio enviado para a chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Resposta Usuário
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Aguarda a resposta do usuário: sim ou não
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Resposta
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
