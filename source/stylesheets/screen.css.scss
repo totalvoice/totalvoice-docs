@@ -658,11 +658,15 @@ html, body {
 .table-parameters {
   
   font-size: 14px;
-  
+
   span {
     display: block;
     font-weight: 700;
     font-size: 12px;
+  }
+
+  span.attribute {
+    color: #939da3;
   }
 
   span.required {      
