@@ -555,6 +555,9 @@ html, body {
     padding-top: 2em;
     padding-bottom: 2em;
     padding: 2em $main-padding;
+    border-style: solid;
+    border-width: 0px 34px;
+    border-color: $code-annotation-bg;
   }
 
   blockquote {
@@ -562,6 +565,31 @@ html, body {
       background-color: $code-annotation-bg;
       padding: $code-annotation-padding 2em;
       color: #eee;
+    }
+  }
+
+  blockquote {
+    table {
+      background-color: $code-annotation-bg;
+      padding: 1em;
+      overflow: auto;
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+
+      td {
+        background-color: $code-annotation-bg !important;
+      }
+
+      td:first-child {
+        width: 200px;
+        text-align: right;
+        padding-right: 5px;
+      }
+
+      tr:last-child {
+        border-bottom: 0px;
+      }
     }
   }
 }
