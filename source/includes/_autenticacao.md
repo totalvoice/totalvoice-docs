@@ -2,6 +2,11 @@
 
 > Exemplo de autenticação
 
+```shell--curl
+$ curl https://api.totalvoice.com.br/sms \
+    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'
+```
+
 ```php
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
@@ -10,76 +15,34 @@ $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("{{access-token}}");
-
-client.chamada.ligar("4832830151", "4811111111")
-    .then(function (data) {
-        console.log(data)
-    })
-    .catch(function (error) {
-        console.error('Erro: ', error)
-    });
 ```
 
 ```go
-package main
-
-import (
-	"fmt"
-
-	"github.com/totalvoice/totalvoice-go"
-)
-
-func main() {
-    client := totalvoice.NewTotalVoiceClient("{{access-token}}")
-    response, err := client.Chamada.Criar("4811111111", "4822222222", nil)
-   
-    if err != nil {
-		panic(err)
-	}
-	fmt.Println(response)
-}
+client := totalvoice.NewTotalVoiceClient("{{access-token}}")
 ```
 
 ```python
 from totalvoice.cliente import Cliente
-
-cliente = Cliente("{{access-token}}", 'HOST') #ex: api.totalvoice.com.br
-
-#Cria chamada
-numero_origem = "48999999999"
-numero_destino = "48900000000"
-response = cliente.chamada.enviar(numero_origem, numero_destino)
-print(response)
+cliente = Cliente("{{access-token}}", 'api.totalvoice.com.br')
 ```
 
 ```java
-package br.com.totalvoice;
-
-import br.com.totalvoice.api.Chamada;
-import org.json.JSONObject;
-
-public class Main {
-    
-    public static void main(String args[]) {
-        
-        try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
-            Chamada chamada = new Chamada(client);
-
-            JSONObject result = chamada.ligar("NUMEROA", "NUMEROB");
-            System.out.println(result);
-
-        } catch(Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-}
+TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
 ```
 
-Para autenticar sua conta você deve incluir na requisição HTTP o cabeçalho **Access-Token**, 
-colocando no valor o token disponibilizado na sua Dashboard da TotalVoice, tome sempre cuidado, não forneça seu token
-para ninguém e nem deixe ele exposto no código, seu token contém muitos privilégios. 
+> Não esqueça de alterar o Token de exemplo pelo seu Token.
 
-`Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO`
+A TotalVoice utiliza um Token de Acesso para realizar a autenticação de sua conta, você deve incluir o Access-Token 
+na requisição HTTP através do cabeçalho, ou pela *Query String*. 
 
-As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação no cabeçalho HTTP transparentemente. 
+Exemplo de Access-Token:
+
+`testeM68PU1Izmb9chEdLzep7IwRymWO`
+
+
+As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação na requisição HTTP transparentemente. 
+
+<aside class="warning">
+ Seu Token deverá ser mantido em segredo, tome muito cuidado, não deixe ele exposto em um código público e nunca
+ compartilhe com ninguém fora da sua organização.
+</aside>

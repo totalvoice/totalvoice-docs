@@ -27,7 +27,7 @@ $nav-bg: #ffffff !default;
 //$nav-bg: #52658B;
 $examples-bg: #2E3336 !default;
 $code-bg: #1E2224 !default;
-$code-annotation-bg: #191D1F !default;
+$code-annotation-bg: #2E3336 !default;
 $nav-subitem-bg: #ffffff !default;
 $nav-active-bg: #ffffff !default;
 $nav-active-parent-bg: #ffffff !default; // parent links of the current section
@@ -44,10 +44,10 @@ $search-notice-bg: #ffffff !default;
 
 // TEXT COLORS
 ////////////////////
-$main-text: #0b0a0a !default; // main content text color
-$nav-text: #0b0a0a !default;
+$main-text: #081720 !default; // main content text color
+$nav-text: #081720 !default;
 $nav-active-text: #0099e5 !default;
-$nav-active-parent-text: #0b0a0a !default; // parent links of the current section
+$nav-active-parent-text: #081720 !default; // parent links of the current section
 $lang-select-text: #fff !default; // color of unselected language tab text
 $lang-select-active-text: #0099e5 !default; // color of selected language tab text
 $lang-select-pressed-text: #fff !default; // color of language tab text when mouse is pressed
@@ -71,9 +71,8 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 // FONTS
 ////////////////////
 %default-font {
-  font-family: 'slate', 'Open Sans', sans-serif;
-  font-size: 16px;
-  letter-spacing: -0.01em;
+  font-family:  'Open Sans', 'slate-light', sans-serif;
+  font-size: 17px;
 }
 
 %header-font {
@@ -82,8 +81,8 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 }
 
 %code-font {
-  font-family: 'slate', Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-  font-size: 15px;
+  font-family: 'Open Sans', 'slate-light', Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+  font-size: 14px;
   line-height: 1.5;
 }
 
