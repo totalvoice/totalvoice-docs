@@ -16,8 +16,7 @@ toc_footers:
 includes:
   - introducao
   - autenticacao
-  - erros
-  - status_api
+  - respostas
   - audio
   - central_telefonica
   - chamadas

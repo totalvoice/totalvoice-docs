@@ -564,6 +564,31 @@ html, body {
       color: #eee;
     }
   }
+
+  blockquote {
+    table {
+      background-color: $code-annotation-bg;
+      padding: 1em;
+      overflow: auto;
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+
+      td {
+        background-color: $code-annotation-bg !important;
+      }
+
+      td:first-child {
+        width: 200px;
+        text-align: right;
+        padding-right: 5px;
+      }
+
+      tr:last-child {
+        border-bottom: 0px;
+      }
+    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////

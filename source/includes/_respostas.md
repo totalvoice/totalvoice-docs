@@ -1,16 +1,85 @@
-# Erros
+# Respostas da API
 
-Nesta seção você encontrará exemplos de como trabalhar com ligações com a API da TotalVoice
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "audio criado com sucesso",
+  "dados": {
+    "id": 4921
+  }
+}
+```
 
-`Access-Token: Token`
+As respostas das requisições realizadas para a API TotalVoice utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
+sendo que os códigos iniciando com 2xx respondem pelo sucesso e os iniciando 4xx pelas falhas.
+
+O JSON retornado pela API segue um padrão
+
+#### Formatação da Resposta Padrão
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                status
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Código HTTP da resposta (mesmo respondido pelo padrão HTTP)
+             </td>
+        </tr>
+        <tr>
+            <td>
+                sucesso
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                True se a resposta for sucesso ou false se tiver algum erro
+             </td>
+        </tr>
+        <tr>
+            <td>
+                motivo
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Motivo 
+             </td>
+        </tr>
+        <tr>
+            <td>
+                mensagem
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Retorna o ID do Áudio
+             </td>
+        </tr>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o ID do Áudio
+             </td>
+        </tr>
+    </tbody>
+</table>
 
 
+>Códigos de Resposta HTTP
 
-> Para realizar uma chamada telefônica, utilize este código:
+> <table>
+<tr>
+<td>aaa</td>
+<td>bbb</td>
+</tr>
+</table>
 
 ```HTTP
-
-<table></table>
 Local | Código | Tipo | Significado
 ----- | ----------- | ---- | ------------
 api	| 403 | FALHA_AUTH | “access token inválido”
