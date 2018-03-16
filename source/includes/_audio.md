@@ -1,6 +1,6 @@
 # Áudio
 
-### Objeto áudio
+### Objeto Áudio
 
 > <br>
 
@@ -549,6 +549,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
             <td>
                 data_inicio
                 <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
             </td>
             <td>
                 Data inicial para consulta dos dados no relatório
@@ -558,6 +559,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
             <td>
                 data_fim
                 <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
             </td>
             <td>
                 Data final para consulta dos dados no relatório
