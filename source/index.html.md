@@ -79,6 +79,7 @@ Ao decorrer desta documentação, você poderá encontrar algumas mensagens que 
   - **URA Ativa:**
   - **PernaA:**
   - **PernaB:**
+  - **DTMF:** DTMF é a sigla em inglês de "Dual-Tone Multi-Frequency", os tons de duas frequências utilizados na discagem dos telefones mais modernos. Mais detalhes em: https://pt.wikipedia.org/wiki/DTMF
   
 
 

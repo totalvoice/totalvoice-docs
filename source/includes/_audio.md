@@ -26,7 +26,7 @@ response = client.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
 ```
 ```java
 Audio audio = new Audio(client);
-JSONObject result = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3");
+JSONObject response = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3");
 ```
 > Exemplo Resposta
 
@@ -42,6 +42,8 @@ JSONObject result = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3");
 }
 ```
 Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determinado número.
+
+`POST /audio`
 
 #### Request
 
@@ -136,7 +138,7 @@ response = client.audio.get_by_id(123)
 ```
 ```java
 Audio audio = new Audio(client);
-JSONObject result = audio.buscar(123);
+JSONObject response = audio.buscar(123);
 ```
 > Exemplo Response
 
@@ -168,6 +170,8 @@ JSONObject result = audio.buscar(123);
 ```
 
 Após o envio de mensagens de áudio, você poderá realizar a busca do registro pelo seu ID.
+
+`GET /audio/{id}`
 
 #### Request
 
@@ -330,7 +334,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Resposta
+                Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
             </td>
         </tr>
     </tbody>
@@ -339,88 +343,59 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 <br>
 <br>
 
-### Listar áudios 
+### Relatório áudio 
 
-> Exemplo
+> Exemplo Request
 
+```shell--curl
+curl -X GET --header 'Accept: application/json' --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/audio/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$response = $client->audio->relatorio($dataInicial, $dataFinal);
 ```
-
 ```javascript--node
-const totalvoice = require('totalvoice-node');
-const client = new totalvoice("{{access-token}}");
-
-client.chamada.ligar("4832830151", "4811111111")
-    .then(function (data) {
-        console.log(data)
-    })
-    .catch(function (error) {
-        console.error('Erro: ', error)
-    });
+var response = client.audio.relatorio(data_inicial, data_final)
 ```
-
 ```go
-package main
-
-import (
-	"fmt"
-
-	"github.com/totalvoice/totalvoice-go"
-)
-
-func main() {
-    client := totalvoice.NewTotalVoiceClient("{{access-token}}")
-    response, err := client.Chamada.Criar("4811111111", "4822222222", nil)
-   
-    if err != nil {
-		panic(err)
-	}
-	fmt.Println(response)
-}
+ response, err := client.Audio.Relatorio.Gerar(dataInicial, dataFinal)
 ```
-
 ```python
-from totalvoice.cliente import Cliente
-
-cliente = Cliente("{{access-token}}", 'HOST') #ex: api.totalvoice.com.br
-
-#Cria chamada
-numero_origem = "48999999999"
-numero_destino = "48900000000"
-response = cliente.chamada.enviar(numero_origem, numero_destino)
-print(response)
+response = client.audio.get_relatorio(data_inicio, data_fim)
 ```
-
 ```java
-package br.com.totalvoice;
+Audio audio = new Audio(client);
+JSONObject response = audio.relatorio(dataInicial, dataFinal);
+```
+> Exemplo Response
 
-import br.com.totalvoice.api.Chamada;
-import org.json.JSONObject;
-
-public class Main {
-    
-    public static void main(String args[]) {
-        
-        try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
-            Chamada chamada = new Chamada(client);
-
-            JSONObject result = chamada.ligar("NUMEROA", "NUMEROB");
-            System.out.println(result);
-
-        } catch(Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "id": 432,
+    "numero_destino": "4832830151",
+    "data_criacao": "2016-03-27T15:12:44+03:00",
+    "data_inicio": "2016-03-27T15:12:49+03:00",
+    "tipo": "fixo",
+    "status": "atendida",
+    "duracao_segundos": 45,
+    "duracao": "00:00:45",
+    "duracao_cobrada_segundos": 60,
+    "duracao_cobrada": "00:00:60",
+    "duracao_falada_segundos": 35,
+    "duracao_falada": "00:00:35",
+    "preco": 0.12,
+    "url_audio": "http://fooooo.bar/audio.mp3",
+    "resposta_usuario": true,
+    "resposta": "8"
+  }
 }
 ```
 
-Para autenticar sua conta você deve incluir na requisição HTTP o cabeçalho **Access-Token**, 
-colocando no valor o token disponibilizado na sua Dashboard da TotalVoice, tome sempre cuidado, não forneça seu token
-para ninguém e nem deixe ele exposto no código, seu token contém muitos privilégios. 
+Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados
 
-`Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO`
-
-As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação no cabeçalho HTTP transparentemente. 
+`GET /audio/relatorio`
