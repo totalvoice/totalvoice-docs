@@ -1,5 +1,10 @@
 # Áudio
 
+A funcionalidade de **Envio de Aúdio**, permite que você envie mensagens de voz (audio) / torpedos de voz para determinados números. 
+Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos 
+devem ser no formato .mp3 e estar hospedados em uma URL pública. Você poderá enviar algumas opções adicionais, 
+tais como, aguardar uma resposta do usuário, gravar o áudio da ligação e colocar um número bina que aparecerá no momento da ligação.  
+
 ### Objeto Áudio
 
 > <br>
@@ -227,7 +232,7 @@ JSONObject response = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
   }
 }
 ```
-Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determinado número.
+Basta informar o número de destino válido e a URL pública do arquivo.
 
 #### Request
 
