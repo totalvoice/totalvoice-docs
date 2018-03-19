@@ -722,7 +722,8 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação e col
     </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.12</span><span class="p">,</span><span class="w">
     </span><span class="s2">"url_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/audio.mp3"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="w">
+    </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Definição do objeto Áudio</p>
@@ -871,6 +872,15 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação e col
             </td>
             <td>
                 Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                url_gravacao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Quando enviado a opção Gravar Áudio = true, este campo disponibilizará uma URL contendo o áudio da gravação da ligação. 
             </td>
         </tr>
     </tbody>
@@ -1812,11 +1822,11 @@ data de envio por exemplo.</p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
     </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48111111111"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data_envio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oi, tudo bem?"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enviada"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-18T00:51:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ola tudo bem?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status_envio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enviada"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-19T00:51:36.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"respostas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
@@ -1860,15 +1870,6 @@ data de envio por exemplo.</p>
         </tr>
         <tr>
             <td>
-                data_envio
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data e hora que foi enviado o SMS
-            </td>
-        </tr>
-        <tr>
-            <td>
                 mensagem
                 <span class="attribute">string</span>
             </td>
@@ -1898,6 +1899,15 @@ data de envio por exemplo.</p>
                     <li>entregue: entregue para o número de destino</li>
                     <li>aguardando: aguardando o envio para processamento</li>
                 </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_status
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que o status foi alterado 
             </td>
         </tr>
         <tr>
