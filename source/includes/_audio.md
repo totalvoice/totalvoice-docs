@@ -1,5 +1,10 @@
 # Áudio
 
+A funcionalidade de **Envio de Aúdio**, permite que você envie mensagens de voz (audio) / torpedos de voz para determinados números. 
+Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos 
+devem ser no formato .mp3 e estar hospedados em uma URL pública. Você poderá enviar algumas opções adicionais, 
+tais como, aguardar uma resposta do usuário, gravar o áudio da ligação e colocar um número bina que aparecerá no momento da ligação.  
+
 ### Objeto Áudio
 
 > <br>
@@ -182,23 +187,19 @@ Definição do objeto Áudio
 
 ### Criar um áudio
 
-> </br>
-
 > Definição
 
 ```text
 POST https://api.totalvoice.com.br/audio
 ```
 
-> </br>
-
-> Exemplo Requisição
+> Request
 
 ```shell--curl
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-             -d '{"numero_destino":"NUMERO_DESTINO","url_audio":"http://foo.bar/audio.mp3"}' \
+             -d '{"numero_destino":"4811111111","url_audio":"http://foo.bar/audio.mp3"}' \
              'https://api.totalvoice.com.br/audio'
 ```
 ```php
@@ -206,19 +207,19 @@ curl -X POST --header 'Content-Type: application/json' \
 $response = $client->audio->enviar('NUMERO-DESTINO', 'http://foo.bar/audio.mp3');
 ```
 ```javascript--node
-var response = client.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
+var response = client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
 ```
 ```go
- response, err := client.Audio.Enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3", false, "")
+ response, err := client.Audio.Enviar("4811111111", "http://foo.bar/audio.mp3", false, "")
 ```
 ```python
-response = client.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
+response = client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
 ```
 ```java
 Audio audio = new Audio(client);
-JSONObject response = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3");
+JSONObject response = audio.enviar("4811111111", "http://foo.bar/audio.mp3");
 ```
-> Exemplo Resposta
+> Response
 
 ```json
 {
@@ -231,9 +232,7 @@ JSONObject response = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
   }
 }
 ```
-Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determinado número.
-
-`POST /audio`
+Basta informar o número de destino válido e a URL pública do arquivo.
 
 #### Request
 
@@ -322,17 +321,13 @@ Possibilita o envio de mensagens de voz (audio) / torpedos de voz para um determ
 
 ### Recuperar áudio
 
-> </br>
-
 > Definição
 
 ```text
 GET https://api.totalvoice.com.br/audio/{id}
 ```
 
-> </br>
-
-> Exemplo Request
+> Request
 
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
@@ -356,7 +351,7 @@ response = client.audio.get_by_id(123)
 Audio audio = new Audio(client);
 JSONObject response = audio.buscar(123);
 ```
-> Exemplo Response
+> Response
 
 ```json
 {
@@ -387,9 +382,7 @@ JSONObject response = audio.buscar(123);
 
 Após o envio de mensagens de áudio, você poderá realizar a busca do registro pelo seu ID.
 
-`GET /audio/{id}`
-
-#### Request
+##### Request
 
 <table class="table-parameters">
     <tbody>
@@ -405,7 +398,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
     </tbody>
 </table>
 
-#### Response
+##### Response
 
 <table class="table-parameters">
     <tbody>
@@ -452,7 +445,6 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 <br>
 
 ### Relatório áudio 
-> </br>
 
 > Definição
 
@@ -460,9 +452,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 GET https://api.totalvoice.com.br/audio/relatorio
 ```
 
-> </br>
-
-> Exemplo Request
+> Request
 
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
@@ -486,7 +476,7 @@ response = client.audio.get_relatorio(data_inicio, data_fim)
 Audio audio = new Audio(client);
 JSONObject response = audio.relatorio(dataInicial, dataFinal);
 ```
-> Exemplo Response
+> Response
 
 ```json
 {
@@ -538,8 +528,6 @@ JSONObject response = audio.relatorio(dataInicial, dataFinal);
 ```
 
 Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
-
-`GET /audio/relatorio?data_inicio=2018-03-10&data_fim=2018-03-11`
 
 #### Request
 

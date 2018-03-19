@@ -433,6 +433,7 @@ html, body {
 
     td:first-child {
       width: 130px;
+      min-width: 130px;
       text-align: right;
       padding-right: 5px;
     }
@@ -667,6 +668,14 @@ html, body {
   
   font-size: 14px;
 
+  tr {
+    border-bottom: 1px solid #f1ecec;
+    td {
+      padding: 20px;
+      width: 100%;
+    }
+  }
+
   span {
     display: block;
     font-weight: 700;
@@ -683,6 +692,11 @@ html, body {
 
   span.optional {
     color: #0c733f;
+
+    span {
+      color: #939da3;
+      font-weight: normal;
+    }
   }
 
   span.type {
