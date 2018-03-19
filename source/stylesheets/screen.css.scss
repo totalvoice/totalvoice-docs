@@ -580,8 +580,14 @@ html, body {
       border-collapse: collapse;
       border-spacing: 0;
 
+      tr {
+        border-bottom: 4px solid $code-annotation-bg;
+        border-left: 34px solid $code-annotation-bg;
+        border-right: 34px solid $code-annotation-bg;
+      }
+
       td {
-        background-color: $code-annotation-bg !important;
+        background-color: $code-bg !important;
       }
 
       td:first-child {
