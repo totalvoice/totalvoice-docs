@@ -199,7 +199,7 @@ POST https://api.totalvoice.com.br/audio
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-             -d '{"numero_destino":"NUMERO_DESTINO","url_audio":"http://foo.bar/audio.mp3"}' \
+             -d '{"numero_destino":"4811111111","url_audio":"http://foo.bar/audio.mp3"}' \
              'https://api.totalvoice.com.br/audio'
 ```
 ```php
@@ -207,17 +207,17 @@ curl -X POST --header 'Content-Type: application/json' \
 $response = $client->audio->enviar('NUMERO-DESTINO', 'http://foo.bar/audio.mp3');
 ```
 ```javascript--node
-var response = client.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
+var response = client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
 ```
 ```go
- response, err := client.Audio.Enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3", false, "")
+ response, err := client.Audio.Enviar("4811111111", "http://foo.bar/audio.mp3", false, "")
 ```
 ```python
-response = client.audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3")
+response = client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
 ```
 ```java
 Audio audio = new Audio(client);
-JSONObject response = audio.enviar("NUMERO_DESTINO", "http://foo.bar/audio.mp3");
+JSONObject response = audio.enviar("4811111111", "http://foo.bar/audio.mp3");
 ```
 > Response
 

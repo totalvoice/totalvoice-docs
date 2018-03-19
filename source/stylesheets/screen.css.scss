@@ -686,6 +686,11 @@ html, body {
 
   span.optional {
     color: #0c733f;
+
+    span {
+      color: #939da3;
+      font-weight: normal;
+    }
   }
 
   span.type {
