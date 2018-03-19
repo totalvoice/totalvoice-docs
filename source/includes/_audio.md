@@ -1,5 +1,11 @@
 # Áudio
 
+> Audio Endpoint
+
+```text
+https://api.totalvoice.com.br/audio
+```
+
 A funcionalidade de **Envio de Aúdio**, permite que você envie mensagens de voz (audio) / torpedos de voz para determinados números. 
 Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos 
 devem ser no formato .mp3 e estar hospedados em uma URL pública. Você poderá enviar algumas opções adicionais, 

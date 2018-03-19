@@ -1,5 +1,11 @@
 # SMS
 
+> SMS Endpoint
+
+```text
+https://api.totalvoice.com.br/sms
+```
+
 O **SMS** permite que você envie mensagens de texto pela nossa API. Você precisa informar
 um número de destino e uma mensagem à ser enviada. Existem algumas opções adicionais,
 que permitem aguardar uma resposta do usuário, enviar multi sms ou agendar uma 
