@@ -335,7 +335,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
 <br>
 <br>
 
-### Recuperar áudio
+### Buscar áudio
 
 > Definição
 

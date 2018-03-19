@@ -22,7 +22,7 @@ data de envio por exemplo.
     "id": 432,
     "numero_destino": "48111111111",
     "data_criacao": "2018-03-18T00:51:22.000Z",
-    "mensagem": "Ola tudo bem?",
+    "mensagem": "Oi, tudo bem?",
     "preco": 0.09,
     "status_envio": "enviada",
     "data_status": "2018-03-19T00:51:36.000Z",
@@ -323,7 +323,7 @@ Para o envio de SMS, é necessário informar um número móvel válido e uma men
 <br>
 <br>
 
-### Recuperar SMS
+### Buscar SMS
 
 > Definição
 
