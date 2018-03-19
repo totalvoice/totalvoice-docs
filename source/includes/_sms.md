@@ -317,12 +317,12 @@ Para o envio de SMS, é necessário informar um número móvel válido e uma men
 <br>
 <br>
 
-### Recuperar áudio
+### Recuperar SMS
 
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/audio/{id}
+GET https://api.totalvoice.com.br/sms/{id}
 ```
 
 > Request
@@ -330,24 +330,24 @@ GET https://api.totalvoice.com.br/audio/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/audio/1'
+            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/sms/1'
 ```
 ```php
 <?php
-$response = $client->audio->buscaAudio(123);
+$response = $client->sms->buscaSms(123);
 ```
 ```javascript--node
-var response = client.audio.buscar(123)
+var response = client.sms.buscar(123)
 ```
 ```go
- response, err := client.Audio.Buscar(123)
+ response, err := client.SMS.Buscar(123)
 ```
 ```python
-response = client.audio.get_by_id(123)
+response = client.sms.get_by_id(123)
 ```
 ```java
-Audio audio = new Audio(client);
-JSONObject response = audio.buscar(123);
+Sms sms = new Sms(client);
+JSONObject response = sms.buscar(123);
 ```
 > Response
 
@@ -378,7 +378,7 @@ JSONObject response = audio.buscar(123);
 }
 ```
 
-Após o envio de mensagens de áudio, você poderá realizar a busca do registro pelo seu ID.
+Após o envio de mensagens de SMS, você poderá realizar a busca do registro pelo seu ID.
 
 ##### Request
 
@@ -390,7 +390,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                ID do Áudio para recuperar os dados
+                ID do SMS para recuperar os dados
              </td>
         </tr>
     </tbody>
@@ -406,7 +406,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
                 <span class="attribute">object</span>
             </td>
             <td>
-                Retorna o objeto <a href="#objeto-audio">áudio</a>
+                Retorna o objeto <a href="#objeto-sms">SMS</a>
              </td>
         </tr>
     </tbody>
@@ -442,12 +442,12 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 <br>
 <br>
 
-### Relatório áudio 
+### Relatório SMS 
 
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/audio/relatorio
+GET https://api.totalvoice.com.br/sms/relatorio
 ```
 
 > Request
@@ -455,24 +455,24 @@ GET https://api.totalvoice.com.br/audio/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: {{access-token}}' \
-            'https://api.totalvoice.com.br/audio/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://api.totalvoice.com.br/sms/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
-$response = $client->audio->relatorio($dataInicial, $dataFinal);
+$response = $client->sms->relatorio($dataInicial, $dataFinal);
 ```
 ```javascript--node
-var response = client.audio.relatorio(data_inicial, data_final)
+var response = client.sms.relatorio(data_inicial, data_final)
 ```
 ```go
- response, err := client.Audio.Relatorio.Gerar(dataInicial, dataFinal)
+ response, err := client.SMS.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
-response = client.audio.get_relatorio(data_inicio, data_fim)
+response = client.sms.get_relatorio(data_inicio, data_fim)
 ```
 ```java
-Audio audio = new Audio(client);
-JSONObject response = audio.relatorio(dataInicial, dataFinal);
+Sms sms = new Sms(client);
+JSONObject response = sms.relatorio(dataInicial, dataFinal);
 ```
 > Response
 
@@ -485,47 +485,39 @@ JSONObject response = audio.relatorio(dataInicial, dataFinal);
   "dados": {
     "relatorio": [
       {
-        "id": 432,
-        "numero_destino": "4832830151",
-        "data_criacao": "2016-03-27T15:12:44+03:00",
-        "data_inicio": "2016-03-27T15:12:49+03:00",
-        "tipo": "fixo",
-        "status": "atendida",
-        "duracao_segundos": 45,
-        "duracao": "00:00:45",
-        "duracao_cobrada_segundos": 60,
-        "duracao_cobrada": "00:00:60",
-        "duracao_falada_segundos": 35,
-        "duracao_falada": "00:00:35",
-        "preco": 0.12,
-        "url_audio": "http://fooooo.bar/audio.mp3",
-        "resposta_usuario": true,
-        "resposta": "8"
+        "id": 151,
+        "numero_destino": "4899999999",
+        "data_criacao": "2016-03-30T23:34:08-03:00",
+        "data_envio": null,
+        "mensagem": "Mensagem de teste",
+        "preco": 0,
+        "status": "enviada",
+        "resposta_usuario": false,
+        "respostas": []
       },
       {
-        "id": 432,
-        "numero_destino": "4832830151",
-        "data_criacao": "2016-03-27T15:12:44+03:00",
-        "data_inicio": "2016-03-27T15:12:49+03:00",
-        "tipo": "fixo",
-        "status": "ocupado",
-        "duracao_segundos": 10,
-        "duracao": "00:00:10",
-        "duracao_cobrada_segundos": null,
-        "duracao_cobrada": null,
-        "duracao_falada_segundos": null,
-        "duracao_falada": null,
-        "preco": 0,
-        "url_audio": "http://fooooo.bar/audio.mp3",
+        "id": 204,
+        "numero_destino": "4899999999",
+        "data_criacao": "2016-03-31T22:39:36-03:00",
+        "data_envio": null,
+        "mensagem": "Oi, tudo bem?",
+        "preco": 0.05,
+        "status": "enviada",
         "resposta_usuario": true,
-        "resposta": null
+        "respostas": [
+          {
+            "id": 2,
+            "resposta": "tudo bem, e voce?",
+            "data_resposta": "2016-03-31T22:46:42-03:00"
+          }
+        ]
       }
     ]
   }
 }
 ```
 
-Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
+Você pode consultar os SMS's enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
 
 #### Request
 
@@ -564,7 +556,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
                 <span class="attribute">array</span>
             </td>
             <td>
-                Retorna um array com objetos <a href="#objeto-audio">áudio</a>
+                Retorna um array com objetos <a href="#objeto-sms">SMS</a>
              </td>
         </tr>
     </tbody>
