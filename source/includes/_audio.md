@@ -34,7 +34,8 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação e col
     "preco": 0.12,
     "url_audio": "http://fooooo.bar/audio.mp3",
     "resposta_usuario": true,
-    "resposta": "8"
+    "resposta": "8",
+    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
 }
 ```
 
@@ -186,6 +187,15 @@ Definição do objeto Áudio
             </td>
             <td>
                 Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                url_gravacao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Quando enviado a opção Gravar Áudio = true, este campo disponibilizará uma URL contendo o áudio da gravação da ligação. 
             </td>
         </tr>
     </tbody>

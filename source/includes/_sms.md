@@ -21,11 +21,11 @@ data de envio por exemplo.
 {
     "id": 432,
     "numero_destino": "48111111111",
-    "data_criacao": "2016-03-27T15:12:44+03:00",
-    "data_envio": "2016-03-27T15:12:49+03:00",
-    "mensagem": "Oi, tudo bem?",
-    "preco": 0.05,
-    "status": "enviada",
+    "data_criacao": "2018-03-18T00:51:22.000Z",
+    "mensagem": "Ola tudo bem?",
+    "preco": 0.09,
+    "status_envio": "enviada",
+    "data_status": "2018-03-19T00:51:36.000Z",
     "resposta_usuario": true,
     "respostas": [
       {
@@ -72,15 +72,6 @@ Definição do objeto Sms
         </tr>
         <tr>
             <td>
-                data_envio
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data e hora que foi enviado o SMS
-            </td>
-        </tr>
-        <tr>
-            <td>
                 mensagem
                 <span class="attribute">string</span>
             </td>
@@ -110,6 +101,15 @@ Definição do objeto Sms
                     <li>entregue: entregue para o número de destino</li>
                     <li>aguardando: aguardando o envio para processamento</li>
                 </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_status
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que o status foi alterado 
             </td>
         </tr>
         <tr>
