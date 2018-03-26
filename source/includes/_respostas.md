@@ -19,7 +19,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
 
 #### Atributos da Resposta
 
-<table class="table-parameters">
+<table>
     <tbody>
         <tr>
             <td>

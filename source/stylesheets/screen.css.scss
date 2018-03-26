@@ -377,7 +377,6 @@ html, body {
     font-size: 19px;
     margin-top: 4em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
@@ -574,6 +573,7 @@ html, body {
 
   blockquote {
     table {
+      font-size: 15px;
       background-color: $code-annotation-bg;
       padding: 1em;
       overflow: auto;
@@ -595,6 +595,7 @@ html, body {
         width: 120px;
         text-align: right;
         padding-right: 20px;
+        font-weight: bold;
       }
     }
   }
