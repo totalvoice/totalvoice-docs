@@ -1,5 +1,11 @@
 # Áudio
 
+> Audio Endpoint
+
+```text
+https://api.totalvoice.com.br/audio
+```
+
 A funcionalidade de **Envio de Aúdio**, permite que você envie mensagens de voz (audio) / torpedos de voz para determinados números. 
 Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos 
 devem ser no formato .mp3 e estar hospedados em uma URL pública. Você poderá enviar algumas opções adicionais, 
@@ -28,7 +34,8 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação e col
     "preco": 0.12,
     "url_audio": "http://fooooo.bar/audio.mp3",
     "resposta_usuario": true,
-    "resposta": "8"
+    "resposta": "8",
+    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
 }
 ```
 
@@ -182,6 +189,15 @@ Definição do objeto Áudio
                 Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
             </td>
         </tr>
+        <tr>
+            <td>
+                url_gravacao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Quando enviado a opção Gravar Áudio = true, este campo disponibilizará uma URL contendo o áudio da gravação da ligação. 
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -319,7 +335,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
 <br>
 <br>
 
-### Recuperar áudio
+### Buscar áudio
 
 > Definição
 
