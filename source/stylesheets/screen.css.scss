@@ -544,7 +544,10 @@ html, body {
 
     @extend %right-col;
 
-    &>p { margin: 0; }
+    &>p {
+      margin: 0;
+      margin-bottom: -10px;
+    }
 
     a {
       color: #fff;

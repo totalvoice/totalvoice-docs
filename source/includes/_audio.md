@@ -220,10 +220,21 @@ curl -X POST --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
 $response = $client->audio->enviar('NUMERO-DESTINO', 'http://foo.bar/audio.mp3');
 ```
 ```javascript--node
-var response = client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
  response, err := client.Audio.Enviar("4811111111", "http://foo.bar/audio.mp3", false, "")
@@ -239,13 +250,13 @@ JSONObject response = audio.enviar("4811111111", "http://foo.bar/audio.mp3");
 
 ```json
 {
-  "status": 200,
-  "sucesso": true,
-  "motivo": 0,
-  "mensagem": "audio criado com sucesso",
-  "dados": {
-    "id": 4921
-  }
+    "status": 200,
+    "sucesso": true,
+    "motivo": 0,
+    "mensagem": "audio criado com sucesso",
+    "dados": {
+        "id": 4921
+    }
 }
 ```
 Basta informar o número de destino válido e a URL pública do arquivo.
@@ -335,10 +346,21 @@ curl -X GET --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
 $response = $client->audio->buscaAudio(123);
 ```
 ```javascript--node
-var response = client.audio.buscar(123)
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.audio.buscar(123)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
  response, err := client.Audio.Buscar(123)
@@ -354,28 +376,28 @@ JSONObject response = audio.buscar(123);
 
 ```json
 {
-  "status": 200,
-  "sucesso": true,
-  "motivo": 0,
-  "mensagem": "dados retornados com sucesso",
-  "dados": {
-    "id": 432,
-    "numero_destino": "4832830151",
-    "data_criacao": "2016-03-27T15:12:44+03:00",
-    "data_inicio": "2016-03-27T15:12:49+03:00",
-    "tipo": "fixo",
-    "status": "atendida",
-    "duracao_segundos": 45,
-    "duracao": "00:00:45",
-    "duracao_cobrada_segundos": 60,
-    "duracao_cobrada": "00:00:60",
-    "duracao_falada_segundos": 35,
-    "duracao_falada": "00:00:35",
-    "preco": 0.12,
-    "url_audio": "http://fooooo.bar/audio.mp3",
-    "resposta_usuario": true,
-    "resposta": "8"
-  }
+    "status": 200,
+    "sucesso": true,
+    "motivo": 0,
+    "mensagem": "dados retornados com sucesso",
+    "dados": {
+        "id": 432,
+        "numero_destino": "4832830151",
+        "data_criacao": "2016-03-27T15:12:44+03:00",
+        "data_inicio": "2016-03-27T15:12:49+03:00",
+        "tipo": "fixo",
+        "status": "atendida",
+        "duracao_segundos": 45,
+        "duracao": "00:00:45",
+        "duracao_cobrada_segundos": 60,
+        "duracao_cobrada": "00:00:60",
+        "duracao_falada_segundos": 35,
+        "duracao_falada": "00:00:35",
+        "preco": 0.12,
+        "url_audio": "http://fooooo.bar/audio.mp3",
+        "resposta_usuario": true,
+        "resposta": "8"
+    }
 }
 ```
 
@@ -430,10 +452,21 @@ curl -X GET --header 'Accept: application/json' \
 ```
 ```php
 <?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
 $response = $client->audio->relatorio($dataInicial, $dataFinal);
 ```
 ```javascript--node
-var response = client.audio.relatorio(data_inicial, data_final)
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.audio.relatorio(data_inicial, data_final)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
  response, err := client.Audio.Relatorio.Gerar(dataInicial, dataFinal)

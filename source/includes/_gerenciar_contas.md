@@ -32,7 +32,7 @@ A funcionalidade de Gerente de Contas, é um acesso especial que precisa ser lib
     "nome_fantasia": "Total Voice",
     "metodo_pagamento": "prepago",
     "fatura_atual": 0.00
-  }
+}
 ```
 
 Definição do objeto Conta
@@ -178,6 +178,77 @@ Definição do objeto Conta
 POST https://api.totalvoice.com.br/conta
 ```
 
+> <br/>Request
+
+```shell--curl
+curl 'https://api.totalvoice.com.br/conta' \
+    -X POST \ 
+    --header 'Content-Type: application/json' \
+    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    -d '{"nome" : "Total Voice", "login" : "totalvoice@totalvoice.com.br", "senha" : "senha123"}'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
+$conta_dados = array(
+    "nome" => "Total Voice", 
+    "login" => "totalvoice@totalvoice.com.br", 
+    "senha" => "senha123"
+);
+$response = $client->conta->criar($conta_dados);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+var conta_dados = {
+    nome: "Total Voice", 
+    login: "totalvoice@totalvoice.com.br", 
+    senha: "senha123"
+};
+
+client.conta.criar(conta_dados)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+
+conta = new(Conta)
+conta.Nome = "Total Voice"
+conta.login = "totalvoice@totalvoice.com.br"
+conta.senha = "senha123"
+
+response, err := client.Conta.Criar(conta)
+```
+```python
+response = client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+```
+```java
+Audio audio = new Audio(client);
+JSONObject response = audio.enviar("4811111111", "http://foo.bar/audio.mp3");
+```
+
+> <br/>Response
+
+```json
+{
+    "status": 200,
+    "sucesso": true,
+    "motivo": 0,
+    "mensagem": "conta criada com sucesso",
+    "dados": {
+        "id": 3132,
+        "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO"
+    }
+}
+```
+
 Cria uma nova conta filha.
 
 #### Request
@@ -310,6 +381,67 @@ Cria uma nova conta filha.
 GET https://api.totalvoice.com.br/conta/{id}
 ```
 
+> <br/>Request
+
+```shell--curl
+curl 'https://api.totalvoice.com.br/conta/3132' \
+    -X GET \
+    --header 'Content-Type: application/json' \
+    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' 
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
+$response = $client->conta->buscaConta(3132);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.conta.buscar(3132)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+
+response, err := client.Conta.Buscar(3132)
+```
+
+> <br/>Response
+
+```json
+{
+    "status": 200,
+    "sucesso": true,
+    "motivo": 0,
+    "mensagem": "dados retornados com sucesso",
+    "dados": {
+        "id": 3132,
+        "nome": "Total Voice",
+        "cpf_cnpj": "00.000.000/0000-00",
+        "login": "totalvoice@totalvoice.com.br",
+        "saldo": 99.01,
+        "telefone": "4832830151",
+        "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
+        "preco_fixo": "0.060",
+        "preco_cel": "0.350",
+        "preco_ramal": "0.000",
+        "email_financeiro": "contato@totalvoice.com.br",
+        "nome_fantasia": null,
+        "metodo_pagamento": "prepago",
+        "fatura_atual": 0.00
+    }
+}
+```
+
+> <br/><br/><br/>
+
 Busca os detalhes de uma conta filha.
 
 ##### Request
@@ -344,39 +476,56 @@ Busca os detalhes de uma conta filha.
     </tbody>
 </table>
 
-> Response
-
-```json
-{
-    "status": 200,
-    "sucesso": true,
-    "motivo": 0,
-    "mensagem": "dados retornados com sucesso",
-    "dados": {
-        "id": 555,
-        "nome": "Total Voice",
-        "cpf_cnpj": "00.000.000/0000-00",
-        "login": "totalvoice@totalvoice.com.br",
-        "saldo": 99.01,
-        "telefone": "4832830151",
-        "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
-        "preco_fixo": "0.060",
-        "preco_cel": "0.350",
-        "preco_ramal": "0.000",
-        "email_financeiro": "contato@totalvoice.com.br",
-        "nome_fantasia": null,
-        "metodo_pagamento": "prepago",
-        "fatura_atual": 0.00
-    }
-}
-```
-
 ## Alterar Conta 
 
 > Definição
 
 ```text
 PUT https://api.totalvoice.com.br/conta/{id}
+```
+
+> <br/>Request
+
+```shell--curl
+curl 'https://api.totalvoice.com.br/conta/3132' \
+    -X PUT \
+    --header 'Content-Type: application/json' \
+    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    -d '{"senha" : "senha123456"}'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
+$conta_dados = array("senha" => "senha123456");
+$response = $client->conta->atualizar(3132, $conta_dados);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+var conta_dados = {
+    senha: "senha123456"
+};
+client.conta.atualizar(3132, conta_dados)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+
+> <br/>Response
+
+```json
+{
+    "status": 200,
+    "sucesso": true,
+    "motivo": 0,
+    "mensagem": "dados atualizados com sucesso",
+    "dados": null
+}
 ```
 
 Altera as informações de uma conta já existente, você precisa passar na URL o ID da conta e no corpo do request o JSON com os campos que serão alterados, conforme exemplos.
@@ -490,6 +639,47 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 DELETE https://api.totalvoice.com.br/conta/{id}
 ```
 
+> <br/>Request
+
+```shell--curl
+curl 'https://api.totalvoice.com.br/conta/3132' \
+    -X DELETE \
+    --header 'Content-Type: application/json' \
+    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
+$response = $client->conta->excluir(3132);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.conta.excluir(3132)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+
+> <br/>Response
+
+```json
+{
+    "status": 200,
+    "sucesso": true,
+    "motivo": 0,
+    "mensagem": "Conta Removida com sucesso.",
+    "dados": null
+}
+```
+
+> <br/><br/><br/>
+
 Deleta permanentemente uma conta filha, ficando indisponível para posterior consulta, 
 tome muito cuidado ao executar este comando, após deletada, a conta filha irá perder todos os acessos à TotalVoice, 
 com isso o login utilizdo ficará disponível (pois não é possível logins duplicados na API).
@@ -521,6 +711,82 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 ```text
 GET https://api.totalvoice.com.br/conta/relatorio
 ```
+
+> <br/>Request
+
+```shell--curl
+curl 'https://api.totalvoice.com.br/conta/relatorio' \
+    -X GET \
+    --header 'Content-Type: application/json' \
+    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' 
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
+$response = $client->conta->relatorio();
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.conta.relatorio()
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+
+> <br/>Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "relatorio": [
+      {
+          "id": 3132,
+          "nome": "Total Voice",
+          "cpf_cnpj": "00.000.000/0000-00",
+          "login": "totalvoice@totalvoice.com.br",
+          "saldo": 99.01,
+          "telefone": "4832830151",
+          "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
+          "preco_fixo": "0.060",
+          "preco_cel": "0.350",
+          "preco_ramal": "0.000",
+          "email_financeiro": "contato@totalvoice.com.br",
+          "nome_fantasia": null,
+          "metodo_pagamento": "prepago",
+          "fatura_atual": 0.00
+      },
+      {
+          "id": 3133,
+          "nome": "Total Voice Filial 2",
+          "cpf_cnpj": "00.000.000/1111-11",
+          "login": "totalvoice_filial_2@totalvoice.com.br",
+          "saldo": 99.01,
+          "telefone": "4832830151",
+          "access_token": "teste228PU1Izmb9chEdLzep7IwRymWO",
+          "preco_fixo": "0.060",
+          "preco_cel": "0.350",
+          "preco_ramal": "0.000",
+          "email_financeiro": "contato@totalvoice.com.br",
+          "nome_fantasia": null,
+          "metodo_pagamento": "prepago",
+          "fatura_atual": 0.00
+      }
+    ]
+  }
+}
+```
+
+> <br/><br/><br/>
 
 Retorna um relatório com todas as suas contas filhas. As contas retornadas no relatório vem ordenadas por data de criação.
 
