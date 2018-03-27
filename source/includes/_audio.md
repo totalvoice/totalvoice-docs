@@ -11,7 +11,7 @@ Basta você informar um número destino e a URL contendo o seu arquivo de áudio
 devem ser no formato .mp3 e estar hospedados em uma URL pública. Você poderá enviar algumas opções adicionais, 
 tais como, aguardar uma resposta do usuário, gravar o áudio da ligação e colocar um número bina que aparecerá no momento da ligação.  
 
-### Objeto Áudio
+## Objeto Áudio
 
 > <br>
 
@@ -201,7 +201,7 @@ Definição do objeto Áudio
     </tbody>
 </table>
 
-### Criar um áudio
+## Criar um áudio
 
 > Definição
 
@@ -318,24 +318,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
     </tbody>
 </table>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-### Buscar áudio
+## Buscar áudio
 
 > Definição
 
@@ -430,37 +413,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
     </tbody>
 </table>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-### Relatório áudio 
+## Relatório áudio 
 
 > Definição
 
