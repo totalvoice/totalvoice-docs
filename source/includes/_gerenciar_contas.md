@@ -379,6 +379,109 @@ Busca os detalhes de uma conta filha.
 PUT https://api.totalvoice.com.br/conta/{id}
 ```
 
+Altera as informações de uma conta já existente, você precisa passar na URL o ID da conta e no corpo do request o JSON com os campos que serão alterados, conforme exemplos.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                nome
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo nome para a conta que você deseja alterar
+             </td>
+        </tr>
+        <tr>
+            <td>
+                login
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo login para a conta, precisa ser um endereço de e-mail válido.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                senha
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Nova senha para esta conta, deve ter mais que 6 caracteres.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                cpf_cnpj
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo CPF ou CNPJ desta conta, para fim de identificação e integração.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                telefone
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo número de telefone de contato desta conta, precisa ser um número de telefone válido.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_fixo
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                O valor que será cobrado desta conta para chamadas destinadas à números fixos, deve ser maior ou igual ao da conta pai.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_cel
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                O valor que será cobrado desta conta para chamadas destinadas à números móveis, deve ser maior ou igual ao da conta pai.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_ramal
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                O valor que será cobrado desta conta para chamada entre Ramais dentro dela mesma, deve ser maior ou igual ao valor da conta pai.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                email_financeiro
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo e-mail de contato para assuntos financeiros desta conta.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                nome_fantasia
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo nome fantasia desta conta que será utilizado para exibição.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+<br/>
+Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com sucesso ou falha.
+
 ## Deletar Conta
 
 > Definição
@@ -387,6 +490,30 @@ PUT https://api.totalvoice.com.br/conta/{id}
 DELETE https://api.totalvoice.com.br/conta/{id}
 ```
 
+Deleta permanentemente uma conta filha, ficando indisponível para posterior consulta, 
+tome muito cuidado ao executar este comando, após deletada, a conta filha irá perder todos os acessos à TotalVoice, 
+com isso o login utilizdo ficará disponível (pois não é possível logins duplicados na API).
+
+##### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Identificador único da conta filha que você deseja deletar.
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+<br/>
+Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com sucesso ou falha.
+
 ## Relatório de Contas
 
 > Definição
@@ -394,3 +521,24 @@ DELETE https://api.totalvoice.com.br/conta/{id}
 ```text
 GET https://api.totalvoice.com.br/conta/relatorio
 ```
+
+Retorna um relatório com todas as suas contas filhas. As contas retornadas no relatório vem ordenadas por data de criação.
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-conta">conta</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<br/>
+<br/>

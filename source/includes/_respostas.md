@@ -19,7 +19,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
 
 #### Atributos da Resposta
 
-<table>
+<table class="table-parameters">
     <tbody>
         <tr>
             <td>
@@ -27,7 +27,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Código HTTP da resposta.
+                <a href="#codigos-http">Código HTTP</a> da resposta.
              </td>
         </tr>
         <tr>
@@ -45,7 +45,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Código do motivo da falha ou sucesso.
+                <a href="#codigos-de-motivos">Código do motivo</a> da falha ou sucesso.
              </td>
         </tr>
         <tr>
@@ -54,7 +54,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
                 <span class="attribute">string</span>
             </td>
             <td>
-                Mensagem de resposta contendo sucesso ou motivo de falha. 
+                Mensagem de resposta contendo mensagem sucesso ou motivo de falha. 
              </td>
         </tr>
         <tr>
@@ -63,7 +63,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
                 <span class="attribute">object</span>
             </td>
             <td>
-                Dados da resposta atribuídos a cada requisição.
+                Objeto de resposta variável em cada função da API.
              </td>
         </tr>
     </tbody>
