@@ -30,8 +30,8 @@ você precisa entrar em contato com nossa equipe, para podermos entender o cená
     </li>
 </ul>
 
-As contas Trial, são contas que foram criadas e ainda não tiveram seus dados confirmados como e-mail e telefone fixo (caso a pessoa
-não tenha telefone fixo, pode entrar em contato com a TotalVoice que validamos diretamente), a conta tem o intuíto apenas de testar
+As contas Trial, são contas que foram criadas e ainda não tiveram seus dados confirmados, como e-mail e telefone fixo (caso a pessoa
+não tenha telefone fixo, pode entrar em contato com a TotalVoice que validamos diretamente), a conta trial tem o intuíto apenas de testar
 as funcionalidades da API, a validação e migração é feita de modo automática e a mudança de tipo de conta acontece na hora.
 
 ## Contas Cliente
@@ -56,7 +56,7 @@ As contas Clientes:
     </li>
 </ul>
 
-## Contas Pais
+## Conta Pai
 
 Quando se tem a necessidade de criar e administrar outras contas, como em integrações com sistemas, revenda de serviços,
 utilização por terceiros das funções de telefonia, você pode solicitar uma permissão de Conta Pai, 
@@ -65,7 +65,8 @@ onde você pode criar, deletar e alterar Contas Filhas.
 As Contas Pais tem as mesmas limitações das Contas Clientes, tendo apenas o diferencial de poder administrar subcontas. 
 
 
-## Contas Filhas
 
-São contas criadas por uma Conta Pai, são exatamente as mesmas Contas Clientes, tendo os mesmos privilégios, sendo apenas
-vínculada a uma outra conta, podendo ser [Alterada](#alterar-conta) ou [Removida](#deletar-conta) por ela.
+## Conta Filha
+
+As contas filhas, são basicamente contas criadas que foram criadas através de outra, são praticamente as mesmas Contas Clientes, 
+tendo os mesmos privilégios, sendo apenas vínculada a uma outra conta, podendo ser [Alterada](#alterar-conta) ou [Removida](#deletar-conta) por ela.
