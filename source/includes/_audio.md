@@ -237,13 +237,17 @@ client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
     });
 ```
 ```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
  response, err := client.Audio.Enviar("4811111111", "http://foo.bar/audio.mp3", false, "")
 ```
 ```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
 response = client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
 ```
 ```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
 Audio audio = new Audio(client);
+
 JSONObject response = audio.enviar("4811111111", "http://foo.bar/audio.mp3");
 ```
 > Response
@@ -363,13 +367,17 @@ client.audio.buscar(123)
     });
 ```
 ```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
  response, err := client.Audio.Buscar(123)
 ```
 ```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
 response = client.audio.get_by_id(123)
 ```
 ```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
 Audio audio = new Audio(client);
+
 JSONObject response = audio.buscar(123);
 ```
 > Response
@@ -469,13 +477,17 @@ client.audio.relatorio(data_inicial, data_final)
     });
 ```
 ```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
  response, err := client.Audio.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
 response = client.audio.get_relatorio(data_inicio, data_fim)
 ```
 ```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
 Audio audio = new Audio(client);
+
 JSONObject response = audio.relatorio(dataInicial, dataFinal);
 ```
 > Response

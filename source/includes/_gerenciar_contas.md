@@ -227,11 +227,19 @@ conta.senha = "senha123"
 response, err := client.Conta.Criar(conta)
 ```
 ```python
-response = client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.conta.criar_conta("Total Voice", "totalvoice@totalvoice.com.br", "senha123")
 ```
 ```java
-Audio audio = new Audio(client);
-JSONObject response = audio.enviar("4811111111", "http://foo.bar/audio.mp3");
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Conta conta = new Conta(client);
+
+JSONObject contaDados = new JSONObject();
+contaDados.put("nome", "Total Voice");
+contaDados.put("login", "totalvoice@totalvoice.com.br");
+contaDados.put("senha", "senha123");
+
+JSONObject response = conta.criar(contaDados);
 ```
 
 > <br/>Response
@@ -392,7 +400,6 @@ curl 'https://api.totalvoice.com.br/conta/3132' \
 ```php
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
-
 $response = $client->conta->buscaConta(3132);
 ```
 ```javascript--node
@@ -409,8 +416,17 @@ client.conta.buscar(3132)
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
-
 response, err := client.Conta.Buscar(3132)
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.conta.get_by_id(3132)
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Conta conta = new Conta(client);
+
+JSONObject response = conta.buscar(3132);
 ```
 
 > <br/>Response
@@ -514,6 +530,28 @@ client.conta.atualizar(3132, conta_dados)
     .catch(function(error) {
         console.log('Erro: ', error)
     });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+
+conta = new(Conta)
+conta.senha = "senha123"
+
+response, err := client.Conta.Atualizar(conta)
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.conta.editar_conta("Total Voice", "totalvoice@totalvoice.com.br", "senha123")
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Conta conta = new Conta(client);
+
+JSONObject contaDados = new JSONObject();
+contaDados.put("id", 3132);
+contaDados.put("senha", "senha123");
+
+JSONObject response = conta.atualizar(contaDados);
 ```
 
 > <br/>Response
@@ -650,7 +688,6 @@ curl 'https://api.totalvoice.com.br/conta/3132' \
 ```php
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
-
 $response = $client->conta->excluir(3132);
 ```
 ```javascript--node
@@ -664,6 +701,20 @@ client.conta.excluir(3132)
     .catch(function(error) {
         console.log('Erro: ', error)
     });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.Conta.Excluir(3132)
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.conta.deletar(3132)
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Conta conta = new Conta(client);
+
+JSONObject response = conta.excluir(3132);
 ```
 
 > <br/>Response
@@ -723,7 +774,6 @@ curl 'https://api.totalvoice.com.br/conta/relatorio' \
 ```php
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
-
 $response = $client->conta->relatorio();
 ```
 ```javascript--node
@@ -737,6 +787,20 @@ client.conta.relatorio()
     .catch(function(error) {
         console.log('Erro: ', error)
     });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.Conta.Relatorio.Gerar()
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.conta.get_relatorio()
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Conta conta = new Conta(client);
+
+JSONObject response = conta.relatorio();
 ```
 
 > <br/>Response
