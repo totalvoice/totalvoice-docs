@@ -601,6 +601,19 @@ html, body {
         font-weight: bold;
       }
     }
+
+    ul {
+      background-color: $code-bg !important;
+      border-bottom: 4px solid $code-annotation-bg;
+      border-left: 34px solid $code-annotation-bg;
+      border-right: 34px solid $code-annotation-bg;
+      margin: 0px;
+      padding: 10px 30px;
+    }
+
+    li {
+      padding: 5px;
+    }
   }
 }
 

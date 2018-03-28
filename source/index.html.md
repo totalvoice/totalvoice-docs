@@ -15,6 +15,7 @@ toc_footers:
 
 includes:
   - introducao
+  - tipos_conta
   - autenticacao
   - respostas
   - audio
