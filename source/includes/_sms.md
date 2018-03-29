@@ -30,6 +30,7 @@ data de envio por exemplo.
     "respostas": [
       {
         "id": 2,
+        "sms_id": 432,
         "resposta": "tudo bem, e voce?",
         "data_resposta": "2016-03-31T22:46:42-03:00"
       }
@@ -142,6 +143,7 @@ Definição do objeto Sms
 ```json
 {
   "id": 2,
+  "sms_id": 3,
   "resposta": "tudo bem, e voce?",
   "data_resposta": "2016-03-31T22:46:42-03:00"
 }
@@ -160,6 +162,15 @@ Definição do objeto Resposta SMS
             </td>
             <td>
                 ID do registro de Resposta.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                sms_id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do SMS vinculado a resposta.
              </td>
         </tr>
         <tr>
