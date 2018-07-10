@@ -1019,6 +1019,11 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="n">Audio</span> <span class="n">audio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Audio</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"4811111111"</span><span class="o">,</span> <span class="s">"http://foo.bar/audio.mp3"</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">audio</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"http://foo.bar/audio.mp3"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -1132,6 +1137,11 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="n">Audio</span> <span class="n">audio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Audio</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="na">buscar</span><span class="o">(</span><span class="mi">123</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"{{access-token}}"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">audio</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"NUMERO-DESTINO"</span><span class="p">,</span> <span class="s2">"URL-AUDIO"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -1224,6 +1234,11 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="n">Audio</span> <span class="n">audio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Audio</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="na">relatorio</span><span class="o">(</span><span class="n">dataInicial</span><span class="o">,</span> <span class="n">dataFinal</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"{{access-token}}"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">audio</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"NUMERO-DESTINO"</span><span class="p">,</span> <span class="s2">"URL-AUDIO"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
