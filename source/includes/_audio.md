@@ -250,6 +250,13 @@ Audio audio = new Audio(client);
 
 JSONObject response = audio.enviar("4811111111", "http://foo.bar/audio.mp3");
 ```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+```
 > Response
 
 ```json
@@ -380,6 +387,13 @@ Audio audio = new Audio(client);
 
 JSONObject response = audio.buscar(123);
 ```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("{{access-token}}")
+puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
+```
 > Response
 
 ```json
@@ -489,6 +503,13 @@ TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO
 Audio audio = new Audio(client);
 
 JSONObject response = audio.relatorio(dataInicial, dataFinal);
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("{{access-token}}")
+puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
 ```
 > Response
 

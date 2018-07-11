@@ -23,6 +23,7 @@ As bibliotecas oficiais da nossa API podem ser encontradas em nosso [GitHub](htt
 - [GO](https://github.com/totalvoice/totalvoice-go)
 - [Python](https://github.com/totalvoice/totalvoice-python)
 - [Java](https://github.com/totalvoice/totalvoice-java)
+- [Ruby](https://github.com/totalvoice/totalvoice-ruby)
 
 ### Dúvidas
 
