@@ -89,7 +89,7 @@ JSONObject response = central.webphone(webphone_dados);
     "motivo": 0,
     "mensagem": "url webphone",
     "dados": {
-        "url": "https://api.totalvoice.com.br/w3/?key=XXXXXXXXXXXXXXXXXXXXXX83b3420&pop=1",
+        "url": "https://api.totalvoice.com.br/w3/?key=XXXXXXXXXXXXXXXXXXXXXX83b3420&pop=1"
     }
 }
 ```
