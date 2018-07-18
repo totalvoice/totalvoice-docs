@@ -315,6 +315,8 @@ $response = $client->perfil->consultaSaldo();
 var response = client.perfil.consultaSaldo()
 ```
 ```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+
  response, err := client.Saldo.ConsultaSaldo()
 ```
 ```python
@@ -398,6 +400,8 @@ $response = $client->perfil->minhaConta();
 var response = client.perfil.minhaConta()
 ```
 ```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+
  response, err := client.Perfil.MinhaConta()
 ```
 ```python
@@ -698,6 +702,8 @@ $response = $client->perfil->relatorioRecarga();
 var response = client.perfil.relatorioRecarga();
 ```
 ```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+
  response, err := client.Perfil.RelatorioRecarga()
 ```
 ```python
@@ -821,6 +827,8 @@ $response = $client->perfil->urlRecarga("www.urlretorno.com.br");
 var response = client.perfil.urlRecarga("www.urlretorno.com.br");
 ```
 ```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+
  response, err := client.Perfil.GeraURLRecarga("www.urlretorno.com.br")
 ```
 ```python
@@ -920,6 +928,8 @@ $response = $client->perfil->webhooks();
 var response = client.perfil.webhooks();
 ```
 ```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+
  response, err := client.Webhook.Listar()
 ```
 ```python
@@ -1018,6 +1028,8 @@ $response = $client->perfil->excluirWebhook("chamada_fim");
 var response = client.perfil.excluirWebhook("chamada_fim");
 ```
 ```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+
  response, err := client.Webhook.Excluir("chamada_fim")
 ```
 ```python
@@ -1061,7 +1073,7 @@ puts @client.perfil.excluir_webhook("chamada_fim")
   }
 }
 ```
-#### Response
+#### Request
 <table class="table-parameters">
     <tbody>
 		<tr>
@@ -1085,6 +1097,135 @@ puts @client.perfil.excluir_webhook("chamada_fim")
     </tbody>
 </table>
 
+#### Response
+<table class="table-parameters">
+    <tbody>
+		<tr>
+            <td>
+                dados
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Retorna dados null e mensagem de sucesso
+             </td>
+		</tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Alterar um webhook
+
+> Definição
+
+```text
+PUT https://api.totalvoice.com.br/webhook/{nome_webhook}
+```
+
+> <br/>Request
+
+```shell--curl
+curl 'https://api.totalvoice.com.br/webhook/chamada_fim' \
+    -X PUT \
+    --header 'Content-Type: application/json' \
+    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    -d '{"url" : "www.urlretorno.com.br"}'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
+$conta_dados = array("senha" => "senha123456");
+$response = $client->perfil->salvaWebhook("chamada_fim", "www.urlretorno.com.br");
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.perfil.salvaWebhook("chamada_fim", "www.urlretorno.com.br")
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+
+response, err := client.Webhook.Salva("chamada_fim", "www.urlretorno.com.br")
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.perfil.editar_webhook("chamada_fim", "www.urlretorno.com.br")
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Perfil perfil = new Perfil(client);
+JSONObject response = perfil.salvaWebhook("chamada_fim", "www.urlretorno.com.br");
+```
+```ruby
+puts @client.perfil.salva_webhook("chamada_fim", "www.urlretorno.com.br")
+```
+
+> <br/>Response
+
+```json
+{
+    "status": 200,
+    "sucesso": true,
+    "motivo": 0,
+    "mensagem": "dados atualizados com sucesso",
+    "dados": null
+}
+```
+
+Altera as informações de um webhook, você precisa passar no corpo do request o JSON com a url para receber o webhook.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                url
+                <span class="optional">string</span>
+            </td>
+            <td>
+                Sua URL que vai receber o callback
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+<table class="table-parameters">
+    <tbody>
+		<tr>
+            <td>
+                dados
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Retorna dados null e mensagem de sucesso
+             </td>
+		</tr>
+    </tbody>
+</table>
 <br>
 <br>
 <br>
