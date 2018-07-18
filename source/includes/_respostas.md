@@ -69,7 +69,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
     </tbody>
 </table>
 
-### Códigos HTTP
+## Códigos HTTP
 
 >Códigos HTTP utilizados
 
@@ -113,7 +113,7 @@ sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, t
 
 <br style="margin-top: 280px;"/>  
 
-### Códigos de Motivos
+## Códigos de Motivos
 
  >Códigos de Motivos
  
@@ -181,3 +181,73 @@ sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, t
  do cabeçalho.
  
  Utilize o atributo **sucesso** se for apenas para identificar se a requisição deu certo ou não.
+
+## Status para Chamada
+
+ >Status para Chamada
+ 
+ > <table>
+     <tr>
+         <td>atendida</td>
+         <td>A ligação foi atendida.</td>
+     </tr>
+     <tr>
+         <td>sem resposta</td>
+         <td>O número não atendeu a ligação.</td>
+     </tr>
+     <tr>
+         <td>ocupado</td>
+         <td>A operadora retornou que o número estava ocupado.</td>
+     </tr>
+     <tr>
+         <td>congestionado</td>
+         <td>Houve algum problema nas linhas de conexões de saída de ligação. (entrar em contato para avisar)</td>
+     </tr>
+     <tr>
+         <td>falha</td>
+         <td>Não foi possível realizar a ligação.</td>
+     </tr>
+     <tr>
+         <td>cancelada</td>
+         <td>A ligação foi cancelada.</td>
+     </tr>
+     <tr>
+         <td>não existe</td>
+         <td>O número desta ligação não existe.</td>
+     </tr>
+ </table>
+ 
+FALTA DESCRICAO
+
+
+## Status Perna de Ligação
+
+ >Status Perna de Ligação
+ 
+ > <table>
+     <tr>
+         <td>preparando</td>
+         <td>A ligação para esta perna ainda não foi iniciada.</td>
+     </tr>
+     <tr>
+         <td>chamando</td>
+         <td>O telefone/ramal desta perna está chamando mas não atendeu.</td>
+     </tr>
+     <tr>
+         <td>atendida</td>
+         <td>A perna atendeu a ligação.</td>
+     </tr>
+     <tr>
+         <td>ocupado</td>
+         <td>A operadora retornou que o número estava ocupado no momento.</td>
+     </tr>
+     <tr>
+         <td>desconhecido</td>
+         <td>Houve alguma falha, entrar em contato com o suporte.</td>
+     </tr>
+ </table>
+ 
+ Este parâmetro é retornado nos objetos que representam algum lado (perna) de uma ligação que foi realizada, 
+ por exemplo em um Objeto de um Áudio haverá um único atributo deste que representa
+ o status do número que o áudio foi enviado, já em uma Chamada você terá um status para cada uma das pernas dela.
+

@@ -221,8 +221,8 @@ client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
 
 conta = new(Conta)
 conta.Nome = "Total Voice"
-conta.login = "totalvoice@totalvoice.com.br"
-conta.senha = "senha123"
+conta.Login = "totalvoice@totalvoice.com.br"
+conta.Senha = "senha123"
 
 response, err := client.Conta.Criar(conta)
 ```
