@@ -8,8 +8,16 @@ https://api.totalvoice.com.br/audio
 
 A funcionalidade de **Envio de Aúdio**, permite que você envie mensagens de voz (audio) / torpedos de voz para determinados números. 
 Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos 
-devem estar no formato .mp3 e disponíveis em uma URL pública. Você poderá enviar algumas opções adicionais, 
-tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou colocar um número bina que aparecerá no momento da ligação.  
+devem estar disponíveis em uma URL pública. Você poderá enviar algumas opções adicionais, 
+tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou colocar um número bina que aparecerá no momento da ligação.
+
+####Formatos aceitos:
+- .mp3
+- .wav
+ 
+####Tamanho máximo:
+- 5MB
+  
 
 ## Objeto Áudio
 
@@ -291,7 +299,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                URL do audio formato MP3, exemplo: http://foo.bar/audio.mp3
+                URL do audio, exemplo: http://foo.bar/audio.mp3
             </td>
         </tr>
         <tr>
