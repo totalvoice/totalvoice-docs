@@ -230,7 +230,7 @@ curl -X POST --header 'Content-Type: application/json' \
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
 
-$response = $client->audio->enviar('NUMERO-DESTINO', 'http://foo.bar/audio.mp3');
+$response = $client->audio->enviar('4811111111', 'http://foo.bar/audio.mp3');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
