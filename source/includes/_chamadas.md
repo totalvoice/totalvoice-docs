@@ -265,23 +265,22 @@ POST https://api.totalvoice.com.br/chamada/{id}
 > Request
 
 ```shell--curl
-curl -X POST --header 'Content-Type: application/json' \
-             --header 'Accept: application/json' \
-             --header 'Access-Token: {{access-token}}' \
-             -d '{"numero_destino":"4811111111","url_audio":"http://foo.bar/audio.mp3"}' \
-             'https://api.totalvoice.com.br/audio'
+curl -X DELETE --header 'Content-Type: application/json' \
+               --header 'Accept: application/json' \
+               --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+               'https://api.totalvoice.com.br/chamada/123'
 ```
 ```php
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
 
-$response = $client->audio->enviar('NUMERO-DESTINO', 'http://foo.bar/audio.mp3');
+$response = $client->chamada->encerrar(123);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
 
-client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+client.chamada.encerrar(123)
     .then(function(data) {
         console.log(data);
     })
@@ -291,24 +290,24 @@ client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
- response, err := client.Audio.Enviar("4811111111", "http://foo.bar/audio.mp3", false, "")
+response, err := client.Chamada.Encerrar(123)
 ```
 ```python
 client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+response = client.chamada.deletar(123)
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
-Audio audio = new Audio(client);
+Chamada chamada = new Chamada(client);
 
-JSONObject response = audio.enviar("4811111111", "http://foo.bar/audio.mp3");
+JSONObject response = chamada.encerrar(123);
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
-puts @client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+puts @client.chamada.encerrar("4811111111", "http://foo.bar/audio.mp3")
 ```
 > Response
 
@@ -317,10 +316,8 @@ puts @client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
   "status": 200,
   "sucesso": true,
   "motivo": 0,
-  "mensagem": "chamada criada com sucesso",
-  "dados": {
-    "id": 9235245
-  }
+  "mensagem": "encerrando chamada",
+  "dados": null
 } 
 ```
 Basta informar o id da chamada ativa
