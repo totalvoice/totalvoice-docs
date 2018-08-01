@@ -17,14 +17,39 @@ Permite gerar relatório de chamadas, derrubar chamadas em andamento, transferir
 > JSON
 
 ```json
-{  
-   "numero_origem":"4832830151",
-   "numero_destino":"4832830151",
-   "data_criacao":"2017-03-30T17:17:14-03:00",
-   "gravar_audio":true,
-   "bina_origem":"4832830151",
-   "bina_destino":"4832830151",
-   "tags":"clienteX"
+{
+  "id": 185,
+  "data_criacao": "2016-03-31T20:33:13-03:00",
+  "ativa": false,
+  "cliente_id": 123,
+  "ramal_id_origem": null,
+  "origem": {
+    "data_inicio": "2016-03-31T20:33:27-03:00",
+    "numero": "4811111111",
+    "tipo": "fixo",
+    "status": "atendida",
+    "substatus": "maquina_origem",
+    "duracao_segundos": 47,
+    "duracao": "00:00:47",
+    "duracao_cobrada_segundos": 30,
+    "duracao_cobrada": "00:00:30",
+    "duracao_falada_segundos": 60,
+    "duracao_falada": "00:01:00",
+    "preco": 0.1
+  },
+  "destino": {
+    "data_inicio": "2016-03-31T20:33:44-03:00",
+    "numero": "4811111112",
+    "tipo": "movel",
+    "status": "atendida",
+    "duracao_segundos": 30,
+    "duracao": "00:00:30",
+    "duracao_cobrada_segundos": 30,
+    "duracao_cobrada": "00:00:30",
+    "duracao_falada_segundos": 60,
+    "duracao_falada": "00:01:00",
+    "preco": 0.1
+  }
 }
 ```
 Definição do objeto Chamada
@@ -35,38 +60,47 @@ Definição do objeto Chamada
     <tbody>
         <tr>
             <td>
-                numero_origem
-                <span class="attribute">string</span>
+                id
+                <span class="attribute">integer</span>
             </td>
             <td>
-                Número origem, recebe a chamada primeiro.  Exemplo: 4832830151
+                ID do registro da chamada.
              </td>
         </tr>
         <tr>
             <td>
-                numero_destino
-                <span class="attribute">string</span>
+                data_criacao
+                <span class="attribute">datetime</span>
             </td>
             <td>
-               Número destino, recebe a chamada após o número origem atender. Exemplo: 4832830151
+                Data de criação do registro da chamada. Data e Hora no formato UTC
             </td>
         </tr>
         <tr>
             <td>
-                data_criacao
-                <span class="attribute">string</span>
+                ativa
+                <span class="attribute">boolean</span>
             </td>
             <td>
-                Informe uma data e hora para agendar a chamada. vazio = liga imediatamente. Data e Hora no formato UTC
+                Identifica se a chamada está ativa ou não
+             </td>
+        </tr>
+        <tr>
+            <td>
+                cliente_id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+               Identificação do cliente referente a chamada
             </td>
         </tr>
        	<tr>
             <td>
-                gravar_audio
-                <span class="optional">Opcional</span>
+                ramal_id_origem
+                <span class="attribute">integer</span>
             </td>
             <td>
-                Flag que indica se o áudio da ligação deve ser gravado
+                ID do ramal que originou a chamada referente a ligação, se houver. 
             </td>
         </tr>
         <tr>
@@ -351,19 +385,19 @@ GET https://api.totalvoice.com.br/chamada/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/audio/1'
+            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' 'https://api.totalvoice.com.br/chamada/123'
 ```
 ```php
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
 
-$response = $client->audio->buscaAudio(123);
+$response = $client->chamada->buscaChamada(123);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
 
-client.audio.buscar(123)
+client.chamada.buscar(123)
     .then(function(data) {
         console.log(data);
     })
@@ -373,24 +407,24 @@ client.audio.buscar(123)
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
- response, err := client.Audio.Buscar(123)
+ response, err := client.Chamada.Buscar(123)
 ```
 ```python
 client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.audio.get_by_id(123)
+response = client.chamada.get_by_id(123)
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
-Audio audio = new Audio(client);
+Chamada chamada = new Chamada(client);
 
-JSONObject response = audio.buscar(123);
+JSONObject response = chamada.buscar(123);
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("{{access-token}}")
-puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.chamada.buscar(123)
 ```
 > Response
 
