@@ -811,7 +811,7 @@ puts @client.chamada.download_gravacao(123)
 }
 ```
 
-Após o envio de chamadas, você poderá realizar a busca do registro pelo seu ID.
+Você poderá realizar o download do áudio da chamada. Esta funcionalidade estará disponível se você setou a opção "**Gravar Audio**" igual a True no momento da criação da chamada.
 
 ##### Request
 <table class="table-parameters">
@@ -834,12 +834,166 @@ Após o envio de chamadas, você poderá realizar a busca do registro pelo seu I
     <tbody>
         <tr>
             <td>
-                dados
-                <span class="attribute">object</span>
+                response
+                <span class="attribute">header</span>
             </td>
             <td>
-                Retorna o objeto <a href="#objeto-chamada">chamada</a>
+                Irá retornar um HTTP Response com Cabeçalho de Resposta: Content-Type: "audio/mpeg"
              </td>
         </tr>
     </tbody>
 </table>
+
+### Relatório Chamadas 
+
+> Definição
+
+```text
+GET https://api.totalvoice.com.br/chamada/relatorio
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            'https://api.totalvoice.com.br/chamada/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$response = $client->chamada->relatorio($dataInicial, $dataFinal);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.chamada.relatorio(dataInicial, dataFinal)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.Chamada.Relatorio.Gerar(dataInicial, dataFinal)
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.chamada.get_relatorio(data_inicio, data_fim)
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Chamada chamada = new Chamada(client);
+JSONObject response = chamada.relatorio(dataInicial, dataFinal);
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.chamada.relatorio(data_inicial, data_final)
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "relatorio": [
+      {
+        "id": 123,
+        "data_criacao": "2018-08-02T10:32:22-03:00",
+        "ativa": false,
+        "url_gravacao": "https://urlgravacao.com.br/rec/audio.mp3",
+        "cliente_id": 1,
+        "conta_id": 1,
+        "ramal_id_origem": 16,
+        "tags": null,
+        "status_geral": "finalizada",
+        "origem": {
+          "data_inicio": null,
+          "numero": "4000",
+          "tipo": "ramal",
+          "status": null,
+          "duracao_segundos": 0,
+          "duracao": "00:00:00",
+          "duracao_cobrada_segundos": 0,
+          "duracao_cobrada": "00:00:00",
+          "duracao_falada_segundos": 0,
+          "duracao_falada": "00:00:00",
+          "preco": 0,
+          "motivo_desconexao": "indefinido"
+        },
+        "destino": {
+          "data_inicio": "2018-08-02T10:32:22-03:00",
+          "numero": "4001",
+          "tipo": "ramal",
+          "status": "atendida",
+          "duracao_segundos": 8,
+          "duracao": "00:00:08",
+          "duracao_cobrada_segundos": 60,
+          "duracao_cobrada": "00:01:00",
+          "duracao_falada_segundos": 8,
+          "duracao_falada": "00:00:08",
+          "preco": 0,
+          "motivo_desconexao": "indefinido"
+        }
+      }
+    ]
+  }
+}
+```
+
+Você pode consultar as Chamadas enviadas. Basta informar o período desejado para que a API retorne os dados.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                data_inicio
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_fim
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-chamada">Chamada</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
