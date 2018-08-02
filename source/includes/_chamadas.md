@@ -669,38 +669,43 @@ puts @client.chamada.buscar(123)
   "motivo": 0,
   "mensagem": "dados retornados com sucesso",
   "dados": {
-    "id": 185,
-    "data_criacao": "2016-03-31T20:33:13-03:00",
-    "ativa": false,
-    "cliente_id": 123,
-    "ramal_id_origem": null,
-    "origem": {
-      "data_inicio": "2016-03-31T20:33:27-03:00",
-      "numero": "4832830151",
-      "tipo": "fixo",
-      "status": "atendida",
-      "substatus": "maquina_origem",
-      "duracao_segundos": 47,
-      "duracao": "00:00:47",
-      "duracao_cobrada_segundos": 30,
-      "duracao_cobrada": "00:00:30",
-      "duracao_falada_segundos": 60,
-      "duracao_falada": "00:01:00",
-      "preco": 0.1
-    },
-    "destino": {
-      "data_inicio": "2016-03-31T20:33:44-03:00",
-      "numero": "4899999999",
-      "tipo": "movel",
-      "status": "atendida",
-      "duracao_segundos": 30,
-      "duracao": "00:00:30",
-      "duracao_cobrada_segundos": 30,
-      "duracao_cobrada": "00:00:30",
-      "duracao_falada_segundos": 60,
-      "duracao_falada": "00:01:00",
-      "preco": 0.1
-    }
+     "id": 123,
+     "data_criacao": "2018-08-02T10:49:30-03:00",
+     "ativa": false,
+     "url_gravacao": "https://urlgravacao.com.br/rec/audio.mp3",
+     "cliente_id": 1,
+     "conta_id": 1,
+     "ramal_id_origem": 1,
+     "tags": "minha-tags",
+     "status_geral": "finalizada",
+     "origem": {
+       "data_inicio": null,
+       "numero": "4000",
+       "tipo": "ramal",
+       "status": "atendida",
+       "duracao_segundos": 10,
+       "duracao": "00:00:10",
+       "duracao_cobrada_segundos": 10,
+       "duracao_cobrada": "00:00:10",
+       "duracao_falada_segundos": 10,
+       "duracao_falada": "00:00:10",
+       "preco": 0.1,
+       "motivo_desconexao": "indefinido"
+     },
+     "destino": {
+       "data_inicio": "2018-08-02T10:49:29-03:00",
+       "numero": "4001",
+       "tipo": "ramal",
+       "status": "atendida",
+       "duracao_segundos": 29,
+       "duracao": "00:00:29",
+       "duracao_cobrada_segundos": 60,
+       "duracao_cobrada": "00:01:00",
+       "duracao_falada_segundos": 28,
+       "duracao_falada": "00:00:28",
+       "preco": 0.1,
+       "motivo_desconexao": "indefinido"
+     }
   }
 }
 ```
@@ -752,19 +757,19 @@ GET https://api.totalvoice.com.br/chamada/{id}/gravacao
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/audio/1'
+            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' 'https://api.totalvoice.com.br/chamada/1/gravacao'
 ```
 ```php
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
 
-$response = $client->audio->buscaAudio(123);
+$response = $client->chamada->downloadGravacao(123);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
 
-client.audio.buscar(123)
+client.chamada.downloadGravacao(123)
     .then(function(data) {
         console.log(data);
     })
@@ -774,67 +779,35 @@ client.audio.buscar(123)
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
- response, err := client.Audio.Buscar(123)
+ response, err := client.Chamada.DownloadGravacao(123)
 ```
 ```python
 client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.audio.get_by_id(123)
+response = client.chamada.get_gravacao_chamada(123)
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
-Audio audio = new Audio(client);
+Chamada chamada = new Chamada(client);
 
-JSONObject response = audio.buscar(123);
+JSONObject response = chamada.downloadGravacao(123);
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("{{access-token}}")
-puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.chamada.download_gravacao(123)
 ```
 > Response
 
 ```json
 {
-  "status": 200,
-  "sucesso": true,
-  "motivo": 0,
-  "mensagem": "dados retornados com sucesso",
-  "dados": {
-    "id": 185,
-    "data_criacao": "2016-03-31T20:33:13-03:00",
-    "ativa": false,
-    "cliente_id": 123,
-    "ramal_id_origem": null,
-    "origem": {
-      "data_inicio": "2016-03-31T20:33:27-03:00",
-      "numero": "4832830151",
-      "tipo": "fixo",
-      "status": "atendida",
-      "substatus": "maquina_origem",
-      "duracao_segundos": 47,
-      "duracao": "00:00:47",
-      "duracao_cobrada_segundos": 30,
-      "duracao_cobrada": "00:00:30",
-      "duracao_falada_segundos": 60,
-      "duracao_falada": "00:01:00",
-      "preco": 0.1
-    },
-    "destino": {
-      "data_inicio": "2016-03-31T20:33:44-03:00",
-      "numero": "4899999999",
-      "tipo": "movel",
-      "status": "atendida",
-      "duracao_segundos": 30,
-      "duracao": "00:00:30",
-      "duracao_cobrada_segundos": 30,
-      "duracao_cobrada": "00:00:30",
-      "duracao_falada_segundos": 60,
-      "duracao_falada": "00:01:00",
-      "preco": 0.1
-    }
-  }
+  "access-control-allow-origin": "*",
+  "connection": "Keep-Alive",
+  "content-length": "1",
+  "content-type": "audio/mpeg",
+  "date": "Thu, 02 Aug 2018 19:06:54 GMT",
+  "keep-alive": "timeout=5, max=100"
 }
 ```
 
@@ -849,7 +822,7 @@ Após o envio de chamadas, você poderá realizar a busca do registro pelo seu I
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                ID da chamada para recuperar os dados
+                ID da chamada para recuperar os dados da gravação
              </td>
         </tr>
     </tbody>
