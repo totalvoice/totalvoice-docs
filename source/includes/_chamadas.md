@@ -18,39 +18,44 @@ Permite gerar relatório de chamadas, derrubar chamadas em andamento, transferir
 
 ```json
 {
-  "id": 185,
-  "data_criacao": "2016-03-31T20:33:13-03:00",
-  "ativa": false,
-  "cliente_id": 123,
-  "ramal_id_origem": null,
-  "origem": {
-    "data_inicio": "2016-03-31T20:33:27-03:00",
-    "numero": "4811111111",
-    "tipo": "fixo",
-    "status": "atendida",
-    "substatus": "maquina_origem",
-    "duracao_segundos": 47,
-    "duracao": "00:00:47",
-    "duracao_cobrada_segundos": 30,
-    "duracao_cobrada": "00:00:30",
-    "duracao_falada_segundos": 60,
-    "duracao_falada": "00:01:00",
-    "preco": 0.1
-  },
-  "destino": {
-    "data_inicio": "2016-03-31T20:33:44-03:00",
-    "numero": "4811111112",
-    "tipo": "movel",
-    "status": "atendida",
-    "duracao_segundos": 30,
-    "duracao": "00:00:30",
-    "duracao_cobrada_segundos": 30,
-    "duracao_cobrada": "00:00:30",
-    "duracao_falada_segundos": 60,
-    "duracao_falada": "00:01:00",
-    "preco": 0.1
-  }
-}
+    "id": 123,
+    "data_criacao": "2018-08-02T10:49:30-03:00",
+    "ativa": false,
+    "url_gravacao": "https://urlgravacao.com.br/rec/audio.mp3",
+    "cliente_id": 1,
+    "conta_id": 1,
+    "ramal_id_origem": 1,
+    "tags": "minha-tags",
+    "status_geral": "finalizada",
+    "origem": {
+      "data_inicio": null,
+      "numero": "4000",
+      "tipo": "ramal",
+      "status": "atendida",
+      "duracao_segundos": 10,
+      "duracao": "00:00:10",
+      "duracao_cobrada_segundos": 10,
+      "duracao_cobrada": "00:00:10",
+      "duracao_falada_segundos": 10,
+      "duracao_falada": "00:00:10",
+      "preco": 0.1,
+      "motivo_desconexao": "indefinido"
+    },
+    "destino": {
+      "data_inicio": "2018-08-02T10:49:29-03:00",
+      "numero": "4001",
+      "tipo": "ramal",
+      "status": "atendida",
+      "duracao_segundos": 29,
+      "duracao": "00:00:29",
+      "duracao_cobrada_segundos": 60,
+      "duracao_cobrada": "00:01:00",
+      "duracao_falada_segundos": 28,
+      "duracao_falada": "00:00:28",
+      "preco": 0.1,
+      "motivo_desconexao": "indefinido"
+    }
+ }
 ```
 Definição do objeto Chamada
 
@@ -87,11 +92,29 @@ Definição do objeto Chamada
         </tr>
         <tr>
             <td>
+                url_gravacao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                URL com áudio da gravação da chamada
+             </td>
+        </tr>
+        <tr>
+            <td>
                 cliente_id
                 <span class="attribute">integer</span>
             </td>
             <td>
                Identificação do cliente referente a chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                conta_id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+               Identificação da Conta referente a chamada
             </td>
         </tr>
        	<tr>
@@ -105,33 +128,60 @@ Definição do objeto Chamada
         </tr>
         <tr>
             <td>
-                bina_origem
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Número de BINA na perna A, formato DDD + Número exemplo: 4832830151
-            </td>
-        </tr>
-        <tr>
-            <td>
-                bina_destino
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Número de BINA na perna B, formato DDD + Número exemplo: 4832830151
-            </td>
-        </tr>
-        <tr>
-            <td>
                 tags
                 <span class="attribute">string</span>
             </td>
             <td>
-                Tags ou comentários sobre esta chamada
+                Informação adicional que pode ser retornada no objeto, como um ID Externo por exemplo. Você consegue enviar essa informação no 
+                Post da Chamada e recuperar posteriormente nessa consulta. 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                status_geral
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Status geral da Chamada. 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                origem / destino
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Array contendo os objetos de <a href="#objeto-origem-destino">origem/destino</a>
             </td>
         </tr>
     </tbody>
 </table>
+
+### Objeto Origem Destino
+
+> <br>
+
+> JSON
+
+```json
+{
+  "data_inicio": "2018-08-02T10:49:29-03:00",
+  "numero": "4000",
+  "tipo": "ramal",
+  "status": "atendida",
+  "duracao_segundos": 29,
+  "duracao": "00:00:29",
+  "duracao_cobrada_segundos": 60,
+  "duracao_cobrada": "00:01:00",
+  "duracao_falada_segundos": 28,
+  "duracao_falada": "00:00:28",
+  "preco": 0,
+  "motivo_desconexao": "indefinido"
+}
+```
+
+Definição do objeto Origem/Destino. Estes objetos, basicamente contém a mesma estrutura de informações com relação as chamadas. A Origem, contém as informações de quem originou 
+a ligação e o Destino de quem recebeu a ligação. Aqui você irá encontrar as informações de duração das chamadas, status e o preço que foi cobrado pela  
 
 ## Criar uma chamada
 > Definição
