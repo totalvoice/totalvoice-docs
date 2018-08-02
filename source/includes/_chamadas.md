@@ -151,7 +151,7 @@ Definição do objeto Chamada
                 <span class="attribute">object</span>
             </td>
             <td>
-                Array contendo os objetos de <a href="#objeto-origem-destino">origem/destino</a>
+                Retorna os objetos <a href="#objeto-origem-destino">origem/destino</a>
             </td>
         </tr>
     </tbody>
@@ -180,8 +180,8 @@ Definição do objeto Chamada
 }
 ```
 
-Definição do objeto Origem/Destino. Estes objetos, basicamente contém a mesma estrutura de informações com relação as chamadas. A Origem, contém as informações de quem originou 
-a ligação e o Destino de quem recebeu a ligação. Aqui você irá encontrar as informações de duração das chamadas, status e o preço que foi cobrado pela  
+Definição do objeto **Origem/Destino**: Estes objetos, basicamente contém a mesma estrutura de informações com relação as chamadas. A **Origem**, contém as informações de quem originou 
+a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que você irá encontrar as informações de duração das chamadas, status e o preço que foi cobrado por cada perna.  
 
 ## Criar uma chamada
 > Definição
