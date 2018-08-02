@@ -143,6 +143,11 @@ Definição do objeto Chamada
             </td>
             <td>
                 Status geral da Chamada. 
+                <ul>
+                    <li>criada: chamada foi criada</li>
+                    <li>curso: está em andamento</li>
+                    <li>finalizada: chamada foi finalizada</li>
+                </ul>
             </td>
         </tr>
         <tr>
@@ -182,6 +187,185 @@ Definição do objeto Chamada
 
 Definição do objeto **Origem/Destino**: Estes objetos, basicamente contém a mesma estrutura de informações com relação as chamadas. A **Origem**, contém as informações de quem originou 
 a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que você irá encontrar as informações de duração das chamadas, status e o preço que foi cobrado por cada perna.  
+
+#### Atributos
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                data_inicio
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora de inicio da chamada na Origem/Destino.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                numero
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número que irá receber a ligação e será o número de Origem/Destino.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                tipo
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Tipo da ligação:
+                <ul>
+                    <li>ramal: ligação para um ramal</li>
+                    <li>movel: ligação para um celular</li>
+                    <li>fixo: ligação para um número fixo</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                status
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Status da ligação na Origem/Destino:
+                <ul>
+                    <li>atendida</li>
+                    <li>sem resposta</li>
+                    <li>ocupado</li>
+                    <li>congestionado</li>
+                    <li>falha</li>
+                    <li>cancelada</li>
+                    <li>não existe</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos (inteiro) total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_cobrada_segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos para fins de cobrança
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_cobrada
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração considerada para fins de cobrança
+            </td>
+        </tr>
+                <tr>
+            <td>
+                duracao_falada_segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_falada
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco
+                <span class="attribute">float</span>
+            </td>
+            <td>
+                Valor cobrado pela chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                motivo_desconexao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Um dos motivos de desconexão:
+                <ul>
+                    <li>1. telefone não existe</li>
+                    <li>2. sem rota para a rede de destino</li>
+                    <li>3. sem rota para o destino</li>
+                    <li>4. prefixo incorreto</li>
+                    <li>6. canal inaceitavel</li>
+                    <li>7. chamada sendo entregue em canal ja estabelecido</li>
+                    <li>8. call peemption</li>
+                    <li>14. telefone portado para outra operadora</li>
+                    <li>16. normal</li>
+                    <li>17. ocupado</li>
+                    <li>18. sem resposta</li>
+                    <li>19. sem resposta - mas chamou</li>
+                    <li>20. assinante ausente</li>
+                    <li>21. chamada rejeitada</li>
+                    <li>22. este numero mudou</li>
+                    <li>23. redirecionado para novo destino</li>
+                    <li>26. atendido em outro lugar</li>
+                    <li>27. destino nao esta funcionando</li>
+                    <li>28. formato invalido de numero</li>
+                    <li>29. rejeitado</li>
+                    <li>30. resposta para status enquiry</li>
+                    <li>31. normal, nao especificado</li>
+                    <li>34. sem canal disponivel</li>
+                    <li>41. falha temporaria</li>
+                    <li>42. equipamento congestionado</li>
+                    <li>44. canal requisitado nao esta disponivel</li>
+                    <li>50. nao cadastrado</li>
+                    <li>52. chamada sainte barrada</li>
+                    <li>54. chamada entrante barrada</li>
+                    <li>57. capacidade nao autorizada</li>
+                    <li>58. erro de midia ou parametros incompativeis</li>
+                    <li>65. capacidade do portador nao implementada</li>
+                    <li>66. tipo de canal nao implementado</li>
+                    <li>69. nao implementado</li>
+                    <li>81. valor de referencia invalido</li>
+                    <li>88. destino incompativel</li>
+                    <li>95. mensagem invalida nao especificada</li>
+                    <li>96. informacao obrigatoria nao presente</li>
+                    <li>97. mensagem nao implementada</li>
+                    <li>98. mensagem nao compativel com o estado da chamada ou nao existente ou nao implementada</li>
+                    <li>97. mensagem nao implementada</li>
+                    <li>99. elemento nao existente ou nao implementada</li>
+                    <li>97. mensagem nao implementada</li>
+                    <li>100. informacao invalida no conteudo dos elementos</li>
+                    <li>101. mensagem nao compativel com o estado da chamada</li>
+                    <li>102. timeout</li>
+                    <li>111. erro de protocolo</li>
+                    <li>127. erro de conectividade</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ## Criar uma chamada
 > Definição

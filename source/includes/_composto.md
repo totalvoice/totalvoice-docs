@@ -250,59 +250,58 @@ Definição do objeto Composto
             </td>
             <td>
                 Um dos motivos de desconexão:
-<br>
-1. telefone não existe<br>
-2. sem rota para a rede de destino<br>
-3. sem rota para o destino<br>
-4. prefixo incorreto<br>
-6. canal inaceitavel<br>
-7. chamada sendo entregue em canal ja estabelecido<br>
-8. call peemption<br>
-14. telefone portado para outra operadora<br>
-16. normal<br>
-17. ocupado<br>
-18. sem resposta<br>
-19. sem resposta - mas chamou<br>
-20. assinante ausente<br>
-21. chamada rejeitada<br>
-22. este numero mudou<br>
-23. redirecionado para novo destino<br>
-26. atendido em outro lugar<br>
-27. destino nao esta funcionando<br>
-28. formato invalido de numero<br>
-29. rejeitado<br>
-30. resposta para status enquiry<br>
-31. normal, nao especificado<br>
-34. sem canal disponivel<br>
-38. rede com problema<br>
-41. falha temporaria<br>
-42. equipamento congestionado<br>
-44. canal requisitado nao esta disponivel<br>
-50. nao cadastrado<br>
-52. chamada sainte barrada<br>
-54. chamada entrante barrada<br>
-57. capacidade nao autorizada<br>
-58. erro de midia ou parametros incompativeis<br>
-65. capacidade do portador nao implementada<br>
-66. tipo de canal nao implementado<br>
-69. nao implementado<br>
-81. valor de referencia invalido<br>
-88. destino incompativel<br>
-95. mensagem invalida nao especificada<br>
-96. informacao obrigatoria nao presente<br>
-97. mensagem nao implementada<br>
-98. mensagem nao compativel com o estado da chamada ou nao existente ou nao implementada<br>
-99. elemento nao existente ou nao implementada<br>
-100. informacao invalida no conteudo dos elementos<br>
-101. mensagem nao compativel com o estado da chamada<br>
-102. timeout<br>
-111. erro de protocolo<br>
-127. erro de conectividade<br>
-
+                <ul>
+                    <li>1. telefone não existe</li>
+                    <li>2. sem rota para a rede de destino</li>
+                    <li>3. sem rota para o destino</li>
+                    <li>4. prefixo incorreto</li>
+                    <li>6. canal inaceitavel</li>
+                    <li>7. chamada sendo entregue em canal ja estabelecido</li>
+                    <li>8. call peemption</li>
+                    <li>14. telefone portado para outra operadora</li>
+                    <li>16. normal</li>
+                    <li>17. ocupado</li>
+                    <li>18. sem resposta</li>
+                    <li>19. sem resposta - mas chamou</li>
+                    <li>20. assinante ausente</li>
+                    <li>21. chamada rejeitada</li>
+                    <li>22. este numero mudou</li>
+                    <li>23. redirecionado para novo destino</li>
+                    <li>26. atendido em outro lugar</li>
+                    <li>27. destino nao esta funcionando</li>
+                    <li>28. formato invalido de numero</li>
+                    <li>29. rejeitado</li>
+                    <li>30. resposta para status enquiry</li>
+                    <li>31. normal, nao especificado</li>
+                    <li>34. sem canal disponivel</li>
+                    <li>41. falha temporaria</li>
+                    <li>42. equipamento congestionado</li>
+                    <li>44. canal requisitado nao esta disponivel</li>
+                    <li>50. nao cadastrado</li>
+                    <li>52. chamada sainte barrada</li>
+                    <li>54. chamada entrante barrada</li>
+                    <li>57. capacidade nao autorizada</li>
+                    <li>58. erro de midia ou parametros incompativeis</li>
+                    <li>65. capacidade do portador nao implementada</li>
+                    <li>66. tipo de canal nao implementado</li>
+                    <li>69. nao implementado</li>
+                    <li>81. valor de referencia invalido</li>
+                    <li>88. destino incompativel</li>
+                    <li>95. mensagem invalida nao especificada</li>
+                    <li>96. informacao obrigatoria nao presente</li>
+                    <li>97. mensagem nao implementada</li>
+                    <li>98. mensagem nao compativel com o estado da chamada ou nao existente ou nao implementada</li>
+                    <li>97. mensagem nao implementada</li>
+                    <li>99. elemento nao existente ou nao implementada</li>
+                    <li>97. mensagem nao implementada</li>
+                    <li>100. informacao invalida no conteudo dos elementos</li>
+                    <li>101. mensagem nao compativel com o estado da chamada</li>
+                    <li>102. timeout</li>
+                    <li>111. erro de protocolo</li>
+                    <li>127. erro de conectividade</li>
+                </ul>
             </td>
         </tr>
-
-
     </tbody>
 </table>
 
