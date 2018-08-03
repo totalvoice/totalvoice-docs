@@ -2466,7 +2466,7 @@ a ligação e o <strong>Destino</strong> de quem recebeu a ligação. É nesses 
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero":"4811111111", "perna": "destino"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero":"4811111111", "modo": 1}'</span> <span class="se">\</span>
              <span class="s1">'https://api.totalvoice.com.br/chamada/123/escuta'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
