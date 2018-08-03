@@ -1013,7 +1013,7 @@ GET https://api.totalvoice.com.br/chamada/{id}/escuta
 ```shell--curl
 curl -X POST --header 'Accept: application/json' \
              --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
-             -d '{"numero":"4811111111", "perna": "destino"}' \
+             -d '{"numero":"4811111111", "modo": 1}' \
              'https://api.totalvoice.com.br/chamada/123/escuta'
 ```
 ```php
