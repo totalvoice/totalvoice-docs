@@ -333,6 +333,12 @@
                   <li>
                     <a href="#escuta-de-chamadas" class="toc-h2 toc-link" data-title="Escuta de Chamadas">Escuta de Chamadas</a>
                   </li>
+                  <li>
+                    <a href="#transferencia-de-chamadas" class="toc-h2 toc-link" data-title="Transferência de Chamadas">Transferência de Chamadas</a>
+                  </li>
+                  <li>
+                    <a href="#avaliacao-de-chamadas" class="toc-h2 toc-link" data-title="Avaliação de Chamadas">Avaliação de Chamadas</a>
+                  </li>
               </ul>
           </li>
            <li>
@@ -2458,16 +2464,17 @@ a ligação e o <strong>Destino</strong> de quem recebeu a ligação. É nesses 
 <blockquote>
 <p>Request</p>
 </blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
-            <span class="s1">'https://api.totalvoice.com.br/chamada/123/escuta'</span>
+<pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+             --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero":"4811111111", "perna": "destino"}'</span> <span class="se">\</span>
+             <span class="s1">'https://api.totalvoice.com.br/chamada/123/escuta'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">chamada</span><span class="o">-&gt;</span><span class="na">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'4811111111'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'4811111111'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"4811111111"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -2475,17 +2482,17 @@ a ligação e o <strong>Destino</strong> de quem recebeu a ligação. É nesses 
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
-</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Chamada</span><span class="o">.</span><span class="n">Escutar</span><span class="p">(</span><span class="m">123</span><span class="p">,</span><span class="x"> </span><span class="err">'</span><span class="m">4811111111</span><span class="err">'</span><span class="p">,</span><span class="x"> </span><span class="m">1</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Chamada</span><span class="o">.</span><span class="n">Escutar</span><span class="p">(</span><span class="m">123</span><span class="p">,</span><span class="x"> </span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="m">1</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chamada</span><span class="o">.</span><span class="n">escuta_chamada</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s">'4811111111'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
 <span class="n">Chamada</span> <span class="n">chamada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Chamada</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chamada</span><span class="o">.</span><span class="na">escutar</span><span class="o">(</span><span class="mi">123</span><span class="o">,</span> <span class="err">'</span><span class="mi">4811111111</span><span class="err">'</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chamada</span><span class="o">.</span><span class="na">escutar</span><span class="o">(</span><span class="mi">123</span><span class="o">,</span> <span class="s">"4811111111"</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'4811111111'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"4811111111"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -2497,7 +2504,7 @@ a ligação e o <strong>Destino</strong> de quem recebeu a ligação. É nesses 
   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"escuta criada com sucesso"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Você pode criar um pedido de escuta para uma chamada que está ativa.</p>
+<p>Você pode realizar uma escuta para uma chamada que está <strong>ativa</strong> (Beta).</p>
 <h4 id='request-6'>Request</h4>
 <table class="table-parameters">
     <tbody>
@@ -2531,6 +2538,234 @@ a ligação e o <strong>Destino</strong> de quem recebeu a ligação. É nesses 
                     <li>2 = sussurro</li>
                     <li>3 = conferência</li>
                 </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
+<h2 id='transferencia-de-chamadas'>Transferência de Chamadas</h2>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://api.totalvoice.com.br/chamada/{id}/transfer
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
+            -d <span class="s1">'{"numero":"4811111111", "perna": "destino"}'</span> <span class="se">\</span>
+            <span class="s1">'https://api.totalvoice.com.br/chamada/123/transfer'</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">chamada</span><span class="o">-&gt;</span><span class="na">transferir</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'4811111111'</span><span class="p">,</span> <span class="s1">'destino'</span><span class="p">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">transferir</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"destino"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Chamada</span><span class="o">.</span><span class="n">Transferir</span><span class="p">(</span><span class="m">123</span><span class="p">,</span><span class="x"> </span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"destino"</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chamada</span><span class="o">.</span><span class="n">transferir</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s">"4811111111"</span><span class="p">,</span> <span class="s">"destino"</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+<span class="n">Chamada</span> <span class="n">chamada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Chamada</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chamada</span><span class="o">.</span><span class="na">transferir</span><span class="o">(</span><span class="mi">123</span><span class="o">,</span> <span class="s">"4811111111"</span><span class="o">,</span> <span class="s">"destino"</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">transferir</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"destino"</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a chamada está sendo transferida"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Transfere a origem ou destino para outro telefone e desconecta a outra perna (Beta).</p>
+<h4 id='request-7'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID da chamada a ser transferida
+            </td>
+        </tr>
+        <tr>
+            <td>
+                numero
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Número ao qual a chamada será transferida
+            </td>
+        </tr>
+        <tr>
+            <td>
+                perna
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Qual perna da chamada será transferida?
+                <ul>
+                    <li>origem</li>
+                    <li>destino</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
+<h2 id='avaliacao-de-chamadas'>Avaliação de Chamadas</h2>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://api.totalvoice.com.br/chamada/{id}/avaliar
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
+            -d <span class="s1">'{"numero":"5", "comentario": "muito boa"}'</span> <span class="se">\</span>
+            <span class="s1">'https://api.totalvoice.com.br/chamada/123/avaliar'</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">chamada</span><span class="o">-&gt;</span><span class="na">avaliar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'5'</span><span class="p">,</span> <span class="s1">'muito boa'</span><span class="p">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">avaliar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"muito boa"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Chamada</span><span class="o">.</span><span class="n">Avaliar</span><span class="p">(</span><span class="m">123</span><span class="p">,</span><span class="x"> </span><span class="s">"5"</span><span class="p">,</span><span class="x"> </span><span class="s">"muito boa"</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chamada</span><span class="o">.</span><span class="n">avaliar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s">"5"</span><span class="p">,</span> <span class="s">"muito boa"</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+<span class="n">Chamada</span> <span class="n">chamada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Chamada</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chamada</span><span class="o">.</span><span class="na">avaliar</span><span class="o">(</span><span class="mi">123</span><span class="o">,</span> <span class="s">"5"</span><span class="o">,</span> <span class="s">"muito boa"</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">avaliar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"5"</span><span class="p">,</span> <span class="s2">"muito boa"</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chamada avaliada com sucesso"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Avalie a Chamada para ter estatisticas de qualidade de seus clientes.</p>
+<h4 id='request-8'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID da chamada a ser avaliada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                nota
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Nota de 1 a 5
+            </td>
+        </tr>
+        <tr>
+            <td>
+                comentario
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Texto de até 1000 caracteres com a avaliação.
             </td>
         </tr>
     </tbody>
