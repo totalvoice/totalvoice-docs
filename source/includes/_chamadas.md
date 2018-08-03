@@ -1104,21 +1104,35 @@ Você pode criar um pedido de escuta para uma chamada que está ativa.
     </tbody>
 </table>
 
-#### Response
-
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                relatorio
-                <span class="attribute">array</span>
-            </td>
-            <td>
-                Retorna um array com objetos <a href="#objeto-chamada">chamada</a>
-             </td>
-        </tr>
-    </tbody>
-</table>
 
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    
+
