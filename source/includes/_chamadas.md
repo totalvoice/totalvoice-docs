@@ -1011,9 +1011,10 @@ GET https://api.totalvoice.com.br/chamada/{id}/escuta
 > Request
 
 ```shell--curl
-curl -X GET --header 'Accept: application/json' \
-            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
-            'https://api.totalvoice.com.br/chamada/123/escuta'
+curl -X POST --header 'Accept: application/json' \
+             --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+             -d '{"numero":"4811111111", "perna": "destino"}' \
+             'https://api.totalvoice.com.br/chamada/123/escuta'
 ```
 ```php
 <?php
@@ -1024,7 +1025,7 @@ $response = $client->chamada->escutar(123, '4811111111', 1);
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
 
-client.chamada.escutar(123, '4811111111', 1)
+client.chamada.escutar(123, "4811111111", 1)
     .then(function(data) {
         console.log(data);
     })
@@ -1034,7 +1035,7 @@ client.chamada.escutar(123, '4811111111', 1)
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
-response, err := client.Chamada.Escutar(123, '4811111111', 1)
+response, err := client.Chamada.Escutar(123, "4811111111", 1)
 ```
 ```python
 client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
@@ -1043,14 +1044,14 @@ response = client.chamada.escuta_chamada(123, '4811111111', 1)
 ```java
 TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
 Chamada chamada = new Chamada(client);
-JSONObject response = chamada.escutar(123, '4811111111', 1);
+JSONObject response = chamada.escutar(123, "4811111111", 1);
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
-puts @client.chamada.escutar(123, '4811111111', 1)
+puts @client.chamada.escutar(123, "4811111111", 1)
 ```
 > Response
 
@@ -1063,7 +1064,7 @@ puts @client.chamada.escutar(123, '4811111111', 1)
 }
 ```
 
-Você pode criar um pedido de escuta para uma chamada que está ativa.
+Você pode realizar uma escuta para uma chamada que está **ativa** (Beta).
 
 #### Request
 
@@ -1134,5 +1135,272 @@ Você pode criar um pedido de escuta para uma chamada que está ativa.
 <br>
 <br>
 <br>
+
+
+## Transferência de Chamadas 
+
+> Definição
+
+```text
+GET https://api.totalvoice.com.br/chamada/{id}/transfer
+```
+
+> Request
+
+```shell--curl
+curl -X POST --header 'Accept: application/json' \
+            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            -d '{"numero":"4811111111", "perna": "destino"}' \
+            'https://api.totalvoice.com.br/chamada/123/transfer'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$response = $client->chamada->transferir(123, '4811111111', 'destino');
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.chamada.transferir(123, "4811111111", "destino")
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.Chamada.Transferir(123, "4811111111", "destino")
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.chamada.transferir(123, "4811111111", "destino")
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Chamada chamada = new Chamada(client);
+JSONObject response = chamada.transferir(123, "4811111111", "destino");
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.chamada.transferir(123, "4811111111", "destino")
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "a chamada está sendo transferida"
+}
+```
+
+Transfere a origem ou destino para outro telefone e desconecta a outra perna (Beta).
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID da chamada a ser transferida
+            </td>
+        </tr>
+        <tr>
+            <td>
+                numero
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Número ao qual a chamada será transferida
+            </td>
+        </tr>
+        <tr>
+            <td>
+                perna
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Qual perna da chamada será transferida?
+                <ul>
+                    <li>origem</li>
+                    <li>destino</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     
+    
+## Avaliação de Chamadas 
+
+> Definição
+
+```text
+GET https://api.totalvoice.com.br/chamada/{id}/avaliar
+```
+
+> Request
+
+```shell--curl
+curl -X POST --header 'Accept: application/json' \
+            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            -d '{"numero":"5", "comentario": "muito boa"}' \
+            'https://api.totalvoice.com.br/chamada/123/avaliar'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$response = $client->chamada->avaliar(123, '5', 'muito boa');
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.chamada.avaliar(123, "5", "muito boa")
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.Chamada.Avaliar(123, "5", "muito boa")
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.chamada.avaliar(123, "5", "muito boa")
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Chamada chamada = new Chamada(client);
+JSONObject response = chamada.avaliar(123, "5", "muito boa");
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.chamada.avaliar(123, "5", "muito boa")
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "chamada avaliada com sucesso"
+}
+```
+
+Avalie a Chamada para ter estatisticas de qualidade de seus clientes.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID da chamada a ser avaliada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                nota
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Nota de 1 a 5
+            </td>
+        </tr>
+        <tr>
+            <td>
+                comentario
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Texto de até 1000 caracteres com a avaliação.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
