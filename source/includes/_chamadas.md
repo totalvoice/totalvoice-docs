@@ -989,7 +989,132 @@ Você pode consultar as Chamadas enviadas. Basta informar o período desejado pa
                 <span class="attribute">array</span>
             </td>
             <td>
-                Retorna um array com objetos <a href="#objeto-chamada">Chamada</a>
+                Retorna um array com objetos <a href="#objeto-chamada">chamada</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+
+
+
+## Escuta de Chamadas 
+
+> Definição
+
+```text
+GET https://api.totalvoice.com.br/chamada/{id}/escuta
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            'https://api.totalvoice.com.br/chamada/123/escuta'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$response = $client->chamada->escutar(123, '4811111111', 1);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.chamada.escutar(123, '4811111111', 1)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.Chamada.Escutar(123, '4811111111', 1)
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.chamada.escuta_chamada(123, '4811111111', 1)
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Chamada chamada = new Chamada(client);
+JSONObject response = chamada.escutar(123, '4811111111', 1);
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.chamada.escutar(123, '4811111111', 1)
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "escuta criada com sucesso"
+}
+```
+
+Você pode criar um pedido de escuta para uma chamada que está ativa.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID da chamada a ser escutada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                numero
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Número do seu telefone
+            </td>
+        </tr>
+        <tr>
+            <td>
+                modo
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Modo de Escuta
+                <ul>
+                    <li>1 = escuta</li>
+                    <li>2 = sussurro</li>
+                    <li>3 = conferência</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-chamada">chamada</a>
              </td>
         </tr>
     </tbody>
