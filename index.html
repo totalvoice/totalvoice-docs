@@ -1141,7 +1141,6 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
              <span class="s1">'https://api.totalvoice.com.br/audio'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
-
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">audio</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'4811111111'</span><span class="p">,</span> <span class="s1">'http://foo.bar/audio.mp3'</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
@@ -1259,7 +1258,6 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://api.totalvoice.com.br/audio/1'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
-
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">audio</span><span class="o">-&gt;</span><span class="na">buscaAudio</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
@@ -1356,7 +1354,6 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             <span class="s1">'https://api.totalvoice.com.br/audio/relatorio?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
-
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">audio</span><span class="o">-&gt;</span><span class="na">relatorio</span><span class="p">(</span><span class="nv">$dataInicial</span><span class="p">,</span> <span class="nv">$dataFinal</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
@@ -5928,12 +5925,31 @@ data de envio por exemplo.</p>
              -d <span class="s1">'{"numero_destino":"48111111111","mensagem":"Ola tudo bem?"}'</span> <span class="se">\</span>
              <span class="s1">'https://api.totalvoice.com.br/sms'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'48111111111'</span><span class="p">,</span> <span class="s1">'Ola tudo bem?'</span><span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"48111111111"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="x"> </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"Ola tudo bem?"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"48111111111"</span><span class="p">,</span> <span class="s">"Ola tudo bem?"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"48111111111"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"Ola tudo bem?"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"48111111111"</span><span class="p">,</span> <span class="s">"Ola tudo bem?"</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+
+<span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"48111111111"</span><span class="o">,</span> <span class="s">"Ola tudo bem?"</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"48111111111"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -5997,7 +6013,10 @@ data de envio por exemplo.</p>
         <tr>
             <td>
                 data_criacao
-                <span class="optional">Opcional</span>
+                <span class="optional">
+                    Opcional,
+                    <span>default <b>null</b></span>
+                </span>
             </td>
             <td>
                 Informe uma data e hora para agendar a entrega do sms. vazio = liga imediatamente. Data e Hora no formato UTC
@@ -6049,12 +6068,31 @@ data de envio por exemplo.</p>
             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://api.totalvoice.com.br/sms/1'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">buscaSms</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="x"> </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Buscar</span><span class="p">(</span><span class="m">123</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Buscar</span><span class="p">(</span><span class="m">123</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+
+<span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">buscar</span><span class="o">(</span><span class="mi">123</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -6156,12 +6194,31 @@ data de envio por exemplo.</p>
             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
             <span class="s1">'https://api.totalvoice.com.br/sms/relatorio?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">relatorio</span><span class="p">(</span><span class="nv">$dataInicial</span><span class="p">,</span> <span class="nv">$dataFinal</span><span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">relatorio</span><span class="p">(</span><span class="nx">data_inicial</span><span class="p">,</span> <span class="nx">data_final</span><span class="p">)</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="x"> </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Relatorio</span><span class="o">.</span><span class="n">Gerar</span><span class="p">(</span><span class="n">dataInicial</span><span class="p">,</span><span class="x"> </span><span class="n">dataFinal</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">get_relatorio</span><span class="p">(</span><span class="n">data_inicio</span><span class="p">,</span> <span class="n">data_fim</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">relatorio</span><span class="p">(</span><span class="nx">data_inicial</span><span class="p">,</span> <span class="nx">data_final</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Relatorio</span><span class="o">.</span><span class="n">Gerar</span><span class="p">(</span><span class="n">dataInicial</span><span class="p">,</span><span class="x"> </span><span class="n">dataFinal</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">get_relatorio</span><span class="p">(</span><span class="n">data_inicio</span><span class="p">,</span> <span class="n">data_fim</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+
+<span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">relatorio</span><span class="o">(</span><span class="n">dataInicial</span><span class="o">,</span> <span class="n">dataFinal</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">relatorio</span><span class="p">(</span><span class="n">data_inicial</span><span class="p">,</span> <span class="n">data_final</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
