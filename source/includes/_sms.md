@@ -213,20 +213,41 @@ curl -X POST --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
 $response = $client->sms->enviar('48111111111', 'Ola tudo bem?');
 ```
 ```javascript--node
-var response = client.sms.enviar("48111111111", "Ola tudo bem?")
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.sms.enviar("48111111111", "Ola tudo bem?")
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
- response, err := client.SMS.Enviar("4811111111", "Ola tudo bem?", false, false, nil)
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.SMS.Enviar("4811111111", "Ola tudo bem?", false, false, nil)
 ```
 ```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
 response = client.sms.enviar("48111111111", "Ola tudo bem?")
 ```
 ```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
 Sms sms = new Sms(client);
 JSONObject response = sms.enviar("48111111111", "Ola tudo bem?");
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.sms.enviar("48111111111", "Ola tudo bem?")
 ```
 > Response
 
@@ -292,7 +313,10 @@ Para o envio de SMS, é necessário informar um número móvel válido e uma men
         <tr>
             <td>
                 data_criacao
-                <span class="optional">Opcional</span>
+                <span class="optional">
+                    Opcional,
+                    <span>default <b>null</b></span>
+                </span>
             </td>
             <td>
                 Informe uma data e hora para agendar a entrega do sms. vazio = liga imediatamente. Data e Hora no formato UTC
@@ -351,21 +375,43 @@ curl -X GET --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
 $response = $client->sms->buscaSms(123);
 ```
 ```javascript--node
-var response = client.sms.buscar(123)
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.sms.buscar(123)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
- response, err := client.SMS.Buscar(123)
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.SMS.Buscar(123)
 ```
 ```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
 response = client.sms.get_by_id(123)
 ```
 ```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
 Sms sms = new Sms(client);
 JSONObject response = sms.buscar(123);
 ```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.sms.buscar(123)
+```
+
 > Response
 
 ```json
@@ -476,20 +522,41 @@ curl -X GET --header 'Accept: application/json' \
 ```
 ```php
 <?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
 $response = $client->sms->relatorio($dataInicial, $dataFinal);
 ```
 ```javascript--node
-var response = client.sms.relatorio(data_inicial, data_final)
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.sms.relatorio(data_inicial, data_final)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
- response, err := client.SMS.Relatorio.Gerar(dataInicial, dataFinal)
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.SMS.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
 response = client.sms.get_relatorio(data_inicio, data_fim)
 ```
 ```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
 Sms sms = new Sms(client);
 JSONObject response = sms.relatorio(dataInicial, dataFinal);
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.sms.relatorio(data_inicial, data_final)
 ```
 > Response
 

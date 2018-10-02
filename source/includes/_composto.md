@@ -1,99 +1,749 @@
 # Composto
 
-## Criar um 
+> Composto Endpoint
 
-> post audio
+```text
+https://api.totalvoice.com.br/composto
+```
 
-## Buscar um 
+A funcionalidade de **Envio de Composto**, permite que você envie mensagens de voz por telefone misturando gravações de áudio MP3 com TTS e também realize algumas outras funções de central telefônica como coletar DTMF e transferir.
 
-> Exemplo
+Exemplo: Envie uma mensagem para confirmar uma consulta ou transferir a pessoa para o reagendamento: "Você possui uma consulta agendada para amanhã 18h. Aperte 1 para confirmar ou 2 para ser remarcar". Quando o usuário pressionar a opção 2, ele já é transferido para o telefone de remarcação.
+JSON DADOS do exemplo:
 
-## Editar um
 
-> Exemplo
+```json
+[
+	{
+		acao: composto,
+		acao_dados: {
+						url_composto: http://fooooo.bar/composto.mp3
+					}
+	},
+	{
+		acao: tts,
+		acao_dados: {
+						"mensagem": "Você possui uma consulta agendada para amanhã 18h. Aperte 1 para confirmar ou 2 para ser remarcar",
+						"velocidade": "-4",
+						"resposta_usuario": "true",
+						"tipo_voz": "br-Ricardo"
+					}
+	},
+	{
+		acao: transferir,
+		opcao: 2,
+		acao_dados: {
+						"numero_telefone": "1132830151",
+						 "bina": "1132830152" 
+					}
+	} 
+]
 
-## Listtar todos os 
+```
 
-> Exemplo
+O composto aceita um JSON com as seguintes opções:
+- composto
+- tts
+- transferir
+
+As regras para o arquivo de áudio são as mesmas:
+
+####Formatos aceitos:
+- .mp3
+- .wav
+
+####Tamanho máximo:
+- 5MB
+
+## Objeto Composto
+
+> <br>
+
+> JSON
+
+```json
+{
+    "id": 432,
+    "numero_destino": "4832830151",
+    "data_criacao": "2016-03-27T15:12:44+03:00",
+    "data_inicio": "2016-03-27T15:12:49+03:00",
+    "tipo": "fixo",
+    "status": "atendida",
+    "duracao_segundos": 45,
+    "duracao": "00:00:45",
+    "duracao_cobrada_segundos": 60,
+    "duracao_cobrada": "00:00:60",
+    "duracao_falada_segundos": 35,
+    "duracao_falada": "00:00:35",
+    "preco": 0.12,
+    "resposta_usuario": true,
+    "resposta": "8",
+	"tags": "clienteX",
+    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
+	
+}
+```
+
+Definição do objeto Composto
+
+#### Atributos
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro de Áudio.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                numero_destino
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número do destinatário que foi enviado o áudio.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_criacao
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi criado o registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_inicio
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi iniciado o processamento do áudio
+            </td>
+        </tr>
+		<tr>
+            <td>
+                tipo
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Tipo de telefone: fixo, móvel ou ramal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                status
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Status do registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos (inteiro) total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração total da chamada desde o início do processamento
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_cobrada_segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos para fins de cobrança
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_cobrada
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração considerada para fins de cobrança
+            </td>
+        </tr>
+                <tr>
+            <td>
+                duracao_falada_segundos
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração em segundos da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                duracao_falada
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Duração da chamada desde que o destino atendeu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco
+                <span class="attribute">float</span>
+            </td>
+            <td>
+                Valor cobrado pela chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                resposta_usuario
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Aguarda a resposta do usuário: sim ou não
+            </td>
+        </tr>
+        <tr>
+            <td>
+                resposta
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                url_gravacao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Quando enviado a opção Gravar Áudio = true, este campo disponibilizará uma URL contendo o áudio da gravação da ligação.
+            </td>
+        </tr>
+		<tr>
+            <td>
+                tags
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Parâmetro de integração - informado no post e retornado no get. Ex: "clienteX"
+            </td>
+        </tr>
+		<tr>
+            <td>
+                motivo_desconexao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Um dos motivos de desconexão:
+                <ul>
+                    <li>1. telefone não existe</li>
+                    <li>2. sem rota para a rede de destino</li>
+                    <li>3. sem rota para o destino</li>
+                    <li>4. prefixo incorreto</li>
+                    <li>6. canal inaceitavel</li>
+                    <li>7. chamada sendo entregue em canal ja estabelecido</li>
+                    <li>8. call peemption</li>
+                    <li>14. telefone portado para outra operadora</li>
+                    <li>16. normal</li>
+                    <li>17. ocupado</li>
+                    <li>18. sem resposta</li>
+                    <li>19. sem resposta - mas chamou</li>
+                    <li>20. assinante ausente</li>
+                    <li>21. chamada rejeitada</li>
+                    <li>22. este numero mudou</li>
+                    <li>23. redirecionado para novo destino</li>
+                    <li>26. atendido em outro lugar</li>
+                    <li>27. destino nao esta funcionando</li>
+                    <li>28. formato invalido de numero</li>
+                    <li>29. rejeitado</li>
+                    <li>30. resposta para status enquiry</li>
+                    <li>31. normal, nao especificado</li>
+                    <li>34. sem canal disponivel</li>
+                    <li>41. falha temporaria</li>
+                    <li>42. equipamento congestionado</li>
+                    <li>44. canal requisitado nao esta disponivel</li>
+                    <li>50. nao cadastrado</li>
+                    <li>52. chamada sainte barrada</li>
+                    <li>54. chamada entrante barrada</li>
+                    <li>57. capacidade nao autorizada</li>
+                    <li>58. erro de midia ou parametros incompativeis</li>
+                    <li>65. capacidade do portador nao implementada</li>
+                    <li>66. tipo de canal nao implementado</li>
+                    <li>69. nao implementado</li>
+                    <li>81. valor de referencia invalido</li>
+                    <li>88. destino incompativel</li>
+                    <li>95. mensagem invalida nao especificada</li>
+                    <li>96. informacao obrigatoria nao presente</li>
+                    <li>97. mensagem nao implementada</li>
+                    <li>98. mensagem nao compativel com o estado da chamada ou nao existente ou nao implementada</li>
+                    <li>97. mensagem nao implementada</li>
+                    <li>99. elemento nao existente ou nao implementada</li>
+                    <li>97. mensagem nao implementada</li>
+                    <li>100. informacao invalida no conteudo dos elementos</li>
+                    <li>101. mensagem nao compativel com o estado da chamada</li>
+                    <li>102. timeout</li>
+                    <li>111. erro de protocolo</li>
+                    <li>127. erro de conectividade</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+## Criar um Composto 
+
+> Definição
+
+```text
+POST https://api.totalvoice.com.br/composto
+```
+
+> Request
+
+```shell--curl
+curl -X POST --header 'Content-Type: application/json' \
+			 --header 'Accept: application/json' \
+			 --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+			 -d '{"numero_destino":"1132830151","dados":[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}],"bina":"4832830151","gravar_composto":false,"tags":"clienteX"}' \
+			 'https://api.totalvoice.com.br/composto'
+```
+
 
 ```php
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
+$dados	= '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]';
+$bina	= '11987654321';
+$tags	= 'clienteY';
+
+$response = $client->composto->enviar('NUMERO-DESTINO', $dados, $bina, $tags);
 ```
+
 
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("{{access-token}}");
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
 
-client.chamada.ligar("4832830151", "4811111111")
-    .then(function (data) {
-        console.log(data)
+client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+    .then(function(data) {
+        console.log(data);
     })
-    .catch(function (error) {
-        console.error('Erro: ', error)
+    .catch(function(error) {
+        console.log('Erro: ', error)
     });
 ```
-
 ```go
-package main
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+ response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Composto composto = new Composto(client);
 
-import (
-	"fmt"
+JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags');
+```
 
-	"github.com/totalvoice/totalvoice-go"
-)
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
 
-func main() {
-    client := totalvoice.NewTotalVoiceClient("{{access-token}}")
-    response, err := client.Chamada.Criar("4811111111", "4822222222", nil)
-   
-    if err != nil {
-		panic(err)
-	}
-	fmt.Println(response)
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+```
+> Response
+
+```json
+{
+    "status": 200,
+    "sucesso": true,
+    "motivo": 0,
+    "mensagem": "composto criado com sucesso",
+    "dados": {
+        "id": 4921
+    }
 }
 ```
+Basta informar o número de destino válido e um JSON com o composto
 
-```python
-from totalvoice.cliente import Cliente
+#### Request
 
-cliente = Cliente("{{access-token}}", 'HOST') #ex: api.totalvoice.com.br
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                numero_destino
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Número do telefone que irá receber a chamada, formato DDD + Número exemplo: 4832830151
+             </td>
+        </tr>
+        <tr>
+            <td>
+                dados
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Objeto JSON com a estrutura de TTS, áudio e transferir
+            </td>
+        </tr>
+        <tr>
+            <td>
+                resposta_usuario
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Aguardar uma resposta do destinário
+            </td>
+        </tr>
+        <tr>
+            <td>
+                gravar_composto
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Gravar a ligação
+            </td>
+        </tr>
+        <tr>
+            <td>
+                bina
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151
+            </td>
+        </tr>
+		<tr>
+            <td>
+                tags
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Campo de texto que será atrelado à ligação e devolvio no momento da ocnsulta.  Ex.: "clienteY"
+            </td>
+        </tr>
 
-#Cria chamada
-numero_origem = "48999999999"
-numero_destino = "48900000000"
-response = cliente.chamada.enviar(numero_origem, numero_destino)
-print(response)
+    </tbody>
+</table>
+
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Retorna o ID do Composto
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+## Buscar Composto 
+
+> Definição
+
+```text
+GET https://api.totalvoice.com.br/composto/{id}
 ```
 
+> Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' \
+            --header 'Accept: application/json' \
+            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/composto/1'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
+$response = $client->composto->buscaCompost(123);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.composto.buscar(123)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+ response, err := client.Composo.Buscar(123)
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.composto.get_by_id(123)
+```
 ```java
-package br.com.totalvoice;
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Composto composto = new Composto(client);
 
-import br.com.totalvoice.api.Chamada;
-import org.json.JSONObject;
+JSONObject response = composto.buscar(123);
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
 
-public class Main {
-    
-    public static void main(String args[]) {
-        
-        try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
-            Chamada chamada = new Chamada(client);
+@client = TotalVoice::API.new("{{access-token}}")
+puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
+```
+> Response
 
-            JSONObject result = chamada.ligar("NUMEROA", "NUMEROB");
-            System.out.println(result);
-
-        } catch(Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+```json
+{
+    "status": 200,
+    "sucesso": true,
+    "motivo": 0,
+    "mensagem": "dados retornados com sucesso",
+    "dados": {
+	    "id": 432,
+	    "numero_destino": "4832830151",
+	    "data_criacao": "2016-03-27T15:12:44+03:00",
+	    "data_inicio": "2016-03-27T15:12:49+03:00",
+	    "tipo": "fixo",
+	    "status": "atendida",
+	    "duracao_segundos": 45,
+	    "duracao": "00:00:45",
+	    "duracao_cobrada_segundos": 60,
+	    "duracao_cobrada": "00:00:60",
+	    "duracao_falada_segundos": 35,
+	    "duracao_falada": "00:00:35",
+	    "preco": 0.12,
+	    "resposta_usuario": true,
+	    "resposta": "8",
+	    "tags": "clienteX",
+	    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
     }
 }
 ```
 
-Para autenticar sua conta você deve incluir na requisição HTTP o cabeçalho **Access-Token**, 
-colocando no valor o token disponibilizado na sua Dashboard da TotalVoice, tome sempre cuidado, não forneça seu token
-para ninguém e nem deixe ele exposto no código, seu token contém muitos privilégios. 
+Após o envio de mensagens composto, você poderá realizar a busca do registro pelo seu ID.
 
-`Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO`
+##### Request
 
-As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação no cabeçalho HTTP transparentemente. 
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                ID
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID do Composto para recuperar os dados
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o objeto <a href="#objeto-composto">composto</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+
+## Relatório composto
+
+> Definição
+
+```text
+GET https://api.totalvoice.com.br/composto/relatorio
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: {{access-token}}' \
+            'https://api.totalvoice.com.br/composto/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+
+$response = $client->composto->relatorio($dataInicial, $dataFinal);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.composto.relatorio(data_inicial, data_final)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+ response, err := client.Audio.Relatorio.Gerar(dataInicial, dataFinal)
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.composto.get_relatorio(data_inicio, data_fim)
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Audio composto = new Audio(client);
+
+JSONObject response = composto.relatorio(dataInicial, dataFinal);
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("{{access-token}}")
+puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
+```
+> Response
+
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "relatorio": [
+      {
+	    "id": 432,
+	    "numero_destino": "4832830151",
+	    "data_criacao": "2016-03-27T15:12:44+03:00",
+	    "data_inicio": "2016-03-27T15:12:49+03:00",
+	    "tipo": "fixo",
+	    "status": "atendida",
+	    "duracao_segundos": 45,
+	    "duracao": "00:00:45",
+	    "duracao_cobrada_segundos": 60,
+	    "duracao_cobrada": "00:00:60",
+	    "duracao_falada_segundos": 35,
+	    "duracao_falada": "00:00:35",
+	    "preco": 0.12,
+	    "resposta_usuario": true,
+	    "resposta": "8",
+	    "tags": "clienteX",
+	    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
+      },
+      {
+	    "id": 433,
+	    "numero_destino": "4832830151",
+	    "data_criacao": "2016-03-27T15:12:44+03:00",
+	    "data_inicio": "2016-03-27T15:12:49+03:00",
+	    "tipo": "fixo",
+	    "status": "atendida",
+	    "duracao_segundos": 45,
+	    "duracao": "00:00:45",
+	    "duracao_cobrada_segundos": 60,
+	    "duracao_cobrada": "00:00:60",
+	    "duracao_falada_segundos": 35,
+	    "duracao_falada": "00:00:35",
+	    "preco": 0.12,
+	    "resposta_usuario": true,
+	    "resposta": "8",
+	    "tags": "clienteX",
+	    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
+
+      }
+
+    ]
+  }
+}
+```
+
+
+Você pode consultar os composto enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                data_inicio
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_fim
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-composto">composto</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+
