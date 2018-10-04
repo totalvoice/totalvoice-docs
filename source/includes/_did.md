@@ -175,6 +175,15 @@ Definição do objeto Chamada
                  Valor cobrado pela chamada
              </td>
          </tr>
+         <tr>
+              <td>
+                  ramal_id
+                  <span class="attribute">integer</span>
+              </td>
+              <td>
+                  ID do ramal vinculado ao DID
+              </td>
+          </tr>
     </tbody>
 </table>
 
