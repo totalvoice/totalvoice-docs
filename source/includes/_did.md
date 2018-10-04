@@ -290,7 +290,7 @@ GET https://api.totalvoice.com.br/did/{id}/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
-            'https://api.totalvoice.com.br/chamada/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://api.totalvoice.com.br/did/1/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
