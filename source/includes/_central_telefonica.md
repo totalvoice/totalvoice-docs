@@ -414,7 +414,7 @@ Você pode consultar as Chamadas recebidas por um Ramal. Basta informar o perío
                 <span class="attribute">array</span>
             </td>
             <td>
-                Retorna um array com objetos <a href="#objeto-chamada-did">chamada DID</a>
+                Retorna um array com objetos <a href="#objeto-chamada-ramal">chamada ramal</a>
              </td>
         </tr>
     </tbody>
