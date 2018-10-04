@@ -1,5 +1,129 @@
 # Central Telefônica
 
+### Objeto Chamada Ramal
+
+> <br>
+
+> JSON
+
+```json
+{
+    "id": 1,
+    "data_inicio": "2018-09-03T10:35:50-03:00",
+    "url_gravacao": "https://url-gravavao/rec/?id=1",
+    "numero_origem": "4811111111",
+    "status": "atendida",
+    "duracao_segundos": 193,
+    "duracao": "00:03:13",
+    "preco": "0.00",
+    "ramal": {
+      "id": 1,
+      "ramal": "4000",
+      "login": "teste@teste.com.br"
+    }
+}
+```
+Definição do objeto Chamada Ramal
+
+#### Atributos
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro da chamada.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                url_gravacao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                URL com áudio da gravação da chamada
+             </td>
+        </tr>
+        <tr>
+            <td>
+                data_inicio
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data de ínicio do registro da chamada. Data e Hora no formato UTC
+            </td>
+        </tr>
+        <tr>
+            <td>
+                numero_origem
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número que originou a ligação.
+             </td>
+        </tr>
+        <tr>
+             <td>
+                 status
+                 <span class="attribute">string</span>
+             </td>
+             <td>
+                 Status da ligação na Origem/Destino:
+                 <ul>
+                     <li>atendida</li>
+                     <li>sem resposta</li>
+                     <li>ocupado</li>
+                     <li>congestionado</li>
+                     <li>falha</li>
+                     <li>cancelada</li>
+                     <li>não existe</li>
+                 </ul>
+             </td>
+        </tr>
+         <tr>
+             <td>
+                 duracao_segundos
+                 <span class="attribute">integer</span>
+             </td>
+             <td>
+                 Duração em segundos (inteiro) total da chamada desde o início do processamento
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 duracao
+                 <span class="attribute">integer</span>
+             </td>
+             <td>
+                 Duração total da chamada desde o início do processamento
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 preco
+                 <span class="attribute">float</span>
+             </td>
+             <td>
+                 Valor cobrado pela chamada
+             </td>
+         </tr>
+         <tr>
+              <td>
+                  ramal
+                  <span class="attribute">object</span>
+              </td>
+              <td>
+                  id: ID do ramal vinculado ao DID
+                  ramal: número do ramal
+                  login: e-mail utilizado pelo ramal
+              </td>
+          </tr>
+    </tbody>
+</table>
+
 ## Criar um 
 
 > post audio
@@ -175,7 +299,7 @@ puts @client.ramal.relatorioChamadas(id, data_inicial, data_final, filtros)
 }
 ```
 
-Você pode consultar as Chamadas recebidas por um DID. Basta informar o período desejado e o ID do DID para que a API retorne os dados.
+Você pode consultar as Chamadas recebidas por um Ramal. Basta informar o período desejado e o ID do Ramal desejado para que a API retorne os dados.
 
 #### Request
 
@@ -187,7 +311,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                ID do DID que será consultado
+                ID do Ramal que será consultado
             </td>
         </tr>
         <tr>

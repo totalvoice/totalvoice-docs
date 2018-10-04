@@ -34,7 +34,7 @@ e as chamadas recebidas por um número em específico da sua Conta.
     "ramal_id": 1231313
 }
 ```
-Definição do objeto Chamada
+Definição do objeto Chamada DID
 
 #### Atributos
 
