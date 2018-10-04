@@ -311,23 +311,23 @@ client.did.relatorioChamadas(id, dataInicial, dataFinal, filtros)
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
-response, err := client.Chamada.RelatorioChamadas.Gerar(id, dataInicial, dataFinal, filtros)
+response, err := client.DID.RelatorioChamadas.Gerar(id, dataInicial, dataFinal, filtros)
 ```
 ```python
 client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.chamada.get_relatorio_chamadas(id, data_inicio, data_fim, filtros)
+response = client.did.get_relatorio_chamadas(id, data_inicio, data_fim, filtros)
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
-Chamada chamada = new Chamada(client);
-JSONObject response = chamada.relatorioChamadas(id, dataInicial, dataFinal, filtros);
+Did did = new Did(client);
+JSONObject response = did.relatorioChamadas(id, dataInicial, dataFinal, filtros);
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
-puts @client.chamada.relatorioChamadas(id, data_inicial, data_final, filtros)
+puts @client.did.relatorioChamadas(id, data_inicial, data_final, filtros)
 ```
 > Response
 
