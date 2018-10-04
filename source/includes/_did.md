@@ -448,6 +448,33 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
     <tbody>
         <tr>
             <td>
+                total
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Retorna a quantidade total de registros
+             </td>
+        </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+             </td>
+        </tr>
+        <tr>
+            <td>
                 relatorio
                 <span class="attribute">array</span>
             </td>
