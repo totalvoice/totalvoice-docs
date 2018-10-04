@@ -862,19 +862,13 @@ curl -X GET --header 'Accept: application/json' \
 ```php
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
-$filtros = [
-    'origem'  => '4832830151',
-    'destino' => '4832830151',
-    'posicao' => 1,
-    'limite'  => 100
-];
 $response = $client->chamada->relatorio($dataInicial, $dataFinal, $filtros);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
 
-client.chamada.relatorio(dataInicial, dataFinal)
+client.chamada.relatorio(dataInicial, dataFinal, filtros)
     .then(function(data) {
         console.log(data);
     })
@@ -884,23 +878,23 @@ client.chamada.relatorio(dataInicial, dataFinal)
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
-response, err := client.Chamada.Relatorio.Gerar(dataInicial, dataFinal)
+response, err := client.Chamada.Relatorio.Gerar(dataInicial, dataFinal, filtros)
 ```
 ```python
 client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.chamada.get_relatorio(data_inicio, data_fim)
+response = client.chamada.get_relatorio(data_inicio, data_fim, filtros)
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
 Chamada chamada = new Chamada(client);
-JSONObject response = chamada.relatorio(dataInicial, dataFinal);
+JSONObject response = chamada.relatorio(dataInicial, dataFinal, filtros);
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
-puts @client.chamada.relatorio(data_inicial, data_final)
+puts @client.chamada.relatorio(data_inicial, data_final, filtros)
 ```
 > Response
 
