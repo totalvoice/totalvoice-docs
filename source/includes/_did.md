@@ -1,5 +1,183 @@
 # DIDs
 
+> Chamada Endpoint
+
+```text
+https://api.totalvoice.com.br/did
+```
+
+A funcionalidade **DID** permite que você gerencie, adquire ou remova um DID da sua Conta. Também será possível extrair relatórios dos DIDs adquiridos
+e as chamadas recebidas por um número em específico da sua Conta.
+
+### Objeto Chamada DID
+
+> <br>
+
+> JSON
+
+```json
+{
+    "id": 1,
+    "ativa": false,
+    "url_gravacao": "https://url-gravacao/rec/?id=1",
+    "data_inicio": "2018-09-27T16:35:15-03:00",
+    "numero_destino": "554811111111",
+    "numero_origem": "554811111111",
+    "status": "ocupado",
+    "duracao_segundos": 15,
+    "duracao": "00:00:15",
+    "duracao_cobrada_segundos": 0,
+    "duracao_cobrada": "00:00:00",
+    "duracao_falada_segundos": 0,
+    "duracao_falada": "00:00:00",
+    "preco": 0,
+    "ramal_id": 1231313
+}
+```
+Definição do objeto Chamada
+
+#### Atributos
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro da chamada.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                ativa
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Identifica se a chamada está ativa ou não
+             </td>
+        </tr>
+        <tr>
+            <td>
+                url_gravacao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                URL com áudio da gravação da chamada
+             </td>
+        </tr>
+        <tr>
+            <td>
+                data_inicio
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data de ínicio do registro da chamada. Data e Hora no formato UTC
+            </td>
+        </tr>
+        <tr>
+            <td>
+                numero_destino
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número de destino da ligação
+             </td>
+        </tr>
+        <tr>
+            <td>
+                numero_origem
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número que originou a ligação.
+             </td>
+        </tr>
+        <tr>
+             <td>
+                 status
+                 <span class="attribute">string</span>
+             </td>
+             <td>
+                 Status da ligação na Origem/Destino:
+                 <ul>
+                     <li>atendida</li>
+                     <li>sem resposta</li>
+                     <li>ocupado</li>
+                     <li>congestionado</li>
+                     <li>falha</li>
+                     <li>cancelada</li>
+                     <li>não existe</li>
+                 </ul>
+             </td>
+        </tr>
+         <tr>
+             <td>
+                 duracao_segundos
+                 <span class="attribute">integer</span>
+             </td>
+             <td>
+                 Duração em segundos (inteiro) total da chamada desde o início do processamento
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 duracao
+                 <span class="attribute">integer</span>
+             </td>
+             <td>
+                 Duração total da chamada desde o início do processamento
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 duracao_cobrada_segundos
+                 <span class="attribute">integer</span>
+             </td>
+             <td>
+                 Duração em segundos para fins de cobrança
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 duracao_cobrada
+                 <span class="attribute">integer</span>
+             </td>
+             <td>
+                 Duração considerada para fins de cobrança
+             </td>
+         </tr>
+                 <tr>
+             <td>
+                 duracao_falada_segundos
+                 <span class="attribute">integer</span>
+             </td>
+             <td>
+                 Duração em segundos da chamada desde que o destino atendeu
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 duracao_falada
+                 <span class="attribute">integer</span>
+             </td>
+             <td>
+                 Duração da chamada desde que o destino atendeu
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 preco
+                 <span class="attribute">float</span>
+             </td>
+             <td>
+                 Valor cobrado pela chamada
+             </td>
+         </tr>
+    </tbody>
+</table>
+
 ## Criar um 
 
 > post audio
@@ -265,7 +443,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 <span class="attribute">array</span>
             </td>
             <td>
-                Retorna um array com objetos <a href="#objeto-chamada">chamada</a>
+                Retorna um array com objetos <a href="#objeto-chamada-did">chamada DID</a>
              </td>
         </tr>
     </tbody>
