@@ -862,7 +862,13 @@ curl -X GET --header 'Accept: application/json' \
 ```php
 <?php
 $client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
-$response = $client->chamada->relatorio($dataInicial, $dataFinal);
+$filtros = [
+    'origem'  => '4832830151',
+    'destino' => '4832830151',
+    'posicao' => 1,
+    'limite'  => 100
+];
+$response = $client->chamada->relatorio($dataInicial, $dataFinal, $filtros);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
@@ -974,6 +980,46 @@ Você pode consultar as Chamadas enviadas. Basta informar o período desejado pa
             </td>
             <td>
                 Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                origem
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número de telefone de origem para filtrar. Ex.: 4832830151
+            </td>
+        </tr>
+        <tr>
+            <td>
+                destino
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número de telefone de destino para filtrar. Ex.: 4832830151
+            </td>
+        </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
         </tr>
     </tbody>
