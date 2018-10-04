@@ -470,7 +470,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+                Quantidade de chamadas que retornou na consulta.
              </td>
         </tr>
         <tr>
