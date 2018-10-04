@@ -12,7 +12,7 @@
 
 > Exemplo
 
-## Listtar todos os 
+## Listar todos os 
 
 > Exemplo
 
@@ -90,10 +90,211 @@ public class Main {
 }
 ```
 
-Para autenticar sua conta você deve incluir na requisição HTTP o cabeçalho **Access-Token**, 
-colocando no valor o token disponibilizado na sua Dashboard da TotalVoice, tome sempre cuidado, não forneça seu token
-para ninguém e nem deixe ele exposto no código, seu token contém muitos privilégios. 
+## Relatório Chamadas Recebidas Ramal
 
-`Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO`
+> Definição
 
-As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação no cabeçalho HTTP transparentemente. 
+```text
+GET https://api.totalvoice.com.br/ramal/{id}/relatorio
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            'https://api.totalvoice.com.br/ramal/1/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$response = $client->central->relatorioChamadas($id, $dataInicial, $dataFinal, $filtros);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.central.relatorioChamadas(id, dataInicial, dataFinal, filtros)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.Ramal.RelatorioChamadas.Gerar(id, dataInicial, dataFinal, filtros)
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.ramal.get_relatorio_chamadas(id, data_inicio, data_fim, filtros)
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Central central = new Central(client);
+JSONObject response = central.relatorioChamadas(id, dataInicial, dataFinal, filtros);
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.ramal.relatorioChamadas(id, data_inicial, data_final, filtros)
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "total": 26,
+    "posicao": 0,
+    "limite": "100",
+    "relatorio": [
+      {
+        "id": 1,
+        "data_inicio": "2018-09-03T10:35:50-03:00",
+        "url_gravacao": "https://url-gravavao/rec/?id=1",
+        "numero_origem": "4811111111",
+        "status": "atendida",
+        "duracao_segundos": 193,
+        "duracao": "00:03:13",
+        "preco": "0.00",
+        "ramal": {
+          "id": 1,
+          "ramal": "4000",
+          "login": "teste@teste.com.br"
+        }
+      }
+    ]
+  }
+}
+```
+
+Você pode consultar as Chamadas recebidas por um DID. Basta informar o período desejado e o ID do DID para que a API retorne os dados.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID do DID que será consultado
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_inicio
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_fim
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                origem
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número de telefone de origem para filtrar. Ex.: 4832830151
+            </td>
+        </tr>
+        <tr>
+            <td>
+                destino
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número de telefone de destino para filtrar. Ex.: 4832830151
+            </td>
+        </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                total
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Retorna a quantidade total de registros
+             </td>
+        </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Quantidade de chamadas que retornou na consulta.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-chamada-did">chamada DID</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
