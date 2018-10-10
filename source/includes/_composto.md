@@ -725,6 +725,26 @@ Você pode consultar os composto enviados posteriormente. Basta informar o perí
                 Data final para consulta dos dados no relatório
             </td>
         </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr> 
     </tbody>
 </table>
 
