@@ -516,6 +516,90 @@ Um evento deste é disparado sempre que um DID (número de telefone) nosso de um
     </tbody>
 </table>
 
+## Valida Número
+
+```text
+PUT https://api.totalvoice.com.br/webhook/valida-numero
+```
+
+Este Webhook é disparado toda vez que o <a href="_valida_numero.md#valida-número">Valida Número</a> é processado. Um Objeto Valida Número é enviado para a url cadastrada.
+
+```json
+{
+    "id": 432,
+    "numero_destino": "554811111111",
+    "data_criacao": "2018-08-02T10:49:30-03:00",
+    "preco": 0.1,
+    "valido": true,
+    "finalizado": true
+}
+```
+
+#### Atributos
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro do valida número.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                numero_destino 
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número a ser validado.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_criacao
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data de criação do registro do valida número. Data e Hora no formato UTC.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco
+                <span class="attribute">float</span>
+            </td>
+            <td>
+               Valor cobrado no processo de validação do número.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                valido
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Resultado do teste de validação do número.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                finalizado
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Status do processo. 
+                <ul>
+                    <li>true - Finalizado </li>
+                    <li>false - Processo de validação em andamento </li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 <br/>
 <br/>
 <br/>
