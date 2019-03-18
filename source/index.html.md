@@ -32,6 +32,7 @@ includes:
   - verificacao
   - webphone
   - webhooks
+  - valida_numero
 
 search: true
 ---
