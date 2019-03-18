@@ -503,6 +503,23 @@
               </ul>
           </li>
            <li>
+            <a href="#valida-numero" class="toc-h1 toc-link" data-title="Valida Número">Valida Número</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#objeto-valida-numero" class="toc-h2 toc-link" data-title="Objeto Valida Número">Objeto Valida Número</a>
+                  </li>
+                  <li>
+                    <a href="#criar-um-valida-numero" class="toc-h2 toc-link" data-title="Criar um valida número">Criar um valida número</a>
+                  </li>
+                  <li>
+                    <a href="#buscar-valida-numero" class="toc-h2 toc-link" data-title="Buscar Valida Número">Buscar Valida Número</a>
+                  </li>
+                  <li>
+                    <a href="#relatorio-valida-numero" class="toc-h2 toc-link" data-title="Relatório Valida Número">Relatório Valida Número</a>
+                  </li>
+              </ul>
+          </li>
+           <li>
             <a href="#verificacao" class="toc-h1 toc-link" data-title="Verificação">Verificação</a>
               <ul class="toc-list-h2">
                   <li>
@@ -550,6 +567,9 @@
                   </li>
                   <li>
                     <a href="#status-de-did" class="toc-h2 toc-link" data-title="Status de DID">Status de DID</a>
+                  </li>
+                  <li>
+                    <a href="#webhook-valida-numero" class="toc-h2 toc-link" data-title="Webhook Valida Número">Webhook Valida Número</a>
                   </li>
               </ul>
           </li>
@@ -960,9 +980,8 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 </ul>
 <h2 id='objeto-audio'>Objeto Áudio</h2>
 <blockquote>
-<p><br></p>
-
-<p>JSON</p>
+<p><br>
+JSON</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
@@ -1471,6 +1490,27 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 Data final para consulta dos dados no relatório
             </td>
         </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr> 
+
     </tbody>
 </table>
 <h4 id='response-3'>Response</h4>
@@ -3800,6 +3840,26 @@ JSON DADOS do exemplo:</p>
                 Data final para consulta dos dados no relatório
             </td>
         </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr> 
     </tbody>
 </table>
 <h4 id='response-3'>Response</h4>
@@ -4348,6 +4408,26 @@ chamadas que ao serem atendidas, conectam-se à essa conferência.   </p>
                 Data final para consulta dos dados no relatório
             </td>
         </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr> 
     </tbody>
 </table>
 <h4 id='response-3'>Response</h4>
@@ -7239,6 +7319,26 @@ data de envio por exemplo.</p>
                 Data final para consulta dos dados no relatório
             </td>
         </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr> 
     </tbody>
 </table>
 <h4 id='response-3'>Response</h4>
@@ -7341,6 +7441,390 @@ para ninguém e nem deixe ele exposto no código, seu token contém muitos privi
 <p><code>Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO</code></p>
 
 <p>As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação no cabeçalho HTTP transparentemente. </p>
+<h1 id='valida-numero'>Valida Número</h1>
+<blockquote>
+<p>Valida Número Endpoint</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://api.totalvoice.com.br/valida-numero
+</code></pre>
+<p>A funcionalidade do valida número é checar se o número fornecido existe ou se é um número inválido.</p>
+<h2 id='objeto-valida-numero'>Objeto Valida Número</h2>
+<blockquote>
+<p>JSON</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:30-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"finalizado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Definição do objeto Valida Número</p>
+<h4 id='atributos'>Atributos</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro do valida número.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                numero_destino 
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número a ser validado.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_criacao
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data de criação do registro do valida número. Data e Hora no formato UTC.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco
+                <span class="attribute">float</span>
+            </td>
+            <td>
+               Valor cobrado no processo de validação do número.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                valido
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Resultado do teste de validação do número.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                finalizado
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Status do processo. 
+                <ul>
+                    <li>true - Finalizado </li>
+                    <li>false - Processo de validação em andamento </li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id='criar-um-valida-numero'>Criar um valida número</h2>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>POST https://api.totalvoice.com.br/valida_numero
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"554811111111"}'</span> <span class="se">\</span>
+             <span class="s1">'https://api.totalvoice.com.br/valida_numero'</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">valida_numero</span><span class="o">-&gt;</span><span class="na">criar</span><span class="p">(</span><span class="s1">'554811111111'</span><span class="p">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">validanumero</span><span class="p">.</span><span class="nx">criar</span><span class="p">(</span><span class="s2">"554811111111"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>  
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+ </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">ValidaNumero</span><span class="o">.</span><span class="n">Criar</span><span class="p">(</span><span class="s">"554811111111"</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">valida_numero</span><span class="o">.</span><span class="n">criar</span><span class="p">(</span><span class="s">"554811111111"</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+<span class="n">ValidaNumero</span> <span class="n">validaNumero</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ValidaNumero</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">validaNumero</span><span class="o">.</span><span class="na">validaNumero</span><span class="o">(</span><span class="s">"554811111111"</span><span class="o">)</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">valida_numero</span><span class="p">.</span><span class="nf">criar</span><span class="p">(</span><span class="s2">"554811111111"</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validação criada com sucessoo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4921</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Basta informar o número de destino a ser validado.</p>
+
+<p>Assim que um registro é criado, ele é imediatamente processado e ao término do processo, um <a href="#webhook-valida-numero">Webhook</a> é disparado para a url cadastrada enviando um objeto <a href="#objeto-valida-numero">valida número</a>.</p>
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                numero_destino
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Número que será validado.
+             </td>
+        </tr>
+    </tbody>
+</table>
+<h4 id='response'>Response</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Retorna o ID do registro valida-numero
+             </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id='buscar-valida-numero'>Buscar Valida Número</h2>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://api.totalvoice.com.br/valida_numero/{id}
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://api.totalvoice.com.br/valida_numero/123'</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">valida_numero</span><span class="o">-&gt;</span><span class="na">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">validaNumero</span><span class="p">.</span><span class="nx">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+ </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">ValidaNumero</span><span class="o">.</span><span class="n">Buscar</span><span class="p">(</span><span class="m">123</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">valida_numero</span><span class="o">.</span><span class="n">get_valida_numero</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+<span class="n">ValidaNumero</span> <span class="n">validaNumero</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ValidaNumero</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">validaNumero</span><span class="o">.</span><span class="na">buscar</span><span class="o">(</span><span class="mi">123</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"{{access-token}}"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">valida_numero</span><span class="p">.</span><span class="nf">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:30-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"finalizado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Após a criação de um valida número, você poderá realizar a busca do registro pelo seu ID.</p>
+<h5 id='request'>Request</h5>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                ID
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID do registo valida número para recuperar os dados
+             </td>
+        </tr>
+    </tbody>
+</table>
+<h5 id='response-2'>Response</h5>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o objeto <a href="#objeto-valida-numero">valida número</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id='relatorio-valida-numero'>Relatório Valida Número</h2>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://api.totalvoice.com.br/valida_numero/relatorio
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://api.totalvoice.com.br/valida_numero/realatorio?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">valida_numero</span><span class="o">-&gt;</span><span class="na">relatorio</span><span class="p">(</span><span class="nv">$dataInicial</span><span class="p">,</span> <span class="nv">$dataFinal</span><span class="p">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">validanumero</span><span class="p">.</span><span class="nx">relatorio</span><span class="p">(</span><span class="nx">data_inicial</span><span class="p">,</span> <span class="nx">data_final</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">ValidaNumero</span><span class="o">.</span><span class="n">Relatorio</span><span class="o">.</span><span class="n">Gerar</span><span class="p">(</span><span class="n">dataInicial</span><span class="p">,</span><span class="x"> </span><span class="n">dataFinal</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">valida_numero</span><span class="o">.</span><span class="n">get_relatorio</span><span class="p">(</span><span class="n">data_inicio</span><span class="p">,</span> <span class="n">data_fim</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+
+<span class="n">ValidaNumero</span> <span class="n">validaNumero</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ValidaNumeo</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">validaNumero</span><span class="o">.</span><span class="na">relatorio</span><span class="o">(</span><span class="n">dataInicial</span><span class="o">,</span> <span class="n">dataFinal</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">valida_numero</span><span class="p">.</span><span class="nf">relatorio</span><span class="p">(</span><span class="n">data_inicial</span><span class="p">,</span> <span class="n">data_final</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:30-03:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"finalizado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">433</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554822222222"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:30-03:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"finalizado"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Você pode consultar o relatório de valida números. Basta informar o período desejado para que a API retorne os dados.</p>
+<h4 id='request-2'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                data_inicio
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_fim
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr> 
+    </tbody>
+</table>
+<h4 id='response-3'>Response</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-valida-numero">valida número</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
 <h1 id='verificacao'>Verificação</h1><h2 id='criar-um'>Criar um</h2>
 <blockquote>
 <p>post audio</p>
@@ -8057,6 +8541,80 @@ uma chamada recebida por um DID ou uma chamada realizada pela API.</p>
             </td>
             <td>
                 Caso a ligação para este DID caia em algum Ramal, este campo vem preenchido com <a href="#objeto-perna-de-ligacao">informaões da perna</a> do Ramal.
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2 id='webhook-valida-numero'>Webhook Valida Número</h2><pre class="highlight plaintext"><code>PUT https://api.totalvoice.com.br/webhook/valida-numero
+</code></pre>
+<p>Este Webhook é disparado toda vez que o <a href="#valida-numero">Valida Número</a> é processado. Um Objeto Valida Número é enviado para a url cadastrada.</p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:30-03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"finalizado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h4 id='atributos-5'>Atributos</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro do valida número.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                numero_destino 
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número a ser validado.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_criacao
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data de criação do registro do valida número. Data e Hora no formato UTC.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco
+                <span class="attribute">float</span>
+            </td>
+            <td>
+               Valor cobrado no processo de validação do número.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                valido
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Resultado do teste de validação do número.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                finalizado
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Status do processo. 
+                <ul>
+                    <li>true - Finalizado </li>
+                    <li>false - Processo de validação em andamento </li>
+                </ul>
             </td>
         </tr>
     </tbody>
