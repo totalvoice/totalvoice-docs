@@ -29,10 +29,10 @@ includes:
   - minha_conta
   - sms
   - tts
+  - valida_numero
   - verificacao
   - webphone
   - webhooks
-  - valida_numero
 
 search: true
 ---

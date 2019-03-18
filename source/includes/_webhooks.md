@@ -516,13 +516,13 @@ Um evento deste é disparado sempre que um DID (número de telefone) nosso de um
     </tbody>
 </table>
 
-## Valida Número
+## Webhook Valida Número
 
 ```text
 PUT https://api.totalvoice.com.br/webhook/valida-numero
 ```
 
-Este Webhook é disparado toda vez que o <a href="_valida_numero.md#valida-número">Valida Número</a> é processado. Um Objeto Valida Número é enviado para a url cadastrada.
+Este Webhook é disparado toda vez que o <a href="#valida-numero">Valida Número</a> é processado. Um Objeto Valida Número é enviado para a url cadastrada.
 
 ```json
 {

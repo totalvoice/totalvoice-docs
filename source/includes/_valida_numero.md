@@ -161,7 +161,7 @@ puts @client.valida_numero.criar("554811111111")
 ```
 Basta informar o número de destino a ser validado.
 
-Assim que um registro é criado, ele é imediatamente processado e ao término do processo, um <a href="_webhooks.md#valida-número">Webhook</a> é disparado para a url cadastrada enviando um objeto <a href="#objeto-valida-número">valida número</a>.
+Assim que um registro é criado, ele é imediatamente processado e ao término do processo, um <a href="#webhook-valida-numero">Webhook</a> é disparado para a url cadastrada enviando um objeto <a href="#objeto-valida-numero">valida número</a>.
 
 <table class="table-parameters">
     <tbody>
@@ -293,7 +293,7 @@ Após a criação de um valida número, você poderá realizar a busca do regist
                 <span class="attribute">object</span>
             </td>
             <td>
-                Retorna o objeto <a href="#objeto-valida-número">valida número</a>
+                Retorna o objeto <a href="#objeto-valida-numero">valida número</a>
              </td>
         </tr>
     </tbody>
@@ -442,7 +442,7 @@ Você pode consultar o relatório de valida números. Basta informar o período 
                 <span class="attribute">array</span>
             </td>
             <td>
-                Retorna um array com objetos <a href="#objeto-valida-número">valida número</a>
+                Retorna um array com objetos <a href="#objeto-valida-numero">valida número</a>
              </td>
         </tr>
     </tbody>
