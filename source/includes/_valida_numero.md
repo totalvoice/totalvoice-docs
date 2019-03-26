@@ -68,6 +68,15 @@ Definição do objeto Valida Número
         </tr>
         <tr>
             <td>
+                status
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Status da chamada realizada.
+            </td>
+        </tr>
+        <tr>
+            <td>
                 valido
                 <span class="attribute">boolean</span>
             </td>
