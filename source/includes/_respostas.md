@@ -1,6 +1,6 @@
 # Respostas da API
 
-> Exemplo JSON de retorno
+> <b>Exemplo JSON de retorno</b>
 
 ```json
 {
@@ -71,8 +71,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
 
 ## Códigos HTTP
 
->Códigos HTTP utilizados
-
+> <b>Códigos HTTP utilizados</b>
 > <table>
     <tr>
         <td>200</td>
@@ -99,6 +98,10 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
         <td>Algum dos parâmetros enviados está inválido</td>
     </tr>
     <tr>
+        <td>429</td>
+        <td>Limite de Requisições por segundo excedido</td>
+    </tr>
+    <tr>
         <td>500</td>
         <td>Alguma coisa aconteceu internamente.</td>
     </tr>
@@ -115,7 +118,7 @@ sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, t
 
 ## Códigos de Motivos
 
- >Códigos de Motivos
+ > <b>Códigos de Motivos</b>
  
  > <table>
      <tr>
@@ -144,7 +147,7 @@ sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, t
      </tr>
      <tr>
          <td>30</td>
-         <td>Esta funcionalidade ainda não foi implementada. (Avise-nos)</td>
+         <td>Esta funcionalidade ainda não foi implementada. (Entre em contato)</td>
      </tr>
      <tr>
          <td>40</td>
@@ -184,7 +187,7 @@ sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, t
 
 ## Status para Chamada
 
- >Status para Chamada
+ > <b>Status para Chamada</b>
  
  > <table>
      <tr>
@@ -201,7 +204,7 @@ sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, t
      </tr>
      <tr>
          <td>congestionado</td>
-         <td>Houve algum problema nas linhas de conexões de saída de ligação. (entrar em contato para avisar)</td>
+         <td>Houve algum problema nas linhas de conexões. (Entre em contato)</td>
      </tr>
      <tr>
          <td>falha</td>
@@ -217,12 +220,14 @@ sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, t
      </tr>
  </table>
  
-FALTA DESCRICAO
+Ao fim de toda ligação a chamada tera um status, ao lado você tem uma lista dos possíveis status.
+<br>
+Caso encontre um status diferente dos mapeados, favor entrar em [contato](#introducao).
 
 
 ## Status Perna de Ligação
 
- >Status Perna de Ligação
+ > <b>Status Perna de Ligação</b>
  
  > <table>
      <tr>
@@ -247,6 +252,8 @@ FALTA DESCRICAO
      </tr>
  </table>
  
+ Este caso geralmente se refere as ligações de duas pernas, onde primeiramente é disparada um chamada para perna A (origem) e quando esta perna atende é disparada a ligação para perna B (destino).
+
  Este parâmetro é retornado nos objetos que representam algum lado (perna) de uma ligação que foi realizada, 
  por exemplo em um Objeto de um Áudio haverá um único atributo deste que representa
  o status do número que o áudio foi enviado, já em uma Chamada você terá um status para cada uma das pernas dela.

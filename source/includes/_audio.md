@@ -1,12 +1,12 @@
 # Áudio
 
-> Audio Endpoint
+> <b>Audio Endpoint</b>
 
 ```text
-https://api.totalvoice.com.br/audio
+https://api2.totalvoice.com.br/audio
 ```
 
-A funcionalidade de **Envio de Aúdio**, permite que você envie mensagens de voz (audio) / torpedos de voz para determinados números. 
+A funcionalidade de **Envio de Aúdio**, permite que você envie um torpedo de voz ou mensagens de voz do tipo audio determinados números. 
 Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos 
 devem estar disponíveis em uma URL pública. Você poderá enviar algumas opções adicionais, 
 tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou colocar um número bina que aparecerá no momento da ligação.
@@ -21,28 +21,28 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 
 ## Objeto Áudio
 
-> <br>
 > JSON
 
 ```json 
 {
-    "id": 432,
-    "numero_destino": "4832830151",
-    "data_criacao": "2016-03-27T15:12:44+03:00",
-    "data_inicio": "2016-03-27T15:12:49+03:00",
-    "tipo": "fixo",
+    "id": 12345678,
+    "numero_destino": "48912341234",
+    "data_criacao": "2019-05-22T09:18:44.000-03:00",
+    "data_inicio": "2019-05-22T09:18:44.000-03:00",
+    "tipo": "movel",
     "status": "atendida",
-    "duracao_segundos": 45,
-    "duracao": "00:00:45",
+    "duracao_segundos": 22,
+    "duracao": "00:00:22",
     "duracao_cobrada_segundos": 60,
-    "duracao_cobrada": "00:00:60",
-    "duracao_falada_segundos": 35,
-    "duracao_falada": "00:00:35",
-    "preco": 0.12,
-    "url_audio": "http://fooooo.bar/audio.mp3",
+    "duracao_cobrada": "00:01:00",
+    "duracao_falada_segundos": 2,
+    "duracao_falada": "00:00:02",
+    "preco": 0.36,
+    "url_audio": "https://sua.url.audio/files/audios/audio.mp3",
     "resposta_usuario": true,
-    "resposta": "8",
-    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
+    "resposta": "1",
+    "motivo_desconexao": null,
+    "url_gravacao": "https://api2.totalvoice.com.br/rec/123456789"
 }
 ```
 
@@ -76,7 +76,7 @@ Definição do objeto Áudio
                 <span class="attribute">datetime</span>
             </td>
             <td>
-                Data e hora que foi criado o registro
+                Data e hora que foi criado o registro.
             </td>
         </tr>
         <tr>
@@ -85,7 +85,7 @@ Definição do objeto Áudio
                 <span class="attribute">datetime</span>
             </td>
             <td>
-                Data e hora que foi iniciado o processamento do áudio
+                Data e hora que foi iniciado o processamento do áudio.
             </td>
         </tr>
         <tr>
@@ -94,7 +94,7 @@ Definição do objeto Áudio
                 <span class="attribute">string</span>
             </td>
             <td>
-                Tipo de telefone: fixo, móvel ou ramal
+                Tipo de telefone: fixo, móvel ou ramal.
             </td>
         </tr>
         <tr>
@@ -103,7 +103,7 @@ Definição do objeto Áudio
                 <span class="attribute">string</span>
             </td>
             <td>
-                Status do registro
+                Status do registro.
             </td>
         </tr>
         <tr>
@@ -112,7 +112,7 @@ Definição do objeto Áudio
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Duração em segundos (inteiro) total da chamada desde o início do processamento
+                Duração em total em <i>segundos</i>, da chamada, desde o início do processamento.
             </td>
         </tr>
         <tr>
@@ -130,7 +130,7 @@ Definição do objeto Áudio
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Duração em segundos para fins de cobrança
+                Duração em <i>segundos</i> para fins de cobrança.
             </td>
         </tr>
         <tr>
@@ -139,7 +139,7 @@ Definição do objeto Áudio
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Duração considerada para fins de cobrança
+                Duração considerada para fins de cobrança.
             </td>
         </tr>
                 <tr>
@@ -148,7 +148,7 @@ Definição do objeto Áudio
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Duração em segundos da chamada desde que o destino atendeu
+                Duração em <i>segundos</i> da chamada desde que o destino atendeu.
             </td>
         </tr>
         <tr>
@@ -157,7 +157,7 @@ Definição do objeto Áudio
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Duração da chamada desde que o destino atendeu
+                Duração da chamada desde que o destino atendeu.
             </td>
         </tr>
         <tr>
@@ -166,7 +166,7 @@ Definição do objeto Áudio
                 <span class="attribute">float</span>
             </td>
             <td>
-                Valor cobrado pela chamada
+                Valor cobrado pela chamada.
             </td>
         </tr>
         <tr>
@@ -175,7 +175,7 @@ Definição do objeto Áudio
                 <span class="attribute">string</span>
             </td>
             <td>
-                URL do Áudio enviado para a chamada
+                URL do Áudio enviado para a chamada.
             </td>
         </tr>
         <tr>
@@ -184,7 +184,7 @@ Definição do objeto Áudio
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Aguarda a resposta do usuário: sim ou não
+                Valor enviado identendificando se aceita a resposta do usuário.¹
             </td>
         </tr>
         <tr>
@@ -193,7 +193,7 @@ Definição do objeto Áudio
                 <span class="attribute">string</span>
             </td>
             <td>
-                Quando o usuário executa alguma ação no teclado do dispositivo, o valor será exibido neste campo (DTMF). 
+                Se você enviou resposta_usuario = true, quando o usuário executa alguma ação no teclado númerico do dispositivo, o valor será exibido neste campo (DTMF).¹
             </td>
         </tr>
         <tr>
@@ -202,18 +202,20 @@ Definição do objeto Áudio
                 <span class="attribute">string</span>
             </td>
             <td>
-                Quando enviado a opção Gravar Áudio = true, este campo disponibilizará uma URL contendo o áudio da gravação da ligação. 
+                Quando enviado a opção Gravar Áudio = true, este campo disponibilizará uma URL contendo o áudio da gravação da ligação.
             </td>
         </tr>
     </tbody>
 </table>
+<br>
+¹ Após o usuário digitar algo no teclado númerico a ligação sera derrubada.
 
 ## Criar um áudio
 
 > Definição
 
 ```text
-POST https://api.totalvoice.com.br/audio
+POST https://api2.totalvoice.com.br/audio
 ```
 
 > Request
@@ -221,20 +223,23 @@ POST https://api.totalvoice.com.br/audio
 ```shell--curl
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
-             --header 'Access-Token: {{access-token}}' \
-             -d '{"numero_destino":"4811111111","url_audio":"http://foo.bar/audio.mp3"}' \
-             'https://api.totalvoice.com.br/audio'
+             --header 'Access-Token: seu-token' \
+             -d '{"numero_destino":"4811111111","url_audio":"http://sua.url.audio/audio.mp3"}' \
+             'https://api2.totalvoice.com.br/audio'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
-$response = $client->audio->enviar('4811111111', 'http://foo.bar/audio.mp3');
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+$client = new TotalVoiceClient('seu-token');
+$response = $client->audio->enviar('4811111111', 'http://sua.url.audio/audio.mp3');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
-client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
     .then(function(data) {
         console.log(data);
     })
@@ -243,25 +248,25 @@ client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
- response, err := client.Audio.Enviar("4811111111", "http://foo.bar/audio.mp3", false, "")
+client := totalvoice.NewTotalVoiceClient("seu-token")
+ response, err := client.Audio.Enviar("4811111111", "http://sua.url.audio/audio.mp3", false, "")
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+response = client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Audio audio = new Audio(client);
 
-JSONObject response = audio.enviar("4811111111", "http://foo.bar/audio.mp3");
+JSONObject response = audio.enviar("4811111111", "http://sua.url.audio/audio.mp3");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
-puts @client.audio.enviar("4811111111", "http://foo.bar/audio.mp3")
+@client = TotalVoice::API.new("seu-token")
+puts @client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
 ```
 > Response
 
@@ -297,7 +302,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                URL do audio, exemplo: http://foo.bar/audio.mp3
+                URL do audio, exemplo: http://sua.url.audio/audio.mp3
             </td>
         </tr>
         <tr>
@@ -327,6 +332,15 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151
             </td>
         </tr>
+        <tr>
+            <td>
+                detecta_caixa
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Caso identificado caixa, a ligação sera durrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -351,7 +365,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/audio/{id}
+GET https://api2.totalvoice.com.br/audio/{id}
 ```
 
 > Request
@@ -359,16 +373,19 @@ GET https://api.totalvoice.com.br/audio/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/audio/1'
+            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/audio/ID-Audio'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
-$response = $client->audio->buscaAudio(123);
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+$client = new TotalVoiceClient('seu-token');
+$response = $client->audio->buscaAudio(id-audio);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.audio.buscar(123)
     .then(function(data) {
@@ -379,15 +396,15 @@ client.audio.buscar(123)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Audio.Buscar(123)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.audio.get_by_id(123)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Audio audio = new Audio(client);
 
 JSONObject response = audio.buscar(123);
@@ -396,7 +413,7 @@ JSONObject response = audio.buscar(123);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("{{access-token}}")
+@client = TotalVoice::API.new("seu-token")
 puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
 ```
 > Response
@@ -467,24 +484,24 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/audio/relatorio
+GET https://api2.totalvoice.com.br/audio/relatorio
 ```
 
 > Request
 
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' \
-            'https://api.totalvoice.com.br/audio/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            --header 'Access-Token: seu-token' \
+            'https://api2.totalvoice.com.br/audio/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->audio->relatorio($dataInicial, $dataFinal);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.audio.relatorio(data_inicial, data_final)
     .then(function(data) {
@@ -495,15 +512,15 @@ client.audio.relatorio(data_inicial, data_final)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Audio.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.audio.get_relatorio(data_inicio, data_fim)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Audio audio = new Audio(client);
 
 JSONObject response = audio.relatorio(dataInicial, dataFinal);
@@ -512,7 +529,7 @@ JSONObject response = audio.relatorio(dataInicial, dataFinal);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("{{access-token}}")
+@client = TotalVoice::API.new("seu-token")
 puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
 ```
 > Response

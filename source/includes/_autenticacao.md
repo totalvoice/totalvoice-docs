@@ -1,6 +1,6 @@
 # Autenticação
 
-> Exemplo de autenticação
+> <b>Exemplo de autenticação</b>
 
 ```shell--curl
 $ curl https://api.totalvoice.com.br/sms \
@@ -30,7 +30,7 @@ client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
 TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
 ```
 
-> Não esqueça de alterar o Token de exemplo pelo seu Token.
+> <b>IMPORTANTE:</b> Não esqueça de alterar o Token de exemplo pelo seu Token.
 
 A TotalVoice utiliza um Token de Acesso para realizar a autenticação de sua conta, você deve incluir o Access-Token 
 na requisição HTTP através do cabeçalho, ou pela *Query String*. 
