@@ -3,7 +3,7 @@
 > Chamada Endpoint
 
 ```text
-https://api.totalvoice.com.br/chamada
+https://api2.totalvoice.com.br/chamada
 ```
 
 A funcionalidade **Chamada** permite que você crie chamadas perna A e perna B, podendo gravar as ligações, agendar, binar o seu próprio número.
@@ -371,7 +371,7 @@ a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que v
 > Definição
 
 ```text
-POST https://api.totalvoice.com.br/chamada
+POST https://api2.totalvoice.com.br/chamada
 ```
 
 > Request
@@ -379,19 +379,19 @@ POST https://api.totalvoice.com.br/chamada
 ```shell--curl
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
-             --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+             --header 'Access-Token: seu-token' \
              -d '{"numero_origem":"4811111111","numero_destino":"4811111112"}' \
-             'https://api.totalvoice.com.br/chamada'
+             'https://api2.totalvoice.com.br/chamada'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $response = $client->chamada->ligar('4811111111', '4811111112');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.chamada.ligar("4811111111", "4811111112")
     .then(function(data) {
@@ -402,15 +402,17 @@ client.chamada.ligar("4811111111", "4811111112")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Chamada.Criar("4811111111", "4811111112", nil)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
 response = client.chamada.enviar("4811111111", "4811111112")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
 
 JSONObject response = chamada.ligar("4811111111", "4811111112");
@@ -419,7 +421,7 @@ JSONObject response = chamada.ligar("4811111111", "4811111112");
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.chamada.ligar("4811111111", "4811111112")
 ```
 > Response
@@ -527,7 +529,7 @@ Basta informar o número de origem e destino.
 > Definição
 
 ```text
-POST https://api.totalvoice.com.br/chamada/{id}
+POST https://api2.totalvoice.com.br/chamada/{id}
 ```
 
 > Request
@@ -535,18 +537,18 @@ POST https://api.totalvoice.com.br/chamada/{id}
 ```shell--curl
 curl -X DELETE --header 'Content-Type: application/json' \
                --header 'Accept: application/json' \
-               --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
-               'https://api.totalvoice.com.br/chamada/123'
+               --header 'Access-Token: seu-token' \
+               'https://api2.totalvoice.com.br/chamada/123'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $response = $client->chamada->encerrar(123);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.chamada.encerrar(123)
     .then(function(data) {
@@ -557,15 +559,17 @@ client.chamada.encerrar(123)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Chamada.Encerrar(123)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.chamada.deletar(123)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.chamada.deletar("123")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
 
 JSONObject response = chamada.encerrar(123);
@@ -574,7 +578,7 @@ JSONObject response = chamada.encerrar(123);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.chamada.encerrar("4811111111", "http://foo.bar/audio.mp3")
 ```
 > Response
@@ -611,7 +615,7 @@ Basta informar o id da chamada ativa
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/chamada/{id}
+GET https://api2.totalvoice.com.br/chamada/{id}
 ```
  
 > Request
@@ -619,17 +623,17 @@ GET https://api.totalvoice.com.br/chamada/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' 'https://api.totalvoice.com.br/chamada/123'
+            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/chamada/123'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $response = $client->chamada->buscaChamada(123);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.chamada.buscar(123)
     .then(function(data) {
@@ -640,15 +644,17 @@ client.chamada.buscar(123)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Chamada.Buscar(123)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.chamada.get_by_id(123)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.chamada.get_by_id("123")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
 
 JSONObject response = chamada.buscar(123);
@@ -657,7 +663,7 @@ JSONObject response = chamada.buscar(123);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.chamada.buscar(123)
 ```
 > Response
@@ -749,7 +755,7 @@ Após o envio de chamadas, você poderá realizar a busca do registro pelo seu I
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/chamada/{id}/gravacao
+GET https://api2.totalvoice.com.br/chamada/{id}/gravacao
 ```
 
 > Request
@@ -757,17 +763,17 @@ GET https://api.totalvoice.com.br/chamada/{id}/gravacao
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' 'https://api.totalvoice.com.br/chamada/1/gravacao'
+            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/chamada/1/gravacao'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $response = $client->chamada->downloadGravacao(123);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.chamada.downloadGravacao(123)
     .then(function(data) {
@@ -778,15 +784,17 @@ client.chamada.downloadGravacao(123)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Chamada.DownloadGravacao(123)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.chamada.get_gravacao_chamada(123)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.chamada.get_gravacao_chamada("123")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
 
 JSONObject response = chamada.downloadGravacao(123);
@@ -795,7 +803,7 @@ JSONObject response = chamada.downloadGravacao(123);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.chamada.download_gravacao(123)
 ```
 > Response
@@ -849,24 +857,24 @@ Você poderá realizar o download do áudio da chamada. Esta funcionalidade esta
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/chamada/relatorio
+GET https://api2.totalvoice.com.br/chamada/relatorio
 ```
 
 > Request
 
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
-            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
-            'https://api.totalvoice.com.br/chamada/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            --header 'Access-Token: seu-token' \
+            'https://api2.totalvoice.com.br/chamada/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->chamada->relatorio($dataInicial, $dataFinal, $filtros);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.chamada.relatorio(dataInicial, dataFinal, filtros)
     .then(function(data) {
@@ -877,15 +885,17 @@ client.chamada.relatorio(dataInicial, dataFinal, filtros)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Chamada.Relatorio.Gerar(dataInicial, dataFinal, filtros)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.chamada.get_relatorio(data_inicio, data_fim, filtros)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.chamada.get_relatorio("2017-12-08T11:00:32-02:00", "2017-12-08T11:00:32-02:00")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
 JSONObject response = chamada.relatorio(dataInicial, dataFinal, filtros);
 ```
@@ -893,7 +903,7 @@ JSONObject response = chamada.relatorio(dataInicial, dataFinal, filtros);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.chamada.relatorio(data_inicial, data_final, filtros)
 ```
 > Response
@@ -1045,25 +1055,25 @@ Você pode consultar as Chamadas enviadas. Basta informar o período desejado pa
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/chamada/{id}/escuta
+GET https://api2.totalvoice.com.br/chamada/{id}/escuta
 ```
 
 > Request
 
 ```shell--curl
 curl -X POST --header 'Accept: application/json' \
-             --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+             --header 'Access-Token: seu-token' \
              -d '{"numero":"4811111111", "modo": 1}' \
-             'https://api.totalvoice.com.br/chamada/123/escuta'
+             'https://api2.totalvoice.com.br/chamada/123/escuta'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->chamada->escutar(123, '4811111111', 1);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.chamada.escutar(123, "4811111111", 1)
     .then(function(data) {
@@ -1074,15 +1084,17 @@ client.chamada.escutar(123, "4811111111", 1)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Chamada.Escutar(123, "4811111111", 1)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.chamada.escuta_chamada(123, '4811111111', 1)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.chamada.escuta_chamada("123", '4811111111',"1")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
 JSONObject response = chamada.escutar(123, "4811111111", 1);
 ```
@@ -1090,7 +1102,7 @@ JSONObject response = chamada.escutar(123, "4811111111", 1);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.chamada.escutar(123, "4811111111", 1)
 ```
 > Response
@@ -1182,25 +1194,25 @@ Você pode realizar uma escuta para uma chamada que está **ativa** (Beta).
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/chamada/{id}/transfer
+GET https://api2.totalvoice.com.br/chamada/{id}/transfer
 ```
 
 > Request
 
 ```shell--curl
 curl -X POST --header 'Accept: application/json' \
-            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            --header 'Access-Token: seu-token' \
             -d '{"numero":"4811111111", "perna": "destino"}' \
-            'https://api.totalvoice.com.br/chamada/123/transfer'
+            'https://api2.totalvoice.com.br/chamada/123/transfer'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->chamada->transferir(123, '4811111111', 'destino');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.chamada.transferir(123, "4811111111", "destino")
     .then(function(data) {
@@ -1211,15 +1223,17 @@ client.chamada.transferir(123, "4811111111", "destino")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Chamada.Transferir(123, "4811111111", "destino")
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.chamada.transferir(123, "4811111111", "destino")
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.chamada.transferir("123", "4811111111", "destino")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
 JSONObject response = chamada.transferir(123, "4811111111", "destino");
 ```
@@ -1227,7 +1241,7 @@ JSONObject response = chamada.transferir(123, "4811111111", "destino");
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.chamada.transferir(123, "4811111111", "destino")
 ```
 > Response
@@ -1318,25 +1332,25 @@ Transfere a origem ou destino para outro telefone e desconecta a outra perna (Be
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/chamada/{id}/avaliar
+GET https://api2.totalvoice.com.br/chamada/{id}/avaliar
 ```
 
 > Request
 
 ```shell--curl
 curl -X POST --header 'Accept: application/json' \
-            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            --header 'Access-Token: seu-token' \
             -d '{"numero":"5", "comentario": "muito boa"}' \
-            'https://api.totalvoice.com.br/chamada/123/avaliar'
+            'https://api2.totalvoice.com.br/chamada/123/avaliar'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->chamada->avaliar(123, '5', 'muito boa');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.chamada.avaliar(123, "5", "muito boa")
     .then(function(data) {
@@ -1347,15 +1361,17 @@ client.chamada.avaliar(123, "5", "muito boa")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Chamada.Avaliar(123, "5", "muito boa")
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.chamada.avaliar(123, "5", "muito boa")
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.chamada.avaliar("123", "5", "muito boa")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
 JSONObject response = chamada.avaliar(123, "5", "muito boa");
 ```
@@ -1363,7 +1379,7 @@ JSONObject response = chamada.avaliar(123, "5", "muito boa");
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.chamada.avaliar(123, "5", "muito boa")
 ```
 > Response

@@ -3,7 +3,7 @@
 > SMS Endpoint
 
 ```text
-https://api.totalvoice.com.br/sms
+https://api2.totalvoice.com.br/sms
 ```
 
 O **SMS** permite que você envie mensagens de texto pela nossa API. Você precisa informar
@@ -199,7 +199,7 @@ Definição do objeto Resposta SMS
 > Definição
 
 ```text
-POST https://api.totalvoice.com.br/sms
+POST https://api2.totalvoice.com.br/sms
 ```
 
 > Request
@@ -209,16 +209,16 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
              -d '{"numero_destino":"48111111111","mensagem":"Ola tudo bem?"}' \
-             'https://api.totalvoice.com.br/sms'
+             'https://api2.totalvoice.com.br/sms'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->sms->enviar('48111111111', 'Ola tudo bem?');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.sms.enviar("48111111111", "Ola tudo bem?")
     .then(function(data) {
@@ -229,15 +229,17 @@ client.sms.enviar("48111111111", "Ola tudo bem?")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.SMS.Enviar("4811111111", "Ola tudo bem?", false, false, nil)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
 response = client.sms.enviar("48111111111", "Ola tudo bem?")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 
 Sms sms = new Sms(client);
 JSONObject response = sms.enviar("48111111111", "Ola tudo bem?");
@@ -246,7 +248,7 @@ JSONObject response = sms.enviar("48111111111", "Ola tudo bem?");
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.sms.enviar("48111111111", "Ola tudo bem?")
 ```
 > Response
@@ -363,7 +365,7 @@ Para o envio de SMS, é necessário informar um número móvel válido e uma men
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/sms/{id}
+GET https://api2.totalvoice.com.br/sms/{id}
 ```
 
 > Request
@@ -371,16 +373,16 @@ GET https://api.totalvoice.com.br/sms/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/sms/1'
+            --header 'Access-Token: {{access-token}}' 'https://api2.totalvoice.com.br/sms/1'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->sms->buscaSms(123);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.sms.buscar(123)
     .then(function(data) {
@@ -391,15 +393,17 @@ client.sms.buscar(123)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.SMS.Buscar(123)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.sms.get_by_id(123)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.sms.get_by_id("123")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 
 Sms sms = new Sms(client);
 JSONObject response = sms.buscar(123);
@@ -408,7 +412,7 @@ JSONObject response = sms.buscar(123);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.sms.buscar(123)
 ```
 
@@ -416,28 +420,23 @@ puts @client.sms.buscar(123)
 
 ```json
 {
-  "status": 200,
-  "sucesso": true,
-  "motivo": 0,
-  "mensagem": "dados retornados com sucesso",
-  "dados": {
-    "id": 432,
-    "numero_destino": "4832830151",
-    "data_criacao": "2016-03-27T15:12:44+03:00",
-    "data_inicio": "2016-03-27T15:12:49+03:00",
-    "tipo": "fixo",
-    "status": "atendida",
-    "duracao_segundos": 45,
-    "duracao": "00:00:45",
-    "duracao_cobrada_segundos": 60,
-    "duracao_cobrada": "00:00:60",
-    "duracao_falada_segundos": 35,
-    "duracao_falada": "00:00:35",
-    "preco": 0.12,
-    "url_audio": "http://fooooo.bar/audio.mp3",
-    "resposta_usuario": true,
-    "resposta": "8"
-  }
+   "status":200,
+   "sucesso":true,
+   "motivo":0,
+   "mensagem":"dados retornados com sucesso",
+   "dados":{  
+      "id":25536757,
+      "numero_destino":"48933445566",
+      "data_criacao":"2019-05-29T17:49:00.000-03:00",
+      "mensagem":"Ola tudo bem?",
+      "preco":0.045,
+      "status_envio":"enviada",
+      "data_status":null,
+      "resposta_usuario":false,
+      "respostas":[  
+
+      ],
+      "tags":null
 }
 ```
 
@@ -510,7 +509,7 @@ Após o envio de mensagens de SMS, você poderá realizar a busca do registro pe
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/sms/relatorio
+GET https://api2.totalvoice.com.br/sms/relatorio
 ```
 
 > Request
@@ -518,16 +517,16 @@ GET https://api.totalvoice.com.br/sms/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: {{access-token}}' \
-            'https://api.totalvoice.com.br/sms/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://api2.totalvoice.com.br/sms/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->sms->relatorio($dataInicial, $dataFinal);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.sms.relatorio(data_inicial, data_final)
     .then(function(data) {
@@ -538,15 +537,17 @@ client.sms.relatorio(data_inicial, data_final)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.SMS.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.sms.get_relatorio(data_inicio, data_fim)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.sms.get_relatorio("2017-12-08T11:00:32-02:00", "2017-12-08T11:00:32-02:00")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 
 Sms sms = new Sms(client);
 JSONObject response = sms.relatorio(dataInicial, dataFinal);
@@ -555,7 +556,7 @@ JSONObject response = sms.relatorio(dataInicial, dataFinal);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.sms.relatorio(data_inicial, data_final)
 ```
 > Response

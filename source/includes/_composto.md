@@ -3,7 +3,7 @@
 > Composto Endpoint
 
 ```text
-https://api.totalvoice.com.br/composto
+https://api2.totalvoice.com.br/composto
 ```
 
 A funcionalidade de **Envio de Composto**, permite que você envie mensagens de voz por telefone misturando gravações de áudio MP3 com TTS e também realize algumas outras funções de central telefônica como coletar DTMF e transferir.
@@ -312,7 +312,7 @@ Definição do objeto Composto
 > Definição
 
 ```text
-POST https://api.totalvoice.com.br/composto
+POST https://api2.totalvoice.com.br/composto
 ```
 
 > Request
@@ -320,15 +320,15 @@ POST https://api.totalvoice.com.br/composto
 ```shell--curl
 curl -X POST --header 'Content-Type: application/json' \
 			 --header 'Accept: application/json' \
-			 --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+			 --header 'Access-Token: seu-token' \
 			 -d '{"numero_destino":"1132830151","dados":[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}],"bina":"4832830151","gravar_composto":false,"tags":"clienteX"}' \
-			 'https://api.totalvoice.com.br/composto'
+			 'https://api2.totalvoice.com.br/composto'
 ```
 
 
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $dados	= '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]';
 $bina	= '11987654321';
@@ -340,7 +340,7 @@ $response = $client->composto->enviar('NUMERO-DESTINO', $dados, $bina, $tags);
 
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
     .then(function(data) {
@@ -351,15 +351,42 @@ client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+dados =[  
+   {  
+      "acao":"composto",
+      "acao_dados":{  
+         "url_composto":"https://instaud.io/_/3K3k.mp3"
+      }
+   },
+   {  
+      "acao":"tts",
+      "acao_dados":{  
+         "mensagem":"lendo este texto",
+         "velocidade":"-4",
+         "resposta_usuario":"true",
+         "tipo_voz":"br-Ricardo"
+      }
+   },
+   {  
+      "acao":"transferir",
+      "opcao":1,
+      "acao_dados":{  
+         "numero_telefone":"4832830151",
+         "bina":"4832830152"
+      }
+   }
+]
+response = client.composto.enviar("NUMERO-DESTINO", dados ,'BINA' , 'TAGS')
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Composto composto = new Composto(client);
 
 JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags');
@@ -369,7 +396,7 @@ JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","ac
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
 ```
 > Response
@@ -474,7 +501,7 @@ Basta informar o número de destino válido e um JSON com o composto
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/composto/{id}
+GET https://api2.totalvoice.com.br/composto/{id}
 ```
 
 > Request
@@ -482,17 +509,17 @@ GET https://api.totalvoice.com.br/composto/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/composto/1'
+            --header 'Access-Token: {{access-token}}' 'https://api2.totalvoice.com.br/composto/1'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $response = $client->composto->buscaCompost(123);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.composto.buscar(123)
     .then(function(data) {
@@ -503,15 +530,17 @@ client.composto.buscar(123)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Composo.Buscar(123)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.composto.get_by_id(123)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.composto.get_by_id("123")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Composto composto = new Composto(client);
 
 JSONObject response = composto.buscar(123);
@@ -593,7 +622,7 @@ Após o envio de mensagens composto, você poderá realizar a busca do registro 
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/composto/relatorio
+GET https://api2.totalvoice.com.br/composto/relatorio
 ```
 
 > Request
@@ -601,17 +630,17 @@ GET https://api.totalvoice.com.br/composto/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: {{access-token}}' \
-            'https://api.totalvoice.com.br/composto/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://api2.totalvoice.com.br/composto/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $response = $client->composto->relatorio($dataInicial, $dataFinal);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.composto.relatorio(data_inicial, data_final)
     .then(function(data) {
@@ -622,15 +651,17 @@ client.composto.relatorio(data_inicial, data_final)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Audio.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.composto.get_relatorio(data_inicio, data_fim)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.composto.get_relatorio("2017-12-08T11:00:32-02:00", "2017-12-08T11:00:32-02:00")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Audio composto = new Audio(client);
 
 JSONObject response = composto.relatorio(dataInicial, dataFinal);

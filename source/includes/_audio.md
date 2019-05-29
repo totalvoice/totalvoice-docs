@@ -252,7 +252,9 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Audio.Enviar("4811111111", "http://sua.url.audio/audio.mp3", false, "")
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
 response = client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
 ```
 ```java
@@ -400,8 +402,10 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Audio.Buscar(123)
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
-response = client.audio.get_by_id(123)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.audio.get_by_id("123")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
@@ -516,8 +520,10 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Audio.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
-response = client.audio.get_relatorio(data_inicio, data_fim)
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.audio.get_relatorio("2017-12-08T11:00:32-02:00", "2017-12-08T11:00:32-02:00")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
