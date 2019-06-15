@@ -440,7 +440,9 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "preco": 0.12,
         "url_audio": "http://fooooo.bar/audio.mp3",
         "resposta_usuario": true,
-        "resposta": "8"
+        "resposta": "8",
+        "motivo_desconexao": null,
+        "url_gravacao": ""
     }
 }
 ```
@@ -558,7 +560,9 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "preco": 0.12,
         "url_audio": "http://fooooo.bar/audio.mp3",
         "resposta_usuario": true,
-        "resposta": "8"
+        "resposta": "8",
+        "motivo_desconexao": null,
+        "url_gravacao": ""
       },
       {
         "id": 432,
@@ -576,7 +580,9 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "preco": 0,
         "url_audio": "http://fooooo.bar/audio.mp3",
         "resposta_usuario": true,
-        "resposta": null
+        "resposta": "",
+        "motivo_desconexao": null,
+        "url_gravacao": ""
       }
     ]
   }
@@ -648,6 +654,8 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
         </tr>
     </tbody>
 </table>
+
+<b>Exemplo:</b> Se você tiver um relatorio com 350 áudios, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
 
 <br>
 <br>

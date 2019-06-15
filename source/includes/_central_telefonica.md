@@ -1,5 +1,9 @@
 # Central Telefônica
 
+Na central telefonica você podera fazer configurações e retirar relatorios de ramai e URAs
+
+Caso você deseje utilizar a API da TotalVoice para ligações recepitivas, entre em [contato](#introducao) conosco para a contração de um número recepitivo(DID).
+
 ### Objeto Chamada Ramal
 
 > <br>
@@ -8,19 +12,20 @@
 
 ```json
 {
-    "id": 1,
-    "data_inicio": "2018-09-03T10:35:50-03:00",
-    "url_gravacao": "https://url-gravavao/rec/?id=1",
-    "numero_origem": "4811111111",
-    "status": "atendida",
-    "duracao_segundos": 193,
-    "duracao": "00:03:13",
-    "preco": "0.00",
-    "ramal": {
-      "id": 1,
-      "ramal": "4000",
-      "login": "teste@teste.com.br"
-    }
+    "id": 76498,
+    "ramal": "3333",
+    "login": "testee@TotalVoice.com.br",
+    "senha": "123456assc",
+    "bina": "48999999999",
+    "webphone_key": "213kbbncs324454ASDcxzln123",
+    "ligacao_externa": true,
+    "ligacao_celular": true,
+    "gravar_audio": true,
+    "acesso_gravacoes": true,
+    "webphone": false,
+    "ura_id": null,
+    "voicemail": false,
+    "tags": ""
 }
 ```
 Definição do objeto Chamada Ramal
@@ -35,236 +40,328 @@ Definição do objeto Chamada Ramal
                 <span class="attribute">integer</span>
             </td>
             <td>
-                ID do registro da chamada.
+                ID do ramal
              </td>
         </tr>
         <tr>
             <td>
-                url_gravacao
-                <span class="attribute">string</span>
+                ramal
+                <span class="attribute">integer</span>
             </td>
             <td>
-                URL com áudio da gravação da chamada
+                Número do ramal
              </td>
         </tr>
         <tr>
             <td>
-                data_inicio
-                <span class="attribute">datetime</span>
+                login
+                <span class="attribute">string</span>
             </td>
             <td>
-                Data de ínicio do registro da chamada. Data e Hora no formato UTC
+                E-mail de login do ramal
             </td>
         </tr>
         <tr>
             <td>
-                numero_origem
+                senha
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número que originou a ligação.
+                Senha do ramal
              </td>
         </tr>
         <tr>
              <td>
-                 status
+                 bina
                  <span class="attribute">string</span>
              </td>
              <td>
-                 Status da ligação na Origem/Destino:
-                 <ul>
-                     <li>atendida</li>
-                     <li>sem resposta</li>
-                     <li>ocupado</li>
-                     <li>congestionado</li>
-                     <li>falha</li>
-                     <li>cancelada</li>
-                     <li>não existe</li>
-                 </ul>
+                 Número que aparece quando o ramal faz ligações
              </td>
         </tr>
          <tr>
              <td>
-                 duracao_segundos
-                 <span class="attribute">integer</span>
+                 webphone_key
+                 <span class="attribute">string</span>
              </td>
              <td>
-                 Duração em segundos (inteiro) total da chamada desde o início do processamento
-             </td>
-         </tr>
-         <tr>
-             <td>
-                 duracao
-                 <span class="attribute">integer</span>
-             </td>
-             <td>
-                 Duração total da chamada desde o início do processamento
+                 Chave para utilização de webphones integrados
              </td>
          </tr>
          <tr>
              <td>
-                 preco
-                 <span class="attribute">float</span>
+                 ligacao_externa
+                 <span class="attribute">boolean</span>
              </td>
              <td>
-                 Valor cobrado pela chamada
+                 Permite faz ligações externas
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 ligacao_celular
+                 <span class="attribute">boolean</span>
+             </td>
+             <td>
+                 Permite faz ligações para números de celular
              </td>
          </tr>
          <tr>
               <td>
-                  ramal
-                  <span class="attribute">object</span>
+                  gravar_audio
+                  <span class="attribute">boolean</span>
               </td>
               <td>
-                  id: ID do ramal vinculado ao DID
-                  ramal: número do ramal
-                  login: e-mail utilizado pelo ramal
+                 Grava as ligações deste ramal
               </td>
           </tr>
     </tbody>
 </table>
 
-## Criar um 
-
-> post audio
-
-## Buscar um 
-
-> Exemplo
-
-## Editar um
-
-> Exemplo
-
-## Listar todos os 
-
-> Exemplo
-
-```php
-<?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
-```
-
-```javascript--node
-const totalvoice = require('totalvoice-node');
-const client = new totalvoice("{{access-token}}");
-
-client.chamada.ligar("4832830151", "4811111111")
-    .then(function (data) {
-        console.log(data)
-    })
-    .catch(function (error) {
-        console.error('Erro: ', error)
-    });
-```
-
-```go
-package main
-
-import (
-	"fmt"
-
-	"github.com/totalvoice/totalvoice-go"
-)
-
-func main() {
-    client := totalvoice.NewTotalVoiceClient("{{access-token}}")
-    response, err := client.Chamada.Criar("4811111111", "4822222222", nil)
-   
-    if err != nil {
-		panic(err)
-	}
-	fmt.Println(response)
-}
-```
-
-```python
-from totalvoice.cliente import Cliente
-
-cliente = Cliente("{{access-token}}", 'HOST') #ex: api.totalvoice.com.br
-
-#Cria chamada
-numero_origem = "48999999999"
-numero_destino = "48900000000"
-response = cliente.chamada.enviar(numero_origem, numero_destino)
-print(response)
-```
-
-```java
-package br.com.totalvoice;
-
-import br.com.totalvoice.api.Chamada;
-import org.json.JSONObject;
-
-public class Main {
-    
-    public static void main(String args[]) {
-        
-        try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
-            Chamada chamada = new Chamada(client);
-
-            JSONObject result = chamada.ligar("NUMEROA", "NUMEROB");
-            System.out.println(result);
-
-        } catch(Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-}
-```
-
-## Relatório Chamadas Recebidas Ramal
+## Criar um ramal
 
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/ramal/{id}/relatorio
+POST https://api2.totalvoice.com.br/ramal
 ```
 
 > Request
 
 ```shell--curl
-curl -X GET --header 'Accept: application/json' \
-            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
-            'https://api.totalvoice.com.br/ramal/1/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+curl -X POST --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             -d '{"ramal":"","login":"","senha":""}' \
+             'https://api2.totalvoice.com.br/ramal'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
-$response = $client->central->relatorioChamadas($id, $dataInicial, $dataFinal, $filtros);
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+Em construção
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
-client.central.relatorioChamadas(id, dataInicial, dataFinal, filtros)
-    .then(function(data) {
-        console.log(data);
-    })
-    .catch(function(error) {
-        console.log('Erro: ', error)
-    });
+Em construção
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
-response, err := client.Ramal.RelatorioChamadas.Gerar(id, dataInicial, dataFinal, filtros)
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.ramal.get_relatorio_chamadas(id, data_inicio, data_fim, filtros)
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
-Central central = new Central(client);
-JSONObject response = central.relatorioChamadas(id, dataInicial, dataFinal, filtros);
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Em construção
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
-puts @client.ramal.relatorioChamadas(id, data_inicial, data_final, filtros)
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "ramal criado com sucesso",
+  "dados": {
+    "id": 1234,
+    "ramal": 4000,
+    "login": "123teste231@totalvoice.com.br",
+    "senha": "123teste23122",
+    "bina": null,
+    "webphone_key": "123teste231224d549e0408e123teste23122",
+    "ligacao_externa": false,
+    "ligacao_celular": false,
+    "gravar_audio": false,
+    "acesso_gravacoes": false,
+    "webphone": true,
+    "ura_id": null,
+    "voicemail": false,
+    "tags": null
+  }
+}
+```
+Nenhum campo é obrigatorio, mas indicamos que você passe os parâmetros ramal, e login para controlar melhor os ramais criados.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                ramal
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Número do ramal
+                </td>
+        </tr>
+        <tr>
+            <td>
+                login
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                E-mail de login do ramal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                senha
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Senha do ramal
+                </td>
+        </tr>
+        <tr>
+                <td>
+                    bina
+                    <span class="attribute">string</span>
+                </td>
+                <td>
+                    Número que aparece quando o ramal faz ligações
+                </td>
+        </tr>
+        <tr>
+            <td>
+                ligacao_externa
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite faz ligações externas
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ligacao_celular
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite faz ligações para números de celular
+            </td>
+        </tr>
+        <tr>
+            <td>
+                gravar_audio
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite a gravação de áudio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                acesso_gravacoes
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite o usário deste ramal ver gravações
+            </td>
+        </tr>
+        <tr>
+            <td>
+                webphone
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite o usário utilizar webphone
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ura_id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Caso tenha um valor aqui, ao telefonar para este número de ramal, vai cair em uma URA ao invés de chamar o usuário
+            </td>
+        </tr>
+        <tr>
+            <td>
+                voicemail
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Se esse valor for igual a true, ao ligar para esse ramal ele sera incaminhado para uma caixa postal que gravar recados.(Não ira chamar no usuário)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o objeto com os dados do ramal criado
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Buscar um ramal
+
+> Definição
+
+```text
+GET https://api2.totalvoice.com.br/ramal/{id}
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             'https://api2.totalvoice.com.br/ramal/{id}'
+```
+```php
+<?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Em construção
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+Em construção
 ```
 > Response
 
@@ -275,31 +372,549 @@ puts @client.ramal.relatorioChamadas(id, data_inicial, data_final, filtros)
   "motivo": 0,
   "mensagem": "dados retornados com sucesso",
   "dados": {
-    "total": 26,
-    "posicao": 0,
-    "limite": "100",
+    "id": 1234,
+    "ramal": "4000",
+    "login": "teste@totalvoiceteste.com.br",
+    "senha": "1234ioYNua",
+    "bina": "48999999999",
+    "webphone_key": "testefd3b268b3de8cateste44968",
+    "ligacao_externa": true,
+    "ligacao_celular": true,
+    "gravar_audio": true,
+    "acesso_gravacoes": true,
+    "webphone": false,
+    "ura_id": null,
+    "voicemail": false,
+    "tags": ""
+  }
+}
+```
+Após o ramal criado, você pode consultar suas informações
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do ramal
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o objeto do ramal </a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Editar um
+
+> Definição
+
+```text
+PUT https://api2.totalvoice.com.br/ramal/{id}
+```
+
+> Request
+
+```shell--curl
+curl -X PUT --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             -d '{"senha":"4321789"}' \
+             'https://api2.totalvoice.com.br/ramal/{id}'
+```
+```php
+<?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Em construção
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados atualizados com sucesso",
+  "dados": null
+}
+```
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Id do ramal que sera modíficado(O id é passado na URL do endpoint) 
+                </td>
+        </tr>
+        <tr>
+            <td>
+                ramal
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Número do ramal
+                </td>
+        </tr>
+        <tr>
+            <td>
+                login
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                E-mail de login do ramal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                senha
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Senha do ramal
+                </td>
+        </tr>
+        <tr>
+                <td>
+                    bina
+                    <span class="attribute">string</span>
+                </td>
+                <td>
+                    Número que aparece quando o ramal faz ligações
+                </td>
+        </tr>
+        <tr>
+            <td>
+                ligacao_externa
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite faz ligações externas
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ligacao_celular
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite faz ligações para números de celular
+            </td>
+        </tr>
+        <tr>
+            <td>
+                gravar_audio
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite a gravação de áudio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                acesso_gravacoes
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite o usário deste ramal ver gravações
+            </td>
+        </tr>
+        <tr>
+            <td>
+                webphone
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite o usário utilizar webphone
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ura_id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Caso tenha um valor aqui, ao telefonar para este número de ramal, vai cair em uma URA ao invés de chamar o usuário
+            </td>
+        </tr>
+        <tr>
+            <td>
+                voicemail
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Se esse valor for igual a true, ao ligar para esse ramal ele sera incaminhado para uma caixa postal que gravar recados.(Não ira chamar no usuário)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o status da requisição</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Deletar um ramal
+
+> Definição
+
+```text
+DELETE https://api2.totalvoice.com.br/ramal/{id}
+```
+
+> Request
+
+```shell--curl
+curl -X DELETE --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             'https://api2.totalvoice.com.br/ramal/{id}'
+```
+```php
+<?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Em construção
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "Ramal Removido",
+  "dados": null
+}
+```
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do ramal
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                 Retorna o status da requisição </a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Listar ramais criados
+
+> Definição
+
+```text
+GET https://api2.totalvoice.com.br/ramal/relatorio
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: seu-token' \
+            'https://api2.totalvoice.com.br/ramal/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+```
+```php
+<?php
+$client = new TotalVoiceClient('seu-token');
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
     "relatorio": [
       {
-        "id": 1,
-        "data_inicio": "2018-09-03T10:35:50-03:00",
-        "url_gravacao": "https://url-gravavao/rec/?id=1",
-        "numero_origem": "4811111111",
-        "status": "atendida",
-        "duracao_segundos": 193,
-        "duracao": "00:03:13",
-        "preco": "0.00",
-        "ramal": {
-          "id": 1,
-          "ramal": "4000",
-          "login": "teste@teste.com.br"
-        }
+        "id": 1234,
+        "ramal": "4000",
+        "login": "teste@totalTeste.com.br",
+        "senha": "1234TesteTotal",
+        "bina": "48999999999",
+        "webphone_key": "totalTesteb8af64668997totalTeste",
+        "ligacao_externa": true,
+        "ligacao_celular": true,
+        "gravar_audio": true,
+        "acesso_gravacoes": false,
+        "webphone": true,
+        "ura_id": null,
+        "voicemail": false,
+        "tags": ""
+      },
+      {
+        "id": 4567,
+        "ramal": "4001",
+        "login": "teste1@totalTeste.com.br",
+        "senha": "1234TesteTotal",
+        "bina": "48999999999",
+        "webphone_key": "teste18e990a500a059a78teste1",
+        "ligacao_externa": true,
+        "ligacao_celular": true,
+        "gravar_audio": true,
+        "acesso_gravacoes": true,
+        "webphone": true,
+        "ura_id": null,
+        "voicemail": false,
+        "tags": ""
       }
     ]
   }
 }
 ```
 
-Você pode consultar as Chamadas recebidas por um Ramal. Basta informar o período desejado e o ID do Ramal desejado para que a API retorne os dados.
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                data_inicio
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_fim
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr> 
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos ramal</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<b>Importante:</b> Se você tiver um relatorio com 350 ramais, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+
+## Listar pausas do ramal
+
+> Definição
+
+```text
+GET https://api2.totalvoice.com.br/ramal/{id}/pausas
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: seu-token' \
+            'https://api2.totalvoice.com.br/ramal/{id}/pausas?data_inicio=2018-03-14&data_fim=2018-03-15'
+```
+```php
+<?php
+$client = new TotalVoiceClient('seu-token');
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "total": 1,
+    "duracao_total": "00:00:07",
+    "duracao_total_segundos": 7,
+    "ramal": "4000",
+    "posicao": 0,
+    "limite": 100,
+    "relatorio": [
+      {
+        "pausa_inicio": "2019-06-15T11:14:41-03:00",
+        "pausa_fim": "2019-06-15T11:14:48-03:00",
+        "tempo_segundos": 7,
+        "tempo": "00:00:07"
+      }
+    ]
+  }
+}
+```
 
 #### Request
 
@@ -309,9 +924,10 @@ Você pode consultar as Chamadas recebidas por um Ramal. Basta informar o perío
             <td>
                 id
                 <span class="required">Obrigatório</span>
+                <span class="required">integer</span>
             </td>
             <td>
-                ID do Ramal que será consultado
+                Id do ramal que sera modíficado(O id é passado na URL do endpoint) 
             </td>
         </tr>
         <tr>
@@ -336,38 +952,18 @@ Você pode consultar as Chamadas recebidas por um Ramal. Basta informar o perío
         </tr>
         <tr>
             <td>
-                origem
-                <span class="optional">Opcional</span>
-                <span class="type">Query String</span>
-            </td>
-            <td>
-                Número de telefone de origem para filtrar. Ex.: 4832830151
-            </td>
-        </tr>
-        <tr>
-            <td>
-                destino
-                <span class="optional">Opcional</span>
-                <span class="type">Query String</span>
-            </td>
-            <td>
-                Número de telefone de destino para filtrar. Ex.: 4832830151
-            </td>
-        </tr>
-        <tr>
-            <td>
                 posicao
-                <span class="optional">Opcional</span>
+                <span class="required">Opcional</span>
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
             <td>
                 limite
-                <span class="optional">Opcional</span>
+                <span class="required">Opcional</span>
                 <span class="type">Query String</span>
             </td>
             <td>
@@ -383,42 +979,178 @@ Você pode consultar as Chamadas recebidas por um Ramal. Basta informar o perío
     <tbody>
         <tr>
             <td>
-                total
-                <span class="attribute">integer</span>
+                dados
+                <span class="attribute">object</span>
             </td>
             <td>
-                Retorna a quantidade total de registros
+                Retorna o objeto com os dados de pausa do ramal
              </td>
+        </tr>
+    </tbody>
+</table>
+
+<b>Importante:</b> Se você tiver um relatorio com 350 pausas do ramal, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+
+## Listar ligações de um ramal
+
+> Definição
+
+Lista as ligações <u>recebidas</u> por um ramal no périodo desejado.
+
+```text
+GET https://api2.totalvoice.com.br/ramal/{id}/relatorio
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: seu-token' \
+            'https://api2.totalvoice.com.br/ramal/{id}/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+```
+```php
+<?php
+$client = new TotalVoiceClient('seu-token');
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "total": 2,
+    "posicao": 0,
+    "limite": 100,
+    "relatorio": [
+      {
+        "id": 123456,
+        "data_inicio": "2019-05-07T15:28:13-03:00",
+        "url_gravacao": "https://api.evoline.com.br/rec/?id=123445&x=12345&cid=1",
+        "numero_origem": "48999999999",
+        "status": "atendida",
+        "duracao_segundos": 369,
+        "duracao": "00:06:09",
+        "preco": "0.00",
+        "ramal": {
+          "id": 60679,
+          "ramal": "4000",
+          "login": "teste@totaltestevoice.com.br"
+        }
+      },
+      {
+        "id": 123456,
+        "data_inicio": "2019-05-08T13:16:02-03:00",
+        "url_gravacao": "https://api.evoline.com.br/rec/?id=123456&x=12345&cid=1",
+        "numero_origem": "48999999999",
+        "status": "atendida",
+        "duracao_segundos": 596,
+        "duracao": "00:09:56",
+        "preco": "0.00",
+        "ramal": {
+          "id": 1234,
+          "ramal": "4000",
+          "login": "teste@totaltestevoice.com.br"
+        }
+      }
+    ]
+  }
+}
+```
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+                <span class="required">integer</span>
+            </td>
+            <td>
+                Id do ramal que sera modíficado(O id é passado na URL do endpoint) 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_inicio
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_fim
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
         </tr>
         <tr>
             <td>
                 posicao
-                <span class="attribute">integer</span>
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
-             </td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+            </td>
         </tr>
         <tr>
             <td>
                 limite
-                <span class="attribute">integer</span>
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
             </td>
             <td>
-                Quantidade de chamadas que retornou na consulta.
-             </td>
-        </tr>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr> 
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+     <tbody>
         <tr>
             <td>
                 relatorio
                 <span class="attribute">array</span>
             </td>
             <td>
-                Retorna um array com objetos <a href="#objeto-chamada-ramal">chamada ramal</a>
+                Retorna um array com objetos de chamadas atendidas</a>
              </td>
         </tr>
     </tbody>
 </table>
+
+<b>Importante:</b> Se você tiver um relatorio com 350 pausas do ramal, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+
 
 <br>
 <br>
