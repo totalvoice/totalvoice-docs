@@ -4,7 +4,7 @@ Na central telefonica você podera fazer configurações e retirar relatorios de
 
 Caso você deseje utilizar a API da TotalVoice para ligações recepitivas, entre em [contato](#introducao) conosco para a contração de um número recepitivo(DID).
 
-### Objeto Chamada Ramal
+### Objeto Ramal
 
 > <br>
 
@@ -28,7 +28,7 @@ Caso você deseje utilizar a API da TotalVoice para ligações recepitivas, entr
     "tags": ""
 }
 ```
-Definição do objeto Chamada Ramal
+Definição do objeto Ramal
 
 #### Atributos
 
@@ -118,7 +118,7 @@ Definição do objeto Chamada Ramal
     </tbody>
 </table>
 
-## Criar um ramal
+### Criar um ramal
 
 > Definição
 
@@ -424,7 +424,7 @@ Após o ramal criado, você pode consultar suas informações
     </tbody>
 </table>
 
-## Editar um
+## Editar uma Ramal
 
 > Definição
 
@@ -605,7 +605,7 @@ Em construção
     <tbody>
         <tr>
             <td>
-                dados
+                status
                 <span class="attribute">object</span>
             </td>
             <td>
@@ -1151,6 +1151,743 @@ Em construção
 
 <b>Importante:</b> Se você tiver um relatorio com 350 pausas do ramal, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
 
+## Objeto URA
 
+> <br>
+
+> JSON
+
+```json
+{
+    "id": 78910,
+    "nome": "Exemplo de URA",
+    "dados": [
+        {
+            "timeout": 6,
+            "menu": "menu 1",
+            "opcao": "",
+            "acao": "tts",
+            "acao_dados": {
+                "mensagem": "Voce ligou para TotalVoice. Aperte 1 para ser atendido."
+            }
+        },
+        {
+            "timeout_fila": 600,
+            "menu": "menu 1",
+            "opcao": "1",
+            "acao": "fila",
+            "acao_dados": {
+                "fila_id": "1234"
+            }
+        }
+    ]
+}
+```
+Uma URA possui uma estrutura atedimento, em nosso api você tem diverças possíbilidades. Após os atributos, iremos apresentar todos os Parâmetros que podem ser utilizados.
+
+#### Atributos
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID da URA
+             </td>
+        </tr>
+        <tr>
+            <td>
+                nome
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Nome da URA
+             </td>
+        </tr>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Dentro de dados você consegue visualizar a estrutura de atendimento da sua URA.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Parâmetros da estrutura da URA(dados)
+O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o que vem logo abaixo. Vejá o exemplo ao lado.
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                playAudio
+                <span class="attribute">url_audio</span>
+            </td>
+            <td>
+                Toca o áudio que consta na url. A url deve ser pública para que nosso sistema possa buscar.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                playTTS
+                <span class="attribute">mensagem</span>
+            </td>
+            <td>
+                Toca a mensagem escrita em formato de áudio com uma voz simulada.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                transfer
+                <span class="attribute">numero_telefone</span>
+            </td>
+            <td>
+                Transefere para um ramal ou número externo. Transferencia para número externo tem o valor de uma ligação efetuada.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                fila
+                <span class="attribute">fila_id</span>
+            </td>
+            <td>
+                Transefere para a <a href="https://centraltotalvoice.freshdesk.com/a/solutions/articles/35000108391-como-funcionam-as-filas-de-atendimento">fila de atendimento</a> referente ao seu ID.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                webhook
+                <span class="attribute">url</span>
+            </td>
+            <td>
+                Envio um webhook com as informações da chamada para o endpoint passado no parametro "url".
+            </td>
+        </tr>
+        <tr>
+            <td>
+                gotomenu
+                <span class="attribute">menu</span>
+            </td>
+            <td>
+                Vai para um próximo menu da mesma ura, exemplo "menu 2".
+            </td>
+        </tr>
+        <tr>
+            <td>
+                dinamico
+                <span class="attribute">url</span>
+            </td>
+            <td>
+                Encaminha a chamada para uma <a href="https://centraltotalvoice.freshdesk.com/solution/articles/35000118467-criando-uma-ura-din%C3%A2mica-simples">URA Dinâmica</a>. Coloca-se a URL para onde será enviado um HTTP POST para solicitar a URA à ser carregada.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                stt
+                <span class="attribute">url</span>
+            </td>
+            <td>
+               Transcreve um áudio em um texto e envia para o url cadastrada. Veja mais sobre clicando aqui.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                fim
+            </td>
+            <td>
+               Derruba a ligação, não tem acao_dados e geralmente é usada seguido de uma outra ação. Se não tiver essa informação, a URA ira ficar até que o outro usuário desligue ou a ligação caia.
+            </td>
+        </tr>                     
+    </tbody>
+</table>
+
+#### Opções adicinação para ação
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                opcao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Caso você tenha adicionado uma 'opcao' na etapa da URA ela só sera chamada caso o usuário digite o número dela. As opções vão de 1 a 9.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                menu
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Indica a qual menu pertence essa etapa da URA, então se 'menu' for igual a 'menu 2'.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                timeout
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Este é o tempo de espera para que a ligação seja derrubada ou a URA va para a próxima ação, ele começa a conta após a sua ação acabar. Exemplo assim que avacar o texto do seu TTS.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                coletar_dtmf
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Isso indicar que essa etapada da ação ira esperar no maximo a quantiade de caracteres que você passar. Por exemplo:
+                {"coletar_dtmf":"11"}. Quando atingido o máximo de DTMF(ou acabar o timeout) sera executada a próxima ação.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                queue_fail_timeout
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Quando você utiliza a ação 'fila' você pode usar esse paremetro passando o tempo maximo de espera da fila, após o termino do tempo a proxima ação sera executada.
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Criar uma URA
+
+> Definição
+
+```text
+POST https://api2.totalvoice.com.br/ura
+```
+
+> Request
+
+```shell--curl
+curl -X POST --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             -d '{"nome":"Nome URA","dados":[{"acao":"tts","acao_dados":{"mensagem":"Essa é uma mensagem de Exemplo"}}]}' \
+             'https://api2.totalvoice.com.br/ura'
+```
+```php
+<?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Em construção
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "ura criada com sucesso",
+  "dados": {
+    "id": 1234
+  }
+}
+```
+Vejá a lista de opções dos dados/estrutura da URA que podem ser utilizadas.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                nome
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Nome da URA
+             </td>
+        </tr>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Dentro de dados você consegue passar a estrutura de atendimento da sua URA.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Retorna o ID do Áudio
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Buscar uma URA
+
+> Definição
+
+```text
+GET https://api2.totalvoice.com.br/ura/{id}
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             'https://api2.totalvoice.com.br/ura/{id}'
+```
+```php
+<?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Em construção
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "id": 12345,
+    "nome": "Atendimento Totalvoice",
+    "dados": [
+      {
+        "timeout": 6,
+        "menu": "menu 1",
+        "opcao": "",
+        "acao": "audio",
+        "acao_dados": {
+          "url_audio": "https://seuaud.io/1234.mp3"
+        }
+      },
+      {
+        "timeout_fila": 600,
+        "menu": "menu 1",
+        "opcao": "1",
+        "acao": "fila",
+        "acao_dados": {
+          "fila_id": "123456"
+        }
+      }
+    ]
+  }
+}
+```
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID da URA
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o objeto da URA
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Editar uma URA
+
+> Definição
+
+```text
+PUT https://api2.totalvoice.com.br/ura/{id}
+```
+
+> Request
+
+```shell--curl
+curl -X POST --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             -d '{"nome":"Nome URA","dados":[{"acao":"tts","acao_dados":{"mensagem":"Essa é uma mensagem de Exemplo 2"}}]}' \
+             'https://api2.totalvoice.com.br/ura/{id}'
+```
+```php
+<?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Em construção
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "ura atualizada com sucesso",
+  "dados": {
+    "id": 1234
+  }
+}
+```
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                nome
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Nome da URA
+             </td>
+        </tr>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Estrutura de atendimento da URA.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                status
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o status da requisição
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+
+## Deletar uma URA
+
+> Definição
+
+```text
+DELETE https://api2.totalvoice.com.br/ura/{id}
+```
+
+> Request
+
+```shell--curl
+curl -X DELETE --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             'https://api2.totalvoice.com.br/ura/{id}'
+```
+```php
+<?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Em construção
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "URA Removida",
+  "dados": null
+}
+```
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID da URA
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                status
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                 Retorna o status da requisição </a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Relatorio de URA
+
+> Definição
+
+Retorna a sua lista de URAs e suas estruturas
+
+```text
+GET https://api2.totalvoice.com.br/ura/relatorio
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: seu-token' \
+            'https://api2.totalvoice.com.br/ura/relatorio'
+```
+```php
+<?php
+$client = new TotalVoiceClient('seu-token');
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "relatorio": [
+      {
+        "id": 12345,
+        "nome": "Teste Geral",
+        "dados": [
+          {
+            "timeout": 6,
+            "menu": "menu 1",
+            "opcao": "",
+            "acao": "tts",
+            "acao_dados": {
+              "mensagem": "Olá, seja bem vindo a melhór startap da Palhóça. Digite 1 para ser atendido."
+            }
+          },
+          {
+            "timeout_fila": 45,
+            "menu": "menu 1",
+            "opcao": "",
+            "acao": "fila",
+            "acao_dados": {
+              "fila_id": "123456"
+            }
+          },
+          {
+            "timeout_fila": 9000,
+            "menu": "menu 1",
+            "opcao": "1",
+            "acao": "fila",
+            "acao_dados": {
+              "fila_id": "745896"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">integer</span>
+            </td>
+            <td>
+                Id da URA
+            </td>
+        </tr> 
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+     <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com as URAs e seus IDs e para cada uma um array com sua estrutura
+             </td>
+        </tr>
+    </tbody>
+</table>
 <br>
 <br>
