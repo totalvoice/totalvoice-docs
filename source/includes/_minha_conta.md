@@ -3,19 +3,19 @@
 > Minha Conta Endpoint
 
 ```text
-https://api.totalvoice.com.br/conta
+https://api2.totalvoice.com.br/conta
 ```
 
 > Saldo Endpoint
 
 ```text
-https://api.totalvoice.com.br/saldo
+https://api2.totalvoice.com.br/saldo
 ```
 
 > Webhook Endpoint
 
 ```text
-https://api.totalvoice.com.br/webhook 
+https://api2.totalvoice.com.br/webhook 
 ```
 
 O **Minha Conta** permite que você visualize seu saldo, monitore suas contas e suas recargas,
@@ -296,7 +296,7 @@ Definição do objeto resposta Minha Conta
 > Definição
 
 ```text
-POST https://api.totalvoice.com.br/saldo
+POST https://api2.totalvoice.com.br/saldo
 ```
 
 > Request
@@ -305,7 +305,7 @@ POST https://api.totalvoice.com.br/saldo
 curl -X GET --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-            'https://api.totalvoice.com.br/saldo'
+            'https://api2.totalvoice.com.br/saldo'
 ```
 ```php
 <?php
@@ -315,11 +315,14 @@ $response = $client->perfil->consultaSaldo();
 var response = client.perfil.consultaSaldo()
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
 
  response, err := client.Saldo.ConsultaSaldo()
 ```
 ```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.minha_conta.get_saldo()
 ```
 ```java
@@ -382,7 +385,7 @@ puts @client.perfil.consulta_saldo()
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/conta/
+GET https://api2.totalvoice.com.br/conta/
 ```
 
 > Request
@@ -390,7 +393,7 @@ GET https://api.totalvoice.com.br/conta/
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/conta'
+            --header 'Access-Token: {{access-token}}' 'https://api2.totalvoice.com.br/conta'
 ```
 ```php
 <?php
@@ -400,11 +403,14 @@ $response = $client->perfil->minhaConta();
 var response = client.perfil.minhaConta()
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
 
  response, err := client.Perfil.MinhaConta()
 ```
 ```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.minha_conta.get_conta()
 ```
 ```java
@@ -492,28 +498,28 @@ puts @client.perfil.minha_conta()
 > Definição
 
 ```text
-PUT https://api.totalvoice.com.br/conta
+PUT https://api2.totalvoice.com.br/conta
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://api.totalvoice.com.br/conta/3132' \
+curl 'https://api2.totalvoice.com.br/conta/3132' \
     -X PUT \
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    --header 'Access-Token: Seu_Token' \
     -d '{"senha" : "senha123456"}'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('Seu_Token');
 
 $conta_dados = array("senha" => "senha123456");
 $response = $client->perfil->atualizaDadosConta($conta_dados);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("Seu_Token");
 
 var conta_dados = {
     senha: "senha123456"
@@ -527,7 +533,7 @@ client.perfil.atualizaDadosConta(conta_dados)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
 
 perfil = new(Perfil)
 perfil.NomeFantasia = "NovoNome"
@@ -535,11 +541,13 @@ perfil.NomeFantasia = "NovoNome"
 response, err := client.Perfil.AtualizarConta(perfil)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.perfil.editar_conta("Total Voice")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
 Perfil perfil = new Perfil(client);
 JSONObject response = perfil.atualizaDadosConta('{"nome":"TotalVoice"}');
 ```
@@ -683,7 +691,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/conta/recargas
+GET https://api2.totalvoice.com.br/conta/recargas
 ```
 
 > Request
@@ -692,7 +700,7 @@ GET https://api.totalvoice.com.br/conta/recargas
 curl -X GET --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-            'https://api.totalvoice.com.br/conta/recargas'
+            'https://api2.totalvoice.com.br/conta/recargas'
 ```
 ```php
 <?php
@@ -702,11 +710,14 @@ $response = $client->perfil->relatorioRecarga();
 var response = client.perfil.relatorioRecarga();
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
 
  response, err := client.Perfil.RelatorioRecarga()
 ```
 ```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.minha_conta.get_recargas()
 ```
 ```java
@@ -808,7 +819,7 @@ puts @client.perfil.relatorio_recarga()
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/conta/urlrecarga
+GET https://api2.totalvoice.com.br/conta/urlrecarga
 ```
 
 > Request
@@ -817,7 +828,7 @@ GET https://api.totalvoice.com.br/conta/urlrecarga
 curl -X GET --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-            'https://api.totalvoice.com.br/conta/urlrecarga?url_retorno=www.urlretorno.com.br'
+            'https://api2.totalvoice.com.br/conta/urlrecarga?url_retorno=www.urlretorno.com.br'
 ```
 ```php
 <?php
@@ -827,11 +838,14 @@ $response = $client->perfil->urlRecarga("www.urlretorno.com.br");
 var response = client.perfil.urlRecarga("www.urlretorno.com.br");
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
 
  response, err := client.Perfil.GeraURLRecarga("www.urlretorno.com.br")
 ```
 ```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.minha_conta.get_url_recarga("www.urlretorno.com.br")
 ```
 ```java
@@ -909,7 +923,7 @@ Este método permite a listagem de todos os webhooks configurados da sua conta. 
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/webhook
+GET https://api2.totalvoice.com.br/webhook
 ```
 
 > Request
@@ -918,7 +932,7 @@ GET https://api.totalvoice.com.br/webhook
 curl -X GET --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-            'https://api.totalvoice.com.br/webhook'
+            'https://api2.totalvoice.com.br/webhook'
 ```
 ```php
 <?php
@@ -928,11 +942,14 @@ $response = $client->perfil->webhooks();
 var response = client.perfil.webhooks();
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
 
  response, err := client.Webhook.Listar()
 ```
 ```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.minha_conta.get_webhook()
 ```
 ```java
@@ -1009,7 +1026,7 @@ Este método permite a remoção de um webhook específico de sua conta. <a href
 > Definição
 
 ```text
-DELETE https://api.totalvoice.com.br/webhook/{nome_webhook}
+DELETE https://api2.totalvoice.com.br/webhook/{nome_webhook}
 ```
 
 > Request
@@ -1018,7 +1035,7 @@ DELETE https://api.totalvoice.com.br/webhook/{nome_webhook}
 curl -X DELETE --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-            'https://api.totalvoice.com.br/webhook/chamada_fim'
+            'https://api2.totalvoice.com.br/webhook/chamada_fim'
 ```
 ```php
 <?php
@@ -1028,11 +1045,14 @@ $response = $client->perfil->excluirWebhook("chamada_fim");
 var response = client.perfil.excluirWebhook("chamada_fim");
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
 
  response, err := client.Webhook.Excluir("chamada_fim")
 ```
 ```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.minha_conta.delete_webhook("chamada_fim")
 ```
 ```java
@@ -1133,28 +1153,28 @@ puts @client.perfil.excluir_webhook("chamada_fim")
 > Definição
 
 ```text
-PUT https://api.totalvoice.com.br/webhook/{nome_webhook}
+PUT https://api2.totalvoice.com.br/webhook/{nome_webhook}
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://api.totalvoice.com.br/webhook/chamada_fim' \
+curl 'https://api2.totalvoice.com.br/webhook/chamada_fim' \
     -X PUT \
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    --header 'Access-Token: Seu_Token' \
     -d '{"url" : "www.urlretorno.com.br"}'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('Seu_Token');
 
 $conta_dados = array("senha" => "senha123456");
 $response = $client->perfil->salvaWebhook("chamada_fim", "www.urlretorno.com.br");
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("Seu_Token");
 
 client.perfil.salvaWebhook("chamada_fim", "www.urlretorno.com.br")
     .then(function(data) {
@@ -1165,16 +1185,18 @@ client.perfil.salvaWebhook("chamada_fim", "www.urlretorno.com.br")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
 
 response, err := client.Webhook.Salva("chamada_fim", "www.urlretorno.com.br")
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.perfil.editar_webhook("chamada_fim", "www.urlretorno.com.br")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
 Perfil perfil = new Perfil(client);
 JSONObject response = perfil.salvaWebhook("chamada_fim", "www.urlretorno.com.br");
 ```

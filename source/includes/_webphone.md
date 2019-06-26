@@ -3,7 +3,7 @@
 > Webphone End Point
 
 ```text
-https://api.totalvoice.com.br/webphone
+https://api2.totalvoice.com.br/webphone
 ```
 
 Webphone é uma maneira de conectar à um Ramal diretamente de um computador, todo ramal tem uma URL na qual
@@ -23,7 +23,7 @@ Um webphone é vinculado diretamente com um Ramal.
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/webphone
+GET https://api2.totalvoice.com.br/webphone
 ```
 
 Consulta a URL do Webphone de um determinado Ramal enviando os parâmetros para pré-configuração do webphone, a URL
@@ -32,20 +32,20 @@ gerada vem com um código único para acesso daquele Webphone sem ser necessári
 > <br/>Request
 
 ```shell--curl
-curl 'https://api.totalvoice.com.br/webphone?ramal=4000' \
+curl 'https://api2.totalvoice.com.br/webphone?ramal=4000' \
     -X GET \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'
+    --header 'Access-Token: Seu_Token'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('Seu_Token');
 
 $webphone_dados = array("ramal" => 4000);
 $response = $client->central->webphone($webphone_dados);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("Seu_Token");
 
 var webphone_dados = { 
     ramal: 4000
@@ -59,7 +59,7 @@ client.central.webphone(webphone_dados)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
 
 m := map[interface{}]interface{}{}
 m["ramal"] = 4000
@@ -67,11 +67,11 @@ m["ramal"] = 4000
 response, err := client.Ramal.Webphone(m)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.webphone.get_webphone("floating", None, 4000)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
 Central central = new Central(client);
 
 JSONObject webphone_dados = new JSONObject();
@@ -89,7 +89,7 @@ JSONObject response = central.webphone(webphone_dados);
     "motivo": 0,
     "mensagem": "url webphone",
     "dados": {
-        "url": "https://api.totalvoice.com.br/w3/?key=XXXXXXXXXXXXXXXXXXXXXX83b3420&pop=1"
+        "url": "https://api2.totalvoice.com.br/w3/?key=XXXXXXXXXXXXXXXXXXXXXX83b3420&pop=1"
     }
 }
 ```
