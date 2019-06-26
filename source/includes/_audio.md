@@ -522,6 +522,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 ```python
 from totalvoice.cliente import Cliente
 
+
 client = Cliente("seu-token", 'api2.totalvoice.com.br')
 response = client.audio.get_relatorio("2017-12-08T11:00:32-02:00", "2017-12-08T11:00:32-02:00")
 ```
