@@ -198,6 +198,15 @@ Definição do objeto Áudio
         </tr>
         <tr>
             <td>
+                motivo_desconexao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconeção</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 url_gravacao
                 <span class="attribute">string</span>
             </td>
