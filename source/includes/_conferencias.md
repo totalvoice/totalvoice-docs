@@ -3,7 +3,7 @@
 > Conferência Endpoint
 
 ```text
-https://api.totalvoice.com.br/conferencia
+https://api2.totalvoice.com.br/conferencia
 ```
 
 Conferências são como salas privadas que você cria e recebe um ID, só você com esse código consegue realizar
@@ -229,7 +229,7 @@ Definição do objeto da Chamada da Conferência
 > Definição
 
 ```text
-POST https://api.totalvoice.com.br/conferencia
+POST https://api2.totalvoice.com.br/conferencia
 ```
 
 > Request
@@ -239,17 +239,17 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
              -d '{"numero_destino":"4811111111","url_conferencia":"http://foo.bar/conferencia.mp3"}' \
-             'https://api.totalvoice.com.br/conferencia'
+             'https://api2.totalvoice.com.br/conferencia'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $response = $client->conferencia->enviar('NUMERO-DESTINO', 'http://foo.bar/conferencia.mp3');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.conferencia.enviar("4811111111", "http://foo.bar/conferencia.mp3")
     .then(function(data) {
@@ -260,15 +260,18 @@ client.conferencia.enviar("4811111111", "http://foo.bar/conferencia.mp3")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Conferencia.Enviar("4811111111", "http://foo.bar/conferencia.mp3", false, "")
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
-response = client.conferencia.enviar("4811111111", "http://foo.bar/conferencia.mp3")
+from totalvoice.cliente import Cliente
+
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+response = client.conferencia.cria_conferencia()
+
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conferencia conferencia = new Conferencia(client);
 
 JSONObject response = conferencia.enviar("4811111111", "http://foo.bar/conferencia.mp3");
@@ -286,59 +289,7 @@ JSONObject response = conferencia.enviar("4811111111", "http://foo.bar/conferenc
     }
 }
 ```
-Basta informar o número de destino válido e a URL pública do arquivo.
-
-#### Request
-
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                numero_destino
-                <span class="required">Obrigatório</span>
-            </td>
-            <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número exemplo: 4832830151
-             </td>
-        </tr>
-        <tr>
-            <td>
-                url_conferencia
-                <span class="required">Obrigatório</span>
-            </td>
-            <td>
-                URL do conferencia formato MP3, exemplo: http://foo.bar/conferencia.mp3
-            </td>
-        </tr>
-        <tr>
-            <td>
-                resposta_usuario
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Aguardar uma resposta do destinário
-            </td>
-        </tr>
-        <tr>
-            <td>
-                gravar_conferencia
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Gravar a ligação
-            </td>
-        </tr>
-        <tr>
-            <td>
-                bina
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151
-            </td>
-        </tr>
-    </tbody>
-</table>
+Basta chamar o metodo cria_conferencia para criar o id da sua conferência.
 
 #### Response
 
@@ -361,7 +312,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/conferencia/{id}
+GET https://api2.totalvoice.com.br/conferencia/{id}
 ```
 
 > Request
@@ -369,17 +320,17 @@ GET https://api.totalvoice.com.br/conferencia/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/conferencia/1'
+            --header 'Access-Token: {{access-token}}' 'https://api2.totalvoice.com.br/conferencia/1'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $response = $client->conferencia->buscaConferencia(123);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.conferencia.buscar(123)
     .then(function(data) {
@@ -390,15 +341,15 @@ client.conferencia.buscar(123)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Conferencia.Buscar(123)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
 response = client.conferencia.get_by_id(123)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conferencia conferencia = new Conferencia(client);
 
 JSONObject response = conferencia.buscar(123);
@@ -471,7 +422,7 @@ Após o envio de mensagens de conferência, você poderá realizar a busca do re
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/conferencia/relatorio
+GET https://api2.totalvoice.com.br/conferencia/relatorio
 ```
 
 > Request
@@ -479,17 +430,17 @@ GET https://api.totalvoice.com.br/conferencia/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: {{access-token}}' \
-            'https://api.totalvoice.com.br/conferencia/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://api2.totalvoice.com.br/conferencia/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $response = $client->conferencia->relatorio($dataInicial, $dataFinal);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.conferencia.relatorio(data_inicial, data_final)
     .then(function(data) {
@@ -500,15 +451,15 @@ client.conferencia.relatorio(data_inicial, data_final)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Conferencia.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
 response = client.conferencia.get_relatorio(data_inicio, data_fim)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conferencia conferencia = new Conferencia(client);
 
 JSONObject response = conferencia.relatorio(dataInicial, dataFinal);

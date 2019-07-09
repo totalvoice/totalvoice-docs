@@ -3,7 +3,7 @@
 > Valida Número Endpoint
 
 ```text
-https://api.totalvoice.com.br/valida-numero
+https://api2.totalvoice.com.br/valida-numero
 ```
 
 A funcionalidade do valida número é checar se o número fornecido existe ou se é um número inválido.
@@ -105,7 +105,7 @@ Definição do objeto Valida Número
 > Definição
 
 ```text
-POST https://api.totalvoice.com.br/valida_numero
+POST https://api2.totalvoice.com.br/valida_numero
 ```
 
 > Request
@@ -115,16 +115,16 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
              -d '{"numero_destino":"554811111111"}' \
-             'https://api.totalvoice.com.br/valida_numero'
+             'https://api2.totalvoice.com.br/valida_numero'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('Seu_Token');
 $response = $client->valida_numero->criar('554811111111');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("Seu_Token");
 
 client.validanumero.criar("554811111111")
     .then(function(data) {  
@@ -135,15 +135,17 @@ client.validanumero.criar("554811111111")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
  response, err := client.ValidaNumero.Criar("554811111111")
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.valida_numero.criar("554811111111")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
 ValidaNumero validaNumero = new ValidaNumero(client);
 
 JSONObject response = validaNumero.validaNumero("554811111111")
@@ -152,7 +154,7 @@ JSONObject response = validaNumero.validaNumero("554811111111")
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("Seu_Token")
 puts @client.valida_numero.criar("554811111111")
 ```
 > Response
@@ -207,7 +209,7 @@ Assim que um registro é criado, ele é imediatamente processado e ao término d
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/valida_numero/{id}
+GET https://api2.totalvoice.com.br/valida_numero/{id}
 ```
 
 > Request
@@ -215,16 +217,16 @@ GET https://api.totalvoice.com.br/valida_numero/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/valida_numero/123'
+            --header 'Access-Token: {{access-token}}' 'https://api2.totalvoice.com.br/valida_numero/123'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('Seu_Token');
 $response = $client->valida_numero->buscar(123);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("Seu_Token");
 
 client.validaNumero.buscar(123)
     .then(function(data) {
@@ -235,15 +237,17 @@ client.validaNumero.buscar(123)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
  response, err := client.ValidaNumero.Buscar(123)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.valida_numero.get_valida_numero(123)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
 ValidaNumero validaNumero = new ValidaNumero(client);
 
 JSONObject response = validaNumero.buscar(123);
@@ -313,7 +317,7 @@ Após a criação de um valida número, você poderá realizar a busca do regist
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/valida_numero/relatorio
+GET https://api2.totalvoice.com.br/valida_numero/relatorio
 ```
 
 > Request
@@ -321,16 +325,16 @@ GET https://api.totalvoice.com.br/valida_numero/relatorio
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/valida_numero/realatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            --header 'Access-Token: {{access-token}}' 'https://api2.totalvoice.com.br/valida_numero/realatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('Seu_Token');
 $response = $client->valida_numero->relatorio($dataInicial, $dataFinal);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("Seu_Token");
 
 client.validanumero.relatorio(data_inicial, data_final)
     .then(function(data) {
@@ -341,15 +345,17 @@ client.validanumero.relatorio(data_inicial, data_final)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
 response, err := client.ValidaNumero.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.valida_numero.get_relatorio(data_inicio, data_fim)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
 
 ValidaNumero validaNumero = new ValidaNumeo(client);
 JSONObject response = validaNumero.relatorio(dataInicial, dataFinal);
@@ -358,7 +364,7 @@ JSONObject response = validaNumero.relatorio(dataInicial, dataFinal);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("Seu_Token")
 puts @client.valida_numero.relatorio(data_inicial, data_final)
 ```
 > Response
