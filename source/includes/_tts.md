@@ -689,7 +689,7 @@ Você pode consultar os Tts enviados posteriormente. Basta informar o período d
     </tbody>
 </table>
 
-<b>Exemplo:</b> Se você tiver um relatorio com 350 Tts, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+<b>Exemplo: </b> Se você tiver um relatorio com 350 Tts, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
 
 <br>
 <br>
