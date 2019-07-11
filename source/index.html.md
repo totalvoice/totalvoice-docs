@@ -21,6 +21,7 @@ includes:
   - respostas
   - audio
   - central_telefonica
+  - fila
   - chamadas
   - composto
   - conferencias

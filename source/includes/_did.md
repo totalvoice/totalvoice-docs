@@ -1,15 +1,541 @@
 # DIDs
 
-> Chamada Endpoint
+## Objeto DID
+
+> Did Endpoint
 
 ```text
 https://api.totalvoice.com.br/did
 ```
 
-A funcionalidade **DID** permite que você gerencie, adquire ou remova um DID da sua Conta. Também será possível extrair relatórios dos DIDs adquiridos
-e as chamadas recebidas por um número em específico da sua Conta.
+> JSON
 
-### Objeto Chamada DID
+```json 
+    {
+    "id": 4844577,
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "numero": "552120182293"
+    }
+```
+
+Definição do objeto Áudio
+
+#### Atributos
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do DID(Número recepitivo)
+             </td>
+        </tr>
+        <tr>
+            <td>
+                cidade
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Cidade do número de telefone(DID)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                estado
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Estado/Região do DID
+            </td>
+        </tr>
+        <tr>
+            <td>
+                numero
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Número completo do DID
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+
+A funcionalidade **DID** (Número de telefone para recebimento de chamadas) permite que você gerencie, adquire ou remova um DID da sua Conta. Também será possível extrair relatórios dos DIDs adquiridos e das chamadas recebidas por um número em específico da sua Conta.
+
+## Consulta DIDs
+
+Lista todos os DIDs da sua conta
+
+> Did Endpoint
+
+```text
+https://api.totalvoice.com.br/did
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' \
+            --header 'Accept: application/json' \
+            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/did'
+```
+```php
+<?php
+Em construção
+```
+```javascript--node
+Em construção
+```
+```go
+Em construção
+```
+```python
+Em construção
+```
+```java
+Em construção
+```
+```ruby
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "dids": [
+      {
+        "id": 123454,
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ",
+        "numero": "552120128207"
+      }
+    ]
+  }
+}
+```
+
+##### Request
+
+Não precisar passar nenhum parâmetro.
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-did">DID</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Atualizar DID
+
+> Definição
+
+```text
+PUT https://api2.totalvoice.com.br/did/{id}
+```
+
+> Request
+
+```shell--curl
+curl -X PUT --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             -d '{"ura_id":"4321789"}' \
+             'https://api2.totalvoice.com.br/did/{id}'
+```
+```php
+<?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Em construção
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados atualizados com sucesso",
+  "dados": null
+}
+```
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Id do ramal que sera modíficado(O id é passado na URL do endpoint) 
+                </td>
+        </tr>
+        <tr>
+            <td>
+                ura_id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID da URA, a qual ira atender a ligação no momento em que o número receber uma ligação.¹
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ramal_id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do ramal, o qual ira atender a ligação no momento em que o número receber uma ligação.¹
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                status
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o status da requisição</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+Importante¹: Você só pode passar uma das opções, ou uma ura_id ou um ramal_id.
+
+> Definição
+
+```text
+DELETE https://api2.totalvoice.com.br/did/{id}
+```
+
+> Request
+
+```shell--curl
+curl -X DELETE --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             'https://api2.totalvoice.com.br/did/{id}'
+```
+```php
+<?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+Em construção
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+Em construção
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+Em construção
+```
+```python
+client = Cliente("seu-token", 'api.totalvoice.com.br')
+Em construção
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Em construção
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "Did Removido com sucesso",
+  "dados": null
+}
+```
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do DID
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                 Retorna o status da requisição
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+
+## Estoque de DIDs
+
+Consulta todos os DIDs disponívels para serem comprados. 
+
+<b>Nota:</b> Para adiquirir um DID você deve ter o cartão de crédito cadastrado na plataforma.
+
+> Did Endpoint
+
+```text
+https://api.totalvoice.com.br/did/estoque
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' \
+            --header 'Accept: application/json' \
+            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/did/estoque'
+```
+```php
+<?php
+Em construção
+```
+```javascript--node
+Em construção
+```
+```go
+Em construção
+```
+```python
+Em construção
+```
+```java
+Em construção
+```
+```ruby
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "dids": [
+      {
+        "id": 12341,
+        "cidade": "SAO PAULO",
+        "estado": "SP",
+        "numero": "5511203729395"
+      },
+      {
+        "id": 12341,
+        "cidade": "Campinas",
+        "estado": "SP",
+        "numero": "5519350128096"
+      }
+    ]
+  }
+}
+```
+
+##### Request
+
+Não precisar passar nenhum parâmetro.
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-did">DIDs</a> disponíveis.
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Comprar DID
+
+Para adiquirir um DID você deve ter o cartão de crédito cadastrado na plataforma.
+
+> Did Endpoint
+
+```text
+https://api.totalvoice.com.br/did/
+```
+
+> Request
+
+```shell--curl
+curl -X POST --header 'Content-Type: application/json' \
+            --header 'Accept: application/json' \
+            d '{"did_id":"123"}' \
+            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/did/'
+```
+```php
+Em construção
+```
+```javascript--node
+Em construção
+```
+```go
+Em construção
+```
+```python
+Em construção
+```
+```java
+Em construção
+```
+```ruby
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "dids": [
+      {
+        "id": 12341,
+        "cidade": "SAO PAULO",
+        "estado": "SP",
+        "numero": "5511203729395"
+      },
+      {
+        "id": 12341,
+        "cidade": "Campinas",
+        "estado": "SP",
+        "numero": "5519350128096"
+      }
+    ]
+  }
+}
+```
+
+##### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                did_id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Id do DID que sera comprado
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o id do DID adquirido.
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Objeto Chamada DID
+
+> Chamada Recebidas Endpoint
+
+```text
+https://api.totalvoice.com.br/did/chamada/{id}
+```
 
 > <br>
 
@@ -17,21 +543,30 @@ e as chamadas recebidas por um número em específico da sua Conta.
 
 ```json
 {
-    "id": 1,
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "id": 21344543,
     "ativa": false,
-    "url_gravacao": "https://url-gravacao/rec/?id=1",
-    "data_inicio": "2018-09-27T16:35:15-03:00",
-    "numero_destino": "554811111111",
-    "numero_origem": "554811111111",
-    "status": "ocupado",
-    "duracao_segundos": 15,
-    "duracao": "00:00:15",
+    "url_gravacao": "https://api.evoline.com.br/rec/sua-gravacao.mp3",
+    "data_inicio": "2019-07-10T09:45:49-03:00",
+    "numero_destino": "552120182097",
+    "numero_origem": "4831810323",
+    "status": "sem resposta",
+    "duracao_segundos": 18,
+    "tags": null,
+    "duracao": "00:00:18",
     "duracao_cobrada_segundos": 0,
     "duracao_cobrada": "00:00:00",
     "duracao_falada_segundos": 0,
     "duracao_falada": "00:00:00",
     "preco": 0,
-    "ramal_id": 1231313
+    "ramal_id": 34484,
+    "ramal": "2000",
+    "gravacoes_parciais": []
+  }
 }
 ```
 Definição do objeto Chamada DID
@@ -187,97 +722,115 @@ Definição do objeto Chamada DID
     </tbody>
 </table>
 
-## Criar um 
+<br>
+<br>
 
-> post audio
+## Buscar uma chamada recebida
 
-## Buscar um 
+> Definição
 
-> Exemplo
+```text
+GET https://api.totalvoice.com.br/did/chamada/{id-chamada}
+```
 
-## Editar um
+> Request
 
-> Exemplo
-
-## Listar todos os 
-
-> Exemplo
-
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            'https://api.totalvoice.com.br/did/chamada/{id-chamada}'
+```
 ```php
-<?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+Em Construção
 ```
-
 ```javascript--node
-const totalvoice = require('totalvoice-node');
-const client = new totalvoice("{{access-token}}");
-
-client.chamada.ligar("4832830151", "4811111111")
-    .then(function (data) {
-        console.log(data)
-    })
-    .catch(function (error) {
-        console.error('Erro: ', error)
-    });
+Em Construção
 ```
-
 ```go
-package main
-
-import (
-	"fmt"
-
-	"github.com/totalvoice/totalvoice-go"
-)
-
-func main() {
-    client := totalvoice.NewTotalVoiceClient("{{access-token}}")
-    response, err := client.Chamada.Criar("4811111111", "4822222222", nil)
-   
-    if err != nil {
-		panic(err)
-	}
-	fmt.Println(response)
-}
+Em Construção
 ```
-
 ```python
-from totalvoice.cliente import Cliente
-
-cliente = Cliente("{{access-token}}", 'HOST') #ex: api.totalvoice.com.br
-
-#Cria chamada
-numero_origem = "48999999999"
-numero_destino = "48900000000"
-response = cliente.chamada.enviar(numero_origem, numero_destino)
-print(response)
+Em Construção
 ```
-
 ```java
-package br.com.totalvoice;
+Em Construção
+```
+```ruby
+Em Construção
+```
+> Response
 
-import br.com.totalvoice.api.Chamada;
-import org.json.JSONObject;
-
-public class Main {
-    
-    public static void main(String args[]) {
-        
-        try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
-            Chamada chamada = new Chamada(client);
-
-            JSONObject result = chamada.ligar("NUMEROA", "NUMEROB");
-            System.out.println(result);
-
-        } catch(Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "total": 3,
+    "posicao": 0,
+    "limite": "100",
+    "relatorio": [
+      {
+        "id": 1,
+        "ativa": false,
+        "url_gravacao": "https://url-gravacao/rec/?id=1",
+        "data_inicio": "2018-09-27T16:35:15-03:00",
+        "numero_destino": "554811111111",
+        "numero_origem": "554811111111",
+        "status": "ocupado",
+        "duracao_segundos": 15,
+        "duracao": "00:00:15",
+        "duracao_cobrada_segundos": 0,
+        "duracao_cobrada": "00:00:00",
+        "duracao_falada_segundos": 0,
+        "duracao_falada": "00:00:00",
+        "preco": 0,
+        "ramal_id": 1231313
+      }
+    ]
+  }
 }
 ```
 
-## Relatório Chamadas Recebidas DID
+Você pode consultar as Chamadas recebidas por um DID. Basta informar o período desejado e o ID do DID para que a API retorne os dados.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID da chamda recebida a ser consultada
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Dados da chamada recebida.
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+
+## Relatório chamadas recebidas por DID
 
 > Definição
 
@@ -379,6 +932,208 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 ID do DID que será consultado
             </td>
         </tr>
+        <tr>
+            <td>
+                data_inicio
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_fim
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                origem
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número de telefone de origem para filtrar. Ex.: 4832830151
+            </td>
+        </tr>
+        <tr>
+            <td>
+                destino
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número de telefone de destino para filtrar. Ex.: 4832830151
+            </td>
+        </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="optional">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                total
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Retorna a quantidade total de registros
+             </td>
+        </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Quantidade de chamadas que retornou na consulta.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-chamada-did">chamada DID</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+
+## Relatorio de todas as chamadas
+
+> Definição
+
+```text
+GET https://api.totalvoice.com.br/did/relatorio
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            'https://api.totalvoice.com.br/did/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+```
+```php
+<?php
+$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$response = $client->did->relatorioChamadas($dataInicial, $dataFinal, $filtros);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+
+client.did.relatorioChamadas(dataInicial, dataFinal, filtros)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+response, err := client.DID.RelatorioChamadas.Gerar(dataInicial, dataFinal, filtros)
+```
+```python
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+response = client.did.get_relatorio_chamadas(data_inicio, data_fim, filtros)
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+Did did = new Did(client);
+JSONObject response = did.relatorioChamadas(dataInicial, dataFinal, filtros);
+```
+```ruby
+require 'totalvoice-ruby'
+include TotalVoice
+
+@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+puts @client.did.relatorioChamadas(data_inicial, data_final, filtros)
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "total": 3,
+    "posicao": 0,
+    "limite": "100",
+    "relatorio": [
+      {
+        "id": 1,
+        "ativa": false,
+        "url_gravacao": "https://url-gravacao/rec/?id=1",
+        "data_inicio": "2018-09-27T16:35:15-03:00",
+        "numero_destino": "554811111111",
+        "numero_origem": "554811111111",
+        "status": "ocupado",
+        "duracao_segundos": 15,
+        "duracao": "00:00:15",
+        "duracao_cobrada_segundos": 0,
+        "duracao_cobrada": "00:00:00",
+        "duracao_falada_segundos": 0,
+        "duracao_falada": "00:00:00",
+        "preco": 0,
+        "ramal_id": 1231313
+      }
+    ]
+  }
+}
+```
+
+Você pode consultar as Chamadas recebidas por todos DID. Basta informar o período desejado para que a API retorne os dados.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
         <tr>
             <td>
                 data_inicio
