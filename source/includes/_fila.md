@@ -652,7 +652,7 @@ Basta informar o id da fila e por parâmetro o id do ramal para ser removido.
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/fila/{id}/{id}
+GET https://api.totalvoice.com.br/fila/{id-fila}/{id-ramal}
 ```
 
 > Request
@@ -660,7 +660,7 @@ GET https://api.totalvoice.com.br/fila/{id}/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/fila/1/1'
+            --header 'Access-Token: {{access-token}}' 'https://api.totalvoice.com.br/fila/id-fila/id-ramal'
 ```
 ```php
 <?php
@@ -762,3 +762,205 @@ Basta informar o id da fila e o id do ramal.
         </tr>        
     </tbody>
 </table>
+
+## Relatório chamadas de uma fila 
+
+> Definição
+
+```text
+GET https://api2.totalvoice.com.br/fila/{id}/relatorio
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Accept: application/json' \
+            --header 'Access-Token: seu-token' \
+            'https://api2.totalvoice.com.br/fila/{id-fial}/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+```
+```php
+<?php
+$client = new TotalVoiceClient('seu-token');
+$response = $client->fila->relatorioChamadas($id_fila,$dataInicial, $dataFinal);
+```
+```javascript--node
+Em construção
+```
+```go
+Em construção
+```
+```python
+Em construção
+```
+```java
+Em construção
+```
+```ruby
+Em construção
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "total": 8,
+    "posicao": 0,
+    "limite": 100,
+    "relatorio": [
+      {
+        "id": 1324567,
+        "numero_destino": "554831810323",
+        "numero_origem": "4712344321",
+        "data_inicio": "2019-07-15T08:32:34.000-03:00",
+        "status": "Não atendida",
+        "atendida": false,
+        "ativa": 0,
+        "duracao_segundos": 237,
+        "duracao": "00:03:57",
+        "duracao_cobrada_segundos": 0,
+        "duracao_cobrada": "00:00:00",
+        "duracao_falada_segundos": 0,
+        "duracao_falada": "00:00:00",
+        "tempo_espera": 225,
+        "preco": 0,
+        "url_gravacao": "https://api.evoline.com.br/rec/?id=123sd213",
+        "fila": {
+          "id": 430,
+          "data_inicio": "2019-07-15T08:31:47.000-03:00"
+        },
+        "ramal": {}
+      },
+      {
+        "id": 43211234,
+        "numero_destino": "554831810323",
+        "numero_origem": "4840421210",
+        "data_inicio": "2019-07-15T09:02:47.000-03:00",
+        "status": "Atendida",
+        "atendida": true,
+        "ativa": 0,
+        "duracao_segundos": 296,
+        "duracao": "00:04:56",
+        "duracao_cobrada_segundos": 286,
+        "duracao_cobrada": "00:04:46",
+        "duracao_falada_segundos": null,
+        "duracao_falada": null,
+        "tempo_espera": null,
+        "preco": 0,
+        "url_gravacao": "https://api.evoline.com.br/rec/?id=691325",
+        "fila": {
+          "id": 430,
+          "data_inicio": "2019-07-15T09:02:47.000-03:00"
+        },
+        "ramal": {
+          "id": 12342454,
+          "ramal": "4099",
+          "login": "suporte@totalvoice.com.br"
+        }
+      }
+    ]
+  }
+}
+```
+
+Você pode consultar os áudios enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <td>
+                id
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Id da fila que deseja consultar as ligações
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_inicio
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_fim
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                origem
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número de origem da ligação recebida
+            </td>
+        </tr>
+            <td>
+                destino
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número de destino da ligação recebida
+            </td>
+        </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr> 
+
+    </tbody>
+</table>
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos chamadas recebidas 
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<b>Exemplo:</b> Se você tiver um relatorio com 350 chamadas, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+
+<br>
+<br>
