@@ -31,7 +31,7 @@ Definição do objeto Áudio
                 <span class="attribute">integer</span>
             </td>
             <td>
-                ID do DID(Número recepitivo)
+                ID do DID(Número receptivo)
              </td>
         </tr>
         <tr>
@@ -65,7 +65,7 @@ Definição do objeto Áudio
 </table>
 <br>
 
-A funcionalidade **DID** (Número de telefone para recebimento de chamadas) permite que você gerencie, adquire ou remova um DID da sua Conta. Também será possível extrair relatórios dos DIDs adquiridos e das chamadas recebidas por um número em específico da sua Conta.
+A funcionalidade **DID** (Número de telefone para recebimento de chamadas) permite que você gerencie, adquire ou remova um DID da sua Conta. Também será possível extrair relatórios dos DIDs adquiridos e das chamadas recebidas por um número específico da sua Conta.
 
 ## Consulta DIDs
 
@@ -126,7 +126,7 @@ Em construção
 
 ##### Request
 
-Não precisar passar nenhum parâmetro.
+Não precisa passar nenhum parâmetro.
 
 #### Response
 
@@ -214,7 +214,7 @@ Em construção
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Id do ramal que sera modíficado(O id é passado na URL do endpoint) 
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
                 </td>
         </tr>
         <tr>
@@ -223,7 +223,7 @@ Em construção
                 <span class="attribute">integer</span>
             </td>
             <td>
-                ID da URA, a qual ira atender a ligação no momento em que o número receber uma ligação.¹
+                ID da URA, a qual irá atender a ligação no momento em que o número receber uma ligação.¹
             </td>
         </tr>
         <tr>
@@ -232,7 +232,7 @@ Em construção
                 <span class="attribute">integer</span>
             </td>
             <td>
-                ID do ramal, o qual ira atender a ligação no momento em que o número receber uma ligação.¹
+                ID do ramal, o qual irá atender a ligação no momento em que o número receber uma ligação.¹
             </td>
         </tr>
     </tbody>
@@ -351,9 +351,9 @@ Em construção
 
 ## Estoque de DIDs
 
-Consulta todos os DIDs disponívels para serem comprados. 
+Consulta todos os DIDs disponíveis para serem comprados. 
 
-<b>Nota:</b> Para adiquirir um DID você deve ter o cartão de crédito cadastrado na plataforma.
+<b>Nota:</b> Para adquirir um DID você deve ter o cartão de crédito cadastrado na plataforma.
 
 > Did Endpoint
 
@@ -416,7 +416,7 @@ Em construção
 
 ##### Request
 
-Não precisar passar nenhum parâmetro.
+Não precisa passar nenhum parâmetro.
 
 #### Response
 
@@ -436,7 +436,7 @@ Não precisar passar nenhum parâmetro.
 
 ## Comprar DID
 
-Para adiquirir um DID você deve ter o cartão de crédito cadastrado na plataforma.
+Para adquirir um DID você deve ter um cartão de crédito cadastrado na plataforma.
 
 > Did Endpoint
 
@@ -507,7 +507,7 @@ Em construção
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Id do DID que sera comprado
+                Id do DID que será comprado
              </td>
         </tr>
     </tbody>
@@ -608,7 +608,7 @@ Definição do objeto Chamada DID
                 <span class="attribute">datetime</span>
             </td>
             <td>
-                Data de ínicio do registro da chamada. Data e Hora no formato UTC
+                Data de início do registro da chamada. Data e Hora no formato UTC
             </td>
         </tr>
         <tr>
@@ -653,7 +653,7 @@ Definição do objeto Chamada DID
                  <span class="attribute">integer</span>
              </td>
              <td>
-                 Duração em segundos (inteiro) total da chamada desde o início do processamento
+                 Duração em segundos (inteiro) do total da chamada desde o início do processamento
              </td>
          </tr>
          <tr>
@@ -805,7 +805,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                ID da chamda recebida a ser consultada
+                ID da chamada recebida a ser consultada
             </td>
         </tr>
     </tbody>
@@ -979,7 +979,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
             </td>
         </tr>
         <tr>
@@ -1014,7 +1014,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
              </td>
         </tr>
         <tr>
@@ -1041,7 +1041,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
 <br>
 <br>
 
-## Relatorio de todas as chamadas
+## Relatório de todas as chamadas
 
 > Definição
 
@@ -1128,7 +1128,7 @@ puts @client.did.relatorioChamadas(data_inicial, data_final, filtros)
 }
 ```
 
-Você pode consultar as Chamadas recebidas por todos DID. Basta informar o período desejado para que a API retorne os dados.
+Você pode consultar as Chamadas recebidas por todos DIDs. Basta informar o período desejado para que a API retorne os dados.
 
 #### Request
 
@@ -1181,7 +1181,7 @@ Você pode consultar as Chamadas recebidas por todos DID. Basta informar o perí
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
             </td>
         </tr>
         <tr>
@@ -1216,7 +1216,7 @@ Você pode consultar as Chamadas recebidas por todos DID. Basta informar o perí
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
              </td>
         </tr>
         <tr>

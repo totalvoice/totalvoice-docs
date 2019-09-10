@@ -7,7 +7,7 @@ https://api2.totalvoice.com.br/sms
 ```
 
 O **SMS** permite que você envie mensagens de texto pela nossa API. Você precisa informar
-um número de destino e uma mensagem à ser enviada. Existem algumas opções adicionais,
+um número de destino e uma mensagem a ser enviada. Existem algumas opções adicionais
 que permitem aguardar uma resposta do usuário, enviar multi sms ou agendar uma 
 data de envio por exemplo.
 
@@ -264,7 +264,7 @@ puts @client.sms.enviar("48111111111", "Ola tudo bem?")
   }
 }
 ```
-Para o envio de SMS, é necessário informar um número móvel válido e uma mensagem de texto.
+Para o envio de SMS é necessário informar um número móvel válido e uma mensagem de texto.
 
 #### Request
 
@@ -276,7 +276,7 @@ Para o envio de SMS, é necessário informar um número móvel válido e uma men
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone móvel que irá receber a mensagem de texto
+                Número do telefone móvel que irá receber a mensagem de texto.
              </td>
         </tr>
         <tr>
@@ -285,7 +285,7 @@ Para o envio de SMS, é necessário informar um número móvel válido e uma men
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Mensagem de texto para ser enviada, limite: 160 caracteres não aceita acentos
+                Mensagem de texto para ser enviada com limite de 160 caracteres e não aceita acentos.
             </td>
         </tr>
         <tr>
@@ -297,31 +297,31 @@ Para o envio de SMS, é necessário informar um número móvel válido e uma men
                 </span>
             </td>
             <td>
-                Aguardar uma resposta do destinário
+                Aguardar uma resposta do destinário.
             </td>
         </tr>
         <tr>
             <td>
                 multi_sms
                 <span class="optional">
-                    Opcional, 
+                    Opcional 
                     <span>default <b>false</b></span>
                 </span>
             </td>
             <td>
-                Aceita SMS com mais de 160 char - ate 16.000. Envia multiplos sms para o mesmo numero (um a cada 160 char) e retorna array de ids.
+                Aceita SMS com mais de 160 caracteres, máximo é de 16.000 caracteres. Envia multiplos SMSs para o mesmo número (um a cada 160 caracteres) e retorna array de IDs.
             </td>
         </tr>
         <tr>
             <td>
                 data_criacao
                 <span class="optional">
-                    Opcional,
+                    Opcional
                     <span>default <b>null</b></span>
                 </span>
             </td>
             <td>
-                Informe uma data e hora para agendar a entrega do sms. vazio = liga imediatamente. Data e Hora no formato UTC
+                Informe uma data e hora para agendar a entrega do SMS. vazio = liga imediatamente. Data e Hora no formato UTC.
             </td>
         </tr>
     </tbody>
@@ -337,7 +337,7 @@ Para o envio de SMS, é necessário informar um número móvel válido e uma men
                 <span class="attribute">integer/array</span>
             </td>
             <td>
-                A resposta pode ser um Objeto com o ID do SMS ou, um array com vários ID's caso seja setado para o envio de multi_sms = true.
+                A resposta pode ser um Objeto com o ID do SMS, ou um array com vários IDs caso seja setado para o envio de multi_sms = true.
              </td>
         </tr>
     </tbody>
@@ -440,7 +440,7 @@ puts @client.sms.buscar(123)
 }
 ```
 
-Após o envio de mensagens de SMS, você poderá realizar a busca do registro pelo seu ID.
+Após o envio de mensagens de SMS você poderá realizar a busca do registro pelo seu ID.
 
 ##### Request
 
@@ -602,7 +602,7 @@ puts @client.sms.relatorio(data_inicial, data_final)
 }
 ```
 
-Você pode consultar os SMS's enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
+Você pode consultar os SMSs enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
 
 #### Request
 
@@ -635,7 +635,7 @@ Você pode consultar os SMS's enviados posteriormente. Basta informar o período
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>

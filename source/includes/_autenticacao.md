@@ -40,7 +40,7 @@ Exemplo de Access-Token:
 `testeM68PU1Izmb9chEdLzep7IwRymWO`
 
 
-As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação na requisição HTTP transparentemente. 
+As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação na requisição HTTP de forma transparente. 
 
 <aside class="warning">
  Mantenha seu Token em segredo, tome muito cuidado, não deixe ele exposto em um código público e nunca

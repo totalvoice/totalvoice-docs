@@ -1,8 +1,8 @@
 # Central Telefônica
 
-Na central telefonica você podera fazer configurações e retirar relatorios de ramai e URAs
+Na central telefônica você poderá fazer configurações e retirar relatórios de ramal e URAs.
 
-Caso você deseje utilizar a API da TotalVoice para ligações recepitivas, entre em [contato](#introducao) conosco para a contração de um número recepitivo(DID).
+Caso você deseje utilizar a API da TotalVoice para ligações receptivas, entre em [contato](#introducao) conosco para a contratação de um número receptivo(DID).
 
 ### Objeto Ramal
 
@@ -94,7 +94,7 @@ Definição do objeto Ramal
                  <span class="attribute">boolean</span>
              </td>
              <td>
-                 Permite faz ligações externas
+                 Permite fazer ligações externas
              </td>
          </tr>
          <tr>
@@ -103,7 +103,7 @@ Definição do objeto Ramal
                  <span class="attribute">boolean</span>
              </td>
              <td>
-                 Permite faz ligações para números de celular
+                 Permite fazer ligações para números de celular
              </td>
          </tr>
          <tr>
@@ -192,7 +192,7 @@ Em construção
   }
 }
 ```
-Nenhum campo é obrigatorio, mas indicamos que você passe os parâmetros ramal, e login para controlar melhor os ramais criados.
+Nenhum campo é obrigatório, mas indicamos que você passe os parâmetros ramal e login para controlar melhor os ramais criados.
 
 #### Request
 
@@ -240,7 +240,7 @@ Nenhum campo é obrigatorio, mas indicamos que você passe os parâmetros ramal,
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Permite faz ligações externas
+                Permite fazer ligações externas
             </td>
         </tr>
         <tr>
@@ -249,7 +249,7 @@ Nenhum campo é obrigatorio, mas indicamos que você passe os parâmetros ramal,
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Permite faz ligações para números de celular
+                Permite fazer ligações para números de celular
             </td>
         </tr>
         <tr>
@@ -267,7 +267,7 @@ Nenhum campo é obrigatorio, mas indicamos que você passe os parâmetros ramal,
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Permite o usário deste ramal ver gravações
+                Permite o usuário deste ramal ver gravações
             </td>
         </tr>
         <tr>
@@ -276,7 +276,7 @@ Nenhum campo é obrigatorio, mas indicamos que você passe os parâmetros ramal,
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Permite o usário utilizar webphone
+                Permite o usuário utilizar webphone
             </td>
         </tr>
         <tr>
@@ -285,7 +285,7 @@ Nenhum campo é obrigatorio, mas indicamos que você passe os parâmetros ramal,
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Caso tenha um valor aqui, ao telefonar para este número de ramal, vai cair em uma URA ao invés de chamar o usuário
+                Caso tenha um valor aqui ao telefonar para este número de ramal, vai cair em uma URA ao invés de chamar o usuário
             </td>
         </tr>
         <tr>
@@ -294,7 +294,7 @@ Nenhum campo é obrigatorio, mas indicamos que você passe os parâmetros ramal,
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Se esse valor for igual a true, ao ligar para esse ramal ele sera incaminhado para uma caixa postal que gravar recados.(Não ira chamar no usuário)
+                Se esse valor for igual a true, ao ligar para esse ramal ele será encaminhado para uma caixa postal que gravará recados. (Não irá chamar no usuário)
             </td>
         </tr>
     </tbody>
@@ -389,7 +389,7 @@ Em construção
   }
 }
 ```
-Após o ramal criado, você pode consultar suas informações
+Após o ramal ser criado, você pode consultar suas informações
 
 #### Request
 
@@ -494,7 +494,7 @@ Em construção
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Id do ramal que sera modíficado(O id é passado na URL do endpoint) 
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
                 </td>
         </tr>
         <tr>
@@ -539,7 +539,7 @@ Em construção
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Permite faz ligações externas
+                Permite fazer ligações externas
             </td>
         </tr>
         <tr>
@@ -548,7 +548,7 @@ Em construção
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Permite faz ligações para números de celular
+                Permite fazer ligações para números de celular
             </td>
         </tr>
         <tr>
@@ -566,7 +566,7 @@ Em construção
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Permite o usário deste ramal ver gravações
+                Permite o usuário deste ramal ver gravações
             </td>
         </tr>
         <tr>
@@ -575,7 +575,7 @@ Em construção
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Permite o usário utilizar webphone
+                Permite o usuário utilizar webphone
             </td>
         </tr>
         <tr>
@@ -593,7 +593,7 @@ Em construção
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Se esse valor for igual a true, ao ligar para esse ramal ele sera incaminhado para uma caixa postal que gravar recados.(Não ira chamar no usuário)
+                Se esse valor for igual a true, ao ligar para esse ramal ele será encaminhado para uma caixa postal que gravará recados.(Não irá chamar no usuário)
             </td>
         </tr>
     </tbody>
@@ -820,7 +820,7 @@ Em construção
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -852,7 +852,7 @@ Em construção
     </tbody>
 </table>
 
-<b>Importante:</b> Se você tiver um relatorio com 350 ramais, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+<b>Importante:</b> Se você tiver um relatório com 350 ramais, na primeira página será retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
 
 ## Listar pausas do ramal
 
@@ -927,7 +927,7 @@ Em construção
                 <span class="required">integer</span>
             </td>
             <td>
-                Id do ramal que sera modíficado(O id é passado na URL do endpoint) 
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
             </td>
         </tr>
         <tr>
@@ -957,7 +957,7 @@ Em construção
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -989,7 +989,7 @@ Em construção
     </tbody>
 </table>
 
-<b>Importante:</b> Se você tiver um relatorio com 350 pausas do ramal, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+<b>Importante:</b> Se você tiver um relatório com 350 pausas do ramal, na primeira página será retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
 
 ## Listar ligações de um ramal
 
@@ -1087,7 +1087,7 @@ Em construção
                 <span class="required">integer</span>
             </td>
             <td>
-                Id do ramal que sera modíficado(O id é passado na URL do endpoint) 
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
             </td>
         </tr>
         <tr>
@@ -1117,7 +1117,7 @@ Em construção
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -1149,7 +1149,7 @@ Em construção
     </tbody>
 </table>
 
-<b>Importante:</b> Se você tiver um relatorio com 350 pausas do ramal, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+<b>Importante:</b> Se você tiver um relatório com 350 pausas do ramal, na primeira página será retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
 
 ## Objeto URA
 
@@ -1183,7 +1183,7 @@ Em construção
     ]
 }
 ```
-Uma URA possui uma estrutura atedimento, em nosso api você tem diverças possíbilidades. Após os atributos, iremos apresentar todos os Parâmetros que podem ser utilizados.
+Uma URA possui uma estrutura de atendimento, em nossa api você tem diversas possibilidades. Após os atributos, iremos apresentar todos os Parâmetros que podem ser utilizados.
 
 #### Atributos
 
@@ -1220,7 +1220,7 @@ Uma URA possui uma estrutura atedimento, em nosso api você tem diverças possí
 </table>
 
 #### Parâmetros da estrutura da URA(dados)
-O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o que vem logo abaixo. Vejá o exemplo ao lado.
+O nome da "acao" é o maior e o que deve estar dentro do array "acao_dados" é o que vem logo abaixo. Veja o exemplo ao lado.
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -1247,7 +1247,7 @@ O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o
                 <span class="attribute">numero_telefone</span>
             </td>
             <td>
-                Transefere para um ramal ou número externo. Transferencia para número externo tem o valor de uma ligação efetuada.
+                Transfere para um ramal ou número externo. Transferência para número externo tem o valor de uma ligação efetuada.
             </td>
         </tr>
         <tr>
@@ -1256,7 +1256,7 @@ O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o
                 <span class="attribute">fila_id</span>
             </td>
             <td>
-                Transefere para a <a href="https://centraltotalvoice.freshdesk.com/a/solutions/articles/35000108391-como-funcionam-as-filas-de-atendimento">fila de atendimento</a> referente ao seu ID.
+                Transfere para a <a href="https://centraltotalvoice.freshdesk.com/a/solutions/articles/35000108391-como-funcionam-as-filas-de-atendimento">fila de atendimento</a> referente ao seu ID.
             </td>
         </tr>
         <tr>
@@ -1265,7 +1265,7 @@ O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o
                 <span class="attribute">url</span>
             </td>
             <td>
-                Envio um webhook com as informações da chamada para o endpoint passado no parametro "url".
+                Envia um webhook com as informações da chamada para o endpoint passado no parâmetro "url".
             </td>
         </tr>
         <tr>
@@ -1292,7 +1292,7 @@ O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o
                 <span class="attribute">url</span>
             </td>
             <td>
-               Transcreve um áudio em um texto e envia para o url cadastrada. Veja mais sobre clicando aqui.
+               Transcreve um áudio em um texto e envia para a url cadastrada. Veja mais sobre clicando aqui.
             </td>
         </tr>
         <tr>
@@ -1300,13 +1300,13 @@ O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o
                 fim
             </td>
             <td>
-               Derruba a ligação, não tem acao_dados e geralmente é usada seguido de uma outra ação. Se não tiver essa informação, a URA ira ficar até que o outro usuário desligue ou a ligação caia.
+               Derruba a ligação, não tem acao_dados e geralmente é usada seguido de uma outra ação. Se não tiver essa informação, a URA irá ficar até que o outro usuário desligue ou a ligação caia.
             </td>
         </tr>                     
     </tbody>
 </table>
 
-#### Opções adicinação para ação
+#### Opções adicionais para ação
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -1315,7 +1315,7 @@ O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o
                 <span class="attribute">string</span>
             </td>
             <td>
-                Caso você tenha adicionado uma 'opcao' na etapa da URA ela só sera chamada caso o usuário digite o número dela. As opções vão de 1 a 9.
+                Caso você tenha adicionado uma 'opcao' na etapa da URA ela só será chamada caso o usuário digite o número dela. As opções vão de 1 à 9.
              </td>
         </tr>
         <tr>
@@ -1324,7 +1324,7 @@ O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o
                 <span class="attribute">string</span>
             </td>
             <td>
-                Indica a qual menu pertence essa etapa da URA, então se 'menu' for igual a 'menu 2'.
+                Indica a qual menu pertence essa etapa da URA.
              </td>
         </tr>
         <tr>
@@ -1333,7 +1333,7 @@ O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o
                 <span class="attribute">string</span>
             </td>
             <td>
-                Este é o tempo de espera para que a ligação seja derrubada ou a URA va para a próxima ação, ele começa a conta após a sua ação acabar. Exemplo assim que avacar o texto do seu TTS.
+                Este é o tempo de espera para que a ligação seja derrubada ou a URA vá para a próxima ação, ele começa a conta após a sua ação acabar. Exemplo: assim que acabar o texto do seu TTS.
              </td>
         </tr>
         <tr>
@@ -1342,8 +1342,8 @@ O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o
                 <span class="attribute">string</span>
             </td>
             <td>
-                Isso indicar que essa etapada da ação ira esperar no maximo a quantiade de caracteres que você passar. Por exemplo:
-                {"coletar_dtmf":"11"}. Quando atingido o máximo de DTMF(ou acabar o timeout) sera executada a próxima ação.
+                Isso indica que essa etapa da ação irá esperar no máximo a quantidade de caracteres que você passar. Por exemplo:
+                {"coletar_dtmf":"11"}. Quando atingido o máximo de DTMF(ou acabar o timeout) será executada a próxima ação.
              </td>
         </tr>
         <tr>
@@ -1352,7 +1352,7 @@ O nome da "acao" é o maior e o que deve estar dentro do arrau "acao_dados" é o
                 <span class="attribute">string</span>
             </td>
             <td>
-                Quando você utiliza a ação 'fila' você pode usar esse paremetro passando o tempo maximo de espera da fila, após o termino do tempo a proxima ação sera executada.
+                Quando você utiliza a ação 'fila' você pode usar esse parâmetro passando o tempo máximo de espera da fila, após o término do tempo a próxima ação será executada.
              </td>
         </tr>
     </tbody>
@@ -1419,7 +1419,7 @@ Em construção
   }
 }
 ```
-Vejá a lista de opções dos dados/estrutura da URA que podem ser utilizadas.
+Veja a lista de opções dos dados/estrutura da URA que podem ser utilizadas.
 
 #### Request
 
@@ -1773,7 +1773,7 @@ Em construção
     </tbody>
 </table>
 
-## Relatorio de URA
+## Relatório de URA
 
 > Definição
 

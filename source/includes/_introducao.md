@@ -13,7 +13,7 @@ Disponibilizamos bibliotecas em diversas linguagens para uma maior facilidade do
 da documentação clicando na linguagem desejada no canto superior direito da página.
 
 Para utilizar a API, você precisará de uma conta em nosso site, <a href="https://www.totalvoice.com.br/signup.php" target="_blank">clicando aqui</a>
-você poderá criá-la facilmente, na página principal de sua conta, você tem acesso ao **Access-Token**, que será utilizado para autenticação no serviço.
+você poderá criá-la facilmente, na página principal de sua conta, você tem acesso ao **Access-Token** que será utilizado para autenticação no serviço.
 
 ### Bibliotecas
 As bibliotecas oficiais da nossa API podem ser encontradas em nosso [GitHub](https://github.com/totalvoice).
@@ -28,8 +28,8 @@ As bibliotecas oficiais da nossa API podem ser encontradas em nosso [GitHub](htt
 
 ### Dúvidas
 
-Caso você não encontre algum material ou possui alguma dúvida técnica que não está na documentação entre em <b>contato</b> conosco
+Caso você não encontre algum material ou possui alguma dúvida técnica que não está na documentação, entre em <b>contato</b> conosco
 pelos nossos canais de comunicação/suporte.
 
  - E-mail: suporte@totalvoice.com.br
- - Chat: no paindel da TotalVoice.
+ - Chat: no painel da TotalVoice.

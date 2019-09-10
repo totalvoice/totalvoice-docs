@@ -6,17 +6,17 @@
 https://api2.totalvoice.com.br/webphone
 ```
 
-Webphone é uma maneira de conectar à um Ramal diretamente de um computador, todo ramal tem uma URL na qual
-pode acessar o Webphone sem precisar se conectar ao site da TotalVoice, muito utilizado em integrações,
+Webphone é uma maneira de se conectar a um Ramal diretamente por um computador, todo ramal tem uma URL na qual
+pode acessar o Webphone sem precisar se conectar ao site da TotalVoice, muito utilizado em integrações
 para implementar ligações diretamente em um software ou sistema de uma maneira fácil.
 
 Há três tipos de Webphone:
 
-- **Floating**: Quando você vai abrir o Webphone em uma popup;
+- **Floating**: Quando você vai abrir o Webphone em um popup;
 - **Embedded**: Se o Webphone ficará embutido no site / sistema;
 - **Hidden**: Sem interface, apenas funções Javascript.
 
-Um webphone é vinculado diretamente com um Ramal.
+Um webphone é vinculado diretamente a um Ramal.
 
 ## Consultar URL Webphone
 
@@ -106,7 +106,7 @@ JSONObject response = central.webphone(webphone_dados);
                 <span class="optional">Opcional</span>
             </td>
             <td>
-               Identificador único do Ramal que você deseja pegar o Webphone, obrigatório caso não for informar o campo ramal.
+               Identificador único do Ramal que você deseja usar no Webphone, obrigatório caso não for informar o campo ramal.
             </td>
         </tr>
         <tr>
@@ -133,7 +133,7 @@ JSONObject response = central.webphone(webphone_dados);
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Se você quiser que o Webphone feche ao fim da ligação, colocar esse campo como true;
+                Se você quiser que o Webphone feche ao fim da ligação deve colocar esse campo como true;
             </td>
         </tr>
         <tr>
@@ -163,3 +163,299 @@ JSONObject response = central.webphone(webphone_dados);
         </tr>
     </tbody>
 </table>
+
+## Criar Webphone
+
+Você pode criar um webphone utilizando nosso exemplo localizado em <a href = "https://github.com/totalvoice/webphone-js">Exemplo Webphone</a>.
+
+## Funções do Webphone
+
+```javascript
+function conectar(){
+                webphone.contentWindow.postMessage({message : 'conectar'}, '*');
+            }
+```
+
+
+
+```javascript
+function desconectar(){
+                webphone.contentWindow.postMessage({message : 'desconectar'}, '*');
+            }
+```
+
+
+
+```javascript
+function chamaNumero(numero) {
+                webphone.contentWindow.postMessage({
+                    message: 'chamaNumero',
+                    'numero': numero
+                }, '*');
+            }
+```
+
+
+
+```javascript
+function atender() {
+                webphone.contentWindow.postMessage({
+                    message: 'answer'
+                }, '*');
+            }
+```
+
+
+
+```javascript
+function desligaChamada() {
+                webphone.contentWindow.postMessage({
+                    message: 'hangup'
+                }, '*');
+            }
+```
+
+
+
+```javascript
+function enviaDTMF(meuDTMF) {
+                webphone.contentWindow.postMessage({
+                    message: 'enviaDTMF',
+                    'dtmf': meuDTMF
+                }, '*');
+            }
+```
+
+
+
+```javascript
+function mute() {
+                webphone.contentWindow.postMessage({
+                    message: 'mute'
+                }, '*');
+            }
+```
+
+
+
+```javascript
+function transferir(numeroTelefone) {
+                webphone.contentWindow.postMessage({
+                    message: 'transferir',
+                    'numeroTelefone': numeroTelefone
+                }, '*');
+            }
+```
+
+
+
+```javascript
+function transferirConsulta(numeroTelefone) {
+                webphone.contentWindow.postMessage({
+                    message: 'transferirConsulta',
+                    'numeroTelefone': numeroTelefone
+                }, '*');
+            }
+```
+
+
+
+```javascript
+function recstart() {
+                webphone.contentWindow.postMessage({
+                    message: 'recStart'
+                }, '*');
+            }
+```
+
+
+
+```javascript
+function recstop() {
+                webphone.contentWindow.postMessage({
+                    message: 'recStop'
+                }, '*');                
+            }
+```
+
+<table class="table-parameters">
+    
+    <tbody>
+        <tr>
+            <td>
+                <b>conectar()<b>
+            </td>
+            <td>
+                Conecta o webphone
+            </td>
+        </tr>
+        
+
+        <tr>
+             <td>
+                <b>desconectar()<b>
+            </td>
+            <td>
+                Desconecta o webphone
+            </td>
+        </tr>
+        
+
+        <tr>
+            <td>
+                <b>chamaNumero(numero)<b>
+            </td>
+            <td>
+                Telefona para o número/ramal destino
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>atender()<b>
+            </td>
+            <td>
+                Atender chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>desligaChamada()<b>
+            </td>
+            <td>
+                Encerra chamada ativa
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>enviaDTMF(meuDTMF)<b>
+            </td>
+            <td>
+                Envia um DTMF(número ou caracter) através de uma tecla. Números de 0 à 9, Asterisco(*) ou Sustenido(#).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>mute()<b>
+            </td>
+            <td>
+                Microfone fica mudo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>transferir(numeroTelefone)<b>
+            </td>
+            <td>
+                Transferir ligação sem consulta
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>transferirConsulta(numeroTelefone)<b>
+            </td>
+            <td>
+                Transferir ligação com consulta
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>recstart()<b>
+            </td>
+            <td>
+                Inicia a gravação parcial de uma chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>recstop()<b>
+            </td>
+            <td>
+                Encerra a gravação parcial da chamada
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+## Eventos do Webphone
+
+```javascript
+
+if (e.data.message == 'chegandoChamada') {
+    alert('Chegando Chamada de ' + e.data.numeroChegando + ' para: ' + 
+    e.data.numeroDestino + ' chamada_recebida_id: ' + e.data.chamadaRecebidaId);
+}
+
+
+if (e.data.message == 'status') {
+    alert('Status: ' + e.data.status);
+}
+
+
+if (e.data.message == 'chamada_id') {
+    alert('Chamada_id: ' + e.data.chamada_id);
+}
+
+
+if (e.data.message == 'status_erro') {
+    alert('Sem Permissão: ' + e.data.status_erro);
+}
+
+                
+if (e.data.message == 'stats_webphone') {
+    alert('Internet: ' + e.data.internet + ' e computador: ' + e.data.computador);
+}
+```
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                <b>chegandoChamada<b>
+            </td>
+            <td>
+                Ao receber uma chamada é disparado uma mensagem com o número de envio(e.data.numeroChegando), número de destino(e.data.numeroDestino) e o ID da chamada( e.data.chamadaRecebidaId).
+            </td>
+        </tr>
+        <tr>
+             <td>
+                <b>status<b>
+            </td>
+            <td>
+                Dispara uma mensagem ao ser alterado o status da chamada(e.data.status), que são exemplos de status: <b>conectado<b>, <b>desconectado<b>, <b>chamando<b>, <b>encerrada<b>, <b>conversando<b>.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>chamada_id<b>
+            </td>
+            <td>
+                Ao ser iniciada a chamada é disparado esse evento que retorna o identificador único da chamada(e.data.chamada_id), o ID é único e pode ser utilizado na api para recuperação de mais informações (get na api ou webhooks). 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>status_erro<b>
+            </td>
+            <td>
+                Ao ocorrer um erro(e.data.status_erro) durante a efetuação da chamada é disparado esse evento.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>stats_webphone<b>
+            </td>
+            <td>
+                Recebe o status da qualidade de conexão(Diagnóstico d o Ping e Jitter) e computador(Uso da CPU) para verificar a qualidade da ligação.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

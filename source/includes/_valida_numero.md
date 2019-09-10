@@ -100,7 +100,7 @@ Definição do objeto Valida Número
     </tbody>
 </table>
 
-## Criar um valida número
+## Criar um Valida Número
 
 > Definição
 
@@ -172,7 +172,7 @@ puts @client.valida_numero.criar("554811111111")
 ```
 Basta informar o número de destino a ser validado.
 
-Assim que um registro é criado, ele é imediatamente processado e ao término do processo, um <a href="#webhook-valida-numero">Webhook</a> é disparado para a url cadastrada enviando um objeto <a href="#objeto-valida-numero">valida número</a>.
+Assim que um registro é criado ele é imediatamente processado, ao término do processo um <a href="#webhook-valida-numero">Webhook</a> é disparado para a url cadastrada enviando um objeto <a href="#objeto-valida-numero">Valida Número</a>.
 
 <table class="table-parameters">
     <tbody>
@@ -278,7 +278,7 @@ puts @client.valida_numero.buscar(123)
 }
 ```
 
-Após a criação de um valida número, você poderá realizar a busca do registro pelo seu ID.
+Após a criação de um Valida Número, você poderá realizar a busca do registro pelo seu ID.
 
 ##### Request
 

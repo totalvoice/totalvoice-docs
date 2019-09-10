@@ -1,17 +1,17 @@
 # TTS Leitura de Texto
 
-> <b>Tts Endpoint</b>
+> <b>TTS Endpoint</b>
 
 ```text
 https://api2.totalvoice.com.br/tts
 ```
-A funcionalidade de **Tts**, permite que você nos envie uma mensgem de tts e nosso torpedo de voz ira tranformar em áudio.
+A funcionalidade de **TTS** permite que você nos envie uma mensagem de texto e nosso torpedo de voz irá tranformar em áudio.
 
-Assim quando o número detino atende, o mesmo ira escutar uma voz falando a mensagem que você escreveu.
+Assim, quando o número destino atende o mesmo irá escutar uma voz falando a mensagem que você escreveu.
 
-Você poderá enviar algumas opções adicionais, tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou colocar um número bina que aparecerá no momento da ligação.
+Você poderá enviar algumas opções adicionais, tais como aguardar uma resposta do usuário, gravar o áudio da ligação ou colocar um número bina que aparecerá no momento da ligação.
 
-## Objeto Tts
+## Objeto TTS
 
 > JSON
 
@@ -41,7 +41,7 @@ Você poderá enviar algumas opções adicionais, tais como, aguardar uma respos
 }
 ```
 
-Definição do objeto Tts
+Definição do objeto TTS
 
 #### Atributos
 
@@ -53,7 +53,7 @@ Definição do objeto Tts
                 <span class="attribute">integer</span>
             </td>
             <td>
-                ID do registro do Tts.
+                ID do registro do TTS.
              </td>
         </tr>
         <tr>
@@ -62,7 +62,7 @@ Definição do objeto Tts
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número do destinatário que foi enviado o Tts.
+                Número do destinatário que foi enviado o TTS.
             </td>
         </tr>
         <tr>
@@ -80,7 +80,7 @@ Definição do objeto Tts
                 <span class="attribute">datetime</span>
             </td>
             <td>
-                Data e hora que foi iniciado o processamento do tts.
+                Data e hora que foi iniciado o processamento do TTS.
             </td>
         </tr>
         <tr>
@@ -107,7 +107,7 @@ Definição do objeto Tts
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Duração em total em <i>segundos</i>, da chamada, desde o início do processamento.
+                Duração total em <i>segundos</i> da chamada, desde o início do processamento.
             </td>
         </tr>
         <tr>
@@ -188,7 +188,7 @@ Definição do objeto Tts
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Valor enviado identendificando se aceita a resposta do usuário.¹
+                Valor enviado identificando se aceita a resposta do usuário.¹
             </td>
         </tr>
         <tr>
@@ -206,7 +206,7 @@ Definição do objeto Tts
                 <span class="attribute">string</span>
             </td>
             <td>
-                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconeção</a>
+                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconecção</a>
             </td>
         </tr>
         <tr>
@@ -223,7 +223,7 @@ Definição do objeto Tts
 <br>
 ¹ Após o usuário digitar algo no teclado númerico a ligação sera derrubada.
 
-## Criar um Tts
+## Criar um TTS
 
 > Definição
 
@@ -306,7 +306,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número exemplo: 4832830151
+                Número do telefone que irá receber a chamada, formato DDD + Número. Exemplo: 4832830151.
              </td>
         </tr>
         <tr>
@@ -315,7 +315,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Mensagem que será falada quando o número destino atender a ligação, exemplo: Olá, essa é a minha mensagem
+                Mensagem que será falada quando o número destino atender a ligação. Exemplo: Olá, essa é a minha mensagem.
             </td>
         </tr>
         <tr>
@@ -324,7 +324,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Velocidade em que será lida a mensagem, vai de -1 a 10. Quando menor mais lento e quanto maior o número mais rápido.
+                Velocidade em que será lida a mensagem, vai de -1 a 10. Quanto menor mais lento e quanto maior o número mais rápido.
             </td>
         </tr>
         <tr>
@@ -333,7 +333,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Aguardar uma resposta do destinário
+                Aguardar uma resposta do destinatário.
             </td>
         </tr>
         <tr>
@@ -351,7 +351,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número. Exemplo: 4832830151
             </td>
         </tr>
         <tr>
@@ -369,7 +369,16 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Caso identificado caixa, a ligação sera durrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
+                Caso seja identificado caixa postal a ligação será durrubada antes que inicie a mensagem para a caixa postal. Esse serviço tem um custo adicional.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                bina_inteligente
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>. 
             </td>
         </tr>
     </tbody>
@@ -385,7 +394,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Retorna o ID do Tts criado
+                Retorna o ID do TTS criado
              </td>
         </tr>
     </tbody>
@@ -479,7 +488,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
 }
 ```
 
-Após o envio do Tts, você poderá realizar a busca do registro pelo seu ID.
+Após o envio do TTS você poderá realizar a busca do registro pelo seu ID.
 
 ##### Request
 
@@ -491,7 +500,7 @@ Após o envio do Tts, você poderá realizar a busca do registro pelo seu ID.
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                ID do Tts para recuperar os dados
+                ID do TTS para recuperar os dados
              </td>
         </tr>
     </tbody>
@@ -507,13 +516,13 @@ Após o envio do Tts, você poderá realizar a busca do registro pelo seu ID.
                 <span class="attribute">object</span>
             </td>
             <td>
-                Retorna o objeto <a href="#objeto-tts">Tts</a>
+                Retorna o objeto <a href="#objeto-tts">TTS</a>
              </td>
         </tr>
     </tbody>
 </table>
 
-## Relatório Tts 
+## Relatório TTS 
 
 > Definição
 
@@ -623,7 +632,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
 }
 ```
 
-Você pode consultar os Tts enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
+Você pode consultar os TTSs enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
 
 #### Request
 
@@ -656,7 +665,7 @@ Você pode consultar os Tts enviados posteriormente. Basta informar o período d
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -683,13 +692,13 @@ Você pode consultar os Tts enviados posteriormente. Basta informar o período d
                 <span class="attribute">array</span>
             </td>
             <td>
-                Retorna um array com objetos <a href="#objeto-audio">Tts</a>
+                Retorna um array com objetos <a href="#objeto-audio">TTS</a>
              </td>
         </tr>
     </tbody>
 </table>
 
-<b>Exemplo: </b> Se você tiver um relatorio com 350 Tts, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+<b>Exemplo: </b> Se você tiver um relatório com 350 TTSs, na primeira página será retornado 200 TTSs. Para pegar os dados da segunda página o valor da posição deve ser 201.
 
 <br>
 <br>

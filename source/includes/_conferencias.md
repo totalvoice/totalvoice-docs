@@ -7,7 +7,7 @@ https://api2.totalvoice.com.br/conferencia
 ```
 
 Conferências são como salas privadas que você cria e recebe um ID, só você com esse código consegue realizar
-chamadas que ao serem atendidas, conectam-se à essa conferência.   
+chamadas que ao serem atendidas, conectam-se a essa conferência.   
 
 ## Objeto Conferência
 
@@ -51,7 +51,7 @@ Definição do objeto Conferência
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Identificar único da conferência.
+                Identificador único da conferência.
              </td>
         </tr>
         <tr>
@@ -119,7 +119,7 @@ Definição do objeto da Chamada da Conferência
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Identificar único da chamada da conferência. 
+                Identificador único da chamada da conferência. 
              </td>
         </tr>
         <tr>
@@ -128,7 +128,7 @@ Definição do objeto da Chamada da Conferência
                 <span class="attribute">id</span>
             </td>
             <td>
-                Identificar único da conferência. 
+                Identificador único da conferência. 
             </td>
         </tr>
         <tr>
@@ -209,7 +209,7 @@ Definição do objeto da Chamada da Conferência
                 <span class="attribute">float</span>
             </td>
             <td>
-                Valor cobrado por por esta chamada da conferência.
+                Valor cobrado por esta chamada da conferência.
             </td>
         </tr>
         <tr>
@@ -218,7 +218,7 @@ Definição do objeto da Chamada da Conferência
                 <span class="attribute">datetime</span>
             </td>
             <td>
-                Data do inicio da chamada.
+                Data do início da chamada.
             </td>
         </tr>
     </tbody>
@@ -395,7 +395,7 @@ Após o envio de mensagens de conferência, você poderá realizar a busca do re
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                ID do Conferência para recuperar os dados
+                ID da Conferência para recuperar os dados
              </td>
         </tr>
     </tbody>
@@ -515,7 +515,7 @@ JSONObject response = conferencia.relatorio(dataInicial, dataFinal);
 }
 ```
 
-Você pode consultar os conferências enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
+Você pode consultar as conferências enviadas posteriormente. Basta informar o período desejado para que a API retorne os dados.
 
 #### Request
 
@@ -548,7 +548,7 @@ Você pode consultar os conferências enviados posteriormente. Basta informar o 
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
