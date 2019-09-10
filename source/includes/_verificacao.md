@@ -5,11 +5,11 @@
 ```text
 https://api2.totalvoice.com.br/verificacao
 ```
-A funcionalidade de **verificacao** ou Two Factor Authentication(2FA), envia um código para um número de telefone, e depois você pode verificar se o código informado pelo usuário é válido.
+A funcionalidade de **verificação** ou Two Factor Authentication(2FA), envia um código para um número de telefone e depois você pode verificar se o código informado pelo usuário é válido.
 
-Esse código(apenas números) pode ser enviado via SMS (formato de texto) ou então TTS, onde você nos passa a mensagem que o usuário que atender a ligação irá ouvir.
+Esse código(apenas números) pode ser enviado via SMS(formato de texto), ou então TTS onde você nos passa a mensagem que o usuário que atender a ligação irá ouvir.
 
-<b>Mensagem enviada:</b> Seu codigo de verificacao *nome_produto* e: 1234
+<b>Mensagem enviada:</b> Seu código de verificação *nome_produto* é: 1234
 
 ## Enviar um código
 
@@ -103,7 +103,7 @@ puts @client.verificacao.enviar("4811111111", "TotalVoice App")
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Nome do produto que sera substituido na mensagem. 
+                Nome do produto que será substituído na mensagem. 
             </td>
         </tr>
         <tr>
@@ -112,7 +112,7 @@ puts @client.verificacao.enviar("4811111111", "TotalVoice App")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Tamanho do código que sera enviado. Minimo 4 e máximo 10, o código possui apenas números.
+                Tamanho do código que será enviado. Mínimo 4 e máximo 10, o código possui apenas números.
             </td>
         </tr>
         <tr>
@@ -121,7 +121,7 @@ puts @client.verificacao.enviar("4811111111", "TotalVoice App")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Caso você deseje que o número receba uma ligação invés de um sms, basta enviar esse parâmetro como 'true'.
+                Caso você deseje que o número receba uma ligação ao invés de um SMS, basta enviar esse parâmetro como 'true'.
             </td>
         </tr>
     </tbody>
@@ -137,7 +137,7 @@ puts @client.verificacao.enviar("4811111111", "TotalVoice App")
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Retorna o ID do do verificação de código enviada.
+                Retorna o ID de verificação do código enviada.
              </td>
         </tr>
     </tbody>
@@ -230,7 +230,7 @@ Após o envio do código, você pode pedir para o usuário inserir na sua platar
                 <span class="attribute">object</span>
             </td>
             <td>
-                Retorna o 'resultado' da verificação, o resultado pode ser 'valido' ou 'invalido'
+                Retorna o 'resultado' da verificação, o resultado pode ser 'válido' ou 'inválido'
              </td>
         </tr>
     </tbody>

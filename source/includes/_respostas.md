@@ -14,7 +14,7 @@
 }
 ```
 
-Toda resposta retornada pela API, vem em formato JSON contendo um cabeçalho padrão,
+Toda resposta retornada pela API vem em formato JSON contendo um cabeçalho padrão,
 o cabeçalho contém as informações sobre a requisição e os dados próprios da resposta, que ficam dentro do campo **dados**.
 
 #### Atributos da Resposta
@@ -112,7 +112,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
 </table>
 
 As respostas das requisições realizadas para a API TotalVoice utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
-sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, também utilizamos os códigos começando com 500 para apresentar falhas internas.
+sendo que o código 200 responde pelo sucesso e os que iniciam por 4xx pelas falhas, também utilizamos os códigos começando com 500 para apresentar falhas internas.
 
 <br style="margin-top: 280px;"/>  
 
@@ -139,11 +139,11 @@ sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, t
      </tr>
      <tr>
          <td>11</td>
-         <td>Algum dos parâmetros enviados está inválido</td>
+         <td>Algum dos parâmetros enviados está inválido.</td>
      </tr>
      <tr>
          <td>20</td>
-         <td>Erro pois o registro iria ficar duplicado.</td>
+         <td>Erro porque o registro ficaria duplicado.</td>
      </tr>
      <tr>
          <td>30</td>
@@ -179,7 +179,7 @@ sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, t
      </tr>
  </table>
  
- Um dos parâmetros padrões que vem em toda resposta da API, é o motivo, onde detalhamos o motivo pelo qual a sua requisição
+ Um dos parâmetros padrões que vem em toda resposta da API é o motivo, onde detalhamos o motivo pelo qual a sua requisição
  falhou (ou deu certo), na tabela ao lado temos a lista de motivos possíveis, e mais detalhes seguem no campo mensagem 
  do cabeçalho.
  
@@ -220,7 +220,7 @@ sendo que o código 200 responde pelo sucesso e os iniciando 4xx pelas falhas, t
      </tr>
  </table>
  
-Ao fim de toda ligação a chamada tera um status, ao lado você tem uma lista dos possíveis status.
+Ao fim de toda ligação a chamada terá um status, ao lado você tem uma lista dos possíveis status.
 <br>
 Caso encontre um status diferente dos mapeados, favor entrar em [contato](#introducao).
 
@@ -252,9 +252,9 @@ Caso encontre um status diferente dos mapeados, favor entrar em [contato](#intro
      </tr>
  </table>
  
- Este caso geralmente se refere as ligações de duas pernas, onde primeiramente é disparada um chamada para perna A (origem) e quando esta perna atende é disparada a ligação para perna B (destino).
+ Este caso geralmente se refere às ligações de duas pernas, onde primeiramente é disparada uma chamada para perna A (origem) e quando esta perna atende é disparada a ligação para perna B (destino).
 
  Este parâmetro é retornado nos objetos que representam algum lado (perna) de uma ligação que foi realizada, 
- por exemplo em um Objeto de um Áudio haverá um único atributo deste que representa
+ por exemplo, em um Objeto de um Áudio haverá um único atributo deste que representa
  o status do número que o áudio foi enviado, já em uma Chamada você terá um status para cada uma das pernas dela.
 

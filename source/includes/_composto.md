@@ -8,7 +8,7 @@ https://api2.totalvoice.com.br/composto
 
 A funcionalidade de **Envio de Composto**, permite que você envie mensagens de voz por telefone misturando gravações de áudio MP3 com TTS e também realize algumas outras funções de central telefônica como coletar DTMF e transferir.
 
-Exemplo: Envie uma mensagem para confirmar uma consulta ou transferir a pessoa para o reagendamento: "Você possui uma consulta agendada para amanhã 18h. Aperte 1 para confirmar ou 2 para ser remarcar". Quando o usuário pressionar a opção 2, ele já é transferido para o telefone de remarcação.
+Exemplo: Envie uma mensagem para confirmar uma consulta ou transferir a pessoa para o reagendamento: "Você possui uma consulta agendada para amanhã às 18h. Pressione 1 para confirmar ou 2 para ser remarcado". Quando o usuário pressionar a opção 2, ele já é transferido para o telefone de remarcação.
 JSON DADOS do exemplo:
 
 
@@ -150,7 +150,7 @@ Definição do objeto Composto
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Duração em segundos (inteiro) total da chamada desde o início do processamento
+                Duração em segundos (inteiro) do total da chamada desde o início do processamento
             </td>
         </tr>
         <tr>
@@ -255,8 +255,8 @@ Definição do objeto Composto
                     <li>2. sem rota para a rede de destino</li>
                     <li>3. sem rota para o destino</li>
                     <li>4. prefixo incorreto</li>
-                    <li>6. canal inaceitavel</li>
-                    <li>7. chamada sendo entregue em canal ja estabelecido</li>
+                    <li>6. canal inaceitável</li>
+                    <li>7. chamada sendo entregue em canal já estabelecido</li>
                     <li>8. call peemption</li>
                     <li>14. telefone portado para outra operadora</li>
                     <li>16. normal</li>
@@ -265,37 +265,37 @@ Definição do objeto Composto
                     <li>19. sem resposta - mas chamou</li>
                     <li>20. assinante ausente</li>
                     <li>21. chamada rejeitada</li>
-                    <li>22. este numero mudou</li>
+                    <li>22. este número mudou</li>
                     <li>23. redirecionado para novo destino</li>
                     <li>26. atendido em outro lugar</li>
-                    <li>27. destino nao esta funcionando</li>
-                    <li>28. formato invalido de numero</li>
+                    <li>27. destino não está funcionando</li>
+                    <li>28. formato inválido de número</li>
                     <li>29. rejeitado</li>
                     <li>30. resposta para status enquiry</li>
-                    <li>31. normal, nao especificado</li>
-                    <li>34. sem canal disponivel</li>
-                    <li>41. falha temporaria</li>
+                    <li>31. normal, não especificado</li>
+                    <li>34. sem canal disponível</li>
+                    <li>41. falha temporária</li>
                     <li>42. equipamento congestionado</li>
-                    <li>44. canal requisitado nao esta disponivel</li>
-                    <li>50. nao cadastrado</li>
+                    <li>44. canal requisitado não está disponível</li>
+                    <li>50. não cadastrado</li>
                     <li>52. chamada sainte barrada</li>
                     <li>54. chamada entrante barrada</li>
-                    <li>57. capacidade nao autorizada</li>
-                    <li>58. erro de midia ou parametros incompativeis</li>
-                    <li>65. capacidade do portador nao implementada</li>
-                    <li>66. tipo de canal nao implementado</li>
-                    <li>69. nao implementado</li>
-                    <li>81. valor de referencia invalido</li>
-                    <li>88. destino incompativel</li>
-                    <li>95. mensagem invalida nao especificada</li>
-                    <li>96. informacao obrigatoria nao presente</li>
-                    <li>97. mensagem nao implementada</li>
-                    <li>98. mensagem nao compativel com o estado da chamada ou nao existente ou nao implementada</li>
-                    <li>97. mensagem nao implementada</li>
-                    <li>99. elemento nao existente ou nao implementada</li>
-                    <li>97. mensagem nao implementada</li>
-                    <li>100. informacao invalida no conteudo dos elementos</li>
-                    <li>101. mensagem nao compativel com o estado da chamada</li>
+                    <li>57. capacidade não autorizada</li>
+                    <li>58. erro de mídia ou parâmetros incompatíveis</li>
+                    <li>65. capacidade do portador não implementada</li>
+                    <li>66. tipo de canal não implementado</li>
+                    <li>69. não implementado</li>
+                    <li>81. valor de referência inválido</li>
+                    <li>88. destino incompatível</li>
+                    <li>95. mensagem inválida não especificada</li>
+                    <li>96. informação obrigatória não presente</li>
+                    <li>97. mensagem não implementada</li>
+                    <li>98. mensagem não compatível com o estado da chamada ou não existente ou não implementada</li>
+                    <li>97. mensagem não implementada</li>
+                    <li>99. elemento não existente ou não implementado</li>
+                    <li>97. mensagem não implementada</li>
+                    <li>100. informação inválida no conteúdo dos elementos</li>
+                    <li>101. mensagem não compatível com o estado da chamada</li>
                     <li>102. timeout</li>
                     <li>111. erro de protocolo</li>
                     <li>127. erro de conectividade</li>
@@ -442,7 +442,7 @@ Basta informar o número de destino válido e um JSON com o composto
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Aguardar uma resposta do destinário
+                Aguardar uma resposta do destinatário
             </td>
         </tr>
         <tr>
@@ -469,10 +469,19 @@ Basta informar o número de destino válido e um JSON com o composto
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Campo de texto que será atrelado à ligação e devolvio no momento da ocnsulta.  Ex.: "clienteY"
+                Campo de texto que será atrelado à ligação e devolvido no momento da consulta.  Ex.: "clienteY"
             </td>
         </tr>
-
+        <tr>
+            <td>
+                bina_inteligente
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>. 
+            </td>
+        </tr>
+   
     </tbody>
 </table>
 
@@ -730,7 +739,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 ```
 
 
-Você pode consultar os composto enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
+Você pode consultar os compostos enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
 
 #### Request
 
@@ -763,7 +772,7 @@ Você pode consultar os composto enviados posteriormente. Basta informar o perí
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>

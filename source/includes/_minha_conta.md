@@ -379,6 +379,28 @@ puts @client.perfil.consulta_saldo()
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Buscar minha conta
 
@@ -567,7 +589,7 @@ puts @client.perfil.atualizar('{"nome":"TotalVoice"}')
 }
 ```
 
-Altera as informações de sua conta principal, você precisa passar no corpo do request o JSON com os campos que serão alterados, conforme exemplos.
+Altera as informações de sua conta principal, você precisa passar no corpo do request o JSON com os campos que serão alterados, conforme os exemplos.
 
 #### Request
 
@@ -624,7 +646,7 @@ Altera as informações de sua conta principal, você precisa passar no corpo do
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                O valor que será cobrado desta conta para chamadas destinadas à números fixos, deve ser maior ou igual ao da conta pai.
+                O valor que será cobrado desta conta para chamadas destinadas a números fixos deve ser maior ou igual ao da conta pai.
             </td>
         </tr>
         <tr>
@@ -633,7 +655,7 @@ Altera as informações de sua conta principal, você precisa passar no corpo do
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                O valor que será cobrado desta conta para chamadas destinadas à números móveis, deve ser maior ou igual ao da conta pai.
+                O valor que será cobrado desta conta para chamadas destinadas a números móveis, deve ser maior ou igual ao da conta pai.
             </td>
         </tr>
         <tr>
@@ -642,7 +664,7 @@ Altera as informações de sua conta principal, você precisa passar no corpo do
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                O valor que será cobrado desta conta para chamada entre Ramais dentro dela mesma, deve ser maior ou igual ao valor da conta pai.
+                O valor que será cobrado desta conta para chamada entre Ramais dentro dela mesma deve ser maior ou igual ao valor da conta pai.
             </td>
         </tr>
         <tr>

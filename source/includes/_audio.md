@@ -6,7 +6,7 @@
 https://api2.totalvoice.com.br/audio
 ```
 
-A funcionalidade de **Envio de Aúdio**, permite que você envie um torpedo de voz ou mensagens de voz do tipo audio determinados números. 
+A funcionalidade de **Envio de Áudio** permite que você envie um torpedo de voz ou mensagens de voz do tipo áudio para determinados números. 
 Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos 
 devem estar disponíveis em uma URL pública. Você poderá enviar algumas opções adicionais, 
 tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou colocar um número bina que aparecerá no momento da ligação.
@@ -118,7 +118,7 @@ Definição do objeto Áudio
         <tr>
             <td>
                 duracao
-                <span class="attribute">integer</span>
+                <span class="attribute">String</span>
             </td>
             <td>
                 Duração total da chamada desde o início do processamento
@@ -136,7 +136,7 @@ Definição do objeto Áudio
         <tr>
             <td>
                 duracao_cobrada
-                <span class="attribute">integer</span>
+                <span class="attribute">String</span>
             </td>
             <td>
                 Duração considerada para fins de cobrança.
@@ -154,7 +154,7 @@ Definição do objeto Áudio
         <tr>
             <td>
                 duracao_falada
-                <span class="attribute">integer</span>
+                <span class="attribute">String</span>
             </td>
             <td>
                 Duração da chamada desde que o destino atendeu.
@@ -217,7 +217,7 @@ Definição do objeto Áudio
     </tbody>
 </table>
 <br>
-¹ Após o usuário digitar algo no teclado númerico a ligação sera derrubada.
+¹ Após o usuário digitar algo no teclado númerico a ligação será derrubada.
 
 ## Criar um áudio
 
@@ -304,7 +304,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número exemplo: 4832830151
+                Número do telefone que irá receber a chamada, formato DDD + Número, exemplo: 4832830151.
              </td>
         </tr>
         <tr>
@@ -313,7 +313,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                URL do audio, exemplo: http://sua.url.audio/audio.mp3
+                URL do áudio, exemplo: http://sua.url.audio/audio.mp3.
             </td>
         </tr>
         <tr>
@@ -322,7 +322,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Aguardar uma resposta do destinário
+                Aguardar uma resposta do destinário.
             </td>
         </tr>
         <tr>
@@ -331,7 +331,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Gravar a ligação
+                Gravar a ligação.
             </td>
         </tr>
         <tr>
@@ -340,7 +340,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número, exemplo: 4832830151.
             </td>
         </tr>
         <tr>
@@ -349,7 +349,16 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Caso identificado caixa, a ligação sera durrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
+                Caso identificado caixa, a ligação será durrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                bina_inteligente
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>. 
             </td>
         </tr>
     </tbody>
@@ -365,7 +374,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Retorna o ID do Áudio
+                Retorna o ID do Áudio.
              </td>
         </tr>
     </tbody>
@@ -618,7 +627,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
                 <span class="type">Query String</span>
             </td>
             <td>
-                Data inicial para consulta dos dados no relatório
+                Data inicial para consulta dos dados no relatório.
             </td>
         </tr>
         <tr>
@@ -628,7 +637,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
                 <span class="type">Query String</span>
             </td>
             <td>
-                Data final para consulta dos dados no relatório
+                Data final para consulta dos dados no relatório.
             </td>
         </tr>
         <tr>
@@ -638,7 +647,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -671,7 +680,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
     </tbody>
 </table>
 
-<b>Exemplo:</b> Se você tiver um relatorio com 350 áudios, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+<b>Exemplo:</b> Se você tiver um relatório com 350 áudios, na primeira página será retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
 
 <br>
 <br>

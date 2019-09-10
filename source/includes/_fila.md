@@ -213,7 +213,7 @@ Basta informar o nome da fila e a estratégia de ring.
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Distribuidor = Toca um ramal por vez ou Multiplo = Toca todos ramais ao mesmo tempo
+                Distribuidor = Toca um ramal por vez, ou Multiplo = Toca todos ramais ao mesmo tempo
             </td>
         </tr>
         <tr>
@@ -456,7 +456,7 @@ Altera as informações da sua fila.
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Distribuidor = Toca um ramal por vez ou Multiplo = Toca todos ramais ao mesmo tempo.
+                Distribuidor = Toca um ramal por vez, ou Multiplo = Toca todos ramais ao mesmo tempo.
             </td>
         </tr>
         <tr>
@@ -927,7 +927,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -960,7 +960,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
     </tbody>
 </table>
 
-<b>Exemplo:</b> Se você tiver um relatorio com 350 chamadas, na primeira página sera retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
+<b>Exemplo:</b> Se você tiver um relatório com 350 chamadas, na primeira página será retornado 200. Para pegar os dados da segunda página o valor da posição deve ser 201.
 
 <br>
 <br>

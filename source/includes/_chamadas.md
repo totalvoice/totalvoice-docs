@@ -6,8 +6,8 @@
 https://api2.totalvoice.com.br/chamada
 ```
 
-A funcionalidade **Chamada** permite que você crie chamadas perna A e perna B, podendo gravar as ligações, agendar, binar o seu próprio número.
-Permite gerar relatório de chamadas, derrubar chamadas em andamento, transferir chamadas, avaliação de chamadas.
+A funcionalidade **Chamada** permite que você crie chamadas perna A e perna B, podendo gravar as ligações, agendar e binar o seu próprio número.
+Permite gerar relatório de chamadas, derrubar chamadas em andamento, transferir chamadas e avaliação de chamadas.
 
 
 ### Objeto Chamada
@@ -185,7 +185,7 @@ Definição do objeto Chamada
 }
 ```
 
-Definição do objeto **Origem/Destino**: Estes objetos, basicamente contém a mesma estrutura de informações com relação as chamadas. A **Origem**, contém as informações de quem originou 
+Definição do objeto **Origem/Destino**: Estes objetos contêm basicamente a mesma estrutura de informações com relação às chamadas. A **Origem**, contém as informações de quem originou 
 a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que você irá encontrar as informações de duração das chamadas, status e o preço que foi cobrado por cada perna.  
 
 #### Atributos
@@ -198,7 +198,7 @@ a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que v
                 <span class="attribute">datetime</span>
             </td>
             <td>
-                Data e hora de inicio da chamada na Origem/Destino.
+                Data e hora de início da chamada na Origem/Destino.
              </td>
         </tr>
         <tr>
@@ -248,7 +248,7 @@ a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que v
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Duração em segundos (inteiro) total da chamada desde o início do processamento
+                Duração em segundos (inteiro) do total da chamada desde o início do processamento
             </td>
         </tr>
         <tr>
@@ -317,7 +317,7 @@ a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que v
                     <li>2. sem rota para a rede de destino</li>
                     <li>3. sem rota para o destino</li>
                     <li>4. prefixo incorreto</li>
-                    <li>6. canal inaceitavel</li>
+                    <li>6. canal inaceitável</li>
                     <li>7. chamada sendo entregue em canal ja estabelecido</li>
                     <li>8. call peemption</li>
                     <li>14. telefone portado para outra operadora</li>
@@ -327,37 +327,37 @@ a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que v
                     <li>19. sem resposta - mas chamou</li>
                     <li>20. assinante ausente</li>
                     <li>21. chamada rejeitada</li>
-                    <li>22. este numero mudou</li>
+                    <li>22. este número mudou</li>
                     <li>23. redirecionado para novo destino</li>
                     <li>26. atendido em outro lugar</li>
-                    <li>27. destino nao esta funcionando</li>
-                    <li>28. formato invalido de numero</li>
+                    <li>27. destino não está funcionando</li>
+                    <li>28. formato inválido de número</li>
                     <li>29. rejeitado</li>
                     <li>30. resposta para status enquiry</li>
-                    <li>31. normal, nao especificado</li>
-                    <li>34. sem canal disponivel</li>
-                    <li>41. falha temporaria</li>
+                    <li>31. normal, não especificado</li>
+                    <li>34. sem canal disponível</li>
+                    <li>41. falha temporária</li>
                     <li>42. equipamento congestionado</li>
-                    <li>44. canal requisitado nao esta disponivel</li>
-                    <li>50. nao cadastrado</li>
+                    <li>44. canal requisitado não está disponível</li>
+                    <li>50. não cadastrado</li>
                     <li>52. chamada sainte barrada</li>
                     <li>54. chamada entrante barrada</li>
-                    <li>57. capacidade nao autorizada</li>
-                    <li>58. erro de midia ou parametros incompativeis</li>
-                    <li>65. capacidade do portador nao implementada</li>
-                    <li>66. tipo de canal nao implementado</li>
-                    <li>69. nao implementado</li>
-                    <li>81. valor de referencia invalido</li>
-                    <li>88. destino incompativel</li>
-                    <li>95. mensagem invalida nao especificada</li>
-                    <li>96. informacao obrigatoria nao presente</li>
-                    <li>97. mensagem nao implementada</li>
-                    <li>98. mensagem nao compativel com o estado da chamada ou nao existente ou nao implementada</li>
-                    <li>97. mensagem nao implementada</li>
-                    <li>99. elemento nao existente ou nao implementada</li>
-                    <li>97. mensagem nao implementada</li>
-                    <li>100. informacao invalida no conteudo dos elementos</li>
-                    <li>101. mensagem nao compativel com o estado da chamada</li>
+                    <li>57. capacidade não autorizada</li>
+                    <li>58. erro de mídia ou parâmetros incompatíveis</li>
+                    <li>65. capacidade do portador não implementada</li>
+                    <li>66. tipo de canal não implementado</li>
+                    <li>69. não implementado</li>
+                    <li>81. valor de referência inválido</li>
+                    <li>88. destino incompatível</li>
+                    <li>95. mensagem inválida não especificada</li>
+                    <li>96. informação obrigatória não presente</li>
+                    <li>97. mensagem não implementada</li>
+                    <li>98. mensagem não compatível com o estado da chamada não existente ou não implementada</li>
+                    <li>97. mensagem não implementada</li>
+                    <li>99. elemento não existente ou não implementada</li>
+                    <li>97. mensagem não implementada</li>
+                    <li>100. informação inválida no conteúdo dos elementos</li>
+                    <li>101. mensagem não compatível com o estado da chamada</li>
                     <li>102. timeout</li>
                     <li>111. erro de protocolo</li>
                     <li>127. erro de conectividade</li>
@@ -485,7 +485,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA na perna A, formato DDD + Número exemplo: 4832830151
+                Número de BINA na perna A, formato DDD + Número, exemplo: 4832830151
             </td>
         </tr>
         <tr>
@@ -494,7 +494,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA na perna B, formato DDD + Número exemplo: 4832830151
+                Número de BINA na perna B, formato DDD + Número, exemplo: 4832830151
             </td>
         </tr>
         <tr>
@@ -1013,7 +1013,7 @@ Você pode consultar as Chamadas enviadas. Basta informar o período desejado pa
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatorio - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
             </td>
         </tr>
         <tr>
@@ -1393,7 +1393,7 @@ puts @client.chamada.avaliar(123, "5", "muito boa")
 }
 ```
 
-Avalie a Chamada para ter estatisticas de qualidade de seus clientes.
+Avalie a Chamada para ter estatísticas de qualidade de seus clientes.
 
 #### Request
 

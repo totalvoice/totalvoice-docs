@@ -1,20 +1,20 @@
 # Permissões de Conta
 
 Quando você cria uma nova conta na TotalVoice, ela é criada automaticamente como uma conta Trial,
-tendo limitações que garantem a segurança do negócio, envitando que pessoas más intencionadas utilizem os serviços
+tendo limitações que garantem a segurança do negócio, evitando que pessoas má intencionadas utilizem os serviços
 da TotalVoice.
 
-Após as validações solicitadas (confirmação de telefone fixo, e-mail, etc) a conta é aprovada instantaneamente, 
-recebendo o acesso de conta Cliente, que retira algumas limitações, mantendo apenas as que evitam golpes e utilização para Spams.
+Após as validações solicitadas (confirmação de telefone fixo, e-mail e etc) a conta é aprovada instantaneamente, 
+recebendo o acesso de conta Cliente, que retira algumas limitações, mantendo apenas as que evitam golpes e que utilizam para Spams.
 
-Caso tenha interesse em ter acessos de funções exclusivas da TotalVoice (Centrais telefônicas, DIDs, Números Receptivos, criação de contas filhas), 
+Caso tenha interesse em ter acessos de funções exclusivas da TotalVoice (Centrais telefônicas, DIDs, Números Receptivos e criação de contas filhas), 
 você precisa entrar em contato com nossa equipe, para podermos entender o cenário e auxiliar na escolha ideal de funcionalidades.  
 
 ## Contas Trial
 > <b>TRIAL</b>
 > <ul>
     <li>
-        São limitadas ao envio das funções da API apenas para números cadastrados (e devidamente confirmados) no painel.
+        São limitadas ao envio das funções da API apenas números cadastrados (e devidamente confirmados) no painel.
     </li>
     <li>
         Não podem editar Ramais.
@@ -23,19 +23,19 @@ você precisa entrar em contato com nossa equipe, para podermos entender o cená
         Número maior de palavras bloqueadas no corpo do SMS.
     </li>
     <li>
-        Limite de 50 SMSs enviadas por dia.
+        Limite de 50 SMSs enviados por dia.
     </li>
     <li>
-       Só é possível utilizar o número BINA no parametro de torpedoz de voz(Áudio,TTS,Composto) com os números cadastrados.
+       Só é possível utilizar o número BINA no parâmetro de torpedos de voz(Áudio, TTS, Composto) com os números cadastrados.
     </li>
     <li>
-        Não tem acesso a Central Telefônica.
+        Não tem acesso à Central Telefônica.
     </li>
 </ul>
 
-As contas Trial, são contas que foram criadas e ainda não tiveram seus dados confirmados, como e-mail e telefone fixo (caso a pessoa
-não tenha telefone fixo, pode entrar em contato com a TotalVoice que validamos diretamente), a conta trial tem o intuíto apenas de testar
-as funcionalidades da API, a validação e migração é feita de modo automática e a mudança de tipo de conta acontece na hora.
+As contas Trial são contas que foram criadas e ainda não tiveram seus dados confirmados, como e-mail e telefone fixo (caso a pessoa
+não tenha telefone fixo pode entrar em contato com a TotalVoice para ser validado), a conta trial tem o intuito apenas de testar
+as funcionalidades da API, a validação e migração é feita de modo automático e a mudança de tipo de conta acontece na hora.
 
 Veja como cadastrar um número <a href='https://centraltotalvoice.freshdesk.com/solution/articles/35000078983-cadastrando-um-n%C3%BAmero-como-bina-identificac%C3%A3o-de-chamada-'>clicando aqui</a>.
 
@@ -49,10 +49,10 @@ Veja como cadastrar um número <a href='https://centraltotalvoice.freshdesk.com/
         Não podem criar e administrar contas filhas.
     </li>
     <li>
-        Limite de 50 SMSs enviadas por dia, que cresce de acordo com o uso (ou em simples contato com a equipe da TotalVoice).
+        Limite de 50 SMSs enviados por dia, que cresce de acordo com o uso (ou em simples contato com a equipe da TotalVoice).
     </li>
     <li>
-        SMSs com algumas palavras proíbidas (referente à cobranças, instituições financeiras, links, etc...).
+        SMSs com algumas palavras proíbidas (referente à cobranças, instituições financeiras, links e etc).
     </li>
 </ul>
 
@@ -65,15 +65,15 @@ As contas Clientes:
 
 ## Conta Pai
 
-Quando se tem a necessidade de criar e administrar outras contas, como em integrações com sistemas, revenda de serviços,
-utilização por terceiros das funções de telefonia, você pode [solicitar uma permissão](#introducao) de Conta Pai, 
-onde você pode criar, deletar e alterar Contas Filhas.
+Quando se tem a necessidade de criar e administrar outras contas, como em integrações com sistemas, revenda de serviços e
+utilização por terceiros das funções de telefonia, você pode [solicitar uma permissão](#introducao) de conta Pai, 
+onde você pode criar, deletar e alterar contas Filhas.
 
-As Contas Pais tem as mesmas limitações das Contas Clientes, tendo apenas o diferencial de poder administrar subcontas. 
+As contas Pais tem as mesmas limitações das contas Clientes, tendo apenas o diferencial de poder administrar subcontas. 
 
 
 
 ## Conta Filha
 
-As contas filhas, são basicamente contas criadas que foram criadas através de outra, são praticamente as mesmas Contas Clientes, 
-tendo os mesmos privilégios, sendo apenas vínculada a uma outra conta, podendo ser [Alterada](#alterar-conta) ou [Removida](#deletar-conta) por seu conta pai.
+As contas Filhas são basicamente contas criadas através de outra conta, são parecidas com as contas Clientes, 
+tendo os mesmos privilégios, sendo apenas vinculada a uma outra conta podendo ser [Alterada](#alterar-conta) ou [Removida](#deletar-conta) por sua conta Pai.
