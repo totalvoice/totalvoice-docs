@@ -272,6 +272,9 @@
                   </li>
               </ul>
           </li>
+           <li>
+            <a href="#testes" class="toc-h1 toc-link" data-title="Testes">Testes</a>
+          </li>
           <li style="margin-top: 20px;">
             <a href="#audio" class="toc-h1 toc-link" data-title="Áudio">Áudio</a>
               <ul class="toc-list-h2">
@@ -609,6 +612,9 @@
            <li>
             <a href="#webhooks" class="toc-h1 toc-link" data-title="Webhooks">Webhooks</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#configuracao" class="toc-h2 toc-link" data-title="Configuração">Configuração</a>
+                  </li>
                   <li>
                     <a href="#eventos-em-tempo-real-de-chamada" class="toc-h2 toc-link" data-title="Eventos em Tempo Real de Chamada">Eventos em Tempo Real de Chamada</a>
                   </li>
@@ -1057,6 +1063,34 @@ Caso encontre um status diferente dos mapeados, favor entrar em <a href="#introd
 <p>Este parâmetro é retornado nos objetos que representam algum lado (perna) de uma ligação que foi realizada, 
  por exemplo, em um Objeto de um Áudio haverá um único atributo deste que representa
  o status do número que o áudio foi enviado, já em uma Chamada você terá um status para cada uma das pernas dela.</p>
+<h1 id='testes'>Testes</h1>
+<p>Com uma conta criada você pode fazer testes em nossa plataforma utilizando nosso playground, software para teste de requisições de API(Postman, Insomnia, etc)</p>
+
+<ul>
+<li><p><a href="https://api2.totalvoice.com.br/doc/#/" target="_blank">Playground</a> - É um ambiente onde você utiliza o token da sua conta e faz envio para nossa api, preenchendo um formulário com os parâmetros necessários. </p></li>
+<li><p>Utilizando o <a href="https://www.getpostman.com/" target="_blank">Postman</a> ou <a href="https://insomnia.rest/" target="_blank">Insomnia</a>, vvocê precisa nos enviar as seguintes informações:</p>
+
+<ul>
+<li>Header
+
+<ul>
+<li>Access-Token - exemplotesteM68PU1Izmb9chEdLzep7IwRymWO</li>
+<li>Content-Type - application/json</li>
+</ul></li>
+<li>Body
+
+<ul>
+<li>No corpo da requisição você deve enviar um JSON (para requisições POST/PUT)
+<br><br></li>
+</ul></li>
+</ul></li>
+<li><p>Para testar os retornos enviados via webhooks, indicamos os seguintes sites:</p>
+
+<ul>
+<li><a href="https://webhook.site" target="_blank">webhook.site</a></li>
+<li><a href="https://requestbin.com" target="_blank">requestbin.com</a></li>
+</ul></li>
+</ul>
 <h1 id='audio'>Áudio</h1>
 <blockquote>
 <p><b>Audio Endpoint</b></p>
@@ -11892,17 +11926,12 @@ gerada vem com um código único para acesso daquele Webphone sem ser necessári
 <br>
 <br></p>
 <h1 id='webhooks'>Webhooks</h1>
-<blockquote>
-<p>Configuração</p>
-</blockquote>
-<pre class="highlight plaintext"><code>Entre no painel da TotalVoice com a conta administradora, 
-vá até o menu Minha Conta e escolha Configurações da API, 
-lá terão todos os campos para preencher em cada Webhook.
-</code></pre>
 <p>Também conhecidos como Callbacks ou Reverse API, os Webhooks são notificações que enviamos para alguma URL (End Point) sua que é configurada 
 no painel da TotalVoice, a notificação é enviada assim que determinados eventos acontecem.</p>
 
 <p>Todos os Webhooks enviados vão por HTTP POST, sendo que as informações referentes ao evento vão no corpo da requisição em formato JSON.</p>
+<h2 id='configuracao'>Configuração</h2>
+<p>Entre no painel da TotalVoice com a conta administradora, vá até o menu Minha Conta e escolha Configurações da API, lá terão todos os campos para preencher em cada Webhook.</p>
 
 <p><i>Poderá levar até 20 minutos após a configuração no Painel para começar o envio das notificações para o endereço escolhido.</i></p>
 <h2 id='eventos-em-tempo-real-de-chamada'>Eventos em Tempo Real de Chamada</h2>
