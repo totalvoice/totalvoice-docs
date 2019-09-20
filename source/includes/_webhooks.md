@@ -1,17 +1,13 @@
 # Webhooks
 
-> Configuração
-
-```text
-Entre no painel da TotalVoice com a conta administradora, 
-vá até o menu Minha Conta e escolha Configurações da API, 
-lá terão todos os campos para preencher em cada Webhook.
-```
-
 Também conhecidos como Callbacks ou Reverse API, os Webhooks são notificações que enviamos para alguma URL (End Point) sua que é configurada 
 no painel da TotalVoice, a notificação é enviada assim que determinados eventos acontecem.
 
 Todos os Webhooks enviados vão por HTTP POST, sendo que as informações referentes ao evento vão no corpo da requisição em formato JSON.
+
+## Configuração
+
+Entre no painel da TotalVoice com a conta administradora, vá até o menu Minha Conta e escolha Configurações da API, lá terão todos os campos para preencher em cada Webhook.
 
 <i>Poderá levar até 20 minutos após a configuração no Painel para começar o envio das notificações para o endereço escolhido.</i>
 

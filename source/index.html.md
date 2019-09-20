@@ -19,6 +19,7 @@ includes:
   - tipos_conta
   - autenticacao
   - respostas
+  - testes
   - audio
   - central_telefonica
   - fila
