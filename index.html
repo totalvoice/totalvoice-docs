@@ -323,6 +323,9 @@
                     <a href="#objeto-ura" class="toc-h2 toc-link" data-title="Objeto URA">Objeto URA</a>
                   </li>
                   <li>
+                    <a href="#criar-uma-ura" class="toc-h2 toc-link" data-title="Criar uma URA">Criar uma URA</a>
+                  </li>
+                  <li>
                     <a href="#buscar-uma-ura" class="toc-h2 toc-link" data-title="Buscar uma URA">Buscar uma URA</a>
                   </li>
                   <li>
@@ -1068,7 +1071,7 @@ Caso encontre um status diferente dos mapeados, favor entrar em <a href="#introd
 
 <ul>
 <li><p><a href="https://api2.totalvoice.com.br/doc/#/" target="_blank">Playground</a> - É um ambiente onde você utiliza o token da sua conta e faz envio para nossa api, preenchendo um formulário com os parâmetros necessários. </p></li>
-<li><p>Utilizando o <a href="https://www.getpostman.com/" target="_blank">Postman</a> ou <a href="https://insomnia.rest/" target="_blank">Insomnia</a>, vvocê precisa nos enviar as seguintes informações:</p>
+<li><p>Utilizando o <a href="https://www.getpostman.com/" target="_blank">Postman</a> ou <a href="https://insomnia.rest/" target="_blank">Insomnia</a>, você deve passar o deve nos enviar as seguintes informações:</p>
 
 <ul>
 <li>Header
@@ -1080,7 +1083,7 @@ Caso encontre um status diferente dos mapeados, favor entrar em <a href="#introd
 <li>Body
 
 <ul>
-<li>No corpo da requisição você deve enviar um JSON (para requisições POST/PUT)
+<li>No corpo da requisição você de enviar um Json.
 <br><br></li>
 </ul></li>
 </ul></li>
@@ -1845,7 +1848,12 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
+<span class="nv">$dados</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"ramal"</span><span class="o">=&gt;</span><span class="s2">"1358"</span><span class="p">,</span>
+    <span class="s2">"login"</span><span class="o">=&gt;</span><span class="s2">"logindeteste231@totalvoice.com.br"</span>
+<span class="p">];</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">criarRamal</span><span class="p">(</span><span class="nv">$dados</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
@@ -2020,10 +2028,13 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
              <span class="s1">'https://api2.totalvoice.com.br/ramal/{id}'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">buscaRamal</span><span class="p">(</span><span class="s2">"id-ramal"</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
@@ -2112,7 +2123,15 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
+
+<span class="nv">$dados</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"ramal"</span><span class="o">=&gt;</span><span class="s2">"1358"</span><span class="p">,</span>
+    <span class="s2">"login"</span><span class="o">=&gt;</span><span class="s2">"logindeteste231@totalvoice.com.br"</span>
+<span class="p">];</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">atualizarRamal</span><span class="p">(</span><span class="s2">"id-ramal"</span><span class="p">,</span> <span class="nv">$dados</span><span class="p">);</span>
+
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
@@ -2282,7 +2301,9 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">excluirRamal</span><span class="p">(</span><span class="s2">"id-ramal"</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
@@ -2478,8 +2499,12 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
             <span class="s1">'https://api2.totalvoice.com.br/ramal/{id}/pausas?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
+
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">relatorioPausasRamal</span><span class="p">(</span><span class="s2">"id-ramal"</span><span class="p">,</span> <span class="s2">"2019-02-20T11:11:19-03:00"</span><span class="p">,</span> <span class="s2">"2019-02-20T11:12:26-03:0"</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
@@ -2927,7 +2952,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
         </tr>
     </tbody>
 </table>
-<h4 id='criar-uma-ura'>Criar uma URA</h4>
+<h2 id='criar-uma-ura'>Criar uma URA</h2>
 <blockquote>
 <p>Definição</p>
 </blockquote>
@@ -2945,7 +2970,20 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
+
+<span class="nv">$dados</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">'acao'</span> <span class="o">=&gt;</span> <span class="s1">'tts'</span><span class="p">,</span>
+      <span class="s1">'menu'</span> <span class="o">=&gt;</span> <span class="s1">'menu 1'</span><span class="p">,</span>
+      <span class="s1">'acao_dados'</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s1">'mensagem'</span> <span class="o">=&gt;</span> <span class="s1">'Olá! Isso é um teste.'</span>
+      <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">criarUra</span><span class="p">(</span><span class="s2">"Teste TotalVoice-001"</span><span class="p">,</span> <span class="nv">$dados</span><span class="p">);</span>
+
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
@@ -3124,7 +3162,20 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
+
+<span class="nv">$dados</span> <span class="o">=</span> <span class="k">array</span> <span class="p">(</span>
+    <span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">'acao'</span> <span class="o">=&gt;</span> <span class="s1">'tts'</span><span class="p">,</span>
+      <span class="s1">'menu'</span> <span class="o">=&gt;</span> <span class="s1">'menu 1'</span><span class="p">,</span>
+      <span class="s1">'acao_dados'</span> <span class="o">=&gt;</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s1">'mensagem'</span> <span class="o">=&gt;</span> <span class="s1">'Olá! Isso é um teste.'</span>
+      <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="p">);</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">atualizarUra</span><span class="p">(</span><span class="s2">"123456"</span><span class="p">,</span> <span class="s2">"Teste TotalVoice-001"</span><span class="p">,</span> <span class="nv">$dados</span><span class="p">);</span>
+
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
@@ -3206,11 +3257,9 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">excluirUra</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
 </span><span class="n">Em</span><span class="x"> </span><span class="n">construção</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
@@ -3495,7 +3544,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
              -d <span class="s1">'{"nome":"Suporte","estrategia_ring":"Multiplo", "timeout_ring": "60"}'</span> <span class="se">\</span>
              <span class="s1">'https://api.totalvoice.com.br/fila'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">fila</span><span class="o">-&gt;</span><span class="na">criar</span><span class="p">(</span><span class="s1">'Suporte'</span><span class="p">,</span> <span class="s1">'Multiplo'</span><span class="p">,</span> <span class="s1">'60'</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
@@ -3507,18 +3556,18 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
  </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Fila</span><span class="o">.</span><span class="n">Criar</span><span class="p">(</span><span class="s">"Suporte"</span><span class="p">,</span><span class="x"> </span><span class="s">"Multiplo"</span><span class="p">,</span><span class="x"> </span><span class="m">60</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">fila</span><span class="o">.</span><span class="n">criar</span><span class="p">(</span><span class="s">"Suporte"</span><span class="p">,</span> <span class="s">"Multiplo"</span><span class="p">,</span> <span class="s">"60"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Fila</span> <span class="n">fila</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fila</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">fila</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"Suporte"</span><span class="o">,</span> <span class="s">"Multiplo"</span><span class="o">)</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">fila</span><span class="p">.</span><span class="nf">criar</span><span class="p">(</span><span class="s2">"Suporte"</span><span class="p">,</span> <span class="s2">"Multiplo"</span><span class="p">,</span> <span class="s2">"60"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
@@ -3594,7 +3643,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://api.totalvoice.com.br/fila/1'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">fila</span><span class="o">-&gt;</span><span class="na">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
@@ -3606,11 +3655,11 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
  </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Fila</span><span class="o">.</span><span class="n">Buscar</span><span class="p">(</span><span class="m">123</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">fila</span><span class="o">.</span><span class="n">get_fila</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Fila</span> <span class="n">fila</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fila</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">fila</span><span class="o">.</span><span class="na">buscar</span><span class="o">(</span><span class="mi">123</span><span class="o">);</span>
@@ -3700,7 +3749,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
     -d <span class="s1">'{"nome":"Suporte","estrategia_ring":"Multiplo", "timeout_ring": "60"}'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">fila</span><span class="o">-&gt;</span><span class="na">atualizarFila</span><span class="p">(</span><span class="s2">"Suporte"</span><span class="p">,</span> <span class="s2">"Multiplo"</span><span class="p">,</span> <span class="s2">"60"</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
@@ -3712,11 +3761,11 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
  </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Fila</span><span class="o">.</span><span class="n">Atualizar</span><span class="p">(</span><span class="s">"Suporte"</span><span class="p">,</span><span class="x"> </span><span class="s">"Multiplo"</span><span class="p">,</span><span class="x"> </span><span class="s">"60"</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">fila</span><span class="o">.</span><span class="n">editar</span><span class="p">(</span><span class="s">"Suporte"</span><span class="p">,</span> <span class="s">"Multiplo"</span><span class="p">,</span> <span class="s">"60"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Fila</span> <span class="n">fila</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fila</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">fila</span><span class="o">.</span><span class="na">atualizar</span><span class="o">(</span><span class="s">"Suporte"</span><span class="o">,</span> <span class="s">"Multiplo"</span><span class="o">);</span>
@@ -3792,7 +3841,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
              -d <span class="s1">'{"ramal_id":"111"}'</span> <span class="se">\</span>
              <span class="s1">'https://api.totalvoice.com.br/fila/123'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">fila</span><span class="o">-&gt;</span><span class="na">addRamal</span><span class="p">(</span><span class="s2">"ID_FILA"</span><span class="p">,</span> <span class="s2">"RAMAL_ID"</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
@@ -3804,18 +3853,18 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
  </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Fila</span><span class="o">.</span><span class="n">AdicionarRamalFila</span><span class="p">(</span><span class="s">"ID_FILA"</span><span class="p">,</span><span class="x"> </span><span class="s">"RAMAL_ID"</span><span class="p">);</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">fila</span><span class="o">.</span><span class="n">add_ramal</span><span class="p">(</span><span class="s">"ID_FILA"</span><span class="p">,</span> <span class="s">"RAMAL_ID"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Fila</span> <span class="n">fila</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fila</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">fila</span><span class="o">.</span><span class="na">adicionaRamalFila</span><span class="o">(</span><span class="s">"ID_FILA"</span><span class="o">,</span> <span class="s">"RAMAL_ID"</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">fila</span><span class="p">.</span><span class="nf">adiciona_ramal</span><span class="p">(</span><span class="s2">"ID_FILA"</span><span class="p">,</span> <span class="s2">"RAMAL_ID"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
@@ -3863,7 +3912,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
              --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
             <span class="s1">'https://api.totalvoice.com.br/fila/111/111'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">fila</span><span class="o">-&gt;</span><span class="na">excluirRamalFila</span><span class="p">(</span><span class="s2">"ID_FILA"</span><span class="p">,</span> <span class="s2">"RAMAL_ID"</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
@@ -3875,14 +3924,14 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
  </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Fila</span><span class="o">.</span><span class="n">ExcluirRamalFila</span><span class="p">(</span><span class="s">"ID_FILA"</span><span class="p">,</span><span class="x"> </span><span class="s">"RAMAL_ID"</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">fila</span><span class="o">.</span><span class="n">deleta_ramal</span><span class="p">(</span><span class="s">"ID_FILA"</span><span class="p">,</span> <span class="s">"RAMAL_ID"</span><span class="p">)</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">fila</span><span class="p">.</span><span class="nf">excluir_ramal</span><span class="p">(</span><span class="s2">"ID_FILA"</span><span class="p">,</span> <span class="s2">"RAMAL_ID"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
@@ -3926,7 +3975,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://api.totalvoice.com.br/fila/id-fila/id-ramal'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">fila</span><span class="o">-&gt;</span><span class="na">buscarFilaRamal</span><span class="p">(</span><span class="s2">"ID_FILA"</span><span class="p">,</span> <span class="s2">"RAMAL_ID"</span><span class="p">)</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
@@ -3938,18 +3987,18 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
  </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Fila</span><span class="o">.</span><span class="n">BuscarRamalFila</span><span class="p">(</span><span class="s">"ID_FILA"</span><span class="p">,</span><span class="x"> </span><span class="s">"RAMAL_ID"</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">fila</span><span class="o">.</span><span class="n">get_fila_ramal</span><span class="p">(</span><span class="s">"ID_FILA"</span><span class="p">,</span> <span class="s">"RAMAL_ID"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Fila</span> <span class="n">fila</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Fila</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">fila</span><span class="o">.</span><span class="na">buscar</span><span class="o">(</span><span class="s">"ID_FILA"</span><span class="o">,</span> <span class="s">"RAMAL_ID"</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">fila</span><span class="p">.</span><span class="nf">buscar_ramal</span><span class="p">(</span><span class="s2">"ID_FILA"</span><span class="p">,</span> <span class="s2">"RAMAL_ID"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
@@ -6813,7 +6862,12 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.   </p>
             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
             --header <span class="s1">'Access-Token: seu-token'</span> <span class="s1">'https://api2.totalvoice.com.br/did'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
+<span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">listaEstoque</span><span class="p">(</span><span class="s2">"id-ramal"</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">Em</span><span class="x"> </span><span class="n">construção</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="n">Em</span> <span class="n">constru</span><span class="err">çã</span><span class="n">o</span>
@@ -7359,7 +7413,7 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.   </p>
 <p>Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
             <span class="s1">'https://api.totalvoice.com.br/did/chamada/{id-chamada}'</span>
 </code></pre><pre class="highlight php tab-php"><code>Em Construção
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="nx">Em</span> <span class="nx">Constru</span><span class="err">çã</span><span class="nx">o</span>
@@ -7444,13 +7498,13 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.   </p>
 <p>Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
             <span class="s1">'https://api.totalvoice.com.br/did/1/relatorio?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">did</span><span class="o">-&gt;</span><span class="na">relatorioChamadas</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="nv">$dataInicial</span><span class="p">,</span> <span class="nv">$dataFinal</span><span class="p">,</span> <span class="nv">$filtros</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">did</span><span class="p">.</span><span class="nx">relatorioChamadas</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">dataInicial</span><span class="p">,</span> <span class="nx">dataFinal</span><span class="p">,</span> <span class="nx">filtros</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -7459,17 +7513,17 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.   </p>
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
 </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">DID</span><span class="o">.</span><span class="n">RelatorioChamadas</span><span class="o">.</span><span class="n">Gerar</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="x"> </span><span class="n">dataInicial</span><span class="p">,</span><span class="x"> </span><span class="n">dataFinal</span><span class="p">,</span><span class="x"> </span><span class="n">filtros</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">get_relatorio_chamadas</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">data_inicio</span><span class="p">,</span> <span class="n">data_fim</span><span class="p">,</span> <span class="n">filtros</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Did</span> <span class="n">did</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Did</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">did</span><span class="o">.</span><span class="na">relatorioChamadas</span><span class="o">(</span><span class="n">id</span><span class="o">,</span> <span class="n">dataInicial</span><span class="o">,</span> <span class="n">dataFinal</span><span class="o">,</span> <span class="n">filtros</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">did</span><span class="p">.</span><span class="nf">relatorioChamadas</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">data_inicial</span><span class="p">,</span> <span class="n">data_final</span><span class="p">,</span> <span class="n">filtros</span><span class="p">)</span>
 </code></pre>
 <blockquote>
@@ -7635,13 +7689,13 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.   </p>
 <p>Request</p>
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
             <span class="s1">'https://api.totalvoice.com.br/did/relatorio?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">did</span><span class="o">-&gt;</span><span class="na">relatorioChamadas</span><span class="p">(</span><span class="nv">$dataInicial</span><span class="p">,</span> <span class="nv">$dataFinal</span><span class="p">,</span> <span class="nv">$filtros</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">did</span><span class="p">.</span><span class="nx">relatorioChamadas</span><span class="p">(</span><span class="nx">dataInicial</span><span class="p">,</span> <span class="nx">dataFinal</span><span class="p">,</span> <span class="nx">filtros</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -7650,17 +7704,17 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.   </p>
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
 </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">DID</span><span class="o">.</span><span class="n">RelatorioChamadas</span><span class="o">.</span><span class="n">Gerar</span><span class="p">(</span><span class="n">dataInicial</span><span class="p">,</span><span class="x"> </span><span class="n">dataFinal</span><span class="p">,</span><span class="x"> </span><span class="n">filtros</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">did</span><span class="o">.</span><span class="n">get_relatorio_chamadas</span><span class="p">(</span><span class="n">data_inicio</span><span class="p">,</span> <span class="n">data_fim</span><span class="p">,</span> <span class="n">filtros</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Did</span> <span class="n">did</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Did</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">did</span><span class="o">.</span><span class="na">relatorioChamadas</span><span class="o">(</span><span class="n">dataInicial</span><span class="o">,</span> <span class="n">dataFinal</span><span class="o">,</span> <span class="n">filtros</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span>
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">did</span><span class="p">.</span><span class="nf">relatorioChamadas</span><span class="p">(</span><span class="n">data_inicial</span><span class="p">,</span> <span class="n">data_final</span><span class="p">,</span> <span class="n">filtros</span><span class="p">)</span>
 </code></pre>
 <blockquote>
@@ -7830,7 +7884,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">999.99</span><span class="p">,</span><span class="w">
     </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seu-token"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
@@ -7984,10 +8038,10 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
 <pre class="highlight shell tab-shell--curl"><code>curl <span class="s1">'https://api.totalvoice.com.br/conta'</span> <span class="se">\</span>
     -X POST <span class="se">\ </span>
     --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-    --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
+    --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
     -d <span class="s1">'{"nome" : "Total Voice", "login" : "totalvoice@totalvoice.com.br", "senha" : "senha123"}'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 
 <span class="nv">$conta_dados</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s2">"nome"</span> <span class="o">=&gt;</span> <span class="s2">"Total Voice"</span><span class="p">,</span> 
@@ -7996,7 +8050,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
 <span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">conta</span><span class="o">-&gt;</span><span class="na">criar</span><span class="p">(</span><span class="nv">$conta_dados</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">conta_dados</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">nome</span><span class="p">:</span> <span class="s2">"Total Voice"</span><span class="p">,</span> 
@@ -8011,7 +8065,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
 
 </span><span class="n">conta</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="nb">new</span><span class="p">(</span><span class="n">Conta</span><span class="p">)</span><span class="x">
 </span><span class="n">conta</span><span class="o">.</span><span class="n">Nome</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"Total Voice"</span><span class="x">
@@ -8019,9 +8073,9 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
 </span><span class="n">conta</span><span class="o">.</span><span class="n">Senha</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"senha123"</span><span class="x">
 
 </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Conta</span><span class="o">.</span><span class="n">Criar</span><span class="p">(</span><span class="n">conta</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">conta</span><span class="o">.</span><span class="n">criar_conta</span><span class="p">(</span><span class="s">"Total Voice"</span><span class="p">,</span> <span class="s">"totalvoice@totalvoice.com.br"</span><span class="p">,</span> <span class="s">"senha123"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Conta</span> <span class="n">conta</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Conta</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">contaDados</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
@@ -8041,7 +8095,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conta criada com sucesso"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3132</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="w">
+        </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seu-token"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -8176,12 +8230,12 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
 <pre class="highlight shell tab-shell--curl"><code>curl <span class="s1">'https://api.totalvoice.com.br/conta/3132'</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-    --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> 
+    --header <span class="s1">'Access-Token: seu-token'</span> 
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">conta</span><span class="o">-&gt;</span><span class="na">buscaConta</span><span class="p">(</span><span class="mi">3132</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">conta</span><span class="p">.</span><span class="nx">buscar</span><span class="p">(</span><span class="mi">3132</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -8190,11 +8244,11 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
 </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Conta</span><span class="o">.</span><span class="n">Buscar</span><span class="p">(</span><span class="m">3132</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">conta</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">3132</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Conta</span> <span class="n">conta</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Conta</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">conta</span><span class="o">.</span><span class="na">buscar</span><span class="o">(</span><span class="mi">3132</span><span class="o">);</span>
@@ -8214,7 +8268,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
         </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.01</span><span class="p">,</span><span class="w">
         </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seu-token"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
@@ -8270,15 +8324,15 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
 <pre class="highlight shell tab-shell--curl"><code>curl <span class="s1">'https://api.totalvoice.com.br/conta/3132'</span> <span class="se">\</span>
     -X PUT <span class="se">\</span>
     --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-    --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
+    --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
     -d <span class="s1">'{"senha" : "senha123456"}'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 
 <span class="nv">$conta_dados</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"senha"</span> <span class="o">=&gt;</span> <span class="s2">"senha123456"</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">conta</span><span class="o">-&gt;</span><span class="na">atualizar</span><span class="p">(</span><span class="mi">3132</span><span class="p">,</span> <span class="nv">$conta_dados</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">conta_dados</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">senha</span><span class="p">:</span> <span class="s2">"senha123456"</span>
@@ -8290,15 +8344,15 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
 
 </span><span class="n">conta</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="nb">new</span><span class="p">(</span><span class="n">Conta</span><span class="p">)</span><span class="x">
 </span><span class="n">conta</span><span class="o">.</span><span class="n">senha</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="s">"senha123"</span><span class="x">
 
 </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Conta</span><span class="o">.</span><span class="n">Atualizar</span><span class="p">(</span><span class="n">conta</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">conta</span><span class="o">.</span><span class="n">editar_conta</span><span class="p">(</span><span class="s">"Total Voice"</span><span class="p">,</span> <span class="s">"totalvoice@totalvoice.com.br"</span><span class="p">,</span> <span class="s">"senha123"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Conta</span> <span class="n">conta</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Conta</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">contaDados</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
@@ -8429,12 +8483,12 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <pre class="highlight shell tab-shell--curl"><code>curl <span class="s1">'https://api.totalvoice.com.br/conta/3132'</span> <span class="se">\</span>
     -X DELETE <span class="se">\</span>
     --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-    --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> <span class="se">\</span>
+    --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">conta</span><span class="o">-&gt;</span><span class="na">excluir</span><span class="p">(</span><span class="mi">3132</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">conta</span><span class="p">.</span><span class="nx">excluir</span><span class="p">(</span><span class="mi">3132</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -8443,11 +8497,11 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
 </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Conta</span><span class="o">.</span><span class="n">Excluir</span><span class="p">(</span><span class="m">3132</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">conta</span><span class="o">.</span><span class="n">deletar</span><span class="p">(</span><span class="mi">3132</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Conta</span> <span class="n">conta</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Conta</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">conta</span><span class="o">.</span><span class="na">excluir</span><span class="o">(</span><span class="mi">3132</span><span class="o">);</span>
@@ -8499,12 +8553,12 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <pre class="highlight shell tab-shell--curl"><code>curl <span class="s1">'https://api.totalvoice.com.br/conta/relatorio'</span> <span class="se">\</span>
     -X GET <span class="se">\</span>
     --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-    --header <span class="s1">'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'</span> 
+    --header <span class="s1">'Access-Token: seu-token'</span> 
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'testeM68PU1Izmb9chEdLzep7IwRymWO'</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">conta</span><span class="o">-&gt;</span><span class="na">relatorio</span><span class="p">();</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="nx">client</span><span class="p">.</span><span class="nx">conta</span><span class="p">.</span><span class="nx">relatorio</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
@@ -8513,11 +8567,11 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">)</span><span class="x">
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
 </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Conta</span><span class="o">.</span><span class="n">Relatorio</span><span class="o">.</span><span class="n">Gerar</span><span class="p">()</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">conta</span><span class="o">.</span><span class="n">get_relatorio</span><span class="p">()</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Conta</span> <span class="n">conta</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Conta</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
 <span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">conta</span><span class="o">.</span><span class="na">relatorio</span><span class="o">();</span>
@@ -8539,7 +8593,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
           </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.01</span><span class="p">,</span><span class="w">
           </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seu-token"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
@@ -8555,7 +8609,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
           </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice_filial_2@totalvoice.com.br"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.01</span><span class="p">,</span><span class="w">
           </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste228PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seu-token"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
@@ -8595,16 +8649,6 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <p>Minha Conta Endpoint</p>
 </blockquote>
 <pre class="highlight plaintext"><code>https://api2.totalvoice.com.br/conta
-</code></pre>
-<blockquote>
-<p>Saldo Endpoint</p>
-</blockquote>
-<pre class="highlight plaintext"><code>https://api2.totalvoice.com.br/saldo
-</code></pre>
-<blockquote>
-<p>Webhook Endpoint</p>
-</blockquote>
-<pre class="highlight plaintext"><code>https://api2.totalvoice.com.br/webhook 
 </code></pre>
 <p>O <strong>Minha Conta</strong> permite que você visualize seu saldo, monitore suas contas e suas recargas,
 edite suas contas e configure e visualize seus webhooks.</p>
@@ -8873,7 +8917,7 @@ edite suas contas e configure e visualize seus webhooks.</p>
 <blockquote>
 <p>Definição</p>
 </blockquote>
-<pre class="highlight plaintext"><code>POST https://api2.totalvoice.com.br/saldo
+<pre class="highlight plaintext"><code>GET https://api2.totalvoice.com.br/saldo
 </code></pre>
 <blockquote>
 <p>Request</p>
@@ -10754,7 +10798,7 @@ data de envio por exemplo.</p>
     </span><span class="s2">"duracao_falada_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"duracao_falada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Olá moço"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mensagem de teste"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"velocidade"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -11363,6 +11407,8 @@ data de envio por exemplo.</p>
 <p>Esse código(apenas números) pode ser enviado via SMS(formato de texto), ou então TTS onde você nos passa a mensagem que o usuário que atender a ligação irá ouvir.</p>
 
 <p><b>Mensagem enviada:</b> Seu código de verificação <em>nome_produto</em> é: 1234</p>
+
+<p><b>Observação:</b> O código enviado para o número de telefone expira em 1 hora.</p>
 <h2 id='enviar-um-codigo'>Enviar um código</h2>
 <blockquote>
 <p>Definição</p>
@@ -11912,7 +11958,8 @@ gerada vem com um código único para acesso daquele Webphone sem ser necessári
                 <b>stats_webphone<b>
             </td>
             <td>
-                Recebe o status da qualidade de conexão(Diagnóstico d o Ping e Jitter) e computador(Uso da CPU) para verificar a qualidade da ligação.
+                Recebe o status da qualidade de conexão(Diagnóstico do Ping e Jitter) e computador(Uso da CPU) para verificar a qualidade da ligação.
+                
             </td>
         </tr>
     </tbody>
@@ -11949,14 +11996,14 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ativo"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T14:21:34"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48984128213"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chamando"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"gravar_audio"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37794869</span><span class="p">,</span><span class="w">
   </span><span class="s2">"destino"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48996955411"</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48966663333"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"cliente_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2150</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
@@ -12038,7 +12085,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37787430"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48984128213"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T14:00:38-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Olá TotalVoice"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
@@ -12509,7 +12556,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T18:48:05"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"evento_conferencia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entrou"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48984128213"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"gravar_audio"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"conferencia_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42874</span><span class="p">,</span><span class="w">
   </span><span class="s2">"chamada_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37823279"</span><span class="p">,</span><span class="w">
@@ -12684,7 +12731,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37784550</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48984128213"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T13:34:57.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T13:34:58.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
@@ -12894,7 +12941,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"destino"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48984128213"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"preparando"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
@@ -13041,7 +13088,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"destino"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T11:19:11-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48984128213"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atendida"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
@@ -13195,7 +13242,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"destino"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T11:18:19-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48984128213"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocupado"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
@@ -13326,7 +13373,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37850704</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48984128213"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T16:38:50.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T16:38:55.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
@@ -13570,7 +13617,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37785542</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48984128213"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T13:44:52.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T13:44:52.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
