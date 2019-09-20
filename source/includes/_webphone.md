@@ -446,7 +446,8 @@ if (e.data.message == 'stats_webphone') {
                 <b>stats_webphone<b>
             </td>
             <td>
-                Recebe o status da qualidade de conexão(Diagnóstico d o Ping e Jitter) e computador(Uso da CPU) para verificar a qualidade da ligação.
+                Recebe o status da qualidade de conexão(Diagnóstico do Ping e Jitter) e computador(Uso da CPU) para verificar a qualidade da ligação.
+                
             </td>
         </tr>
     </tbody>

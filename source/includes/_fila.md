@@ -143,7 +143,7 @@ curl -X POST --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->fila->criar('Suporte', 'Multiplo', '60');
 ```
 ```javascript--node
@@ -159,15 +159,15 @@ client.fila.enviar("Suporte", "Multiplo", "60")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.Criar("Suporte", "Multiplo", 60)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.fila.criar("Suporte", "Multiplo", "60")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Fila fila = new Fila(client);
 
 JSONObject response = fila.enviar("Suporte", "Multiplo")
@@ -176,7 +176,7 @@ JSONObject response = fila.enviar("Suporte", "Multiplo")
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.fila.criar("Suporte", "Multiplo", "60")
 ```
 > Response
@@ -261,7 +261,7 @@ curl -X GET --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->fila->buscar(123);
 ```
 ```javascript--node
@@ -277,15 +277,15 @@ client.fila.buscar(123)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.Buscar(123)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.fila.get_fila(123)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Fila fila = new Fila(client);
 
 JSONObject response = fila.buscar(123);
@@ -387,7 +387,7 @@ curl 'https://api.totalvoice.com.br/fila/1' \
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->fila->atualizarFila("Suporte", "Multiplo", "60");
 ```
 ```javascript--node
@@ -403,15 +403,15 @@ client.fila.atualizarFila("Suporte", "Multiplo", "60")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.Atualizar("Suporte", "Multiplo", "60")
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.fila.editar("Suporte", "Multiplo", "60")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Fila fila = new Fila(client);
 
 JSONObject response = fila.atualizar("Suporte", "Multiplo");
@@ -498,7 +498,7 @@ curl -X POST --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->fila->addRamal("ID_FILA", "RAMAL_ID");
 ```
 ```javascript--node
@@ -514,15 +514,15 @@ client.fila.addRamal("ID_FILA", "RAMAL_ID")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.AdicionarRamalFila("ID_FILA", "RAMAL_ID");
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.fila.add_ramal("ID_FILA", "RAMAL_ID")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Fila fila = new Fila(client);
 
 JSONObject response = fila.adicionaRamalFila("ID_FILA", "RAMAL_ID");
@@ -531,7 +531,7 @@ JSONObject response = fila.adicionaRamalFila("ID_FILA", "RAMAL_ID");
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.fila.adiciona_ramal("ID_FILA", "RAMAL_ID")
 ```
 > Response
@@ -586,7 +586,7 @@ curl -X DELETE --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->fila->excluirRamalFila("ID_FILA", "RAMAL_ID");
 ```
 ```javascript--node
@@ -602,18 +602,18 @@ client.fila.excluirRamalFila("ID_FILA", "RAMAL_ID")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.ExcluirRamalFila("ID_FILA", "RAMAL_ID")
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.fila.deleta_ramal("ID_FILA", "RAMAL_ID")
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.fila.excluir_ramal("ID_FILA", "RAMAL_ID")
 ```
 > Response
@@ -664,7 +664,7 @@ curl -X GET --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->fila->buscarFilaRamal("ID_FILA", "RAMAL_ID")
 ```
 ```javascript--node
@@ -680,15 +680,15 @@ client.fila.buscarRamalFila("ID_FILA", "RAMAL_ID")
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.BuscarRamalFila("ID_FILA", "RAMAL_ID")
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.fila.get_fila_ramal("ID_FILA", "RAMAL_ID")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Fila fila = new Fila(client);
 
 JSONObject response = fila.buscar("ID_FILA", "RAMAL_ID");
@@ -697,7 +697,7 @@ JSONObject response = fila.buscar("ID_FILA", "RAMAL_ID");
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.fila.buscar_ramal("ID_FILA", "RAMAL_ID")
 ```
 > Response

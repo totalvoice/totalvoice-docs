@@ -6,18 +6,6 @@
 https://api2.totalvoice.com.br/conta
 ```
 
-> Saldo Endpoint
-
-```text
-https://api2.totalvoice.com.br/saldo
-```
-
-> Webhook Endpoint
-
-```text
-https://api2.totalvoice.com.br/webhook 
-```
-
 O **Minha Conta** permite que você visualize seu saldo, monitore suas contas e suas recargas,
 edite suas contas e configure e visualize seus webhooks.
 
@@ -296,7 +284,7 @@ Definição do objeto resposta Minha Conta
 > Definição
 
 ```text
-POST https://api2.totalvoice.com.br/saldo
+GET https://api2.totalvoice.com.br/saldo
 ```
 
 > Request
