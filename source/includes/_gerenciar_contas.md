@@ -24,7 +24,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     "login": "totalvoice@totalvoice.com.br",
     "saldo": 999.99,
     "telefone": "4832830151",
-    "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
+    "access_token": "seu-token",
     "preco_fixo": "0.060",
     "preco_cel": "0.350",
     "preco_ramal": "0.000",
@@ -204,12 +204,12 @@ POST https://api.totalvoice.com.br/conta
 curl 'https://api.totalvoice.com.br/conta' \
     -X POST \ 
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    --header 'Access-Token: seu-token' \
     -d '{"nome" : "Total Voice", "login" : "totalvoice@totalvoice.com.br", "senha" : "senha123"}'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $conta_dados = array(
     "nome" => "Total Voice", 
@@ -220,7 +220,7 @@ $response = $client->conta->criar($conta_dados);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 var conta_dados = {
     nome: "Total Voice", 
@@ -237,7 +237,7 @@ client.conta.criar(conta_dados)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 
 conta = new(Conta)
 conta.Nome = "Total Voice"
@@ -247,11 +247,11 @@ conta.Senha = "senha123"
 response, err := client.Conta.Criar(conta)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.conta.criar_conta("Total Voice", "totalvoice@totalvoice.com.br", "senha123")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject contaDados = new JSONObject();
@@ -272,7 +272,7 @@ JSONObject response = conta.criar(contaDados);
     "mensagem": "conta criada com sucesso",
     "dados": {
         "id": 3132,
-        "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO"
+        "access_token": "seu-token"
     }
 }
 ```
@@ -424,16 +424,16 @@ GET https://api.totalvoice.com.br/conta/{id}
 curl 'https://api.totalvoice.com.br/conta/3132' \
     -X GET \
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' 
+    --header 'Access-Token: seu-token' 
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->conta->buscaConta(3132);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.conta.buscar(3132)
     .then(function(data) {
@@ -444,15 +444,15 @@ client.conta.buscar(3132)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Buscar(3132)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.conta.get_by_id(3132)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject response = conta.buscar(3132);
@@ -473,7 +473,7 @@ JSONObject response = conta.buscar(3132);
         "login": "totalvoice@totalvoice.com.br",
         "saldo": 999.99,
         "telefone": "4832830151",
-        "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
+        "access_token": "seu-token",
         "preco_fixo": "0.060",
         "preco_cel": "0.350",
         "preco_ramal": "0.000",
@@ -537,19 +537,19 @@ PUT https://api.totalvoice.com.br/conta/{id}
 curl 'https://api.totalvoice.com.br/conta/3132' \
     -X PUT \
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    --header 'Access-Token: seu-token' \
     -d '{"senha" : "senha123456"}'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $conta_dados = array("senha" => "senha123456");
 $response = $client->conta->atualizar(3132, $conta_dados);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 var conta_dados = {
     senha: "senha123456"
@@ -563,7 +563,7 @@ client.conta.atualizar(3132, conta_dados)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 
 conta = new(Conta)
 conta.senha = "senha123"
@@ -571,11 +571,11 @@ conta.senha = "senha123"
 response, err := client.Conta.Atualizar(conta)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.conta.editar_conta("Total Voice", "totalvoice@totalvoice.com.br", "senha123")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject contaDados = new JSONObject();
@@ -723,16 +723,16 @@ DELETE https://api.totalvoice.com.br/conta/{id}
 curl 'https://api.totalvoice.com.br/conta/3132' \
     -X DELETE \
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    --header 'Access-Token: seu-token' \
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->conta->excluir(3132);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.conta.excluir(3132)
     .then(function(data) {
@@ -743,15 +743,15 @@ client.conta.excluir(3132)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Excluir(3132)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.conta.deletar(3132)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject response = conta.excluir(3132);
@@ -809,16 +809,16 @@ GET https://api.totalvoice.com.br/conta/relatorio
 curl 'https://api.totalvoice.com.br/conta/relatorio' \
     -X GET \
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' 
+    --header 'Access-Token: seu-token' 
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->conta->relatorio();
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.conta.relatorio()
     .then(function(data) {
@@ -829,15 +829,15 @@ client.conta.relatorio()
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Relatorio.Gerar()
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.conta.get_relatorio()
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject response = conta.relatorio();

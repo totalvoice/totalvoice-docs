@@ -11,6 +11,8 @@ Esse código(apenas números) pode ser enviado via SMS(formato de texto), ou ent
 
 <b>Mensagem enviada:</b> Seu código de verificação *nome_produto* é: 1234
 
+<b>Observação:</b> O código enviado para o número de telefone expira em 1 hora.
+
 ## Enviar um código
 
 > Definição
