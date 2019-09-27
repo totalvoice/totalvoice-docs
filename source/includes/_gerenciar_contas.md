@@ -24,7 +24,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     "login": "totalvoice@totalvoice.com.br",
     "saldo": 999.99,
     "telefone": "4832830151",
-    "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
+    "access_token": "seu-token",
     "preco_fixo": "0.060",
     "preco_cel": "0.350",
     "preco_ramal": "0.000",
@@ -54,137 +54,92 @@ Definição do objeto Conta
         </tr>
         <tr>
             <td>
-                nome
-                <span class="attribute">string</span>
+                login
+                <span class="required">Obrigatório</span>
             </td>
             <td>
-                Nome cadastrado para a conta.
+                Login para a nova conta, precisa ser um endereço de e-mail válido.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                senha
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Senha para esta nova conta, deve ter mais que 6 caracteres.
             </td>
         </tr>
         <tr>
             <td>
                 cpf_cnpj
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                CPF ou CNPJ cadastrado na conta.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                login
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Login da conta, utilizado para entrar no painel da TotalVoice.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                saldo
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Saldo atual disponível para utilização na conta.
+                CPF ou CNPJ desta conta, para fim de identificação e integração.
             </td>
         </tr>
         <tr>
             <td>
                 telefone
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Telefone de contato cadastrado para a conta.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                access_token
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Token de acesso desta conta, utilizado para realizar a autenticação na API. 
+                Número de telefone de contato desta conta, precisa ser um número de telefone válido.
             </td>
         </tr>
         <tr>
             <td>
                 preco_fixo
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Valor cobrado por minuto para realização de chamadas para telefones fixos através desta conta.
+                O valor que será cobrado desta conta para chamadas destinadas a números fixos, deve ser maior ou igual ao da conta pai, por padrão vem o valor igual ao atual.
             </td>
         </tr>
         <tr>
             <td>
                 preco_cel
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Valor cobrado por minuto para realização de chamadas para telefones móveis através desta conta.
+                O valor que será cobrado desta conta para chamadas destinadas a números móveis deve ser maior ou igual ao da conta pai, por padrão vem o valor igual ao atual.
             </td>
         </tr>
         <tr>
             <td>
                 preco_ramal
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Valor cobrado por minuto para realização de chamadas entre Ramais desta mesma conta.
+                O valor que será cobrado desta conta para chamada entre Ramais dentro dela mesma deve ser maior ou igual ao valor da conta pai, por padrão vem o valor igual ao atual.
             </td>
         </tr>
-                <tr>
+        <tr>
             <td>
                 email_financeiro
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                E-mail de contato reponsável pelo financeiro desta conta, é utilizado para confirmação de transações, recargas e avisos.
+                E-mail de contato para assuntos financeiros da nova conta, por padrão vem o e-mail da conta pai.
             </td>
         </tr>
         <tr>
             <td>
                 nome_fantasia
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Nome fantasia da empresa desta conta, quando atribuído aparece nos logins e nas informações no lugar do nome principal.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                conta_ativa
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Informar se a conta pode ser utilizada ou não, 1 para ativá e 0 para inativa.
+                Nome fantasia desta conta que será utilizado para exibição.
             </td>
         </tr>
         <tr>
             <td>
                 valor_aviso_saldo_baixo
-                <span class="attribute">integer</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Quando o saldo de créditos atingir ou ficar abaixo do valor determinado, você receberá um aviso no email do email_financeiro(caso este não tenha sido cadastrado você receberá no e-mail de login
-            </td>
-        </tr>
-        <tr>
-            <td>
-                metodo_pagamento
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Método de pagamento desta conta, atualmente só existe o método Pré Pago.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                fatura_atual
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Valor da fatura atual da conta.
+                É necessário sem um valor inteiro, ex: 100 .Quando o saldo de créditos atingir ou ficar abaixo do valor determinado, você receberá um aviso no email do email_financeiro(caso este não tenha sido cadastrado você receberá no e-mail de login
             </td>
         </tr>
     </tbody>
@@ -204,12 +159,12 @@ POST https://api.totalvoice.com.br/conta
 curl 'https://api.totalvoice.com.br/conta' \
     -X POST \ 
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    --header 'Access-Token: seu-token' \
     -d '{"nome" : "Total Voice", "login" : "totalvoice@totalvoice.com.br", "senha" : "senha123"}'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $conta_dados = array(
     "nome" => "Total Voice", 
@@ -220,7 +175,7 @@ $response = $client->conta->criar($conta_dados);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 var conta_dados = {
     nome: "Total Voice", 
@@ -237,7 +192,7 @@ client.conta.criar(conta_dados)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 
 conta = new(Conta)
 conta.Nome = "Total Voice"
@@ -247,11 +202,11 @@ conta.Senha = "senha123"
 response, err := client.Conta.Criar(conta)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.conta.criar_conta("Total Voice", "totalvoice@totalvoice.com.br", "senha123")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject contaDados = new JSONObject();
@@ -272,7 +227,7 @@ JSONObject response = conta.criar(contaDados);
     "mensagem": "conta criada com sucesso",
     "dados": {
         "id": 3132,
-        "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO"
+        "access_token": "seu-token"
     }
 }
 ```
@@ -424,16 +379,16 @@ GET https://api.totalvoice.com.br/conta/{id}
 curl 'https://api.totalvoice.com.br/conta/3132' \
     -X GET \
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' 
+    --header 'Access-Token: seu-token' 
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->conta->buscaConta(3132);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.conta.buscar(3132)
     .then(function(data) {
@@ -444,15 +399,15 @@ client.conta.buscar(3132)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Buscar(3132)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.conta.get_by_id(3132)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject response = conta.buscar(3132);
@@ -473,7 +428,7 @@ JSONObject response = conta.buscar(3132);
         "login": "totalvoice@totalvoice.com.br",
         "saldo": 999.99,
         "telefone": "4832830151",
-        "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
+        "access_token": "seu-token",
         "preco_fixo": "0.060",
         "preco_cel": "0.350",
         "preco_ramal": "0.000",
@@ -537,19 +492,19 @@ PUT https://api.totalvoice.com.br/conta/{id}
 curl 'https://api.totalvoice.com.br/conta/3132' \
     -X PUT \
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    --header 'Access-Token: seu-token' \
     -d '{"senha" : "senha123456"}'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 
 $conta_dados = array("senha" => "senha123456");
 $response = $client->conta->atualizar(3132, $conta_dados);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 var conta_dados = {
     senha: "senha123456"
@@ -563,7 +518,7 @@ client.conta.atualizar(3132, conta_dados)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 
 conta = new(Conta)
 conta.senha = "senha123"
@@ -571,11 +526,11 @@ conta.senha = "senha123"
 response, err := client.Conta.Atualizar(conta)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.conta.editar_conta("Total Voice", "totalvoice@totalvoice.com.br", "senha123")
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject contaDados = new JSONObject();
@@ -723,16 +678,16 @@ DELETE https://api.totalvoice.com.br/conta/{id}
 curl 'https://api.totalvoice.com.br/conta/3132' \
     -X DELETE \
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+    --header 'Access-Token: seu-token' \
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->conta->excluir(3132);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.conta.excluir(3132)
     .then(function(data) {
@@ -743,15 +698,15 @@ client.conta.excluir(3132)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Excluir(3132)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.conta.deletar(3132)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject response = conta.excluir(3132);
@@ -809,16 +764,16 @@ GET https://api.totalvoice.com.br/conta/relatorio
 curl 'https://api.totalvoice.com.br/conta/relatorio' \
     -X GET \
     --header 'Content-Type: application/json' \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' 
+    --header 'Access-Token: seu-token' 
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->conta->relatorio();
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.conta.relatorio()
     .then(function(data) {
@@ -829,15 +784,15 @@ client.conta.relatorio()
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Relatorio.Gerar()
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.conta.get_relatorio()
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject response = conta.relatorio();
@@ -965,7 +920,9 @@ Em Contrução
 Permite adicionar crédito de bônus nas contas criadas por mim.
 <br>
 <br>
+<aside class="warning">
 A funcionalidade de Crédito de Bônus é um limite especial configurado em sua conta gerente, que precisa ser liberado por nossa equipe, caso tenha interesse, entre em contato
+</aside>
 
 #### Request
 
