@@ -30,8 +30,10 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     "preco_ramal": "0.000",
     "email_financeiro": "totalvoice@totalvoice.com.br",
     "nome_fantasia": "Total Voice",
+    "conta_ativa": 1,
+    "valor_aviso_saldo_baixo": "150.00",
     "metodo_pagamento": "prepago",
-    "fatura_atual": 0.00
+    "fatura_atual": 0.00,
 }
 ```
 
@@ -147,6 +149,24 @@ Definição do objeto Conta
             </td>
             <td>
                 Nome fantasia da empresa desta conta, quando atribuído aparece nos logins e nas informações no lugar do nome principal.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                conta_ativa
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Informar se a conta pode ser utilizada ou não, 1 para ativá e 0 para inativa.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                valor_aviso_saldo_baixo
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Quando o saldo de créditos atingir ou ficar abaixo do valor determinado, você receberá um aviso no email do email_financeiro(caso este não tenha sido cadastrado você receberá no e-mail de login
             </td>
         </tr>
         <tr>
@@ -353,6 +373,15 @@ Cria uma nova conta filha.
                 Nome fantasia desta conta que será utilizado para exibição.
             </td>
         </tr>
+        <tr>
+            <td>
+                valor_aviso_saldo_baixo
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                É necessário sem um valor inteiro, ex: 100 .Quando o saldo de créditos atingir ou ficar abaixo do valor determinado, você receberá um aviso no email do email_financeiro(caso este não tenha sido cadastrado você receberá no e-mail de login
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -439,19 +468,21 @@ JSONObject response = conta.buscar(3132);
     "mensagem": "dados retornados com sucesso",
     "dados": {
         "id": 3132,
-        "nome": "Total Voice",
+        "nome": "Total Voice Telecom",
         "cpf_cnpj": "00.000.000/0000-00",
         "login": "totalvoice@totalvoice.com.br",
-        "saldo": 99.01,
+        "saldo": 999.99,
         "telefone": "4832830151",
         "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
         "preco_fixo": "0.060",
         "preco_cel": "0.350",
         "preco_ramal": "0.000",
-        "email_financeiro": "contato@totalvoice.com.br",
-        "nome_fantasia": null,
+        "email_financeiro": "totalvoice@totalvoice.com.br",
+        "nome_fantasia": "Total Voice",
+        "conta_ativa": 1,
+        "valor_aviso_saldo_baixo": "150.00",
         "metodo_pagamento": "prepago",
-        "fatura_atual": 0.00
+        "fatura_atual": 0.00,
     }
 }
 ```
@@ -662,6 +693,15 @@ Altera as informações de uma conta já existente, você precisa passar na URL 
                 Novo nome fantasia desta conta que será utilizado para exibição.
             </td>
         </tr>
+        <tr>
+            <td>
+                valor_aviso_saldo_baixo
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                É necessário sem um valor inteiro, ex: 100 .Quando o saldo de créditos atingir ou ficar abaixo do valor determinado, você receberá um aviso no email do email_financeiro(caso este não tenha sido cadastrado você receberá no e-mail de login
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -814,36 +854,40 @@ JSONObject response = conta.relatorio();
   "dados": {
     "relatorio": [
       {
-          "id": 3132,
-          "nome": "Total Voice",
-          "cpf_cnpj": "00.000.000/0000-00",
-          "login": "totalvoice@totalvoice.com.br",
-          "saldo": 99.01,
-          "telefone": "4832830151",
-          "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
-          "preco_fixo": "0.060",
-          "preco_cel": "0.350",
-          "preco_ramal": "0.000",
-          "email_financeiro": "contato@totalvoice.com.br",
-          "nome_fantasia": null,
-          "metodo_pagamento": "prepago",
-          "fatura_atual": 0.00
+        "id": 3132,
+        "nome": "Total Voice Telecom",
+        "cpf_cnpj": "00.000.000/0000-00",
+        "login": "totalvoice@totalvoice.com.br",
+        "saldo": 999.99,
+        "telefone": "4832830151",
+        "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
+        "preco_fixo": "0.060",
+        "preco_cel": "0.350",
+        "preco_ramal": "0.000",
+        "email_financeiro": "totalvoice@totalvoice.com.br",
+        "nome_fantasia": "Total Voice",
+        "conta_ativa": 1,
+        "valor_aviso_saldo_baixo": "150.00",
+        "metodo_pagamento": "prepago",
+        "fatura_atual": 0.00,
       },
       {
-          "id": 3133,
-          "nome": "Total Voice Filial 2",
-          "cpf_cnpj": "00.000.000/1111-11",
-          "login": "totalvoice_filial_2@totalvoice.com.br",
-          "saldo": 99.01,
-          "telefone": "4832830151",
-          "access_token": "teste228PU1Izmb9chEdLzep7IwRymWO",
-          "preco_fixo": "0.060",
-          "preco_cel": "0.350",
-          "preco_ramal": "0.000",
-          "email_financeiro": "contato@totalvoice.com.br",
-          "nome_fantasia": null,
-          "metodo_pagamento": "prepago",
-          "fatura_atual": 0.00
+        "id": 3132,
+        "nome": "Total Voice Telecom",
+        "cpf_cnpj": "00.000.000/0000-00",
+        "login": "totalvoice@totalvoice.com.br",
+        "saldo": 999.99,
+        "telefone": "4832830151",
+        "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
+        "preco_fixo": "0.060",
+        "preco_cel": "0.350",
+        "preco_ramal": "0.000",
+        "email_financeiro": "totalvoice@totalvoice.com.br",
+        "nome_fantasia": "Total Voice",
+        "conta_ativa": 1,
+        "valor_aviso_saldo_baixo": "150.00",
+        "metodo_pagamento": "prepago",
+        "fatura_atual": 0.00
       }
     ]
   }
@@ -872,3 +916,78 @@ Retorna um relatório com todas as suas contas filhas. As contas retornadas no r
 
 <br/>
 <br/>
+
+## Crédito bônus
+
+> Definição
+
+```text
+POST https://api2.totalvoice.com.br/conta/{id}/bonus
+```
+
+> Request
+
+```shell--curl
+curl -X POST --header 'Accept: application/json' \
+            --header 'Access-Token: seu-token' \
+            -d '{"valor":"100"}' \
+            'https://api2.totalvoice.com.br/conta/id-conta/bonus'
+```
+```php
+Em Contrução
+```
+```javascript--node
+Em Contrução
+```
+```go
+Em Contrução
+```
+```python
+Em Contrução
+```
+```java
+Em Contrução
+```
+```ruby
+Em Contrução
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "valor adicionado com sucesso"
+}
+```
+
+Permite adicionar crédito de bônus nas contas criadas por mim.
+<br>
+<br>
+A funcionalidade de Crédito de Bônus é um limite especial configurado em sua conta gerente, que precisa ser liberado por nossa equipe, caso tenha interesse, entre em contato
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID da conta que vai receber os creditos
+            </td>
+        </tr>
+        <tr>
+            <td>
+                valor
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Valor que será adicionado como crédito bônus na conta
+            </td>
+        </tr>
+    </tbody>
+</table>

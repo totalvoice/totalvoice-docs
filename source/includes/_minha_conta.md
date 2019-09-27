@@ -29,16 +29,24 @@ edite suas contas e configure e visualize seus webhooks.
 
 ```json
 {
+    "id": 1,
     "nome": "Total Voice Telecom",
-    "login": "contato@totalvoice.com.br",
-    "senha": "senha secreta",
-    "cpf_cnpj": "00.000.000/0000-00",
+    "cpf_cnpj": "12.123.123\/0001-10",
+    "login": "teste@totalvoice.com.br",
+    "saldo": 950.64,
     "telefone": "4832830151",
-    "preco_fixo": "0.09",
-    "preco_cel": "0.35",
-    "preco_ramal": "0.02"
-    "email_financeiro": "financeiro@totalvoice.com.br",
-    "nome_fantasia": "Total Voice",
+    "access_token": "1234asdkgh1g23213nkbdfsh3v43",
+    "preco_fixo": "0.060",
+    "preco_sms": "0.090",
+    "preco_cel": "0.350",
+    "preco_ramal": "0.000",
+    "email_financeiro": "testefinanceiro@totalvoice.com.br",
+    "nome_fantasia": null,
+    "conta_ativa": 1,
+    "valor_aviso_saldo_baixo": "0.00",
+    "metodo_pagamento": "prepago",
+    "fatura_atual": 1.52,
+    "limite_credito_bonus": 0
 }
 ```
 Definição do objeto Conta
@@ -149,19 +157,24 @@ Definição do objeto Conta
 
 ```json
 {
-    "id": 14681,
-    "nome": "DesenvolvimentoTotalVoice",
-    "cpf_cnpj": "12.042.833/0001-02",
-    "login": "desenvolvimento@totalvoice.com.br",
-    "saldo": 100.00,
+    "id": 1,
+    "nome": "Total Voice Telecom",
+    "cpf_cnpj": "12.123.123\/0001-10",
+    "login": "teste@totalvoice.com.br",
+    "saldo": 950.64,
     "telefone": "4832830151",
-    "access_token": "acces_token",
+    "access_token": "1234asdkgh1g23213nkbdfsh3v43",
     "preco_fixo": "0.060",
+    "preco_sms": "0.090",
     "preco_cel": "0.350",
     "preco_ramal": "0.000",
-    "email_financeiro": "financeiro@totalvoice.com.br",
-    "nome_fantasia": "TotalVoice",
-    "metodo_pagamento": "prepago"
+    "email_financeiro": "testefinanceiro@totalvoice.com.br",
+    "nome_fantasia": null,
+    "conta_ativa": 1,
+    "valor_aviso_saldo_baixo": "0.00",
+    "metodo_pagamento": "prepago",
+    "fatura_atual": 1.52,
+    "limite_credito_bonus": 0
 }
 ```
 
@@ -451,20 +464,24 @@ puts @client.perfil.minha_conta()
   "motivo": 0,
   "mensagem": "dados retornados com sucesso",
   "dados": {
-    "id": 14681,
-    "nome": "DesenvolvimentoTotalVoice",
-    "cpf_cnpj": "11.111.111/0001-02",
-    "login": "desenvolvimento@totalvoice.com.br",
-    "saldo": 111.38,
+    "id": 1,
+    "nome": "Total Voice Telecom",
+    "cpf_cnpj": "12.123.123\/0001-10",
+    "login": "teste@totalvoice.com.br",
+    "saldo": 950.64,
     "telefone": "4832830151",
-    "access_token": "tokentestetoken",
+    "access_token": "1234asdkgh1g23213nkbdfsh3v43",
     "preco_fixo": "0.060",
+    "preco_sms": "0.090",
     "preco_cel": "0.350",
     "preco_ramal": "0.000",
-    "email_financeiro": "",
+    "email_financeiro": "testefinanceiro@totalvoice.com.br",
     "nome_fantasia": null,
-    "metodo_pagamento": "pospago",
-    "fatura_atual": 365.34
+    "conta_ativa": 1,
+    "valor_aviso_saldo_baixo": "0.00",
+    "metodo_pagamento": "prepago",
+    "fatura_atual": 1.52,
+    "limite_credito_bonus": 0
   }
 }
 ```
