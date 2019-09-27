@@ -923,7 +923,6 @@ Permite adicionar crédito de bônus nas contas criadas por mim.
 <aside class="warning">
 A funcionalidade de Crédito de Bônus é um limite especial configurado em sua conta gerente, que precisa ser liberado por nossa equipe, caso tenha interesse, entre em contato
 </aside>
-
 #### Request
 
 <table class="table-parameters">
