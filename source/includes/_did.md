@@ -86,7 +86,12 @@ curl -X GET --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
-Em construção
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+$client = new TotalVoiceClient('seu-token');
+
+$response = $client->central->listaEstoque("id-ramal");
 ```
 ```javascript--node
 Em construção
@@ -737,7 +742,7 @@ GET https://api.totalvoice.com.br/did/chamada/{id-chamada}
 
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
-            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            --header 'Access-Token: seu-token' \
             'https://api.totalvoice.com.br/did/chamada/{id-chamada}'
 ```
 ```php
@@ -842,17 +847,17 @@ GET https://api.totalvoice.com.br/did/{id}/relatorio
 
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
-            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            --header 'Access-Token: seu-token' \
             'https://api.totalvoice.com.br/did/1/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->did->relatorioChamadas($id, $dataInicial, $dataFinal, $filtros);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.did.relatorioChamadas(id, dataInicial, dataFinal, filtros)
     .then(function(data) {
@@ -863,15 +868,15 @@ client.did.relatorioChamadas(id, dataInicial, dataFinal, filtros)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.DID.RelatorioChamadas.Gerar(id, dataInicial, dataFinal, filtros)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.did.get_relatorio_chamadas(id, data_inicio, data_fim, filtros)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Did did = new Did(client);
 JSONObject response = did.relatorioChamadas(id, dataInicial, dataFinal, filtros);
 ```
@@ -879,7 +884,7 @@ JSONObject response = did.relatorioChamadas(id, dataInicial, dataFinal, filtros)
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.did.relatorioChamadas(id, data_inicial, data_final, filtros)
 ```
 > Response
@@ -1053,17 +1058,17 @@ GET https://api.totalvoice.com.br/did/relatorio
 
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
-            --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
+            --header 'Access-Token: seu-token' \
             'https://api.totalvoice.com.br/did/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
+$client = new TotalVoiceClient('seu-token');
 $response = $client->did->relatorioChamadas($dataInicial, $dataFinal, $filtros);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
+const client = new totalvoice("seu-token");
 
 client.did.relatorioChamadas(dataInicial, dataFinal, filtros)
     .then(function(data) {
@@ -1074,15 +1079,15 @@ client.did.relatorioChamadas(dataInicial, dataFinal, filtros)
     });
 ```
 ```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
+client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.DID.RelatorioChamadas.Gerar(dataInicial, dataFinal, filtros)
 ```
 ```python
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'api.totalvoice.com.br')
 response = client.did.get_relatorio_chamadas(data_inicio, data_fim, filtros)
 ```
 ```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Did did = new Did(client);
 JSONObject response = did.relatorioChamadas(dataInicial, dataFinal, filtros);
 ```
@@ -1090,7 +1095,7 @@ JSONObject response = did.relatorioChamadas(dataInicial, dataFinal, filtros);
 require 'totalvoice-ruby'
 include TotalVoice
 
-@client = TotalVoice::API.new("testeM68PU1Izmb9chEdLzep7IwRymWO")
+@client = TotalVoice::API.new("seu-token")
 puts @client.did.relatorioChamadas(data_inicial, data_final, filtros)
 ```
 > Response

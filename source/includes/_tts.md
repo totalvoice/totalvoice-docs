@@ -478,7 +478,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
     "duracao_falada_segundos": 0,
     "duracao_falada": "00:00:00",
     "preco": 0,
-    "mensagem": "Olá moço",
+    "mensagem": "Mensagem de teste",
     "velocidade": 0,
     "resposta_usuario": true,
     "resposta": 2,

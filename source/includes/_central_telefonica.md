@@ -140,7 +140,12 @@ curl -X POST --header 'Content-Type: application/json' \
 require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
-Em construção
+$client = new TotalVoiceClient('seu-token');
+$dados = [
+    "ramal"=>"1358",
+    "login"=>"logindeteste231@totalvoice.com.br"
+];
+$response = $client->central->criarRamal($dados);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
@@ -334,10 +339,13 @@ curl -X GET --header 'Content-Type: application/json' \
 ```
 ```php
 <?php
+
 require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
-Em construção
+$client = new TotalVoiceClient('seu-token');
+
+$response = $client->central->buscaRamal("id-ramal");
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
@@ -446,7 +454,15 @@ curl -X PUT --header 'Content-Type: application/json' \
 require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
-Em construção
+$client = new TotalVoiceClient('seu-token');
+
+$dados = [
+    "ramal"=>"1358",
+    "login"=>"logindeteste231@totalvoice.com.br"
+];
+
+$response = $client->central->atualizarRamal("id-ramal", $dados);
+
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
@@ -636,7 +652,9 @@ curl -X DELETE --header 'Content-Type: application/json' \
 require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
-Em construção
+$client = new TotalVoiceClient('seu-token');
+
+$response = $client->central->excluirRamal("id-ramal");
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
@@ -871,8 +889,12 @@ curl -X GET --header 'Accept: application/json' \
 ```
 ```php
 <?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
 $client = new TotalVoiceClient('seu-token');
-Em construção
+
+$response = $client->central->relatorioPausasRamal("id-ramal", "2019-02-20T11:11:19-03:00", "2019-02-20T11:12:26-03:0");
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
@@ -1358,7 +1380,7 @@ O nome da "acao" é o maior e o que deve estar dentro do array "acao_dados" é o
     </tbody>
 </table>
 
-#### Criar uma URA
+## Criar uma URA
 
 > Definição
 
@@ -1380,7 +1402,20 @@ curl -X POST --header 'Content-Type: application/json' \
 require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
-Em construção
+$client = new TotalVoiceClient('seu-token');
+
+$dados = array (
+    0 => array (
+      'acao' => 'tts',
+      'menu' => 'menu 1',
+      'acao_dados' => array (
+          'mensagem' => 'Olá! Isso é um teste.'
+      ),
+    )
+    );
+
+$response = $client->central->criarUra("Teste TotalVoice-001", $dados);
+
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
@@ -1599,7 +1634,20 @@ curl -X POST --header 'Content-Type: application/json' \
 require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
-Em construção
+$client = new TotalVoiceClient('seu-token');
+
+$dados = array (
+    0 => array (
+      'acao' => 'tts',
+      'menu' => 'menu 1',
+      'acao_dados' => array (
+          'mensagem' => 'Olá! Isso é um teste.'
+      ),
+    )
+    );
+
+$response = $client->central->atualizarUra("123456", "Teste TotalVoice-001", $dados);
+
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
@@ -1702,13 +1750,9 @@ curl -X DELETE --header 'Content-Type: application/json' \
 require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
-Em construção
-```
-```javascript--node
-const totalvoice = require('totalvoice-node');
-const client = new totalvoice("seu-token");
+$client = new TotalVoiceClient('seu-token');
 
-Em construção
+$response = $client->central->excluirUra("id");
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
