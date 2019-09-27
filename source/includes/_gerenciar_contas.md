@@ -54,137 +54,92 @@ Definição do objeto Conta
         </tr>
         <tr>
             <td>
-                nome
-                <span class="attribute">string</span>
+                login
+                <span class="required">Obrigatório</span>
             </td>
             <td>
-                Nome cadastrado para a conta.
+                Login para a nova conta, precisa ser um endereço de e-mail válido.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                senha
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Senha para esta nova conta, deve ter mais que 6 caracteres.
             </td>
         </tr>
         <tr>
             <td>
                 cpf_cnpj
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                CPF ou CNPJ cadastrado na conta.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                login
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Login da conta, utilizado para entrar no painel da TotalVoice.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                saldo
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Saldo atual disponível para utilização na conta.
+                CPF ou CNPJ desta conta, para fim de identificação e integração.
             </td>
         </tr>
         <tr>
             <td>
                 telefone
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Telefone de contato cadastrado para a conta.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                access_token
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Token de acesso desta conta, utilizado para realizar a autenticação na API. 
+                Número de telefone de contato desta conta, precisa ser um número de telefone válido.
             </td>
         </tr>
         <tr>
             <td>
                 preco_fixo
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Valor cobrado por minuto para realização de chamadas para telefones fixos através desta conta.
+                O valor que será cobrado desta conta para chamadas destinadas a números fixos, deve ser maior ou igual ao da conta pai, por padrão vem o valor igual ao atual.
             </td>
         </tr>
         <tr>
             <td>
                 preco_cel
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Valor cobrado por minuto para realização de chamadas para telefones móveis através desta conta.
+                O valor que será cobrado desta conta para chamadas destinadas a números móveis deve ser maior ou igual ao da conta pai, por padrão vem o valor igual ao atual.
             </td>
         </tr>
         <tr>
             <td>
                 preco_ramal
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Valor cobrado por minuto para realização de chamadas entre Ramais desta mesma conta.
+                O valor que será cobrado desta conta para chamada entre Ramais dentro dela mesma deve ser maior ou igual ao valor da conta pai, por padrão vem o valor igual ao atual.
             </td>
         </tr>
-                <tr>
+        <tr>
             <td>
                 email_financeiro
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                E-mail de contato reponsável pelo financeiro desta conta, é utilizado para confirmação de transações, recargas e avisos.
+                E-mail de contato para assuntos financeiros da nova conta, por padrão vem o e-mail da conta pai.
             </td>
         </tr>
         <tr>
             <td>
                 nome_fantasia
-                <span class="attribute">string</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Nome fantasia da empresa desta conta, quando atribuído aparece nos logins e nas informações no lugar do nome principal.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                conta_ativa
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Informar se a conta pode ser utilizada ou não, 1 para ativá e 0 para inativa.
+                Nome fantasia desta conta que será utilizado para exibição.
             </td>
         </tr>
         <tr>
             <td>
                 valor_aviso_saldo_baixo
-                <span class="attribute">integer</span>
+                <span class="optional">Opcional</span>
             </td>
             <td>
-                Quando o saldo de créditos atingir ou ficar abaixo do valor determinado, você receberá um aviso no email do email_financeiro(caso este não tenha sido cadastrado você receberá no e-mail de login
-            </td>
-        </tr>
-        <tr>
-            <td>
-                metodo_pagamento
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Método de pagamento desta conta, atualmente só existe o método Pré Pago.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                fatura_atual
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Valor da fatura atual da conta.
+                É necessário sem um valor inteiro, ex: 100 .Quando o saldo de créditos atingir ou ficar abaixo do valor determinado, você receberá um aviso no email do email_financeiro(caso este não tenha sido cadastrado você receberá no e-mail de login
             </td>
         </tr>
     </tbody>
@@ -965,8 +920,9 @@ Em Contrução
 Permite adicionar crédito de bônus nas contas criadas por mim.
 <br>
 <br>
+<aside class="warning">
 A funcionalidade de Crédito de Bônus é um limite especial configurado em sua conta gerente, que precisa ser liberado por nossa equipe, caso tenha interesse, entre em contato
-
+</aside>
 #### Request
 
 <table class="table-parameters">
