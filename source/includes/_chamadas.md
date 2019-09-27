@@ -1194,7 +1194,7 @@ Você pode realizar uma escuta para uma chamada que está **ativa** (Beta).
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/chamada/{id}/transfer
+POST https://api2.totalvoice.com.br/chamada/{id}/transfer
 ```
 
 > Request
