@@ -493,6 +493,9 @@
                   <li>
                     <a href="#relatorio-de-contas" class="toc-h2 toc-link" data-title="Relatório de Contas">Relatório de Contas</a>
                   </li>
+                  <li>
+                    <a href="#credito-bonus" class="toc-h2 toc-link" data-title="Crédito bônus">Crédito bônus</a>
+                  </li>
               </ul>
           </li>
            <li>
@@ -1071,7 +1074,7 @@ Caso encontre um status diferente dos mapeados, favor entrar em <a href="#introd
 
 <ul>
 <li><p><a href="https://api2.totalvoice.com.br/doc/#/" target="_blank">Playground</a> - É um ambiente onde você utiliza o token da sua conta e faz envio para nossa api, preenchendo um formulário com os parâmetros necessários. </p></li>
-<li><p>Utilizando o <a href="https://www.getpostman.com/" target="_blank">Postman</a> ou <a href="https://insomnia.rest/" target="_blank">Insomnia</a>, você deve passar o deve nos enviar as seguintes informações:</p>
+<li><p>Utilizando o <a href="https://www.getpostman.com/" target="_blank">Postman</a> ou <a href="https://insomnia.rest/" target="_blank">Insomnia</a>, vvocê precisa nos enviar as seguintes informações:</p>
 
 <ul>
 <li>Header
@@ -1083,7 +1086,7 @@ Caso encontre um status diferente dos mapeados, favor entrar em <a href="#introd
 <li>Body
 
 <ul>
-<li>No corpo da requisição você de enviar um Json.
+<li>No corpo da requisição você deve enviar um JSON (para requisições POST/PUT)
 <br><br></li>
 </ul></li>
 </ul></li>
@@ -5310,7 +5313,7 @@ a ligação e o <strong>Destino</strong> de quem recebeu a ligação. É nesses 
 <blockquote>
 <p>Definição</p>
 </blockquote>
-<pre class="highlight plaintext"><code>GET https://api2.totalvoice.com.br/chamada/{id}/transfer
+<pre class="highlight plaintext"><code>POST https://api2.totalvoice.com.br/chamada/{id}/transfer
 </code></pre>
 <blockquote>
 <p>Request</p>
@@ -7890,8 +7893,10 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"conta_ativa"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"valor_aviso_saldo_baixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150.00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepago"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+    </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Definição do objeto Conta</p>
@@ -8004,6 +8009,24 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
             </td>
             <td>
                 Nome fantasia da empresa desta conta, quando atribuído aparece nos logins e nas informações no lugar do nome principal.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                conta_ativa
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Informar se a conta pode ser utilizada ou não, 1 para ativá e 0 para inativa.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                valor_aviso_saldo_baixo
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Quando o saldo de créditos atingir ou ficar abaixo do valor determinado, você receberá um aviso no email do email_financeiro(caso este não tenha sido cadastrado você receberá no e-mail de login
             </td>
         </tr>
         <tr>
@@ -8193,6 +8216,15 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
                 Nome fantasia desta conta que será utilizado para exibição.
             </td>
         </tr>
+        <tr>
+            <td>
+                valor_aviso_saldo_baixo
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                É necessário sem um valor inteiro, ex: 100 .Quando o saldo de créditos atingir ou ficar abaixo do valor determinado, você receberá um aviso no email do email_financeiro(caso este não tenha sido cadastrado você receberá no e-mail de login
+            </td>
+        </tr>
     </tbody>
 </table>
 <h4 id='response'>Response</h4>
@@ -8263,19 +8295,21 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3132</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice Telecom"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0000-00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.01</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">999.99</span><span class="p">,</span><span class="w">
         </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seu-token"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contato@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conta_ativa"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"valor_aviso_saldo_baixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150.00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepago"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+        </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -8466,6 +8500,15 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
                 Novo nome fantasia desta conta que será utilizado para exibição.
             </td>
         </tr>
+        <tr>
+            <td>
+                valor_aviso_saldo_baixo
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                É necessário sem um valor inteiro, ex: 100 .Quando o saldo de créditos atingir ou ficar abaixo do valor determinado, você receberá um aviso no email do email_financeiro(caso este não tenha sido cadastrado você receberá no e-mail de login
+            </td>
+        </tr>
     </tbody>
 </table>
 <h4 id='response-3'>Response</h4>
@@ -8587,36 +8630,40 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
   </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3132</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0000-00"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.01</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seu-token"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contato@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepago"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3132</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice Telecom"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0000-00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">999.99</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conta_ativa"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"valor_aviso_saldo_baixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150.00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepago"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
-          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3133</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice Filial 2"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/1111-11"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice_filial_2@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">99.01</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seu-token"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contato@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepago"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3132</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice Telecom"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0000-00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">999.99</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalvoice@totalvoice.com.br"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"conta_ativa"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"valor_aviso_saldo_baixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"150.00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepago"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -8644,6 +8691,63 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 
 <p><br/>
 <br/></p>
+<h2 id='credito-bonus'>Crédito bônus</h2>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>POST https://api2.totalvoice.com.br/conta/{id}/bonus
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
+            -d <span class="s1">'{"valor":"100"}'</span> <span class="se">\</span>
+            <span class="s1">'https://api2.totalvoice.com.br/conta/id-conta/bonus'</span>
+</code></pre><pre class="highlight php tab-php"><code>Em Contrução
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="nx">Em</span> <span class="nx">Contru</span><span class="err">çã</span><span class="nx">o</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">Em</span><span class="x"> </span><span class="n">Contrução</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">Em</span> <span class="n">Contru</span><span class="err">çã</span><span class="n">o</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">Em</span> <span class="n">Contru</span><span class="err">çã</span><span class="n">o</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="no">Em</span> <span class="no">Contru</span><span class="err">çã</span><span class="n">o</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valor adicionado com sucesso"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Permite adicionar crédito de bônus nas contas criadas por mim.
+<br>
+<br>
+A funcionalidade de Crédito de Bônus é um limite especial configurado em sua conta gerente, que precisa ser liberado por nossa equipe, caso tenha interesse, entre em contato</p>
+<h4 id='request-5'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID da conta que vai receber os creditos
+            </td>
+        </tr>
+        <tr>
+            <td>
+                valor
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Valor que será adicionado como crédito bônus na conta
+            </td>
+        </tr>
+    </tbody>
+</table>
 <h1 id='minha-conta'>Minha Conta</h1>
 <blockquote>
 <p>Minha Conta Endpoint</p>
@@ -8659,16 +8763,24 @@ edite suas contas e configure e visualize seus webhooks.</p>
 <p>JSON</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice Telecom"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"contato@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"senha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"senha secreta"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0000-00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.123.123</span><span class="se">\/</span><span class="s2">0001-10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste@totalvoice.com.br"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">950.64</span><span class="p">,</span><span class="w">
     </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.09"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.35"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02"</span><span class="w">
-    </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"financeiro@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234asdkgh1g23213nkbdfsh3v43"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco_sms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.090"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testefinanceiro@totalvoice.com.br"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"conta_ativa"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"valor_aviso_saldo_baixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepago"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.52</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"limite_credito_bonus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Definição do objeto Conta</p>
@@ -8775,19 +8887,24 @@ edite suas contas e configure e visualize seus webhooks.</p>
 <p>JSON</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14681</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DesenvolvimentoTotalVoice"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.042.833/0001-02"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desenvolvimento@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice Telecom"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.123.123</span><span class="se">\/</span><span class="s2">0001-10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste@totalvoice.com.br"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">950.64</span><span class="p">,</span><span class="w">
     </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"acces_token"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234asdkgh1g23213nkbdfsh3v43"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco_sms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.090"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"financeiro@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TotalVoice"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepago"</span><span class="w">
+    </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testefinanceiro@totalvoice.com.br"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"conta_ativa"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"valor_aviso_saldo_baixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepago"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.52</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"limite_credito_bonus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Definição do objeto resposta Minha Conta</p>
@@ -9040,20 +9157,24 @@ edite suas contas e configure e visualize seus webhooks.</p>
   </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14681</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DesenvolvimentoTotalVoice"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11.111.111/0001-02"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"desenvolvimento@totalvoice.com.br"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">111.38</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Voice Telecom"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.123.123</span><span class="se">\/</span><span class="s2">0001-10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste@totalvoice.com.br"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">950.64</span><span class="p">,</span><span class="w">
     </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tokentestetoken"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234asdkgh1g23213nkbdfsh3v43"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco_sms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.090"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.000"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email_financeiro"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testefinanceiro@totalvoice.com.br"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"nome_fantasia"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pospago"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">365.34</span><span class="w">
+    </span><span class="s2">"conta_ativa"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"valor_aviso_saldo_baixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"metodo_pagamento"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prepago"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fatura_atual"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.52</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"limite_credito_bonus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h5 id='response-2'>Response</h5>
