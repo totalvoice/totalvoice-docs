@@ -138,6 +138,15 @@ Definição do objeto Chamada
         </tr>
         <tr>
             <td>
+                detecta_caixa
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Caso identificado caixa, a ligação será durrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
+            </td>
+        </tr>
+        <tr>
+            <td>
                 status_geral
                 <span class="attribute">string</span>
             </td>
