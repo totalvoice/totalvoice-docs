@@ -213,7 +213,7 @@ Basta informar o nome da fila e a estratégia de ring.
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Distribuidor = Toca um ramal por vez, ou Multiplo = Toca todos ramais ao mesmo tempo
+                Distribuidor = Toca um ramal por vez, DistribuidorParalelo = Toca um ramal por vez com encaminhamento paralelo ou Multiplo = Toca todos ramais ao mesmo tempo.
             </td>
         </tr>
         <tr>
@@ -456,7 +456,7 @@ Altera as informações da sua fila.
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Distribuidor = Toca um ramal por vez, ou Multiplo = Toca todos ramais ao mesmo tempo.
+                Distribuidor = Toca um ramal por vez, DistribuidorParalelo = Toca um ramal por vez com encaminhamento paralelo ou Multiplo = Toca todos ramais ao mesmo tempo.
             </td>
         </tr>
         <tr>

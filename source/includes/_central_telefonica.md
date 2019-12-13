@@ -151,7 +151,19 @@ $response = $client->central->criarRamal($dados);
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-Em construção
+const dados = {
+    ramal: '1358', 
+    login: 'logindeteste231@totalvoice.com.br', 
+    senha: '123456'
+};
+
+client.central.criarRamal(dados)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -351,7 +363,13 @@ $response = $client->central->buscaRamal("id-ramal");
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-Em construção
+client.central.buscaRamal('id-ramal')
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -432,7 +450,7 @@ Após o ramal ser criado, você pode consultar suas informações
     </tbody>
 </table>
 
-## Editar uma Ramal
+## Editar um Ramal
 
 > Definição
 
@@ -468,7 +486,18 @@ $response = $client->central->atualizarRamal("id-ramal", $dados);
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-Em construção
+const dados = {
+    login: 'logindeteste456@totalvoice.com.br', 
+    senha: '12345678'
+};
+
+client.central.atualizarRamal('id-ramal', dados)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -660,7 +689,13 @@ $response = $client->central->excluirRamal("id-ramal");
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-Em construção
+client.central.excluirRamal('id-ramal')
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -747,7 +782,15 @@ Em construção
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-Em construção
+const client = new totalvoice("seu-token");
+
+client.central.relatorio()
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -896,9 +939,17 @@ $client = new TotalVoiceClient('seu-token');
 
 $response = $client->central->relatorioPausasRamal("id-ramal", "2019-02-20T11:11:19-03:00", "2019-02-20T11:12:26-03:0");
 ```
-```javascript--node
+```javascript--node 
 const totalvoice = require('totalvoice-node');
-Em construção
+const client = new totalvoice("seu-token");
+
+client.central.relatorioPausas('id-ramal')
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -1037,7 +1088,15 @@ Em construção
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-Em construção
+const client = new totalvoice("seu-token");
+
+client.central.relatorio('id-ramal')
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -1421,7 +1480,22 @@ $response = $client->central->criarUra("Teste TotalVoice-001", $dados);
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-Em construção
+const dados = [{
+    acao: "tts",
+    opcao: "1",
+    menu: "menu 2",
+    acao_dados: {
+        mensagem: "Mensagem de teste"
+    }
+}];
+
+client.central.criarUra("nome-ura", dados)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -1524,7 +1598,13 @@ Em construção
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-Em construção
+client.central.buscaUra('id-ura')
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -1653,7 +1733,17 @@ $response = $client->central->atualizarUra("123456", "Teste TotalVoice-001", $da
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-Em construção
+const dados = {
+    timeout: 10
+};
+
+client.central.atualizarUra('id-ura', 'nome-ura', dados)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -1754,6 +1844,18 @@ $client = new TotalVoiceClient('seu-token');
 
 $response = $client->central->excluirUra("id");
 ```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+client.central.excluirUra('id-ura')
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
@@ -1841,7 +1943,15 @@ Em construção
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
-Em construção
+const client = new totalvoice("seu-token");
+
+client.central.relatorioUra()
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
@@ -1901,23 +2011,6 @@ Em construção
   }
 }
 ```
-
-#### Request
-
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                id
-                <span class="required">integer</span>
-            </td>
-            <td>
-                Id da URA
-            </td>
-        </tr> 
-    </tbody>
-</table>
-
 #### Response
 
 <table class="table-parameters">
