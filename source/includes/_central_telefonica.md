@@ -1247,7 +1247,7 @@ O nome da "acao" é o maior e o que deve estar dentro do array "acao_dados" é o
     <tbody>
         <tr>
             <td>
-                playAudio
+                audio
                 <span class="attribute">url_audio</span>
             </td>
             <td>
@@ -1256,7 +1256,7 @@ O nome da "acao" é o maior e o que deve estar dentro do array "acao_dados" é o
         </tr>
         <tr>
             <td>
-                playTTS
+                tts
                 <span class="attribute">mensagem</span>
             </td>
             <td>
