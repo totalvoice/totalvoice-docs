@@ -34,7 +34,8 @@ data de envio por exemplo.
         "resposta": "tudo bem, e voce?",
         "data_resposta": "2016-03-31T22:46:42-03:00"
       }
-    ]
+    ],
+    "tags": null
 }
 ```
 
@@ -129,6 +130,15 @@ Definição do objeto Sms
             </td>
             <td>
                 Array contendo os objetos de <a href="#objeto-resposta-sms">resposta</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                tags
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                String com a tag enviado no momento do post.
             </td>
         </tr>
     </tbody>
@@ -314,6 +324,17 @@ Para o envio de SMS é necessário informar um número móvel válido e uma mens
         </tr>
         <tr>
             <td>
+                tags
+                <span class="optional">
+                    Opcional 
+                </span>
+            </td>
+            <td>
+                Você pode enviar informações em texto no campo tags com até 50 caracteres.
+            </td>
+        </tr>
+        <tr>
+            <td>
                 data_criacao
                 <span class="optional">
                     Opcional
@@ -436,7 +457,7 @@ puts @client.sms.buscar(123)
       "respostas":[  
 
       ],
-      "tags":null
+      "tags":"informações adicionais"
 }
 ```
 
