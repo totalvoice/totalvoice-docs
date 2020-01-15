@@ -9973,7 +9973,8 @@ data de envio por exemplo.</p>
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tudo bem, e voce?"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31T22:46:42-03:00"</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Definição do objeto Sms</p>
@@ -10065,6 +10066,15 @@ data de envio por exemplo.</p>
             </td>
             <td>
                 Array contendo os objetos de <a href="#objeto-resposta-sms">resposta</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                tags
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                String com a tag enviado no momento do post.
             </td>
         </tr>
     </tbody>
@@ -10228,6 +10238,17 @@ data de envio por exemplo.</p>
         </tr>
         <tr>
             <td>
+                tags
+                <span class="optional">
+                    Opcional 
+                </span>
+            </td>
+            <td>
+                Você pode enviar informações em texto no campo tags com até 50 caracteres.
+            </td>
+        </tr>
+        <tr>
+            <td>
                 data_criacao
                 <span class="optional">
                     Opcional
@@ -10332,7 +10353,7 @@ data de envio por exemplo.</p>
       </span><span class="s2">"respostas"</span><span class="p">:[</span><span class="w">  
 
       </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"tags"</span><span class="p">:</span><span class="kc">null</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="s2">"informações adicionais"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Após o envio de mensagens de SMS você poderá realizar a busca do registro pelo seu ID.</p>
