@@ -63,15 +63,6 @@ Definição do objeto Conta
         </tr>
         <tr>
             <td>
-                senha
-                <span class="required">Obrigatório</span>
-            </td>
-            <td>
-                Senha para esta nova conta, deve ter mais que 6 caracteres.
-            </td>
-        </tr>
-        <tr>
-            <td>
                 cpf_cnpj
                 <span class="optional">Opcional</span>
             </td>
