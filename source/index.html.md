@@ -9,6 +9,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - python
   - java
   - ruby
+  - C Sharp
 
 toc_footers:
   - <a href='https://api2.totalvoice.com.br/painel' target="_blank">Entrar</a>

@@ -947,3 +947,338 @@ A funcionalidade de Crédito de Bônus é um limite especial configurado em sua 
         </tr>
     </tbody>
 </table>
+
+
+<br/>
+<br/>
+
+
+## Listar Webhooks
+
+Este método permite a listagem de todos os webhooks default configurados para suas subcontas(Contas filhas). <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da TotalVoice. 
+
+> Definição
+
+```text
+GET https://api2.totalvoice.com.br/conta/webhook-default
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: {{access-token}}' \
+            'https://api2.totalvoice.com.br/conta/webhook-default'
+```
+```php
+<?php
+$response = $client->conta->webhooksDefault();
+```
+```javascript--node
+var response = client.conta.webhooksDefault()
+```
+```go
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
+#Contrução
+response, err := client.webhooksDefault.Listar()
+```
+```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
+response = client.conta.get_webhook_default()
+```
+```java
+Perfil perfil = new Perfil(client);
+#Contrução
+JSONObject response = perfil.webhooks();
+```
+```ruby
+puts @client.conta.webhooks_default()
+```
+```csharp
+#teste
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "webhooks": [
+      {
+        "webhook": "status_tempo_real",
+        "url": "https://webhook.site/T3st1dew3b400k"
+      },
+      {
+        "webhook": "chamada_fim",
+        "url": "https://webhook.site/T3st1dew3b400k"
+      },
+    ]
+  }
+}
+```
+
+#### Request
+<table class="table-parameters">
+    <p>Não precisa passar nenhum parâmetro.</p>
+</table>
+
+#### Response
+<table class="table-parameters">
+    <tbody>
+		<tr>
+            <td>
+                webhooks
+                <span class="attribute">array</span>
+            </td>
+           <td>
+                Retorna dentro de dados um arrays com os webhooks default cadastros.
+            </td>
+		</tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Remover Webhook
+
+Este método permite a remoção de um webhook default específico.<a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da TotalVoice. 
+
+> Definição
+
+```text
+DELETE https://api2.totalvoice.com.br/conta/webhook-default/{nome_webhook}
+```
+
+> Request
+
+```shell--curl
+curl -X DELETE --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: {{access-token}}' \
+            'https://api2.totalvoice.com.br/conta/webhook-default/chamada_fim'
+```
+```php
+<?php
+$response = $client->conta->excluirWebhookDefault("nome");
+```
+```javascript--node
+var response = client.conta.excluirWebhookDefault("nome")
+```
+```go
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
+#contrução
+response, err := client.conta.excluirWebhookDefault("nome")
+```
+```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
+client.conta.delete_webhook_default("nome")
+```
+```java
+Perfil perfil = new Perfil(client);
+#Contrução
+JSONObject response = perfil.excluirWebhook("chamada_fim");
+```
+```ruby
+puts @client.conta.excluir_webhook_default("nome")
+```
+
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "webhook default apagado com sucesso",
+  "dados": null
+}
+```
+#### Request
+<table class="table-parameters">
+    <tbody>
+		<tr>
+            <td>
+                webhook
+                <span class="required">string</span>
+            </td>
+            <td>
+                Nome do webhook
+             </td>
+		</tr>
+    </tbody>
+</table>
+
+#### Response
+<table class="table-parameters">
+    <tbody>
+		<tr>
+            <td>
+                dados
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Retorna dados null e mensagem de sucesso
+             </td>
+		</tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Alterar um webhook
+
+> Definição
+
+```text
+PUT https://api2.totalvoice.com.br/conta/webhook-default/{nome_webhook}
+```
+
+> <br/>Request
+
+```shell--curl
+curl 'https://api2.totalvoice.com.br/conta/webhook-default/chamada_fim' \
+    -X PUT \
+    --header 'Content-Type: application/json' \
+    --header 'Access-Token: Seu_Token' \
+    -d '{"url" : "www.urlretorno.com.br"}'
+```
+```php
+<?php
+$client = new TotalVoiceClient('Seu_Token');
+
+$conta_dados = array("senha" => "senha123456");
+$response = $client->conta->salvaWebhookDefault("nome","url")
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("Seu_Token");
+
+client.conta.salvaWebhookDefault("nome","url")
+```
+```go
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
+#Construção
+response, err := client.Webhook.Salva("chamada_fim", "www.urlretorno.com.br")
+```
+```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
+response = client.conta.edit_webhook_default("nome","url")
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
+Perfil perfil = new Perfil(client);
+#Construção
+JSONObject response = perfil.salvaWebhook("chamada_fim", "www.urlretorno.com.br");
+```
+```ruby
+puts @client.conta.salvar_webhook_default("nome","url")
+```
+
+> <br/>Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "webhook default atualizado com sucesso",
+  "dados": null
+}
+```
+
+Altera as informações de um webhook default, você precisa passar no corpo do request o JSON com a url que vai receber o webhook.
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                nome
+                <span class="required">string</span>
+            </td>
+            <td>
+                Nome do webhook que vai ser alterado
+             </td>
+        </tr>
+        <tr>
+            <td>
+                url
+                <span class="required">string</span>
+            </td>
+            <td>
+                Sua URL que vai receber o callback
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+<table class="table-parameters">
+    <tbody>
+		<tr>
+            <td>
+                dados
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Retorna dados null e mensagem de sucesso
+             </td>
+		</tr>
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
