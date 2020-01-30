@@ -1182,8 +1182,6 @@ curl 'https://api2.totalvoice.com.br/conta/webhook-default/chamada_fim' \
 ```php
 <?php
 $client = new TotalVoiceClient('Seu_Token');
-
-$conta_dados = array("senha" => "senha123456");
 $response = $client->conta->salvaWebhookDefault("nome","url")
 ```
 ```javascript--node

@@ -63,15 +63,6 @@ Definição do objeto Conta
         </tr>
         <tr>
             <td>
-                data_criacao
-                <span class="attribute">senha</span>
-            </td>
-            <td>
-                Senha de acesso da sua conta
-            </td>
-        </tr>
-        <tr>
-            <td>
                 cpf_cnpj
                 <span class="attribute">string</span>
             </td>
@@ -1168,8 +1159,6 @@ curl 'https://api2.totalvoice.com.br/webhook/chamada_fim' \
 ```php
 <?php
 $client = new TotalVoiceClient('Seu_Token');
-
-$conta_dados = array("senha" => "senha123456");
 $response = $client->perfil->salvaWebhook("chamada_fim", "www.urlretorno.com.br");
 ```
 ```javascript--node

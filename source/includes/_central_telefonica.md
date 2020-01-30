@@ -15,7 +15,6 @@ Caso você deseje utilizar a API da TotalVoice para ligações receptivas, entre
     "id": 76498,
     "ramal": "3333",
     "login": "testee@TotalVoice.com.br",
-    "senha": "123456assc",
     "bina": "48999999999",
     "webphone_key": "213kbbncs324454ASDcxzln123",
     "ligacao_externa": true,
@@ -60,15 +59,6 @@ Definição do objeto Ramal
             <td>
                 E-mail de login do ramal
             </td>
-        </tr>
-        <tr>
-            <td>
-                senha
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Senha do ramal
-             </td>
         </tr>
         <tr>
              <td>
@@ -401,7 +391,6 @@ Em construção
     "id": 1234,
     "ramal": "4000",
     "login": "teste@totalvoiceteste.com.br",
-    "senha": "1234ioYNua",
     "bina": "48999999999",
     "webphone_key": "testefd3b268b3de8cateste44968",
     "ligacao_externa": true,
@@ -817,7 +806,6 @@ Em construção
         "id": 1234,
         "ramal": "4000",
         "login": "teste@totalTeste.com.br",
-        "senha": "1234TesteTotal",
         "bina": "48999999999",
         "webphone_key": "totalTesteb8af64668997totalTeste",
         "ligacao_externa": true,
@@ -833,7 +821,6 @@ Em construção
         "id": 4567,
         "ramal": "4001",
         "login": "teste1@totalTeste.com.br",
-        "senha": "1234TesteTotal",
         "bina": "48999999999",
         "webphone_key": "teste18e990a500a059a78teste1",
         "ligacao_externa": true,
