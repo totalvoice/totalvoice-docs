@@ -980,8 +980,7 @@ var response = client.conta.webhooksDefault()
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("Seu_Token")
-#Contrução
-response, err := client.webhooksDefault.Listar()
+response, err := client.WebhookDefault.Listar();
 ```
 ```python
 from totalvoice.cliente import Cliente
@@ -990,16 +989,13 @@ client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 response = client.conta.get_webhook_default()
 ```
 ```java
-Perfil perfil = new Perfil(client);
-#Contrução
-JSONObject response = perfil.webhooks();
+Conta conta = new Conta(client);
+JSONObject response = conta.webhookDefault()
 ```
 ```ruby
 puts @client.conta.webhooks_default()
 ```
-```csharp
-#teste
-```
+
 > Response
 
 ```json
@@ -1087,8 +1083,7 @@ var response = client.conta.excluirWebhookDefault("nome")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("Seu_Token")
-#contrução
-response, err := client.conta.excluirWebhookDefault("nome")
+response, err := client.WebhookDefault.Excluir("nome")
 ```
 ```python
 from totalvoice.cliente import Cliente
@@ -1097,9 +1092,8 @@ client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
 client.conta.delete_webhook_default("nome")
 ```
 ```java
-Perfil perfil = new Perfil(client);
-#Contrução
-JSONObject response = perfil.excluirWebhook("chamada_fim");
+Conta conta = new Conta(client);
+JSONObject response = conta.excluirWebhookDefault("nome");
 ```
 ```ruby
 puts @client.conta.excluir_webhook_default("nome")
@@ -1194,8 +1188,7 @@ client.conta.salvaWebhookDefault("nome","url")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("Seu_Token")
-#Construção
-response, err := client.Webhook.Salva("chamada_fim", "www.urlretorno.com.br")
+response, err := client.WebhookDefault.Salvar("nome","url");
 ```
 ```python
 from totalvoice.cliente import Cliente
@@ -1205,9 +1198,8 @@ response = client.conta.edit_webhook_default("nome","url")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
-Perfil perfil = new Perfil(client);
-#Construção
-JSONObject response = perfil.salvaWebhook("chamada_fim", "www.urlretorno.com.br");
+Conta conta = new Conta(client);
+JSONObject response = conta.salvarWebhookDefault("nome","url");
 ```
 ```ruby
 puts @client.conta.salvar_webhook_default("nome","url")
