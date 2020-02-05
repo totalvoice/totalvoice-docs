@@ -5,6 +5,9 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
 
 Todos os Webhooks enviados vão por HTTP POST, sendo que as informações referentes ao evento vão no corpo da requisição em formato JSON.
 
+Na requisição GET para visualizar os webhooks cadastrados ele irá trazer apenas os que possuem URL. Caso a conta seja uma subconta e não tiver URL de webhook, irá buscar os webhooks default configurados na conta principal.
+
+
 ## Configuração
 
 Entre no painel da TotalVoice com a conta administradora, vá até o menu Minha Conta e escolha Configurações da API, lá terão todos os campos para preencher em cada Webhook.
