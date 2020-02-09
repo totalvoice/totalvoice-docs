@@ -63,15 +63,6 @@ Definição do objeto Conta
         </tr>
         <tr>
             <td>
-                data_criacao
-                <span class="attribute">senha</span>
-            </td>
-            <td>
-                Senha de acesso da sua conta
-            </td>
-        </tr>
-        <tr>
-            <td>
                 cpf_cnpj
                 <span class="attribute">string</span>
             </td>
@@ -994,24 +985,25 @@ puts @client.perfil.webhooks()
   "status": 200,
   "sucesso": true,
   "motivo": 0,
-  "mensagem": "webhook apagado com sucesso",
-  "dados": null
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "webhooks": [
+      {
+        "webhook": "status_tempo_real",
+        "url": "https://webhook.site/T3st1dew3b400k"
+      },
+      {
+        "webhook": "chamada_fim",
+        "url": "https://webhook.site/T3st1dew3b400k"
+      },
+    ]
+  }
 }
 ```
 
 #### Request
 <table class="table-parameters">
-    <tbody>
-		<tr>
-            <td>
-                nome_webhook
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Nome do webhook a ser deletado
-             </td>
-		</tr>
-    </tbody>
+    <p>Não precisa passar nenhum parâmetro.</p>
 </table>
 
 #### Response
@@ -1019,12 +1011,12 @@ puts @client.perfil.webhooks()
     <tbody>
 		<tr>
             <td>
-                dados
-                <span class="attribute">string</span>
+                webhooks
+                <span class="attribute">array</span>
             </td>
-            <td>
-                Retorna dados null e mensagem de sucesso
-             </td>
+           <td>
+                Retorna dentro de dados um arrays com os webhooks cadastros.
+            </td>
 		</tr>
     </tbody>
 </table>
@@ -1097,27 +1089,8 @@ puts @client.perfil.excluir_webhook("chamada_fim")
   "status": 200,
   "sucesso": true,
   "motivo": 0,
-  "mensagem": "dados retornados com sucesso",
-  "dados": {
-    "webhooks": [
-      {
-        "webhook": "status_tempo_real",
-        "url": "http://urltemporeal.com.br"
-      },
-      {
-        "webhook": "chamada_fim",
-        "url": "http://urlchamadafim.com.br"
-      },
-      {
-        "webhook": "envio_sms",
-        "url": "http://enviosms.com.br"
-      },
-      {
-        "webhook": "chamada_did_fim",
-        "url": "http://chamadadidfim.com.br"
-      }
-    ]
-  }
+  "mensagem": "webhook default apagado com sucesso",
+  "dados": null
 }
 ```
 #### Request
@@ -1126,19 +1099,10 @@ puts @client.perfil.excluir_webhook("chamada_fim")
 		<tr>
             <td>
                 webhook
-                <span class="attribute">string</span>
+                <span class="required">string</span>
             </td>
             <td>
                 Nome do webhook
-             </td>
-		</tr>
-		<tr>
-            <td>
-                url
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                URL destino para receber o webhook
              </td>
 		</tr>
     </tbody>
@@ -1195,8 +1159,6 @@ curl 'https://api2.totalvoice.com.br/webhook/chamada_fim' \
 ```php
 <?php
 $client = new TotalVoiceClient('Seu_Token');
-
-$conta_dados = array("senha" => "senha123456");
 $response = $client->perfil->salvaWebhook("chamada_fim", "www.urlretorno.com.br");
 ```
 ```javascript--node
@@ -1235,15 +1197,15 @@ puts @client.perfil.salva_webhook("chamada_fim", "www.urlretorno.com.br")
 
 ```json
 {
-    "status": 200,
-    "sucesso": true,
-    "motivo": 0,
-    "mensagem": "dados atualizados com sucesso",
-    "dados": null
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "webhook default atualizado com sucesso",
+  "dados": null
 }
 ```
 
-Altera as informações de um webhook, você precisa passar no corpo do request o JSON com a url para receber o webhook.
+Altera as informações de um webhook default, você precisa passar no corpo do request o JSON com a url que vai receber o webhook.
 
 #### Request
 
@@ -1251,8 +1213,17 @@ Altera as informações de um webhook, você precisa passar no corpo do request 
     <tbody>
         <tr>
             <td>
+                nome
+                <span class="required">string</span>
+            </td>
+            <td>
+                Nome do webhook que vai ser alterado
+             </td>
+        </tr>
+        <tr>
+            <td>
                 url
-                <span class="optional">string</span>
+                <span class="required">string</span>
             </td>
             <td>
                 Sua URL que vai receber o callback
