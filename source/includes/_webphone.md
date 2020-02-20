@@ -278,6 +278,24 @@ function recstop() {
             }
 ```
 
+```javascript
+function pauseInQueue(queueId) {
+                webphone.contentWindow.postMessage({
+                message: 'pauseInQueue',
+                queueId: queueId
+                }, '*');
+            }
+```
+
+```javascript
+function unpauseInQueue(queueId) {
+                webphone.contentWindow.postMessage({
+                message: 'unpauseInQueue',
+                queueId: queueId
+                }, '*');
+            }
+```
+
 <table class="table-parameters">
     
     <tbody>
@@ -371,6 +389,24 @@ function recstop() {
             </td>
             <td>
                 Encerra a gravação parcial da chamada
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <b>pauseInQueue(queueId)<b>
+            </td>
+            <td>
+                Pausa um ramal na fila `queueId` ou em todas as filas caso nenhum valor seja passado
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <b>unpauseInQueue(queueId)<b>
+            </td>
+            <td>
+                Despausa um ramal na fila `queueId` ou em todas as filas caso nenhum valor seja passado
             </td>
         </tr>
     </tbody>
