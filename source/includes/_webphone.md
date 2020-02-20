@@ -279,19 +279,19 @@ function recstop() {
 ```
 
 ```javascript
-function pauseInQueue(queueId) {
+function pausarNaFila(filaId) {
                 webphone.contentWindow.postMessage({
-                message: 'pauseInQueue',
-                queueId: queueId
+                message: 'pausarNaFila',
+                filaId: filaId
                 }, '*');
             }
 ```
 
 ```javascript
-function unpauseInQueue(queueId) {
+function despausarNaFila(filaId) {
                 webphone.contentWindow.postMessage({
-                message: 'unpauseInQueue',
-                queueId: queueId
+                message: 'despausarNaFila',
+                filaId: filaId
                 }, '*');
             }
 ```
@@ -394,7 +394,7 @@ function unpauseInQueue(queueId) {
 
         <tr>
             <td>
-                <b>pauseInQueue(queueId)<b>
+                <b>pausarNaFila(filaId)<b>
             </td>
             <td>
                 Pausa um ramal na fila `queueId` ou em todas as filas caso nenhum valor seja passado
@@ -403,7 +403,7 @@ function unpauseInQueue(queueId) {
 
         <tr>
             <td>
-                <b>unpauseInQueue(queueId)<b>
+                <b>despausarNaFila(filaId)<b>
             </td>
             <td>
                 Despausa um ramal na fila `queueId` ou em todas as filas caso nenhum valor seja passado
