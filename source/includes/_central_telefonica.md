@@ -685,36 +685,24 @@ $response = $client->central->atualizarRamalFila("id-ramal", $dados);
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-const dados = {
-    status_pausa: true, 
-    fila: 41
-};
-
-client.central.atualizarRamalFila('id-ramal', dados)
-    .then(function(data) {
-        console.log(data);
-    })
-    .catch(function(error) {
-        console.log('Erro: ', error)
-    });
+client.central.atualizarRamalFila(ramal_id, data)
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
-Em construção
+response, err := client.RamalFila.Atualizar(ramal_id, data)
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
-Em construção
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client.ramal.editarRamalFila(ramal_id, data)
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
-Em construção
+Central central = new Central(client);
+JSONObject response = central.atualizarRamalFila(ramal_id, data);
 ```
 ```ruby
-require 'totalvoice-ruby'
-include TotalVoice
-
-Em construção
+@client = TotalVoice::API.new("9754aac7641722789c80c237f9afb4b1", "api2.totalvoice.com.br")
+puts @client.ramal.atualizar_ramal_fila(ramal_id, data)
 ```
 > Response
 
