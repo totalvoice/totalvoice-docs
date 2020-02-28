@@ -24,7 +24,6 @@ JSON DADOS do exemplo:
 		acao: tts,
 		acao_dados: {
 						"mensagem": "Você possui uma consulta agendada para amanhã 18h. Aperte 1 para confirmar ou 2 para ser remarcar",
-						"velocidade": "-4",
 						"resposta_usuario": "true",
 						"tipo_voz": "br-Ricardo"
 					}
@@ -321,7 +320,7 @@ POST https://api2.totalvoice.com.br/composto
 curl -X POST --header 'Content-Type: application/json' \
 			 --header 'Accept: application/json' \
 			 --header 'Access-Token: seu-token' \
-			 -d '{"numero_destino":"1132830151","dados":[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}],"bina":"4832830151","gravar_composto":false,"tags":"clienteX"}' \
+			 -d '{"numero_destino":"1132830151","dados":[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}],"bina":"4832830151","gravar_composto":false,"tags":"clienteX"}' \
 			 'https://api2.totalvoice.com.br/composto'
 ```
 
@@ -330,7 +329,7 @@ curl -X POST --header 'Content-Type: application/json' \
 <?php
 $client = new TotalVoiceClient('seu-token');
 
-$dados	= '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]';
+$dados	= '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]';
 $bina	= '11987654321';
 $tags	= 'clienteY';
 
@@ -342,7 +341,7 @@ $response = $client->composto->enviar('NUMERO-DESTINO', $dados, $bina, $tags);
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
     .then(function(data) {
         console.log(data);
     })
@@ -352,7 +351,7 @@ client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+ response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
 ```
 ```python
 from totalvoice.cliente import Cliente
@@ -369,7 +368,6 @@ dados =[
       "acao":"tts",
       "acao_dados":{  
          "mensagem":"lendo este texto",
-         "velocidade":"-4",
          "resposta_usuario":"true",
          "tipo_voz":"br-Ricardo"
       }
@@ -389,7 +387,7 @@ response = client.composto.enviar("NUMERO-DESTINO", dados ,'BINA' , 'TAGS')
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Composto composto = new Composto(client);
 
-JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags');
+JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags');
 ```
 
 ```ruby
@@ -397,7 +395,7 @@ require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","velocidade":"-4","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
 ```
 > Response
 

@@ -33,7 +33,6 @@ Você poderá enviar algumas opções adicionais, tais como aguardar uma respost
     "duracao_falada": "00:00:02",
     "preco": 0.35,
     "mensagem": "Olá, se você gostaria de utilizar a totalvoice, digite 1.",
-    "velocidade": 0,
     "resposta_usuario": true,
     "resposta": "1",
     "motivo_desconexao": null,
@@ -175,15 +174,6 @@ Definição do objeto TTS
         </tr>
         <tr>
             <td>
-                velocidade
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Velocidade em que foi lida a mensagem.
-            </td>
-        </tr>
-        <tr>
-            <td>
                 resposta_usuario
                 <span class="attribute">boolean</span>
             </td>
@@ -316,15 +306,6 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
             </td>
             <td>
                 Mensagem que será falada quando o número destino atender a ligação. Exemplo: Olá, essa é a minha mensagem.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                velocidade
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Velocidade em que será lida a mensagem, vai de -1 a 10. Quanto menor mais lento e quanto maior o número mais rápido.
             </td>
         </tr>
         <tr>
@@ -479,7 +460,6 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
     "duracao_falada": "00:00:00",
     "preco": 0,
     "mensagem": "Mensagem de teste",
-    "velocidade": 0,
     "resposta_usuario": true,
     "resposta": 2,
     "motivo_desconexao": "16. normal",
@@ -600,7 +580,6 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
         "duracao_falada": "00:00:00",
         "preco": 0,
         "mensagem": "Olá, tudo bem?",
-        "velocidade": 0,
         "resposta_usuario": false,
         "resposta": null,
         "motivo_desconexao": "16. normal",
@@ -621,7 +600,6 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
         "duracao_falada": "00:00:00",
         "preco": 0,
         "mensagem": "Olá esse é uma mensagem enviada por tts",
-        "velocidade": 2,
         "resposta_usuario": false,
         "resposta": null,
         "motivo_desconexao": "17. ocupado",
