@@ -444,7 +444,7 @@ Após o ramal ser criado, você pode consultar suas informações
 > Definição
 
 ```text
-PUT https://api2.totalvoice.com.br/ramal/{id}
+PUT https://api2.totalvoice.com.br/ramal/{id}/fila
 ```
 
 > Request
@@ -628,6 +628,129 @@ Em construção
             </td>
             <td>
                 Se esse valor for igual a true, ao ligar para esse ramal ele será encaminhado para uma caixa postal que gravará recados.(Não irá chamar no usuário)
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+##### Response
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                status
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o status da requisição</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+## Editar um ramal na fila
+
+> Definição
+
+```text
+PUT https://api2.totalvoice.com.br/ramal/{id}/fila
+```
+
+> Request
+
+```shell--curl
+curl -X PUT --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: seu-token' \
+             -d '{"status_pausa":true, "fila":41}' \
+             'https://api2.totalvoice.com.br/ramal/{id}/fila'
+```
+```php
+<?php
+require_once "vendor/autoload.php";
+use TotalVoice\Client as TotalVoiceClient;
+
+$client = new TotalVoiceClient('seu-token');
+
+$dados = [
+    "status_pausa"=>true,
+    "fila"=>41
+];
+
+$response = $client->central->atualizarRamalFila("id-ramal", $dados);
+
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("seu-token");
+
+client.central.atualizarRamalFila(ramal_id, data)
+```
+```go
+client := totalvoice.NewTotalVoiceClient("seu-token")
+response, err := client.RamalFila.Atualizar(ramal_id, data)
+```
+```python
+client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client.ramal.editarRamalFila(ramal_id, data)
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("seu-token");
+Central central = new Central(client);
+JSONObject response = central.atualizarRamalFila(ramal_id, data);
+```
+```ruby
+@client = TotalVoice::API.new("9754aac7641722789c80c237f9afb4b1", "api2.totalvoice.com.br")
+puts @client.ramal.atualizar_ramal_fila(ramal_id, data)
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "Ramal pausado com sucesso na fila 41",
+  "dados": [
+    {
+      "ramal_id": 16,
+      "pausado": true,
+      "fila": 41
+    }
+  ]
+}
+```
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
+                </td>
+        </tr>
+        <tr>
+            <td>
+                status_pausa
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Pausa (true) ou despausa (false)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                fila
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Id da fila que você quer pausar o ramal
             </td>
         </tr>
     </tbody>
