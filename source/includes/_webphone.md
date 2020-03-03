@@ -296,6 +296,24 @@ function despausarNaFila(filaId) {
             }
 ```
 
+```javascript
+function entrarNaFila(filaId) {
+                webphone.contentWindow.postMessage({
+                message: 'entrarNaFila',
+                filaId: filaId
+                }, '*');
+            }
+```
+
+```javascript
+function sairDaFila(filaId) {
+                webphone.contentWindow.postMessage({
+                message: 'sairDaFila',
+                filaId: filaId
+                }, '*');
+            }
+```
+
 <table class="table-parameters">
     
     <tbody>
@@ -397,7 +415,7 @@ function despausarNaFila(filaId) {
                 <b>pausarNaFila(filaId)<b>
             </td>
             <td>
-                Pausa um ramal na fila `queueId` ou em todas as filas caso nenhum valor seja passado
+                Pausa um ramal na fila `filaId` ou em todas as filas caso nenhum valor seja passado
             </td>
         </tr>
 
@@ -406,7 +424,25 @@ function despausarNaFila(filaId) {
                 <b>despausarNaFila(filaId)<b>
             </td>
             <td>
-                Despausa um ramal na fila `queueId` ou em todas as filas caso nenhum valor seja passado
+                Despausa um ramal na fila `filaId` ou em todas as filas caso nenhum valor seja passado
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <b>entrarNaFila(filaId)<b>
+            </td>
+            <td>
+                Insere o ramal na fila definida em `filaId`
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <b>sairDaFila(filaId)<b>
+            </td>
+            <td>
+                Remove o ramal na fila definida em `filaId`
             </td>
         </tr>
     </tbody>
