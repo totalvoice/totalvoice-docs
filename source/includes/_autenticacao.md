@@ -42,7 +42,7 @@ Exemplo de Access-Token:
 
 As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação na requisição HTTP de forma transparente. 
 
-<aside class="warning">
+<aside class="notice">
  Mantenha seu Token em segredo, tome muito cuidado, não deixe ele exposto em um código público e nunca
  compartilhe com ninguém fora da sua organização.
 </aside>

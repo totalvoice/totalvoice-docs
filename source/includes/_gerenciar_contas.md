@@ -8,7 +8,7 @@ https://api.totalvoice.com.br/conta
 Com a funcionalidade de Gerente de Contas você pode criar, consultar, alterar e deletar contas filhas, sendo as contas filhas exatamente iguais a qualquer outra conta na TotalVoice,
 apenas são vinculadas com uma conta pai que tem o controle sobre ela, tendo o intuito de realizar integrações e automatizar processos de uso e revenda de serviços da API.
 
-<aside class="warning">
+<aside class="notice">
 A funcionalidade de Gerente de Contas é um acesso especial que precisa ser liberado por nossa equipe, caso tenha interesse, entrar em contato por telefone com a equipe de Vendas.
 </aside>
 
@@ -911,7 +911,7 @@ Em Contrução
 Permite adicionar crédito de bônus nas contas criadas por mim.
 <br>
 <br>
-<aside class="warning">
+<aside class="notice">
 A funcionalidade de Crédito de Bônus é um limite especial configurado em sua conta gerente, que precisa ser liberado por nossa equipe, caso tenha interesse, entre em contato
 </aside>
 #### Request

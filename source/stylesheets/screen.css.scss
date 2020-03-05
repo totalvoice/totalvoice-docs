@@ -481,9 +481,9 @@ html, body {
     padding-bottom: 1em;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    background: $aside-notice-bg;
-    color: #6464d8;
-    font-weight: bold;
+    border-top: 1px solid #EB6400;
+    border-bottom: 1px solid #EB6400;
+    color: #080a0b;
     line-height: 1.6;
 
     &.warning {
@@ -504,7 +504,7 @@ html, body {
   }
 
   aside.notice:before {
-    //@extend %icon-info-sign;
+    @extend %icon-info-sign;
   }
 
   aside.warning:before {
@@ -719,4 +719,16 @@ html, body {
   span.type {
     color: #0b8805;
   }
+}
+
+.danger {
+  line-height: 1.5;
+  background: #FFFFFF;
+  border: 1px solid #EB6400;
+  box-sizing: border-box;
+  border-radius: 6px;
+
+  max-width: 560px;
+  margin-right: 0px;
+  margin-left: 25px;
 }

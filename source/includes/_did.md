@@ -356,9 +356,11 @@ Em construção
 
 ## Estoque de DIDs
 
-Consulta todos os DIDs disponíveis para serem comprados. 
+<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da TotalVoice pelo email  <a href="">suporte@totalvoice.com.br</a>
+</aside>
 
-<b>Nota:</b> Para adquirir um DID você deve ter o cartão de crédito cadastrado na plataforma.
+
+<p style="color:#5A5A5A;"><b>Nota:</b> Para adquirir um DID você deve ter o cartão de crédito cadastrado na plataforma.</p>
 
 > Did Endpoint
 
@@ -378,12 +380,9 @@ curl -X GET --header 'Content-Type: application/json' \
 Em construção
 ```
 ```javascript--node
-Em construção
-```
-```go
-Em construção
-```
-```python
+Em construção<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da TotalVoice pelo email  <a href="">suporte@totalvoice.com.br</a>
+</aside>
+
 Em construção
 ```
 ```java
@@ -421,18 +420,18 @@ Em construção
 
 ##### Request
 
-Não precisa passar nenhum parâmetro.
+<p style="color:#5A5A5A;">Não precisa passar nenhum parâmetro.<p>
 
 #### Response
 
 <table class="table-parameters">
     <tbody>
         <tr>
-            <td>
+            <td style="color:#5A5A5A;">
                 relatorio
                 <span class="attribute">array</span>
             </td>
-            <td>
+            <td style="color:#5A5A5A;">
                 Retorna um array com objetos <a href="#objeto-did">DIDs</a> disponíveis.
              </td>
         </tr>
@@ -441,7 +440,11 @@ Não precisa passar nenhum parâmetro.
 
 ## Comprar DID
 
-Para adquirir um DID você deve ter um cartão de crédito cadastrado na plataforma.
+<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da TotalVoice pelo email  <a href="">suporte@totalvoice.com.br</a>
+</aside>
+
+
+<p style="color:#5A5A5A;">Para adquirir um DID você deve ter um cartão de crédito cadastrado na plataforma.<p>
 
 > Did Endpoint
 
@@ -507,11 +510,11 @@ Em construção
 <table class="table-parameters">
     <tbody>
         <tr>
-            <td>
+            <td style="color:#5A5A5A;">
                 did_id
-                <span class="required">Obrigatório</span>
+                <span class="required" >Obrigatório</span>
             </td>
-            <td>
+            <td style="color:#5A5A5A;">
                 Id do DID que será comprado
              </td>
         </tr>
@@ -523,11 +526,11 @@ Em construção
 <table class="table-parameters">
     <tbody>
         <tr>
-            <td>
+            <td style="color:#5A5A5A;">
                 dados
                 <span class="attribute">object</span>
             </td>
-            <td>
+            <td style="color:#5A5A5A;">
                 Retorna o id do DID adquirido.
              </td>
         </tr>
