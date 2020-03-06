@@ -477,6 +477,22 @@ if (e.data.message == 'status_erro') {
 if (e.data.message == 'stats_webphone') {
     alert('Internet: ' + e.data.internet + ' e computador: ' + e.data.computador);
 }
+
+if (e.data.message == 'entrou_na_fila') {
+    alert('Ramal entrou na fila');
+}
+
+if (e.data.message == 'saiu_da_fila') {
+    alert('Ramal saiu da fila');
+}
+
+if (e.data.message == 'pausou_na_fila') {
+    alert('Ramal foi pausado na fila');
+}
+
+if (e.data.message == 'despausou_na_fila') {
+    alert('Ramal foi despausado na fila');
+}
 ```
 
 <table class="table-parameters">
@@ -519,7 +535,38 @@ if (e.data.message == 'stats_webphone') {
             </td>
             <td>
                 Recebe o status da qualidade de conexão(Diagnóstico do Ping e Jitter) e computador(Uso da CPU) para verificar a qualidade da ligação.
-                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>pausou_na_fila<b>
+            </td>
+            <td>
+                É chamado quando o ramal é pausado em alguma fila.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>despausou_na_fila<b>
+            </td>
+            <td>
+                É chamado quando o ramal é despausado em alguma fila.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>entrou_na_fila<b>
+            </td>
+            <td>
+                É chamado quando o ramal entra em alguma fila.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>saiu_da_fila<b>
+            </td>
+            <td>
+                É chamado quando o ramal sai de alguma fila.
             </td>
         </tr>
     </tbody>
