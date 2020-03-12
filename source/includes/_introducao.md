@@ -32,4 +32,4 @@ Caso você não encontre algum material ou possui alguma dúvida técnica que n�
 pelos nossos canais de comunicação/suporte.
 
  - E-mail: suporte@totalvoice.com.br
- - Chat: no painel da TotalVoice.
+ - Chat: ###CHAT_PLACE###.

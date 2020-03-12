@@ -1,5 +1,5 @@
 # totalvoice-docs
-Documentação - TotalVoice
+Documentação - API de Voz da Zenvia
 
 ## Esta documentação está em desenvolvimento!
 

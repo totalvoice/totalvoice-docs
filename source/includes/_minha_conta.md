@@ -936,7 +936,7 @@ puts @client.perfil.url_recarga("www.urlretorno.com.br")
 
 ## Listar Webhooks
 
-Este método permite a listagem de todos os webhooks configurados da sua conta. <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da TotalVoice. 
+Este método permite a listagem de todos os webhooks configurados da sua conta. <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da ###BRAND_NAME###. 
 
 > Definição
 
@@ -1040,7 +1040,7 @@ puts @client.perfil.webhooks()
 
 ## Remover Webhook
 
-Este método permite a remoção de um webhook específico de sua conta. <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da TotalVoice. 
+Este método permite a remoção de um webhook específico de sua conta. <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da ###BRAND_NAME###. 
 
 > Definição
 

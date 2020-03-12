@@ -1,7 +1,7 @@
 # Webhooks
 
 Também conhecidos como Callbacks ou Reverse API, os Webhooks são notificações que enviamos para alguma URL (End Point) sua que é configurada 
-no painel da TotalVoice, a notificação é enviada assim que determinados eventos acontecem.
+no ###PANEL_NAME###, a notificação é enviada assim que determinados eventos acontecem.
 
 Todos os Webhooks enviados vão por HTTP POST, sendo que as informações referentes ao evento vão no corpo da requisição em formato JSON.
 
@@ -10,7 +10,7 @@ Todos os Webhooks enviados vão por HTTP POST, sendo que as informações refere
 
 ## Configuração
 
-Entre no painel da TotalVoice com a conta administradora, vá até o menu Minha Conta e escolha Configurações da API, lá terão todos os campos para preencher em cada Webhook.
+Entre no ###PANEL_NAME### com a conta administradora, vá até o menu Minha Conta e escolha Configurações da API, lá terão todos os campos para preencher em cada Webhook.
 
 <i>Poderá levar até 20 minutos após a configuração no Painel para começar o envio das notificações para o endereço escolhido.</i>
 
@@ -81,7 +81,7 @@ Sempre que uma das pernas de uma chamada muda de estado este webhook é enviado,
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Identificador único (na TotalVoice) do cliente que realizou a Chamada.
+                Identificador único (###IN_BRAND_NAME###) do cliente que realizou a Chamada.
             </td>
         </tr> 
         <tr>
@@ -126,7 +126,7 @@ Informa se o SMS foi enviado ou houve falha.
   "id": "37787430",
   "numero_destino": "48988888888",
   "data_criacao": "2019-09-06T14:00:38-03:00",
-  "mensagem": "Olá TotalVoice",
+  "mensagem": "Olá ###BRAND_NAME###",
   "preco": 0.09,
   "status_envio": "entregue",
   "data_status": "2019-09-06T14:01:13-03:00",

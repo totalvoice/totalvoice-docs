@@ -1,13 +1,13 @@
 # Permissões de Conta
 
-Quando você cria uma nova conta na TotalVoice, ela é criada automaticamente como uma conta Trial,
-tendo limitações que garantem a segurança do negócio, evitando que pessoas má intencionadas utilizem os serviços
-da TotalVoice.
+Quando você cria uma nova conta na ###COMPANY_NAME###, ela é criada automaticamente como uma conta Trial,
+tendo limitações que garantem a segurança do negócio, evitando que pessoas mal intencionadas utilizem os serviços
+da ###BRAND_NAME###.
 
 Após as validações solicitadas (confirmação de telefone fixo, e-mail e etc) a conta é aprovada instantaneamente, 
 recebendo o acesso de conta Cliente, que retira algumas limitações, mantendo apenas as que evitam golpes e que utilizam para Spams.
 
-Caso tenha interesse em ter acessos de funções exclusivas da TotalVoice (Centrais telefônicas, DIDs, Números Receptivos e criação de contas filhas), 
+Caso tenha interesse em ter acessos de funções exclusivas da API de Voz (Centrais telefônicas, DIDs, Números Receptivos e criação de contas filhas), 
 você precisa entrar em contato com nossa equipe, para podermos entender o cenário e auxiliar na escolha ideal de funcionalidades.  
 
 ## Contas Trial
@@ -34,7 +34,7 @@ você precisa entrar em contato com nossa equipe, para podermos entender o cená
 </ul>
 
 As contas Trial são contas que foram criadas e ainda não tiveram seus dados confirmados, como e-mail e telefone fixo (caso a pessoa
-não tenha telefone fixo pode entrar em contato com a TotalVoice para ser validado), a conta trial tem o intuito apenas de testar
+não tenha telefone fixo pode entrar em contato com ###CONTACT_TEAM### para ser validado), a conta trial tem o intuito apenas de testar
 as funcionalidades da API, a validação e migração é feita de modo automático e a mudança de tipo de conta acontece na hora.
 
 Veja como cadastrar um número <a href='https://centraltotalvoice.freshdesk.com/solution/articles/35000078983-cadastrando-um-n%C3%BAmero-como-bina-identificac%C3%A3o-de-chamada-'>clicando aqui</a>.
@@ -49,7 +49,7 @@ Veja como cadastrar um número <a href='https://centraltotalvoice.freshdesk.com/
         Não podem criar e administrar contas filhas.
     </li>
     <li>
-        Limite de 50 SMSs enviados por dia, que cresce de acordo com o uso (ou em simples contato com a equipe da TotalVoice).
+        Limite de 50 SMSs enviados por dia, que cresce de acordo com o uso (ou em simples contato com a ###CONTACT_TEAM_ALT###).
     </li>
     <li>
         SMSs com algumas palavras proíbidas (referente à cobranças, instituições financeiras, links e etc).
