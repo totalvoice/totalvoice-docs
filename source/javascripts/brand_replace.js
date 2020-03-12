@@ -50,9 +50,34 @@ $(document).ready(function(){
 });
 
 function getCurrentReferrerKey() {
+    var referrerKeyInLocalStorage = 'brand-replace-referrer-url';
+    var referrerExpirationKeyInLocalStorage = 'brand-replace-exp-referrer-url';
+    var referrerValueInLocalStorage = localStorage.getItem(referrerKeyInLocalStorage);
+    if(referrerValueInLocalStorage == null) {
+        var urlReferer = getUrlReferrer();
+        var oneDayInMilliseconds = (86400 * 1000);
+
+        localStorage.setItem(referrerKeyInLocalStorage, urlReferer);
+        localStorage.setItem(referrerExpirationKeyInLocalStorage, Date.now() + oneDayInMilliseconds);
+        return urlReferer;
+    }
+
+    // Handle localStorage key expirations
+    var referrerExpiration = localStorage.getItem(referrerExpirationKeyInLocalStorage);
+    if(referrerExpiration < Date.now()) {
+        localStorage.removeItem(referrerKeyInLocalStorage);
+        localStorage.removeItem(referrerExpirationKeyInLocalStorage);
+    }
+    
+    return referrerValueInLocalStorage;
+}
+
+function getUrlReferrer() {
     var zenviaRegex = /zenvia|zenapi/;
-    if(zenviaRegex.test(document.referrer))
+    if(zenviaRegex.test(document.referrer)) {
         return 'zenvia';
+    }
+
     return 'totalvoice';
 }
 
