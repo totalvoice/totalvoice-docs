@@ -65,7 +65,7 @@ function replaceTitle(referrerKey) {
 function replaceLogo(referrerKey) {
     // Default logo is TotalVoice, so replace only if referrerKey equals 'zenvia'
     if(referrerKey == 'zenvia') {
-        $(".logo").attr("src", "images/logo-zenapi.png");
+        $(".logo").attr("src", "images/zenapi-logo.png");
     }
 }
 
