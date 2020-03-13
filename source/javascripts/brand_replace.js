@@ -33,8 +33,8 @@ var zenviaValues = {
     "###CONTACT_TEAM_ALT###": "equipe de Voz da Zenvia",
     "###COMPANY_NAME_LOWER_CASE###": "zenvia",
     "###VOICE_APP###": "ZenAPI de Voz",
-    "###PANEL_NAME###": "painel de Voz do ZenAPI",
-    "###IN_BRAND_NAME###": "no ZenAPI",
+    "###PANEL_NAME###": "painel de Voz da ZenAPI",
+    "###IN_BRAND_NAME###": "na ZenAPI",
     "###PANEL_REF###": "a plataforma da ZenAPI",
     "###PANEL_REF_ALT###": "na plataforma da ZenAPI",
 }
@@ -54,12 +54,12 @@ function getCurrentReferrerKey() {
     var referrerExpirationKeyInLocalStorage = 'brand-replace-exp-referrer-url';
     var referrerValueInLocalStorage = localStorage.getItem(referrerKeyInLocalStorage);
     if(referrerValueInLocalStorage == null) {
-        var urlReferer = getUrlReferrer();
+        var urlReferrer = getUrlReferrer();
         var oneDayInMilliseconds = (86400 * 1000);
 
-        localStorage.setItem(referrerKeyInLocalStorage, urlReferer);
+        localStorage.setItem(referrerKeyInLocalStorage, urlReferrer);
         localStorage.setItem(referrerExpirationKeyInLocalStorage, Date.now() + oneDayInMilliseconds);
-        return urlReferer;
+        return urlReferrer;
     }
 
     // Handle localStorage key expirations
@@ -68,16 +68,14 @@ function getCurrentReferrerKey() {
         localStorage.removeItem(referrerKeyInLocalStorage);
         localStorage.removeItem(referrerExpirationKeyInLocalStorage);
     }
-    
+
     return referrerValueInLocalStorage;
 }
 
 function getUrlReferrer() {
     var zenviaRegex = /zenvia|zenapi/;
-    if(zenviaRegex.test(document.referrer)) {
+    if(zenviaRegex.test(document.referrer))
         return 'zenvia';
-    }
-
     return 'totalvoice';
 }
 
