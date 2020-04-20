@@ -15,9 +15,9 @@ JSON DADOS do exemplo:
 ```json
 [
 	{
-		acao: composto,
+		acao: audio,
 		acao_dados: {
-						url_composto: http://fooooo.bar/composto.mp3
+						url_audio: http://fooooo.bar/composto.mp3
 					}
 	},
 	{
@@ -41,9 +41,14 @@ JSON DADOS do exemplo:
 ```
 
 O composto aceita um JSON com as seguintes opções:
-- composto
-- tts
-- transferir
+<ul>
+    <li>audio</li>
+    <li>tts</li>
+    <li>transferir</li>
+    <li>ura</li>
+</ul>
+
+Você pode ver como funciona o envio de dados vendo a utlização em <a href="http://localhost:4567/?shell--curl#criar-um-composto">curl</a>
 
 As regras para o arquivo de áudio são as mesmas:
 
@@ -320,7 +325,38 @@ POST https://api2.totalvoice.com.br/composto
 curl -X POST --header 'Content-Type: application/json' \
 			 --header 'Accept: application/json' \
 			 --header 'Access-Token: seu-token' \
-			 -d '{"numero_destino":"1132830151","dados":[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}],"bina":"4832830151","gravar_composto":false,"tags":"clienteX"}' \
+			 -d '{
+                 "numero_destino":"1132830151",
+                "dados":[
+                    {  
+                        "acao":"audio",
+                        "acao_dados":{  
+                            "url_composto":"https://instaud.io/_/3K3k.mp3"
+                        }
+                    },
+                    {  
+                        "acao":"tts",
+                        "acao_dados":{  
+                            "mensagem":"lendo este texto",
+                            "resposta_usuario":"true",
+                            "tipo_voz":"br-Ricardo"
+                        }
+                    },
+                    {  
+                        "acao":"transferir",
+                        "opcao":1,
+                        "acao_dados":{  
+                            "numero_telefone":"4832830151",
+                            "bina":"4832830152"
+                        }
+                    },
+                        {  
+                        "acao":"ura",
+                        "opcao":2,
+                        "acao_dados":{  
+                            "ura_id":"1234"
+                        }
+                    }' \
 			 'https://api2.totalvoice.com.br/composto'
 ```
 
@@ -329,7 +365,7 @@ curl -X POST --header 'Content-Type: application/json' \
 <?php
 $client = new TotalVoiceClient('seu-token');
 
-$dados	= '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]';
+$dados	= '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]';
 $bina	= '11987654321';
 $tags	= 'clienteY';
 
@@ -341,7 +377,7 @@ $response = $client->composto->enviar('NUMERO-DESTINO', $dados, $bina, $tags);
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
     .then(function(data) {
         console.log(data);
     })
@@ -351,7 +387,7 @@ client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+ response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
 ```
 ```python
 from totalvoice.cliente import Cliente
@@ -359,9 +395,9 @@ from totalvoice.cliente import Cliente
 client = Cliente("seu-token", 'api2.totalvoice.com.br')
 dados =[  
    {  
-      "acao":"composto",
+      "acao":"audio",
       "acao_dados":{  
-         "url_composto":"https://instaud.io/_/3K3k.mp3"
+         "url_audio":"https://instaud.io/_/3K3k.mp3"
       }
    },
    {  
@@ -379,6 +415,13 @@ dados =[
          "numero_telefone":"4832830151",
          "bina":"4832830152"
       }
+   },
+    {  
+      "acao":"ura",
+      "opcao":2,
+      "acao_dados":{  
+         "ura_id":"1234"
+      }
    }
 ]
 response = client.composto.enviar("NUMERO-DESTINO", dados ,'BINA' , 'TAGS')
@@ -387,7 +430,7 @@ response = client.composto.enviar("NUMERO-DESTINO", dados ,'BINA' , 'TAGS')
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Composto composto = new Composto(client);
 
-JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags');
+JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags');
 ```
 
 ```ruby
@@ -395,7 +438,7 @@ require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"composto","acao_dados":{"url_composto":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
 ```
 > Response
 
@@ -431,7 +474,7 @@ Basta informar o número de destino válido e um JSON com o composto
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Objeto JSON com a estrutura de TTS, áudio e transferir
+                Objeto JSON com a estrutura de TTS, áudio, transferir e URA ¹
             </td>
         </tr>
         <tr>
@@ -445,7 +488,7 @@ Basta informar o número de destino válido e um JSON com o composto
         </tr>
         <tr>
             <td>
-                gravar_composto
+                gravar_audio
                 <span class="optional">Opcional</span>
             </td>
             <td>
@@ -500,7 +543,7 @@ Basta informar o número de destino válido e um JSON com o composto
     </tbody>
 </table>
 
-
+¹ Você pode ver como funciona o envio de dados vendo a utlização em <a href="http://localhost:4567/?shell--curl#criar-um-composto">curl</a>
 
 
 ## Buscar Composto 
@@ -804,4 +847,3 @@ Você pode consultar os compostos enviados posteriormente. Basta informar o per�
 
 <br>
 <br>
-
