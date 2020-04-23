@@ -380,7 +380,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
         </tr>
     </tbody>
 </table>
-¹ Lista de vozes disponível.
+¹ Lista de vozes disponíveis.
 <ul>
     <li>br-Vitoria</li>
     <li>br-Ricardo</li>

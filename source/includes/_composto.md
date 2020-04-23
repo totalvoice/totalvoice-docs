@@ -48,7 +48,7 @@ O composto aceita um JSON com as seguintes opções:
     <li>ura</li>
 </ul>
 
-Você pode ver como funciona o envio de dados vendo a utlização em <a href="http://localhost:4567/?shell--curl#criar-um-composto">curl</a>
+Você pode ver como funciona o envio de dados vendo a utlização em <a href="#criar-um-composto">curl</a>
 
 As regras para o arquivo de áudio são as mesmas:
 
@@ -543,7 +543,7 @@ Basta informar o número de destino válido e um JSON com o composto
     </tbody>
 </table>
 
-¹ Você pode ver como funciona o envio de dados vendo a utlização em <a href="http://localhost:4567/?shell--curl#criar-um-composto">curl</a>
+¹ Você pode ver como funciona o envio de dados vendo a utlização em <a href="#criar-um-composto">curl</a>
 
 
 ## Buscar Composto 
