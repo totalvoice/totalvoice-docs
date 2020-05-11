@@ -380,6 +380,25 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
         </tr>
     </tbody>
 </table>
+¹ Lista de vozes disponíveis.
+<ul>
+    <li>br-Vitoria</li>
+    <li>br-Ricardo</li>
+    <li>en-Joey</li>
+    <li>en-Joanna</li>
+    <li>fre-Celine</li>
+    <li>fre-Mathieu</li>
+    <li>ger-Vicki</li>
+    <li>ger-Hans</li>
+    <li>ita-Carla</li>
+    <li>ita-Giorgio</li>
+    <li>jap-Mizuki</li>
+    <li>pol-Jan</li>
+    <li>rus-Tatyana</li>
+    <li>rus-Maxim</li>
+    <li>esp-Conchita</li>
+    <li>esp-Enrique</li>
+</ul> 
 
 ## Buscar Tts
 
