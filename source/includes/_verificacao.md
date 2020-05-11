@@ -27,7 +27,7 @@ POST https://api2.totalvoice.com.br/verificacao
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"4811111111","nome_produto":"TotalVoice App"}' \
+             -d '{"numero_destino":"4811111111","nome_produto":"ZenAPI de Voz"}' \
              'https://api2.totalvoice.com.br/verificacao'
 ```
 ```php
@@ -36,13 +36,13 @@ require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
 $client = new TotalVoiceClient('seu-token');
-$response = $client->verificacao->enviar('4811111111', 'TotalVoice App');
+$response = $client->verificacao->enviar('4811111111', 'ZenAPI de Voz');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.verificacao.enviar("4811111111", "TotalVoice App")
+client.verificacao.enviar("4811111111", "###VOICE_APP###")
     .then(function(data) {
         console.log(data);
     })
@@ -52,24 +52,24 @@ client.verificacao.enviar("4811111111", "TotalVoice App")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.verificacao.enviar("4811111111", "TotalVoice App", false, "")
+ response, err := client.verificacao.enviar("4811111111", "###VOICE_APP###", false, "")
 ```
 ```python
 client = Cliente("seu-token", 'api.totalvoice.com.br')
-response = client.verificacao.enviar("4811111111", "TotalVoice App")
+response = client.verificacao.enviar("4811111111", "###VOICE_APP###")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Verificacao verificacao = new Verificacao(client);
 
-JSONObject response = verificacao.enviar("4811111111", "TotalVoice App");
+JSONObject response = verificacao.enviar("4811111111", "###VOICE_APP###");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.verificacao.enviar("4811111111", "TotalVoice App")
+puts @client.verificacao.enviar("4811111111", "###VOICE_APP###")
 ```
 > Response
 

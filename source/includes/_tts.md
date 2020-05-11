@@ -32,7 +32,7 @@ Você poderá enviar algumas opções adicionais, tais como aguardar uma respost
     "duracao_falada_segundos": 2,
     "duracao_falada": "00:00:02",
     "preco": 0.35,
-    "mensagem": "Olá, se você gostaria de utilizar a totalvoice, digite 1.",
+    "mensagem": "Olá, se você gostaria de utilizar a ###COMPANY_NAME_LOWER_CASE###, digite 1.",
     "resposta_usuario": true,
     "resposta": "1",
     "motivo_desconexao": null,
