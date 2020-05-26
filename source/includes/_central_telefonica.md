@@ -229,7 +229,7 @@ Nenhum campo é obrigatório, mas indicamos que você passe os parâmetros ramal
                 <span class="attribute">string</span>
             </td>
             <td>
-                Senha do ramal
+                Senha do ramal. (Deve conter 8 caracteres, sendo pelo menos 1 maiúsculo e 1 minúsculo)
                 </td>
         </tr>
         <tr>
@@ -555,7 +555,7 @@ Em construção
                 <span class="attribute">string</span>
             </td>
             <td>
-                Senha do ramal
+                Senha do ramal (Deve conter 8 caracteres, sendo pelo menos 1 maiúsculo e 1 minúsculo)
                 </td>
         </tr>
         <tr>

@@ -253,7 +253,7 @@ Cria uma nova conta filha.
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Senha para esta nova conta, deve ter mais que 6 caracteres.
+                Senha para esta nova conta. (Deve conter 8 caracteres, sendo pelo menos 1 maiúsculo e 1 minúsculo)
             </td>
         </tr>
         <tr>
@@ -573,7 +573,7 @@ Altera as informações de uma conta já existente, você precisa passar na URL 
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Nova senha para esta conta, deve ter mais que 6 caracteres.
+                Nova senha para esta conta. (Deve conter 8 caracteres, sendo pelo menos 1 maiúsculo e 1 minúsculo)
             </td>
         </tr>
         <tr>
