@@ -1115,9 +1115,9 @@ Caso encontre um status diferente dos mapeados, favor entrar em <a href="#introd
 </blockquote>
 <pre class="highlight plaintext"><code>https://api2.totalvoice.com.br/audio
 </code></pre>
-<p>A funcionalidade de <strong>Envio de Áudio</strong> permite que você envie um torpedo de voz ou mensagens de voz do tipo áudio para determinados números. 
-Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos 
-devem estar disponíveis em uma URL pública. Você poderá enviar algumas opções adicionais, 
+<p>A funcionalidade de <strong>Envio de Áudio</strong> permite que você envie um torpedo de voz ou mensagens de voz do tipo áudio para determinados números.
+Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos
+devem estar disponíveis em uma URL pública. Você poderá enviar algumas opções adicionais,
 tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou colocar um número bina que aparecerá no momento da ligação.</p>
 <h4 id='formatos-aceitos'>Formatos aceitos:</h4>
 <ul>
@@ -1438,7 +1438,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Caso identificado caixa, a ligação será durrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
+                Caso identificado caixa, a ligação será derrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
             </td>
         </tr>
         <tr>
@@ -1447,7 +1447,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>. 
+                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>.
             </td>
         </tr>
     </tbody>
@@ -1696,7 +1696,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
             </td>
         </tr>
         <tr>
@@ -1708,7 +1708,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
-        </tr> 
+        </tr>
 
     </tbody>
 </table>
@@ -4560,7 +4560,7 @@ Permite gerar relatório de chamadas, derrubar chamadas em andamento, transferir
                 <span class="attribute">integer</span>
             </td>
             <td>
-                ID do ramal que originou a chamada referente a ligação, se houver. 
+                ID do ramal que originou a chamada referente a ligação, se houver.
             </td>
         </tr>
         <tr>
@@ -4569,8 +4569,8 @@ Permite gerar relatório de chamadas, derrubar chamadas em andamento, transferir
                 <span class="attribute">string</span>
             </td>
             <td>
-                Informação adicional que pode ser retornada no objeto, como um ID Externo por exemplo. Você consegue enviar essa informação no 
-                Post da Chamada e recuperar posteriormente nessa consulta. 
+                Informação adicional que pode ser retornada no objeto, como um ID Externo por exemplo. Você consegue enviar essa informação no
+                Post da Chamada e recuperar posteriormente nessa consulta.
             </td>
         </tr>
         <tr>
@@ -4579,7 +4579,7 @@ Permite gerar relatório de chamadas, derrubar chamadas em andamento, transferir
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Caso identificado caixa, a ligação será durrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
+                Caso identificado caixa, a ligação será derrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
             </td>
         </tr>
         <tr>
@@ -4588,7 +4588,7 @@ Permite gerar relatório de chamadas, derrubar chamadas em andamento, transferir
                 <span class="attribute">string</span>
             </td>
             <td>
-                Status geral da Chamada. 
+                Status geral da Chamada.
                 <ul>
                     <li>criada: chamada foi criada</li>
                     <li>curso: está em andamento</li>
@@ -4628,8 +4628,8 @@ Permite gerar relatório de chamadas, derrubar chamadas em andamento, transferir
   </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"indefinido"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Definição do objeto <strong>Origem/Destino</strong>: Estes objetos contêm basicamente a mesma estrutura de informações com relação às chamadas. A <strong>Origem</strong>, contém as informações de quem originou 
-a ligação e o <strong>Destino</strong> de quem recebeu a ligação. É nesses objetos que você irá encontrar as informações de duração das chamadas, status e o preço que foi cobrado por cada perna.  </p>
+<p>Definição do objeto <strong>Origem/Destino</strong>: Estes objetos contêm basicamente a mesma estrutura de informações com relação às chamadas. A <strong>Origem</strong>, contém as informações de quem originou
+a ligação e o <strong>Destino</strong> de quem recebeu a ligação. É nesses objetos que você irá encontrar as informações de duração das chamadas, status e o preço que foi cobrado por cada perna.</p>
 <h4 id='atributos-2'>Atributos</h4>
 <table class="table-parameters">
     <tbody>
@@ -4999,7 +4999,7 @@ a ligação e o <strong>Destino</strong> de quem recebeu a ligação. É nesses 
   </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"encerrando chamada"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w"> 
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Basta informar o id da chamada ativa</p>
 <h4 id='request-2'>Request</h4>
