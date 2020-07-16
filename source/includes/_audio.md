@@ -6,24 +6,24 @@
 https://api2.totalvoice.com.br/audio
 ```
 
-A funcionalidade de **Envio de Áudio** permite que você envie um torpedo de voz ou mensagens de voz do tipo áudio para determinados números. 
-Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos 
-devem estar disponíveis em uma URL pública. Você poderá enviar algumas opções adicionais, 
+A funcionalidade de **Envio de Áudio** permite que você envie um torpedo de voz ou mensagens de voz do tipo áudio para determinados números.
+Basta você informar um número destino e a URL contendo o seu arquivo de áudio. Estes arquivos
+devem estar disponíveis em uma URL pública. Você poderá enviar algumas opções adicionais,
 tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou colocar um número bina que aparecerá no momento da ligação.
 
 ####Formatos aceitos:
 - .mp3
 - .wav
- 
+
 ####Tamanho máximo:
 - 5MB
-   
+
 
 ## Objeto Áudio
 
 > JSON
 
-```json 
+```json
 {
     "id": 12345678,
     "numero_destino": "48912341234",
@@ -349,7 +349,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Caso identificado caixa, a ligação será durrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
+                Caso identificado caixa, a ligação será derrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
             </td>
         </tr>
         <tr>
@@ -358,7 +358,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>. 
+                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>.
             </td>
         </tr>
     </tbody>
@@ -503,7 +503,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
     </tbody>
 </table>
 
-## Relatório áudio 
+## Relatório áudio
 
 > Definição
 
@@ -647,7 +647,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
             </td>
         </tr>
         <tr>
@@ -659,7 +659,7 @@ Você pode consultar os áudios enviados posteriormente. Basta informar o perío
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
-        </tr> 
+        </tr>
 
     </tbody>
 </table>
