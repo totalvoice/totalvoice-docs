@@ -12,7 +12,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='https://api2.totalvoice.com.br/painel' target="_blank">Entrar</a>
-  - <a href='https://www.totalvoice.com.br/signup.php' target="_blank">Criar Conta</a>
+  - <a href='https://api2.totalvoice.com.br/painel/signup.php target="_blank">Criar Conta</a>
 
 includes:
   - introducao
