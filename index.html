@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
   <head>
@@ -1751,6 +1750,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     </span><span class="s2">"ligacao_externa"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ligacao_celular"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"gravar_audio"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bina_inteligente"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"acesso_gravacoes"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"webphone"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ura_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -1790,50 +1790,59 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             </td>
         </tr>
         <tr>
-             <td>
-                 bina
-                 <span class="attribute">string</span>
-             </td>
-             <td>
-                 Número que aparece quando o ramal faz ligações
-             </td>
+            <td>
+                bina
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número que aparece quando o ramal faz ligações
+            </td>
         </tr>
-         <tr>
-             <td>
-                 webphone_key
-                 <span class="attribute">string</span>
-             </td>
-             <td>
-                 Chave para utilização de webphones integrados
-             </td>
-         </tr>
-         <tr>
-             <td>
-                 ligacao_externa
-                 <span class="attribute">boolean</span>
-             </td>
-             <td>
-                 Permite fazer ligações externas
-             </td>
-         </tr>
-         <tr>
-             <td>
-                 ligacao_celular
-                 <span class="attribute">boolean</span>
-             </td>
-             <td>
-                 Permite fazer ligações para números de celular
-             </td>
-         </tr>
-         <tr>
-              <td>
-                  gravar_audio
-                  <span class="attribute">boolean</span>
-              </td>
-              <td>
-                 Grava as ligações deste ramal
-              </td>
-          </tr>
+        <tr>
+            <td>
+                webphone_key
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Chave para utilização de webphones integrados
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ligacao_externa
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite fazer ligações externas
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ligacao_celular
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Permite fazer ligações para números de celular
+            </td>
+        </tr>
+        <tr>
+            <td>
+                gravar_audio
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Grava as ligações deste ramal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                bina_inteligente
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região.
+            </td>
+        </tr>
     </tbody>
 </table>
 <h3 id='criar-um-ramal'>Criar um ramal</h3>
@@ -1864,8 +1873,8 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">dados</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">ramal</span><span class="p">:</span> <span class="s1">'1358'</span><span class="p">,</span> 
-    <span class="na">login</span><span class="p">:</span> <span class="s1">'logindeteste231@totalvoice.com.br'</span><span class="p">,</span> 
+    <span class="na">ramal</span><span class="p">:</span> <span class="s1">'1358'</span><span class="p">,</span>
+    <span class="na">login</span><span class="p">:</span> <span class="s1">'logindeteste231@totalvoice.com.br'</span><span class="p">,</span>
     <span class="na">senha</span><span class="p">:</span> <span class="s1">'123456'</span>
 <span class="p">};</span>
 
@@ -2159,7 +2168,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">dados</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">login</span><span class="p">:</span> <span class="s1">'logindeteste456@totalvoice.com.br'</span><span class="p">,</span> 
+    <span class="na">login</span><span class="p">:</span> <span class="s1">'logindeteste456@totalvoice.com.br'</span><span class="p">,</span>
     <span class="na">senha</span><span class="p">:</span> <span class="s1">'12345678'</span>
 <span class="p">};</span>
 
@@ -2200,7 +2209,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint) 
+                Id do ramal que será modificado(O id é passado na URL do endpoint)
                 </td>
         </tr>
         <tr>
@@ -2384,7 +2393,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint) 
+                Id do ramal que será modificado(O id é passado na URL do endpoint)
                 </td>
         </tr>
         <tr>
@@ -2604,7 +2613,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
             </td>
         </tr>
         <tr>
@@ -2616,7 +2625,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
-        </tr> 
+        </tr>
     </tbody>
 </table>
 <h4 id='response-6'>Response</h4>
@@ -2705,7 +2714,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="required">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint) 
+                Id do ramal que será modificado(O id é passado na URL do endpoint)
             </td>
         </tr>
         <tr>
@@ -2735,7 +2744,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
             </td>
         </tr>
         <tr>
@@ -2855,7 +2864,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="required">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint) 
+                Id do ramal que será modificado(O id é passado na URL do endpoint)
             </td>
         </tr>
         <tr>
@@ -2885,7 +2894,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
             </td>
         </tr>
         <tr>
@@ -2897,7 +2906,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
-        </tr> 
+        </tr>
     </tbody>
 </table>
 <h4 id='response-8'>Response</h4>
@@ -3063,7 +3072,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             <td>
                Derruba a ligação, não tem acao_dados e geralmente é usada seguido de uma outra ação. Se não tiver essa informação, a URA irá ficar até que o outro usuário desligue ou a ligação caia.
             </td>
-        </tr><br>
+        </tr>
     </tbody>
 </table></p>
 <h4 id='opcoes-adicionais-para-acao'>Opções adicionais para ação</h4>
