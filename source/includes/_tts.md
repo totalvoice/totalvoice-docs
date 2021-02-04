@@ -350,7 +350,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Caso seja identificado caixa postal a ligação será durrubada antes que inicie a mensagem para a caixa postal. Esse serviço tem um custo adicional.
+                Caso seja identificado caixa postal a ligação será derrubada antes que inicie a mensagem para a caixa postal. Esse serviço tem um custo adicional.
             </td>
         </tr>
         <tr>

@@ -123,7 +123,7 @@ Definição do objeto Chamada
                 <span class="attribute">integer</span>
             </td>
             <td>
-                ID do ramal que originou a chamada referente a ligação, se houver. 
+                ID do ramal que originou a chamada referente a ligação, se houver.
             </td>
         </tr>
         <tr>
@@ -132,8 +132,8 @@ Definição do objeto Chamada
                 <span class="attribute">string</span>
             </td>
             <td>
-                Informação adicional que pode ser retornada no objeto, como um ID Externo por exemplo. Você consegue enviar essa informação no 
-                Post da Chamada e recuperar posteriormente nessa consulta. 
+                Informação adicional que pode ser retornada no objeto, como um ID Externo por exemplo. Você consegue enviar essa informação no
+                Post da Chamada e recuperar posteriormente nessa consulta.
             </td>
         </tr>
         <tr>
@@ -142,7 +142,7 @@ Definição do objeto Chamada
                 <span class="attribute">boolean</span>
             </td>
             <td>
-                Caso identificado caixa, a ligação será durrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
+                Caso identificado caixa, a ligação será derrubada antes que a ligação seja atendida. Esse serviço tem um custo adicional.
             </td>
         </tr>
         <tr>
@@ -151,7 +151,7 @@ Definição do objeto Chamada
                 <span class="attribute">string</span>
             </td>
             <td>
-                Status geral da Chamada. 
+                Status geral da Chamada.
                 <ul>
                     <li>criada: chamada foi criada</li>
                     <li>curso: está em andamento</li>
@@ -194,8 +194,8 @@ Definição do objeto Chamada
 }
 ```
 
-Definição do objeto **Origem/Destino**: Estes objetos contêm basicamente a mesma estrutura de informações com relação às chamadas. A **Origem**, contém as informações de quem originou 
-a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que você irá encontrar as informações de duração das chamadas, status e o preço que foi cobrado por cada perna.  
+Definição do objeto **Origem/Destino**: Estes objetos contêm basicamente a mesma estrutura de informações com relação às chamadas. A **Origem**, contém as informações de quem originou
+a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que você irá encontrar as informações de duração das chamadas, status e o preço que foi cobrado por cada perna.
 
 #### Atributos
 
@@ -599,7 +599,7 @@ puts @client.chamada.encerrar("4811111111", "http://foo.bar/audio.mp3")
   "motivo": 0,
   "mensagem": "encerrando chamada",
   "dados": null
-} 
+}
 ```
 Basta informar o id da chamada ativa
 
@@ -626,7 +626,7 @@ Basta informar o id da chamada ativa
 ```text
 GET https://api2.totalvoice.com.br/chamada/{id}
 ```
- 
+
 > Request
 
 ```shell--curl
@@ -861,7 +861,7 @@ Você poderá realizar o download do áudio da chamada. Esta funcionalidade esta
     </tbody>
 </table>
 
-## Relatório Chamadas 
+## Relatório Chamadas
 
 > Definição
 
@@ -1059,7 +1059,7 @@ Você pode consultar as Chamadas enviadas. Basta informar o período desejado pa
 
 
 
-## Escuta de Chamadas 
+## Escuta de Chamadas
 
 > Definição
 
@@ -1198,7 +1198,7 @@ Você pode realizar uma escuta para uma chamada que está **ativa** (Beta).
 <br>
 
 
-## Transferência de Chamadas 
+## Transferência de Chamadas
 
 > Definição
 
@@ -1334,9 +1334,9 @@ Transfere a origem ou destino para outro telefone e desconecta a outra perna (Be
 <br>
 <br>
 <br>
-    
-    
-## Avaliação de Chamadas 
+
+
+## Avaliação de Chamadas
 
 > Definição
 
