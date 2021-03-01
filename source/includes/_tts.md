@@ -382,6 +382,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
 </table>
 ¹ Lista de vozes disponíveis.
 <ul>
+    <li>br-Camila</li>
     <li>br-Vitoria</li>
     <li>br-Ricardo</li>
     <li>en-Joey</li>
