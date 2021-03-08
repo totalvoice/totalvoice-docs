@@ -15,7 +15,7 @@ Você poderá enviar algumas opções adicionais, tais como aguardar uma respost
 
 > JSON
 
-```json
+```json 
 
 
 {
@@ -32,7 +32,7 @@ Você poderá enviar algumas opções adicionais, tais como aguardar uma respost
     "duracao_falada_segundos": 2,
     "duracao_falada": "00:00:02",
     "preco": 0.35,
-    "mensagem": "Olá, se você gostaria de utilizar a totalvoice, digite 1.",
+    "mensagem": "Olá, se você gostaria de utilizar a ###COMPANY_NAME_LOWER_CASE###, digite 1.",
     "resposta_usuario": true,
     "resposta": "1",
     "motivo_desconexao": null,
@@ -359,7 +359,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>.
+                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>. 
             </td>
         </tr>
     </tbody>
@@ -382,6 +382,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
 </table>
 ¹ Lista de vozes disponíveis.
 <ul>
+    <li>br-Camila</li>
     <li>br-Vitoria</li>
     <li>br-Ricardo</li>
     <li>en-Joey</li>
@@ -398,7 +399,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
     <li>rus-Maxim</li>
     <li>esp-Conchita</li>
     <li>esp-Enrique</li>
-</ul>
+</ul> 
 
 ## Buscar Tts
 
@@ -521,7 +522,7 @@ Após o envio do TTS você poderá realizar a busca do registro pelo seu ID.
     </tbody>
 </table>
 
-## Relatório TTS
+## Relatório TTS 
 
 > Definição
 
@@ -662,7 +663,7 @@ Você pode consultar os TTSs enviados posteriormente. Basta informar o período 
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -674,7 +675,7 @@ Você pode consultar os TTSs enviados posteriormente. Basta informar o período 
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
-        </tr>
+        </tr> 
 
     </tbody>
 </table>

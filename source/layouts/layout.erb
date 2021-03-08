@@ -29,9 +29,17 @@ under the License.
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title><%= current_page.data.title || "TotalVoice API Doc" %></title>
+    <title><%= current_page.data.title || "Doc da API de Voz" %></title>
     <link rel="icon" href="../images/icon.png" sizes="32x32" />
 
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Documentação TotalVoice - API de ligação, voz e SMS">
+    <meta property="og:url" content="https://www.totalvoice.com.br/doc">
+    <meta property="og:site_name" content="TotalVoice">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TotalVoice - API de ligação, voz e SMS">
+    
     <style>
       <%= Rouge::Themes::MonokaiSublime.render(:scope => '.highlight') %>
     </style>
@@ -42,6 +50,7 @@ under the License.
     <% else %>
       <%= javascript_include_tag  "all_nosearch" %>
     <% end %>
+    <%= javascript_include_tag  "brand_replace" %>
   </head>
 
   <body class="<%= page_classes %>" data-languages="<%=h language_tabs.map{ |lang| lang.is_a?(Hash) ? lang.keys.first : lang }.to_json %>">

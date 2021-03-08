@@ -1,11 +1,11 @@
 # Efetuando Ligações
 
-Nesta seção você encontrará exemplos de como trabalhar com ligações com a API da TotalVoice
+Nesta seção você encontrará exemplos de como trabalhar com ligações com a ###API_OWNERSHIP###.
 
 `Access-Token: Token`
 
 <aside class="notice">
- Você precisa substituir `access-token` pelo seu Token fornecido pela TotalVoice.
+ Você precisa substituir `access-token` pelo seu Token fornecido pela ###BRAND_NAME###.
 </aside>
 
 ### Realizando uma ligação
@@ -95,7 +95,7 @@ public class Main {
 }
 ```
 
-> Você precisa substituir `{{access-token}}` pelo seu Token fornecido pela TotalVoice.
+> Você precisa substituir `{{access-token}}` pelo seu Token fornecido pela ###BRAND_NAME###.
 
 ### HTTP Request
 

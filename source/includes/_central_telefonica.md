@@ -2,7 +2,7 @@
 
 Na central telefônica você poderá fazer configurações e retirar relatórios de ramal e URAs.
 
-Caso você deseje utilizar a API da TotalVoice para ligações receptivas, entre em [contato](#introducao) conosco para a contratação de um número receptivo(DID).
+Caso você deseje utilizar a ###API_OWNERSHIP### para ligações receptivas, entre em [contato](#introducao) conosco para a contratação de um número receptivo(DID).
 
 ### Objeto Ramal
 
@@ -20,7 +20,6 @@ Caso você deseje utilizar a API da TotalVoice para ligações receptivas, entre
     "ligacao_externa": true,
     "ligacao_celular": true,
     "gravar_audio": true,
-    "bina_inteligente": false,
     "acesso_gravacoes": true,
     "webphone": false,
     "ura_id": null,
@@ -62,59 +61,50 @@ Definição do objeto Ramal
             </td>
         </tr>
         <tr>
-            <td>
-                bina
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Número que aparece quando o ramal faz ligações
-            </td>
+             <td>
+                 bina
+                 <span class="attribute">string</span>
+             </td>
+             <td>
+                 Número que aparece quando o ramal faz ligações
+             </td>
         </tr>
-        <tr>
-            <td>
-                webphone_key
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Chave para utilização de webphones integrados
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ligacao_externa
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Permite fazer ligações externas
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ligacao_celular
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Permite fazer ligações para números de celular
-            </td>
-        </tr>
-        <tr>
-            <td>
-                gravar_audio
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Grava as ligações deste ramal
-            </td>
-        </tr>
-        <tr>
-            <td>
-                bina_inteligente
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região.
-            </td>
-        </tr>
+         <tr>
+             <td>
+                 webphone_key
+                 <span class="attribute">string</span>
+             </td>
+             <td>
+                 Chave para utilização de webphones integrados
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 ligacao_externa
+                 <span class="attribute">boolean</span>
+             </td>
+             <td>
+                 Permite fazer ligações externas
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 ligacao_celular
+                 <span class="attribute">boolean</span>
+             </td>
+             <td>
+                 Permite fazer ligações para números de celular
+             </td>
+         </tr>
+         <tr>
+              <td>
+                  gravar_audio
+                  <span class="attribute">boolean</span>
+              </td>
+              <td>
+                 Grava as ligações deste ramal
+              </td>
+          </tr>
     </tbody>
 </table>
 
@@ -152,8 +142,8 @@ const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
 const dados = {
-    ramal: '1358',
-    login: 'logindeteste231@totalvoice.com.br',
+    ramal: '1358', 
+    login: 'logindeteste231@totalvoice.com.br', 
     senha: '123456'
 };
 
@@ -486,7 +476,7 @@ const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
 const dados = {
-    login: 'logindeteste456@totalvoice.com.br',
+    login: 'logindeteste456@totalvoice.com.br', 
     senha: '12345678'
 };
 
@@ -538,7 +528,7 @@ Em construção
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint)
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
                 </td>
         </tr>
         <tr>
@@ -742,7 +732,7 @@ puts @client.ramal.atualizar_ramal_fila(ramal_id, data)
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint)
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
                 </td>
         </tr>
         <tr>
@@ -1001,7 +991,7 @@ Em construção
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -1013,7 +1003,7 @@ Em construção
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
-        </tr>
+        </tr> 
     </tbody>
 </table>
 
@@ -1059,7 +1049,7 @@ $client = new TotalVoiceClient('seu-token');
 
 $response = $client->central->relatorioPausasRamal("id-ramal", "2019-02-20T11:11:19-03:00", "2019-02-20T11:12:26-03:0");
 ```
-```javascript--node
+```javascript--node 
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
@@ -1120,7 +1110,7 @@ Em construção
                 <span class="required">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint)
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
             </td>
         </tr>
         <tr>
@@ -1150,7 +1140,7 @@ Em construção
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -1288,7 +1278,7 @@ Em construção
                 <span class="required">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint)
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
             </td>
         </tr>
         <tr>
@@ -1318,7 +1308,7 @@ Em construção
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -1330,7 +1320,7 @@ Em construção
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
-        </tr>
+        </tr> 
     </tbody>
 </table>
 
@@ -1369,7 +1359,7 @@ Em construção
             "opcao": "",
             "acao": "tts",
             "acao_dados": {
-                "mensagem": "Voce ligou para TotalVoice. Aperte 1 para ser atendido."
+                "mensagem": "Voce ligou para ###COMPANY_NAME###. Aperte 1 para ser atendido."
             }
         },
         {
@@ -1503,7 +1493,7 @@ O nome da "acao" é o maior e o que deve estar dentro do array "acao_dados" é o
             <td>
                Derruba a ligação, não tem acao_dados e geralmente é usada seguido de uma outra ação. Se não tiver essa informação, a URA irá ficar até que o outro usuário desligue ou a ligação caia.
             </td>
-        </tr>
+        </tr>                     
     </tbody>
 </table>
 
@@ -1754,7 +1744,7 @@ Em construção
   "mensagem": "dados retornados com sucesso",
   "dados": {
     "id": 12345,
-    "nome": "Atendimento Totalvoice",
+    "nome": "Atendimento ###BRAND_NAME###",
     "dados": [
       {
         "timeout": 6,
@@ -1846,7 +1836,7 @@ $dados = array (
     )
     );
 
-$response = $client->central->atualizarUra("123456", "Teste TotalVoice-001", $dados);
+$response = $client->central->atualizarUra("123456", "Teste ###BRAND_NAME###-001", $dados);
 
 ```
 ```javascript--node

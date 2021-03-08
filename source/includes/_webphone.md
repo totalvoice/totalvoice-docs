@@ -7,7 +7,7 @@ https://api2.totalvoice.com.br/webphone
 ```
 
 Webphone é uma maneira de se conectar a um Ramal diretamente por um computador, todo ramal tem uma URL na qual
-pode acessar o Webphone sem precisar se conectar ao site da TotalVoice, muito utilizado em integrações
+pode acessar o Webphone sem precisar se conectar ###PANEL_REF###, muito utilizado em integrações
 para implementar ligações diretamente em um software ou sistema de uma maneira fácil.
 
 Há três tipos de Webphone:
@@ -27,7 +27,7 @@ GET https://api2.totalvoice.com.br/webphone
 ```
 
 Consulta a URL do Webphone de um determinado Ramal enviando os parâmetros para pré-configuração do webphone, a URL
-gerada vem com um código único para acesso daquele Webphone sem ser necessário login na TotalVoice.
+gerada vem com um código único para acesso daquele Webphone sem ser necessário login ###PANEL_REF_ALT###.
 
 > <br/>Request
 
