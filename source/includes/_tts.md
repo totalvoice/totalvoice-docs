@@ -401,7 +401,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
     <li>esp-Enrique</li>
 </ul> 
 
-## Buscar Tts
+## Buscar TTS
 
 > Definição
 
