@@ -8,6 +8,14 @@
     <title>TotalVoice API Doc</title>
     <link rel="icon" href="../images/icon.png" sizes="32x32" />
 
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Documentação TotalVoice - API de ligação, voz e SMS">
+    <meta property="og:url" content="https://www.totalvoice.com.br/doc">
+    <meta property="og:site_name" content="TotalVoice">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TotalVoice - API de ligação, voz e SMS">
+    
     <style>
       .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
@@ -576,27 +584,10 @@
                     <a href="#criar-um-tts" class="toc-h2 toc-link" data-title="Criar um TTS">Criar um TTS</a>
                   </li>
                   <li>
-                    <a href="#buscar-tts" class="toc-h2 toc-link" data-title="Buscar Tts">Buscar Tts</a>
+                    <a href="#buscar-tts" class="toc-h2 toc-link" data-title="Buscar TTS">Buscar TTS</a>
                   </li>
                   <li>
                     <a href="#relatorio-tts" class="toc-h2 toc-link" data-title="Relatório TTS">Relatório TTS</a>
-                  </li>
-              </ul>
-          </li>
-           <li>
-            <a href="#valida-numero" class="toc-h1 toc-link" data-title="Valida Número">Valida Número</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#objeto-valida-numero" class="toc-h2 toc-link" data-title="Objeto Valida Número">Objeto Valida Número</a>
-                  </li>
-                  <li>
-                    <a href="#criar-um-valida-numero" class="toc-h2 toc-link" data-title="Criar um Valida Número">Criar um Valida Número</a>
-                  </li>
-                  <li>
-                    <a href="#buscar-valida-numero" class="toc-h2 toc-link" data-title="Buscar Valida Número">Buscar Valida Número</a>
-                  </li>
-                  <li>
-                    <a href="#relatorio-valida-numero" class="toc-h2 toc-link" data-title="Relatório Valida Número">Relatório Valida Número</a>
                   </li>
               </ul>
           </li>
@@ -659,9 +650,6 @@
                     <a href="#eventos-em-tempo-real-de-conferencias" class="toc-h2 toc-link" data-title="Eventos em Tempo Real de Conferências">Eventos em Tempo Real de Conferências</a>
                   </li>
                   <li>
-                    <a href="#valida-numero" class="toc-h2 toc-link" data-title="Valida Número">Valida Número</a>
-                  </li>
-                  <li>
                     <a href="#tts-fim" class="toc-h2 toc-link" data-title="TTS Fim">TTS Fim</a>
                   </li>
                   <li>
@@ -696,7 +684,7 @@
 </blockquote>
 <pre class="highlight plaintext"><code>https://api2.totalvoice.com.br
 </code></pre>
-<p>Os serviços da TotalVoice estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e
+<p>Os serviços da ZenAPI estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e
 os códigos de respostas HTTP para indicar erros na API. Suportamos cross-origin, aceitando interações de qualquer domínio com segurança.</p>
 
 <p>Disponibilizamos bibliotecas em diversas linguagens para uma maior facilidade dos nossos usuários, você pode alterar a linguagem de referência
@@ -721,18 +709,18 @@ você poderá criá-la facilmente, na página principal de sua conta, você tem 
 pelos nossos canais de comunicação/suporte.</p>
 
 <ul>
-<li>E-mail: suporte@totalvoice.com.br</li>
-<li>Chat: no painel da TotalVoice.</li>
+<li>E-mail: suporte.voz@zenvia.com</li>
+<li>Chat: na plataforma de Voz da Zenvia.</li>
 </ul>
 <h1 id='permissoes-de-conta'>Permissões de Conta</h1>
-<p>Quando você cria uma nova conta na TotalVoice, ela é criada automaticamente como uma conta Trial,
-tendo limitações que garantem a segurança do negócio, evitando que pessoas má intencionadas utilizem os serviços
-da TotalVoice.</p>
+<p>Quando você cria uma nova conta na Zenvia, ela é criada automaticamente como uma conta Trial,
+tendo limitações que garantem a segurança do negócio, evitando que pessoas mal intencionadas utilizem os serviços
+da ZenAPI.</p>
 
 <p>Após as validações solicitadas (confirmação de telefone fixo, e-mail e etc) a conta é aprovada instantaneamente, 
 recebendo o acesso de conta Cliente, que retira algumas limitações, mantendo apenas as que evitam golpes e que utilizam para Spams.</p>
 
-<p>Caso tenha interesse em ter acessos de funções exclusivas da TotalVoice (Centrais telefônicas, DIDs, Números Receptivos e criação de contas filhas), 
+<p>Caso tenha interesse em ter acessos de funções exclusivas da API de Voz (Centrais telefônicas, DIDs, Números Receptivos e criação de contas filhas), 
 você precisa entrar em contato com nossa equipe, para podermos entender o cenário e auxiliar na escolha ideal de funcionalidades.  </p>
 <h2 id='contas-trial'>Contas Trial</h2>
 <blockquote>
@@ -760,7 +748,7 @@ você precisa entrar em contato com nossa equipe, para podermos entender o cená
 </blockquote>
 
 <p>As contas Trial são contas que foram criadas e ainda não tiveram seus dados confirmados, como e-mail e telefone fixo (caso a pessoa
-não tenha telefone fixo pode entrar em contato com a TotalVoice para ser validado), a conta trial tem o intuito apenas de testar
+não tenha telefone fixo pode entrar em contato com o time de voz da Zenvia para ser validado), a conta trial tem o intuito apenas de testar
 as funcionalidades da API, a validação e migração é feita de modo automático e a mudança de tipo de conta acontece na hora.</p>
 
 <p>Veja como cadastrar um número <a href='https://centraltotalvoice.freshdesk.com/solution/articles/35000078983-cadastrando-um-n%C3%BAmero-como-bina-identificac%C3%A3o-de-chamada-'>clicando aqui</a>.</p>
@@ -775,7 +763,7 @@ as funcionalidades da API, a validação e migração é feita de modo automáti
         Não podem criar e administrar contas filhas.
     </li>
     <li>
-        Limite de 50 SMSs enviados por dia, que cresce de acordo com o uso (ou em simples contato com a equipe da TotalVoice).
+        Limite de 50 SMSs enviados por dia, que cresce de acordo com o uso (ou em simples contato com a equipe de Voz da Zenvia).
     </li>
     <li>
         SMSs com algumas palavras proíbidas (referente à cobranças, instituições financeiras, links e etc).
@@ -815,14 +803,14 @@ tendo os mesmos privilégios, sendo apenas vinculada a uma outra conta podendo s
 <p><b>IMPORTANTE:</b> Não esqueça de alterar o Token de exemplo pelo seu Token.</p>
 </blockquote>
 
-<p>A TotalVoice utiliza um Token de Acesso para realizar a autenticação de sua conta, você deve incluir o Access-Token 
+<p>A API de Voz utiliza um Token de Acesso para realizar a autenticação de sua conta, você deve incluir o Access-Token 
 na requisição HTTP através do cabeçalho, ou pela <em>Query String</em>. </p>
 
 <p>Exemplo de Access-Token:</p>
 
 <p><code>testeM68PU1Izmb9chEdLzep7IwRymWO</code></p>
 
-<p>As bibliotecas disponibilizadas pela TotalVoice já fazem a autenticação na requisição HTTP de forma transparente. </p>
+<p>As bibliotecas disponibilizadas pelo ZenAPI já fazem a autenticação na requisição HTTP de forma transparente. </p>
 
 <aside class="notice">
  Mantenha seu Token em segredo, tome muito cuidado, não deixe ele exposto em um código público e nunca
@@ -937,7 +925,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
 </table></p>
 </blockquote>
 
-<p>As respostas das requisições realizadas para a API TotalVoice utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
+<p>As respostas das requisições realizadas para a API de Voz da ZenAPI utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
 sendo que o código 200 responde pelo sucesso e os que iniciam por 4xx pelas falhas, também utilizamos os códigos começando com 500 para apresentar falhas internas.</p>
 
 <p><br style="margin-top: 280px;"/>  </p>
@@ -1735,7 +1723,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <h1 id='central-telefonica'>Central Telefônica</h1>
 <p>Na central telefônica você poderá fazer configurações e retirar relatórios de ramal e URAs.</p>
 
-<p>Caso você deseje utilizar a API da TotalVoice para ligações receptivas, entre em <a href="#introducao">contato</a> conosco para a contratação de um número receptivo(DID).</p>
+<p>Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, entre em <a href="#introducao">contato</a> conosco para a contratação de um número receptivo(DID).</p>
 <h3 id='objeto-ramal'>Objeto Ramal</h3>
 <blockquote>
 <p><br></p>
@@ -1751,7 +1739,6 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     </span><span class="s2">"ligacao_externa"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ligacao_celular"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"gravar_audio"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bina_inteligente"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"acesso_gravacoes"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"webphone"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ura_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -1791,59 +1778,50 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             </td>
         </tr>
         <tr>
-            <td>
-                bina
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Número que aparece quando o ramal faz ligações
-            </td>
+             <td>
+                 bina
+                 <span class="attribute">string</span>
+             </td>
+             <td>
+                 Número que aparece quando o ramal faz ligações
+             </td>
         </tr>
-        <tr>
-            <td>
-                webphone_key
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Chave para utilização de webphones integrados
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ligacao_externa
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Permite fazer ligações externas
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ligacao_celular
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Permite fazer ligações para números de celular
-            </td>
-        </tr>
-        <tr>
-            <td>
-                gravar_audio
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Grava as ligações deste ramal
-            </td>
-        </tr>
-        <tr>
-            <td>
-                bina_inteligente
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região.
-            </td>
-        </tr>
+         <tr>
+             <td>
+                 webphone_key
+                 <span class="attribute">string</span>
+             </td>
+             <td>
+                 Chave para utilização de webphones integrados
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 ligacao_externa
+                 <span class="attribute">boolean</span>
+             </td>
+             <td>
+                 Permite fazer ligações externas
+             </td>
+         </tr>
+         <tr>
+             <td>
+                 ligacao_celular
+                 <span class="attribute">boolean</span>
+             </td>
+             <td>
+                 Permite fazer ligações para números de celular
+             </td>
+         </tr>
+         <tr>
+              <td>
+                  gravar_audio
+                  <span class="attribute">boolean</span>
+              </td>
+              <td>
+                 Grava as ligações deste ramal
+              </td>
+          </tr>
     </tbody>
 </table>
 <h3 id='criar-um-ramal'>Criar um ramal</h3>
@@ -1874,8 +1852,8 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">dados</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">ramal</span><span class="p">:</span> <span class="s1">'1358'</span><span class="p">,</span>
-    <span class="na">login</span><span class="p">:</span> <span class="s1">'logindeteste231@totalvoice.com.br'</span><span class="p">,</span>
+    <span class="na">ramal</span><span class="p">:</span> <span class="s1">'1358'</span><span class="p">,</span> 
+    <span class="na">login</span><span class="p">:</span> <span class="s1">'logindeteste231@totalvoice.com.br'</span><span class="p">,</span> 
     <span class="na">senha</span><span class="p">:</span> <span class="s1">'123456'</span>
 <span class="p">};</span>
 
@@ -2169,7 +2147,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">dados</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="na">login</span><span class="p">:</span> <span class="s1">'logindeteste456@totalvoice.com.br'</span><span class="p">,</span>
+    <span class="na">login</span><span class="p">:</span> <span class="s1">'logindeteste456@totalvoice.com.br'</span><span class="p">,</span> 
     <span class="na">senha</span><span class="p">:</span> <span class="s1">'12345678'</span>
 <span class="p">};</span>
 
@@ -2210,7 +2188,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint)
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
                 </td>
         </tr>
         <tr>
@@ -2394,7 +2372,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint)
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
                 </td>
         </tr>
         <tr>
@@ -2614,7 +2592,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -2626,7 +2604,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
-        </tr>
+        </tr> 
     </tbody>
 </table>
 <h4 id='response-6'>Response</h4>
@@ -2715,7 +2693,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="required">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint)
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
             </td>
         </tr>
         <tr>
@@ -2745,7 +2723,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -2865,7 +2843,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="required">integer</span>
             </td>
             <td>
-                Id do ramal que será modificado(O id é passado na URL do endpoint)
+                Id do ramal que será modificado(O id é passado na URL do endpoint) 
             </td>
         </tr>
         <tr>
@@ -2895,7 +2873,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -2907,7 +2885,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
-        </tr>
+        </tr> 
     </tbody>
 </table>
 <h4 id='response-8'>Response</h4>
@@ -2942,7 +2920,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             </span><span class="s2">"opcao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
             </span><span class="s2">"acao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tts"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"acao_dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Voce ligou para TotalVoice. Aperte 1 para ser atendido."</span><span class="w">
+                </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Voce ligou para Zenvia. Aperte 1 para ser atendido."</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -3073,7 +3051,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             <td>
                Derruba a ligação, não tem acao_dados e geralmente é usada seguido de uma outra ação. Se não tiver essa informação, a URA irá ficar até que o outro usuário desligue ou a ligação caia.
             </td>
-        </tr>
+        </tr><br>
     </tbody>
 </table></p>
 <h4 id='opcoes-adicionais-para-acao'>Opções adicionais para ação</h4>
@@ -3289,7 +3267,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atendimento Totalvoice"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atendimento ZenAPI"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
@@ -3370,7 +3348,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     <span class="p">)</span>
     <span class="p">);</span>
 
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">atualizarUra</span><span class="p">(</span><span class="s2">"123456"</span><span class="p">,</span> <span class="s2">"Teste TotalVoice-001"</span><span class="p">,</span> <span class="nv">$dados</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">central</span><span class="o">-&gt;</span><span class="na">atualizarUra</span><span class="p">(</span><span class="s2">"123456"</span><span class="p">,</span> <span class="s2">"Teste ZenAPI-001"</span><span class="p">,</span> <span class="nv">$dados</span><span class="p">);</span>
 
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
@@ -7335,7 +7313,7 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.   </p>
     </tbody>
 </table>
 <h2 id='estoque-de-dids'>Estoque de DIDs</h2>
-<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da TotalVoice pelo email  <a href="">suporte@totalvoice.com.br</a>
+<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte@totalvoice.com.br</a>
 </aside>
 
 <p style="color:#5A5A5A;"><b>Nota:</b> Para adquirir um DID você deve ter o cartão de crédito cadastrado na plataforma.</p>
@@ -7353,7 +7331,7 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.   </p>
             --header <span class="s1">'Access-Token: seu-token'</span> <span class="s1">'https://api2.totalvoice.com.br/did/estoque'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span><span class="o">&lt;</span><span class="nx">aside</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"notice"</span><span class="o">&gt;</span> <span class="nx">Antes</span> <span class="nx">era</span> <span class="nx">poss</span><span class="err">í</span><span class="nx">vel</span> <span class="nx">consultar</span> <span class="nx">os</span> <span class="nx">n</span><span class="err">ú</span><span class="nx">meros</span> <span class="nx">de</span> <span class="nx">DIDs</span> <span class="nx">dispon</span><span class="err">í</span><span class="nx">veis</span> <span class="nx">e</span> <span class="nx">compr</span><span class="err">á</span><span class="o">-</span><span class="nx">los</span> <span class="nx">automaticamente</span><span class="p">.</span> <span class="nx">Atualmente</span> <span class="err">é</span> <span class="nx">necess</span><span class="err">á</span><span class="nx">rio</span> <span class="nx">entrar</span> <span class="nx">em</span> <span class="nx">contato</span> <span class="nx">com</span> <span class="nx">o</span> <span class="nx">time</span> <span class="nx">de</span> <span class="nx">suporte</span> <span class="nx">da</span> <span class="nx">TotalVoice</span> <span class="nx">pelo</span> <span class="nx">email</span>  <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">""</span><span class="o">&gt;</span><span class="nx">suporte</span><span class="p">@</span><span class="nd">totalvoice</span><span class="p">.</span><span class="nx">com</span><span class="p">.</span><span class="nx">br</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span><span class="o">&lt;</span><span class="nx">aside</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"notice"</span><span class="o">&gt;</span> <span class="nx">Antes</span> <span class="nx">era</span> <span class="nx">poss</span><span class="err">í</span><span class="nx">vel</span> <span class="nx">consultar</span> <span class="nx">os</span> <span class="nx">n</span><span class="err">ú</span><span class="nx">meros</span> <span class="nx">de</span> <span class="nx">DIDs</span> <span class="nx">dispon</span><span class="err">í</span><span class="nx">veis</span> <span class="nx">e</span> <span class="nx">compr</span><span class="err">á</span><span class="o">-</span><span class="nx">los</span> <span class="nx">automaticamente</span><span class="p">.</span> <span class="nx">Atualmente</span> <span class="err">é</span> <span class="nx">necess</span><span class="err">á</span><span class="nx">rio</span> <span class="nx">entrar</span> <span class="nx">em</span> <span class="nx">contato</span> <span class="nx">com</span> <span class="nx">o</span> <span class="nx">time</span> <span class="nx">de</span> <span class="nx">suporte</span> <span class="nx">da</span> <span class="nx">equipe</span> <span class="nx">de</span> <span class="nx">voz</span> <span class="nx">da</span> <span class="nx">Zenvia</span> <span class="nx">pelo</span> <span class="nx">email</span>  <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">""</span><span class="o">&gt;</span><span class="nx">suporte</span><span class="p">@</span><span class="nd">totalvoice</span><span class="p">.</span><span class="nx">com</span><span class="p">.</span><span class="nx">br</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
 </span><span class="o">&lt;</span><span class="sr">/aside</span><span class="err">&gt;
 </span>
 <span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
@@ -7402,7 +7380,7 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.   </p>
     </tbody>
 </table>
 <h2 id='comprar-did'>Comprar DID</h2>
-<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da TotalVoice pelo email  <a href="">suporte@totalvoice.com.br</a>
+<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte@totalvoice.com.br</a>
 </aside>
 
 <p><p style="color:#5A5A5A;">Para adquirir um DID você deve ter um cartão de crédito cadastrado na plataforma.<p></p>
@@ -8134,7 +8112,7 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.   </p>
 </blockquote>
 <pre class="highlight plaintext"><code>https://api.totalvoice.com.br/conta
 </code></pre>
-<p>Com a funcionalidade de Gerente de Contas você pode criar, consultar, alterar e deletar contas filhas, sendo as contas filhas exatamente iguais a qualquer outra conta na TotalVoice,
+<p>Com a funcionalidade de Gerente de Contas você pode criar, consultar, alterar e deletar contas filhas, sendo as contas filhas exatamente iguais a qualquer outra conta na Zenvia,
 apenas são vinculadas com uma conta pai que tem o controle sobre ela, tendo o intuito de realizar integrações e automatizar processos de uso e revenda de serviços da API.</p>
 
 <aside class="notice">
@@ -8775,7 +8753,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 </blockquote>
 
 <p>Deleta permanentemente uma conta filha, ficando indisponível para uma posterior consulta, 
-tome muito cuidado ao executar este comando, após deletada, a conta filha irá perder todos os acessos à TotalVoice, 
+tome muito cuidado ao executar este comando, após deletada, a conta filha irá perder todos os acessos à Zenvia, 
 com isso o login utilizdo ficará disponível (pois não é possível logins duplicados na API).</p>
 <h5 id='request-4'>Request</h5>
 <table class="table-parameters">
@@ -8964,7 +8942,7 @@ A funcionalidade de Crédito de Bônus é um limite especial configurado em sua 
 <p><br/>
 <br/></p>
 <h2 id='listar-webhooks'>Listar Webhooks</h2>
-<p>Este método permite a listagem de todos os webhooks default configurados para suas subcontas(Contas filhas). <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da TotalVoice. </p>
+<p>Este método permite a listagem de todos os webhooks default configurados para suas subcontas(Contas filhas). <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da ZenAPI. </p>
 
 <blockquote>
 <p>Definição</p>
@@ -9048,7 +9026,7 @@ A funcionalidade de Crédito de Bônus é um limite especial configurado em sua 
 <br>
 <br></p>
 <h2 id='remover-webhook'>Remover Webhook</h2>
-<p>Este método permite a remoção de um webhook default específico.<a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da TotalVoice. </p>
+<p>Este método permite a remoção de um webhook default específico.<a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da ZenAPI. </p>
 
 <blockquote>
 <p>Definição</p>
@@ -10059,7 +10037,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <br>
 <br></p>
 <h2 id='listar-webhooks'>Listar Webhooks</h2>
-<p>Este método permite a listagem de todos os webhooks configurados da sua conta. <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da TotalVoice. </p>
+<p>Este método permite a listagem de todos os webhooks configurados da sua conta. <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da ZenAPI. </p>
 
 <blockquote>
 <p>Definição</p>
@@ -10144,7 +10122,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <br>
 <br></p>
 <h2 id='remover-webhook'>Remover Webhook</h2>
-<p>Este método permite a remoção de um webhook específico de sua conta. <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da TotalVoice. </p>
+<p>Este método permite a remoção de um webhook específico de sua conta. <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da ZenAPI. </p>
 
 <blockquote>
 <p>Definição</p>
@@ -10983,7 +10961,7 @@ data de envio por exemplo.</p>
     </span><span class="s2">"duracao_falada_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"duracao_falada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:02"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.35</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Olá, se você gostaria de utilizar a totalvoice, digite 1."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Olá, se você gostaria de utilizar a zenvia, digite 1."</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -11289,7 +11267,7 @@ data de envio por exemplo.</p>
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>.
+                Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>. 
             </td>
         </tr>
     </tbody>
@@ -11311,6 +11289,7 @@ data de envio por exemplo.</p>
 
 <p>¹ Lista de vozes disponíveis.
 <ul>
+    <li>br-Camila</li>
     <li>br-Vitoria</li>
     <li>br-Ricardo</li>
     <li>en-Joey</li>
@@ -11327,8 +11306,8 @@ data de envio por exemplo.</p>
     <li>rus-Maxim</li>
     <li>esp-Conchita</li>
     <li>esp-Enrique</li>
-</ul></p>
-<h2 id='buscar-tts'>Buscar Tts</h2>
+</ul> </p>
+<h2 id='buscar-tts'>Buscar TTS</h2>
 <blockquote>
 <p>Definição</p>
 </blockquote>
@@ -11553,7 +11532,7 @@ data de envio por exemplo.</p>
                 <span class="type">Query String</span>
             </td>
             <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
             </td>
         </tr>
         <tr>
@@ -11565,7 +11544,7 @@ data de envio por exemplo.</p>
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
-        </tr>
+        </tr> 
 
     </tbody>
 </table>
@@ -11588,405 +11567,6 @@ data de envio por exemplo.</p>
 
 <p><br>
 <br></p>
-<h1 id='valida-numero'>Valida Número</h1>
-<blockquote>
-<p>Valida Número Endpoint</p>
-</blockquote>
-<pre class="highlight plaintext"><code>https://api2.totalvoice.com.br/valida-numero
-</code></pre>
-<p>A funcionalidade do valida número é checar se o número fornecido existe ou se é um número inválido.</p>
-<h2 id='objeto-valida-numero'>Objeto Valida Número</h2>
-<blockquote>
-<p>JSON</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:30-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"finalizado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Definição do objeto Valida Número</p>
-<h4 id='atributos'>Atributos</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                id
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                ID do registro do valida número.
-             </td>
-        </tr>
-        <tr>
-            <td>
-                numero_destino 
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Número a ser validado.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                data_criacao
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data de criação do registro do valida número. Data e Hora no formato UTC.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco
-                <span class="attribute">float</span>
-            </td>
-            <td>
-               Valor cobrado no processo de validação do número.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                status
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Status da chamada realizada.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                valido
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Resultado do teste de validação do número.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                finalizado
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Status do processo. 
-                <ul>
-                    <li>true - Finalizado </li>
-                    <li>false - Processo de validação em andamento </li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h2 id='criar-um-valida-numero'>Criar um Valida Número</h2>
-<blockquote>
-<p>Definição</p>
-</blockquote>
-<pre class="highlight plaintext"><code>POST https://api2.totalvoice.com.br/valida_numero
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"554811111111"}'</span> <span class="se">\</span>
-             <span class="s1">'https://api2.totalvoice.com.br/valida_numero'</span>
-</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'Seu_Token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">valida_numero</span><span class="o">-&gt;</span><span class="na">criar</span><span class="p">(</span><span class="s1">'554811111111'</span><span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"Seu_Token"</span><span class="p">);</span>
-
-<span class="nx">client</span><span class="p">.</span><span class="nx">validanumero</span><span class="p">.</span><span class="nx">criar</span><span class="p">(</span><span class="s2">"554811111111"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>  
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"Seu_Token"</span><span class="p">)</span><span class="x">
- </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">ValidaNumero</span><span class="o">.</span><span class="n">Criar</span><span class="p">(</span><span class="s">"554811111111"</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"Seu_Token"</span><span class="p">,</span> <span class="s">'api2.totalvoice.com.br'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">valida_numero</span><span class="o">.</span><span class="n">criar</span><span class="p">(</span><span class="s">"554811111111"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"Seu_Token"</span><span class="o">);</span>
-<span class="n">ValidaNumero</span> <span class="n">validaNumero</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ValidaNumero</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">validaNumero</span><span class="o">.</span><span class="na">validaNumero</span><span class="o">(</span><span class="s">"554811111111"</span><span class="o">)</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
-<span class="kp">include</span> <span class="no">TotalVoice</span>
-
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Seu_Token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">valida_numero</span><span class="p">.</span><span class="nf">criar</span><span class="p">(</span><span class="s2">"554811111111"</span><span class="p">)</span>
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"validação criada com sucessoo"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4921</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Basta informar o número de destino a ser validado.</p>
-
-<p>Assim que um registro é criado ele é imediatamente processado, ao término do processo um <a href="#webhook-valida-numero">Webhook</a> é disparado para a url cadastrada enviando um objeto <a href="#objeto-valida-numero">Valida Número</a>.</p>
-
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                numero_destino
-                <span class="required">Obrigatório</span>
-            </td>
-            <td>
-                Número que será validado.
-             </td>
-        </tr>
-    </tbody>
-</table>
-<h4 id='response'>Response</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                id
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Retorna o ID do registro valida-numero
-             </td>
-        </tr>
-    </tbody>
-</table>
-<h2 id='buscar-valida-numero'>Buscar Valida Número</h2>
-<blockquote>
-<p>Definição</p>
-</blockquote>
-<pre class="highlight plaintext"><code>GET https://api2.totalvoice.com.br/valida_numero/{id}
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://api2.totalvoice.com.br/valida_numero/123'</span>
-</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'Seu_Token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">valida_numero</span><span class="o">-&gt;</span><span class="na">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"Seu_Token"</span><span class="p">);</span>
-
-<span class="nx">client</span><span class="p">.</span><span class="nx">validaNumero</span><span class="p">.</span><span class="nx">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"Seu_Token"</span><span class="p">)</span><span class="x">
- </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">ValidaNumero</span><span class="o">.</span><span class="n">Buscar</span><span class="p">(</span><span class="m">123</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"Seu_Token"</span><span class="p">,</span> <span class="s">'api2.totalvoice.com.br'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">valida_numero</span><span class="o">.</span><span class="n">get_valida_numero</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"Seu_Token"</span><span class="o">);</span>
-<span class="n">ValidaNumero</span> <span class="n">validaNumero</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ValidaNumero</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">validaNumero</span><span class="o">.</span><span class="na">buscar</span><span class="o">(</span><span class="mi">123</span><span class="o">);</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
-<span class="kp">include</span> <span class="no">TotalVoice</span>
-
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"{{access-token}}"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">valida_numero</span><span class="p">.</span><span class="nf">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:30-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"finalizado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Após a criação de um Valida Número, você poderá realizar a busca do registro pelo seu ID.</p>
-<h5 id='request'>Request</h5>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                ID
-                <span class="required">Obrigatório</span>
-            </td>
-            <td>
-                ID do registo valida número para recuperar os dados
-             </td>
-        </tr>
-    </tbody>
-</table>
-<h5 id='response-2'>Response</h5>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                dados
-                <span class="attribute">object</span>
-            </td>
-            <td>
-                Retorna o objeto <a href="#objeto-valida-numero">valida número</a>
-             </td>
-        </tr>
-    </tbody>
-</table>
-<h2 id='relatorio-valida-numero'>Relatório Valida Número</h2>
-<blockquote>
-<p>Definição</p>
-</blockquote>
-<pre class="highlight plaintext"><code>GET https://api2.totalvoice.com.br/valida_numero/relatorio
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://api2.totalvoice.com.br/valida_numero/realatorio?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
-</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'Seu_Token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">valida_numero</span><span class="o">-&gt;</span><span class="na">relatorio</span><span class="p">(</span><span class="nv">$dataInicial</span><span class="p">,</span> <span class="nv">$dataFinal</span><span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"Seu_Token"</span><span class="p">);</span>
-
-<span class="nx">client</span><span class="p">.</span><span class="nx">validanumero</span><span class="p">.</span><span class="nx">relatorio</span><span class="p">(</span><span class="nx">data_inicial</span><span class="p">,</span> <span class="nx">data_final</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"Seu_Token"</span><span class="p">)</span><span class="x">
-</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">ValidaNumero</span><span class="o">.</span><span class="n">Relatorio</span><span class="o">.</span><span class="n">Gerar</span><span class="p">(</span><span class="n">dataInicial</span><span class="p">,</span><span class="x"> </span><span class="n">dataFinal</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"Seu_Token"</span><span class="p">,</span> <span class="s">'api2.totalvoice.com.br'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">valida_numero</span><span class="o">.</span><span class="n">get_relatorio</span><span class="p">(</span><span class="n">data_inicio</span><span class="p">,</span> <span class="n">data_fim</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"Seu_Token"</span><span class="o">);</span>
-
-<span class="n">ValidaNumero</span> <span class="n">validaNumero</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ValidaNumeo</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">validaNumero</span><span class="o">.</span><span class="na">relatorio</span><span class="o">(</span><span class="n">dataInicial</span><span class="o">,</span> <span class="n">dataFinal</span><span class="o">);</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
-<span class="kp">include</span> <span class="no">TotalVoice</span>
-
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"Seu_Token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">valida_numero</span><span class="p">.</span><span class="nf">relatorio</span><span class="p">(</span><span class="n">data_inicial</span><span class="p">,</span> <span class="n">data_final</span><span class="p">)</span>
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:30-03:00"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"finalizado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">433</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554822222222"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:30-03:00"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"finalizado"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Você pode consultar o relatório de valida números. Basta informar o período desejado para que a API retorne os dados.</p>
-<h4 id='request-2'>Request</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                data_inicio
-                <span class="required">Obrigatório</span>
-                <span class="type">Query String</span>
-            </td>
-            <td>
-                Data inicial para consulta dos dados no relatório
-            </td>
-        </tr>
-        <tr>
-            <td>
-                data_fim
-                <span class="required">Obrigatório</span>
-                <span class="type">Query String</span>
-            </td>
-            <td>
-                Data final para consulta dos dados no relatório
-            </td>
-        </tr>
-        <tr>
-            <td>
-                posicao
-                <span class="required">Opcional</span>
-                <span class="type">Query String</span>
-            </td>
-            <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
-            </td>
-        </tr>
-        <tr>
-            <td>
-                limite
-                <span class="required">Opcional</span>
-                <span class="type">Query String</span>
-            </td>
-            <td>
-                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
-            </td>
-        </tr> 
-    </tbody>
-</table>
-<h4 id='response-3'>Response</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                relatorio
-                <span class="attribute">array</span>
-            </td>
-            <td>
-                Retorna um array com objetos <a href="#objeto-valida-numero">valida número</a>
-             </td>
-        </tr>
-    </tbody>
-</table>
 <h1 id='verificacao-2fa'>Verificação (2FA)</h1>
 <blockquote>
 <p><b>Verificação (2FA) Endpoint</b></p>
@@ -12012,18 +11592,18 @@ data de envio por exemplo.</p>
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"4811111111","nome_produto":"TotalVoice App"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"4811111111","nome_produto":"ZenAPI de Voz"}'</span> <span class="se">\</span>
              <span class="s1">'https://api2.totalvoice.com.br/verificacao'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">verificacao</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'4811111111'</span><span class="p">,</span> <span class="s1">'TotalVoice App'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">verificacao</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'4811111111'</span><span class="p">,</span> <span class="s1">'ZenAPI de Voz'</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">verificacao</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"TotalVoice App"</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">verificacao</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"ZenAPI de Voz"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -12031,18 +11611,18 @@ data de envio por exemplo.</p>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
- </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">verificacao</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"TotalVoice App"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="s">""</span><span class="p">)</span><span class="x">
+ </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">verificacao</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"ZenAPI de Voz"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="s">""</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'api.totalvoice.com.br'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">verificacao</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span> <span class="s">"TotalVoice App"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">verificacao</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span> <span class="s">"ZenAPI de Voz"</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Verificacao</span> <span class="n">verificacao</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Verificacao</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">verificacao</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"4811111111"</span><span class="o">,</span> <span class="s">"TotalVoice App"</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">verificacao</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"4811111111"</span><span class="o">,</span> <span class="s">"ZenAPI de Voz"</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">verificacao</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"TotalVoice App"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">verificacao</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"ZenAPI de Voz"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -12188,7 +11768,7 @@ data de envio por exemplo.</p>
 <pre class="highlight plaintext"><code>https://api2.totalvoice.com.br/webphone
 </code></pre>
 <p>Webphone é uma maneira de se conectar a um Ramal diretamente por um computador, todo ramal tem uma URL na qual
-pode acessar o Webphone sem precisar se conectar ao site da TotalVoice, muito utilizado em integrações
+pode acessar o Webphone sem precisar se conectar a plataforma da ZenAPI, muito utilizado em integrações
 para implementar ligações diretamente em um software ou sistema de uma maneira fácil.</p>
 
 <p>Há três tipos de Webphone:</p>
@@ -12207,7 +11787,7 @@ para implementar ligações diretamente em um software ou sistema de uma maneira
 <pre class="highlight plaintext"><code>GET https://api2.totalvoice.com.br/webphone
 </code></pre>
 <p>Consulta a URL do Webphone de um determinado Ramal enviando os parâmetros para pré-configuração do webphone, a URL
-gerada vem com um código único para acesso daquele Webphone sem ser necessário login na TotalVoice.</p>
+gerada vem com um código único para acesso daquele Webphone sem ser necessário login na plataforma da ZenAPI.</p>
 
 <blockquote>
 <p><br/>Request</p>
@@ -12672,13 +12252,13 @@ gerada vem com um código único para acesso daquele Webphone sem ser necessári
 <br></p>
 <h1 id='webhooks'>Webhooks</h1>
 <p>Também conhecidos como Callbacks ou Reverse API, os Webhooks são notificações que enviamos para alguma URL (End Point) sua que é configurada 
-no painel da TotalVoice, a notificação é enviada assim que determinados eventos acontecem.</p>
+no painel de Voz da ZenAPI, a notificação é enviada assim que determinados eventos acontecem.</p>
 
 <p>Todos os Webhooks enviados vão por HTTP POST, sendo que as informações referentes ao evento vão no corpo da requisição em formato JSON.</p>
 
 <p><i>Obs: Na requisição GET para visualizar os webhooks cadastrados ele irá trazer apenas os que possuem URL. Caso a conta seja uma subconta e não tiver URL de webhook, irá buscar os webhooks default configurados na conta principal.</i></p>
 <h2 id='configuracao'>Configuração</h2>
-<p>Entre no painel da TotalVoice com a conta administradora, vá até o menu Minha Conta e escolha Configurações da API, lá terão todos os campos para preencher em cada Webhook.</p>
+<p>Entre no painel de Voz da ZenAPI com a conta administradora, vá até o menu Minha Conta e escolha Configurações da API, lá terão todos os campos para preencher em cada Webhook.</p>
 
 <p><i>Poderá levar até 20 minutos após a configuração no Painel para começar o envio das notificações para o endereço escolhido.</i></p>
 <h2 id='eventos-em-tempo-real-de-chamada'>Eventos em Tempo Real de Chamada</h2>
@@ -12744,7 +12324,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Identificador único (na TotalVoice) do cliente que realizou a Chamada.
+                Identificador único (na ZenAPI) do cliente que realizou a Chamada.
             </td>
         </tr> 
         <tr>
@@ -12787,7 +12367,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37787430"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T14:00:38-03:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Olá TotalVoice"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Olá ZenAPI"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
   </span><span class="s2">"status_envio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"entregue"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T14:01:13-03:00"</span><span class="p">,</span><span class="w">
@@ -13330,98 +12910,6 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
         </tr> 
     </tbody>
 </table>
-<h2 id='valida-numero'>Valida Número</h2>
-<p>A cada chamada de validação de numero finalizada enviamos se o número é valido ou inválido.</p>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:30-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"finalizado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='atributos-9'>Atributos</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                id
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                ID do registro do valida número.
-             </td>
-        </tr>
-        <tr>
-            <td>
-                numero_destino 
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Número a ser validado.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                data_criacao
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data de criação do registro do valida número. Data e Hora no formato UTC.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco
-                <span class="attribute">float</span>
-            </td>
-            <td>
-               Valor cobrado no processo de validação do número.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                valido
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Resultado do teste de validação do número.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                finalizado
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Status do processo. 
-                <ul>
-                    <li>true - Finalizado </li>
-                    <li>false - Processo de validação em andamento </li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<p><br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/></p>
 <h2 id='tts-fim'>TTS Fim</h2>
 <p>Ao fim de toda chamada TTS, um callback é feito para este endereço, enviando detalhes como duração e status.</p>
 
@@ -13448,7 +12936,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
   </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16. normal"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ôôôôoooooooolááaaaaaaaaaa"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='atributos-10'>Atributos</h4>
+</span></code></pre><h4 id='atributos-9'>Atributos</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -13655,7 +13143,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"gravacoes_parciais"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='atributos-11'>Atributos</h4>
+</span></code></pre><h4 id='atributos-10'>Atributos</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -13802,7 +13290,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"gravacoes_parciais"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='atributos-12'>Atributos</h4>
+</span></code></pre><h4 id='atributos-11'>Atributos</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -13956,7 +13444,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"gravacoes_parciais"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='atributos-13'>Atributos</h4>
+</span></code></pre><h4 id='atributos-12'>Atributos</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -14091,7 +13579,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
   </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clienteX"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='atributos-14'>Atributos</h4>
+</span></code></pre><h4 id='atributos-13'>Atributos</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -14335,7 +13823,7 @@ no painel da TotalVoice, a notificação é enviada assim que determinados event
   </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
   </span><span class="s2">"url_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://65381g.ha.azioncdn.net/7/7/b/3/daniellimaofficial-never-enough-72a13242.mp3"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h4 id='atributos-15'>Atributos</h4>
+</span></code></pre><h4 id='atributos-14'>Atributos</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
