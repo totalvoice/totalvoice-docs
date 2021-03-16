@@ -64,7 +64,7 @@ Definição do objeto Conta
         <tr>
             <td>
                 cpf_cnpj
-                <span class="optional">Opcional</span>
+                <span class="required">Obrigatório</span>
             </td>
             <td>
                 CPF ou CNPJ desta conta, para fim de identificação e integração.
@@ -259,7 +259,7 @@ Cria uma nova conta filha.
         <tr>
             <td>
                 cpf_cnpj
-                <span class="optional">Opcional</span>
+                <span class="required">Obrigatório</span>
             </td>
             <td>
                 CPF ou CNPJ desta conta, para fim de identificação e integração.
