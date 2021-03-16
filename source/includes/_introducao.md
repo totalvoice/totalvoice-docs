@@ -31,5 +31,5 @@ As bibliotecas oficiais da nossa API podem ser encontradas em nosso [GitHub](htt
 Caso você não encontre algum material ou possui alguma dúvida técnica que não está na documentação, entre em <b>contato</b> conosco
 pelos nossos canais de comunicação/suporte.
 
- - E-mail: suporte@totalvoice.com.br
+ - E-mail: suporte.voz@zenvia.com
  - Chat: na plataforma de Voz da Zenvia.
