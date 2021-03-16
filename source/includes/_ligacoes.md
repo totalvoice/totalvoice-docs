@@ -1,11 +1,11 @@
 # Efetuando Ligações
 
-Nesta seção você encontrará exemplos de como trabalhar com ligações com a ###API_OWNERSHIP###.
+Nesta seção você encontrará exemplos de como trabalhar com ligações com a API de Voz da ZenAPI.
 
 `Access-Token: Token`
 
 <aside class="notice">
- Você precisa substituir `access-token` pelo seu Token fornecido pela ###BRAND_NAME###.
+ Você precisa substituir `access-token` pelo seu Token fornecido pela ZenAPI.
 </aside>
 
 ### Realizando uma ligação
@@ -95,7 +95,7 @@ public class Main {
 }
 ```
 
-> Você precisa substituir `{{access-token}}` pelo seu Token fornecido pela ###BRAND_NAME###.
+> Você precisa substituir `{{access-token}}` pelo seu Token fornecido pela ZenAPI.
 
 ### HTTP Request
 

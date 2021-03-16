@@ -5,7 +5,7 @@
 ```text
 https://api.totalvoice.com.br/conta
 ```
-Com a funcionalidade de Gerente de Contas você pode criar, consultar, alterar e deletar contas filhas, sendo as contas filhas exatamente iguais a qualquer outra conta na ###COMPANY_NAME###,
+Com a funcionalidade de Gerente de Contas você pode criar, consultar, alterar e deletar contas filhas, sendo as contas filhas exatamente iguais a qualquer outra conta na Zenvia,
 apenas são vinculadas com uma conta pai que tem o controle sobre ela, tendo o intuito de realizar integrações e automatizar processos de uso e revenda de serviços da API.
 
 <aside class="notice">
@@ -64,7 +64,7 @@ Definição do objeto Conta
         <tr>
             <td>
                 cpf_cnpj
-                <span class="optional">Opcional</span>
+                <span class="required">Obrigatório</span>
             </td>
             <td>
                 CPF ou CNPJ desta conta, para fim de identificação e integração.
@@ -259,7 +259,7 @@ Cria uma nova conta filha.
         <tr>
             <td>
                 cpf_cnpj
-                <span class="optional">Opcional</span>
+                <span class="required">Obrigatório</span>
             </td>
             <td>
                 CPF ou CNPJ desta conta, para fim de identificação e integração.
@@ -718,7 +718,7 @@ JSONObject response = conta.excluir(3132);
 > <br/><br/><br/>
 
 Deleta permanentemente uma conta filha, ficando indisponível para uma posterior consulta, 
-tome muito cuidado ao executar este comando, após deletada, a conta filha irá perder todos os acessos à ###COMPANY_NAME###, 
+tome muito cuidado ao executar este comando, após deletada, a conta filha irá perder todos os acessos à Zenvia, 
 com isso o login utilizdo ficará disponível (pois não é possível logins duplicados na API).
 
 ##### Request
@@ -946,7 +946,7 @@ A funcionalidade de Crédito de Bônus é um limite especial configurado em sua 
 
 ## Listar Webhooks
 
-Este método permite a listagem de todos os webhooks default configurados para suas subcontas(Contas filhas). <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da ###BRAND_NAME###. 
+Este método permite a listagem de todos os webhooks default configurados para suas subcontas(Contas filhas). <a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da ZenAPI. 
 
 > Definição
 
@@ -1049,7 +1049,7 @@ puts @client.conta.webhooks_default()
 
 ## Remover Webhook
 
-Este método permite a remoção de um webhook default específico.<a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da ###BRAND_NAME###. 
+Este método permite a remoção de um webhook default específico.<a href="#webhooks">Clique aqui</a> para obter mais informações sobre cada webhook da ZenAPI. 
 
 > Definição
 

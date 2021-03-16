@@ -42,7 +42,7 @@ $response = $client->verificacao->enviar('4811111111', 'ZenAPI de Voz');
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.verificacao.enviar("4811111111", "###VOICE_APP###")
+client.verificacao.enviar("4811111111", "ZenAPI de Voz")
     .then(function(data) {
         console.log(data);
     })
@@ -52,24 +52,24 @@ client.verificacao.enviar("4811111111", "###VOICE_APP###")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.verificacao.enviar("4811111111", "###VOICE_APP###", false, "")
+ response, err := client.verificacao.enviar("4811111111", "ZenAPI de Voz", false, "")
 ```
 ```python
 client = Cliente("seu-token", 'api.totalvoice.com.br')
-response = client.verificacao.enviar("4811111111", "###VOICE_APP###")
+response = client.verificacao.enviar("4811111111", "ZenAPI de Voz")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Verificacao verificacao = new Verificacao(client);
 
-JSONObject response = verificacao.enviar("4811111111", "###VOICE_APP###");
+JSONObject response = verificacao.enviar("4811111111", "ZenAPI de Voz");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.verificacao.enviar("4811111111", "###VOICE_APP###")
+puts @client.verificacao.enviar("4811111111", "ZenAPI de Voz")
 ```
 > Response
 

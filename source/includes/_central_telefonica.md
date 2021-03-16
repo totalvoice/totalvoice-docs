@@ -2,7 +2,7 @@
 
 Na central telefônica você poderá fazer configurações e retirar relatórios de ramal e URAs.
 
-Caso você deseje utilizar a ###API_OWNERSHIP### para ligações receptivas, entre em [contato](#introducao) conosco para a contratação de um número receptivo(DID).
+Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, entre em [contato](#introducao) conosco para a contratação de um número receptivo(DID).
 
 ### Objeto Ramal
 
@@ -1359,7 +1359,7 @@ Em construção
             "opcao": "",
             "acao": "tts",
             "acao_dados": {
-                "mensagem": "Voce ligou para ###COMPANY_NAME###. Aperte 1 para ser atendido."
+                "mensagem": "Voce ligou para Zenvia. Aperte 1 para ser atendido."
             }
         },
         {
@@ -1744,7 +1744,7 @@ Em construção
   "mensagem": "dados retornados com sucesso",
   "dados": {
     "id": 12345,
-    "nome": "Atendimento ###BRAND_NAME###",
+    "nome": "Atendimento ZenAPI",
     "dados": [
       {
         "timeout": 6,
@@ -1836,7 +1836,7 @@ $dados = array (
     )
     );
 
-$response = $client->central->atualizarUra("123456", "Teste ###BRAND_NAME###-001", $dados);
+$response = $client->central->atualizarUra("123456", "Teste ZenAPI-001", $dados);
 
 ```
 ```javascript--node
