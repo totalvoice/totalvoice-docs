@@ -6,7 +6,7 @@
 https://api2.totalvoice.com.br
 ```
 
-Os serviços da ###BRAND_NAME### estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e
+Os serviços da ZenAPI estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e
 os códigos de respostas HTTP para indicar erros na API. Suportamos cross-origin, aceitando interações de qualquer domínio com segurança.
 
 Disponibilizamos bibliotecas em diversas linguagens para uma maior facilidade dos nossos usuários, você pode alterar a linguagem de referência
@@ -32,4 +32,4 @@ Caso você não encontre algum material ou possui alguma dúvida técnica que n�
 pelos nossos canais de comunicação/suporte.
 
  - E-mail: suporte@totalvoice.com.br
- - Chat: ###CHAT_PLACE###.
+ - Chat: na plataforma de Voz da Zenvia.

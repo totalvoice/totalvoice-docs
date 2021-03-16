@@ -356,7 +356,7 @@ Em construção
 
 ## Estoque de DIDs
 
-<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o ###TECHNICAL_SUPPORT_TEAM### pelo email  <a href="">suporte@totalvoice.com.br</a>
+<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte@totalvoice.com.br</a>
 </aside>
 
 
@@ -380,7 +380,7 @@ curl -X GET --header 'Content-Type: application/json' \
 Em construção
 ```
 ```javascript--node
-Em construção<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o ###TECHNICAL_SUPPORT_TEAM### pelo email  <a href="">suporte@totalvoice.com.br</a>
+Em construção<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte@totalvoice.com.br</a>
 </aside>
 
 Em construção
@@ -440,7 +440,7 @@ Em construção
 
 ## Comprar DID
 
-<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o ###TECHNICAL_SUPPORT_TEAM### pelo email  <a href="">suporte@totalvoice.com.br</a>
+<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte@totalvoice.com.br</a>
 </aside>
 
 

@@ -111,7 +111,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
     </tr>
 </table>
 
-As respostas das requisições realizadas para a ###API_OWNERSHIP### utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
+As respostas das requisições realizadas para a API de Voz da ZenAPI utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
 sendo que o código 200 responde pelo sucesso e os que iniciam por 4xx pelas falhas, também utilizamos os códigos começando com 500 para apresentar falhas internas.
 
 <br style="margin-top: 280px;"/>  
