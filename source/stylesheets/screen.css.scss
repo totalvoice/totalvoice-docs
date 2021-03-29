@@ -81,6 +81,8 @@ html, body {
     display: block;
     height: 100%;
     max-height: 60px;
+    width: auto;
+    max-width: calc(100% - 32px);
     margin: 16px;
     margin-bottom: $logo-margin;
   }
