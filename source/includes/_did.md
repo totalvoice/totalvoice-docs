@@ -5,7 +5,7 @@
 > Did Endpoint
 
 ```text
-https://api.totalvoice.com.br/did
+https://voice-app.zenvia.com/did
 ```
 
 > JSON
@@ -74,7 +74,7 @@ Lista todos os DIDs da sua conta
 > Did Endpoint
 
 ```text
-https://api.totalvoice.com.br/did
+https://voice-app.zenvia.com/did
 ```
 
 > Request
@@ -82,7 +82,7 @@ https://api.totalvoice.com.br/did
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/did'
+            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/did'
 ```
 ```php
 <?php
@@ -154,7 +154,7 @@ Não precisa passar nenhum parâmetro.
 > Definição
 
 ```text
-PUT https://api2.totalvoice.com.br/did/{id}
+PUT https://voice-app.zenvia.com/did/{id}
 ```
 
 > Request
@@ -164,7 +164,7 @@ curl -X PUT --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"ura_id":"4321789"}' \
-             'https://api2.totalvoice.com.br/did/{id}'
+             'https://voice-app.zenvia.com/did/{id}'
 ```
 ```php
 <?php
@@ -184,7 +184,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -266,7 +266,7 @@ Importante¹: Você só pode passar uma das opções, ou uma ura_id ou um ramal_
 > Definição
 
 ```text
-DELETE https://api2.totalvoice.com.br/did/{id}
+DELETE https://voice-app.zenvia.com/did/{id}
 ```
 
 > Request
@@ -275,7 +275,7 @@ DELETE https://api2.totalvoice.com.br/did/{id}
 curl -X DELETE --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             'https://api2.totalvoice.com.br/did/{id}'
+             'https://voice-app.zenvia.com/did/{id}'
 ```
 ```php
 <?php
@@ -295,7 +295,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -356,7 +356,7 @@ Em construção
 
 ## Estoque de DIDs
 
-<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte@totalvoice.com.br</a>
+<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte.voz@zenvia.com</a>
 </aside>
 
 
@@ -365,7 +365,7 @@ Em construção
 > Did Endpoint
 
 ```text
-https://api.totalvoice.com.br/did/estoque
+https://voice-app.zenvia.com/did/estoque
 ```
 
 > Request
@@ -373,14 +373,14 @@ https://api.totalvoice.com.br/did/estoque
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/did/estoque'
+            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/did/estoque'
 ```
 ```php
 <?php
 Em construção
 ```
 ```javascript--node
-Em construção<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte@totalvoice.com.br</a>
+Em construção<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte.voz@zenvia.com</a>
 </aside>
 
 Em construção
@@ -440,7 +440,7 @@ Em construção
 
 ## Comprar DID
 
-<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte@totalvoice.com.br</a>
+<aside class="notice"> Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte.voz@zenvia.com</a>
 </aside>
 
 
@@ -449,7 +449,7 @@ Em construção
 > Did Endpoint
 
 ```text
-https://api.totalvoice.com.br/did/
+https://voice-app.zenvia.com/did/
 ```
 
 > Request
@@ -458,7 +458,7 @@ https://api.totalvoice.com.br/did/
 curl -X POST --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
             d '{"did_id":"123"}' \
-            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/did/'
+            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/did/'
 ```
 ```php
 Em construção
@@ -542,7 +542,7 @@ Em construção
 > Chamada Recebidas Endpoint
 
 ```text
-https://api.totalvoice.com.br/did/chamada/{id}
+https://voice-app.zenvia.com/did/chamada/{id}
 ```
 
 > <br>
@@ -738,7 +738,7 @@ Definição do objeto Chamada DID
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/did/chamada/{id-chamada}
+GET https://voice-app.zenvia.com/did/chamada/{id-chamada}
 ```
 
 > Request
@@ -746,7 +746,7 @@ GET https://api.totalvoice.com.br/did/chamada/{id-chamada}
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://api.totalvoice.com.br/did/chamada/{id-chamada}'
+            'https://voice-app.zenvia.com/did/chamada/{id-chamada}'
 ```
 ```php
 Em Construção
@@ -843,7 +843,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/did/{id}/relatorio
+GET https://voice-app.zenvia.com/did/{id}/relatorio
 ```
 
 > Request
@@ -851,7 +851,7 @@ GET https://api.totalvoice.com.br/did/{id}/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://api.totalvoice.com.br/did/1/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-app.zenvia.com/did/1/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -875,7 +875,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.DID.RelatorioChamadas.Gerar(id, dataInicial, dataFinal, filtros)
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.did.get_relatorio_chamadas(id, data_inicio, data_fim, filtros)
 ```
 ```java
@@ -1054,7 +1054,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/did/relatorio
+GET https://voice-app.zenvia.com/did/relatorio
 ```
 
 > Request
@@ -1062,7 +1062,7 @@ GET https://api.totalvoice.com.br/did/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://api.totalvoice.com.br/did/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-app.zenvia.com/did/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -1086,7 +1086,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.DID.RelatorioChamadas.Gerar(dataInicial, dataFinal, filtros)
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.did.get_relatorio_chamadas(data_inicio, data_fim, filtros)
 ```
 ```java

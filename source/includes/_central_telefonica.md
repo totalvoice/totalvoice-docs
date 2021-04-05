@@ -14,7 +14,7 @@ Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, en
 {
     "id": 76498,
     "ramal": "3333",
-    "login": "testee@TotalVoice.com.br",
+    "login": "testee@zenvia.com",
     "bina": "48999999999",
     "webphone_key": "213kbbncs324454ASDcxzln123",
     "ligacao_externa": true,
@@ -113,7 +113,7 @@ Definição do objeto Ramal
 > Definição
 
 ```text
-POST https://api2.totalvoice.com.br/ramal
+POST https://voice-app.zenvia.com/ramal
 ```
 
 > Request
@@ -123,7 +123,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"ramal":"","login":"","senha":""}' \
-             'https://api2.totalvoice.com.br/ramal'
+             'https://voice-app.zenvia.com/ramal'
 ```
 ```php
 <?php
@@ -160,7 +160,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -184,7 +184,7 @@ Em construção
   "dados": {
     "id": 1234,
     "ramal": 4000,
-    "login": "123teste231@totalvoice.com.br",
+    "login": "123teste231@zenvia.com",
     "senha": "123teste23122",
     "bina": null,
     "webphone_key": "123teste231224d549e0408e123teste23122",
@@ -328,7 +328,7 @@ Nenhum campo é obrigatório, mas indicamos que você passe os parâmetros ramal
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/ramal/{id}
+GET https://voice-app.zenvia.com/ramal/{id}
 ```
 
 > Request
@@ -337,7 +337,7 @@ GET https://api2.totalvoice.com.br/ramal/{id}
 curl -X GET --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             'https://api2.totalvoice.com.br/ramal/{id}'
+             'https://voice-app.zenvia.com/ramal/{id}'
 ```
 ```php
 <?php
@@ -366,7 +366,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -390,7 +390,7 @@ Em construção
   "dados": {
     "id": 1234,
     "ramal": "4000",
-    "login": "teste@totalvoiceteste.com.br",
+    "login": "teste@zenvia.com",
     "bina": "48999999999",
     "webphone_key": "testefd3b268b3de8cateste44968",
     "ligacao_externa": true,
@@ -444,7 +444,7 @@ Após o ramal ser criado, você pode consultar suas informações
 > Definição
 
 ```text
-PUT https://api2.totalvoice.com.br/ramal/{id}/fila
+PUT https://voice-app.zenvia.com/ramal/{id}/fila
 ```
 
 > Request
@@ -454,7 +454,7 @@ curl -X PUT --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"senha":"4321789"}' \
-             'https://api2.totalvoice.com.br/ramal/{id}'
+             'https://voice-app.zenvia.com/ramal/{id}'
 ```
 ```php
 <?php
@@ -493,7 +493,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -654,7 +654,7 @@ Em construção
 > Definição
 
 ```text
-PUT https://api2.totalvoice.com.br/ramal/{id}/fila
+PUT https://voice-app.zenvia.com/ramal/{id}/fila
 ```
 
 > Request
@@ -664,7 +664,7 @@ curl -X PUT --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"status_pausa":true, "fila":41}' \
-             'https://api2.totalvoice.com.br/ramal/{id}/fila'
+             'https://voice-app.zenvia.com/ramal/{id}/fila'
 ```
 ```php
 <?php
@@ -692,7 +692,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.RamalFila.Atualizar(ramal_id, data)
 ```
 ```python
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 client.ramal.editarRamalFila(ramal_id, data)
 ```
 ```java
@@ -701,7 +701,7 @@ Central central = new Central(client);
 JSONObject response = central.atualizarRamalFila(ramal_id, data);
 ```
 ```ruby
-@client = TotalVoice::API.new("9754aac7641722789c80c237f9afb4b1", "api2.totalvoice.com.br")
+@client = TotalVoice::API.new("9754aac7641722789c80c237f9afb4b1", "voice-app.zenvia.com")
 puts @client.ramal.atualizar_ramal_fila(ramal_id, data)
 ```
 > Response
@@ -777,7 +777,7 @@ puts @client.ramal.atualizar_ramal_fila(ramal_id, data)
 > Definição
 
 ```text
-DELETE https://api2.totalvoice.com.br/ramal/{id}
+DELETE https://voice-app.zenvia.com/ramal/{id}
 ```
 
 > Request
@@ -786,7 +786,7 @@ DELETE https://api2.totalvoice.com.br/ramal/{id}
 curl -X DELETE --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             'https://api2.totalvoice.com.br/ramal/{id}'
+             'https://voice-app.zenvia.com/ramal/{id}'
 ```
 ```php
 <?php
@@ -814,7 +814,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -877,7 +877,7 @@ Em construção
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/ramal/relatorio
+GET https://voice-app.zenvia.com/ramal/relatorio
 ```
 
 > Request
@@ -885,7 +885,7 @@ GET https://api2.totalvoice.com.br/ramal/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://api2.totalvoice.com.br/ramal/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-app.zenvia.com/ramal/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -909,7 +909,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -1030,7 +1030,7 @@ Em construção
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/ramal/{id}/pausas
+GET https://voice-app.zenvia.com/ramal/{id}/pausas
 ```
 
 > Request
@@ -1038,7 +1038,7 @@ GET https://api2.totalvoice.com.br/ramal/{id}/pausas
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://api2.totalvoice.com.br/ramal/{id}/pausas?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-app.zenvia.com/ramal/{id}/pausas?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -1066,7 +1066,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -1181,7 +1181,7 @@ Em construção
 Lista as ligações <u>recebidas</u> por um ramal no périodo desejado.
 
 ```text
-GET https://api2.totalvoice.com.br/ramal/{id}/relatorio
+GET https://voice-app.zenvia.com/ramal/{id}/relatorio
 ```
 
 > Request
@@ -1189,7 +1189,7 @@ GET https://api2.totalvoice.com.br/ramal/{id}/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://api2.totalvoice.com.br/ramal/{id}/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-app.zenvia.com/ramal/{id}/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -1213,7 +1213,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -1554,7 +1554,7 @@ O nome da "acao" é o maior e o que deve estar dentro do array "acao_dados" é o
 > Definição
 
 ```text
-POST https://api2.totalvoice.com.br/ura
+POST https://voice-app.zenvia.com/ura
 ```
 
 > Request
@@ -1564,7 +1564,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"nome":"Nome URA","dados":[{"acao":"tts","acao_dados":{"mensagem":"Essa é uma mensagem de Exemplo"}}]}' \
-             'https://api2.totalvoice.com.br/ura'
+             'https://voice-app.zenvia.com/ura'
 ```
 ```php
 <?php
@@ -1612,7 +1612,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -1686,7 +1686,7 @@ Veja a lista de opções dos dados/estrutura da URA que podem ser utilizadas.
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/ura/{id}
+GET https://voice-app.zenvia.com/ura/{id}
 ```
 
 > Request
@@ -1695,7 +1695,7 @@ GET https://api2.totalvoice.com.br/ura/{id}
 curl -X GET --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             'https://api2.totalvoice.com.br/ura/{id}'
+             'https://voice-app.zenvia.com/ura/{id}'
 ```
 ```php
 <?php
@@ -1721,7 +1721,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -1807,7 +1807,7 @@ Em construção
 > Definição
 
 ```text
-PUT https://api2.totalvoice.com.br/ura/{id}
+PUT https://voice-app.zenvia.com/ura/{id}
 ```
 
 > Request
@@ -1817,7 +1817,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"nome":"Nome URA","dados":[{"acao":"tts","acao_dados":{"mensagem":"Essa é uma mensagem de Exemplo 2"}}]}' \
-             'https://api2.totalvoice.com.br/ura/{id}'
+             'https://voice-app.zenvia.com/ura/{id}'
 ```
 ```php
 <?php
@@ -1860,7 +1860,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -1934,7 +1934,7 @@ Em construção
 > Definição
 
 ```text
-DELETE https://api2.totalvoice.com.br/ura/{id}
+DELETE https://voice-app.zenvia.com/ura/{id}
 ```
 
 > Request
@@ -1943,7 +1943,7 @@ DELETE https://api2.totalvoice.com.br/ura/{id}
 curl -X DELETE --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             'https://api2.totalvoice.com.br/ura/{id}'
+             'https://voice-app.zenvia.com/ura/{id}'
 ```
 ```php
 <?php
@@ -1971,7 +1971,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java
@@ -2036,7 +2036,7 @@ Em construção
 Retorna a sua lista de URAs e suas estruturas
 
 ```text
-GET https://api2.totalvoice.com.br/ura/relatorio
+GET https://voice-app.zenvia.com/ura/relatorio
 ```
 
 > Request
@@ -2044,7 +2044,7 @@ GET https://api2.totalvoice.com.br/ura/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://api2.totalvoice.com.br/ura/relatorio'
+            'https://voice-app.zenvia.com/ura/relatorio'
 ```
 ```php
 <?php
@@ -2068,7 +2068,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 Em construção
 ```
 ```java

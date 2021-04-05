@@ -62,7 +62,7 @@ func main() {
 ```python
 from totalvoice.cliente import Cliente
 
-cliente = Cliente("{{access-token}}", 'HOST') #ex: api.totalvoice.com.br
+cliente = Cliente("{{access-token}}", 'HOST') #ex: voice-app.zenvia.com
 
 #Cria chamada
 numero_origem = "48999999999"
@@ -99,4 +99,4 @@ public class Main {
 
 ### HTTP Request
 
-`POST http://api2.totalvoice.com.br/chamada`
+`POST http://voice-app.zenvia.com/chamada`

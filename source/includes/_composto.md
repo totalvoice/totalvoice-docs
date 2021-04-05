@@ -3,7 +3,7 @@
 > Composto Endpoint
 
 ```text
-https://api2.totalvoice.com.br/composto
+https://voice-app.zenvia.com/composto
 ```
 
 A funcionalidade de **Envio de Composto**, permite que você envie mensagens de voz por telefone misturando gravações de áudio MP3 com TTS e também realize algumas outras funções de central telefônica como coletar DTMF e transferir.
@@ -316,7 +316,7 @@ Definição do objeto Composto
 > Definição
 
 ```text
-POST https://api2.totalvoice.com.br/composto
+POST https://voice-app.zenvia.com/composto
 ```
 
 > Request
@@ -357,7 +357,7 @@ curl -X POST --header 'Content-Type: application/json' \
                             "ura_id":"1234"
                         }
                     }' \
-			 'https://api2.totalvoice.com.br/composto'
+			 'https://voice-app.zenvia.com/composto'
 ```
 
 
@@ -392,7 +392,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 dados =[  
    {  
       "acao":"audio",
@@ -551,7 +551,7 @@ Basta informar o número de destino válido e um JSON com o composto
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/composto/{id}
+GET https://voice-app.zenvia.com/composto/{id}
 ```
 
 > Request
@@ -559,7 +559,7 @@ GET https://api2.totalvoice.com.br/composto/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api2.totalvoice.com.br/composto/1'
+            --header 'Access-Token: {{access-token}}' 'https://voice-app.zenvia.com/composto/1'
 ```
 ```php
 <?php
@@ -586,7 +586,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.composto.get_by_id("123")
 ```
 ```java
@@ -672,7 +672,7 @@ Após o envio de mensagens composto, você poderá realizar a busca do registro 
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/composto/relatorio
+GET https://voice-app.zenvia.com/composto/relatorio
 ```
 
 > Request
@@ -680,7 +680,7 @@ GET https://api2.totalvoice.com.br/composto/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: {{access-token}}' \
-            'https://api2.totalvoice.com.br/composto/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-app.zenvia.com/composto/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -707,7 +707,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.composto.get_relatorio("2017-12-08T11:00:32-02:00", "2017-12-08T11:00:32-02:00")
 ```
 ```java

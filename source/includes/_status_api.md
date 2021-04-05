@@ -101,7 +101,7 @@ sms |	405 |	PARAMETRO_INVALIDO |	 “o parametro mensagem não pode conter mais 
 sms |	405 |	PARAMETRO_INVALIDO |	“o parametro mensagem não pode conter mais de 16000 caracteres”
 sms |	405 |	PARAMETRO_INVALIDO |	“Mensagem bloqueada por SPAM.”
 sms |	403 |	SEM_PERMISSAO |	“Limite diário de 50 atingido. Ative sua conta no painel para enviar sem limites.”
-sms |	403 |	SEM_PERMISSAO |	“Limite diario de SMS esgotado. Caso precise aumentar seu número máximo de envios de SMS diários, entre em contato com suporte@totalvoice.com.br.”
+sms |	403 |	SEM_PERMISSAO |	“Limite diario de SMS esgotado. Caso precise aumentar seu número máximo de envios de SMS diários, entre em contato com suporte.voz@zenvia.com.”
 sms |	200 |	SUCESSO |	sms criado com sucesso
 tts |	404 |	PARAMETRO_OBRIGATORIO |	 “qual tts? informar ID /tts/ID”
 tts |	404 |	ELEMENTO_NAO_ENCONTRADO |	 “tts não encontrado”

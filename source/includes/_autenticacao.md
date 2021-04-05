@@ -3,7 +3,7 @@
 > <b>Exemplo de autenticação</b>
 
 ```shell--curl
-$ curl https://api.totalvoice.com.br/sms \
+$ curl https://voice-app.zenvia.com/sms \
     --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'
 ```
 
@@ -23,7 +23,7 @@ client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
 
 ```python
 from totalvoice.cliente import Cliente
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'api.totalvoice.com.br')
+client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'voice-app.zenvia.com')
 ```
 
 ```java
