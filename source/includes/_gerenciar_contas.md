@@ -3,7 +3,7 @@
 > Gerenciar Contas End Point
 
 ```text
-https://api.totalvoice.com.br/conta
+https://voice-app.zenvia.com/conta
 ```
 Com a funcionalidade de Gerente de Contas você pode criar, consultar, alterar e deletar contas filhas, sendo as contas filhas exatamente iguais a qualquer outra conta na Zenvia,
 apenas são vinculadas com uma conta pai que tem o controle sobre ela, tendo o intuito de realizar integrações e automatizar processos de uso e revenda de serviços da API.
@@ -21,14 +21,14 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     "id": 3132,
     "nome": "Total Voice Telecom",
     "cpf_cnpj": "00.000.000/0000-00",
-    "login": "totalvoice@totalvoice.com.br",
+    "login": "zenvia@zenvia.com",
     "saldo": 999.99,
     "telefone": "4832830151",
     "access_token": "seu-token",
     "preco_fixo": "0.060",
     "preco_cel": "0.350",
     "preco_ramal": "0.000",
-    "email_financeiro": "totalvoice@totalvoice.com.br",
+    "email_financeiro": "zenvia@zenvia.com",
     "nome_fantasia": "Total Voice",
     "conta_ativa": 1,
     "valor_aviso_saldo_baixo": "150.00",
@@ -141,17 +141,17 @@ Definição do objeto Conta
 > Definição
 
 ```text
-POST https://api.totalvoice.com.br/conta
+POST https://voice-app.zenvia.com/conta
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://api.totalvoice.com.br/conta' \
+curl 'https://voice-app.zenvia.com/conta' \
     -X POST \ 
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' \
-    -d '{"nome" : "Total Voice", "login" : "totalvoice@totalvoice.com.br", "senha" : "senha123"}'
+    -d '{"nome" : "Total Voice", "login" : "zenvia@zenvia.com", "senha" : "senha123"}'
 ```
 ```php
 <?php
@@ -159,7 +159,7 @@ $client = new TotalVoiceClient('seu-token');
 
 $conta_dados = array(
     "nome" => "Total Voice", 
-    "login" => "totalvoice@totalvoice.com.br", 
+    "login" => "zenvia@zenvia.com", 
     "senha" => "senha123"
 );
 $response = $client->conta->criar($conta_dados);
@@ -170,7 +170,7 @@ const client = new totalvoice("seu-token");
 
 var conta_dados = {
     nome: "Total Voice", 
-    login: "totalvoice@totalvoice.com.br", 
+    login: "zenvia@zenvia.com", 
     senha: "senha123"
 };
 
@@ -187,14 +187,14 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 
 conta = new(Conta)
 conta.Nome = "Total Voice"
-conta.Login = "totalvoice@totalvoice.com.br"
+conta.Login = "zenvia@zenvia.com"
 conta.Senha = "senha123"
 
 response, err := client.Conta.Criar(conta)
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
-response = client.conta.criar_conta("Total Voice", "totalvoice@totalvoice.com.br", "senha123")
+client = Cliente("seu-token", 'voice-app.zenvia.com')
+response = client.conta.criar_conta("Total Voice", "zenvia@zenvia.com", "senha123")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
@@ -202,7 +202,7 @@ Conta conta = new Conta(client);
 
 JSONObject contaDados = new JSONObject();
 contaDados.put("nome", "Total Voice");
-contaDados.put("login", "totalvoice@totalvoice.com.br");
+contaDados.put("login", "zenvia@zenvia.com");
 contaDados.put("senha", "senha123");
 
 JSONObject response = conta.criar(contaDados);
@@ -361,13 +361,13 @@ Cria uma nova conta filha.
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/conta/{id}
+GET https://voice-app.zenvia.com/conta/{id}
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://api.totalvoice.com.br/conta/3132' \
+curl 'https://voice-app.zenvia.com/conta/3132' \
     -X GET \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' 
@@ -394,7 +394,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Buscar(3132)
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.conta.get_by_id(3132)
 ```
 ```java
@@ -416,14 +416,14 @@ JSONObject response = conta.buscar(3132);
         "id": 3132,
         "nome": "Total Voice Telecom",
         "cpf_cnpj": "00.000.000/0000-00",
-        "login": "totalvoice@totalvoice.com.br",
+        "login": "zenvia@zenvia.com",
         "saldo": 999.99,
         "telefone": "4832830151",
         "access_token": "seu-token",
         "preco_fixo": "0.060",
         "preco_cel": "0.350",
         "preco_ramal": "0.000",
-        "email_financeiro": "totalvoice@totalvoice.com.br",
+        "email_financeiro": "zenvia@zenvia.com",
         "nome_fantasia": "Total Voice",
         "conta_ativa": 1,
         "valor_aviso_saldo_baixo": "150.00",
@@ -474,13 +474,13 @@ Busca os detalhes de uma conta filha.
 > Definição
 
 ```text
-PUT https://api.totalvoice.com.br/conta/{id}
+PUT https://voice-app.zenvia.com/conta/{id}
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://api.totalvoice.com.br/conta/3132' \
+curl 'https://voice-app.zenvia.com/conta/3132' \
     -X PUT \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' \
@@ -517,8 +517,8 @@ conta.senha = "senha123"
 response, err := client.Conta.Atualizar(conta)
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
-response = client.conta.editar_conta("Total Voice", "totalvoice@totalvoice.com.br", "senha123")
+client = Cliente("seu-token", 'voice-app.zenvia.com')
+response = client.conta.editar_conta("Total Voice", "zenvia@zenvia.com", "senha123")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
@@ -660,13 +660,13 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 > Definição
 
 ```text
-DELETE https://api.totalvoice.com.br/conta/{id}
+DELETE https://voice-app.zenvia.com/conta/{id}
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://api.totalvoice.com.br/conta/3132' \
+curl 'https://voice-app.zenvia.com/conta/3132' \
     -X DELETE \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' \
@@ -693,7 +693,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Excluir(3132)
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.conta.deletar(3132)
 ```
 ```java
@@ -746,13 +746,13 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 > Definição
 
 ```text
-GET https://api.totalvoice.com.br/conta/relatorio
+GET https://voice-app.zenvia.com/conta/relatorio
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://api.totalvoice.com.br/conta/relatorio' \
+curl 'https://voice-app.zenvia.com/conta/relatorio' \
     -X GET \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' 
@@ -779,7 +779,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Relatorio.Gerar()
 ```
 ```python
-client = Cliente("seu-token", 'api.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.conta.get_relatorio()
 ```
 ```java
@@ -803,14 +803,14 @@ JSONObject response = conta.relatorio();
         "id": 3132,
         "nome": "Total Voice Telecom",
         "cpf_cnpj": "00.000.000/0000-00",
-        "login": "totalvoice@totalvoice.com.br",
+        "login": "zenvia@zenvia.com",
         "saldo": 999.99,
         "telefone": "4832830151",
         "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
         "preco_fixo": "0.060",
         "preco_cel": "0.350",
         "preco_ramal": "0.000",
-        "email_financeiro": "totalvoice@totalvoice.com.br",
+        "email_financeiro": "zenvia@zenvia.com",
         "nome_fantasia": "Total Voice",
         "conta_ativa": 1,
         "valor_aviso_saldo_baixo": "150.00",
@@ -821,14 +821,14 @@ JSONObject response = conta.relatorio();
         "id": 3132,
         "nome": "Total Voice Telecom",
         "cpf_cnpj": "00.000.000/0000-00",
-        "login": "totalvoice@totalvoice.com.br",
+        "login": "zenvia@zenvia.com",
         "saldo": 999.99,
         "telefone": "4832830151",
         "access_token": "testeM68PU1Izmb9chEdLzep7IwRymWO",
         "preco_fixo": "0.060",
         "preco_cel": "0.350",
         "preco_ramal": "0.000",
-        "email_financeiro": "totalvoice@totalvoice.com.br",
+        "email_financeiro": "zenvia@zenvia.com",
         "nome_fantasia": "Total Voice",
         "conta_ativa": 1,
         "valor_aviso_saldo_baixo": "150.00",
@@ -868,7 +868,7 @@ Retorna um relatório com todas as suas contas filhas. As contas retornadas no r
 > Definição
 
 ```text
-POST https://api2.totalvoice.com.br/conta/{id}/bonus
+POST https://voice-app.zenvia.com/conta/{id}/bonus
 ```
 
 > Request
@@ -877,7 +877,7 @@ POST https://api2.totalvoice.com.br/conta/{id}/bonus
 curl -X POST --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
             -d '{"valor":"100"}' \
-            'https://api2.totalvoice.com.br/conta/id-conta/bonus'
+            'https://voice-app.zenvia.com/conta/id-conta/bonus'
 ```
 ```php
 Em Contrução
@@ -951,7 +951,7 @@ Este método permite a listagem de todos os webhooks default configurados para s
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/conta/webhook-default
+GET https://voice-app.zenvia.com/conta/webhook-default
 ```
 
 > Request
@@ -960,7 +960,7 @@ GET https://api2.totalvoice.com.br/conta/webhook-default
 curl -X GET --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-            'https://api2.totalvoice.com.br/conta/webhook-default'
+            'https://voice-app.zenvia.com/conta/webhook-default'
 ```
 ```php
 <?php
@@ -976,7 +976,7 @@ response, err := client.WebhookDefault.Listar();
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
+client = Cliente("Seu_Token", 'voice-app.zenvia.com')
 response = client.conta.get_webhook_default()
 ```
 ```java
@@ -1054,7 +1054,7 @@ Este método permite a remoção de um webhook default específico.<a href="#web
 > Definição
 
 ```text
-DELETE https://api2.totalvoice.com.br/conta/webhook-default/{nome_webhook}
+DELETE https://voice-app.zenvia.com/conta/webhook-default/{nome_webhook}
 ```
 
 > Request
@@ -1063,7 +1063,7 @@ DELETE https://api2.totalvoice.com.br/conta/webhook-default/{nome_webhook}
 curl -X DELETE --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-            'https://api2.totalvoice.com.br/conta/webhook-default/chamada_fim'
+            'https://voice-app.zenvia.com/conta/webhook-default/chamada_fim'
 ```
 ```php
 <?php
@@ -1079,7 +1079,7 @@ response, err := client.WebhookDefault.Excluir("nome")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
+client = Cliente("Seu_Token", 'voice-app.zenvia.com')
 client.conta.delete_webhook_default("nome")
 ```
 ```java
@@ -1152,13 +1152,13 @@ puts @client.conta.excluir_webhook_default("nome")
 > Definição
 
 ```text
-PUT https://api2.totalvoice.com.br/conta/webhook-default/{nome_webhook}
+PUT https://voice-app.zenvia.com/conta/webhook-default/{nome_webhook}
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://api2.totalvoice.com.br/conta/webhook-default/chamada_fim' \
+curl 'https://voice-app.zenvia.com/conta/webhook-default/chamada_fim' \
     -X PUT \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: Seu_Token' \
@@ -1182,7 +1182,7 @@ response, err := client.WebhookDefault.Salvar("nome","url");
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
+client = Cliente("Seu_Token", 'voice-app.zenvia.com')
 response = client.conta.edit_webhook_default("nome","url")
 ```
 ```java
