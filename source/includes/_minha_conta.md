@@ -18,7 +18,7 @@ edite suas contas e configure e visualize seus webhooks.
 ```json
 {
     "id": 1,
-    "nome": "Total Voice Telecom",
+    "nome": "Zenvia Telecom",
     "cpf_cnpj": "12.123.123\/0001-10",
     "login": "teste@totalvoice.com.br",
     "saldo": 950.64,
@@ -137,7 +137,7 @@ Definição do objeto Conta
 ```json
 {
     "id": 1,
-    "nome": "Total Voice Telecom",
+    "nome": "Zenvia Telecom",
     "cpf_cnpj": "12.123.123\/0001-10",
     "login": "teste@totalvoice.com.br",
     "saldo": 950.64,
@@ -444,7 +444,7 @@ puts @client.perfil.minha_conta()
   "mensagem": "dados retornados com sucesso",
   "dados": {
     "id": 1,
-    "nome": "Total Voice Telecom",
+    "nome": "Zenvia Telecom",
     "cpf_cnpj": "12.123.123\/0001-10",
     "login": "teste@totalvoice.com.br",
     "saldo": 950.64,
@@ -562,7 +562,7 @@ response, err := client.Perfil.AtualizarConta(perfil)
 from totalvoice.cliente import Cliente
 
 client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
-response = client.perfil.editar_conta("Total Voice")
+response = client.perfil.editar_conta("Zenvia")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
