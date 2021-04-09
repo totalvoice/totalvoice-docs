@@ -19,7 +19,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
 ```json
 {
     "id": 3132,
-    "nome": "Total Voice Telecom",
+    "nome": "Zenvia Telecom",
     "cpf_cnpj": "00.000.000/0000-00",
     "login": "zenvia@zenvia.com",
     "saldo": 999.99,
@@ -29,7 +29,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     "preco_cel": "0.350",
     "preco_ramal": "0.000",
     "email_financeiro": "zenvia@zenvia.com",
-    "nome_fantasia": "Total Voice",
+    "nome_fantasia": "Zenvia",
     "conta_ativa": 1,
     "valor_aviso_saldo_baixo": "150.00",
     "metodo_pagamento": "prepago",
@@ -151,14 +151,14 @@ curl 'https://voice-app.zenvia.com/conta' \
     -X POST \ 
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' \
-    -d '{"nome" : "Total Voice", "login" : "zenvia@zenvia.com", "senha" : "senha123"}'
+    -d '{"nome" : "Zenvia", "login" : "zenvia@zenvia.com", "senha" : "senha123"}'
 ```
 ```php
 <?php
 $client = new TotalVoiceClient('seu-token');
 
 $conta_dados = array(
-    "nome" => "Total Voice", 
+    "nome" => "Zenvia", 
     "login" => "zenvia@zenvia.com", 
     "senha" => "senha123"
 );
@@ -169,7 +169,7 @@ const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
 var conta_dados = {
-    nome: "Total Voice", 
+    nome: "Zenvia", 
     login: "zenvia@zenvia.com", 
     senha: "senha123"
 };
@@ -186,7 +186,7 @@ client.conta.criar(conta_dados)
 client := totalvoice.NewTotalVoiceClient("seu-token")
 
 conta = new(Conta)
-conta.Nome = "Total Voice"
+conta.Nome = "Zenvia"
 conta.Login = "zenvia@zenvia.com"
 conta.Senha = "senha123"
 
@@ -194,14 +194,14 @@ response, err := client.Conta.Criar(conta)
 ```
 ```python
 client = Cliente("seu-token", 'voice-app.zenvia.com')
-response = client.conta.criar_conta("Total Voice", "zenvia@zenvia.com", "senha123")
+response = client.conta.criar_conta("Zenvia", "zenvia@zenvia.com", "senha123")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conta conta = new Conta(client);
 
 JSONObject contaDados = new JSONObject();
-contaDados.put("nome", "Total Voice");
+contaDados.put("nome", "Zenvia");
 contaDados.put("login", "zenvia@zenvia.com");
 contaDados.put("senha", "senha123");
 
@@ -414,7 +414,7 @@ JSONObject response = conta.buscar(3132);
     "mensagem": "dados retornados com sucesso",
     "dados": {
         "id": 3132,
-        "nome": "Total Voice Telecom",
+        "nome": "Zenvia Telecom",
         "cpf_cnpj": "00.000.000/0000-00",
         "login": "zenvia@zenvia.com",
         "saldo": 999.99,
@@ -424,7 +424,7 @@ JSONObject response = conta.buscar(3132);
         "preco_cel": "0.350",
         "preco_ramal": "0.000",
         "email_financeiro": "zenvia@zenvia.com",
-        "nome_fantasia": "Total Voice",
+        "nome_fantasia": "Zenvia",
         "conta_ativa": 1,
         "valor_aviso_saldo_baixo": "150.00",
         "metodo_pagamento": "prepago",
@@ -518,7 +518,7 @@ response, err := client.Conta.Atualizar(conta)
 ```
 ```python
 client = Cliente("seu-token", 'voice-app.zenvia.com')
-response = client.conta.editar_conta("Total Voice", "zenvia@zenvia.com", "senha123")
+response = client.conta.editar_conta("Zenvia", "zenvia@zenvia.com", "senha123")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
@@ -801,7 +801,7 @@ JSONObject response = conta.relatorio();
     "relatorio": [
       {
         "id": 3132,
-        "nome": "Total Voice Telecom",
+        "nome": "Zenvia Telecom",
         "cpf_cnpj": "00.000.000/0000-00",
         "login": "zenvia@zenvia.com",
         "saldo": 999.99,
@@ -811,7 +811,7 @@ JSONObject response = conta.relatorio();
         "preco_cel": "0.350",
         "preco_ramal": "0.000",
         "email_financeiro": "zenvia@zenvia.com",
-        "nome_fantasia": "Total Voice",
+        "nome_fantasia": "Zenvia",
         "conta_ativa": 1,
         "valor_aviso_saldo_baixo": "150.00",
         "metodo_pagamento": "prepago",
@@ -819,7 +819,7 @@ JSONObject response = conta.relatorio();
       },
       {
         "id": 3132,
-        "nome": "Total Voice Telecom",
+        "nome": "Zenvia Telecom",
         "cpf_cnpj": "00.000.000/0000-00",
         "login": "zenvia@zenvia.com",
         "saldo": 999.99,
@@ -829,7 +829,7 @@ JSONObject response = conta.relatorio();
         "preco_cel": "0.350",
         "preco_ramal": "0.000",
         "email_financeiro": "zenvia@zenvia.com",
-        "nome_fantasia": "Total Voice",
+        "nome_fantasia": "Zenvia",
         "conta_ativa": 1,
         "valor_aviso_saldo_baixo": "150.00",
         "metodo_pagamento": "prepago",
