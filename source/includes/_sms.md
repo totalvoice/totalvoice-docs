@@ -3,7 +3,7 @@
 > SMS Endpoint
 
 ```text
-https://api2.totalvoice.com.br/sms
+https://voice-app.zenvia.com/sms
 ```
 
 O **SMS** permite que você envie mensagens de texto pela nossa API. Você precisa informar
@@ -209,7 +209,7 @@ Definição do objeto Resposta SMS
 > Definição
 
 ```text
-POST https://api2.totalvoice.com.br/sms
+POST https://voice-app.zenvia.com/sms
 ```
 
 > Request
@@ -219,7 +219,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
              -d '{"numero_destino":"48111111111","mensagem":"Ola tudo bem?"}' \
-             'https://api2.totalvoice.com.br/sms'
+             'https://voice-app.zenvia.com/sms'
 ```
 ```php
 <?php
@@ -245,7 +245,7 @@ response, err := client.SMS.Enviar("4811111111", "Ola tudo bem?", false, false, 
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.sms.enviar("48111111111", "Ola tudo bem?")
 ```
 ```java
@@ -386,7 +386,7 @@ Para o envio de SMS é necessário informar um número móvel válido e uma mens
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/sms/{id}
+GET https://voice-app.zenvia.com/sms/{id}
 ```
 
 > Request
@@ -394,7 +394,7 @@ GET https://api2.totalvoice.com.br/sms/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://api2.totalvoice.com.br/sms/1'
+            --header 'Access-Token: {{access-token}}' 'https://voice-app.zenvia.com/sms/1'
 ```
 ```php
 <?php
@@ -420,7 +420,7 @@ response, err := client.SMS.Buscar(123)
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.sms.get_by_id("123")
 ```
 ```java
@@ -530,7 +530,7 @@ Após o envio de mensagens de SMS você poderá realizar a busca do registro pel
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/sms/relatorio
+GET https://voice-app.zenvia.com/sms/relatorio
 ```
 
 > Request
@@ -538,7 +538,7 @@ GET https://api2.totalvoice.com.br/sms/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: {{access-token}}' \
-            'https://api2.totalvoice.com.br/sms/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-app.zenvia.com/sms/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -564,7 +564,7 @@ response, err := client.SMS.Relatorio.Gerar(dataInicial, dataFinal)
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.sms.get_relatorio("2017-12-08T11:00:32-02:00", "2017-12-08T11:00:32-02:00")
 ```
 ```java
