@@ -386,10 +386,19 @@ POST https://api2.totalvoice.com.br/chamada
 > Request
 
 ```shell--curl
-curl -X POST --header 'Content-Type: application/json' \
-             --header 'Accept: application/json' \
-             --header 'Access-Token: seu-token' \
-             -d '{"numero_origem":"4811111111","numero_destino":"4811111112"}' \
+curl -X POST --header 'Content-Type: application/json' 
+             --header 'Accept: application/json' 
+             --header 'Access-Token: seu-token' 
+             -d '{
+                    "numero_origem":"4811111111",
+                    "numero_destino":"4811111112",
+                    "data_criacao":"2021-04-08T17:21:20Z",
+                    "gravar_audio":"true",
+                    "bina_origem":"4832830151",
+                    "bina_destino":"4832830152",
+                    "tags":"clienteUm",
+                    "detecta_caixa_origem":"true"
+                 }' 
              'https://api2.totalvoice.com.br/chamada'
 ```
 ```php
@@ -458,7 +467,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número origem, recebe a chamada primeiro.  Exemplo: 4832830151
+                Número origem (perna A), recebe a chamada primeiro do número destino. Exemplo: 4832830151
              </td>
         </tr>
         <tr>
@@ -467,7 +476,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-               Número destino, recebe a chamada após o número origem atender. Exemplo: 4832830151
+               Número destino (perna B), recebe a chamada após o número origem atender. Exemplo: 4832830151
             </td>
         </tr>
         <tr>
@@ -494,7 +503,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA na perna A, formato DDD + Número, exemplo: 4832830151
+                Número de BINA do número origem (perna A) apresentado na chamada para o número destino (perna B). Formato DDD + Número, exemplo: 4832830151
             </td>
         </tr>
         <tr>
@@ -503,7 +512,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA na perna B, formato DDD + Número, exemplo: 4832830151
+                Número de BINA do número destino (perna B) apresentado na chamada para o número origem (perna A). Formato DDD + Número, exemplo: 4832830151
             </td>
         </tr>
         <tr>
@@ -513,6 +522,16 @@ Basta informar o número de origem e destino.
             </td>
             <td>
                 Tags ou comentários sobre esta chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                detecta_caixa_origem
+                <span class="optional">Opcional</span>
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Desconecta automaticamente em até 3s caso caia em caixa postal (vivo, claro, tim, oi)
             </td>
         </tr>
     </tbody>
