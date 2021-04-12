@@ -123,7 +123,7 @@ puts @client.verificacao.enviar("4811111111", "ZenAPI de Voz")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Caso você deseje que o número receba uma ligação ao invés de um SMS, basta enviar esse parâmetro como 'true'.
+                Para que o código de verificação seja enviado por uma ligação (TTS) ao invés de um SMS, basta enviar esse parâmetro como "true". Quando o parâmetro não for enviado, é considerado o valor default "false".
             </td>
         </tr>
     </tbody>
