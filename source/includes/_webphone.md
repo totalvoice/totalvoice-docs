@@ -3,7 +3,7 @@
 > Webphone End Point
 
 ```text
-https://api2.totalvoice.com.br/webphone
+https://voice-app.zenvia.com/webphone
 ```
 
 Webphone é uma maneira de se conectar a um Ramal diretamente por um computador, todo ramal tem uma URL na qual
@@ -23,7 +23,7 @@ Um webphone é vinculado diretamente a um Ramal.
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/webphone
+GET https://voice-app.zenvia.com/webphone
 ```
 
 Consulta a URL do Webphone de um determinado Ramal enviando os parâmetros para pré-configuração do webphone, a URL
@@ -32,7 +32,7 @@ gerada vem com um código único para acesso daquele Webphone sem ser necessári
 > <br/>Request
 
 ```shell--curl
-curl 'https://api2.totalvoice.com.br/webphone?ramal=4000' \
+curl 'https://voice-app.zenvia.com/webphone?ramal=4000' \
     -X GET \
     --header 'Access-Token: Seu_Token'
 ```
@@ -67,7 +67,7 @@ m["ramal"] = 4000
 response, err := client.Ramal.Webphone(m)
 ```
 ```python
-client = Cliente("Seu_Token", 'api2.totalvoice.com.br')
+client = Cliente("Seu_Token", 'voice-app.zenvia.com')
 response = client.webphone.get_webphone("floating", None, 4000)
 ```
 ```java
@@ -89,7 +89,7 @@ JSONObject response = central.webphone(webphone_dados);
     "motivo": 0,
     "mensagem": "url webphone",
     "dados": {
-        "url": "https://api2.totalvoice.com.br/w3/?key=XXXXXXXXXXXXXXXXXXXXXX83b3420&pop=1"
+        "url": "https://voice-app.zenvia.com/w3/?key=XXXXXXXXXXXXXXXXXXXXXX83b3420&pop=1"
     }
 }
 ```

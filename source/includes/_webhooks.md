@@ -678,7 +678,7 @@ A cada mudança dentro de uma conferência você recebe informações, quem entr
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Identificador único (na TotalVoice) do cliente que executou determinada ação na conferência.
+                Identificador único (na Zenvia) do cliente que executou determinada ação na conferência.
             </td>
         </tr> 
         <tr>

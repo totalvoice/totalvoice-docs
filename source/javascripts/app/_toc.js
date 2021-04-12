@@ -61,6 +61,9 @@
 
       // Catch the initial load case
       if (currentTop == scrollOffset && !loaded) {
+        if (window.location.hash.charAt(window.location.hash.length - 1) === '/')
+          window.location.hash = window.location.hash.slice(0, -1);
+
         best = window.location.hash;
         loaded = true;
       }

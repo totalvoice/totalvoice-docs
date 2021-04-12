@@ -3,7 +3,7 @@
 > Chamada Endpoint
 
 ```text
-https://api2.totalvoice.com.br/chamada
+https://voice-app.zenvia.com/chamada
 ```
 
 A funcionalidade **Chamada** permite que você crie chamadas perna A e perna B, podendo gravar as ligações, agendar e binar o seu próprio número.
@@ -380,17 +380,26 @@ a ligação e o **Destino** de quem recebeu a ligação. É nesses objetos que v
 > Definição
 
 ```text
-POST https://api2.totalvoice.com.br/chamada
+POST https://voice-app.zenvia.com/chamada
 ```
 
 > Request
 
 ```shell--curl
-curl -X POST --header 'Content-Type: application/json' \
-             --header 'Accept: application/json' \
-             --header 'Access-Token: seu-token' \
-             -d '{"numero_origem":"4811111111","numero_destino":"4811111112"}' \
-             'https://api2.totalvoice.com.br/chamada'
+curl -X POST --header 'Content-Type: application/json' 
+             --header 'Accept: application/json' 
+             --header 'Access-Token: seu-token' 
+             -d '{
+                    "numero_origem":"4811111111",
+                    "numero_destino":"4811111112",
+                    "data_criacao":"2021-04-08T17:21:20Z",
+                    "gravar_audio":"true",
+                    "bina_origem":"4832830151",
+                    "bina_destino":"4832830152",
+                    "tags":"clienteUm",
+                    "detecta_caixa_origem":"true"
+                 }' 
+             'https://voice-app.zenvia.com/chamada'
 ```
 ```php
 <?php
@@ -417,7 +426,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.chamada.enviar("4811111111", "4811111112")
 ```
 ```java
@@ -458,7 +467,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número origem, recebe a chamada primeiro.  Exemplo: 4832830151
+                Número origem (perna A), recebe a chamada primeiro do número destino. Exemplo: 4832830151
              </td>
         </tr>
         <tr>
@@ -467,7 +476,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-               Número destino, recebe a chamada após o número origem atender. Exemplo: 4832830151
+               Número destino (perna B), recebe a chamada após o número origem atender. Exemplo: 4832830151
             </td>
         </tr>
         <tr>
@@ -494,7 +503,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA na perna A, formato DDD + Número, exemplo: 4832830151
+                Número de BINA do número origem (perna A) apresentado na chamada para o número destino (perna B). Formato DDD + Número, exemplo: 4832830151
             </td>
         </tr>
         <tr>
@@ -503,7 +512,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA na perna B, formato DDD + Número, exemplo: 4832830151
+                Número de BINA do número destino (perna B) apresentado na chamada para o número origem (perna A). Formato DDD + Número, exemplo: 4832830151
             </td>
         </tr>
         <tr>
@@ -513,6 +522,16 @@ Basta informar o número de origem e destino.
             </td>
             <td>
                 Tags ou comentários sobre esta chamada
+            </td>
+        </tr>
+        <tr>
+            <td>
+                detecta_caixa_origem
+                <span class="optional">Opcional</span>
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Desconecta automaticamente em até 3s caso caia em caixa postal (vivo, claro, tim, oi)
             </td>
         </tr>
     </tbody>
@@ -538,7 +557,7 @@ Basta informar o número de origem e destino.
 > Definição
 
 ```text
-POST https://api2.totalvoice.com.br/chamada/{id}
+POST https://voice-app.zenvia.com/chamada/{id}
 ```
 
 > Request
@@ -547,7 +566,7 @@ POST https://api2.totalvoice.com.br/chamada/{id}
 curl -X DELETE --header 'Content-Type: application/json' \
                --header 'Accept: application/json' \
                --header 'Access-Token: seu-token' \
-               'https://api2.totalvoice.com.br/chamada/123'
+               'https://voice-app.zenvia.com/chamada/123'
 ```
 ```php
 <?php
@@ -574,7 +593,7 @@ response, err := client.Chamada.Encerrar(123)
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.chamada.deletar("123")
 ```
 ```java
@@ -624,7 +643,7 @@ Basta informar o id da chamada ativa
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/chamada/{id}
+GET https://voice-app.zenvia.com/chamada/{id}
 ```
 
 > Request
@@ -632,7 +651,7 @@ GET https://api2.totalvoice.com.br/chamada/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/chamada/123'
+            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/chamada/123'
 ```
 ```php
 <?php
@@ -659,7 +678,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.chamada.get_by_id("123")
 ```
 ```java
@@ -764,7 +783,7 @@ Após o envio de chamadas, você poderá realizar a busca do registro pelo seu I
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/chamada/{id}/gravacao
+GET https://voice-app.zenvia.com/chamada/{id}/gravacao
 ```
 
 > Request
@@ -772,7 +791,7 @@ GET https://api2.totalvoice.com.br/chamada/{id}/gravacao
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: seu-token' 'https://api2.totalvoice.com.br/chamada/1/gravacao'
+            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/chamada/1/gravacao'
 ```
 ```php
 <?php
@@ -799,7 +818,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.chamada.get_gravacao_chamada("123")
 ```
 ```java
@@ -866,7 +885,7 @@ Você poderá realizar o download do áudio da chamada. Esta funcionalidade esta
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/chamada/relatorio
+GET https://voice-app.zenvia.com/chamada/relatorio
 ```
 
 > Request
@@ -874,7 +893,7 @@ GET https://api2.totalvoice.com.br/chamada/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://api2.totalvoice.com.br/chamada/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-app.zenvia.com/chamada/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -900,7 +919,7 @@ response, err := client.Chamada.Relatorio.Gerar(dataInicial, dataFinal, filtros)
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.chamada.get_relatorio("2017-12-08T11:00:32-02:00", "2017-12-08T11:00:32-02:00")
 ```
 ```java
@@ -1064,7 +1083,7 @@ Você pode consultar as Chamadas enviadas. Basta informar o período desejado pa
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/chamada/{id}/escuta
+GET https://voice-app.zenvia.com/chamada/{id}/escuta
 ```
 
 > Request
@@ -1073,7 +1092,7 @@ GET https://api2.totalvoice.com.br/chamada/{id}/escuta
 curl -X POST --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"numero":"4811111111", "modo": 1}' \
-             'https://api2.totalvoice.com.br/chamada/123/escuta'
+             'https://voice-app.zenvia.com/chamada/123/escuta'
 ```
 ```php
 <?php
@@ -1099,7 +1118,7 @@ response, err := client.Chamada.Escutar(123, "4811111111", 1)
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.chamada.escuta_chamada("123", '4811111111',"1")
 ```
 ```java
@@ -1203,7 +1222,7 @@ Você pode realizar uma escuta para uma chamada que está **ativa** (Beta).
 > Definição
 
 ```text
-POST https://api2.totalvoice.com.br/chamada/{id}/transfer
+POST https://voice-app.zenvia.com/chamada/{id}/transfer
 ```
 
 > Request
@@ -1212,7 +1231,7 @@ POST https://api2.totalvoice.com.br/chamada/{id}/transfer
 curl -X POST --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
             -d '{"numero":"4811111111", "perna": "destino"}' \
-            'https://api2.totalvoice.com.br/chamada/123/transfer'
+            'https://voice-app.zenvia.com/chamada/123/transfer'
 ```
 ```php
 <?php
@@ -1238,7 +1257,7 @@ response, err := client.Chamada.Transferir(123, "4811111111", "destino")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.chamada.transferir("123", "4811111111", "destino")
 ```
 ```java
@@ -1341,7 +1360,7 @@ Transfere a origem ou destino para outro telefone e desconecta a outra perna (Be
 > Definição
 
 ```text
-GET https://api2.totalvoice.com.br/chamada/{id}/avaliar
+GET https://voice-app.zenvia.com/chamada/{id}/avaliar
 ```
 
 > Request
@@ -1350,7 +1369,7 @@ GET https://api2.totalvoice.com.br/chamada/{id}/avaliar
 curl -X POST --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
             -d '{"numero":"5", "comentario": "muito boa"}' \
-            'https://api2.totalvoice.com.br/chamada/123/avaliar'
+            'https://voice-app.zenvia.com/chamada/123/avaliar'
 ```
 ```php
 <?php
@@ -1376,7 +1395,7 @@ response, err := client.Chamada.Avaliar(123, "5", "muito boa")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'api2.totalvoice.com.br')
+client = Cliente("seu-token", 'voice-app.zenvia.com')
 response = client.chamada.avaliar("123", "5", "muito boa")
 ```
 ```java
