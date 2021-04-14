@@ -464,6 +464,7 @@ Basta informar o número de origem e destino.
         <tr>
             <td>
                 numero_origem
+                <span class="required">Obrigatório</span>
                 <span class="attribute">string</span>
             </td>
             <td>
@@ -473,6 +474,7 @@ Basta informar o número de origem e destino.
         <tr>
             <td>
                 numero_destino
+                <span class="required">Obrigatório</span>
                 <span class="attribute">string</span>
             </td>
             <td>
@@ -482,6 +484,7 @@ Basta informar o número de origem e destino.
         <tr>
             <td>
                 data_criacao
+                <span class="optional">Opcional</span>
                 <span class="attribute">string</span>
             </td>
             <td>
@@ -492,6 +495,7 @@ Basta informar o número de origem e destino.
             <td>
                 gravar_audio
                 <span class="optional">Opcional</span>
+                <span class="attribute">boolean</span>
             </td>
             <td>
                 Flag que indica se o áudio da ligação deve ser gravado
@@ -500,6 +504,7 @@ Basta informar o número de origem e destino.
         <tr>
             <td>
                 bina_origem
+                <span class="optional">Opcional</span>
                 <span class="attribute">string</span>
             </td>
             <td>
@@ -509,6 +514,7 @@ Basta informar o número de origem e destino.
         <tr>
             <td>
                 bina_destino
+                <span class="optional">Opcional</span>
                 <span class="attribute">string</span>
             </td>
             <td>
@@ -518,6 +524,7 @@ Basta informar o número de origem e destino.
         <tr>
             <td>
                 tags
+                <span class="optional">Opcional</span>
                 <span class="attribute">string</span>
             </td>
             <td>

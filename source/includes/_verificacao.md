@@ -27,7 +27,7 @@ POST https://voice-app.zenvia.com/verificacao
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"4811111111","nome_produto":"ZenAPI de Voz"}' \
+             -d '{"numero_destino":"4811111111","nome_produto":"ZenAPI de Voz","tts":"true"}' \
              'https://voice-app.zenvia.com/verificacao'
 ```
 ```php
@@ -114,7 +114,7 @@ puts @client.verificacao.enviar("4811111111", "ZenAPI de Voz")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Tamanho do código que será enviado. Mínimo 4 e máximo 10, o código possui apenas números.
+                Tamanho do código que será enviado. Mínimo 4 e máximo 10, o código possui apenas números. Caso não seja informado, é utilizado o valor default = 4.
             </td>
         </tr>
         <tr>
@@ -123,7 +123,7 @@ puts @client.verificacao.enviar("4811111111", "ZenAPI de Voz")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Caso você deseje que o número receba uma ligação ao invés de um SMS, basta enviar esse parâmetro como 'true'.
+                Para que o código de verificação seja enviado por uma ligação (TTS) ao invés de um SMS, basta enviar esse parâmetro como "true". Quando o parâmetro não for enviado, é considerado o valor default "false".
             </td>
         </tr>
     </tbody>
