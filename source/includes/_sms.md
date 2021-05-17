@@ -6,6 +6,11 @@
 https://voice-app.zenvia.com/sms
 ```
 
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
+
 O **SMS** permite que você envie mensagens de texto pela nossa API. Você precisa informar
 um número de destino e uma mensagem a ser enviada. Existem algumas opções adicionais
 que permitem aguardar uma resposta do usuário, enviar multi sms ou agendar uma 
@@ -14,6 +19,11 @@ data de envio por exemplo.
 ### Objeto Sms
 
 > <br>
+
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
 
 > JSON
 
@@ -148,6 +158,11 @@ Definição do objeto Sms
 
 > <br>
 
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
+
 > JSON
 
 ```json
@@ -274,6 +289,12 @@ puts @client.sms.enviar("48111111111", "Ola tudo bem?")
   }
 }
 ```
+
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
+
 Para o envio de SMS é necessário informar um número móvel válido e uma mensagem de texto.
 
 #### Request
@@ -461,6 +482,11 @@ puts @client.sms.buscar(123)
 }
 ```
 
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
+
 Após o envio de mensagens de SMS você poderá realizar a busca do registro pelo seu ID.
 
 ##### Request
@@ -622,6 +648,11 @@ puts @client.sms.relatorio(data_inicial, data_final)
   }
 }
 ```
+
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
 
 Você pode consultar os SMSs enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.
 
