@@ -15,23 +15,23 @@ JSON DADOS do exemplo:
 ```json
 [
 	{
-		acao: audio,
-		acao_dados: {
-						url_audio: http://fooooo.bar/composto.mp3
+		"acao": "audio",
+		"acao_dados": {
+						"url_audio": "http://fooooo.bar/composto.mp3"
 					}
 	},
 	{
-		acao: tts,
-		acao_dados: {
+		"acao": "tts",
+		"acao_dados": {
 						"mensagem": "Você possui uma consulta agendada para amanhã 18h. Aperte 1 para confirmar ou 2 para ser remarcar",
 						"resposta_usuario": "true",
 						"tipo_voz": "br-Ricardo"
 					}
 	},
 	{
-		acao: transferir,
-		opcao: 2,
-		acao_dados: {
+		"acao": "transferir",
+		"opcao": 2,
+		"acao_dados": {
 						"numero_telefone": "1132830151",
 						 "bina": "1132830152" 
 					}
@@ -83,7 +83,13 @@ As regras para o arquivo de áudio são as mesmas:
     "resposta_usuario": true,
     "resposta": "8",
 	"tags": "clienteX",
-    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
+    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
+    "bina": "+5548988888888",
+    "chamada_verificada": true,
+    "motivo_vcall": {
+        "id": 123,
+        "mensagem": "Texto do motivo"
+    }
 	
 }
 ```
@@ -306,6 +312,34 @@ Definição do objeto Composto
                 </ul>
             </td>
         </tr>
+        <tr>
+              <td>
+                  bina
+                  <span class="attribute">string</span>
+              </td>
+              <td>
+                    Número de telefone que aparece no identificador de quem recebe a chamada
+              </td>
+          </tr>
+        <tr>
+         <tr>
+              <td>
+                  chamada_verificada
+                  <span class="attribute">boolean</span>
+              </td>
+              <td>
+                    Se o composto foi enviado com chamada verificada
+              </td>
+          </tr>
+        <tr>
+            <td>
+                motivo_vcall
+                <span class="attribute">objeto</span>
+            </td>
+            <td>
+                Objeto do tipo <a href="#objeto-motivo-vcall">Motivos VCall</a>
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -522,7 +556,25 @@ Basta informar o número de destino válido e um JSON com o composto
                 Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>. 
             </td>
         </tr>
-   
+        <tr>
+            <td>
+                chamada_verificada
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                 Um valor booleano para identificar se o composto terá chamada verificada
+            </td>
+        </tr>
+         <tr>
+            <td>
+                motivo_vcall
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Id do motivo vcall da chamada verificada
+            </td>
+        </tr>
+    </tbody>
     </tbody>
 </table>
 
@@ -627,7 +679,13 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta_usuario": true,
 	    "resposta": "8",
 	    "tags": "clienteX",
-	    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
+	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
+        "bina": "+5548988888888",
+        "chamada_verificada": true,
+        "motivo_vcall": {
+            "id": 123,
+            "mensagem": "Texto do motivo"
+        }
     }
 }
 ```
@@ -751,7 +809,13 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta_usuario": true,
 	    "resposta": "8",
 	    "tags": "clienteX",
-	    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
+	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
+        "bina": "+5548988888888",
+        "chamada_verificada": true,
+        "motivo_vcall": {
+            "id": 123,
+            "mensagem": "Texto do motivo"
+        }
       },
       {
 	    "id": 433,
@@ -770,10 +834,14 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta_usuario": true,
 	    "resposta": "8",
 	    "tags": "clienteX",
-	    "url_gravacao": "http://fooooo.bar/gravacao.mp3"
-
+	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
+        "bina": "+5548988888888",
+        "chamada_verificada": false,
+        "motivo_vcall": {
+            "id": null,
+            "mensagem": null
+        }
       }
-
     ]
   }
 }

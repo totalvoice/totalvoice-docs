@@ -27,8 +27,7 @@ Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, en
     "tags": "",
     "motivo_vcall": {
         "id": 53,
-        "motivo": "Estamos retornando a sua solicitação",
-        "status": "Aprovado"
+        "motivo": "Estamos retornando a sua solicitação"
     }        
 }
 ```
@@ -975,8 +974,7 @@ Em construção
         "tags": "",
         "motivo_vcall": {
             "id": 53,
-            "motivo": "Estamos retornando a sua solicitação",
-            "status": "Aprovado"
+            "motivo": "Estamos retornando a sua solicitação"
         }
       },
       {
