@@ -575,7 +575,6 @@ Basta informar o número de destino válido e um JSON com o composto
             </td>
         </tr>
     </tbody>
-    </tbody>
 </table>
 
 

@@ -220,7 +220,7 @@ Definição do objeto Áudio
                 Quando enviado a opção Gravar Áudio = true, este campo disponibilizará uma URL contendo o áudio da gravação da ligação.
             </td>
         </tr>
-         <tr>
+        <tr>
               <td>
                   bina
                   <span class="attribute">string</span>
