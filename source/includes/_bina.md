@@ -237,6 +237,10 @@ Envia um número de telefone para que receba um código via SMS (celular) ou TSS
     </tbody>
 </table>
 
+<br>
+<br>
+<br>
+<br>
 
 ### Validar uma Bina
 
@@ -438,7 +442,14 @@ Após a criação de uma bina, você poderá realizar a busca do registro pelo s
 <br>
 <br>
 <br>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Deletar uma Bina
 
@@ -490,6 +501,12 @@ Caso a Bina esteja vinculada ao Caller ID Default ou à um motivo de Chamada Ver
 }
 ```
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
