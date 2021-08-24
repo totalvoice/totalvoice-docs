@@ -261,7 +261,7 @@ POST https://voice-app.zenvia.com/tts
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"4811111111","mensagem":"Olá", "chamada_verificada": true, "motivo_vcall": 57}' \
+             -d '{"numero_destino":"+554888881111", "bina": "+554811111111", "mensagem":"Olá", "chamada_verificada": true, "motivo_vcall": 57}' \
              'https://voice-app.zenvia.com/tts'
 ```
 ```php
