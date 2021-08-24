@@ -1408,6 +1408,15 @@ Em construção
             "acao_dados": {
                 "fila_id": "1234"
             }
+        },
+        {
+            "timeout": 2,
+            "menu": "menu 8",
+            "opcao": "8",
+            "acao": "digiteramal",
+            "acao_dados": {
+                "mensagem": "Digite o ramal desejado"
+            }
         }
     ]
 }
@@ -1517,11 +1526,11 @@ O nome da "acao" é o maior e o que deve estar dentro do array "acao_dados" é o
         </tr>
         <tr>
             <td>
-                stt
-                <span class="attribute">url</span>
+                digiteramal
+                <span class="attribute">mensagem</span>
             </td>
             <td>
-               Transcreve um áudio em um texto e envia para a url cadastrada. Veja mais sobre clicando aqui.
+               Mensagem que será reproduzida em formato de áudio ao cliente para solicitar a digitação de um ramal. A chamada será direcionada para o ramal informado.
             </td>
         </tr>
         <tr>
