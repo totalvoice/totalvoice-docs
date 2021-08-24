@@ -267,7 +267,7 @@ POST https://voice-app.zenvia.com/audio
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"4811111111","url_audio":"http://sua.url.audio/audio.mp3"}' \
+             -d '{"numero_destino":"4811111111","url_audio":"http://sua.url.audio/audio.mp3", "chamada_verificada": true, "motivo_vcall": 57}' \
              'https://voice-app.zenvia.com/audio'
 ```
 ```php

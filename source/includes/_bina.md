@@ -166,11 +166,11 @@ POST https://voice-app.zenvia.com/bina
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-             -d '{"telefone":"+5548988888888"}' \
+             -d '{"telefone":"+5548988888888", "mensagem_sms": "Teste SMS", "mensagem_tts": "Teste TTS"}' \
              'https://voice-app.zenvia.com/bina'
 ```
 
-Envia um número de telefone para que receba um código via SMS (celular) ou TSS (fixo). Nossa API identificará automaticamente o tipo de número (fixo ou móvel) e enviará a mensagem com o cóidgo.
+Envia um número de telefone para que receba um código via SMS (celular) ou TSS (fixo). Nossa API identificará automaticamente o tipo de número (fixo ou móvel) e enviará a mensagem com o código.
 
 #### Request
 
@@ -180,6 +180,7 @@ Envia um número de telefone para que receba um código via SMS (celular) ou TSS
             <td>
                 telefone
                 <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Número do telefone que irá receber a Chamada (fixo) ou SMS (móvel) com o código para validação
@@ -189,6 +190,7 @@ Envia um número de telefone para que receba um código via SMS (celular) ou TSS
             <td>
                 mensagem_sms
                 <span class="optional">Opcional</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Mensagem customizada para validação da Bina para números móveis (SMS). Temos a opção de enviar uma mensagem customizada com formatação de String (%s)
@@ -198,6 +200,7 @@ Envia um número de telefone para que receba um código via SMS (celular) ou TSS
             <td>
                 mensagem_tts
                 <span class="optional">Opcional</span>
+                <span class="attribute">string</span>
             </td>
             <td>
                 Mensagem customizada para validação da Bina para números fixos (TTS). Temos a opção de enviar uma mensagem customizada com formatação de String (%s)
@@ -381,10 +384,15 @@ Após a criação de uma bina, você poderá realizar a busca do registro pelo s
     "confirmado": true,
     "chamadas_verificadas": [
         {
-            "id": 53,
-            "motivo": "Estamos retornando a sua solicitação",
+            "id": 2678,
+            "motivo": "Estamos retornando sua solicitação de contato",
             "status": "Aprovado"
-        }
+       },
+       {
+            "id": 2998,
+            "motivo": "Estamos retornando sua solicitação de contato",
+            "status": "Aprovado"
+       }
     ]
 }
 }
@@ -449,7 +457,10 @@ curl -X DELETE --header 'Content-Type: application/json' \
             'https://voice-app.zenvia.com/bina/1'
 ```
 
-Remove a bina identificada pelo ID informado
+Apaga o número de telefone (Bina) cadastrado na Conta. Você deve informar o ID da bina que deseja remover. O método ainda aceita como parâmetro o número de telefone para remoção da bina, mas esta opção será desativada em breve.
+
+Caso a Bina esteja vinculada ao Caller ID Default ou à um motivo de Chamada Verificada, será necessário desvincular via painel de voz, antes de deletar.
+
 
 #### Request
 

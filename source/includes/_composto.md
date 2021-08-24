@@ -360,7 +360,9 @@ curl -X POST --header 'Content-Type: application/json' \
 			 --header 'Accept: application/json' \
 			 --header 'Access-Token: seu-token' \
 			 -d '{
-                 "numero_destino":"1132830151",
+                "numero_destino":"1132830151",
+                "chamada_verificada": true, 
+                "motivo_vcall": 57,
                 "dados":[
                     {  
                         "acao":"audio",
