@@ -6,13 +6,15 @@
 https://voice-app.zenvia.com/bina
 ```
 
-Bina é o número identificador do telefone de origiem e que aparece no telefone do destino.
+Bina é o número identificador do telefone de origem e que aparece no telefone do destino.
 
-Este endpoint permite que você cadastre e valide suas binas para utilizá-las em chamadas e torpedos de voz com o intuito de identificar ao destino que ligação é de origem sua.
+Este endpoint permite que você cadastre e valide suas binas para utilizá-las em chamadas e torpedos de voz com o intuito de identificar ao destino que a ligação é sua, independente do número que estiver sendo utilizado para realizar a chamada.
 
 Tendo a sua bina cadastrada e aprovada, você pode vincular Motivos VCall (Motivos de Chamadas Verificadas) a ela. 
 
-Chamada Verificada é um recurso do Google para previnir spam e golpes por telefone, ao mesmo tempo em que ajuda empresas legítimas a transmitirem mais confiança e segurança para os seus clientes.
+Chamadas Verificadas são um recurso para prevenir spam e golpes por telefone, ao mesmo tempo em que ajuda empresas legítimas a transmitirem mais confiança e segurança para os seus clientes.
+
+Para utilizar as Chamadas Verificadas, é necessário fazer a contratação prévia da funcionalidade.
 
 
 ### Objeto Bina
@@ -170,7 +172,7 @@ curl -X POST --header 'Content-Type: application/json' \
              'https://voice-app.zenvia.com/bina'
 ```
 
-Envia um número de telefone para que receba um código via SMS (celular) ou TSS (fixo). Nossa API identificará automaticamente o tipo de número (fixo ou móvel) e enviará a mensagem com o código.
+Envia um número de telefone para que receba um código via SMS (celular) ou TTS (fixo). Nossa API identificará automaticamente o tipo de número (fixo ou móvel) e enviará a mensagem com o código.
 
 #### Request
 
@@ -468,7 +470,7 @@ curl -X DELETE --header 'Content-Type: application/json' \
             'https://voice-app.zenvia.com/bina/1'
 ```
 
-Apaga o número de telefone (Bina) cadastrado na Conta. Você deve informar o ID da bina que deseja remover. O método ainda aceita como parâmetro o número de telefone para remoção da bina, mas esta opção será desativada em breve.
+Apaga o número de telefone (Bina) cadastrado na Conta. Você deve informar o ID da bina que deseja remover.
 
 Caso a Bina esteja vinculada ao Caller ID Default ou à um motivo de Chamada Verificada, será necessário desvincular via painel de voz, antes de deletar.
 
