@@ -555,6 +555,32 @@
               </ul>
           </li>
            <li>
+            <a href="#bina" class="toc-h1 toc-link" data-title="Bina">Bina</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#objeto-bina" class="toc-h2 toc-link" data-title="Objeto Bina">Objeto Bina</a>
+                  </li>
+                  <li>
+                    <a href="#objeto-motivo-vcall" class="toc-h2 toc-link" data-title="Objeto Motivo VCall">Objeto Motivo VCall</a>
+                  </li>
+                  <li>
+                    <a href="#cadastrar-uma-bina" class="toc-h2 toc-link" data-title="Cadastrar uma Bina">Cadastrar uma Bina</a>
+                  </li>
+                  <li>
+                    <a href="#validar-uma-bina" class="toc-h2 toc-link" data-title="Validar uma Bina">Validar uma Bina</a>
+                  </li>
+                  <li>
+                    <a href="#buscar-uma-bina" class="toc-h2 toc-link" data-title="Buscar uma Bina">Buscar uma Bina</a>
+                  </li>
+                  <li>
+                    <a href="#deletar-uma-bina" class="toc-h2 toc-link" data-title="Deletar uma Bina">Deletar uma Bina</a>
+                  </li>
+                  <li>
+                    <a href="#relatorio-bina" class="toc-h2 toc-link" data-title="Relatório Bina">Relatório Bina</a>
+                  </li>
+              </ul>
+          </li>
+           <li>
             <a href="#sms" class="toc-h1 toc-link" data-title="SMS">SMS</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1139,7 +1165,13 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://voice-app.zenvia.com/rec/123456789"</span><span class="w">
+    </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://voice-app.zenvia.com/rec/123456789"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texto do motivo"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Definição do objeto Áudio</p>
@@ -1308,6 +1340,34 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 Quando enviado a opção Gravar Áudio = true, este campo disponibilizará uma URL contendo o áudio da gravação da ligação.
             </td>
         </tr>
+        <tr>
+              <td>
+                  bina
+                  <span class="attribute">string</span>
+              </td>
+              <td>
+                    Número de telefone que aparece no identificador de quem recebe a chamada
+              </td>
+          </tr>
+        <tr>
+         <tr>
+              <td>
+                  chamada_verificada
+                  <span class="attribute">boolean</span>
+              </td>
+              <td>
+                    Se o áudio foi enviado com chamada verificada
+              </td>
+          </tr>
+        <tr>
+            <td>
+                motivo_vcall
+                <span class="attribute">objeto</span>
+            </td>
+            <td>
+                Objeto do tipo <a href="#objeto-motivo-vcall">Motivos VCall</a>
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -1325,7 +1385,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"4811111111","url_audio":"http://sua.url.audio/audio.mp3"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"+5548988881111", "bina": "+554811111111" ,url_audio":"http://sua.url.audio/audio.mp3", "chamada_verificada": true, "motivo_vcall": 57}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-app.zenvia.com/audio'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
@@ -1439,6 +1499,24 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>.
             </td>
         </tr>
+        <tr>
+            <td>
+                chamada_verificada
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                 Um valor booleano para identificar se o áudio terá chamada verificada
+            </td>
+        </tr>
+         <tr>
+            <td>
+                motivo_vcall
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Id do motivo vcall da chamada verificada
+            </td>
+        </tr>
     </tbody>
 </table>
 <h4 id='response'>Response</h4>
@@ -1525,7 +1603,13 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
         </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texto do motivo"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1628,7 +1712,13 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
         </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texto do motivo"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
@@ -1648,7 +1738,13 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
         </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -1743,7 +1839,11 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     </span><span class="s2">"webphone"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ura_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"voicemail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estamos retornando a sua solicitação"</span><span class="w">
+    </span><span class="p">}</span><span class="w">        
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Definição do objeto Ramal</p>
@@ -1822,6 +1922,15 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                  Grava as ligações deste ramal
               </td>
           </tr>
+          <tr>
+              <td>
+                  motivo_vcall
+                  <span class="attribute">objeto</span>
+              </td>
+              <td>
+                 Objeto do tipo <a href="#objeto-motivo-vcall">Motivos VCall</a>
+              </td>
+          </tr>
     </tbody>
 </table>
 <h3 id='criar-um-ramal'>Criar um ramal</h3>
@@ -1897,7 +2006,8 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     </span><span class="s2">"webphone"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ura_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"voicemail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -2004,6 +2114,15 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 Se esse valor for igual a true, ao ligar para esse ramal ele será encaminhado para uma caixa postal que gravará recados. (Não irá chamar no usuário)
             </td>
         </tr>
+        <tr>
+            <td>
+                motivo_vcall
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Id do motivo vcall
+            </td>
+        </tr>
     </tbody>
 </table>
 <h5 id='response'>Response</h5>
@@ -2083,7 +2202,8 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     </span><span class="s2">"webphone"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ura_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"voicemail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -2288,6 +2408,15 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             </td>
             <td>
                 Se esse valor for igual a true, ao ligar para esse ramal ele será encaminhado para uma caixa postal que gravará recados.(Não irá chamar no usuário)
+            </td>
+        </tr>
+         <tr>
+            <td>
+                motivo_vcall
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Id do motivo vcall
             </td>
         </tr>
     </tbody>
@@ -2542,7 +2671,11 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
         </span><span class="s2">"webphone"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ura_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"voicemail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estamos retornando a sua solicitação"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4567</span><span class="p">,</span><span class="w">
@@ -2557,7 +2690,8 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
         </span><span class="s2">"webphone"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ura_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"voicemail"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -2931,6 +3065,15 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
             </span><span class="s2">"acao_dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"fila_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="w">
             </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"menu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"menu 8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"opcao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"acao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"digiteramal"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"acao_dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Digite o ramal desejado"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3037,11 +3180,11 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
         </tr>
         <tr>
             <td>
-                stt
-                <span class="attribute">url</span>
+                digiteramal
+                <span class="attribute">mensagem</span>
             </td>
             <td>
-               Transcreve um áudio em um texto e envia para a url cadastrada. Veja mais sobre clicando aqui.
+               Mensagem que será reproduzida em formato de áudio ao cliente para solicitar a digitação de um ramal. A chamada será direcionada para o ramal informado.
             </td>
         </tr>
         <tr>
@@ -5773,23 +5916,23 @@ a ligação e o <strong>Destino</strong> de quem recebeu a ligação. É nesses 
 JSON DADOS do exemplo:</p>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="err">acao</span><span class="p">:</span><span class="w"> </span><span class="err">audio</span><span class="p">,</span><span class="w">
-        </span><span class="err">acao_dados</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="err">url_audio</span><span class="p">:</span><span class="w"> </span><span class="err">http</span><span class="p">:</span><span class="err">//fooooo.bar/composto.mp</span><span class="mi">3</span><span class="w">
+        </span><span class="s2">"acao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"audio"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"acao_dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"url_audio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/composto.mp3"</span><span class="w">
                     </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="err">acao</span><span class="p">:</span><span class="w"> </span><span class="err">tts</span><span class="p">,</span><span class="w">
-        </span><span class="err">acao_dados</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"acao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tts"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"acao_dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                         </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Você possui uma consulta agendada para amanhã 18h. Aperte 1 para confirmar ou 2 para ser remarcar"</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="s2">"true"</span><span class="p">,</span><span class="w">
                         </span><span class="s2">"tipo_voz"</span><span class="p">:</span><span class="w"> </span><span class="s2">"br-Ricardo"</span><span class="w">
                     </span><span class="p">}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="err">acao</span><span class="p">:</span><span class="w"> </span><span class="err">transferir</span><span class="p">,</span><span class="w">
-        </span><span class="err">opcao</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="err">acao_dados</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"acao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transferir"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"opcao"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"acao_dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                         </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1132830151"</span><span class="p">,</span><span class="w">
                          </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1132830152"</span><span class="w"> 
                     </span><span class="p">}</span><span class="w">
@@ -5840,7 +5983,13 @@ JSON DADOS do exemplo:</p>
     </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clienteX"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="w">
+    </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texto do motivo"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -6060,6 +6209,34 @@ JSON DADOS do exemplo:</p>
                 </ul>
             </td>
         </tr>
+        <tr>
+              <td>
+                  bina
+                  <span class="attribute">string</span>
+              </td>
+              <td>
+                    Número de telefone que aparece no identificador de quem recebe a chamada
+              </td>
+          </tr>
+        <tr>
+         <tr>
+              <td>
+                  chamada_verificada
+                  <span class="attribute">boolean</span>
+              </td>
+              <td>
+                    Se o composto foi enviado com chamada verificada
+              </td>
+          </tr>
+        <tr>
+            <td>
+                motivo_vcall
+                <span class="attribute">objeto</span>
+            </td>
+            <td>
+                Objeto do tipo <a href="#objeto-motivo-vcall">Motivos VCall</a>
+            </td>
+        </tr>
     </tbody>
 </table>
 <h2 id='criar-um-composto'>Criar um Composto</h2>
@@ -6075,7 +6252,10 @@ JSON DADOS do exemplo:</p>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
              -d <span class="s1">'{
-                 "numero_destino":"1132830151",
+                "numero_destino":"+551132830151",
+                "chamada_verificada": true, 
+                "motivo_vcall": 57,
+                "bina": "+5548988881111",
                 "dados":[
                     {  
                         "acao":"audio",
@@ -6095,8 +6275,8 @@ JSON DADOS do exemplo:</p>
                         "acao":"transferir",
                         "opcao":1,
                         "acao_dados":{  
-                            "numero_telefone":"4832830151",
-                            "bina":"4832830152"
+                            "numero_telefone":"+554832830151",
+                            "bina":"+554832830152"
                         }
                     },
                         {  
@@ -6252,7 +6432,24 @@ JSON DADOS do exemplo:</p>
                 Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>. 
             </td>
         </tr>
-   
+        <tr>
+            <td>
+                chamada_verificada
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                 Um valor booleano para identificar se o composto terá chamada verificada
+            </td>
+        </tr>
+         <tr>
+            <td>
+                motivo_vcall
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Id do motivo vcall da chamada verificada
+            </td>
+        </tr>
     </tbody>
 </table>
 <h4 id='response'>Response</h4>
@@ -6338,7 +6535,13 @@ JSON DADOS do exemplo:</p>
         </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clienteX"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="w">
+        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texto do motivo"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -6440,7 +6643,13 @@ JSON DADOS do exemplo:</p>
         </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clienteX"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="w">
+        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texto do motivo"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">433</span><span class="p">,</span><span class="w">
@@ -6459,10 +6668,14 @@ JSON DADOS do exemplo:</p>
         </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clienteX"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="w">
-
+        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
-
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -10336,6 +10549,550 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <br>
 <br>
 <br></p>
+<h1 id='bina'>Bina</h1>
+<blockquote>
+<p>Bina Endpoint</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://voice-app.zenvia.com/bina
+</code></pre>
+<p>Bina é o número identificador do telefone de origem e que aparece no telefone do destino.</p>
+
+<p>Este endpoint permite que você cadastre e valide suas binas para utilizá-las em chamadas e torpedos de voz com o intuito de identificar ao destino que a ligação é sua, independente do número que estiver sendo utilizado para realizar a chamada.</p>
+
+<p>Tendo a sua bina cadastrada e aprovada, você pode vincular Motivos VCall (Motivos de Chamadas Verificadas) a ela. </p>
+
+<p>Chamadas Verificadas são um recurso para prevenir spam e golpes por telefone, ao mesmo tempo em que ajuda empresas legítimas a transmitirem mais confiança e segurança para os seus clientes.</p>
+
+<p>Para utilizar as Chamadas Verificadas, é necessário fazer a contratação prévia da funcionalidade.</p>
+<h3 id='objeto-bina'>Objeto Bina</h3>
+<blockquote>
+<p>JSON</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548911111111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-18T00:51:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fixo"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"confirmado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chamadas_verificadas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estamos retornando a sua solicitação"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aprovado"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Definição do objeto Bina</p>
+<h4 id='atributos'>Atributos</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro de Bina
+             </td>
+        </tr>
+        <tr>
+            <td>
+                numero_telefone
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número do telefone que será binado
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_criacao
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi criado o registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                fixo
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Se o número da bina se refere a um telefone fixo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                confirmado
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Se está confirmado que o número de telefone da bina pertence a você
+            </td>
+        </tr>
+        <tr>
+            <td>
+                chamadas_verificadas
+                <span class="attribute">array</span>
+            </td>
+            <td>
+               Um array de <a href="#objeto-motivo-vcall">Motivos VCall</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3 id='objeto-motivo-vcall'>Objeto Motivo VCall</h3>
+<blockquote>
+<p><br></p>
+
+<p>JSON</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estamos retornando a sua solicitação"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aprovado"</span><span class="w">
+</span><span class="p">}</span><span class="w">   
+</span></code></pre>
+<p>Motivo VCall são os motivos das Chamadas Verificadas. Os Motivos Vcall são vinculados a bina e são cadastrados atráves do painel em <a href="https://voice-app.zenvia.com/painel/">voice-app.zenvia.com/painel/</a></p>
+
+<p>Definição do objeto Motivo VCall</p>
+<h4 id='atributos-2'>Atributos</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do motivo da Chamada Verificada
+             </td>
+        </tr>
+        <tr>
+            <td>
+                motivo
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Motivo da Chamada Verificada que aparecerá no display do aparelho celular do destino
+            </td>
+        </tr>
+        <tr>
+            <td>
+                status
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Informa qual o status do motivo da Chamada Verificada. Pode ser <b>Aprovado</b> | <b>Em análise</b> | <b>Recusado</b>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3 id='cadastrar-uma-bina'>Cadastrar uma Bina</h3>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>POST https://voice-app.zenvia.com/bina
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"telefone":"+5548988888888", "mensagem_sms": "Teste SMS", "mensagem_tts": "Teste TTS"}'</span> <span class="se">\</span>
+             <span class="s1">'https://voice-app.zenvia.com/bina'</span>
+</code></pre>
+<p>Envia um número de telefone para que receba um código via SMS (celular) ou TTS (fixo). Nossa API identificará automaticamente o tipo de número (fixo ou móvel) e enviará a mensagem com o código.</p>
+<h4 id='request'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                telefone
+                <span class="required">Obrigatório</span>
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número do telefone que irá receber a Chamada (fixo) ou SMS (móvel) com o código para validação
+             </td>
+        </tr>
+        <tr>
+            <td>
+                mensagem_sms
+                <span class="optional">Opcional</span>
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Mensagem customizada para validação da Bina para números móveis (SMS). Temos a opção de enviar uma mensagem customizada com formatação de String (%s)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                mensagem_tts
+                <span class="optional">Opcional</span>
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Mensagem customizada para validação da Bina para números fixos (TTS). Temos a opção de enviar uma mensagem customizada com formatação de String (%s)
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4 id='response'>Response</h4>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Código enviado com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                Null
+                <span class="attribute">Null</span>
+            </td>
+            <td>
+                O retorno é nulo, apenas uma mensagem informando que o código foi enviado para o número fornecido
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br>
+<br>
+<br></p>
+<h3 id='validar-uma-bina'>Validar uma Bina</h3>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://voice-app.zenvia.com/bina
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
+            <span class="s1">'https://voice-app.zenvia.com/bina?codigo=1234&amp;telefone=+5548988888888'</span>
+</code></pre>
+<p>Você deve informar o número do telefone e o código recebido no celular (SMS) ou telefone (TTS) informados no método POST, para realizarmos a validação</p>
+<h4 id='request-2'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                telefone
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número do telefone que será validado
+             </td>
+        </tr>
+        <tr>
+            <td>
+                codigo
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Código que será validado
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4 id='response-2'>Response</h4>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verificação realizada com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"valido"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                valido
+                <span class="attribute">booleano</span>
+            </td>
+            <td>
+               Retorna true se o código e o número conferem. Caso contrário retorna false
+             </td>
+        </tr>
+        <tr>
+            <td>
+                id
+                <span class="attribute">Integer</span>
+            </td>
+            <td>
+               Retorna o ID da bina cadastrada
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
+<h3 id='buscar-uma-bina'>Buscar uma Bina</h3>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://voice-app.zenvia.com/bina/{id}
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Accept: application/json'</span> <span class="se">\ </span>
+            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
+            <span class="s1">'https://voice-app.zenvia.com/bina/1'</span>
+</code></pre>
+<p>Após a criação de uma bina, você poderá realizar a busca do registro pelo seu ID</p>
+<h4 id='request-3'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                ID
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID da Bina para recuperar os dados
+             </td>
+        </tr>
+    </tbody>
+</table>
+<h4 id='response-3'>Response</h4>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dados retornados com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-18T00:51:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fixo"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"confirmado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chamadas_verificadas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2678</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estamos retornando sua solicitação de contato"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aprovado"</span><span class="w">
+       </span><span class="p">},</span><span class="w">
+       </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2998</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estamos retornando sua solicitação de contato"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aprovado"</span><span class="w">
+       </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+               Retorna o objeto <a href="#objeto-bina">Bina</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
+<h3 id='deletar-uma-bina'>Deletar uma Bina</h3>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>DELETE https://voice-app.zenvia.com/bina/{id}
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X DELETE --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Accept: application/json'</span> <span class="se">\ </span>
+            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
+            <span class="s1">'https://voice-app.zenvia.com/bina/1'</span>
+</code></pre>
+<p>Apaga o número de telefone (Bina) cadastrado na Conta. Você deve informar o ID da bina que deseja remover.</p>
+
+<p>Caso a Bina esteja vinculada ao Caller ID Default ou à um motivo de Chamada Verificada, será necessário desvincular via painel de voz, antes de deletar.</p>
+<h4 id='request-4'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                ID
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID da Bina a ser removida
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bina removida com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
+<h3 id='relatorio-bina'>Relatório Bina</h3>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://voice-app.zenvia.com/bina/relatorio
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Accept: application/json'</span> <span class="se">\ </span>
+            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
+            <span class="s1">'https://voice-app.zenvia.com/bina/relatorio'</span>
+</code></pre>
+<p>Busca os telefones (Bina) cadastrados na Conta</p>
+<h4 id='response-4'>Response</h4>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dados retornados com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+554832830151"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fixo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"confirmado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"chamadas_verificadas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estamos retornando sua solicitação de contato"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aprovado"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">99</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estamos retornando sua solicitação de contato"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aprovado"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">array</span>
+            </td>
+            <td>
+               Retorna um array de objetos <a href="#objeto-bina">Bina</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
 <h1 id='sms'>SMS</h1>
 <blockquote>
 <p>SMS Endpoint</p>
@@ -10445,6 +11202,8 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
                     <li>erro: erro no processamento</li>
                     <li>entregue: entregue para o número de destino</li>
                     <li>aguardando: aguardando o envio para processamento</li>
+                    <li>em análise:  conteúdo da mensagem em análise</li>
+                    <li>bloqueado: mensagem bloqueada por conteúdo proibido</li>
                 </ul> 
             </td>
         </tr>
@@ -11025,7 +11784,13 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
     </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://voice-app.zenvia.com/rec/123456789"</span><span class="w">
+    </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://voice-app.zenvia.com/rec/123456789"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texto do motivo"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Definição do objeto TTS</p>
@@ -11194,6 +11959,34 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
                 Quando enviado a opção Gravar Áudio = true, este campo disponibilizará uma URL contendo o áudio da gravação da ligação.
             </td>
         </tr>
+        <tr>
+              <td>
+                  bina
+                  <span class="attribute">string</span>
+              </td>
+              <td>
+                    Número de telefone que aparece no identificador de quem recebe a chamada
+              </td>
+          </tr>
+        <tr>
+         <tr>
+              <td>
+                  chamada_verificada
+                  <span class="attribute">boolean</span>
+              </td>
+              <td>
+                    Se o tts foi enviado com chamada verificada
+              </td>
+          </tr>
+        <tr>
+            <td>
+                motivo_vcall
+                <span class="attribute">objeto</span>
+            </td>
+            <td>
+                Objeto do tipo <a href="#objeto-motivo-vcall">Motivos VCall</a>
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -11211,7 +12004,7 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"4811111111","mensagem":"Olá"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"+554888881111", "bina": "+554811111111", "mensagem":"Olá", "chamada_verificada": true, "motivo_vcall": 57}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-app.zenvia.com/tts'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
@@ -11330,6 +12123,24 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
                 Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>. 
             </td>
         </tr>
+        <tr>
+            <td>
+                chamada_verificada
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                 Um valor booleano para identificar se o tts terá chamada verificada
+            </td>
+        </tr>
+         <tr>
+            <td>
+                motivo_vcall
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Id do motivo vcall da chamada verificada
+            </td>
+        </tr>
     </tbody>
 </table>
 <h4 id='response'>Response</h4>
@@ -11435,7 +12246,13 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
     </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16. normal"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texto do motivo"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -11535,7 +12352,13 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
         </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16. normal"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Texto do motivo"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13246578</span><span class="p">,</span><span class="w">
@@ -11555,7 +12378,13 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
         </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17. ocupado"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"chamada_verificada"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"motivo_vcall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
