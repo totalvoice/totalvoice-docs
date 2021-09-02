@@ -112,6 +112,8 @@ Definição do objeto Sms
                     <li>erro: erro no processamento</li>
                     <li>entregue: entregue para o número de destino</li>
                     <li>aguardando: aguardando o envio para processamento</li>
+                    <li>em análise:  conteúdo da mensagem em análise</li>
+                    <li>bloqueado: mensagem bloqueada por conteúdo proibido</li>
                 </ul> 
             </td>
         </tr>

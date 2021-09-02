@@ -24,7 +24,11 @@ Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, en
     "webphone": false,
     "ura_id": null,
     "voicemail": false,
-    "tags": ""
+    "tags": "",
+    "motivo_vcall": {
+        "id": 53,
+        "motivo": "Estamos retornando a sua solicitação"
+    }        
 }
 ```
 Definição do objeto Ramal
@@ -103,6 +107,15 @@ Definição do objeto Ramal
               </td>
               <td>
                  Grava as ligações deste ramal
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  motivo_vcall
+                  <span class="attribute">objeto</span>
+              </td>
+              <td>
+                 Objeto do tipo <a href="#objeto-motivo-vcall">Motivos VCall</a>
               </td>
           </tr>
     </tbody>
@@ -195,7 +208,8 @@ Em construção
     "webphone": true,
     "ura_id": null,
     "voicemail": false,
-    "tags": null
+    "tags": null,
+    "motivo_vcall": null
   }
 }
 ```
@@ -304,6 +318,15 @@ Nenhum campo é obrigatório, mas indicamos que você passe os parâmetros ramal
                 Se esse valor for igual a true, ao ligar para esse ramal ele será encaminhado para uma caixa postal que gravará recados. (Não irá chamar no usuário)
             </td>
         </tr>
+        <tr>
+            <td>
+                motivo_vcall
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Id do motivo vcall
+            </td>
+        </tr>
     </tbody>
 </table>
 
@@ -400,7 +423,8 @@ Em construção
     "webphone": false,
     "ura_id": null,
     "voicemail": false,
-    "tags": ""
+    "tags": "",
+    "motivo_vcall": null
   }
 }
 ```
@@ -628,6 +652,15 @@ Em construção
             </td>
             <td>
                 Se esse valor for igual a true, ao ligar para esse ramal ele será encaminhado para uma caixa postal que gravará recados.(Não irá chamar no usuário)
+            </td>
+        </tr>
+         <tr>
+            <td>
+                motivo_vcall
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                Id do motivo vcall
             </td>
         </tr>
     </tbody>
@@ -938,7 +971,11 @@ Em construção
         "webphone": true,
         "ura_id": null,
         "voicemail": false,
-        "tags": ""
+        "tags": "",
+        "motivo_vcall": {
+            "id": 53,
+            "motivo": "Estamos retornando a sua solicitação"
+        }
       },
       {
         "id": 4567,
@@ -953,7 +990,8 @@ Em construção
         "webphone": true,
         "ura_id": null,
         "voicemail": false,
-        "tags": ""
+        "tags": "",
+        "motivo_vcall": null
       }
     ]
   }
@@ -1370,6 +1408,15 @@ Em construção
             "acao_dados": {
                 "fila_id": "1234"
             }
+        },
+        {
+            "timeout": 2,
+            "menu": "menu 8",
+            "opcao": "8",
+            "acao": "digiteramal",
+            "acao_dados": {
+                "mensagem": "Digite o ramal desejado"
+            }
         }
     ]
 }
@@ -1479,11 +1526,11 @@ O nome da "acao" é o maior e o que deve estar dentro do array "acao_dados" é o
         </tr>
         <tr>
             <td>
-                stt
-                <span class="attribute">url</span>
+                digiteramal
+                <span class="attribute">mensagem</span>
             </td>
             <td>
-               Transcreve um áudio em um texto e envia para a url cadastrada. Veja mais sobre clicando aqui.
+               Mensagem que será reproduzida em formato de áudio ao cliente para solicitar a digitação de um ramal. A chamada será direcionada para o ramal informado.
             </td>
         </tr>
         <tr>

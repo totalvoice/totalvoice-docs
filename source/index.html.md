@@ -29,6 +29,7 @@ includes:
   - did
   - gerenciar_contas
   - minha_conta
+  - bina
   - sms
   - tts
   - verificacao
