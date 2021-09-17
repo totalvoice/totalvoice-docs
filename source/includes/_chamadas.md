@@ -508,7 +508,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA do número origem (perna A) apresentado na chamada para o número destino (perna B). Formato DDD + Número, exemplo: 4832830151
+                Número de BINA que será apresentado na chamada para o número origem (perna A). Formato DDD + Número, exemplo: 4832830151
             </td>
         </tr>
         <tr>
@@ -518,7 +518,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA do número destino (perna B) apresentado na chamada para o número origem (perna A). Formato DDD + Número, exemplo: 4832830151
+                Número de BINA que será apresentado na chamada para o número destino (perna B). Formato DDD + Número, exemplo: 4832830151
             </td>
         </tr>
         <tr>
