@@ -3,7 +3,7 @@
 > <b>Api Endpoint</b>
 
 ```text
-https://voice-app.zenvia.com
+https://voice-api.zenvia.com
 ```
 
 Os serviços da ZenAPI estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e
@@ -12,7 +12,7 @@ os códigos de respostas HTTP para indicar erros na API. Suportamos cross-origin
 Disponibilizamos bibliotecas em diversas linguagens para uma maior facilidade dos nossos usuários, você pode alterar a linguagem de referência
 da documentação clicando na linguagem desejada no canto superior direito da página.
 
-Para utilizar a API, você precisará de uma conta em nosso site, <a href="https://voice-app.zenvia.com/painel/signup.php" target="_blank">clicando aqui</a>
+Para utilizar a API, você precisará de uma conta em nosso site, <a href="https://voice-api.zenvia.com/painel/signup.php" target="_blank">clicando aqui</a>
 você poderá criá-la facilmente, na página principal de sua conta, você tem acesso ao **Access-Token** que será utilizado para autenticação no serviço.
 
 ### Bibliotecas

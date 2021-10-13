@@ -3,7 +3,7 @@
 > Bina Endpoint
 
 ```text
-https://voice-app.zenvia.com/bina
+https://voice-api.zenvia.com/bina
 ```
 
 Bina é o número identificador do telefone de origem e que aparece no telefone do destino.
@@ -115,7 +115,7 @@ Definição do objeto Bina
 }   
 ```
 
-Motivo VCall são os motivos das Chamadas Verificadas. Os Motivos Vcall são vinculados a bina e são cadastrados atráves do painel em [voice-app.zenvia.com/painel/](https://voice-app.zenvia.com/painel/)
+Motivo VCall são os motivos das Chamadas Verificadas. Os Motivos Vcall são vinculados a bina e são cadastrados atráves do painel em [voice-api.zenvia.com/painel/](https://voice-api.zenvia.com/painel/)
 
 Definição do objeto Motivo VCall
 
@@ -159,7 +159,7 @@ Definição do objeto Motivo VCall
 > Definição
 
 ```text
-POST https://voice-app.zenvia.com/bina
+POST https://voice-api.zenvia.com/bina
 ```
 
 > Request
@@ -169,7 +169,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
              -d '{"telefone":"+5548988888888", "mensagem_sms": "Teste SMS", "mensagem_tts": "Teste TTS"}' \
-             'https://voice-app.zenvia.com/bina'
+             'https://voice-api.zenvia.com/bina'
 ```
 
 Envia um número de telefone para que receba um código via SMS (celular) ou TTS (fixo). Nossa API identificará automaticamente o tipo de número (fixo ou móvel) e enviará a mensagem com o código.
@@ -249,7 +249,7 @@ Envia um número de telefone para que receba um código via SMS (celular) ou TTS
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/bina
+GET https://voice-api.zenvia.com/bina
 ```
 
 > Request
@@ -258,7 +258,7 @@ GET https://voice-app.zenvia.com/bina
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
             --header 'Access-Token: {{access-token}}' \
-            'https://voice-app.zenvia.com/bina?codigo=1234&telefone=+5548988888888'
+            'https://voice-api.zenvia.com/bina?codigo=1234&telefone=+5548988888888'
 ```
 
 Você deve informar o número do telefone e o código recebido no celular (SMS) ou telefone (TTS) informados no método POST, para realizarmos a validação
@@ -342,7 +342,7 @@ Você deve informar o número do telefone e o código recebido no celular (SMS) 
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/bina/{id}
+GET https://voice-api.zenvia.com/bina/{id}
 ```
 
 > Request
@@ -351,7 +351,7 @@ GET https://voice-app.zenvia.com/bina/{id}
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \ 
             --header 'Access-Token: {{access-token}}' \
-            'https://voice-app.zenvia.com/bina/1'
+            'https://voice-api.zenvia.com/bina/1'
 ```
 
 Após a criação de uma bina, você poderá realizar a busca do registro pelo seu ID
@@ -458,7 +458,7 @@ Após a criação de uma bina, você poderá realizar a busca do registro pelo s
 > Definição
 
 ```text
-DELETE https://voice-app.zenvia.com/bina/{id}
+DELETE https://voice-api.zenvia.com/bina/{id}
 ```
 
 > Request
@@ -467,7 +467,7 @@ DELETE https://voice-app.zenvia.com/bina/{id}
 curl -X DELETE --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \ 
             --header 'Access-Token: {{access-token}}' \
-            'https://voice-app.zenvia.com/bina/1'
+            'https://voice-api.zenvia.com/bina/1'
 ```
 
 Apaga o número de telefone (Bina) cadastrado na Conta. Você deve informar o ID da bina que deseja remover.
@@ -521,7 +521,7 @@ Caso a Bina esteja vinculada ao Caller ID Default ou à um motivo de Chamada Ver
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/bina/relatorio
+GET https://voice-api.zenvia.com/bina/relatorio
 ```
 
 > Request
@@ -530,7 +530,7 @@ GET https://voice-app.zenvia.com/bina/relatorio
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \ 
             --header 'Access-Token: {{access-token}}' \
-            'https://voice-app.zenvia.com/bina/relatorio'
+            'https://voice-api.zenvia.com/bina/relatorio'
 ```
 
 Busca os telefones (Bina) cadastrados na Conta

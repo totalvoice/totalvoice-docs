@@ -5,7 +5,7 @@
 > Did Endpoint
 
 ```text
-https://voice-app.zenvia.com/did
+https://voice-api.zenvia.com/did
 ```
 
 > JSON
@@ -74,7 +74,7 @@ Lista todos os DIDs da sua conta
 > Did Endpoint
 
 ```text
-https://voice-app.zenvia.com/did
+https://voice-api.zenvia.com/did
 ```
 
 > Request
@@ -82,7 +82,7 @@ https://voice-app.zenvia.com/did
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/did'
+            --header 'Access-Token: seu-token' 'https://voice-api.zenvia.com/did'
 ```
 ```php
 <?php
@@ -154,7 +154,7 @@ Não precisa passar nenhum parâmetro.
 > Definição
 
 ```text
-PUT https://voice-app.zenvia.com/did/{id}
+PUT https://voice-api.zenvia.com/did/{id}
 ```
 
 > Request
@@ -164,7 +164,7 @@ curl -X PUT --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"ura_id":"4321789"}' \
-             'https://voice-app.zenvia.com/did/{id}'
+             'https://voice-api.zenvia.com/did/{id}'
 ```
 ```php
 <?php
@@ -184,7 +184,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 Em construção
 ```
 ```java
@@ -266,7 +266,7 @@ Importante¹: Você só pode passar uma das opções, ou uma ura_id ou um ramal_
 > Definição
 
 ```text
-DELETE https://voice-app.zenvia.com/did/{id}
+DELETE https://voice-api.zenvia.com/did/{id}
 ```
 
 > Request
@@ -275,7 +275,7 @@ DELETE https://voice-app.zenvia.com/did/{id}
 curl -X DELETE --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             'https://voice-app.zenvia.com/did/{id}'
+             'https://voice-api.zenvia.com/did/{id}'
 ```
 ```php
 <?php
@@ -295,7 +295,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 Em construção
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 Em construção
 ```
 ```java
@@ -365,7 +365,7 @@ Em construção
 > Did Endpoint
 
 ```text
-https://voice-app.zenvia.com/did/estoque
+https://voice-api.zenvia.com/did/estoque
 ```
 
 > Request
@@ -373,7 +373,7 @@ https://voice-app.zenvia.com/did/estoque
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/did/estoque'
+            --header 'Access-Token: seu-token' 'https://voice-api.zenvia.com/did/estoque'
 ```
 ```php
 <?php
@@ -449,7 +449,7 @@ Em construção
 > Did Endpoint
 
 ```text
-https://voice-app.zenvia.com/did/
+https://voice-api.zenvia.com/did/
 ```
 
 > Request
@@ -458,7 +458,7 @@ https://voice-app.zenvia.com/did/
 curl -X POST --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
             d '{"did_id":"123"}' \
-            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/did/'
+            --header 'Access-Token: seu-token' 'https://voice-api.zenvia.com/did/'
 ```
 ```php
 Em construção
@@ -542,7 +542,7 @@ Em construção
 > Chamada Recebidas Endpoint
 
 ```text
-https://voice-app.zenvia.com/did/chamada/{id}
+https://voice-api.zenvia.com/did/chamada/{id}
 ```
 
 > <br>
@@ -738,7 +738,7 @@ Definição do objeto Chamada DID
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/did/chamada/{id-chamada}
+GET https://voice-api.zenvia.com/did/chamada/{id-chamada}
 ```
 
 > Request
@@ -746,7 +746,7 @@ GET https://voice-app.zenvia.com/did/chamada/{id-chamada}
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://voice-app.zenvia.com/did/chamada/{id-chamada}'
+            'https://voice-api.zenvia.com/did/chamada/{id-chamada}'
 ```
 ```php
 Em Construção
@@ -843,7 +843,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/did/{id}/relatorio
+GET https://voice-api.zenvia.com/did/{id}/relatorio
 ```
 
 > Request
@@ -851,7 +851,7 @@ GET https://voice-app.zenvia.com/did/{id}/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://voice-app.zenvia.com/did/1/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-api.zenvia.com/did/1/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -875,7 +875,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.DID.RelatorioChamadas.Gerar(id, dataInicial, dataFinal, filtros)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.did.get_relatorio_chamadas(id, data_inicio, data_fim, filtros)
 ```
 ```java
@@ -1054,7 +1054,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/did/relatorio
+GET https://voice-api.zenvia.com/did/relatorio
 ```
 
 > Request
@@ -1062,7 +1062,7 @@ GET https://voice-app.zenvia.com/did/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://voice-app.zenvia.com/did/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-api.zenvia.com/did/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -1086,7 +1086,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.DID.RelatorioChamadas.Gerar(dataInicial, dataFinal, filtros)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.did.get_relatorio_chamadas(data_inicio, data_fim, filtros)
 ```
 ```java
