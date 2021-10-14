@@ -115,7 +115,7 @@ Definição do objeto Bina
 }   
 ```
 
-Motivo VCall são os motivos das Chamadas Verificadas. Os Motivos Vcall são vinculados a bina e são cadastrados atráves do painel em [voice-api.zenvia.com/painel/](https://voice-api.zenvia.com/painel/)
+Motivo VCall são os motivos das Chamadas Verificadas. Os Motivos Vcall são vinculados a bina e são cadastrados atráves do painel em [voice-app.zenvia.com/painel/](https://voice-app.zenvia.com/painel/)
 
 Definição do objeto Motivo VCall
 
