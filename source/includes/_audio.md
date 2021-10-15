@@ -3,7 +3,7 @@
 > <b>Audio Endpoint</b>
 
 ```text
-https://voice-app.zenvia.com/audio
+https://voice-api.zenvia.com/audio
 ```
 
 A funcionalidade de **Envio de Áudio** permite que você envie um torpedo de voz ou mensagens de voz do tipo áudio para determinados números.
@@ -42,7 +42,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     "resposta_usuario": true,
     "resposta": "1",
     "motivo_desconexao": null,
-    "url_gravacao": "https://voice-app.zenvia.com/rec/123456789",
+    "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
     "bina": "+5548988888888",
     "chamada_verificada": true,
     "motivo_vcall": {
@@ -258,7 +258,7 @@ Definição do objeto Áudio
 > Definição
 
 ```text
-POST https://voice-app.zenvia.com/audio
+POST https://voice-api.zenvia.com/audio
 ```
 
 > Request
@@ -268,7 +268,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"numero_destino":"+5548988881111", "bina": "+554811111111" ,url_audio":"http://sua.url.audio/audio.mp3", "chamada_verificada": true, "motivo_vcall": 57}' \
-             'https://voice-app.zenvia.com/audio'
+             'https://voice-api.zenvia.com/audio'
 ```
 ```php
 <?php
@@ -297,7 +297,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
 ```
 ```java
@@ -437,7 +437,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/audio/{id}
+GET https://voice-api.zenvia.com/audio/{id}
 ```
 
 > Request
@@ -445,7 +445,7 @@ GET https://voice-app.zenvia.com/audio/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/audio/ID-Audio'
+            --header 'Access-Token: seu-token' 'https://voice-api.zenvia.com/audio/ID-Audio'
 ```
 ```php
 <?php
@@ -474,7 +474,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.audio.get_by_id("123")
 ```
 ```java
@@ -566,7 +566,7 @@ Após o envio de mensagens de áudio, você poderá realizar a busca do registro
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/audio/relatorio
+GET https://voice-api.zenvia.com/audio/relatorio
 ```
 
 > Request
@@ -574,7 +574,7 @@ GET https://voice-app.zenvia.com/audio/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://voice-app.zenvia.com/audio/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-api.zenvia.com/audio/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -601,7 +601,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 from totalvoice.cliente import Cliente
 
 
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.audio.get_relatorio("2017-12-08T11:00:32-02:00", "2017-12-08T11:00:32-02:00")
 ```
 ```java

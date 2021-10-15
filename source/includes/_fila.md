@@ -3,7 +3,7 @@
 > Fila Endpoint
 
 ```text
-https://voice-app.zenvia.com/fila
+https://voice-api.zenvia.com/fila
 ```
 
 A funcionalidade de filas permite a automatização e manipulação de filas de atendimentos
@@ -129,7 +129,7 @@ Definição do objeto Fila
 > Definição
 
 ```text
-POST https://voice-app.zenvia.com/fila
+POST https://voice-api.zenvia.com/fila
 ```
 
 > Request
@@ -139,7 +139,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
              -d '{"nome":"Suporte","estrategia_ring":"Multiplo", "timeout_ring": "60"}' \
-             'https://voice-app.zenvia.com/fila'
+             'https://voice-api.zenvia.com/fila'
 ```
 ```php
 <?php
@@ -163,7 +163,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.Criar("Suporte", "Multiplo", 60)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.fila.criar("Suporte", "Multiplo", "60")
 ```
 ```java
@@ -249,7 +249,7 @@ Basta informar o nome da fila e a estratégia de ring.
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/fila/{id}
+GET https://voice-api.zenvia.com/fila/{id}
 ```
 
 > Request
@@ -257,7 +257,7 @@ GET https://voice-app.zenvia.com/fila/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://voice-app.zenvia.com/fila/1'
+            --header 'Access-Token: {{access-token}}' 'https://voice-api.zenvia.com/fila/1'
 ```
 ```php
 <?php
@@ -281,7 +281,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.Buscar(123)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.fila.get_fila(123)
 ```
 ```java
@@ -373,13 +373,13 @@ Após a criação de uma fila, você poderá realizar a busca do registro pelo s
 > Definição
 
 ```text
-PUT https://voice-app.zenvia.com/fila/{id}
+PUT https://voice-api.zenvia.com/fila/{id}
 ```
 
 > Request
 
 ```shell--curl
-curl 'https://voice-app.zenvia.com/fila/1' \
+curl 'https://voice-api.zenvia.com/fila/1' \
     -X PUT \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO' \
@@ -407,7 +407,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.Atualizar("Suporte", "Multiplo", "60")
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.fila.editar("Suporte", "Multiplo", "60")
 ```
 ```java
@@ -484,7 +484,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 > Definição
 
 ```text
-POST https://voice-app.zenvia.com/fila/{id}
+POST https://voice-api.zenvia.com/fila/{id}
 ```
 
 > Request
@@ -494,7 +494,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
              -d '{"ramal_id":"111"}' \
-             'https://voice-app.zenvia.com/fila/123'
+             'https://voice-api.zenvia.com/fila/123'
 ```
 ```php
 <?php
@@ -518,7 +518,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.AdicionarRamalFila("ID_FILA", "RAMAL_ID");
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.fila.add_ramal("ID_FILA", "RAMAL_ID")
 ```
 ```java
@@ -573,7 +573,7 @@ Basta informar o id da fila e por parâmetro o id do ramal.
 > Definição
 
 ```text
-DELETE https://voice-app.zenvia.com/fila/{id}
+DELETE https://voice-api.zenvia.com/fila/{id}
 ```
 
 > Request
@@ -582,7 +582,7 @@ DELETE https://voice-app.zenvia.com/fila/{id}
 curl -X DELETE --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-            'https://voice-app.zenvia.com/fila/111/111'
+            'https://voice-api.zenvia.com/fila/111/111'
 ```
 ```php
 <?php
@@ -606,7 +606,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.ExcluirRamalFila("ID_FILA", "RAMAL_ID")
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.fila.deleta_ramal("ID_FILA", "RAMAL_ID")
 ```
 ```ruby
@@ -652,7 +652,7 @@ Basta informar o id da fila e por parâmetro o id do ramal para ser removido.
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/fila/{id-fila}/{id-ramal}
+GET https://voice-api.zenvia.com/fila/{id-fila}/{id-ramal}
 ```
 
 > Request
@@ -660,7 +660,7 @@ GET https://voice-app.zenvia.com/fila/{id-fila}/{id-ramal}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://voice-app.zenvia.com/fila/id-fila/id-ramal'
+            --header 'Access-Token: {{access-token}}' 'https://voice-api.zenvia.com/fila/id-fila/id-ramal'
 ```
 ```php
 <?php
@@ -684,7 +684,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Fila.BuscarRamalFila("ID_FILA", "RAMAL_ID")
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.fila.get_fila_ramal("ID_FILA", "RAMAL_ID")
 ```
 ```java
@@ -768,7 +768,7 @@ Basta informar o id da fila e o id do ramal.
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/fila/{id}/relatorio
+GET https://voice-api.zenvia.com/fila/{id}/relatorio
 ```
 
 > Request
@@ -776,7 +776,7 @@ GET https://voice-app.zenvia.com/fila/{id}/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://voice-app.zenvia.com/fila/{id-fial}/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-api.zenvia.com/fila/{id-fial}/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php

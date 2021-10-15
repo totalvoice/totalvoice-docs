@@ -3,7 +3,7 @@
 > <b>TTS Endpoint</b>
 
 ```text
-https://voice-app.zenvia.com/tts
+https://voice-api.zenvia.com/tts
 ```
 A funcionalidade de **TTS** permite que você nos envie uma mensagem de texto e nosso torpedo de voz irá tranformar em áudio.
 
@@ -36,7 +36,7 @@ Você poderá enviar algumas opções adicionais, tais como aguardar uma respost
     "resposta_usuario": true,
     "resposta": "1",
     "motivo_desconexao": null,
-    "url_gravacao": "https://voice-app.zenvia.com/rec/123456789",
+    "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
     "bina": "+5548988888888",
     "chamada_verificada": true,
     "motivo_vcall": {
@@ -252,7 +252,7 @@ Definição do objeto TTS
 > Definição
 
 ```text
-POST https://voice-app.zenvia.com/tts
+POST https://voice-api.zenvia.com/tts
 ```
 
 > Request
@@ -262,7 +262,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"numero_destino":"+554888881111", "bina": "+554811111111", "mensagem":"Olá", "chamada_verificada": true, "motivo_vcall": 57}' \
-             'https://voice-app.zenvia.com/tts'
+             'https://voice-api.zenvia.com/tts'
 ```
 ```php
 <?php
@@ -289,7 +289,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Tts.Enviar("4811111111", "Olá, essa é a minha mensagem", false, "")
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
 ```
 ```java
@@ -458,7 +458,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/tts/{id}
+GET https://voice-api.zenvia.com/tts/{id}
 ```
 
 > Request
@@ -466,7 +466,7 @@ GET https://voice-app.zenvia.com/tts/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/tts/ID-Audio'
+            --header 'Access-Token: seu-token' 'https://voice-api.zenvia.com/tts/ID-Audio'
 ```
 ```php
 <?php
@@ -493,7 +493,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.tts.Buscar(123)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.tts.get_by_id(123)
 ```
 ```java
@@ -585,7 +585,7 @@ Após o envio do TTS você poderá realizar a busca do registro pelo seu ID.
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/tts/relatorio
+GET https://voice-api.zenvia.com/tts/relatorio
 ```
 
 > Request
@@ -593,7 +593,7 @@ GET https://voice-app.zenvia.com/tts/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            'https://voice-app.zenvia.com/tts/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-api.zenvia.com/tts/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -617,7 +617,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.tts.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.tts.get_relatorio(data_inicio, data_fim)
 ```
 ```java

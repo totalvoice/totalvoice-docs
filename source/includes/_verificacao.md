@@ -3,7 +3,7 @@
 > <b>Verificação (2FA) Endpoint</b>
 
 ```text
-https://voice-app.zenvia.com/verificacao
+https://voice-api.zenvia.com/verificacao
 ```
 A funcionalidade de **verificação** ou Two Factor Authentication(2FA), envia um código para um número de telefone e depois você pode verificar se o código informado pelo usuário é válido.
 
@@ -18,7 +18,7 @@ Esse código(apenas números) pode ser enviado via SMS(formato de texto), ou ent
 > Definição
 
 ```text
-POST https://voice-app.zenvia.com/verificacao
+POST https://voice-api.zenvia.com/verificacao
 ```
 
 > Request
@@ -28,7 +28,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
              -d '{"numero_destino":"4811111111","nome_produto":"ZenAPI de Voz","tts":"true"}' \
-             'https://voice-app.zenvia.com/verificacao'
+             'https://voice-api.zenvia.com/verificacao'
 ```
 ```php
 <?php
@@ -55,7 +55,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.verificacao.enviar("4811111111", "ZenAPI de Voz", false, "")
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.verificacao.enviar("4811111111", "ZenAPI de Voz")
 ```
 ```java
@@ -151,7 +151,7 @@ puts @client.verificacao.enviar("4811111111", "ZenAPI de Voz")
 
 
 ```text
-GET https://voice-app.zenvia.com/verificacao
+GET https://voice-api.zenvia.com/verificacao
 ```
 
 > Request
@@ -159,7 +159,7 @@ GET https://voice-app.zenvia.com/verificacao
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: seu-token' 'https://voice-app.zenvia.com/verificacao/?id=1234&pin=36355'
+            --header 'Access-Token: seu-token' 'https://voice-api.zenvia.com/verificacao/?id=1234&pin=36355'
 ```
 ```php
 <?php
