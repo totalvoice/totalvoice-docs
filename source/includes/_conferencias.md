@@ -3,7 +3,7 @@
 > Conferência Endpoint
 
 ```text
-https://voice-app.zenvia.com/conferencia
+https://voice-api.zenvia.com/conferencia
 ```
 
 Conferências são como salas privadas que você cria e recebe um ID, só você com esse código consegue realizar
@@ -229,7 +229,7 @@ Definição do objeto da Chamada da Conferência
 > Definição
 
 ```text
-POST https://voice-app.zenvia.com/conferencia
+POST https://voice-api.zenvia.com/conferencia
 ```
 
 > Request
@@ -239,7 +239,7 @@ curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
              -d '{"numero_destino":"4811111111","url_conferencia":"http://foo.bar/conferencia.mp3"}' \
-             'https://voice-app.zenvia.com/conferencia'
+             'https://voice-api.zenvia.com/conferencia'
 ```
 ```php
 <?php
@@ -266,7 +266,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.conferencia.cria_conferencia()
 
 ```
@@ -312,7 +312,7 @@ Basta chamar o metodo cria_conferencia para criar o id da sua conferência.
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/conferencia/{id}
+GET https://voice-api.zenvia.com/conferencia/{id}
 ```
 
 > Request
@@ -320,7 +320,7 @@ GET https://voice-app.zenvia.com/conferencia/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://voice-app.zenvia.com/conferencia/1'
+            --header 'Access-Token: {{access-token}}' 'https://voice-api.zenvia.com/conferencia/1'
 ```
 ```php
 <?php
@@ -345,7 +345,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Conferencia.Buscar(123)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.conferencia.get_by_id(123)
 ```
 ```java
@@ -422,7 +422,7 @@ Após o envio de mensagens de conferência, você poderá realizar a busca do re
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/conferencia/relatorio
+GET https://voice-api.zenvia.com/conferencia/relatorio
 ```
 
 > Request
@@ -430,7 +430,7 @@ GET https://voice-app.zenvia.com/conferencia/relatorio
 ```shell--curl
 curl -X GET --header 'Accept: application/json' \
             --header 'Access-Token: {{access-token}}' \
-            'https://voice-app.zenvia.com/conferencia/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
+            'https://voice-api.zenvia.com/conferencia/relatorio?data_inicio=2018-03-14&data_fim=2018-03-15'
 ```
 ```php
 <?php
@@ -455,7 +455,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
  response, err := client.Conferencia.Relatorio.Gerar(dataInicial, dataFinal)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.conferencia.get_relatorio(data_inicio, data_fim)
 ```
 ```java

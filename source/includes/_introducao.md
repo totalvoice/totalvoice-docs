@@ -3,7 +3,7 @@
 > <b>Api Endpoint</b>
 
 ```text
-https://voice-app.zenvia.com
+https://voice-api.zenvia.com
 ```
 
 Os serviços da ZenAPI estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e

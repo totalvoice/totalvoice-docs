@@ -3,7 +3,7 @@
 > Gerenciar Contas End Point
 
 ```text
-https://voice-app.zenvia.com/conta
+https://voice-api.zenvia.com/conta
 ```
 Com a funcionalidade de Gerente de Contas você pode criar, consultar, alterar e deletar contas filhas, sendo as contas filhas exatamente iguais a qualquer outra conta na Zenvia,
 apenas são vinculadas com uma conta pai que tem o controle sobre ela, tendo o intuito de realizar integrações e automatizar processos de uso e revenda de serviços da API.
@@ -141,13 +141,13 @@ Definição do objeto Conta
 > Definição
 
 ```text
-POST https://voice-app.zenvia.com/conta
+POST https://voice-api.zenvia.com/conta
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://voice-app.zenvia.com/conta' \
+curl 'https://voice-api.zenvia.com/conta' \
     -X POST \ 
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' \
@@ -193,7 +193,7 @@ conta.Senha = "senha123"
 response, err := client.Conta.Criar(conta)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.conta.criar_conta("Zenvia", "zenvia@zenvia.com", "senha123")
 ```
 ```java
@@ -361,13 +361,13 @@ Cria uma nova conta filha.
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/conta/{id}
+GET https://voice-api.zenvia.com/conta/{id}
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://voice-app.zenvia.com/conta/3132' \
+curl 'https://voice-api.zenvia.com/conta/3132' \
     -X GET \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' 
@@ -394,7 +394,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Buscar(3132)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.conta.get_by_id(3132)
 ```
 ```java
@@ -474,13 +474,13 @@ Busca os detalhes de uma conta filha.
 > Definição
 
 ```text
-PUT https://voice-app.zenvia.com/conta/{id}
+PUT https://voice-api.zenvia.com/conta/{id}
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://voice-app.zenvia.com/conta/3132' \
+curl 'https://voice-api.zenvia.com/conta/3132' \
     -X PUT \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' \
@@ -517,7 +517,7 @@ conta.senha = "senha123"
 response, err := client.Conta.Atualizar(conta)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.conta.editar_conta("Zenvia", "zenvia@zenvia.com", "senha123")
 ```
 ```java
@@ -660,13 +660,13 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 > Definição
 
 ```text
-DELETE https://voice-app.zenvia.com/conta/{id}
+DELETE https://voice-api.zenvia.com/conta/{id}
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://voice-app.zenvia.com/conta/3132' \
+curl 'https://voice-api.zenvia.com/conta/3132' \
     -X DELETE \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' \
@@ -693,7 +693,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Excluir(3132)
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.conta.deletar(3132)
 ```
 ```java
@@ -746,13 +746,13 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/conta/relatorio
+GET https://voice-api.zenvia.com/conta/relatorio
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://voice-app.zenvia.com/conta/relatorio' \
+curl 'https://voice-api.zenvia.com/conta/relatorio' \
     -X GET \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: seu-token' 
@@ -779,7 +779,7 @@ client := totalvoice.NewTotalVoiceClient("seu-token")
 response, err := client.Conta.Relatorio.Gerar()
 ```
 ```python
-client = Cliente("seu-token", 'voice-app.zenvia.com')
+client = Cliente("seu-token", 'voice-api.zenvia.com')
 response = client.conta.get_relatorio()
 ```
 ```java
@@ -868,7 +868,7 @@ Retorna um relatório com todas as suas contas filhas. As contas retornadas no r
 > Definição
 
 ```text
-POST https://voice-app.zenvia.com/conta/{id}/bonus
+POST https://voice-api.zenvia.com/conta/{id}/bonus
 ```
 
 > Request
@@ -877,7 +877,7 @@ POST https://voice-app.zenvia.com/conta/{id}/bonus
 curl -X POST --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
             -d '{"valor":"100"}' \
-            'https://voice-app.zenvia.com/conta/id-conta/bonus'
+            'https://voice-api.zenvia.com/conta/id-conta/bonus'
 ```
 ```php
 Em Contrução
@@ -951,7 +951,7 @@ Este método permite a listagem de todos os webhooks default configurados para s
 > Definição
 
 ```text
-GET https://voice-app.zenvia.com/conta/webhook-default
+GET https://voice-api.zenvia.com/conta/webhook-default
 ```
 
 > Request
@@ -960,7 +960,7 @@ GET https://voice-app.zenvia.com/conta/webhook-default
 curl -X GET --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-            'https://voice-app.zenvia.com/conta/webhook-default'
+            'https://voice-api.zenvia.com/conta/webhook-default'
 ```
 ```php
 <?php
@@ -976,7 +976,7 @@ response, err := client.WebhookDefault.Listar();
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("Seu_Token", 'voice-app.zenvia.com')
+client = Cliente("Seu_Token", 'voice-api.zenvia.com')
 response = client.conta.get_webhook_default()
 ```
 ```java
@@ -1054,7 +1054,7 @@ Este método permite a remoção de um webhook default específico.<a href="#web
 > Definição
 
 ```text
-DELETE https://voice-app.zenvia.com/conta/webhook-default/{nome_webhook}
+DELETE https://voice-api.zenvia.com/conta/webhook-default/{nome_webhook}
 ```
 
 > Request
@@ -1063,7 +1063,7 @@ DELETE https://voice-app.zenvia.com/conta/webhook-default/{nome_webhook}
 curl -X DELETE --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-            'https://voice-app.zenvia.com/conta/webhook-default/chamada_fim'
+            'https://voice-api.zenvia.com/conta/webhook-default/chamada_fim'
 ```
 ```php
 <?php
@@ -1079,7 +1079,7 @@ response, err := client.WebhookDefault.Excluir("nome")
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("Seu_Token", 'voice-app.zenvia.com')
+client = Cliente("Seu_Token", 'voice-api.zenvia.com')
 client.conta.delete_webhook_default("nome")
 ```
 ```java
@@ -1152,13 +1152,13 @@ puts @client.conta.excluir_webhook_default("nome")
 > Definição
 
 ```text
-PUT https://voice-app.zenvia.com/conta/webhook-default/{nome_webhook}
+PUT https://voice-api.zenvia.com/conta/webhook-default/{nome_webhook}
 ```
 
 > <br/>Request
 
 ```shell--curl
-curl 'https://voice-app.zenvia.com/conta/webhook-default/chamada_fim' \
+curl 'https://voice-api.zenvia.com/conta/webhook-default/chamada_fim' \
     -X PUT \
     --header 'Content-Type: application/json' \
     --header 'Access-Token: Seu_Token' \
@@ -1182,7 +1182,7 @@ response, err := client.WebhookDefault.Salvar("nome","url");
 ```python
 from totalvoice.cliente import Cliente
 
-client = Cliente("Seu_Token", 'voice-app.zenvia.com')
+client = Cliente("Seu_Token", 'voice-api.zenvia.com')
 response = client.conta.edit_webhook_default("nome","url")
 ```
 ```java
