@@ -368,7 +368,7 @@ curl -X POST --header 'Content-Type: application/json' \
                     {  
                         "acao":"audio",
                         "acao_dados":{  
-                            "url_composto":"https://instaud.io/_/3K3k.mp3"
+                            "url_audio":"https://instaud.io/_/3K3k.mp3"
                         }
                     },
                     {  

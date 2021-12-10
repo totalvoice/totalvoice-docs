@@ -267,7 +267,7 @@ POST https://voice-api.zenvia.com/audio
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+5548988881111", "bina": "+554811111111" ,url_audio":"http://sua.url.audio/audio.mp3", "chamada_verificada": true, "motivo_vcall": 57}' \
+             -d '{"numero_destino":"+5548988881111", "bina": "+554811111111" ,"url_audio":"http://sua.url.audio/audio.mp3", "chamada_verificada": true, "motivo_vcall": 57}' \
              'https://voice-api.zenvia.com/audio'
 ```
 ```php
