@@ -466,7 +466,7 @@ GET https://voice-api.zenvia.com/tts/{id}
 ```shell--curl
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
-            --header 'Access-Token: seu-token' 'https://voice-api.zenvia.com/tts/ID-Audio'
+            --header 'Access-Token: seu-token' 'https://voice-api.zenvia.com/tts/id-tts'
 ```
 ```php
 <?php
@@ -474,7 +474,7 @@ require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
 $client = new TotalVoiceClient('seu-token');
-$response = $client->tts->buscaAudio(id-audio);
+$response = $client->tts->buscaTTS(id-tts);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
