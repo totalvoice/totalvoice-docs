@@ -1385,7 +1385,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"+5548988881111", "bina": "+554811111111" ,url_audio":"http://sua.url.audio/audio.mp3", "chamada_verificada": true, "motivo_vcall": 57}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"+5548988881111", "bina": "+554811111111" ,"url_audio":"http://sua.url.audio/audio.mp3", "chamada_verificada": true, "motivo_vcall": 57}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-api.zenvia.com/audio'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
@@ -6260,7 +6260,7 @@ JSON DADOS do exemplo:</p>
                     {  
                         "acao":"audio",
                         "acao_dados":{  
-                            "url_composto":"https://instaud.io/_/3K3k.mp3"
+                            "url_audio":"https://instaud.io/_/3K3k.mp3"
                         }
                     },
                     {  
@@ -12189,13 +12189,13 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: seu-token'</span> <span class="s1">'https://voice-api.zenvia.com/tts/ID-Audio'</span>
+            --header <span class="s1">'Access-Token: seu-token'</span> <span class="s1">'https://voice-api.zenvia.com/tts/id-tts'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">tts</span><span class="o">-&gt;</span><span class="na">buscaAudio</span><span class="p">(</span><span class="nx">id</span><span class="o">-</span><span class="nx">audio</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">tts</span><span class="o">-&gt;</span><span class="na">buscaTTS</span><span class="p">(</span><span class="nx">id</span><span class="o">-</span><span class="nx">tts</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
