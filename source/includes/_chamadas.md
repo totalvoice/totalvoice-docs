@@ -731,7 +731,8 @@ puts @client.chamada.buscar(123)
        "duracao_falada_segundos": 10,
        "duracao_falada": "00:00:10",
        "preco": 0.1,
-       "motivo_desconexao": "indefinido"
+       "motivo_desconexao": "indefinido",
+       "bina_origem" : "+27921815114"
      },
      "destino": {
        "data_inicio": "2018-08-02T10:49:29-03:00",
@@ -745,7 +746,8 @@ puts @client.chamada.buscar(123)
        "duracao_falada_segundos": 28,
        "duracao_falada": "00:00:28",
        "preco": 0.1,
-       "motivo_desconexao": "indefinido"
+       "motivo_desconexao": "indefinido",
+       "bina_destino" : "+73970934836"
      }
   }
 }
@@ -973,7 +975,8 @@ puts @client.chamada.relatorio(data_inicial, data_final, filtros)
           "duracao_falada_segundos": 0,
           "duracao_falada": "00:00:00",
           "preco": 0,
-          "motivo_desconexao": "indefinido"
+          "motivo_desconexao": "indefinido",
+          "bina_origem" : "+27921815114"
         },
         "destino": {
           "data_inicio": "2018-08-02T10:32:22-03:00",
@@ -987,7 +990,9 @@ puts @client.chamada.relatorio(data_inicial, data_final, filtros)
           "duracao_falada_segundos": 8,
           "duracao_falada": "00:00:08",
           "preco": 0,
-          "motivo_desconexao": "indefinido"
+          "motivo_desconexao": "indefinido",
+          "bina_destino" : "+73970934836"
+
         }
       }
     ]
@@ -1494,4 +1499,5 @@ Avalie a Chamada para ter estatísticas de qualidade de seus clientes.
 <br>
 <br>
 <br>
+
 
