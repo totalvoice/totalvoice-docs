@@ -1,10 +1,10 @@
 # Testes
 
-Com uma conta criada você pode fazer testes em nossa plataforma utilizando nosso playground, software para teste de requisições de API(Postman, Insomnia, etc)
+Com uma conta criada você pode fazer testes em nossa plataforma utilizando nosso playground, software para teste de requisições de API (Postman, Insomnia, etc)
 
- - <a href="https://voice-api.zenvia.com/doc/#/" target="_blank">Playground</a> - É um ambiente onde você utiliza o token da sua conta e faz envio para nossa api, preenchendo um formulário com os parâmetros necessários. 
+ - <a href="https://voice-app.zenvia.com/doc" target="_blank">Playground</a> - É um ambiente onde você utiliza o token da sua conta e faz envio para nossa api, preenchendo um formulário com os parâmetros necessários. 
 
- - Utilizando o <a href="https://www.getpostman.com/" target="_blank">Postman</a> ou <a href="https://insomnia.rest/" target="_blank">Insomnia</a>, vvocê precisa nos enviar as seguintes informações:
+ - Utilizando o <a href="https://www.getpostman.com/" target="_blank">Postman</a> ou <a href="https://insomnia.rest/" target="_blank">Insomnia</a>, você precisa nos enviar as seguintes informações:
     - Header
         - Access-Token - exemplotesteM68PU1Izmb9chEdLzep7IwRymWO
         - Content-Type - application/json
