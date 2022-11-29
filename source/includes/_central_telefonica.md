@@ -468,7 +468,7 @@ Após o ramal ser criado, você pode consultar suas informações
 > Definição
 
 ```text
-PUT https://voice-api.zenvia.com/ramal/{id}/fila
+PUT https://voice-api.zenvia.com/ramal/{id}
 ```
 
 > Request
@@ -642,7 +642,7 @@ Em construção
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Caso tenha um valor aqui, ao telefonar para este número de ramal, vai cair em uma URA ao invés de chamar o usuário
+                Caso tenha um valor aqui, ao telefonar para este número de ramal, vai cair em uma URA ao invés de chamar o usuário. Caso queira desvincular uma URA basta passar o valor 'null' neste campo.
             </td>
         </tr>
         <tr>
@@ -661,6 +661,15 @@ Em construção
             </td>
             <td>
                 Id do motivo vcall
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ativo
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Ativar e desativar ramal de acordo com as regras. Default = true
             </td>
         </tr>
     </tbody>
