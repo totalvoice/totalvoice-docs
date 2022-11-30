@@ -424,7 +424,8 @@ Em construção
     "ura_id": null,
     "voicemail": false,
     "tags": "",
-    "motivo_vcall": null
+    "motivo_vcall": null,
+    "ativo": true
   }
 }
 ```
@@ -984,7 +985,8 @@ Em construção
         "motivo_vcall": {
             "id": 53,
             "motivo": "Estamos retornando a sua solicitação"
-        }
+        },
+        "ativo": true
       },
       {
         "id": 4567,
@@ -1000,7 +1002,8 @@ Em construção
         "ura_id": null,
         "voicemail": false,
         "tags": "",
-        "motivo_vcall": null
+        "motivo_vcall": null,
+        "ativo": true
       }
     ]
   }
