@@ -1228,7 +1228,7 @@ Em construção
 
 > Definição
 
-Lista as ligações <u>recebidas</u> por um ramal no périodo desejado.
+Lista as ligações <u>recebidas</u> por um ramal no período desejado.
 
 ```text
 GET https://voice-api.zenvia.com/ramal/{id}/relatorio
