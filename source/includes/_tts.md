@@ -753,7 +753,7 @@ Você pode consultar os TTSs enviados posteriormente. Basta informar o período 
                 <span class="type">Query String</span>
             </td>
             <td>
-                Numéro de destino da chamada.
+                Número de destino da chamada.
             </td>
         </tr> 
 
