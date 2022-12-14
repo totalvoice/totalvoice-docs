@@ -745,6 +745,16 @@ Você pode consultar os TTSs enviados posteriormente. Basta informar o período 
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
+        </tr>
+        <tr>
+            <td>
+                destino
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número de destino da chamada.
+            </td>
         </tr> 
 
     </tbody>
