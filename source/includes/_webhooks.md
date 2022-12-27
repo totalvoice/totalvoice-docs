@@ -1805,7 +1805,7 @@ Ao fim de toda chamada de áudio um callback é feito para este endereço, envia
                 <span class="attribute">string</span>
             </td>
             <td>
-                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconeção</a>
+                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconexão</a>
             </td>
         </tr>
         <tr>
