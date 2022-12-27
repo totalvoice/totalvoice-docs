@@ -1,6 +1,6 @@
 # Áudio
 
-> <b>Audio Endpoint</b>
+> <b>Áudio Endpoint</b>
 
 ```text
 https://voice-api.zenvia.com/audio
@@ -208,7 +208,7 @@ Definição do objeto Áudio
                 <span class="attribute">string</span>
             </td>
             <td>
-                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconeção</a>
+                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconexão</a>
             </td>
         </tr>
         <tr>

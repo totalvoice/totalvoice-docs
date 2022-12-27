@@ -15,11 +15,9 @@ toc_footers:
   - <a href='https://voice-app.zenvia.com/painel/signup.php' target="_blank">Criar Conta</a>
 
 includes:
-  - introducao
-  - tipos_conta
-  - autenticacao
-  - respostas
-  - testes
+  - comecando
+  - guia_usuario
+  - recursos_desenvolvedor
   - audio
   - central_telefonica
   - fila
