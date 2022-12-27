@@ -1,38 +1,5 @@
 # Recursos de desenvolvedor
 
-> <b>Exemplo de autenticação</b>
-
-```shell--curl
-$ curl https://voice-api.zenvia.com/sms \
-    --header 'Access-Token: testeM68PU1Izmb9chEdLzep7IwRymWO'
-```
-
-```php
-<?php
-$client = new TotalVoiceClient('testeM68PU1Izmb9chEdLzep7IwRymWO');
-```
-
-```javascript--node
-const totalvoice = require('totalvoice-node');
-const client = new totalvoice("testeM68PU1Izmb9chEdLzep7IwRymWO");
-```
-
-```go
-client := totalvoice.NewTotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO")
-```
-
-```python
-from totalvoice.cliente import Cliente
-client = Cliente("testeM68PU1Izmb9chEdLzep7IwRymWO", 'voice-api.zenvia.com')
-```
-
-```java
-TotalVoiceClient client = new TotalVoiceClient("testeM68PU1Izmb9chEdLzep7IwRymWO");
-```
-
-> <b>IMPORTANTE:</b> Não esqueça de alterar o Token de exemplo pelo seu Token.
-
-
 
 ## Autenticação
 
@@ -41,7 +8,6 @@ Este tópico explica como obter e configurar a autorização de **token de acess
 Esta é a maneira como as APIs de Voz da Zenvia garantem que os dados sejam protegidos.
 
 Sua utilização permite que desenvolvedores legitimem sua conta, acessem as APIs para obter informações e realizem as demais requisições desejadas. 
-
 
 
 ### Sobre Tokens de Acesso

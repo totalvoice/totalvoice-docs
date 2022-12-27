@@ -125,11 +125,11 @@ Caso você não encontre algum material ou tenha alguma dúvida técnica que nã
     <tbody>
         <tr>
             <td><a href="#audio">Áudio</a></td>
-            <td><a href="#gerenciar_contas">Gerenciar Contas</a></td>
+            <td><a href="#gerenciar-contas">Gerenciar Contas</a></td>
         </tr>
         <tr>
-            <td><a href="#central_telefonica">Central Telefônica</a></td>
-            <td><a href="#minha_conta">Minha Conta</a></td>
+            <td><a href="#central-telefonica">Central Telefônica</a></td>
+            <td><a href="#minha-conta">Minha Conta</a></td>
         </tr>
         <tr>
             <td><a href="#fila">Fila</a></td>
@@ -141,14 +141,14 @@ Caso você não encontre algum material ou tenha alguma dúvida técnica que nã
         </tr>
         <tr>
             <td><a href="#composto">Composto</a></td>
-            <td><a href="#tts">TTS Leitura de Texto</a></td>
+            <td><a href="#tts-leitura-de-texto">TTS Leitura de Texto</a></td>
         </tr>
         <tr>
             <td><a href="#conferencias">Conferências</a></td>
-            <td><a href="#verificacao">Verificação (2FA)</a></td>
+            <td><a href="#verificacao-2fa">Verificação (2FA)</a></td>
         </tr>
         <tr>
-            <td><a href="#did">DIDs</a></td>
+            <td><a href="#dids">DIDs</a></td>
             <td><a href="#webphone">Webphone</a></td>
         </tr>
     </tbody>
