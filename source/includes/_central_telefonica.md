@@ -424,8 +424,7 @@ Em construção
     "ura_id": null,
     "voicemail": false,
     "tags": "",
-    "motivo_vcall": null,
-    "ativo": true
+    "motivo_vcall": null
   }
 }
 ```
@@ -662,15 +661,6 @@ Em construção
             </td>
             <td>
                 Id do motivo vcall
-            </td>
-        </tr>
-        <tr>
-            <td>
-                ativo
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Ativar e desativar ramal de acordo com as regras. Default = true
             </td>
         </tr>
     </tbody>
@@ -985,8 +975,7 @@ Em construção
         "motivo_vcall": {
             "id": 53,
             "motivo": "Estamos retornando a sua solicitação"
-        },
-        "ativo": true
+        }
       },
       {
         "id": 4567,
@@ -1002,8 +991,7 @@ Em construção
         "ura_id": null,
         "voicemail": false,
         "tags": "",
-        "motivo_vcall": null,
-        "ativo": true
+        "motivo_vcall": null
       }
     ]
   }
