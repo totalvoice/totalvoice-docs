@@ -24,11 +24,7 @@ Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, en
     "webphone": false,
     "ura_id": null,
     "voicemail": false,
-    "tags": "",
-    "motivo_vcall": {
-        "id": 53,
-        "motivo": "Estamos retornando a sua solicitação"
-    }        
+    "tags": ""
 }
 ```
 Definição do objeto Ramal
@@ -107,15 +103,6 @@ Definição do objeto Ramal
               </td>
               <td>
                  Grava as ligações deste ramal
-              </td>
-          </tr>
-          <tr>
-              <td>
-                  motivo_vcall
-                  <span class="attribute">objeto</span>
-              </td>
-              <td>
-                 Objeto do tipo <a href="#objeto-motivo-vcall">Motivos VCall</a>
               </td>
           </tr>
     </tbody>
@@ -208,8 +195,7 @@ Em construção
     "webphone": true,
     "ura_id": null,
     "voicemail": false,
-    "tags": null,
-    "motivo_vcall": null
+    "tags": null
   }
 }
 ```
@@ -318,15 +304,6 @@ Nenhum campo é obrigatório, mas indicamos que você passe os parâmetros ramal
                 Se esse valor for igual a true, ao ligar para esse ramal ele será encaminhado para uma caixa postal que gravará recados. (Não irá chamar no usuário)
             </td>
         </tr>
-        <tr>
-            <td>
-                motivo_vcall
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Id do motivo vcall
-            </td>
-        </tr>
     </tbody>
 </table>
 
@@ -423,8 +400,7 @@ Em construção
     "webphone": false,
     "ura_id": null,
     "voicemail": false,
-    "tags": "",
-    "motivo_vcall": null
+    "tags": ""
   }
 }
 ```
@@ -652,15 +628,6 @@ Em construção
             </td>
             <td>
                 Se esse valor for igual a true, ao ligar para esse ramal ele será encaminhado para uma caixa postal que gravará recados.(Não irá chamar no usuário)
-            </td>
-        </tr>
-         <tr>
-            <td>
-                motivo_vcall
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                Id do motivo vcall
             </td>
         </tr>
     </tbody>
@@ -971,11 +938,7 @@ Em construção
         "webphone": true,
         "ura_id": null,
         "voicemail": false,
-        "tags": "",
-        "motivo_vcall": {
-            "id": 53,
-            "motivo": "Estamos retornando a sua solicitação"
-        }
+        "tags": ""
       },
       {
         "id": 4567,
@@ -990,8 +953,7 @@ Em construção
         "webphone": true,
         "ura_id": null,
         "voicemail": false,
-        "tags": "",
-        "motivo_vcall": null
+        "tags": ""
       }
     ]
   }

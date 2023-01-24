@@ -10,12 +10,6 @@ Bina é o número identificador do telefone de origem e que aparece no telefone 
 
 Este endpoint permite que você cadastre e valide suas binas para utilizá-las em chamadas e torpedos de voz com o intuito de identificar ao destino que a ligação é sua, independente do número que estiver sendo utilizado para realizar a chamada.
 
-Tendo a sua bina cadastrada e aprovada, você pode vincular Motivos VCall (Motivos de Chamadas Verificadas) a ela. 
-
-Chamadas Verificadas são um recurso para prevenir spam e golpes por telefone, ao mesmo tempo em que ajuda empresas legítimas a transmitirem mais confiança e segurança para os seus clientes.
-
-Para utilizar as Chamadas Verificadas, é necessário fazer a contratação prévia da funcionalidade.
-
 
 ### Objeto Bina
 
@@ -27,14 +21,7 @@ Para utilizar as Chamadas Verificadas, é necessário fazer a contratação pré
     "numero_telefone": "+5548911111111",
     "data_criacao": "2018-03-18T00:51:22.000Z",
     "fixo": false,
-    "confirmado": true,
-    "chamadas_verificadas": [
-        {
-            "id": 53,
-            "motivo": "Estamos retornando a sua solicitação",
-            "status": "Aprovado"
-        }
-    ]
+    "confirmado": true
 }
 ```
 
@@ -87,67 +74,6 @@ Definição do objeto Bina
             </td>
             <td>
                 Se está confirmado que o número de telefone da bina pertence a você
-            </td>
-        </tr>
-        <tr>
-            <td>
-                chamadas_verificadas
-                <span class="attribute">array</span>
-            </td>
-            <td>
-               Um array de <a href="#objeto-motivo-vcall">Motivos VCall</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-### Objeto Motivo VCall
-
-> <br>
-
-> JSON
-
-```json
-{
-    "id": 53,
-    "motivo": "Estamos retornando a sua solicitação",
-    "status": "Aprovado"
-}   
-```
-
-Motivo VCall são os motivos das Chamadas Verificadas. Os Motivos Vcall são vinculados a bina e são cadastrados atráves do painel em [voice-app.zenvia.com/painel/](https://voice-app.zenvia.com/painel/)
-
-Definição do objeto Motivo VCall
-
-#### Atributos
-
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                id
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                ID do motivo da Chamada Verificada
-             </td>
-        </tr>
-        <tr>
-            <td>
-                motivo
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Motivo da Chamada Verificada que aparecerá no display do aparelho celular do destino
-            </td>
-        </tr>
-        <tr>
-            <td>
-                status
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Informa qual o status do motivo da Chamada Verificada. Pode ser <b>Aprovado</b> | <b>Em análise</b> | <b>Recusado</b>
             </td>
         </tr>
     </tbody>
@@ -387,20 +313,8 @@ Após a criação de uma bina, você poderá realizar a busca do registro pelo s
     "numero_telefone": "+5548988888888",
     "data_criacao": "2018-03-18T00:51:22.000Z",
     "fixo": false,
-    "confirmado": true,
-    "chamadas_verificadas": [
-        {
-            "id": 2678,
-            "motivo": "Estamos retornando sua solicitação de contato",
-            "status": "Aprovado"
-       },
-       {
-            "id": 2998,
-            "motivo": "Estamos retornando sua solicitação de contato",
-            "status": "Aprovado"
-       }
-    ]
-}
+    "confirmado": true
+  }
 }
 ```
 
@@ -472,7 +386,7 @@ curl -X DELETE --header 'Content-Type: application/json' \
 
 Apaga o número de telefone (Bina) cadastrado na Conta. Você deve informar o ID da bina que deseja remover.
 
-Caso a Bina esteja vinculada ao Caller ID Default ou à um motivo de Chamada Verificada, será necessário desvincular via painel de voz, antes de deletar.
+Caso a Bina esteja vinculada ao Caller ID Default, será necessário desvincular via painel de voz, antes de deletar.
 
 
 #### Request
@@ -547,27 +461,14 @@ Busca os telefones (Bina) cadastrados na Conta
   "motivo": 0,
   "mensagem": "Dados retornados com sucesso",
   "dados": [
-        {
-            "id": 432,
-            "numero_telefone": "+554832830151",
-            "data_criacao": "2016-03-27T15:12:44+03:00",
-            "fixo": true,
-            "confirmado": true,
-            "chamadas_verificadas": [
-                {
-                    "id": 53,
-                    "motivo": "Estamos retornando sua solicitação de contato",
-                    "status": "Aprovado"
-                },
-                {
-                    "id": 99,
-                    "motivo": "Estamos retornando sua solicitação de contato",
-                    "status": "Aprovado"
-                }
-            ]
-        }
-    ]
-  }
+    {
+        "id": 432,
+        "numero_telefone": "+554832830151",
+        "data_criacao": "2016-03-27T15:12:44+03:00",
+        "fixo": true,
+        "confirmado": true
+    }
+  ]  
 }
 ```
 
