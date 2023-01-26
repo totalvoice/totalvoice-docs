@@ -264,55 +264,46 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
            <li>
-            <a href="#introducao" class="toc-h1 toc-link" data-title="Introdução">Introdução</a>
+            <a href="#comecando" class="toc-h1 toc-link" data-title="Começando">Começando</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#visao-geral-da-plataforma" class="toc-h2 toc-link" data-title="Visão geral da plataforma">Visão geral da plataforma</a>
+                  </li>
                   <li>
                     <a href="#bibliotecas" class="toc-h2 toc-link" data-title="Bibliotecas">Bibliotecas</a>
                   </li>
                   <li>
-                    <a href="#duvidas" class="toc-h2 toc-link" data-title="Dúvidas">Dúvidas</a>
+                    <a href="#suporte" class="toc-h2 toc-link" data-title="Suporte">Suporte</a>
                   </li>
               </ul>
           </li>
            <li>
-            <a href="#permissoes-de-conta" class="toc-h1 toc-link" data-title="Permissões de Conta">Permissões de Conta</a>
+            <a href="#guia-do-usuario" class="toc-h1 toc-link" data-title="Guia do usuário">Guia do usuário</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#contas-trial" class="toc-h2 toc-link" data-title="Contas Trial">Contas Trial</a>
+                    <a href="#introducao" class="toc-h2 toc-link" data-title="Introdução">Introdução</a>
                   </li>
                   <li>
-                    <a href="#contas-cliente" class="toc-h2 toc-link" data-title="Contas Cliente">Contas Cliente</a>
+                    <a href="#guia-de-inicio-inscreva-se-para-uma-conta" class="toc-h2 toc-link" data-title="Guia de início: Inscreva-se para uma conta">Guia de início: Inscreva-se para uma conta</a>
                   </li>
                   <li>
-                    <a href="#conta-pai" class="toc-h2 toc-link" data-title="Conta Pai">Conta Pai</a>
-                  </li>
-                  <li>
-                    <a href="#conta-filha" class="toc-h2 toc-link" data-title="Conta Filha">Conta Filha</a>
+                    <a href="#permissoes-de-conta" class="toc-h2 toc-link" data-title="Permissões de conta">Permissões de conta</a>
                   </li>
               </ul>
           </li>
            <li>
-            <a href="#autenticacao" class="toc-h1 toc-link" data-title="Autenticação">Autenticação</a>
-          </li>
-           <li>
-            <a href="#respostas-da-api" class="toc-h1 toc-link" data-title="Respostas da API">Respostas da API</a>
+            <a href="#recursos-de-desenvolvedor" class="toc-h1 toc-link" data-title="Recursos de desenvolvedor">Recursos de desenvolvedor</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#codigos-http" class="toc-h2 toc-link" data-title="Códigos HTTP">Códigos HTTP</a>
+                    <a href="#autenticacao" class="toc-h2 toc-link" data-title="Autenticação">Autenticação</a>
                   </li>
                   <li>
-                    <a href="#codigos-de-motivos" class="toc-h2 toc-link" data-title="Códigos de Motivos">Códigos de Motivos</a>
+                    <a href="#respostas-de-api" class="toc-h2 toc-link" data-title="Respostas de API">Respostas de API</a>
                   </li>
                   <li>
-                    <a href="#status-para-chamada" class="toc-h2 toc-link" data-title="Status para Chamada">Status para Chamada</a>
-                  </li>
-                  <li>
-                    <a href="#status-perna-de-ligacao" class="toc-h2 toc-link" data-title="Status Perna de Ligação">Status Perna de Ligação</a>
+                    <a href="#testes" class="toc-h2 toc-link" data-title="Testes">Testes</a>
                   </li>
               </ul>
-          </li>
-           <li>
-            <a href="#testes" class="toc-h1 toc-link" data-title="Testes">Testes</a>
           </li>
           <li style="margin-top: 20px;">
             <a href="#audio" class="toc-h1 toc-link" data-title="Áudio">Áudio</a>
@@ -734,22 +725,96 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introducao'>Introdução</h1>
+        <h1 id='comecando'>Começando</h1><h2 id='visao-geral-da-plataforma'>Visão geral da plataforma</h2>
 <blockquote>
-<p><b>Api Endpoint</b></p>
+<p><b>API Endpoint</b></p>
 </blockquote>
-<pre class="highlight plaintext"><code>https://voice-api.zenvia.com
+<pre class="highlight plaintext"><code>https://voice-api.zenvia.com/
 </code></pre>
-<p>Os serviços da ZenAPI estão disponíveis através de uma API Rest, utilizando JSON, categorizada com o endereço da URL para identificar o serviço e
-os códigos de respostas HTTP para indicar erros na API. Suportamos cross-origin, aceitando interações de qualquer domínio com segurança.</p>
+<p>A plataforma de desenvolvedor da API de Voz da Zenvia fornece tudo o que desenvolvedores precisam para começar a usar as APIs e ampliar a estratégia de comunicação utilizando nossos recursos de voz para efetuar e receber chamadas ou enviar torpedos. </p>
 
-<p>Disponibilizamos bibliotecas em diversas linguagens para uma maior facilidade dos nossos usuários, você pode alterar a linguagem de referência
-da documentação clicando na linguagem desejada no canto superior direito da página.</p>
+<p>Os guias aqui disponibilizados fornecem ferramentas, recursos, dados e produtos de API para você integrar e estender seus resultados de pesquisas e campanhas.</p>
 
-<p>Para utilizar a API, você precisará de uma conta em nosso site, <a href="https://voice-app.zenvia.com/painel/signup.php" target="_blank">clicando aqui</a>
-você poderá criá-la facilmente, na página principal de sua conta, você tem acesso ao <strong>Access-Token</strong> que será utilizado para autenticação no serviço.</p>
-<h3 id='bibliotecas'>Bibliotecas</h3>
-<p>As bibliotecas oficiais da nossa API podem ser encontradas em nosso <a href="https://github.com/totalvoice">GitHub</a>.</p>
+<p>Links rápidos:</p>
+
+<ul>
+<li><a href="https://voice-app.zenvia.com/painel/signup.php">Inscreva-se para uma conta</a></li>
+<li><a href="#permissoes-de-conta">Permissões de conta</a></li>
+<li><a href="#em-breve">Descubra as APIs que funcionam melhor para você</a></li>
+<li><a href="#testes">Realize seu primeiro teste</a></li>
+</ul>
+<h3 id='por-que-usar-nossas-apis'>Por que usar nossas APIs?</h3>
+<p>A solução de voz da Zenvia é destinada para desenvolvedores que precisam de uma comunicação automatizada e principalmente integrada com as ferramentas que a sua empresa já possui.</p>
+
+<p>Nossas APIs de fácil utilização oferecem interações e soluções para chamadas e torpedos de voz através de programação direta. Com elas, você tem: </p>
+
+<p><img src="images/solucoes-api-banner.png" title="Soluções API de voz" alt="Soluções API de voz" /></p>
+<h3 id='como-a-plataforma-esta-organizada'>Como a plataforma está organizada</h3>
+<p>A plataforma de desenvolvedor é organizada por APIs diferentes de acordo com a necessidade de integração. </p>
+
+<p>Reunimos uma seção de introdução diferente para cada uma contendo todas as suas especificidades. Atualmente, nossas APIs são:</p>
+
+<h4>Áudio</h4>
+
+<p>Essa API permite que você envie um torpedo de voz ou mensagens de voz do tipo áudio para determinados números. </p>
+
+<h4>Central Telefônica</h4>
+
+<p>Na central telefônica você poderá fazer configurações e retirar relatórios de ramal e URAs.</p>
+
+<h4>Fila</h4>
+
+<p>A funcionalidade de filas permite a automatização e manipulação de filas de atendimento.</p>
+
+<h4>Chamadas</h4>
+
+<p>Essa API permite que você crie chamadas, podendo gravar as ligações, agendar e binar o seu próprio número. Também permite gerar relatório de chamadas, derrubar chamadas em andamento, transferir chamadas e avaliar de chamadas.</p>
+
+<h4>Composto</h4>
+
+<p>A funcionalidade de Envio de Composto, permite que você envie mensagens de voz por telefone misturando gravações de áudio MP3 com TTS e também realize algumas outras funções de central telefônica como coletar DTMF e transferir.</p>
+
+<h4>Conferências</h4>
+
+<p>Essa API permite criar e receber um ID para realizar chamadas que, ao serem atendidas, conectam-se a essa conferência. </p>
+
+<h4>DIDs</h4>
+
+<aside class="notice"> 
+Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email <a href="email:suporte.voz@zenvia.com">suporte.voz@zenvia.com</a>
+</aside>
+
+<p>A funcionalidade DID (Número de telefone para recebimento de chamadas) permite que você gerencie, adquira ou remova um DID da sua Conta</p>
+
+<h4>Gerenciar Contas</h4>
+
+<p>Com essa API você pode criar, consultar, alterar e deletar contas filhas, sendo as contas filhas exatamente iguais a qualquer outra conta na Zenvia. </p>
+
+<h4>Minha Conta</h4>
+
+<p>Essa funcionalidade permite que você visualize seu saldo, monitore suas contas e suas recargas, edite suas contas e configure e visualize seus webhooks.</p>
+
+<h4>Bina</h4>
+
+<p>Este endpoint permite que você cadastre e valide suas binas para utilizá-las em chamadas e torpedos de voz com o intuito de identificar ao destino que a ligação é sua, independente do número que estiver sendo utilizado para realizar a chamada.</p>
+
+<h4>SMS</h4>
+
+<p>O SMS permite que você envie mensagens de texto pela nossa API. </p>
+
+<h4>TTS Leitura de Texto</h4>
+
+<p>A funcionalidade de TTS permite que você nos envie uma mensagem de texto e nosso torpedo de voz irá transformar em áudio.</p>
+
+<h4>Verificação (2FA)</h4>
+
+<p>A funcionalidade de verificação ou Two Factor Authentication(2FA), envia um código para um número de telefone e depois você pode verificar se o código informado pelo usuário é válido.</p>
+
+<h4>Webphone</h4>
+
+<p>Consulta a URL do Webphone de um determinado Ramal enviando os parâmetros para pré-configuração</p>
+<h2 id='bibliotecas'>Bibliotecas</h2>
+<p>Em nosso <a href="https://github.com/totalvoice">GitHub</a> você encontra bibliotecas de cliente e de código aberto que podem ajudá-lo a integrar nossas APIs ao seu sistema de forma mais rápida. </p>
 
 <ul>
 <li><a href="https://github.com/totalvoice/totalvoice-php">PHP</a></li>
@@ -760,87 +825,130 @@ você poderá criá-la facilmente, na página principal de sua conta, você tem 
 <li><a href="https://github.com/totalvoice/totalvoice-java">Java</a></li>
 <li><a href="https://github.com/totalvoice/totalvoice-ruby">Ruby</a></li>
 </ul>
-<h3 id='duvidas'>Dúvidas</h3>
-<p>Caso você não encontre algum material ou possui alguma dúvida técnica que não está na documentação, entre em <b>contato</b> conosco
-pelos nossos canais de comunicação/suporte.</p>
+<h2 id='suporte'>Suporte</h2>
+<p>Caso você não encontre algum material ou tenha alguma dúvida técnica que não esteja na documentação, entre em contato conosco pelos nossos canais de suporte.</p>
 
 <ul>
-<li>E-mail: suporte.voz@zenvia.com</li>
+<li>E-mail: suporte.voz@zenvia.com.</li>
 <li>Chat: na plataforma de Voz da Zenvia.</li>
 </ul>
-<h1 id='permissoes-de-conta'>Permissões de Conta</h1>
-<p>Quando você cria uma nova conta na Zenvia, ela é criada automaticamente como uma conta Trial,
-tendo limitações que garantem a segurança do negócio, evitando que pessoas mal intencionadas utilizem os serviços
-da ZenAPI.</p>
+<h3 id='visite-as-paginas-especificas-de-cada-api-para-obter-mais-informacoes-sobre-como-comecar-a-utiliza-las'>Visite as páginas específicas de cada API para obter mais informações sobre como começar a utilizá-las.</h3>
+<table class="table-with-textual-content">
+    <tbody>
+        <tr>
+            <td><a href="#audio">Áudio</a></td>
+            <td><a href="#gerenciar-contas">Gerenciar Contas</a></td>
+        </tr>
+        <tr>
+            <td><a href="#central-telefonica">Central Telefônica</a></td>
+            <td><a href="#minha-conta">Minha Conta</a></td>
+        </tr>
+        <tr>
+            <td><a href="#fila">Fila</a></td>
+            <td><a href="#bina">Bina</a></td>
+        </tr>
+        <tr>
+            <td><a href="#chamadas">Chamadas</a></td>
+            <td><a href="#sms">SMS</a></td>
+        </tr>
+        <tr>
+            <td><a href="#composto">Composto</a></td>
+            <td><a href="#tts-leitura-de-texto">TTS Leitura de Texto</a></td>
+        </tr>
+        <tr>
+            <td><a href="#conferencias">Conferências</a></td>
+            <td><a href="#verificacao-2fa">Verificação (2FA)</a></td>
+        </tr>
+        <tr>
+            <td><a href="#dids">DIDs</a></td>
+            <td><a href="#webphone">Webphone</a></td>
+        </tr>
+    </tbody>
+</table>  
+<h1 id='guia-do-usuario'>Guia do usuário</h1><h2 id='introducao'>Introdução</h2>
+<p>Os documentos a seguir ajudarão você a interagir com a API REST e começar a utilizar nossos recursos de voz para efetuar ou receber chamadas e enviar torpedos. </p>
 
-<p>Após as validações solicitadas (confirmação de telefone fixo, e-mail e etc) a conta é aprovada instantaneamente, 
-recebendo o acesso de conta Cliente, que retira algumas limitações, mantendo apenas as que evitam golpes e que utilizam para Spams.</p>
+<p>Utilizamos o JSON para estruturar nossos dados e um endereço único da API para identificar os serviços e seus respectivos códigos de respostas HTTP.  </p>
 
-<p>Caso tenha interesse em ter acessos de funções exclusivas da API de Voz (Centrais telefônicas, DIDs, Números Receptivos e criação de contas filhas), 
-você precisa entrar em contato com nossa equipe, para podermos entender o cenário e auxiliar na escolha ideal de funcionalidades.  </p>
-<h2 id='contas-trial'>Contas Trial</h2>
-<blockquote>
-<p><b>TRIAL</b>
-<ul>
-    <li>
-        São limitadas ao envio das funções da API apenas números cadastrados (e devidamente confirmados) no painel.
-    </li>
-    <li>
-        Não podem editar Ramais.
-    </li>
-    <li>
-        Número maior de palavras bloqueadas no corpo do SMS.
-    </li>
-    <li>
-        Limite de 50 SMSs enviados por dia.
-    </li>
-    <li>
-       Só é possível utilizar o número BINA no parâmetro de torpedos de voz(Áudio, TTS, Composto) com os números cadastrados.
-    </li>
-    <li>
-        Não tem acesso à Central Telefônica.
-    </li>
-</ul></p>
-</blockquote>
+<p>💡 Usamos serviços de &quot;cross-origin&quot;, aceitando interações de qualquer domínio seguro. Portanto, você pode realizar uma requisição para determinado recurso utilizando alguma API Client. </p>
+<h2 id='guia-de-inicio-inscreva-se-para-uma-conta'>Guia de início: Inscreva-se para uma conta</h2>
+<p>Você deve começar criando uma conta em nosso site. A inscrição é necessária para testar APIs, integrá-las ao seu sistema ou aplicativo e usufruir dos recursos disponíveis. </p>
 
-<p>As contas Trial são contas que foram criadas e ainda não tiveram seus dados confirmados, como e-mail e telefone fixo (caso a pessoa
-não tenha telefone fixo pode entrar em contato com o time de voz da Zenvia para ser validado), a conta trial tem o intuito apenas de testar
-as funcionalidades da API, a validação e migração é feita de modo automático e a mudança de tipo de conta acontece na hora.</p>
+<p>Inscreva-se <a href="https://voice-app.zenvia.com/painel/signup.php">neste link</a> e siga os passos abaixo:</p>
 
-<p>Veja como cadastrar um número <a href='https://centraltotalvoice.freshdesk.com/solution/articles/35000078983-cadastrando-um-n%C3%BAmero-como-bina-identificac%C3%A3o-de-chamada-'>clicando aqui</a>.</p>
-<h2 id='contas-cliente'>Contas Cliente</h2>
-<blockquote>
-<p><b>CLIENTE</b>
-<ul>
-    <li>
-        Não podem binar números que não sejam seus confirmados.
-    </li>
-    <li>
-        Não podem criar e administrar contas filhas.
-    </li>
-    <li>
-        Limite de 50 SMSs enviados por dia, que cresce de acordo com o uso (ou em simples contato com a equipe de Voz da Zenvia).
-    </li>
-    <li>
-        SMSs com algumas palavras proíbidas (referente à cobranças, instituições financeiras, links e etc).
-    </li>
-</ul></p>
-</blockquote>
+<ol>
+<li>Preencha os dados solicitados e clique em Criar conta;</li>
+<li>Valide seu cadastro através do e-mail e telefone;</li>
+<li>Acesse o painel.</li>
+</ol>
 
-<p>Contas Clientes são aquelas que já passaram por um processo de validação, dando liberdade para utilização da API com apenas algumas limitações por questão
-de segurança.</p>
+<p>Na página principal da sua conta, você terá acesso ao <strong>Access-Token</strong> que será utilizado para autenticação no serviço. Ele estará disponível e localizado conforme sinalizado na imagem:</p>
 
-<p>As contas Clientes:</p>
-<h2 id='conta-pai'>Conta Pai</h2>
-<p>Quando se tem a necessidade de criar e administrar outras contas, como em integrações com sistemas, revenda de serviços e
-utilização por terceiros das funções de telefonia, você pode <a href="#introducao">solicitar uma permissão</a> de conta Pai, 
-onde você pode criar, deletar e alterar contas Filhas.</p>
+<p><img src="images/access-token-painel.png" title="Onde encontrar Access-Token" alt="Onde encontrar Access-Token" /></p>
+<h2 id='permissoes-de-conta'>Permissões de conta</h2>
+<p>O acesso às APIs de Voz da Zenvia possui uma hierarquia de contas onde cada uma contém suas especificidades. </p>
 
-<p>As contas Pais tem as mesmas limitações das contas Clientes, tendo apenas o diferencial de poder administrar subcontas. </p>
-<h2 id='conta-filha'>Conta Filha</h2>
-<p>As contas Filhas são basicamente contas criadas através de outra conta, são parecidas com as contas Clientes, 
-tendo os mesmos privilégios, sendo apenas vinculada a uma outra conta podendo ser <a href="#alterar-conta">Alterada</a> ou <a href="#deletar-conta">Removida</a> por sua conta Pai.</p>
-<h1 id='autenticacao'>Autenticação</h1>
+<p>Ao criar uma nova conta, a mesma é criada automaticamente como Trial. Esse tipo possui limitações que garantem a segurança do negócio, evitando assim que pessoas mal intencionadas utilizem nossos serviços.</p>
+
+<p>Por outro lado, após validar as informações solicitadas (telefone e e-mail), a conta é aprovada instantaneamente. A partir disso, é válido saber:</p>
+
+<table class="table-with-textual-content">
+    <thead>
+        <tr>
+            <th>Tipo de conta</th>
+            <th>Descrição</th>
+            <th>Subconta</th>
+            <th>Limitações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Contas Trial</td>
+            <td>São contas que ainda não tiveram seus dados confirmados, possuindo o intuito apenas de testar as funcionalidades da API.</td>
+            <td class="center"><span class="text-wrong">X</span></td>
+            <td>
+                <ul>
+                    <li>São limitados ao envio das funções da API apenas números cadastrados e confirmados no painel.</li>
+                    <li>Não podem editar ramais.</li>
+                    <li>Máximo de 50 SMS enviados por dias, com limitações de palavras bloqueadas por texto.</li>
+                    <li>Função de BINA disponível apenas no torpedo de voz com números cadastrados.</li>
+                    <li>Não possui acesso à central telefônica.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Contas Cliente</td>
+            <td>Dá a liberdade para utilização da API com apenas algumas limitações por questão de segurança, como aquelas que evitam golpes ou usam spams.</td>
+            <td class="center"><span class="text-wrong">X</span></td>
+            <td>
+                <ul>
+                    <li>Não podem binar números não sejam seus confirmados.</li>
+                    <li>Não podem criar e administrar contas filhas.</li>
+                    <li>Máximo de 50 SMS enviados por dia, limite que cresce de acordo com o uso.</li>
+                    <li>SMSs com algumas palavras proibidas (referente à cobranças, instituições financeiras, links, etc).</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Contas Pai</td>
+            <td>São contas para quem possui a necessidade de criar e administrar outras contas, como em integrações com sistemas, revenda de serviços e utilização por terceiros das funções de telefonia.</td>
+            <td class="center">Contas Filhas</td>
+            <td>
+                <ul>
+                    <li>As contas Pais têm as mesmas limitações das contas Clientes, tendo apenas o diferencial de poder administrar subcontas.</li>
+                    <li>As contas Filhas são basicamente contas criadas através de outra conta, são parecidas com as contas Clientes, tendo os mesmos privilégios, sendo apenas vinculada a uma outra conta, podendo ser <a href="#alterar-conta">Alterada</a> ou <a href="#deletar-conta">Removida</a> por sua conta Pai.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h1 id='recursos-de-desenvolvedor'>Recursos de desenvolvedor</h1><h2 id='autenticacao'>Autenticação</h2>
+<p>Este tópico explica como obter e configurar a autorização de <strong>token de acesso</strong> com a API de Voz, principal e única forma de autenticação que aplicamos. </p>
+
+<p>Esta é a maneira como as APIs de Voz da Zenvia garantem que os dados sejam protegidos.</p>
+
+<p>Sua utilização permite que desenvolvedores legitimem sua conta, acessem as APIs para obter informações e realizem as demais requisições desejadas. </p>
+<h3 id='sobre-tokens-de-acesso'>Sobre Tokens de Acesso</h3>
 <blockquote>
 <p><b>Exemplo de autenticação</b></p>
 </blockquote>
@@ -856,23 +964,39 @@ tendo os mesmos privilégios, sendo apenas vinculada a uma outra conta podendo s
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="o">);</span>
 </code></pre>
 <blockquote>
-<p><b>IMPORTANTE:</b> Não esqueça de alterar o Token de exemplo pelo seu Token.</p>
+<p><b>IMPORTANTE:</b> Não esqueça de alterar o Access-Token de exemplo pelo seu token.</p>
 </blockquote>
 
-<p>A API de Voz utiliza um Token de Acesso para realizar a autenticação de sua conta, você deve incluir o Access-Token 
-na requisição HTTP através do cabeçalho, ou pela <em>Query String</em>. </p>
+<p>A autorização do token de acesso permite que você, desenvolvedor, acesse as APIs para obter informações da sua conta e realize as chamadas que desejar, bastando apenas utilizar o código como parâmetro. </p>
 
 <p>Exemplo de Access-Token:</p>
 
 <p><code>testeM68PU1Izmb9chEdLzep7IwRymWO</code></p>
+<h3 id='geracao-do-access-token'>Geração do Access-Token</h3>
+<p>Após criar a sua conta na plataforma, você pode realizar o login <a href="https://voice-app.zenvia.com/painel/login.php">aqui</a> e ter acesso ao seu token da API. </p>
 
-<p>As bibliotecas disponibilizadas pelo ZenAPI já fazem a autenticação na requisição HTTP de forma transparente. </p>
+<p>No canto inferior esquerdo da tela inicial, clique no ícone de <em>Copiar</em> em <em>Access Token</em>. </p>
 
-<aside class="notice">
- Mantenha seu Token em segredo, tome muito cuidado, não deixe ele exposto em um código público e nunca
- compartilhe com ninguém fora da sua organização.
-</aside>
-<h1 id='respostas-da-api'>Respostas da API</h1>
+<p><img src="images/access-token-caminho.gif" title="Como encontrar Access-Token" alt="Como encontrar Access-Token" /></p>
+
+<p><strong>Importante:</strong> Lembre-se de copiar e colar o token em um local seguro e mantê-lo em segredo. Recomendamos também não utilizá-lo em código público e nem compartilhá-lo com ninguém fora da sua organização.  </p>
+<h3 id='requisicoes'>Requisições</h3>
+<p>O código de autenticação retornado na etapa anterior servirá como um ticket de acesso para os serviços disponíveis nas nossas APIs.</p>
+
+<p>Dessa forma, o Token será validado sempre que uma requisição for feita e você deve utilizar o mesmo para cada uma delas. </p>
+
+<p>💡 Lembre-se que as requisições podem ser para áudios, centrais telefônicas, chamadas, entre outras.</p>
+<h3 id='solicitacoes'>Solicitações</h3>
+<p>As APIs da Zenvia são baseadas no padrão REST e formato JSON para receber e retornar os dados. Esses recursos são acessados através de solicitações HTTP por meio do seguinte caminho:</p>
+<h4 id='cabecalho-de-solicitacao-de-autorizacao-http'>Cabeçalho de solicitação de autorização HTTP</h4>
+<p>O token deve ser enviado nas requisições através do header padrão do protocolo HTTP. </p>
+
+<p>Toda e qualquer requisição precisa conter em seu cabeçalho (<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTTP_header#:~:text=An%20HTTP%20header%20is%20a,format%20of%20the%20returned%20body">header</a>) o seu código de autenticação (Access-Token), que será utilizado para identificação na plataforma.</p>
+
+<p>💡 Desenvolvedores não necessitam lidar com as complexidades relacionadas à autenticação.  As bibliotecas disponibilizadas pela ZenAPI já fazem a autenticação na requisição HTTP de forma transparente e automática. </p>
+
+<p>🔐 Mantenha seu Token em segredo, tome muito cuidado, não deixe ele exposto em um código público e nunca compartilhe com ninguém fora da sua organização.</p>
+<h2 id='respostas-de-api'>Respostas de API</h2>
 <blockquote>
 <p><b>Exemplo JSON de retorno</b></p>
 </blockquote>
@@ -880,15 +1004,20 @@ na requisição HTTP através do cabeçalho, ou pela <em>Query String</em>. </p>
   </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
   </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"audio criado com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"áudio criado com sucesso"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4921</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Toda resposta retornada pela API vem em formato JSON contendo um cabeçalho padrão,
-o cabeçalho contém as informações sobre a requisição e os dados próprios da resposta, que ficam dentro do campo <strong>dados</strong>.</p>
-<h4 id='atributos-da-resposta'>Atributos da Resposta</h4>
+<p>As respostas das APIs vêm em formato JSON contendo:</p>
+
+<ul>
+<li>Cabeçalho padrão;</li>
+<li>Cabeçalho com as informações sobre a requisição;</li>
+<li>Dados próprios da resposta, localizado no campo dados.</li>
+</ul>
+
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -938,7 +1067,7 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
         </tr>
     </tbody>
 </table>
-<h2 id='codigos-http'>Códigos HTTP</h2>
+<h3 id='codigos-http'>Códigos HTTP</h3>
 <blockquote>
 <p><b>Códigos HTTP utilizados</b>
 <table>
@@ -981,182 +1110,185 @@ o cabeçalho contém as informações sobre a requisição e os dados próprios 
 </table></p>
 </blockquote>
 
-<p>As respostas das requisições realizadas para a API de Voz da ZenAPI utilizam os códigos convencionais HTTP, indicando sucesso ou falha,
-sendo que o código 200 responde pelo sucesso e os que iniciam por 4xx pelas falhas, também utilizamos os códigos começando com 500 para apresentar falhas internas.</p>
+<p>As respostas das requisições realizadas para a API de Voz utilizam os códigos convencionais HTTP.</p>
 
-<p><br style="margin-top: 280px;"/>  </p>
-<h2 id='codigos-de-motivos'>Códigos de Motivos</h2>
+<p>Elas podem indicar sucesso ou falha, onde: </p>
+
+<ul>
+<li>O código 200 responde pelo sucesso;</li>
+<li>Códigos que iniciam por 4xx respondem pelas falhas.</li>
+<li>Códigos começando com 5xx respondem pelas falhas internas.</li>
+</ul>
+<h3 id='codigos-de-motivos'>Códigos de Motivos</h3>
 <blockquote>
-<p><b>Códigos de Motivos</b></p>
-
+<p><b>Códigos de Motivos</b>
 <table>
-     <tr>
-         <td>0</td>
-         <td>Os dados foram retornados com sucesso.</td>
-     </tr>
-     <tr>
-         <td>8</td>
-         <td>Sua conta não tem permissão para realizar esse procedimento.</td>
-     </tr>
-     <tr>
-         <td>9</td>
-         <td>Sua conta não tem saldo suficiente.</td>
-     </tr>
-     <tr>
-         <td>10</td>
-         <td>Você não enviou todos os parâmetros obrigatórios.</td>
-     </tr>
-     <tr>
-         <td>11</td>
-         <td>Algum dos parâmetros enviados está inválido.</td>
-     </tr>
-     <tr>
-         <td>20</td>
-         <td>Erro porque o registro ficaria duplicado.</td>
-     </tr>
-     <tr>
-         <td>30</td>
-         <td>Esta funcionalidade ainda não foi implementada. (Entre em contato)</td>
-     </tr>
-     <tr>
-         <td>40</td>
-         <td>Houve uma falha na autenticação, seu Token está correto?</td>
-     </tr>
     <tr>
-         <td>50</td>
-         <td>Erro interno dentro do nosso sistema.</td>
-     </tr>
-     <tr>
-         <td>60</td>
-         <td>Não encontramos o elemento que você está procurando.</td>
-     </tr>
-     <tr>
-         <td>70</td>
-         <td>A chamada requisitada não contém uma gravação.</td>
-     </tr>
-     <tr>
-         <td>80</td>
-         <td>A chamada solicitada não está ativa.</td>
-     </tr>
-     <tr>
-         <td>90</td>
-         <td>O caminho não foi encontrado.</td>
-     </tr>
-     <tr>
-         <td>100</td>
-         <td>A requisição solicitada é inválida.</td>
-     </tr>
- </table>
+        <td>0</td>
+        <td>Os dados foram retornados com sucesso.</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Sua conta não tem permissão para realizar esse procedimento.</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Sua conta não tem saldo suficiente.</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>Você não enviou todos os parâmetros obrigatórios.</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>Algum dos parâmetros enviados está inválido.</td>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>Erro porque o registro ficaria duplicado.</td>
+    </tr>
+    <tr>
+        <td>30</td>
+        <td>Esta funcionalidade ainda não foi implementada. (Entre em contato)</td>
+    </tr>
+    <tr>
+        <td>40</td>
+        <td>Houve uma falha na autenticação, seu Token está correto?</td>
+    </tr>
+    <tr>
+        <td>50</td>
+        <td>Erro interno dentro do nosso sistema.</td>
+    </tr>
+    <tr>
+        <td>60</td>
+        <td>Não encontramos o elemento que você está procurando.</td>
+    </tr>
+    <tr>
+        <td>70</td>
+        <td>A chamada requisitada não contém uma gravação.</td>
+    </tr>
+    <tr>
+        <td>80</td>
+        <td>A chamada solicitada não está ativa.</td>
+    </tr>
+    <tr>
+        <td>90</td>
+        <td>O caminho não foi encontrado.</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>A requisição solicitada é inválida.</td>
+    </tr>
+</table></p>
 </blockquote>
 
-<p>Um dos parâmetros padrões que vem em toda resposta da API é o motivo, onde detalhamos o motivo pelo qual a sua requisição
- falhou (ou deu certo), na tabela ao lado temos a lista de motivos possíveis, e mais detalhes seguem no campo mensagem 
- do cabeçalho.</p>
+<p>Um dos parâmetros padrões que vêm em toda resposta da API é o motivo. É nele onde detalhamos o motivo pelo qual a sua requisição falhou (ou deu certo).</p>
 
-<p>Utilize o atributo <strong>sucesso</strong> se for apenas para identificar se a requisição deu certo ou não.</p>
-<h2 id='status-para-chamada'>Status para Chamada</h2>
+<p>Ao lado, a tabela detalha a lista de motivos possíveis e mais detalhes seguem no campo mensagem do cabeçalho.</p>
+
+<p><strong>💡 Utilize o atributo <em>sucesso</em> se for apenas para identificar se a requisição deu certo ou não.</strong></p>
+<h3 id='status-para-chamada'>Status para Chamada</h3>
 <blockquote>
-<p><b>Status para Chamada</b></p>
-
+<p><b>Status para Chamada</b>
 <table>
-     <tr>
-         <td>atendida</td>
-         <td>A ligação foi atendida.</td>
-     </tr>
-     <tr>
-         <td>sem resposta</td>
-         <td>O número não atendeu a ligação.</td>
-     </tr>
-     <tr>
-         <td>ocupado</td>
-         <td>A operadora retornou que o número estava ocupado.</td>
-     </tr>
-     <tr>
-         <td>congestionado</td>
-         <td>Houve algum problema nas linhas de conexões. (Entre em contato)</td>
-     </tr>
-     <tr>
-         <td>falha</td>
-         <td>Não foi possível realizar a ligação.</td>
-     </tr>
-     <tr>
-         <td>cancelada</td>
-         <td>A ligação foi cancelada.</td>
-     </tr>
-     <tr>
-         <td>não existe</td>
-         <td>O número desta ligação não existe.</td>
-     </tr>
- </table>
+    <tr>
+        <td>atendida</td>
+        <td>A ligação foi atendida.</td>
+    </tr>
+    <tr>
+        <td>sem resposta</td>
+        <td>O número não atendeu a ligação.</td>
+    </tr>
+    <tr>
+        <td>ocupado</td>
+        <td>A operadora retornou que o número estava ocupado.</td>
+    </tr>
+    <tr>
+        <td>congestionado</td>
+        <td>Houve algum problema nas linhas de conexões. (Entre em contato)</td>
+    </tr>
+    <tr>
+        <td>falha</td>
+        <td>Não foi possível realizar a ligação.</td>
+    </tr>
+    <tr>
+        <td>cancelada</td>
+        <td>A ligação foi cancelada.</td>
+    </tr>
+    <tr>
+        <td>não existe</td>
+        <td>O número desta ligação não existe.</td>
+    </tr>
+</table></p>
 </blockquote>
 
-<p>Ao fim de toda ligação a chamada terá um status, ao lado você tem uma lista dos possíveis status.
-<br>
-Caso encontre um status diferente dos mapeados, favor entrar em <a href="#introducao">contato</a>.</p>
-<h2 id='status-perna-de-ligacao'>Status Perna de Ligação</h2>
+<p>Ao fim de toda ligação, a chamada terá um <em>status</em>. </p>
+
+<p>Ao lado, a tabela detalha a lista dos possíveis status. Caso encontre um status diferente dos mapeados, entre em contato com a nossa equipe.</p>
+<h3 id='status-perna-de-ligacao'>Status Perna de Ligação</h3>
 <blockquote>
-<p><b>Status Perna de Ligação</b></p>
-
+<p><b>Status Perna de Ligação</b>
 <table>
-     <tr>
-         <td>preparando</td>
-         <td>A ligação para esta perna ainda não foi iniciada.</td>
-     </tr>
-     <tr>
-         <td>chamando</td>
-         <td>O telefone/ramal desta perna está chamando mas não atendeu.</td>
-     </tr>
-     <tr>
-         <td>atendida</td>
-         <td>A perna atendeu a ligação.</td>
-     </tr>
-     <tr>
-         <td>ocupado</td>
-         <td>A operadora retornou que o número estava ocupado no momento.</td>
-     </tr>
-     <tr>
-         <td>desconhecido</td>
-         <td>Houve alguma falha, entrar em contato com o suporte.</td>
-     </tr>
- </table>
+    <tr>
+        <td>preparando</td>
+        <td>A ligação para esta perna ainda não foi iniciada.</td>
+    </tr>
+    <tr>
+        <td>chamando</td>
+        <td>O telefone/ramal desta perna está chamando mas não atendeu.</td>
+    </tr>
+    <tr>
+        <td>atendida</td>
+        <td>A perna atendeu a ligação.</td>
+    </tr>
+    <tr>
+        <td>ocupado</td>
+        <td>A operadora retornou que o número estava ocupado no momento.</td>
+    </tr>
+    <tr>
+        <td>desconhecido</td>
+        <td>Houve alguma falha, entrar em contato com o suporte.</td>
+    </tr>
+</table></p>
 </blockquote>
 
-<p>Este caso geralmente se refere às ligações de duas pernas, onde primeiramente é disparada uma chamada para perna A (origem) e quando esta perna atende é disparada a ligação para perna B (destino).</p>
+<p>Este caso geralmente se refere às ligações de duas pernas, onde primeiramente é disparada uma chamada para perna A (origem) e, quando esta perna atende, a ligação é disparada a para perna B (destino). </p>
 
-<p>Este parâmetro é retornado nos objetos que representam algum lado (perna) de uma ligação que foi realizada, 
- por exemplo, em um Objeto de um Áudio haverá um único atributo deste que representa
- o status do número que o áudio foi enviado, já em uma Chamada você terá um status para cada uma das pernas dela.</p>
-<h1 id='testes'>Testes</h1>
-<p>Com uma conta criada você pode fazer testes em nossa plataforma utilizando nosso playground, software para teste de requisições de API (Postman, Insomnia, etc)</p>
+<p>Este parâmetro é retornado nos objetos que representam algum lado (perna) de uma ligação que foi realizada.</p>
 
-<ul>
-<li><p><a href="https://voice-app.zenvia.com/doc" target="_blank">Playground</a> - É um ambiente onde você utiliza o token da sua conta e faz envio para nossa api, preenchendo um formulário com os parâmetros necessários. </p></li>
-<li><p>Utilizando o <a href="https://www.getpostman.com/" target="_blank">Postman</a> ou <a href="https://insomnia.rest/" target="_blank">Insomnia</a>, você precisa nos enviar as seguintes informações:</p>
+<p><strong>Por exemplo:</strong> em um Objeto de um Áudio haverá um único atributo deste que representa o status do número que ele foi enviado. Por outro lado, em uma Chamada você terá um status para cada uma das pernas dela. </p>
+<h2 id='testes'>Testes</h2>
+<p>Com uma conta criada, é possível realizar testes em nossa plataforma utilizando nosso playground ou em um software para teste de requisições de API, como Postman e Insomnia. </p>
+
+<p>Veja mais detalhes sobre: </p>
 
 <ul>
-<li>Header
+<li><a href="https://voice-app.zenvia.com/doc/">Playground</a>: Utilize o token da sua conta e faça envios para nossa API. Para isso, basta preencher um formulário com os parâmetros necessários. </li>
+<li><p><a href="https://www.postman.com/">Postman</a> ou <a href="https://insomnia.rest/">Insomnia</a>: Para utilizar o software de testes, será necessário que você envie as seguintes informações:</p>
+
+<ol>
+<li>Header: 
 
 <ul>
-<li>Access-Token - exemplotesteM68PU1Izmb9chEdLzep7IwRymWO</li>
-<li>Content-Type - application/json</li>
+<li><strong>Access-Token</strong> - exemplotesteM68PU1Izmb9chEdLzep7IwRymWO</li>
+<li><strong>Content-Type</strong> - application/json</li>
 </ul></li>
-<li>Body
+<li>Body:
 
 <ul>
-<li>No corpo da requisição você deve enviar um JSON (para requisições POST/PUT)
-<br><br></li>
+<li>No corpo da requisição você deve enviar um <strong>JSON</strong> (para requisições POST/PUT)</li>
 </ul></li>
-</ul></li>
+</ol></li>
 <li><p>Para testar os retornos enviados via webhooks, indicamos os seguintes sites:</p>
 
-<ul>
-<li><a href="https://webhook.site" target="_blank">webhook.site</a></li>
-<li><a href="https://requestbin.com" target="_blank">requestbin.com</a></li>
-</ul></li>
+<ol>
+<li><a href="https://webhook.site/">webhook.site</a></li>
+<li><a href="https://requestbin.com/">requestbin.com</a></li>
+</ol></li>
 </ul>
 <h1 id='audio'>Áudio</h1>
 <blockquote>
-<p><b>Audio Endpoint</b></p>
+<p><b>Áudio Endpoint</b></p>
 </blockquote>
 <pre class="highlight plaintext"><code>https://voice-api.zenvia.com/audio
 </code></pre>
@@ -1358,7 +1490,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="attribute">string</span>
             </td>
             <td>
-                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconeção</a>
+                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconexão</a>
             </td>
         </tr>
         <tr>
@@ -2270,7 +2402,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <blockquote>
 <p>Definição</p>
 </blockquote>
-<pre class="highlight plaintext"><code>PUT https://voice-api.zenvia.com/ramal/{id}/fila
+<pre class="highlight plaintext"><code>PUT https://voice-api.zenvia.com/ramal/{id}
 </code></pre>
 <blockquote>
 <p>Request</p>
@@ -2428,7 +2560,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
                 <span class="attribute">integer</span>
             </td>
             <td>
-                Caso tenha um valor aqui, ao telefonar para este número de ramal, vai cair em uma URA ao invés de chamar o usuário
+                Caso tenha um valor aqui, ao telefonar para este número de ramal, vai cair em uma URA ao invés de chamar o usuário. Caso queira desvincular uma URA basta passar o valor 'null' neste campo.
             </td>
         </tr>
         <tr>
@@ -2923,7 +3055,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 <p>Definição</p>
 </blockquote>
 
-<p>Lista as ligações <u>recebidas</u> por um ramal no périodo desejado.</p>
+<p>Lista as ligações <u>recebidas</u> por um ramal no período desejado.</p>
 <pre class="highlight plaintext"><code>GET https://voice-api.zenvia.com/ramal/{id}/relatorio
 </code></pre>
 <blockquote>
@@ -12468,6 +12600,16 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
             <td>
                 Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
             </td>
+        </tr>
+        <tr>
+            <td>
+                destino
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Número de destino da chamada.
+            </td>
         </tr> 
 
     </tbody>
@@ -14900,7 +15042,7 @@ no painel de Voz da ZenAPI, a notificação é enviada assim que determinados ev
                 <span class="attribute">string</span>
             </td>
             <td>
-                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconeção</a>
+                Aqui é informado o motivo do derrubamento da ligação, você pode ver mais em <a href="#codigos-de-motivos">motivos de desconexão</a>
             </td>
         </tr>
         <tr>
