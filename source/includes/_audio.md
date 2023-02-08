@@ -43,12 +43,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     "resposta": "1",
     "motivo_desconexao": null,
     "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
-    "bina": "+5548988888888",
-    "chamada_verificada": true,
-    "motivo_vcall": {
-        "id": 123,
-        "mensagem": "Texto do motivo"
-    }
+    "bina": "+5548988888888"
 }
 ```
 
@@ -230,24 +225,6 @@ Definição do objeto Áudio
               </td>
           </tr>
         <tr>
-         <tr>
-              <td>
-                  chamada_verificada
-                  <span class="attribute">boolean</span>
-              </td>
-              <td>
-                    Se o áudio foi enviado com chamada verificada
-              </td>
-          </tr>
-        <tr>
-            <td>
-                motivo_vcall
-                <span class="attribute">objeto</span>
-            </td>
-            <td>
-                Objeto do tipo <a href="#objeto-motivo-vcall">Motivos VCall</a>
-            </td>
-        </tr>
     </tbody>
 </table>
 <br>
@@ -267,7 +244,7 @@ POST https://voice-api.zenvia.com/audio
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+5548988881111", "bina": "+554811111111" ,"url_audio":"http://sua.url.audio/audio.mp3", "chamada_verificada": true, "motivo_vcall": 57}' \
+             -d '{"numero_destino":"+5548988881111", "bina": "+554811111111" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
              'https://voice-api.zenvia.com/audio'
 ```
 ```php
@@ -395,24 +372,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 Quando o valor for true, ao enviar o torpedo o número de telefone que aparecerá para o destino será um número com DDD de sua região. Veja <a href="https://centraltotalvoice.freshdesk.com/support/solutions/articles/35000132235-bina-inteligente-torpedo-de-voz">DDDs disponíveis</a>.
             </td>
         </tr>
-        <tr>
-            <td>
-                chamada_verificada
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                 Um valor booleano para identificar se o áudio terá chamada verificada
-            </td>
-        </tr>
-         <tr>
-            <td>
-                motivo_vcall
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Id do motivo vcall da chamada verificada
-            </td>
-        </tr>
+    
     </tbody>
 </table>
 
@@ -517,12 +477,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "8",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+5548988888888",
-        "chamada_verificada": true,
-        "motivo_vcall": {
-            "id": 123,
-            "mensagem": "Texto do motivo"
-        }
+        "bina": "+5548988888888"
     }
 }
 ```
@@ -646,12 +601,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "8",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+5548988888888",
-        "chamada_verificada": true,
-        "motivo_vcall": {
-            "id": 123,
-            "mensagem": "Texto do motivo"
-        }
+        "bina": "+5548988888888"
       },
       {
         "id": 432,
@@ -672,12 +622,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+5548988888888",
-        "chamada_verificada": false,
-        "motivo_vcall": {
-            "id": null,
-            "mensagem": null
-        }
+        "bina": "+5548988888888"
       }
     ]
   }
