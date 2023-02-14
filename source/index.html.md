@@ -18,21 +18,19 @@ includes:
   - comecando
   - guia_usuario
   - recursos_desenvolvedor
-  - audio
   - central_telefonica
   - fila
   - chamadas
-  - composto
   - conferencias
   - did
   - gerenciar_contas
   - minha_conta
   - bina
   - sms
-  - tts
   - verificacao
   - webphone
   - webhooks
+  - torpedo
 
 search: true
 ---
