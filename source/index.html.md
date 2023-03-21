@@ -26,7 +26,6 @@ includes:
   - bina
   - sms
   - verificacao
-  - webphone
   - apis_ligacoes
   - apis_torpedos
 
