@@ -20,8 +20,6 @@ includes:
   - recursos_desenvolvedor
   - central_telefonica
   - fila
-  - chamadas
-  - conferencias
   - did
   - gerenciar_contas
   - minha_conta
@@ -29,8 +27,8 @@ includes:
   - sms
   - verificacao
   - webphone
-  - webhooks
-  - torpedo
+  - apis_ligacoes
+  - apis_torpedos
 
 search: true
 ---
