@@ -21,11 +21,10 @@ includes:
   - central_telefonica
   - fila
   - did
-  - gerenciar_contas
-  - minha_conta
   - bina
   - sms
   - verificacao
+  - apis_contas
   - apis_ligacoes
   - apis_torpedos
 
