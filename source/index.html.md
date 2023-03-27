@@ -18,14 +18,11 @@ includes:
   - comecando
   - guia_usuario
   - recursos_desenvolvedor
-  - central_telefonica
-  - fila
-  - did
   - gerenciar_contas
   - minha_conta
-  - bina
   - sms
   - verificacao
+  - apis_central
   - apis_ligacoes
   - apis_torpedos
 
