@@ -25,7 +25,7 @@ includes:
   - minha_conta
   - bina
   - sms
-  - verificacao
+  - apis_voz
   - apis_ligacoes
   - apis_torpedos
 
