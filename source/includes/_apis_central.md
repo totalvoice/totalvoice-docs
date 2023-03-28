@@ -1,4 +1,4 @@
-# Central
+# APIs de Central
 
 As APIs de Central viabilizam a criação de uma operação de telefonia básica para empresas. 
 
