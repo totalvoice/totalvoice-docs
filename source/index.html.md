@@ -21,7 +21,7 @@ includes:
   - gerenciar_contas
   - minha_conta
   - sms
-  - verificacao
+  - apis_voz
   - apis_central
   - apis_ligacoes
   - apis_torpedos
