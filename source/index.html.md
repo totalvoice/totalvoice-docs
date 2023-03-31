@@ -18,8 +18,6 @@ includes:
   - comecando
   - guia_usuario
   - recursos_desenvolvedor
-  - gerenciar_contas
-  - minha_conta
   - sms
   - apis_voz
   - apis_central
