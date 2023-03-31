@@ -1,812 +1,5 @@
 # APIs de Contas
 
-## Minha conta
-
-Usando esse recurso, você pode visualizar seu saldo, monitorar suas contas e suas recargas, editar suas contas e configurar e visualizar seus webhooks.
-
-### Objeto Minha Conta
-
-> <br>
-
-> JSON
-
-```json
-{
-    "id": 1,
-    "nome": "Zenvia Telecom",
-    "cpf_cnpj": "12.123.123\/0001-10",
-    "login": "teste@zenvia.com",
-    "saldo": 950.64,
-    "telefone": "4832830151",
-    "access_token": "1234asdkgh1g23213nkbdfsh3v43",
-    "preco_fixo": "0.060",
-    "preco_sms": "0.090",
-    "preco_cel": "0.350",
-    "preco_ramal": "0.000",
-    "email_financeiro": "testefinanceiro@zenvia.com",
-    "nome_fantasia": null,
-    "conta_ativa": 1,
-    "valor_aviso_saldo_baixo": "0.00",
-    "metodo_pagamento": "prepago",
-    "fatura_atual": 1.52,
-    "limite_credito_bonus": 0
-}
-```
-
-O objeto é um modelo JSON. Para realizar a chamada, é necessário que esta contenha os parâmetros solicitados abaixo na tabela Atributos. Ao final, a API fará o retorno.
-
-**Endpoint** <a href ="https://voice-api.zenvia.com/conta">https://voice-api.zenvia.com/conta</a>
-
-#### Atributos
-
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                nome
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Nome da conta.
-             </td>
-        </tr>
-        <tr>
-            <td>
-                login
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Login de acesso da sua conta
-            </td>
-        </tr>
-        <tr>
-            <td>
-                cpf_cnpj
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                CPF ou CNPJ da sua conta
-            </td>
-        </tr>
-        <tr>
-            <td>
-                telefone
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Telefone da sua conta
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco_fixo
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Preço por minuto do fixo
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco_cel
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Preço por minuto para celular
-            </td>
-        </tr>
-        <tr>
-        <tr>
-            <td>
-                preco_ramal
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Preço por minuto do ramal
-            </td>
-        </tr>
-        <tr>
-            <td>
-                email_financeiro
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                E-mail do financeiro da sua empresa
-            </td>
-        </tr>
-        <tr>
-            <td>
-                nome_fantasia
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Nome fantasia da sua empresa
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-### Objeto Resposta - Minha conta
-
-> <br>
-
-> JSON
-
-```json
-{
-    "id": 1,
-    "nome": "Zenvia Telecom",
-    "cpf_cnpj": "12.123.123\/0001-10",
-    "login": "teste@zenvia.com",
-    "saldo": 950.64,
-    "telefone": "4832830151",
-    "access_token": "1234asdkgh1g23213nkbdfsh3v43",
-    "preco_fixo": "0.060",
-    "preco_sms": "0.090",
-    "preco_cel": "0.350",
-    "preco_ramal": "0.000",
-    "email_financeiro": "testefinanceiro@zenvia.com",
-    "nome_fantasia": null,
-    "conta_ativa": 1,
-    "valor_aviso_saldo_baixo": "0.00",
-    "metodo_pagamento": "prepago",
-    "fatura_atual": 1.52,
-    "limite_credito_bonus": 0
-}
-```
-
-O objeto é um modelo JSON. Para realizar a chamada, é necessário que esta contenha os parâmetros solicitados abaixo na tabela Atributos. Ao final, a API fará o retorno.
-
-**Endpoint** <a href ="https://voice-api.zenvia.com/conta">https://voice-api.zenvia.com/conta</a>
-
-#### Atributos
-
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                id
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                ID do registro da sua conta
-             </td>
-        </tr>
-        <tr>
-            <td>
-                nome
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Nome da sua conta
-             </td>
-        </tr>
-        <tr>
-            <td>
-                cpf_cnpj
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                CPF ou CNPJ da sua conta
-            </td>
-        </tr>
-        <tr>
-            <td>
-                login
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Login de acesso da sua conta
-            </td>
-        </tr>
-        <tr>
-            <td>
-                saldo
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Saldo atual da conta
-            </td>
-        </tr>
-        <tr>
-            <td>
-                telefone
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Telefone da sua conta
-            </td>
-        </tr>
-        <tr>
-            <td>
-                access_token
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Access Token da sua conta
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco_fixo
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Preço por minuto para fixo
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco_cel
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Preço por minuto para celulares
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco_ramal
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Preço por minuto para ramal
-            </td>
-        </tr>
-        <tr>
-            <td>
-                email_financeiro
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                E-mail do financeiro da sua empresa
-            </td>
-        </tr>
-        <tr>
-            <td>
-                nome_fantasia
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Nome fantasia da sua empresa
-            </td>
-        </tr>
-        <tr>
-            <td>
-                metodo_pagamento
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Método de faturamento da sua conta
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-### Consultar saldo da Conta
-
-> Definição
-
-```text
-GET https://voice-api.zenvia.com/saldo
-```
-
-> Request
-
-```shell--curl
-curl -X GET --header 'Content-Type: application/json' \
-             --header 'Accept: application/json' \
-             --header 'Access-Token: {{access-token}}' \
-            'https://voice-api.zenvia.com/saldo'
-```
-```php
-<?php
-$response = $client->perfil->consultaSaldo();
-```
-```javascript--node
-var response = client.perfil.consultaSaldo()
-```
-```go
-client := totalvoice.NewTotalVoiceClient("Seu_Token")
-
- response, err := client.Saldo.ConsultaSaldo()
-```
-```python
-from totalvoice.cliente import Cliente
-
-client = Cliente("Seu_Token", 'voice-api.zenvia.com')
-response = client.minha_conta.get_saldo()
-```
-```java
-Perfil perfil = new Perfil(client);
-JSONObject response = perfil.consultaSaldo();
-```
-```ruby
-puts @client.perfil.consulta_saldo()
-```
-
-> Response
-
-```json
-{
-  "status": 200,
-  "sucesso": true,
-  "motivo": 0,
-  "mensagem": "saldo atual",
-  "dados": {
-    "saldo": 100.00
-  }
-}
-```
-
-Caso deseje consultar o saldo disponível em sua conta, basta realizar uma chamada para obter os dados. Utilize um HTTP GET para o endereço de definição da API. 
-
-**GET** <a href ="https://voice-api.zenvia.com/saldo">https://voice-api.zenvia.com/saldo</a>
-
-### Buscar conta
-
-> Definição
-
-```text
-GET https://voice-api.zenvia.com/conta/
-```
-
-> Request
-
-```shell--curl
-curl -X GET --header 'Content-Type: application/json' \
-            --header 'Accept: application/json' \
-            --header 'Access-Token: {{access-token}}' 'https://voice-api.zenvia.com/conta'
-```
-```php
-<?php
-$response = $client->perfil->minhaConta();
-```
-```javascript--node
-var response = client.perfil.minhaConta()
-```
-```go
-client := totalvoice.NewTotalVoiceClient("Seu_Token")
-
- response, err := client.Perfil.MinhaConta()
-```
-```python
-from totalvoice.cliente import Cliente
-
-client = Cliente("Seu_Token", 'voice-api.zenvia.com')
-response = client.minha_conta.get_conta()
-```
-```java
-Perfil perfil = new Perfil(client);
-JSONObject response = perfil.minhaConta();
-```
-```ruby
-puts @client.perfil.minha_conta()
-```
-> Response
-
-```json
-{
-  "status": 200,
-  "sucesso": true,
-  "motivo": 0,
-  "mensagem": "dados retornados com sucesso",
-  "dados": {
-    "id": 1,
-    "nome": "Zenvia Telecom",
-    "cpf_cnpj": "12.123.123\/0001-10",
-    "login": "teste@zenvia.com",
-    "saldo": 950.64,
-    "telefone": "4832830151",
-    "access_token": "1234asdkgh1g23213nkbdfsh3v43",
-    "preco_fixo": "0.060",
-    "preco_sms": "0.090",
-    "preco_cel": "0.350",
-    "preco_ramal": "0.000",
-    "email_financeiro": "testefinanceiro@zenvia.com",
-    "nome_fantasia": null,
-    "conta_ativa": 1,
-    "valor_aviso_saldo_baixo": "0.00",
-    "metodo_pagamento": "prepago",
-    "fatura_atual": 1.52,
-    "limite_credito_bonus": 0
-  }
-}
-```
-
-Caso deseje buscar a sua conta, basta realizar uma chamada para obter os dados. Utilize um HTTP GET para o endereço de definição da API. 
-
-**GET** <a href ="https://voice-api.zenvia.com/conta">https://voice-api.zenvia.com/conta</a>
-
-### Alterar Conta
-
-> Definição
-
-```text
-PUT https://voice-api.zenvia.com/conta
-```
-
-> <br/>Request
-
-```shell--curl
-curl 'https://voice-api.zenvia.com/conta/3132' \
-    -X PUT \
-    --header 'Content-Type: application/json' \
-    --header 'Access-Token: Seu_Token' \
-    -d '{"senha" : "senha123456"}'
-```
-```php
-<?php
-$client = new TotalVoiceClient('Seu_Token');
-
-$conta_dados = array("senha" => "senha123456");
-$response = $client->perfil->atualizaDadosConta($conta_dados);
-```
-```javascript--node
-const totalvoice = require('totalvoice-node');
-const client = new totalvoice("Seu_Token");
-
-var conta_dados = {
-    senha: "senha123456"
-};
-client.perfil.atualizaDadosConta(conta_dados)
-    .then(function(data) {
-        console.log(data);
-    })
-    .catch(function(error) {
-        console.log('Erro: ', error)
-    });
-```
-```go
-client := totalvoice.NewTotalVoiceClient("Seu_Token")
-
-perfil = new(Perfil)
-perfil.NomeFantasia = "NovoNome"
-
-response, err := client.Perfil.AtualizarConta(perfil)
-```
-```python
-from totalvoice.cliente import Cliente
-
-client = Cliente("Seu_Token", 'voice-api.zenvia.com')
-response = client.perfil.editar_conta("Zenvia")
-```
-```java
-TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
-Perfil perfil = new Perfil(client);
-JSONObject response = perfil.atualizaDadosConta('{"nome":"TotalVoice"}');
-```
-```ruby
-puts @client.perfil.atualizar('{"nome":"TotalVoice"}')
-```
-
-> <br/>Response
-
-```json
-{
-    "status": 200,
-    "sucesso": true,
-    "motivo": 0,
-    "mensagem": "dados atualizados com sucesso",
-    "dados": null
-}
-```
-
-Para alterar as informações da sua conta principal, você precisa passar no corpo do request o JSON com os campos que serão alterados, conforme os exemplos.
-
-O método de solicitação deve ser HTTP PUT. Ele criará um novo recurso e substituirá as antigas informações. 
-
-**PUT** <a href ="https://voice-api.zenvia.com/conta">https://voice-api.zenvia.com/conta</a>
-
-#### Request
-
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                nome
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Novo nome para a conta que você deseja alterar
-             </td>
-        </tr>
-        <tr>
-            <td>
-                login
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Novo login para a conta, precisa ser um endereço de e-mail válido.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                senha
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Nova senha para esta conta. (Deve conter 8 caracteres, sendo pelo menos 1 maiúsculo e 1 minúsculo)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                cpf_cnpj
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Novo CPF ou CNPJ desta conta, para fim de identificação e integração.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                telefone
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Novo número de telefone de contato desta conta, precisa ser um número de telefone válido.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco_fixo
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                O valor que será cobrado desta conta para chamadas destinadas a números fixos deve ser maior ou igual ao da conta pai.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco_cel
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                O valor que será cobrado desta conta para chamadas destinadas a números móveis, deve ser maior ou igual ao da conta pai.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco_ramal
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                O valor que será cobrado desta conta para chamada entre Ramais dentro dela mesma deve ser maior ou igual ao valor da conta pai.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                email_financeiro
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Novo e-mail de contato para assuntos financeiros desta conta.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                nome_fantasia
-                <span class="optional">Opcional</span>
-            </td>
-            <td>
-                Novo nome fantasia desta conta que será utilizado para exibição.
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-#### Response
-<br/>
-Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com sucesso ou falha.
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-### Relatório de Recarga  
-
-> Definição
-
-```text
-GET https://voice-api.zenvia.com/conta/recargas
-```
-
-> Request
-
-```shell--curl
-curl -X GET --header 'Content-Type: application/json' \
-             --header 'Accept: application/json' \
-             --header 'Access-Token: {{access-token}}' \
-            'https://voice-api.zenvia.com/conta/recargas'
-```
-```php
-<?php
-$response = $client->perfil->relatorioRecarga();
-```
-```javascript--node
-var response = client.perfil.relatorioRecarga();
-```
-```go
-client := totalvoice.NewTotalVoiceClient("Seu_Token")
-
- response, err := client.Perfil.RelatorioRecarga()
-```
-```python
-from totalvoice.cliente import Cliente
-
-client = Cliente("Seu_Token", 'voice-api.zenvia.com')
-response = client.minha_conta.get_recargas()
-```
-```java
-Perfil perfil = new Perfil(client);
-JSONObject response = perfil.relatorioRecarga();
-```
-```ruby
-puts @client.perfil.relatorio_recarga()
-```
-
-> Response
-
-```json
-{
-  "status": 200,
-  "sucesso": true,
-  "motivo": 0,
-  "mensagem": "dados retornados com sucesso",
-  "dados": {
-    "relatorio": [
-      {
-        "id": 6470,
-        "credito": 10,
-        "data": "2018-07-05T09:42:03-03:00",
-        "descricao": "Recarga"
-      },
-      {
-        "id": 5873,
-        "credito": 10,
-        "data": "2018-05-28T11:34:49-03:00",
-        "descricao": "Recarga"
-      }
-    ]}
-}
-```
-
-Para consultar os dados de recarga da sua conta, basta informar o período desejado para que a API retorne os dados.
-
-Veja ao lado um exemplo de requisição. Os campos são:
-
-#### Response
-
-<table class="table-parameters">
-    <tbody>
-		<tr>
-            <td>
-                id
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                ID da transação de recarga
-             </td>
-		</tr>
-		<tr>
-            <td>
-                credito
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Valor da recarga
-             </td>
-		</tr>
-		<tr>
-            <td>
-                data
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data da transação
-             </td>
-		</tr>
-		<tr>
-            <td>
-                descricao
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Descrição da transação
-             </td>
-		</tr>
-    </tbody>
-</table>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-### URL de recarga
-
-> Definição
-
-```text
-GET https://voice-api.zenvia.com/conta/urlrecarga
-```
-
-> Request
-
-```shell--curl
-curl -X GET --header 'Content-Type: application/json' \
-             --header 'Accept: application/json' \
-             --header 'Access-Token: {{access-token}}' \
-            'https://voice-api.zenvia.com/conta/urlrecarga?url_retorno=www.urlretorno.com.br'
-```
-```php
-<?php
-$response = $client->perfil->urlRecarga("www.urlretorno.com.br");
-```
-```javascript--node
-var response = client.perfil.urlRecarga("www.urlretorno.com.br");
-```
-```go
-client := totalvoice.NewTotalVoiceClient("Seu_Token")
-
- response, err := client.Perfil.GeraURLRecarga("www.urlretorno.com.br")
-```
-```python
-from totalvoice.cliente import Cliente
-
-client = Cliente("Seu_Token", 'voice-api.zenvia.com')
-response = client.minha_conta.get_url_recarga("www.urlretorno.com.br")
-```
-```java
-Perfil perfil = new Perfil(client);
-JSONObject response = perfil.urlRecarga("www.urlretorno.com.br");
-```
-```ruby
-puts @client.perfil.url_recarga("www.urlretorno.com.br")
-```
-
-> Response
-
-```json
-{
-  "status": 200,
-  "sucesso": true,
-  "motivo": 0,
-  "mensagem": "dados retornados com sucesso",
-  "dados": {
-    "url": "https://api.evoline.com.br/recarga/index.php?id=eagr&public_key=teste5a4b033e14e69"
-  }
-}
-```
-
-Para gerar uma URL para recarga de créditos na sua conta, utilize um HTTP GET no endereço de definição da API. 
-
-**GET** <a href ="https://voice-api.zenvia.com/conta/urlrecarga">https://voice-api.zenvia.com/conta/urlrecarga</a>
-
 ## Gerenciar Contas
 
 > Gerenciar Contas End Point
@@ -2051,3 +1244,810 @@ Este método permite alterar as informações de um webhook default. Para isso, 
 		</tr>
     </tbody>
 </table>
+
+## Minha conta
+
+Usando esse recurso, você pode visualizar seu saldo, monitorar suas contas e suas recargas, editar suas contas e configurar e visualizar seus webhooks.
+
+### Objeto Minha Conta
+
+> <br>
+
+> JSON
+
+```json
+{
+    "id": 1,
+    "nome": "Zenvia Telecom",
+    "cpf_cnpj": "12.123.123\/0001-10",
+    "login": "teste@zenvia.com",
+    "saldo": 950.64,
+    "telefone": "4832830151",
+    "access_token": "1234asdkgh1g23213nkbdfsh3v43",
+    "preco_fixo": "0.060",
+    "preco_sms": "0.090",
+    "preco_cel": "0.350",
+    "preco_ramal": "0.000",
+    "email_financeiro": "testefinanceiro@zenvia.com",
+    "nome_fantasia": null,
+    "conta_ativa": 1,
+    "valor_aviso_saldo_baixo": "0.00",
+    "metodo_pagamento": "prepago",
+    "fatura_atual": 1.52,
+    "limite_credito_bonus": 0
+}
+```
+
+O objeto é um modelo JSON. Para realizar a chamada, é necessário que esta contenha os parâmetros solicitados abaixo na tabela Atributos. Ao final, a API fará o retorno.
+
+**Endpoint** <a href ="https://voice-api.zenvia.com/conta">https://voice-api.zenvia.com/conta</a>
+
+#### Atributos
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                nome
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Nome da conta.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                login
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Login de acesso da sua conta
+            </td>
+        </tr>
+        <tr>
+            <td>
+                cpf_cnpj
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                CPF ou CNPJ da sua conta
+            </td>
+        </tr>
+        <tr>
+            <td>
+                telefone
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Telefone da sua conta
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_fixo
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Preço por minuto do fixo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_cel
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Preço por minuto para celular
+            </td>
+        </tr>
+        <tr>
+        <tr>
+            <td>
+                preco_ramal
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Preço por minuto do ramal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                email_financeiro
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                E-mail do financeiro da sua empresa
+            </td>
+        </tr>
+        <tr>
+            <td>
+                nome_fantasia
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Nome fantasia da sua empresa
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+### Objeto Resposta - Minha conta
+
+> <br>
+
+> JSON
+
+```json
+{
+    "id": 1,
+    "nome": "Zenvia Telecom",
+    "cpf_cnpj": "12.123.123\/0001-10",
+    "login": "teste@zenvia.com",
+    "saldo": 950.64,
+    "telefone": "4832830151",
+    "access_token": "1234asdkgh1g23213nkbdfsh3v43",
+    "preco_fixo": "0.060",
+    "preco_sms": "0.090",
+    "preco_cel": "0.350",
+    "preco_ramal": "0.000",
+    "email_financeiro": "testefinanceiro@zenvia.com",
+    "nome_fantasia": null,
+    "conta_ativa": 1,
+    "valor_aviso_saldo_baixo": "0.00",
+    "metodo_pagamento": "prepago",
+    "fatura_atual": 1.52,
+    "limite_credito_bonus": 0
+}
+```
+
+O objeto é um modelo JSON. Para realizar a chamada, é necessário que esta contenha os parâmetros solicitados abaixo na tabela Atributos. Ao final, a API fará o retorno.
+
+**Endpoint** <a href ="https://voice-api.zenvia.com/conta">https://voice-api.zenvia.com/conta</a>
+
+#### Atributos
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro da sua conta
+             </td>
+        </tr>
+        <tr>
+            <td>
+                nome
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Nome da sua conta
+             </td>
+        </tr>
+        <tr>
+            <td>
+                cpf_cnpj
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                CPF ou CNPJ da sua conta
+            </td>
+        </tr>
+        <tr>
+            <td>
+                login
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Login de acesso da sua conta
+            </td>
+        </tr>
+        <tr>
+            <td>
+                saldo
+                <span class="attribute">float</span>
+            </td>
+            <td>
+                Saldo atual da conta
+            </td>
+        </tr>
+        <tr>
+            <td>
+                telefone
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Telefone da sua conta
+            </td>
+        </tr>
+        <tr>
+            <td>
+                access_token
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Access Token da sua conta
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_fixo
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Preço por minuto para fixo
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_cel
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Preço por minuto para celulares
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_ramal
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Preço por minuto para ramal
+            </td>
+        </tr>
+        <tr>
+            <td>
+                email_financeiro
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                E-mail do financeiro da sua empresa
+            </td>
+        </tr>
+        <tr>
+            <td>
+                nome_fantasia
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Nome fantasia da sua empresa
+            </td>
+        </tr>
+        <tr>
+            <td>
+                metodo_pagamento
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Método de faturamento da sua conta
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+### Consultar saldo da Conta
+
+> Definição
+
+```text
+GET https://voice-api.zenvia.com/saldo
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: {{access-token}}' \
+            'https://voice-api.zenvia.com/saldo'
+```
+```php
+<?php
+$response = $client->perfil->consultaSaldo();
+```
+```javascript--node
+var response = client.perfil.consultaSaldo()
+```
+```go
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
+
+ response, err := client.Saldo.ConsultaSaldo()
+```
+```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'voice-api.zenvia.com')
+response = client.minha_conta.get_saldo()
+```
+```java
+Perfil perfil = new Perfil(client);
+JSONObject response = perfil.consultaSaldo();
+```
+```ruby
+puts @client.perfil.consulta_saldo()
+```
+
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "saldo atual",
+  "dados": {
+    "saldo": 100.00
+  }
+}
+```
+
+Caso deseje consultar o saldo disponível em sua conta, basta realizar uma chamada para obter os dados. Utilize um HTTP GET para o endereço de definição da API. 
+
+**GET** <a href ="https://voice-api.zenvia.com/saldo">https://voice-api.zenvia.com/saldo</a>
+
+### Buscar conta
+
+> Definição
+
+```text
+GET https://voice-api.zenvia.com/conta/
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' \
+            --header 'Accept: application/json' \
+            --header 'Access-Token: {{access-token}}' 'https://voice-api.zenvia.com/conta'
+```
+```php
+<?php
+$response = $client->perfil->minhaConta();
+```
+```javascript--node
+var response = client.perfil.minhaConta()
+```
+```go
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
+
+ response, err := client.Perfil.MinhaConta()
+```
+```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'voice-api.zenvia.com')
+response = client.minha_conta.get_conta()
+```
+```java
+Perfil perfil = new Perfil(client);
+JSONObject response = perfil.minhaConta();
+```
+```ruby
+puts @client.perfil.minha_conta()
+```
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "id": 1,
+    "nome": "Zenvia Telecom",
+    "cpf_cnpj": "12.123.123\/0001-10",
+    "login": "teste@zenvia.com",
+    "saldo": 950.64,
+    "telefone": "4832830151",
+    "access_token": "1234asdkgh1g23213nkbdfsh3v43",
+    "preco_fixo": "0.060",
+    "preco_sms": "0.090",
+    "preco_cel": "0.350",
+    "preco_ramal": "0.000",
+    "email_financeiro": "testefinanceiro@zenvia.com",
+    "nome_fantasia": null,
+    "conta_ativa": 1,
+    "valor_aviso_saldo_baixo": "0.00",
+    "metodo_pagamento": "prepago",
+    "fatura_atual": 1.52,
+    "limite_credito_bonus": 0
+  }
+}
+```
+
+Caso deseje buscar a sua conta, basta realizar uma chamada para obter os dados. Utilize um HTTP GET para o endereço de definição da API. 
+
+**GET** <a href ="https://voice-api.zenvia.com/conta">https://voice-api.zenvia.com/conta</a>
+
+### Alterar Conta
+
+> Definição
+
+```text
+PUT https://voice-api.zenvia.com/conta
+```
+
+> <br/>Request
+
+```shell--curl
+curl 'https://voice-api.zenvia.com/conta/3132' \
+    -X PUT \
+    --header 'Content-Type: application/json' \
+    --header 'Access-Token: Seu_Token' \
+    -d '{"senha" : "senha123456"}'
+```
+```php
+<?php
+$client = new TotalVoiceClient('Seu_Token');
+
+$conta_dados = array("senha" => "senha123456");
+$response = $client->perfil->atualizaDadosConta($conta_dados);
+```
+```javascript--node
+const totalvoice = require('totalvoice-node');
+const client = new totalvoice("Seu_Token");
+
+var conta_dados = {
+    senha: "senha123456"
+};
+client.perfil.atualizaDadosConta(conta_dados)
+    .then(function(data) {
+        console.log(data);
+    })
+    .catch(function(error) {
+        console.log('Erro: ', error)
+    });
+```
+```go
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
+
+perfil = new(Perfil)
+perfil.NomeFantasia = "NovoNome"
+
+response, err := client.Perfil.AtualizarConta(perfil)
+```
+```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'voice-api.zenvia.com')
+response = client.perfil.editar_conta("Zenvia")
+```
+```java
+TotalVoiceClient client = new TotalVoiceClient("Seu_Token");
+Perfil perfil = new Perfil(client);
+JSONObject response = perfil.atualizaDadosConta('{"nome":"TotalVoice"}');
+```
+```ruby
+puts @client.perfil.atualizar('{"nome":"TotalVoice"}')
+```
+
+> <br/>Response
+
+```json
+{
+    "status": 200,
+    "sucesso": true,
+    "motivo": 0,
+    "mensagem": "dados atualizados com sucesso",
+    "dados": null
+}
+```
+
+Para alterar as informações da sua conta principal, você precisa passar no corpo do request o JSON com os campos que serão alterados, conforme os exemplos.
+
+O método de solicitação deve ser HTTP PUT. Ele criará um novo recurso e substituirá as antigas informações. 
+
+**PUT** <a href ="https://voice-api.zenvia.com/conta">https://voice-api.zenvia.com/conta</a>
+
+#### Request
+
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                nome
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo nome para a conta que você deseja alterar
+             </td>
+        </tr>
+        <tr>
+            <td>
+                login
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo login para a conta, precisa ser um endereço de e-mail válido.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                senha
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Nova senha para esta conta. (Deve conter 8 caracteres, sendo pelo menos 1 maiúsculo e 1 minúsculo)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                cpf_cnpj
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo CPF ou CNPJ desta conta, para fim de identificação e integração.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                telefone
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo número de telefone de contato desta conta, precisa ser um número de telefone válido.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_fixo
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                O valor que será cobrado desta conta para chamadas destinadas a números fixos deve ser maior ou igual ao da conta pai.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_cel
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                O valor que será cobrado desta conta para chamadas destinadas a números móveis, deve ser maior ou igual ao da conta pai.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco_ramal
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                O valor que será cobrado desta conta para chamada entre Ramais dentro dela mesma deve ser maior ou igual ao valor da conta pai.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                email_financeiro
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo e-mail de contato para assuntos financeiros desta conta.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                nome_fantasia
+                <span class="optional">Opcional</span>
+            </td>
+            <td>
+                Novo nome fantasia desta conta que será utilizado para exibição.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### Response
+<br/>
+Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com sucesso ou falha.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+### Relatório de Recarga  
+
+> Definição
+
+```text
+GET https://voice-api.zenvia.com/conta/recargas
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: {{access-token}}' \
+            'https://voice-api.zenvia.com/conta/recargas'
+```
+```php
+<?php
+$response = $client->perfil->relatorioRecarga();
+```
+```javascript--node
+var response = client.perfil.relatorioRecarga();
+```
+```go
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
+
+ response, err := client.Perfil.RelatorioRecarga()
+```
+```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'voice-api.zenvia.com')
+response = client.minha_conta.get_recargas()
+```
+```java
+Perfil perfil = new Perfil(client);
+JSONObject response = perfil.relatorioRecarga();
+```
+```ruby
+puts @client.perfil.relatorio_recarga()
+```
+
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "relatorio": [
+      {
+        "id": 6470,
+        "credito": 10,
+        "data": "2018-07-05T09:42:03-03:00",
+        "descricao": "Recarga"
+      },
+      {
+        "id": 5873,
+        "credito": 10,
+        "data": "2018-05-28T11:34:49-03:00",
+        "descricao": "Recarga"
+      }
+    ]}
+}
+```
+
+Para consultar os dados de recarga da sua conta, basta informar o período desejado para que a API retorne os dados.
+
+Veja ao lado um exemplo de requisição. Os campos são:
+
+#### Response
+
+<table class="table-parameters">
+    <tbody>
+		<tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID da transação de recarga
+             </td>
+		</tr>
+		<tr>
+            <td>
+                credito
+                <span class="attribute">float</span>
+            </td>
+            <td>
+                Valor da recarga
+             </td>
+		</tr>
+		<tr>
+            <td>
+                data
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data da transação
+             </td>
+		</tr>
+		<tr>
+            <td>
+                descricao
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Descrição da transação
+             </td>
+		</tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+### URL de recarga
+
+> Definição
+
+```text
+GET https://voice-api.zenvia.com/conta/urlrecarga
+```
+
+> Request
+
+```shell--curl
+curl -X GET --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             --header 'Access-Token: {{access-token}}' \
+            'https://voice-api.zenvia.com/conta/urlrecarga?url_retorno=www.urlretorno.com.br'
+```
+```php
+<?php
+$response = $client->perfil->urlRecarga("www.urlretorno.com.br");
+```
+```javascript--node
+var response = client.perfil.urlRecarga("www.urlretorno.com.br");
+```
+```go
+client := totalvoice.NewTotalVoiceClient("Seu_Token")
+
+ response, err := client.Perfil.GeraURLRecarga("www.urlretorno.com.br")
+```
+```python
+from totalvoice.cliente import Cliente
+
+client = Cliente("Seu_Token", 'voice-api.zenvia.com')
+response = client.minha_conta.get_url_recarga("www.urlretorno.com.br")
+```
+```java
+Perfil perfil = new Perfil(client);
+JSONObject response = perfil.urlRecarga("www.urlretorno.com.br");
+```
+```ruby
+puts @client.perfil.url_recarga("www.urlretorno.com.br")
+```
+
+> Response
+
+```json
+{
+  "status": 200,
+  "sucesso": true,
+  "motivo": 0,
+  "mensagem": "dados retornados com sucesso",
+  "dados": {
+    "url": "https://api.evoline.com.br/recarga/index.php?id=eagr&public_key=teste5a4b033e14e69"
+  }
+}
+```
+
+Para gerar uma URL para recarga de créditos na sua conta, utilize um HTTP GET no endereço de definição da API. 
+
+**GET** <a href ="https://voice-api.zenvia.com/conta/urlrecarga">https://voice-api.zenvia.com/conta/urlrecarga</a>
