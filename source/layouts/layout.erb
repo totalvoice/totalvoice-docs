@@ -110,21 +110,35 @@ under the License.
       <% end %>
       <div id="toc" class="toc-list-h1">
         <% toc_data(page_content).each do |h1| %>
-         <% if h1[:content].to_s == 'Áudio' %>
+         <% if h1[:content].to_s == 'SMS' %>
           <li style="margin-top: 20px;">
          <% else %>
            <li>
          <% end %>
             <a href="#<%= h1[:id] %>" class="toc-h1 toc-link" data-title="<%= h1[:content].to_s %>"><%= h1[:content] %></a>
             <% if h1[:children].length > 0 %>
-              <ul class="toc-list-h2">
-                <% h1[:children].each do |h2| %>
-                  <li>
-                    <a href="#<%= h2[:id] %>" class="toc-h2 toc-link" data-title="<%= h2[:content].to_s %>"><%= h2[:content] %></a>
-                  </li>
-                <% end %>
-              </ul>
-            <% end %>
+            <ul class="toc-list-h2">
+              <% h1[:children].each do |h2| %>
+                <li>
+                  <a href="#<%= h2[:id] %>" class="toc-h2 toc-link" data-title="<%= h2[:content].to_s %>">
+                    <%= h2[:content] %>
+                  </a>
+                  <% if h2[:children].length > 0 %>
+                    <ul class="toc-list-h3">
+                      <% h2[:children].each do |h3| %>
+                        <li>
+                          <a href="#<%= h3[:id] %>" class="toc-h3 toc-link" data-title="<%= h3[:content].to_s %>">
+                            <%= h3[:content] %>
+                          </a>
+                        </li>
+                      <% end %>
+                    </ul>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+          
           </li>
         <% end %>
       </div>

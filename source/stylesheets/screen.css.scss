@@ -183,6 +183,16 @@ html, body {
     font-size: 15px;
   }
 
+  .toc-list-h3 {
+    background-color: $nav-subitem-bg;
+    font-weight: 500;
+  }
+
+  .toc-h3 {
+    padding-left: $nav-padding + $nav-indent + 10px;
+    font-size: 15px;
+  }
+
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
