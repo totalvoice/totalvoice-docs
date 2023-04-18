@@ -1085,8 +1085,8 @@ curl -X POST --header 'Content-Type: application/json' \
                         "acao":"transferir",
                         "opcao":1,
                         "acao_dados":{  
-                            "numero_telefone":"+554832830151",
-                            "bina":"+554832830152"
+                            "numero_telefone":"4832830151",
+                            "bina":"4832830152"
                         }
                     },
                         {  
