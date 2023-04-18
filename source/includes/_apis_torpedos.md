@@ -267,7 +267,7 @@ POST https://voice-api.zenvia.com/audio
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+5548988881111", "bina": "+554811111111" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
+             -d '{"numero_destino":"4888881111", "bina": "4811111111" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
              'https://voice-api.zenvia.com/audio'
 ```
 ```php
@@ -1855,7 +1855,7 @@ POST https://voice-api.zenvia.com/tts
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+554888881111", "bina": "+554811111111", "mensagem":"Olá"}' \
+             -d '{"numero_destino":"4888881111", "bina": "4811111111", "mensagem":"Olá"}' \
              'https://voice-api.zenvia.com/tts'
 ```
 ```php

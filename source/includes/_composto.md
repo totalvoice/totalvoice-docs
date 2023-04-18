@@ -336,8 +336,8 @@ curl -X POST --header 'Content-Type: application/json' \
 			 --header 'Accept: application/json' \
 			 --header 'Access-Token: seu-token' \
 			 -d '{
-                "numero_destino":"+551132830151",
-                "bina": "+5548988881111",
+                "numero_destino":"4888881111",
+                "bina": "4811111111",
                 "dados":[
                     {  
                         "acao":"audio",
@@ -357,8 +357,8 @@ curl -X POST --header 'Content-Type: application/json' \
                         "acao":"transferir",
                         "opcao":1,
                         "acao_dados":{  
-                            "numero_telefone":"+554832830151",
-                            "bina":"+554832830152"
+                            "numero_telefone":"4832830151",
+                            "bina":"4832830152"
                         }
                     },
                         {  
