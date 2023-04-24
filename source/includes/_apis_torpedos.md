@@ -16,7 +16,7 @@ AS APIs de Torpedo viabilizam a entrega de mensagens para os clientes. Nossa doc
 https://voice-api.zenvia.com/audio
 ```
 
-Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz como áudio para o destino através de um arquivo **MP3**.Poderá também enviar algumas opções adicionais. São elas:
+Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz como áudio para o destino através de um arquivo **MP3**. Poderá também enviar algumas opções adicionais. São elas:
 
 - Aguardar uma resposta do usuário;
 - Gravar o áudio da ligação;
