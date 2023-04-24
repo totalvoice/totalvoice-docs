@@ -1,4 +1,4 @@
-# SMS
+# SMS (descontinuado)
 
 > SMS Endpoint
 

@@ -18,12 +18,12 @@ includes:
   - comecando
   - guia_usuario
   - recursos_desenvolvedor
-  - sms
   - apis_voz
   - apis_central
   - apis_contas
   - apis_ligacoes
   - apis_torpedos
+  - sms
 
 search: true
 ---
