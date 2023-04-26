@@ -16,7 +16,7 @@ AS APIs de Torpedo viabilizam a entrega de mensagens para os clientes. Nossa doc
 https://voice-api.zenvia.com/audio
 ```
 
-Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz como áudio para o destino através de um arquivo **MP3** ou  **.wav.** Poderá também enviar algumas opções adicionais. São elas:
+Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz como áudio para o destino através de um arquivo **MP3**. Poderá também enviar algumas opções adicionais. São elas:
 
 - Aguardar uma resposta do usuário;
 - Gravar o áudio da ligação;
@@ -24,9 +24,9 @@ Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz com
 
 #### Observações:
 
-1. Os arquivos de áudio devem estar disponíveis em uma URL pública direcionando para um arquivo de áudio MP3 ou um .wav;
+1. Os arquivos de áudio devem estar disponíveis em uma URL pública direcionando para um arquivo de áudio MP3.
 2. O tamanho máximo é de 5MB.
-3. O formato de envio no campo numero_destino é DDD + 9 +  número. (Ex. p/ SP: 11912341234).
+3. O formato de envio no campo numero_destino é DDD + número. (Ex. p/ SP: 11912341234).
 
 ### Objeto Áudio
 
@@ -267,7 +267,7 @@ POST https://voice-api.zenvia.com/audio
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+5548988881111", "bina": "+554811111111" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
+             -d '{"numero_destino":"4888881111", "bina": "4811111111" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
              'https://voice-api.zenvia.com/audio'
 ```
 ```php
@@ -769,7 +769,7 @@ O composto aceita um JSON com as seguintes opções:
 
 #### Observações:
 
-- Os arquivos de áudio são aceitos nos formatos **MP3** ou um **.wav**;
+- Os arquivos de áudio são aceitos nos formatos **MP3**;
 - O tamanho máximo é de **5MB**.
 
 
@@ -1064,8 +1064,8 @@ curl -X POST --header 'Content-Type: application/json' \
 			 --header 'Accept: application/json' \
 			 --header 'Access-Token: seu-token' \
 			 -d '{
-                "numero_destino":"+551132830151",
-                "bina": "+5548988881111",
+                "numero_destino":"4888881111",
+                "bina": "4811111111",
                 "dados":[
                     {  
                         "acao":"audio",
@@ -1085,8 +1085,8 @@ curl -X POST --header 'Content-Type: application/json' \
                         "acao":"transferir",
                         "opcao":1,
                         "acao_dados":{  
-                            "numero_telefone":"+554832830151",
-                            "bina":"+554832830152"
+                            "numero_telefone":"4832830151",
+                            "bina":"4832830152"
                         }
                     },
                         {  
@@ -1855,7 +1855,7 @@ POST https://voice-api.zenvia.com/tts
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+554888881111", "bina": "+554811111111", "mensagem":"Olá"}' \
+             -d '{"numero_destino":"4888881111", "bina": "4811111111", "mensagem":"Olá"}' \
              'https://voice-api.zenvia.com/tts'
 ```
 ```php
