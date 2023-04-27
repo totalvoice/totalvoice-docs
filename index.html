@@ -390,37 +390,6 @@
           
           </li>
           <li style="margin-top: 20px;">
-            <a href="#sms" class="toc-h1 toc-link" data-title="SMS">SMS</a>
-            <ul class="toc-list-h2">
-                <li>
-                  <a href="#objeto-sms" class="toc-h2 toc-link" data-title="Objeto Sms">
-                    Objeto Sms
-                  </a>
-                </li>
-                <li>
-                  <a href="#objeto-resposta-sms" class="toc-h2 toc-link" data-title="Objeto Resposta SMS">
-                    Objeto Resposta SMS
-                  </a>
-                </li>
-                <li>
-                  <a href="#enviar-um-sms" class="toc-h2 toc-link" data-title="Enviar um SMS">
-                    Enviar um SMS
-                  </a>
-                </li>
-                <li>
-                  <a href="#buscar-sms" class="toc-h2 toc-link" data-title="Buscar SMS">
-                    Buscar SMS
-                  </a>
-                </li>
-                <li>
-                  <a href="#relatorio-sms" class="toc-h2 toc-link" data-title="Relatório SMS">
-                    Relatório SMS
-                  </a>
-                </li>
-            </ul>
-          
-          </li>
-           <li>
             <a href="#apis-de-voz" class="toc-h1 toc-link" data-title="APIs de Voz">APIs de Voz</a>
             <ul class="toc-list-h2">
                 <li>
@@ -1080,6 +1049,37 @@
             </ul>
           
           </li>
+           <li>
+            <a href="#sms-descontinuado" class="toc-h1 toc-link" data-title="SMS (descontinuado)">SMS (descontinuado)</a>
+            <ul class="toc-list-h2">
+                <li>
+                  <a href="#objeto-sms" class="toc-h2 toc-link" data-title="Objeto Sms">
+                    Objeto Sms
+                  </a>
+                </li>
+                <li>
+                  <a href="#objeto-resposta-sms" class="toc-h2 toc-link" data-title="Objeto Resposta SMS">
+                    Objeto Resposta SMS
+                  </a>
+                </li>
+                <li>
+                  <a href="#enviar-um-sms" class="toc-h2 toc-link" data-title="Enviar um SMS">
+                    Enviar um SMS
+                  </a>
+                </li>
+                <li>
+                  <a href="#buscar-sms" class="toc-h2 toc-link" data-title="Buscar SMS">
+                    Buscar SMS
+                  </a>
+                </li>
+                <li>
+                  <a href="#relatorio-sms" class="toc-h2 toc-link" data-title="Relatório SMS">
+                    Relatório SMS
+                  </a>
+                </li>
+            </ul>
+          
+          </li>
       </div>
         <ul class="toc-footer">
             <li><a href='https://voice-app.zenvia.com/painel' target="_blank">Entrar</a></li>
@@ -1650,662 +1650,6 @@ Antes era possível consultar os números de DIDs disponíveis e comprá-los aut
 <li><a href="https://requestbin.com/">requestbin.com</a></li>
 </ol></li>
 </ul>
-<h1 id='sms'>SMS</h1>
-<blockquote>
-<p>SMS Endpoint</p>
-</blockquote>
-<pre class="highlight plaintext"><code>https://voice-api.zenvia.com/sms
-</code></pre>
-<aside class="notice">
-Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
-<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
-</aside>
-
-<p>O <strong>SMS</strong> permite que você envie mensagens de texto pela nossa API. Você precisa informar
-um número de destino e uma mensagem a ser enviada. Existem algumas opções adicionais
-que permitem aguardar uma resposta do usuário, enviar multi sms ou agendar uma 
-data de envio por exemplo.</p>
-<h3 id='objeto-sms'>Objeto Sms</h3>
-<blockquote>
-<p><br></p>
-</blockquote>
-
-<aside class="notice">
-Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
-<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
-</aside>
-
-<blockquote>
-<p>JSON</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48111111111"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-18T00:51:22.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oi, tudo bem?"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status_envio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enviada"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"data_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-19T00:51:36.000Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"respostas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"sms_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tudo bem, e voce?"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"data_resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31T22:46:42-03:00"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Definição do objeto Sms</p>
-<h4 id='atributos'>Atributos</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                id
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                ID do registro de SMS.
-             </td>
-        </tr>
-        <tr>
-            <td>
-                numero_destino
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Número do destinatário (móvel) que será enviado o SMS.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                data_criacao
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data e hora que foi criado o registro
-            </td>
-        </tr>
-        <tr>
-            <td>
-                mensagem
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Mensagem que será enviada para o número.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                preco
-                <span class="attribute">float</span>
-            </td>
-            <td>
-                Valor cobrado pelo envio
-            </td>
-        </tr>
-        <tr>
-            <td>
-                status
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Status do registro:
-                <ul>
-                    <li>enviada: enviado para processamento</li>
-                    <li>erro: erro no processamento</li>
-                    <li>entregue: entregue para o número de destino</li>
-                    <li>aguardando: aguardando o envio para processamento</li>
-                    <li>em análise:  conteúdo da mensagem em análise</li>
-                    <li>bloqueado: mensagem bloqueada por conteúdo proibido</li>
-                </ul> 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                data_status
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data e hora que o status foi alterado 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                resposta_usuario
-                <span class="attribute">boolean</span>
-            </td>
-            <td>
-                Aguarda a resposta do usuário: sim ou não
-            </td>
-        </tr>
-        <tr>
-            <td>
-                respostas
-                <span class="attribute">array</span>
-            </td>
-            <td>
-                Array contendo os objetos de <a href="#objeto-resposta-sms">resposta</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                tags
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                String com a tag enviado no momento do post.
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h3 id='objeto-resposta-sms'>Objeto Resposta SMS</h3>
-<blockquote>
-<p><br></p>
-</blockquote>
-
-<aside class="notice">
-Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
-<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
-</aside>
-
-<blockquote>
-<p>JSON</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sms_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tudo bem, e voce?"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"data_resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31T22:46:42-03:00"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Definição do objeto Resposta SMS</p>
-<h4 id='atributos-2'>Atributos</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                id
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                ID do registro de Resposta.
-             </td>
-        </tr>
-        <tr>
-            <td>
-                sms_id
-                <span class="attribute">integer</span>
-            </td>
-            <td>
-                ID do SMS vinculado a resposta.
-             </td>
-        </tr>
-        <tr>
-            <td>
-                resposta
-                <span class="attribute">string</span>
-            </td>
-            <td>
-                Texto com a resposta do usuário
-            </td>
-        </tr>
-        <tr>
-            <td>
-                data_resposta
-                <span class="attribute">datetime</span>
-            </td>
-            <td>
-                Data e hora que foi respondido pelo usuário
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h3 id='enviar-um-sms'>Enviar um SMS</h3>
-<blockquote>
-<p>Definição</p>
-</blockquote>
-<pre class="highlight plaintext"><code>POST https://voice-api.zenvia.com/sms
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"48111111111","mensagem":"Ola tudo bem?"}'</span> <span class="se">\</span>
-             <span class="s1">'https://voice-api.zenvia.com/sms'</span>
-</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'48111111111'</span><span class="p">,</span> <span class="s1">'Ola tudo bem?'</span><span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
-
-<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"48111111111"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
-</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"Ola tudo bem?"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"48111111111"</span><span class="p">,</span> <span class="s">"Ola tudo bem?"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
-
-<span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"48111111111"</span><span class="o">,</span> <span class="s">"Ola tudo bem?"</span><span class="o">);</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
-<span class="kp">include</span> <span class="no">TotalVoice</span>
-
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"48111111111"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sms criado com sucesso"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4921</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<aside class="notice">
-Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
-<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
-</aside>
-
-<p>Para o envio de SMS é necessário informar um número móvel válido e uma mensagem de texto.</p>
-<h4 id='request'>Request</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                numero_destino
-                <span class="required">Obrigatório</span>
-            </td>
-            <td>
-                Número do telefone móvel que irá receber a mensagem de texto.
-             </td>
-        </tr>
-        <tr>
-            <td>
-                mensagem
-                <span class="required">Obrigatório</span>
-            </td>
-            <td>
-                Mensagem de texto para ser enviada com limite de 160 caracteres e não aceita acentos.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                resposta_usuario
-                <span class="optional">
-                    Opcional,
-                    <span>default <b>false</b></span>
-                </span>
-            </td>
-            <td>
-                Aguardar uma resposta do destinário.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                multi_sms
-                <span class="optional">
-                    Opcional 
-                    <span>default <b>false</b></span>
-                </span>
-            </td>
-            <td>
-                Aceita SMS com mais de 160 caracteres, máximo é de 16.000 caracteres. Envia multiplos SMSs para o mesmo número (um a cada 160 caracteres) e retorna array de IDs.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                tags
-                <span class="optional">
-                    Opcional 
-                </span>
-            </td>
-            <td>
-                Você pode enviar informações em texto no campo tags com até 50 caracteres.
-            </td>
-        </tr>
-        <tr>
-            <td>
-                data_criacao
-                <span class="optional">
-                    Opcional
-                    <span>default <b>null</b></span>
-                </span>
-            </td>
-            <td>
-                Informe uma data e hora para agendar a entrega do SMS. vazio = liga imediatamente. Data e Hora no formato UTC.
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h4 id='response'>Response</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                id
-                <span class="attribute">integer/array</span>
-            </td>
-            <td>
-                A resposta pode ser um Objeto com o ID do SMS, ou um array com vários IDs caso seja setado para o envio de multi_sms = true.
-             </td>
-        </tr>
-    </tbody>
-</table>
-
-<p><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br></p>
-<h3 id='buscar-sms'>Buscar SMS</h3>
-<blockquote>
-<p>Definição</p>
-</blockquote>
-<pre class="highlight plaintext"><code>GET https://voice-api.zenvia.com/sms/{id}
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://voice-api.zenvia.com/sms/1'</span>
-</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">buscaSms</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
-
-<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
-</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Buscar</span><span class="p">(</span><span class="m">123</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="s">"123"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
-
-<span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">buscar</span><span class="o">(</span><span class="mi">123</span><span class="o">);</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
-<span class="kp">include</span> <span class="no">TotalVoice</span>
-
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-   </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"motivo"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
-   </span><span class="s2">"dados"</span><span class="p">:{</span><span class="w">  
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">25536757</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="s2">"48933445566"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="s2">"2019-05-29T17:49:00.000-03:00"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="s2">"Ola tudo bem?"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"preco"</span><span class="p">:</span><span class="mf">0.045</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status_envio"</span><span class="p">:</span><span class="s2">"enviada"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"data_status"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"respostas"</span><span class="p">:[</span><span class="w">  
-
-      </span><span class="p">],</span><span class="w">
-      </span><span class="s2">"tags"</span><span class="p">:</span><span class="s2">"informações adicionais"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<aside class="notice">
-Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
-<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
-</aside>
-
-<p>Após o envio de mensagens de SMS você poderá realizar a busca do registro pelo seu ID.</p>
-<h5 id='request-2'>Request</h5>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                ID
-                <span class="required">Obrigatório</span>
-            </td>
-            <td>
-                ID do SMS para recuperar os dados
-             </td>
-        </tr>
-    </tbody>
-</table>
-<h5 id='response-2'>Response</h5>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                dados
-                <span class="attribute">object</span>
-            </td>
-            <td>
-                Retorna o objeto <a href="#objeto-sms">SMS</a>
-             </td>
-        </tr>
-    </tbody>
-</table>
-
-<p><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br></p>
-<h3 id='relatorio-sms'>Relatório SMS</h3>
-<blockquote>
-<p>Definição</p>
-</blockquote>
-<pre class="highlight plaintext"><code>GET https://voice-api.zenvia.com/sms/relatorio
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
-            <span class="s1">'https://voice-api.zenvia.com/sms/relatorio?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
-</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">relatorio</span><span class="p">(</span><span class="nv">$dataInicial</span><span class="p">,</span> <span class="nv">$dataFinal</span><span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
-
-<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">relatorio</span><span class="p">(</span><span class="nx">data_inicial</span><span class="p">,</span> <span class="nx">data_final</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-    <span class="p">})</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
-    <span class="p">});</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
-</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Relatorio</span><span class="o">.</span><span class="n">Gerar</span><span class="p">(</span><span class="n">dataInicial</span><span class="p">,</span><span class="x"> </span><span class="n">dataFinal</span><span class="p">)</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">get_relatorio</span><span class="p">(</span><span class="s">"2017-12-08T11:00:32-02:00"</span><span class="p">,</span> <span class="s">"2017-12-08T11:00:32-02:00"</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
-
-<span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">relatorio</span><span class="o">(</span><span class="n">dataInicial</span><span class="o">,</span> <span class="n">dataFinal</span><span class="o">);</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
-<span class="kp">include</span> <span class="no">TotalVoice</span>
-
-<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">relatorio</span><span class="p">(</span><span class="n">data_inicial</span><span class="p">,</span> <span class="n">data_final</span><span class="p">)</span>
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4899999999"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-30T23:34:08-03:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"data_envio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mensagem de teste"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enviada"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"respostas"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4899999999"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31T22:39:36-03:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"data_envio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oi, tudo bem?"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enviada"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"respostas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-          </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tudo bem, e voce?"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"data_resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31T22:46:42-03:00"</span><span class="w">
-          </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<aside class="notice">
-Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
-<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
-</aside>
-
-<p>Você pode consultar os SMSs enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.</p>
-<h4 id='request-3'>Request</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                data_inicio
-                <span class="required">Obrigatório</span>
-                <span class="type">Query String</span>
-            </td>
-            <td>
-                Data inicial para consulta dos dados no relatório
-            </td>
-        </tr>
-        <tr>
-            <td>
-                data_fim
-                <span class="required">Obrigatório</span>
-                <span class="type">Query String</span>
-            </td>
-            <td>
-                Data final para consulta dos dados no relatório
-            </td>
-        </tr>
-        <tr>
-            <td>
-                posicao
-                <span class="required">Opcional</span>
-                <span class="type">Query String</span>
-            </td>
-            <td>
-                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
-            </td>
-        </tr>
-        <tr>
-            <td>
-                limite
-                <span class="required">Opcional</span>
-                <span class="type">Query String</span>
-            </td>
-            <td>
-                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
-            </td>
-        </tr> 
-    </tbody>
-</table>
-<h4 id='response-3'>Response</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td>
-                relatorio
-                <span class="attribute">array</span>
-            </td>
-            <td>
-                Retorna um array com objetos <a href="#objeto-sms">SMS</a>
-             </td>
-        </tr>
-    </tbody>
-</table>
-
-<p><br>
-<br></p>
 <h1 id='apis-de-voz'>APIs de Voz</h1>
 <blockquote>
 <p>À medida em que for rolando para baixo nesta documentação, você verá todas as amostras de código de cada API. Verá também exemplos de solicitações e respostas.</p>
@@ -12536,7 +11880,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 </blockquote>
 <pre class="highlight plaintext"><code>https://voice-api.zenvia.com/audio
 </code></pre>
-<p>Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz como áudio para o destino através de um arquivo <strong>MP3</strong> ou  <strong>.wav.</strong> Poderá também enviar algumas opções adicionais. São elas:</p>
+<p>Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz como áudio para o destino através de um arquivo <strong>MP3</strong>. Poderá também enviar algumas opções adicionais. São elas:</p>
 
 <ul>
 <li>Aguardar uma resposta do usuário;</li>
@@ -12545,9 +11889,9 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 </ul>
 <h4 id='observacoes'>Observações:</h4>
 <ol>
-<li>Os arquivos de áudio devem estar disponíveis em uma URL pública direcionando para um arquivo de áudio MP3 ou um .wav;</li>
+<li>Os arquivos de áudio devem estar disponíveis em uma URL pública direcionando para um arquivo de áudio MP3.</li>
 <li>O tamanho máximo é de 5MB.</li>
-<li>O formato de envio no campo numero_destino é DDD + 9 +  número. (Ex. p/ SP: 11912341234).</li>
+<li>O formato de envio no campo numero_destino é DDD + número. (Ex. p/ SP: 11912341234).</li>
 </ol>
 <h3 id='objeto-audio'>Objeto Áudio</h3>
 <blockquote>
@@ -12785,7 +12129,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"+5548988881111", "bina": "+554811111111" ,"url_audio":"http://sua.url.audio/audio.mp3"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"4888881111", "bina": "4811111111" ,"url_audio":"http://sua.url.audio/audio.mp3"}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-api.zenvia.com/audio'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
@@ -13236,7 +12580,7 @@ retorne os dados.</p>
 </ul>
 <h4 id='observacoes-2'>Observações:</h4>
 <ul>
-<li>Os arquivos de áudio são aceitos nos formatos <strong>MP3</strong> ou um <strong>.wav</strong>;</li>
+<li>Os arquivos de áudio são aceitos nos formatos <strong>MP3</strong>;</li>
 <li>O tamanho máximo é de <strong>5MB</strong>.</li>
 </ul>
 <h3 id='objeto-composto'>Objeto Composto</h3>
@@ -13525,8 +12869,8 @@ retorne os dados.</p>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
              -d <span class="s1">'{
-                "numero_destino":"+551132830151",
-                "bina": "+5548988881111",
+                "numero_destino":"4888881111",
+                "bina": "4811111111",
                 "dados":[
                     {  
                         "acao":"audio",
@@ -13546,8 +12890,8 @@ retorne os dados.</p>
                         "acao":"transferir",
                         "opcao":1,
                         "acao_dados":{  
-                            "numero_telefone":"+554832830151",
-                            "bina":"+554832830152"
+                            "numero_telefone":"4832830151",
+                            "bina":"4832830152"
                         }
                     },
                         {  
@@ -14254,7 +13598,7 @@ retorne os dados.</p>
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"+554888881111", "bina": "+554811111111", "mensagem":"Olá"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"4888881111", "bina": "4811111111", "mensagem":"Olá"}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-api.zenvia.com/tts'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
@@ -14704,6 +14048,662 @@ retorne os dados.</p>
         </tr>
     </tbody>
 </table>
+<h1 id='sms-descontinuado'>SMS (descontinuado)</h1>
+<blockquote>
+<p>SMS Endpoint</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://voice-api.zenvia.com/sms
+</code></pre>
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
+
+<p>O <strong>SMS</strong> permite que você envie mensagens de texto pela nossa API. Você precisa informar
+um número de destino e uma mensagem a ser enviada. Existem algumas opções adicionais
+que permitem aguardar uma resposta do usuário, enviar multi sms ou agendar uma 
+data de envio por exemplo.</p>
+<h3 id='objeto-sms'>Objeto Sms</h3>
+<blockquote>
+<p><br></p>
+</blockquote>
+
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
+
+<blockquote>
+<p>JSON</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48111111111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-18T00:51:22.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oi, tudo bem?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status_envio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enviada"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-19T00:51:36.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"respostas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sms_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tudo bem, e voce?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data_resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31T22:46:42-03:00"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Definição do objeto Sms</p>
+<h4 id='atributos'>Atributos</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro de SMS.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                numero_destino
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Número do destinatário (móvel) que será enviado o SMS.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_criacao
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi criado o registro
+            </td>
+        </tr>
+        <tr>
+            <td>
+                mensagem
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Mensagem que será enviada para o número.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                preco
+                <span class="attribute">float</span>
+            </td>
+            <td>
+                Valor cobrado pelo envio
+            </td>
+        </tr>
+        <tr>
+            <td>
+                status
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Status do registro:
+                <ul>
+                    <li>enviada: enviado para processamento</li>
+                    <li>erro: erro no processamento</li>
+                    <li>entregue: entregue para o número de destino</li>
+                    <li>aguardando: aguardando o envio para processamento</li>
+                    <li>em análise:  conteúdo da mensagem em análise</li>
+                    <li>bloqueado: mensagem bloqueada por conteúdo proibido</li>
+                </ul> 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_status
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que o status foi alterado 
+            </td>
+        </tr>
+        <tr>
+            <td>
+                resposta_usuario
+                <span class="attribute">boolean</span>
+            </td>
+            <td>
+                Aguarda a resposta do usuário: sim ou não
+            </td>
+        </tr>
+        <tr>
+            <td>
+                respostas
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Array contendo os objetos de <a href="#objeto-resposta-sms">resposta</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                tags
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                String com a tag enviado no momento do post.
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3 id='objeto-resposta-sms'>Objeto Resposta SMS</h3>
+<blockquote>
+<p><br></p>
+</blockquote>
+
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
+
+<blockquote>
+<p>JSON</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sms_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tudo bem, e voce?"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data_resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31T22:46:42-03:00"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Definição do objeto Resposta SMS</p>
+<h4 id='atributos-2'>Atributos</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do registro de Resposta.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                sms_id
+                <span class="attribute">integer</span>
+            </td>
+            <td>
+                ID do SMS vinculado a resposta.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                resposta
+                <span class="attribute">string</span>
+            </td>
+            <td>
+                Texto com a resposta do usuário
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_resposta
+                <span class="attribute">datetime</span>
+            </td>
+            <td>
+                Data e hora que foi respondido pelo usuário
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3 id='enviar-um-sms'>Enviar um SMS</h3>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>POST https://voice-api.zenvia.com/sms
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+             --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+             --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"48111111111","mensagem":"Ola tudo bem?"}'</span> <span class="se">\</span>
+             <span class="s1">'https://voice-api.zenvia.com/sms'</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'48111111111'</span><span class="p">,</span> <span class="s1">'Ola tudo bem?'</span><span class="p">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"48111111111"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"Ola tudo bem?"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"48111111111"</span><span class="p">,</span> <span class="s">"Ola tudo bem?"</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
+
+<span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"48111111111"</span><span class="o">,</span> <span class="s">"Ola tudo bem?"</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"48111111111"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sms criado com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4921</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
+
+<p>Para o envio de SMS é necessário informar um número móvel válido e uma mensagem de texto.</p>
+<h4 id='request'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                numero_destino
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Número do telefone móvel que irá receber a mensagem de texto.
+             </td>
+        </tr>
+        <tr>
+            <td>
+                mensagem
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                Mensagem de texto para ser enviada com limite de 160 caracteres e não aceita acentos.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                resposta_usuario
+                <span class="optional">
+                    Opcional,
+                    <span>default <b>false</b></span>
+                </span>
+            </td>
+            <td>
+                Aguardar uma resposta do destinário.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                multi_sms
+                <span class="optional">
+                    Opcional 
+                    <span>default <b>false</b></span>
+                </span>
+            </td>
+            <td>
+                Aceita SMS com mais de 160 caracteres, máximo é de 16.000 caracteres. Envia multiplos SMSs para o mesmo número (um a cada 160 caracteres) e retorna array de IDs.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                tags
+                <span class="optional">
+                    Opcional 
+                </span>
+            </td>
+            <td>
+                Você pode enviar informações em texto no campo tags com até 50 caracteres.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_criacao
+                <span class="optional">
+                    Opcional
+                    <span>default <b>null</b></span>
+                </span>
+            </td>
+            <td>
+                Informe uma data e hora para agendar a entrega do SMS. vazio = liga imediatamente. Data e Hora no formato UTC.
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4 id='response'>Response</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                id
+                <span class="attribute">integer/array</span>
+            </td>
+            <td>
+                A resposta pode ser um Objeto com o ID do SMS, ou um array com vários IDs caso seja setado para o envio de multi_sms = true.
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
+<h3 id='buscar-sms'>Buscar SMS</h3>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://voice-api.zenvia.com/sms/{id}
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="s1">'https://voice-api.zenvia.com/sms/1'</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">buscaSms</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Buscar</span><span class="p">(</span><span class="m">123</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="s">"123"</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
+
+<span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">buscar</span><span class="o">(</span><span class="mi">123</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">buscar</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"status"</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"motivo"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dados"</span><span class="p">:{</span><span class="w">  
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">25536757</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="s2">"48933445566"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="s2">"2019-05-29T17:49:00.000-03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="s2">"Ola tudo bem?"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"preco"</span><span class="p">:</span><span class="mf">0.045</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status_envio"</span><span class="p">:</span><span class="s2">"enviada"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"data_status"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"respostas"</span><span class="p">:[</span><span class="w">  
+
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"tags"</span><span class="p">:</span><span class="s2">"informações adicionais"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
+
+<p>Após o envio de mensagens de SMS você poderá realizar a busca do registro pelo seu ID.</p>
+<h5 id='request-2'>Request</h5>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                ID
+                <span class="required">Obrigatório</span>
+            </td>
+            <td>
+                ID do SMS para recuperar os dados
+             </td>
+        </tr>
+    </tbody>
+</table>
+<h5 id='response-2'>Response</h5>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                dados
+                <span class="attribute">object</span>
+            </td>
+            <td>
+                Retorna o objeto <a href="#objeto-sms">SMS</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br></p>
+<h3 id='relatorio-sms'>Relatório SMS</h3>
+<blockquote>
+<p>Definição</p>
+</blockquote>
+<pre class="highlight plaintext"><code>GET https://voice-api.zenvia.com/sms/relatorio
+</code></pre>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
+            --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
+            <span class="s1">'https://voice-api.zenvia.com/sms/relatorio?data_inicio=2018-03-14&amp;data_fim=2018-03-15'</span>
+</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">relatorio</span><span class="p">(</span><span class="nv">$dataInicial</span><span class="p">,</span> <span class="nv">$dataFinal</span><span class="p">);</span>
+</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">relatorio</span><span class="p">(</span><span class="nx">data_inicial</span><span class="p">,</span> <span class="nx">data_final</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
+    <span class="p">});</span>
+</code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Relatorio</span><span class="o">.</span><span class="n">Gerar</span><span class="p">(</span><span class="n">dataInicial</span><span class="p">,</span><span class="x"> </span><span class="n">dataFinal</span><span class="p">)</span><span class="x">
+</span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">get_relatorio</span><span class="p">(</span><span class="s">"2017-12-08T11:00:32-02:00"</span><span class="p">,</span> <span class="s">"2017-12-08T11:00:32-02:00"</span><span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
+
+<span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">relatorio</span><span class="o">(</span><span class="n">dataInicial</span><span class="o">,</span> <span class="n">dataFinal</span><span class="o">);</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
+<span class="kp">include</span> <span class="no">TotalVoice</span>
+
+<span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">relatorio</span><span class="p">(</span><span class="n">data_inicial</span><span class="p">,</span> <span class="n">data_final</span><span class="p">)</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4899999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-30T23:34:08-03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data_envio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mensagem de teste"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enviada"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"respostas"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4899999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31T22:39:36-03:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"data_envio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oi, tudo bem?"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"enviada"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"resposta_usuario"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"respostas"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tudo bem, e voce?"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"data_resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31T22:46:42-03:00"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="notice">
+Este endpoint foi descontinuado e não receberá novas atualizações e melhorias. Para novas implementações de SMS, acesse:
+<a href="https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS">https://zenvia.github.io/zenvia-openapi-spec/v2/#tag/SMS</a>
+</aside>
+
+<p>Você pode consultar os SMSs enviados posteriormente. Basta informar o período desejado para que a API retorne os dados.</p>
+<h4 id='request-3'>Request</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                data_inicio
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data inicial para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                data_fim
+                <span class="required">Obrigatório</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Data final para consulta dos dados no relatório
+            </td>
+        </tr>
+        <tr>
+            <td>
+                posicao
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Posição para seleção dos dados do relatório - começa na posição 0. Também chamado de offset.            
+            </td>
+        </tr>
+        <tr>
+            <td>
+                limite
+                <span class="required">Opcional</span>
+                <span class="type">Query String</span>
+            </td>
+            <td>
+                Quantidade de chamadas a retornar na consulta. O limite padrão é 100 e o máximo é 200.
+            </td>
+        </tr> 
+    </tbody>
+</table>
+<h4 id='response-3'>Response</h4>
+<table class="table-parameters">
+    <tbody>
+        <tr>
+            <td>
+                relatorio
+                <span class="attribute">array</span>
+            </td>
+            <td>
+                Retorna um array com objetos <a href="#objeto-sms">SMS</a>
+             </td>
+        </tr>
+    </tbody>
+</table>
+
+<p><br>
+<br></p>
 
       </div>
       <div class="dark-box">
