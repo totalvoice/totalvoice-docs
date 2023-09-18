@@ -649,16 +649,6 @@
                           </a>
                         </li>
                         <li>
-                          <a href="#estoque-de-dids" class="toc-h3 toc-link" data-title="Estoque de DIDs">
-                            Estoque de DIDs
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#comprar-did" class="toc-h3 toc-link" data-title="Comprar DID">
-                            Comprar DID
-                          </a>
-                        </li>
-                        <li>
                           <a href="#deletar-did" class="toc-h3 toc-link" data-title="Deletar DID">
                             Deletar DID
                           </a>
@@ -6171,159 +6161,6 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <aside class="notice">
 Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ramal_id</strong>.
 </aside>
-<h3 id='estoque-de-dids'>Estoque de DIDs</h3>
-<blockquote>
-<p>Did Endpoint</p>
-</blockquote>
-<pre class="highlight plaintext"><code>https://voice-api.zenvia.com/did/estoque
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X GET --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: seu-token'</span> <span class="s1">'https://voice-api.zenvia.com/did/estoque'</span>
-</code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span><span class="o">&lt;</span><span class="nx">aside</span> <span class="kr">class</span><span class="o">=</span><span class="s2">"notice"</span><span class="o">&gt;</span> <span class="nx">Antes</span> <span class="nx">era</span> <span class="nx">poss</span><span class="err">í</span><span class="nx">vel</span> <span class="nx">consultar</span> <span class="nx">os</span> <span class="nx">n</span><span class="err">ú</span><span class="nx">meros</span> <span class="nx">de</span> <span class="nx">DIDs</span> <span class="nx">dispon</span><span class="err">í</span><span class="nx">veis</span> <span class="nx">e</span> <span class="nx">compr</span><span class="err">á</span><span class="o">-</span><span class="nx">los</span> <span class="nx">automaticamente</span><span class="p">.</span> <span class="nx">Atualmente</span> <span class="err">é</span> <span class="nx">necess</span><span class="err">á</span><span class="nx">rio</span> <span class="nx">entrar</span> <span class="nx">em</span> <span class="nx">contato</span> <span class="nx">com</span> <span class="nx">o</span> <span class="nx">time</span> <span class="nx">de</span> <span class="nx">suporte</span> <span class="nx">da</span> <span class="nx">equipe</span> <span class="nx">de</span> <span class="nx">voz</span> <span class="nx">da</span> <span class="nx">Zenvia</span> <span class="nx">pelo</span> <span class="nx">email</span>  <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">""</span><span class="o">&gt;</span><span class="nx">suporte</span><span class="p">.</span><span class="nx">voz</span><span class="p">@</span><span class="nd">zenvia</span><span class="p">.</span><span class="nx">com</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="sr">/aside</span><span class="err">&gt;
-</span>
-<span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">Em</span> <span class="n">constru</span><span class="err">çã</span><span class="n">o</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="no">Em</span> <span class="n">constru</span><span class="err">çã</span><span class="n">o</span>
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"dids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12341</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cidade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAO PAULO"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5511203729395"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12341</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cidade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campinas"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5519350128096"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<aside class="notice">Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte.voz@zenvia.com</a>
-</aside>
-
-<p style="color:#5A5A5A;"><b>Nota:</b> Para adquirir um DID você deve ter o cartão de crédito cadastrado na plataforma.</p>
-
-<p>Método utilizado: </p>
-
-<p><strong>GET</strong> <a href = "https://voice-api.zenvia.com/did/estoque">https://voice-api.zenvia.com/did/estoque</a></p>
-<h5 id='request-15'>Request</h5>
-<p><p style="color:#5A5A5A;">Não precisa passar nenhum parâmetro.<p></p>
-<h4 id='response-15'>Response</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td style="color:#5A5A5A;">
-                relatorio
-                <span class="attribute">array</span>
-            </td>
-            <td style="color:#5A5A5A;">
-                Retorna um array com objetos <a href="#objeto-did">DIDs</a> disponíveis.
-             </td>
-        </tr>
-    </tbody>
-</table>
-<h3 id='comprar-did'>Comprar DID</h3>
-<blockquote>
-<p>Did Endpoint</p>
-</blockquote>
-<pre class="highlight plaintext"><code>https://voice-api.zenvia.com/did/
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
-            --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-            d <span class="s1">'{"did_id":"123"}'</span> <span class="se">\</span>
-            --header <span class="s1">'Access-Token: seu-token'</span> <span class="s1">'https://voice-api.zenvia.com/did/'</span>
-</code></pre><pre class="highlight php tab-php"><code>Em construção
-</code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="nx">Em</span> <span class="nx">constru</span><span class="err">çã</span><span class="nx">o</span>
-</code></pre><pre class="highlight go tab-go"><code><span class="n">Em</span><span class="x"> </span><span class="n">construção</span><span class="x">
-</span></code></pre><pre class="highlight python tab-python"><code><span class="n">Em</span> <span class="n">constru</span><span class="err">çã</span><span class="n">o</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">Em</span> <span class="n">constru</span><span class="err">çã</span><span class="n">o</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="no">Em</span> <span class="n">constru</span><span class="err">çã</span><span class="n">o</span>
-</code></pre>
-<blockquote>
-<p>Response</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"sucesso"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"motivo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"dids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12341</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cidade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAO PAULO"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5511203729395"</span><span class="w">
-      </span><span class="p">},</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12341</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"cidade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Campinas"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SP"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5519350128096"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<aside class="notice">Antes era possível consultar os números de DIDs disponíveis e comprá-los automaticamente. Atualmente é necessário entrar em contato com o time de suporte da equipe de voz da Zenvia pelo email  <a href="">suporte.voz@zenvia.com</a>
-</aside>
-
-<p><p style="color:#5A5A5A;">Para adquirir um DID você deve ter um cartão de crédito cadastrado na plataforma.<p></p>
-
-<p>Método utilizado: </p>
-
-<p><strong>POST</strong> <a href = "https://voice-api.zenvia.com/did/">https://voice-api.zenvia.com/did/</a></p>
-<h5 id='request-16'>Request</h5>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td style="color:#5A5A5A;">
-                did_id
-                <span class="required" >Obrigatório</span>
-            </td>
-            <td style="color:#5A5A5A;">
-                Id do DID que será comprado
-             </td>
-        </tr>
-    </tbody>
-</table>
-<h4 id='response-16'>Response</h4>
-<table class="table-parameters">
-    <tbody>
-        <tr>
-            <td style="color:#5A5A5A;">
-                dados
-                <span class="attribute">object</span>
-            </td>
-            <td style="color:#5A5A5A;">
-                Retorna o id do DID adquirido.
-             </td>
-        </tr>
-    </tbody>
-</table>
 <h3 id='deletar-did'>Deletar DID</h3>
 <p>Para deletar um número de telefone (DID) cadastrado na sua conta, basta informar o ID do mesmo. </p>
 
@@ -6578,7 +6415,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
 <p>Para requisitar, basta informar o período desejado e o ID do DID para que a API retorne os dados. </p>
 
 <p><strong>GET</strong> <a href = "https://voice-api.zenvia.com/did/chamada/{id-chamada}">https://voice-api.zenvia.com/did/chamada/{id-chamada}</a></p>
-<h4 id='request-17'>Request</h4>
+<h4 id='request-15'>Request</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -6592,7 +6429,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
         </tr>
     </tbody>
 </table>
-<h4 id='response-17'>Response</h4>
+<h4 id='response-15'>Response</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -6681,7 +6518,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
 <p>Para consultar as chamadas recebidas por um DID, basta informar o período desejado e o ID do DID para que a API retorne os dados.</p>
 
 <p>Veja ao lado um exemplo de requisição. Os campos são:</p>
-<h4 id='request-18'>Request</h4>
+<h4 id='request-16'>Request</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -6755,7 +6592,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
         </tr>
     </tbody>
 </table>
-<h4 id='response-18'>Response</h4>
+<h4 id='response-16'>Response</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -6871,7 +6708,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
 <p>Para consultar todas as chamadas recebidas por todos os DIDs, basta informar o período desejado e o ID do DID para que a API retorne os dados.</p>
 
 <p>Veja ao lado um exemplo de requisição. Os campos são:</p>
-<h4 id='request-19'>Request</h4>
+<h4 id='request-17'>Request</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -6936,7 +6773,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
         </tr>
     </tbody>
 </table>
-<h4 id='response-19'>Response</h4>
+<h4 id='response-17'>Response</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -7322,7 +7159,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
 </ol>
 
 <p>Veja ao lado um exemplo de requisição. Os campos são:</p>
-<h4 id='request-20'>Request</h4>
+<h4 id='request-18'>Request</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -7345,7 +7182,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
         </tr>
     </tbody>
 </table>
-<h5 id='response-20'>Response</h5>
+<h5 id='response-18'>Response</h5>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -7440,7 +7277,7 @@ pelo seu ID. </p>
 <p>A chamada para obter os dados da consulta deve ser realizada utilizando um HTTP GET para o endereço de definição da API.</p>
 
 <p><strong>GET</strong> <a href = "https://voice-api.zenvia.com/ura/{id}">https://voice-api.zenvia.com/ura/{id}</a></p>
-<h4 id='request-21'>Request</h4>
+<h4 id='request-19'>Request</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -7454,7 +7291,7 @@ pelo seu ID. </p>
         </tr>
     </tbody>
 </table>
-<h5 id='response-21'>Response</h5>
+<h5 id='response-19'>Response</h5>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -7541,7 +7378,7 @@ pelo seu ID. </p>
 <p>Para alterar as informações de uma URA, o método de solicitação deve ser HTTP PUT. Ele criará um novo recurso e substituirá as antigas informações. </p>
 
 <p><strong>PUT</strong> <a href = "https://voice-api.zenvia.com/ura/{id}">https://voice-api.zenvia.com/ura/{id}</a></p>
-<h4 id='request-22'>Request</h4>
+<h4 id='request-20'>Request</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -7564,7 +7401,7 @@ pelo seu ID. </p>
         </tr>
     </tbody>
 </table>
-<h5 id='response-22'>Response</h5>
+<h5 id='response-20'>Response</h5>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -7635,7 +7472,7 @@ pelo seu ID. </p>
 <p>Método utilizado: </p>
 
 <p><strong>DELETE</strong> <a href = "https://voice-api.zenvia.com/ura/{id}">https://voice-api.zenvia.com/ura/{id}</a></p>
-<h4 id='request-23'>Request</h4>
+<h4 id='request-21'>Request</h4>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -7649,7 +7486,7 @@ pelo seu ID. </p>
         </tr>
     </tbody>
 </table>
-<h5 id='response-23'>Response</h5>
+<h5 id='response-21'>Response</h5>
 <table class="table-parameters">
     <tbody>
         <tr>
@@ -7746,7 +7583,7 @@ pelo seu ID. </p>
 <p>Para consultar sua lista de URAs e suas estruturas, o método de solicitação deve ser HTTP GET. Ele retornará um array com as URAs e seus IDs. </p>
 
 <p><strong>GET</strong> <a href = "https://voice-api.zenvia.com/ura/relatorio">https://voice-api.zenvia.com/ura/relatorio</a></p>
-<h4 id='response-24'>Response</h4>
+<h4 id='response-22'>Response</h4>
 <table class="table-parameters">
      <tbody>
         <tr>
