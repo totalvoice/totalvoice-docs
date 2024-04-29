@@ -467,7 +467,7 @@ puts @client.chamada.ligar("4811111111", "4811111112")
 
 Para criar uma chamada, basta informar o número de origem e o destino. 
 
-**POST:**  <a href = "https://voice-api.zenvia.com/audio">https://voice-api.zenvia.com/audio</a>
+**POST:**  <a href = "https://voice-api.zenvia.com/chamada">https://voice-api.zenvia.com/chamada</a>
 
 **REQUEST:**
 
