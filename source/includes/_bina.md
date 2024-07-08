@@ -18,7 +18,7 @@ Este endpoint permite que você cadastre e valide suas binas para utilizá-las e
 ```json
 {
     "id": 432,
-    "numero_telefone": "+55108888888888",
+    "numero_telefone": "+5510999999999",
     "data_criacao": "2018-03-18T00:51:22.000Z",
     "fixo": false,
     "confirmado": true
@@ -94,7 +94,7 @@ POST https://voice-api.zenvia.com/bina
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-             -d '{"telefone":"+55108888888888", "mensagem_sms": "Teste SMS", "mensagem_tts": "Teste TTS"}' \
+             -d '{"telefone":"+5510999999999", "mensagem_sms": "Teste SMS", "mensagem_tts": "Teste TTS"}' \
              'https://voice-api.zenvia.com/bina'
 ```
 
@@ -184,7 +184,7 @@ GET https://voice-api.zenvia.com/bina
 curl -X GET --header 'Content-Type: application/json' \
             --header 'Accept: application/json' \
             --header 'Access-Token: {{access-token}}' \
-            'https://voice-api.zenvia.com/bina?codigo=1234&telefone=+55108888888888'
+            'https://voice-api.zenvia.com/bina?codigo=1234&telefone=+5510999999999'
 ```
 
 Você deve informar o número do telefone e o código recebido no celular (SMS) ou telefone (TTS) informados no método POST, para realizarmos a validação

@@ -41,7 +41,7 @@ Para utilizar uma bina específica, é necessário realizar a contratação de u
 ```json
 {
     "id": 432,
-    "numero_telefone": "+55108888888888",
+    "numero_telefone": "+5510999999999",
     "data_criacao": "2018-03-18T00:51:22.000Z",
     "fixo": false,
     "confirmado": true
@@ -160,7 +160,7 @@ A chamada para obter os dados da consulta deve ser realizada utilizando um HTTP 
   "mensagem": "Dados retornados com sucesso",
   "dados": {
     "id": 1,
-    "numero_telefone": "+55108888888888",
+    "numero_telefone": "+5510999999999",
     "data_criacao": "2018-03-18T00:51:22.000Z",
     "fixo": false,
     "confirmado": true
@@ -1521,7 +1521,7 @@ Em construção
         "id": 123456,
         "data_inicio": "2019-05-07T15:28:13-03:00",
         "url_gravacao": "https://api.evoline.com.br/rec/?id=123445&x=12345&cid=1",
-        "numero_origem": "+55108888888888",
+        "numero_origem": "+5510999999999",
         "status": "atendida",
         "duracao_segundos": 369,
         "duracao": "00:06:09",
@@ -1536,7 +1536,7 @@ Em construção
         "id": 123456,
         "data_inicio": "2019-05-08T13:16:02-03:00",
         "url_gravacao": "https://api.evoline.com.br/rec/?id=123456&x=12345&cid=1",
-        "numero_origem": "+55108888888888",
+        "numero_origem": "+5510999999999",
         "status": "atendida",
         "duracao_segundos": 596,
         "duracao": "00:09:56",

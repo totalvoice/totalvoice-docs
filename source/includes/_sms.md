@@ -30,7 +30,7 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
 ```json
 {
     "id": 432,
-    "numero_destino": "+55108888888888",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2018-03-18T00:51:22.000Z",
     "mensagem": "Oi, tudo bem?",
     "preco": 0.09,
@@ -235,19 +235,19 @@ POST https://voice-api.zenvia.com/sms
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-             -d '{"numero_destino":"+55108888888888","mensagem":"Ola tudo bem?"}' \
+             -d '{"numero_destino":"+5510999999999","mensagem":"Ola tudo bem?"}' \
              'https://voice-api.zenvia.com/sms'
 ```
 ```php
 <?php
 $client = new TotalVoiceClient('seu-token');
-$response = $client->sms->enviar('+55108888888888', 'Ola tudo bem?');
+$response = $client->sms->enviar('+5510999999999', 'Ola tudo bem?');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.sms.enviar("+55108888888888", "Ola tudo bem?")
+client.sms.enviar("+5510999999999", "Ola tudo bem?")
     .then(function(data) {
         console.log(data);
     })
@@ -263,20 +263,20 @@ response, err := client.SMS.Enviar("+5510999999999", "Ola tudo bem?", false, fal
 from totalvoice.cliente import Cliente
 
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.sms.enviar("+55108888888888", "Ola tudo bem?")
+response = client.sms.enviar("+5510999999999", "Ola tudo bem?")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 
 Sms sms = new Sms(client);
-JSONObject response = sms.enviar("+55108888888888", "Ola tudo bem?");
+JSONObject response = sms.enviar("+5510999999999", "Ola tudo bem?");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.sms.enviar("+55108888888888", "Ola tudo bem?")
+puts @client.sms.enviar("+5510999999999", "Ola tudo bem?")
 ```
 > Response
 
@@ -470,7 +470,7 @@ puts @client.sms.buscar(123)
    "mensagem":"dados retornados com sucesso",
    "dados":{  
       "id":25536757,
-      "numero_destino":"+55108888888888",
+      "numero_destino":"+5510999999999",
       "data_criacao":"2019-05-29T17:49:00.000-03:00",
       "mensagem":"Ola tudo bem?",
       "preco":0.045,

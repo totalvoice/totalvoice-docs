@@ -35,7 +35,7 @@ Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz com
 ```json
 {
     "id": 12345678,
-    "numero_destino": "+55108888888888",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2019-05-22T09:18:44.000-03:00",
     "data_inicio": "2019-05-22T09:18:44.000-03:00",
     "tipo": "movel",
@@ -1626,7 +1626,7 @@ https://voice-api.zenvia.com/tts
 
 {
     "id": 12345678,
-    "numero_destino": "+55108888888888",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2019-05-22T09:18:44.000-03:00",
     "data_inicio": "2019-05-22T09:18:44.000-03:00",
     "tipo": "movel",

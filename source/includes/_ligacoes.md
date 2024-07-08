@@ -65,8 +65,8 @@ from totalvoice.cliente import Cliente
 cliente = Cliente("{{access-token}}", 'HOST') #ex: voice-api.zenvia.com
 
 #Cria chamada
-numero_origem = "+55108888888888"
-numero_destino = "+55108888888888"
+numero_origem = "+5510999999999"
+numero_destino = "+5510999999999"
 response = cliente.chamada.enviar(numero_origem, numero_destino)
 print(response)
 ```
