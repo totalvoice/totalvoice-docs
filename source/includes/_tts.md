@@ -238,7 +238,7 @@ POST https://voice-api.zenvia.com/tts
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"++5510999999999", "bina": "++5510999999999", "mensagem":"Olá"}' \
+             -d '{"numero_destino":"++5510999999999", "bina": "+5510888888888", "mensagem":"Olá"}' \
              'https://voice-api.zenvia.com/tts'
 ```
 ```php
