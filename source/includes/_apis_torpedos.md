@@ -267,7 +267,7 @@ POST https://voice-api.zenvia.com/audio
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+5510999999999", "bina": "+5510999999999" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
+             -d '{"numero_destino":"+5510999999999", "bina": "+5510888888888" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
              'https://voice-api.zenvia.com/audio'
 ```
 ```php
@@ -276,7 +276,7 @@ require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
 $client = new TotalVoiceClient('seu-token');
-$response = $client->audio->enviar('+5510999999999', 'http://sua.url.audio/audio.mp3');
+$response = $client->audio->enviar('+5510888888888', 'http://sua.url.audio/audio.mp3');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
@@ -1065,7 +1065,7 @@ curl -X POST --header 'Content-Type: application/json' \
 			 --header 'Access-Token: seu-token' \
 			 -d '{
                 "numero_destino":"+5510999999999",
-                "bina": "+5510999999999",
+                "bina": "+5510888888888",
                 "dados":[
                     {  
                         "acao":"audio",
@@ -1086,7 +1086,7 @@ curl -X POST --header 'Content-Type: application/json' \
                         "opcao":1,
                         "acao_dados":{  
                             "numero_telefone":"+5510999999999",
-                            "bina":"+5510999999999"
+                            "bina":"+5510888888888"
                         }
                     },
                         {  
@@ -1104,7 +1104,7 @@ curl -X POST --header 'Content-Type: application/json' \
 <?php
 $client = new TotalVoiceClient('seu-token');
 
-$dados	= '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510999999999"}}]';
+$dados	= '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]';
 $bina	= '11987654321';
 $tags	= 'clienteY';
 
@@ -1116,7 +1116,7 @@ $response = $client->composto->enviar('NUMERO-DESTINO', $dados, $bina, $tags);
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510999999999"}}]','11987654321' , 'tags')
+client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags')
     .then(function(data) {
         console.log(data);
     })
@@ -1126,7 +1126,7 @@ client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_au
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510999999999"}}]','11987654321' , 'tags')
+ response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags')
 ```
 ```python
 from totalvoice.cliente import Cliente
@@ -1152,7 +1152,7 @@ dados =[
       "opcao":1,
       "acao_dados":{  
          "numero_telefone":"+5510999999999",
-         "bina":"+5510999999999"
+         "bina":"+5510888888888"
       }
    },
     {  
@@ -1169,7 +1169,7 @@ response = client.composto.enviar("NUMERO-DESTINO", dados ,'BINA' , 'TAGS')
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Composto composto = new Composto(client);
 
-JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510999999999"}}]','11987654321' , 'tags');
+JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags');
 ```
 
 ```ruby
@@ -1177,7 +1177,7 @@ require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510999999999"}}]','11987654321' , 'tags')
+puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags')
 ```
 > Response
 
@@ -1855,7 +1855,7 @@ POST https://voice-api.zenvia.com/tts
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+5510999999999", "bina": "+5510999999999", "mensagem":"Olá"}' \
+             -d '{"numero_destino":"+5510999999999", "bina": "++5510888888888", "mensagem":"Olá"}' \
              'https://voice-api.zenvia.com/tts'
 ```
 ```php
