@@ -30,7 +30,7 @@ echo $response->getContent();
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("{{access-token}}");
 
-client.chamada.ligar("4832830151", "4811111111")
+client.chamada.ligar("+5510999999999", "+5510999999999")
     .then(function (data) {
         console.log(data)
     })
@@ -50,7 +50,7 @@ import (
 
 func main() {
     client := totalvoice.NewTotalVoiceClient("{{access-token}}")
-    response, err := client.Chamada.Criar("4811111111", "4822222222", nil)
+    response, err := client.Chamada.Criar("+5510999999999", "+5510999999999", nil)
    
     if err != nil {
 		panic(err)
@@ -65,8 +65,8 @@ from totalvoice.cliente import Cliente
 cliente = Cliente("{{access-token}}", 'HOST') #ex: voice-api.zenvia.com
 
 #Cria chamada
-numero_origem = "48999999999"
-numero_destino = "48900000000"
+numero_origem = "+55108888888888"
+numero_destino = "+55108888888888"
 response = cliente.chamada.enviar(numero_origem, numero_destino)
 print(response)
 ```

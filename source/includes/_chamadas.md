@@ -390,12 +390,12 @@ curl -X POST --header 'Content-Type: application/json'
              --header 'Accept: application/json' 
              --header 'Access-Token: seu-token' 
              -d '{
-                    "numero_origem":"4811111111",
-                    "numero_destino":"4811111112",
+                    "numero_origem":"+5510999999999",
+                    "numero_destino":"+5510999999999",
                     "data_criacao":"2021-04-08T17:21:20Z",
                     "gravar_audio":"true",
-                    "bina_origem":"4832830151",
-                    "bina_destino":"4832830152",
+                    "bina_origem":"+55108888888888",
+                    "bina_destino":"+55108888888888",
                     "tags":"clienteUm",
                     "detecta_caixa_origem":"true"
                  }' 
@@ -405,13 +405,13 @@ curl -X POST --header 'Content-Type: application/json'
 <?php
 $client = new TotalVoiceClient('seu-token');
 
-$response = $client->chamada->ligar('4811111111', '4811111112');
+$response = $client->chamada->ligar('+5510999999999', '+5510999999999');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.chamada.ligar("4811111111", "4811111112")
+client.chamada.ligar("+5510999999999", "+5510999999999")
     .then(function(data) {
         console.log(data);
     })
@@ -421,26 +421,26 @@ client.chamada.ligar("4811111111", "4811111112")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Chamada.Criar("4811111111", "4811111112", nil)
+ response, err := client.Chamada.Criar("+5510999999999", "+5510999999999", nil)
 ```
 ```python
 from totalvoice.cliente import Cliente
 
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.chamada.enviar("4811111111", "4811111112")
+response = client.chamada.enviar("+5510999999999", "+5510999999999")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
 
-JSONObject response = chamada.ligar("4811111111", "4811111112");
+JSONObject response = chamada.ligar("+5510999999999", "+5510999999999");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.chamada.ligar("4811111111", "4811111112")
+puts @client.chamada.ligar("+5510999999999", "+5510999999999")
 ```
 > Response
 
@@ -468,7 +468,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número origem (perna A), recebe a chamada primeiro do número destino. Exemplo: 4832830151
+                Número origem (perna A), recebe a chamada primeiro do número destino. Exemplo: +5510999999999
              </td>
         </tr>
         <tr>
@@ -478,7 +478,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-               Número destino (perna B), recebe a chamada após o número origem atender. Exemplo: 4832830151
+               Número destino (perna B), recebe a chamada após o número origem atender. Exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -508,7 +508,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA que será apresentado na chamada para o número origem (perna A). Formato DDD + Número, exemplo: 4832830151
+                Número de BINA que será apresentado na chamada para o número origem (perna A). Formato DDD + Número, exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -518,7 +518,7 @@ Basta informar o número de origem e destino.
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA que será apresentado na chamada para o número destino (perna B). Formato DDD + Número, exemplo: 4832830151
+                Número de BINA que será apresentado na chamada para o número destino (perna B). Formato DDD + Número, exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -614,7 +614,7 @@ require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.chamada.encerrar("4811111111", "http://foo.bar/audio.mp3")
+puts @client.chamada.encerrar("+5510999999999", "http://foo.bar/audio.mp3")
 ```
 > Response
 
@@ -1033,7 +1033,7 @@ Você pode consultar as Chamadas enviadas. Basta informar o período desejado pa
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: 4832830151
+                Número de telefone de origem para filtrar. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -1043,7 +1043,7 @@ Você pode consultar as Chamadas enviadas. Basta informar o período desejado pa
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: 4832830151
+                Número de telefone de destino para filtrar. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -1103,19 +1103,19 @@ GET https://voice-api.zenvia.com/chamada/{id}/escuta
 ```shell--curl
 curl -X POST --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero":"4811111111", "modo": 1}' \
+             -d '{"numero":"+5510999999999", "modo": 1}' \
              'https://voice-api.zenvia.com/chamada/123/escuta'
 ```
 ```php
 <?php
 $client = new TotalVoiceClient('seu-token');
-$response = $client->chamada->escutar(123, '4811111111', 1);
+$response = $client->chamada->escutar(123, '+5510999999999', 1);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.chamada.escutar(123, "4811111111", 1)
+client.chamada.escutar(123, "+5510999999999", 1)
     .then(function(data) {
         console.log(data);
     })
@@ -1125,25 +1125,25 @@ client.chamada.escutar(123, "4811111111", 1)
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
-response, err := client.Chamada.Escutar(123, "4811111111", 1)
+response, err := client.Chamada.Escutar(123, "+5510999999999", 1)
 ```
 ```python
 from totalvoice.cliente import Cliente
 
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.chamada.escuta_chamada("123", '4811111111',"1")
+response = client.chamada.escuta_chamada("123", '+5510999999999',"1")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
-JSONObject response = chamada.escutar(123, "4811111111", 1);
+JSONObject response = chamada.escutar(123, "+5510999999999", 1);
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.chamada.escutar(123, "4811111111", 1)
+puts @client.chamada.escutar(123, "+5510999999999", 1)
 ```
 > Response
 
@@ -1242,19 +1242,19 @@ POST https://voice-api.zenvia.com/chamada/{id}/transfer
 ```shell--curl
 curl -X POST --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            -d '{"numero":"4811111111", "perna": "destino"}' \
+            -d '{"numero":"+5510999999999", "perna": "destino"}' \
             'https://voice-api.zenvia.com/chamada/123/transfer'
 ```
 ```php
 <?php
 $client = new TotalVoiceClient('seu-token');
-$response = $client->chamada->transferir(123, '4811111111', 'destino');
+$response = $client->chamada->transferir(123, '+5510999999999', 'destino');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.chamada.transferir(123, "4811111111", "destino")
+client.chamada.transferir(123, "+5510999999999", "destino")
     .then(function(data) {
         console.log(data);
     })
@@ -1264,25 +1264,25 @@ client.chamada.transferir(123, "4811111111", "destino")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
-response, err := client.Chamada.Transferir(123, "4811111111", "destino")
+response, err := client.Chamada.Transferir(123, "+5510999999999", "destino")
 ```
 ```python
 from totalvoice.cliente import Cliente
 
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.chamada.transferir("123", "4811111111", "destino")
+response = client.chamada.transferir("123", "+5510999999999", "destino")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
-JSONObject response = chamada.transferir(123, "4811111111", "destino");
+JSONObject response = chamada.transferir(123, "+5510999999999", "destino");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.chamada.transferir(123, "4811111111", "destino")
+puts @client.chamada.transferir(123, "+5510999999999", "destino")
 ```
 > Response
 
