@@ -68,7 +68,7 @@ As regras para o arquivo de áudio são as mesmas:
 ```json
 {
     "id": 432,
-    "numero_destino": "4832830151",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2016-03-27T15:12:44+03:00",
     "data_inicio": "2016-03-27T15:12:49+03:00",
     "tipo": "fixo",
@@ -84,7 +84,7 @@ As regras para o arquivo de áudio são as mesmas:
     "resposta": "8",
 	"tags": "clienteX",
     "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-    "bina": "+5548988888888"
+    "bina": "+55108888888888"
 }
 ```
 
@@ -336,8 +336,8 @@ curl -X POST --header 'Content-Type: application/json' \
 			 --header 'Accept: application/json' \
 			 --header 'Access-Token: seu-token' \
 			 -d '{
-                "numero_destino":"4888881111",
-                "bina": "4811111111",
+                "numero_destino":"+5510999999999",
+                "bina": "+5510888888888",
                 "dados":[
                     {  
                         "acao":"audio",
@@ -357,8 +357,8 @@ curl -X POST --header 'Content-Type: application/json' \
                         "acao":"transferir",
                         "opcao":1,
                         "acao_dados":{  
-                            "numero_telefone":"4832830151",
-                            "bina":"4832830152"
+                            "numero_telefone":"+5510999999999",
+                            "bina":"+5510888888888"
                         }
                     },
                         {  
@@ -376,7 +376,7 @@ curl -X POST --header 'Content-Type: application/json' \
 <?php
 $client = new TotalVoiceClient('seu-token');
 
-$dados	= '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]';
+$dados	= '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]';
 $bina	= '11987654321';
 $tags	= 'clienteY';
 
@@ -388,7 +388,7 @@ $response = $client->composto->enviar('NUMERO-DESTINO', $dados, $bina, $tags);
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags')
     .then(function(data) {
         console.log(data);
     })
@@ -398,7 +398,7 @@ client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_au
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+ response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags')
 ```
 ```python
 from totalvoice.cliente import Cliente
@@ -423,8 +423,8 @@ dados =[
       "acao":"transferir",
       "opcao":1,
       "acao_dados":{  
-         "numero_telefone":"4832830151",
-         "bina":"4832830152"
+         "numero_telefone":"+5510999999999",
+         "bina":"+5510888888888"
       }
    },
     {  
@@ -441,7 +441,7 @@ response = client.composto.enviar("NUMERO-DESTINO", dados ,'BINA' , 'TAGS')
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Composto composto = new Composto(client);
 
-JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags');
+JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags');
 ```
 
 ```ruby
@@ -449,7 +449,7 @@ require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags')
 ```
 > Response
 
@@ -476,7 +476,7 @@ Basta informar o número de destino válido e um JSON com o composto
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número exemplo: 4832830151
+                Número do telefone que irá receber a chamada, formato DDD + Número exemplo: +5510999999999
              </td>
         </tr>
         <tr>
@@ -512,7 +512,7 @@ Basta informar o número de destino válido e um JSON com o composto
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: +5510999999999
             </td>
         </tr>
 		<tr>
@@ -622,7 +622,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
     "mensagem": "dados retornados com sucesso",
     "dados": {
 	    "id": 432,
-	    "numero_destino": "4832830151",
+	    "numero_destino": "+5510999999999",
 	    "data_criacao": "2016-03-27T15:12:44+03:00",
 	    "data_inicio": "2016-03-27T15:12:49+03:00",
 	    "tipo": "fixo",
@@ -638,7 +638,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+5548988888888"
+        "bina": "+55108888888888"
     }
 }
 ```
@@ -747,7 +747,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
     "relatorio": [
       {
 	    "id": 432,
-	    "numero_destino": "4832830151",
+	    "numero_destino": "+5510999999999",
 	    "data_criacao": "2016-03-27T15:12:44+03:00",
 	    "data_inicio": "2016-03-27T15:12:49+03:00",
 	    "tipo": "fixo",
@@ -763,11 +763,11 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+5548988888888"
+        "bina": "+55108888888888"
       },
       {
 	    "id": 433,
-	    "numero_destino": "4832830151",
+	    "numero_destino": "+5510999999999",
 	    "data_criacao": "2016-03-27T15:12:44+03:00",
 	    "data_inicio": "2016-03-27T15:12:49+03:00",
 	    "tipo": "fixo",
@@ -783,7 +783,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+5548988888888"
+        "bina": "+55108888888888"
       }
     ]
   }

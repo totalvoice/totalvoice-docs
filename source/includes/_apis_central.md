@@ -41,7 +41,7 @@ Para utilizar uma bina específica, é necessário realizar a contratação de u
 ```json
 {
     "id": 432,
-    "numero_telefone": "+5548911111111",
+    "numero_telefone": "+5510999999999",
     "data_criacao": "2018-03-18T00:51:22.000Z",
     "fixo": false,
     "confirmado": true
@@ -160,7 +160,7 @@ A chamada para obter os dados da consulta deve ser realizada utilizando um HTTP 
   "mensagem": "Dados retornados com sucesso",
   "dados": {
     "id": 1,
-    "numero_telefone": "+5548988888888",
+    "numero_telefone": "+5510999999999",
     "data_criacao": "2018-03-18T00:51:22.000Z",
     "fixo": false,
     "confirmado": true
@@ -252,7 +252,7 @@ Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, en
     "id": 76498,
     "ramal": "3333",
     "login": "testee@zenvia.com",
-    "bina": "48999999999",
+    "bina": "+55108888888888",
     "webphone_key": "213kbbncs324454ASDcxzln123",
     "ligacao_externa": true,
     "ligacao_celular": true,
@@ -643,7 +643,7 @@ Em construção
     "id": 1234,
     "ramal": "4000",
     "login": "teste@zenvia.com",
-    "bina": "48999999999",
+    "bina": "+55108888888888",
     "webphone_key": "testefd3b268b3de8cateste44968",
     "ligacao_externa": true,
     "ligacao_celular": true,
@@ -1202,7 +1202,7 @@ Em construção
         "id": 1234,
         "ramal": "4000",
         "login": "teste@totalTeste.com.br",
-        "bina": "48999999999",
+        "bina": "+55108888888888",
         "webphone_key": "totalTesteb8af64668997totalTeste",
         "ligacao_externa": true,
         "ligacao_celular": true,
@@ -1217,7 +1217,7 @@ Em construção
         "id": 4567,
         "ramal": "4001",
         "login": "teste1@totalTeste.com.br",
-        "bina": "48999999999",
+        "bina": "+55108888888888",
         "webphone_key": "teste18e990a500a059a78teste1",
         "ligacao_externa": true,
         "ligacao_celular": true,
@@ -1521,7 +1521,7 @@ Em construção
         "id": 123456,
         "data_inicio": "2019-05-07T15:28:13-03:00",
         "url_gravacao": "https://api.evoline.com.br/rec/?id=123445&x=12345&cid=1",
-        "numero_origem": "48999999999",
+        "numero_origem": "+5510999999999",
         "status": "atendida",
         "duracao_segundos": 369,
         "duracao": "00:06:09",
@@ -1536,7 +1536,7 @@ Em construção
         "id": 123456,
         "data_inicio": "2019-05-08T13:16:02-03:00",
         "url_gravacao": "https://api.evoline.com.br/rec/?id=123456&x=12345&cid=1",
-        "numero_origem": "48999999999",
+        "numero_origem": "+5510999999999",
         "status": "atendida",
         "duracao_segundos": 596,
         "duracao": "00:09:56",
@@ -2433,7 +2433,7 @@ Em construção
     "relatorio": [
       {
         "id": 1324567,
-        "numero_destino": "554831810323",
+        "numero_destino": "+5510999999999",
         "numero_origem": "4712344321",
         "data_inicio": "2019-07-15T08:32:34.000-03:00",
         "status": "Não atendida",
@@ -2456,8 +2456,8 @@ Em construção
       },
       {
         "id": 43211234,
-        "numero_destino": "554831810323",
-        "numero_origem": "4840421210",
+        "numero_destino": "+5510999999999",
+        "numero_origem": "+5510999999999",
         "data_inicio": "2019-07-15T09:02:47.000-03:00",
         "status": "Atendida",
         "atendida": true,
@@ -2874,7 +2874,7 @@ https://voice-api.zenvia.com/did/chamada/{id}
     "url_gravacao": "https://api.evoline.com.br/rec/sua-gravacao.mp3",
     "data_inicio": "2019-07-10T09:45:49-03:00",
     "numero_destino": "552120182097",
-    "numero_origem": "4831810323",
+    "numero_origem": "+5510999999999",
     "status": "sem resposta",
     "duracao_segundos": 18,
     "tags": null,
@@ -3097,8 +3097,8 @@ Em Construção
         "ativa": false,
         "url_gravacao": "https://url-gravacao/rec/?id=1",
         "data_inicio": "2018-09-27T16:35:15-03:00",
-        "numero_destino": "554811111111",
-        "numero_origem": "554811111111",
+        "numero_destino": "+5510999999999",
+        "numero_origem": "+5510999999999",
         "status": "ocupado",
         "duracao_segundos": 15,
         "duracao": "00:00:15",
@@ -3222,8 +3222,8 @@ puts @client.did.relatorioChamadas(id, data_inicial, data_final, filtros)
         "ativa": false,
         "url_gravacao": "https://url-gravacao/rec/?id=1",
         "data_inicio": "2018-09-27T16:35:15-03:00",
-        "numero_destino": "554811111111",
-        "numero_origem": "554811111111",
+        "numero_destino": "+5510999999999",
+        "numero_origem": "+5510999999999",
         "status": "ocupado",
         "duracao_segundos": 15,
         "duracao": "00:00:15",
@@ -3283,7 +3283,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: 4832830151
+                Número de telefone de origem para filtrar. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -3293,7 +3293,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: 4832830151
+                Número de telefone de destino para filtrar. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -3432,8 +3432,8 @@ puts @client.did.relatorioChamadas(data_inicial, data_final, filtros)
         "ativa": false,
         "url_gravacao": "https://url-gravacao/rec/?id=1",
         "data_inicio": "2018-09-27T16:35:15-03:00",
-        "numero_destino": "554811111111",
-        "numero_origem": "554811111111",
+        "numero_destino": "+5510999999999",
+        "numero_origem": "+5510999999999",
         "status": "ocupado",
         "duracao_segundos": 15,
         "duracao": "00:00:15",
@@ -3484,7 +3484,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: 4832830151
+                Número de telefone de origem para filtrar. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -3494,7 +3494,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: 4832830151
+                Número de telefone de destino para filtrar. Ex.: +5510999999999
             </td>
         </tr>
         <tr>

@@ -27,7 +27,7 @@ POST https://voice-api.zenvia.com/verificacao
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"4811111111","nome_produto":"ZenAPI de Voz","tts":"true"}' \
+             -d '{"numero_destino":"+5510999999999","nome_produto":"ZenAPI de Voz","tts":"true"}' \
              'https://voice-api.zenvia.com/verificacao'
 ```
 ```php
@@ -36,13 +36,13 @@ require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
 $client = new TotalVoiceClient('seu-token');
-$response = $client->verificacao->enviar('4811111111', 'ZenAPI de Voz');
+$response = $client->verificacao->enviar('+5510999999999', 'ZenAPI de Voz');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.verificacao.enviar("4811111111", "ZenAPI de Voz")
+client.verificacao.enviar("+5510999999999", "ZenAPI de Voz")
     .then(function(data) {
         console.log(data);
     })
@@ -52,24 +52,24 @@ client.verificacao.enviar("4811111111", "ZenAPI de Voz")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.verificacao.enviar("4811111111", "ZenAPI de Voz", false, "")
+ response, err := client.verificacao.enviar("+5510999999999", "ZenAPI de Voz", false, "")
 ```
 ```python
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.verificacao.enviar("4811111111", "ZenAPI de Voz")
+response = client.verificacao.enviar("+5510999999999", "ZenAPI de Voz")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Verificacao verificacao = new Verificacao(client);
 
-JSONObject response = verificacao.enviar("4811111111", "ZenAPI de Voz");
+JSONObject response = verificacao.enviar("+5510999999999", "ZenAPI de Voz");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.verificacao.enviar("4811111111", "ZenAPI de Voz")
+puts @client.verificacao.enviar("+5510999999999", "ZenAPI de Voz")
 ```
 > Response
 

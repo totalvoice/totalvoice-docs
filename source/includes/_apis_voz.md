@@ -62,7 +62,7 @@ POST https://voice-api.zenvia.com/verificacao
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"4811111111","nome_produto":"ZenAPI de Voz","tts":"true"}' \
+             -d '{"numero_destino":"+5510999999999","nome_produto":"ZenAPI de Voz","tts":"true"}' \
              'https://voice-api.zenvia.com/verificacao'
 ```
 ```php
@@ -71,13 +71,13 @@ require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
 $client = new TotalVoiceClient('seu-token');
-$response = $client->verificacao->enviar('4811111111', 'ZenAPI de Voz');
+$response = $client->verificacao->enviar('+5510999999999', 'ZenAPI de Voz');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.verificacao.enviar("4811111111", "ZenAPI de Voz")
+client.verificacao.enviar("+5510999999999", "ZenAPI de Voz")
     .then(function(data) {
         console.log(data);
     })
@@ -87,24 +87,24 @@ client.verificacao.enviar("4811111111", "ZenAPI de Voz")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.verificacao.enviar("4811111111", "ZenAPI de Voz", false, "")
+ response, err := client.verificacao.enviar("+5510999999999", "ZenAPI de Voz", false, "")
 ```
 ```python
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.verificacao.enviar("4811111111", "ZenAPI de Voz")
+response = client.verificacao.enviar("+5510999999999", "ZenAPI de Voz")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Verificacao verificacao = new Verificacao(client);
 
-JSONObject response = verificacao.enviar("4811111111", "ZenAPI de Voz");
+JSONObject response = verificacao.enviar("+5510999999999", "ZenAPI de Voz");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.verificacao.enviar("4811111111", "ZenAPI de Voz")
+puts @client.verificacao.enviar("+5510999999999", "ZenAPI de Voz")
 ```
 > Response
 
@@ -343,14 +343,14 @@ A seguir, você terá acesso às documentações dos Webhooks disponíveis. São
     "tipo": "movel",
     "ativo": false,
     "data_criacao": "2019-09-06T14:21:34",
-    "numero": "48988888888",
+    "numero": "+5510999999999",
     "status": "chamando"
   },
   "gravar_audio": false,
   "id": 37794869,
   "destino": {
     "tipo": "movel",
-    "numero": "48966663333"
+    "numero": "+5510999999999"
   },
   "cliente_id": 2150,
   "tags": ""
@@ -672,7 +672,7 @@ Os atributos são:
 {
   "data_criacao": "2019-09-06T18:48:05",
   "evento_conferencia": "Entrou",
-  "numero": "48988888888",
+  "numero": "+5510999999999",
   "gravar_audio": false,
   "conferencia_id": 42874,
   "chamada_id": "37823279",
@@ -730,7 +730,7 @@ Exemplos: quem entrou ou saiu da conferência, id da chamada, id da conferência
                 <span class="attribute">String</span>
             </td>
             <td>
-                Número do telefone que executou determinada ação na conferência, formato DDD + Número. Exemplo: 4832830151.
+                Número do telefone que executou determinada ação na conferência, formato DDD + Número. Exemplo: +5510999999999.
             </td>
         </tr> 
         <tr>
@@ -762,7 +762,7 @@ Exemplos: quem entrou ou saiu da conferência, id da chamada, id da conferência
 
 {
   "id": "37787430",
-  "numero_destino": "48988888888",
+  "numero_destino": "+5510999999999",
   "data_criacao": "2019-09-06T14:00:38-03:00",
   "mensagem": "Olá ZenAPI",
   "preco": 0.09,
@@ -805,7 +805,7 @@ Os atributos são:
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número do telefone que irá receber o SMS, formato DDD + Número. Exemplo: 4832830151.
+                Número do telefone que irá receber o SMS, formato DDD + Número. Exemplo: +5510999999999.
             </td>
         </tr>
         <tr>
@@ -1007,7 +1007,7 @@ Esse Webhook informa quando houver um novo voicemail (mensagem de voz) na caixa 
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número do telefone que irá enviar o voicemail para o ramal, formato DDD + Número. Exemplo: 4832830151.
+                Número do telefone que irá enviar o voicemail para o ramal, formato DDD + Número. Exemplo: +5510999999999.
             </td>
         </tr>
         <tr>
@@ -1074,7 +1074,7 @@ Esse Webhook informa quando houver um novo voicemail (mensagem de voz) na caixa 
   },
   "destino": {
     "data_inicio": null,
-    "numero": "48988888888",
+    "numero": "+5510999999999",
     "tipo": "movel",
     "status": "preparando",
     "duracao_segundos": 9,
@@ -1204,7 +1204,7 @@ Durante uma chamada, este webhook é acionado sempre que o status mudar (de "cha
 
 {
   "id": 37784550,
-  "numero_destino": "48988888888",
+  "numero_destino": "+5510999999999",
   "data_criacao": "2019-09-06T13:34:57.000-03:00",
   "data_inicio": "2019-09-06T13:34:58.000-03:00",
   "tipo": "movel",
@@ -1417,7 +1417,7 @@ Esse Webhook é enviado ao fim de toda chamada TTS, enviando detalhes como dura�
   },
   "destino": {
     "data_inicio": "2019-09-06T11:19:11-03:00",
-    "numero": "48988888888",
+    "numero": "+5510999999999",
     "tipo": "movel",
     "status": "atendida",
     "duracao_segundos": 24,
@@ -1567,7 +1567,7 @@ Esse Webhook é enviado ao fim de toda chamada, enviando detalhes como duração
   },
   "destino": {
     "data_inicio": "2019-09-06T11:18:19-03:00",
-    "numero": "48988888888",
+    "numero": "+5510999999999",
     "tipo": "movel",
     "status": "ocupado",
     "duracao_segundos": 31,
@@ -1695,7 +1695,7 @@ Esse Webhook é enviado ao fim de toda chamada recebida (DID), enviando detalhes
 
 {
   "id": 37850704,
-  "numero_destino": "48988888888",
+  "numero_destino": "+5510999999999",
   "data_criacao": "2019-09-06T16:38:50.000-03:00",
   "data_inicio": "2019-09-06T16:38:55.000-03:00",
   "tipo": "movel",
@@ -1944,7 +1944,7 @@ Ao fim de toda chamada do tipo Composto, um callback é feito para este endereç
 
 {
   "id": 37785542,
-  "numero_destino": "48988888888",
+  "numero_destino": "+5510999999999",
   "data_criacao": "2019-09-06T13:44:52.000-03:00",
   "data_inicio": "2019-09-06T13:44:52.000-03:00",
   "tipo": "movel",

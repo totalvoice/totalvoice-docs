@@ -20,7 +20,7 @@ Você poderá enviar algumas opções adicionais, tais como aguardar uma respost
 
 {
     "id": 12345678,
-    "numero_destino": "48912341234",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2019-05-22T09:18:44.000-03:00",
     "data_inicio": "2019-05-22T09:18:44.000-03:00",
     "tipo": "movel",
@@ -37,7 +37,7 @@ Você poderá enviar algumas opções adicionais, tais como aguardar uma respost
     "resposta": "1",
     "motivo_desconexao": null,
     "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
-    "bina": "+5548988888888"
+    "bina": "+55108888888888"
 }
 ```
 
@@ -238,7 +238,7 @@ POST https://voice-api.zenvia.com/tts
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+554888881111", "bina": "+554811111111", "mensagem":"Olá"}' \
+             -d '{"numero_destino":"++5510999999999", "bina": "+5510888888888", "mensagem":"Olá"}' \
              'https://voice-api.zenvia.com/tts'
 ```
 ```php
@@ -247,13 +247,13 @@ require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
 $client = new TotalVoiceClient('seu-token');
-$response = $client->tts->enviar('4811111111', 'Olá, essa é a minha mensagem');
+$response = $client->tts->enviar('+5510999999999', 'Olá, essa é a minha mensagem');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
+client.tts.enviar("+5510999999999", "Olá, essa é a minha mensagem")
     .then(function(data) {
         console.log(data);
     })
@@ -263,24 +263,24 @@ client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Tts.Enviar("4811111111", "Olá, essa é a minha mensagem", false, "")
+ response, err := client.Tts.Enviar("+5510999999999", "Olá, essa é a minha mensagem", false, "")
 ```
 ```python
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
+response = client.tts.enviar("+5510999999999", "Olá, essa é a minha mensagem")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Tts tts = new Tts(client);
 
-JSONObject response = tts.enviar("4811111111", "Olá, essa é a minha mensagem");
+JSONObject response = tts.enviar("+5510999999999", "Olá, essa é a minha mensagem");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
+puts @client.tts.enviar("+5510999999999", "Olá, essa é a minha mensagem")
 ```
 > Response
 
@@ -307,7 +307,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número. Exemplo: 4832830151.
+                Número do telefone que irá receber a chamada, formato DDD + Número. Exemplo: +5510999999999.
              </td>
         </tr>
         <tr>
@@ -343,7 +343,7 @@ puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número. Exemplo: 4832830151
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número. Exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -478,7 +478,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
   "mensagem": "dados retornados com sucesso",
   "dados": {
     "id": 123453,
-    "numero_destino": "4832830151",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2019-07-09T10:59:42.000-03:00",
     "data_inicio": "2019-07-09T10:59:43.000-03:00",
     "tipo": "movel",
@@ -495,7 +495,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
     "resposta": 2,
     "motivo_desconexao": "16. normal",
     "url_gravacao": "",
-    "bina": "+5548988888888"
+    "bina": "+55108888888888"
   }
 }
 ```
@@ -599,7 +599,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
     "relatorio": [
       {
         "id": 12345679,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2019-07-09T10:59:42.000-03:00",
         "data_inicio": "2019-07-09T10:59:43.000-03:00",
         "tipo": "movel",
@@ -616,11 +616,11 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
         "resposta": null,
         "motivo_desconexao": "16. normal",
         "url_gravacao": "",
-        "bina": "+5548988888888"
+        "bina": "+55108888888888"
       },
       {
         "id": 13246578,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2019-07-09T15:33:01.000-03:00",
         "data_inicio": "2019-07-09T15:33:01.000-03:00",
         "tipo": "movel",
@@ -637,7 +637,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
         "resposta": null,
         "motivo_desconexao": "17. ocupado",
         "url_gravacao": "",
-        "bina": "+5548988888888"
+        "bina": "+55108888888888"
       }
     ]
   }

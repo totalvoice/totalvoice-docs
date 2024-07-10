@@ -26,7 +26,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
 ```json
 {
     "id": 12345678,
-    "numero_destino": "48912341234",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2019-05-22T09:18:44.000-03:00",
     "data_inicio": "2019-05-22T09:18:44.000-03:00",
     "tipo": "movel",
@@ -43,7 +43,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     "resposta": "1",
     "motivo_desconexao": null,
     "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
-    "bina": "+5548988888888"
+    "bina": "+55108888888888"
 }
 ```
 
@@ -244,7 +244,7 @@ POST https://voice-api.zenvia.com/audio
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+5548988881111", "bina": "+554811111111" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
+             -d '{"numero_destino":"+5510999999999", "bina": "+55108888888888" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
              'https://voice-api.zenvia.com/audio'
 ```
 ```php
@@ -253,13 +253,13 @@ require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
 $client = new TotalVoiceClient('seu-token');
-$response = $client->audio->enviar('4811111111', 'http://sua.url.audio/audio.mp3');
+$response = $client->audio->enviar('+5510999999999', 'http://sua.url.audio/audio.mp3');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
+client.audio.enviar("+5510999999999", "http://sua.url.audio/audio.mp3")
     .then(function(data) {
         console.log(data);
     })
@@ -269,26 +269,26 @@ client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Audio.Enviar("4811111111", "http://sua.url.audio/audio.mp3", false, "")
+ response, err := client.Audio.Enviar("+5510999999999", "http://sua.url.audio/audio.mp3", false, "")
 ```
 ```python
 from totalvoice.cliente import Cliente
 
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
+response = client.audio.enviar("+5510999999999", "http://sua.url.audio/audio.mp3")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Audio audio = new Audio(client);
 
-JSONObject response = audio.enviar("4811111111", "http://sua.url.audio/audio.mp3");
+JSONObject response = audio.enviar("+5510999999999", "http://sua.url.audio/audio.mp3");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
+puts @client.audio.enviar("+5510999999999", "http://sua.url.audio/audio.mp3")
 ```
 > Response
 
@@ -315,7 +315,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número, exemplo: 4832830151.
+                Número do telefone que irá receber a chamada, formato DDD + Número, exemplo: +5510999999999.
              </td>
         </tr>
         <tr>
@@ -351,7 +351,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número, exemplo: 4832830151.
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número, exemplo: +5510999999999.
             </td>
         </tr>
         <tr>
@@ -460,7 +460,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
     "mensagem": "dados retornados com sucesso",
     "dados": {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",
@@ -477,7 +477,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "8",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+5548988888888"
+        "bina": "+55108888888888"
     }
 }
 ```
@@ -584,7 +584,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
     "relatorio": [
       {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",
@@ -601,11 +601,11 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "8",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+5548988888888"
+        "bina": "+55108888888888"
       },
       {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",
@@ -622,7 +622,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+5548988888888"
+        "bina": "+55108888888888"
       }
     ]
   }

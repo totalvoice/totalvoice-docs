@@ -377,7 +377,7 @@ https://voice-api.zenvia.com/did/chamada/{id}
     "url_gravacao": "https://api.evoline.com.br/rec/sua-gravacao.mp3",
     "data_inicio": "2019-07-10T09:45:49-03:00",
     "numero_destino": "552120182097",
-    "numero_origem": "4831810323",
+    "numero_origem": "+5510999999999",
     "status": "sem resposta",
     "duracao_segundos": 18,
     "tags": null,
@@ -600,8 +600,8 @@ Em Construção
         "ativa": false,
         "url_gravacao": "https://url-gravacao/rec/?id=1",
         "data_inicio": "2018-09-27T16:35:15-03:00",
-        "numero_destino": "554811111111",
-        "numero_origem": "554811111111",
+        "numero_destino": "+5510999999999",
+        "numero_origem": "+5510999999999",
         "status": "ocupado",
         "duracao_segundos": 15,
         "duracao": "00:00:15",
@@ -724,8 +724,8 @@ puts @client.did.relatorioChamadas(id, data_inicial, data_final, filtros)
         "ativa": false,
         "url_gravacao": "https://url-gravacao/rec/?id=1",
         "data_inicio": "2018-09-27T16:35:15-03:00",
-        "numero_destino": "554811111111",
-        "numero_origem": "554811111111",
+        "numero_destino": "+5510999999999",
+        "numero_origem": "+5510999999999",
         "status": "ocupado",
         "duracao_segundos": 15,
         "duracao": "00:00:15",
@@ -783,7 +783,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: 4832830151
+                Número de telefone de origem para filtrar. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -793,7 +793,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: 4832830151
+                Número de telefone de destino para filtrar. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -935,8 +935,8 @@ puts @client.did.relatorioChamadas(data_inicial, data_final, filtros)
         "ativa": false,
         "url_gravacao": "https://url-gravacao/rec/?id=1",
         "data_inicio": "2018-09-27T16:35:15-03:00",
-        "numero_destino": "554811111111",
-        "numero_origem": "554811111111",
+        "numero_destino": "+5510999999999",
+        "numero_origem": "+5510999999999",
         "status": "ocupado",
         "duracao_segundos": 15,
         "duracao": "00:00:15",
@@ -985,7 +985,7 @@ Você pode consultar as Chamadas recebidas por todos DIDs. Basta informar o per�
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: 4832830151
+                Número de telefone de origem para filtrar. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -995,7 +995,7 @@ Você pode consultar as Chamadas recebidas por todos DIDs. Basta informar o per�
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: 4832830151
+                Número de telefone de destino para filtrar. Ex.: +5510999999999
             </td>
         </tr>
         <tr>

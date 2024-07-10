@@ -25,7 +25,7 @@ chamadas que ao serem atendidas, conectam-se a essa conferência.
                   "id": 46132,
                   "conferencia_id" : 432,
                   "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-                  "numero": "4832830151",
+                  "numero": "+5510999999999",
                   "data_criacao": "2016-03-27T15:12:44+03:00",
                   "cli": 3132,
                   "duracao": "00:00:45",
@@ -95,7 +95,7 @@ Definição do objeto Conferência
     "id": 46132,
     "conferencia_id" : 432,
     "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-    "numero": "4832830151",
+    "numero": "+5510999999999",
     "data_criacao": "2016-03-27T15:12:44+03:00",
     "cli": 3132,
     "duracao": "00:00:45",
@@ -238,7 +238,7 @@ POST https://voice-api.zenvia.com/conferencia
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-             -d '{"numero_destino":"4811111111","url_conferencia":"http://foo.bar/conferencia.mp3"}' \
+             -d '{"numero_destino":"+5510999999999","url_conferencia":"http://foo.bar/conferencia.mp3"}' \
              'https://voice-api.zenvia.com/conferencia'
 ```
 ```php
@@ -251,7 +251,7 @@ $response = $client->conferencia->enviar('NUMERO-DESTINO', 'http://foo.bar/confe
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.conferencia.enviar("4811111111", "http://foo.bar/conferencia.mp3")
+client.conferencia.enviar("+5510999999999", "http://foo.bar/conferencia.mp3")
     .then(function(data) {
         console.log(data);
     })
@@ -261,7 +261,7 @@ client.conferencia.enviar("4811111111", "http://foo.bar/conferencia.mp3")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Conferencia.Enviar("4811111111", "http://foo.bar/conferencia.mp3", false, "")
+ response, err := client.Conferencia.Enviar("+5510999999999", "http://foo.bar/conferencia.mp3", false, "")
 ```
 ```python
 from totalvoice.cliente import Cliente
@@ -274,7 +274,7 @@ response = client.conferencia.cria_conferencia()
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conferencia conferencia = new Conferencia(client);
 
-JSONObject response = conferencia.enviar("4811111111", "http://foo.bar/conferencia.mp3");
+JSONObject response = conferencia.enviar("+5510999999999", "http://foo.bar/conferencia.mp3");
 ```
 > Response
 
@@ -364,7 +364,7 @@ JSONObject response = conferencia.buscar(123);
     "mensagem": "dados retornados com sucesso",
     "dados": {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",
@@ -476,7 +476,7 @@ JSONObject response = conferencia.relatorio(dataInicial, dataFinal);
     "relatorio": [
       {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",
@@ -494,7 +494,7 @@ JSONObject response = conferencia.relatorio(dataInicial, dataFinal);
       },
       {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",

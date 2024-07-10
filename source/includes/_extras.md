@@ -30,17 +30,17 @@ chamada |	404 |	PARAMETRO_OBRIGATORIO |	 “qual chamada? informar ID /chamada/I
 chamada |	404 |	ELEMENTO_NAO_ENCONTRADO |	 “chamada não encontrada”
 chamada |	404 |	CHAMADA_SEM_GRAVACAO |	 “chamada sem gravação solicitada”
 chamada |	200 |	SUCESSO |	dados retornados com sucesso
-chamada |	405 |	PARAMETRO_INVALIDO |	 “numero_origem inválido, formato DDD + Número ex: 4832830151”
-chamada |	405 |	PARAMETRO_INVALIDO |	 “numero_destino inválido, formato DDD + Número ex: 4832830151”
+chamada |	405 |	PARAMETRO_INVALIDO |	 “numero_origem inválido, formato DDD + Número ex: +5510999999999”
+chamada |	405 |	PARAMETRO_INVALIDO |	 “numero_destino inválido, formato DDD + Número ex: +5510999999999”
 chamada |	200 |	SUCESSO |	chamada criada com sucesso
-chamada |	405 |	PARAMETRO_INVALIDO |	 “numero inválido, formato DDD + Número ex: 4832830151”
+chamada |	405 |	PARAMETRO_INVALIDO |	 “numero inválido, formato DDD + Número ex: +5510999999999”
 chamada |	405 |	PARAMETRO_INVALIDO |	 “modo inválido: 1=escuta, 2=sussurro, 3=conferência”
 chamada |	404 |	CHAMADA_NAO_ATIVA |	 “a chamada não está ativa”
 chamada |	200 |	SUCESSO |	escuta criada com sucesso
 chamada |	200 |	SUCESSO |	 “encerrando chamada”
 chamada |	404 |	CHAMADA_NAO_ATIVA |	 “a chamada não está ativa”
 chamada |	405 |	PARAMETRO_INVALIDO |	 “parametro inválido, informe perna ‘origem’ ou ‘destino'”
-chamada |	405 |	PARAMETRO_INVALIDO |	 “numero inválido, formato DDD + Número ex: 4832830151”
+chamada |	405 |	PARAMETRO_INVALIDO |	 “numero inválido, formato DDD + Número ex: +5510999999999”
 chamada |	200 |	SUCESSO |	transferindo chamada
 chamada |	404 |	CHAMADA_NAO_ATIVA |	a chamada não está ativa
 chamada |	404 |	ELEMENTO_NAO_ENCONTRADO |	 “chamada não encontrada”
@@ -84,7 +84,7 @@ ramal |	404 |	CHAMADA_NAO_ATIVA |	 “a chamada não está ativa”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “ramal inválido, informe o ramal com 3 ou 4 dígitos”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “login inválido”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “senha inválida”
-ramal |	405 |	PARAMETRO_INVALIDO |	 “número da bina inválido, informar segundo o exemplo: 4832830151”
+ramal |	405 |	PARAMETRO_INVALIDO |	 “número da bina inválido, informar segundo o exemplo: +5510999999999”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “login duplicado. Ja existe este login.”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “ramal inválido, já existe um ramal {ramal} cadastrado”
 ramal |	200 |	SUCESSO |	ramal criado com sucesso
@@ -92,7 +92,7 @@ ramal |	405 |	PARAMETRO_INVALIDO |	 “atenção, informe o id do ramal a ser at
 ramal |	405 |	PARAMETRO_INVALIDO |	 “ramal inválido, informe o ramal com 3 ou 4 dígitos”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “login inválido”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “senha inválida”
-ramal |	405 |	PARAMETRO_INVALIDO |	 “número da bina inválido, formato DDD + Número ex: 4832830151”
+ramal |	405 |	PARAMETRO_INVALIDO |	 “número da bina inválido, formato DDD + Número ex: +5510999999999”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “não é possível alterar o login do ramal administrador”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “não é possível alterar a senha do ramal administrador”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “nada para atualizar”
@@ -129,7 +129,7 @@ webhook |	200 |	SUCESSO |	 “webhook atualizado com sucesso”
 webhook |	405 |	PARAMETRO_OBRIGATORIO |	 “o parametro webhook é obrigatório”
 webhook |	405 |	PARAMETRO_INVALIDO |	 “o parametro webhook é inválido. Webhooks válidos: {lista_webhooks}”
 webhook |	200 |	SUCESSO |	 “webhook apagado com sucesso”
-webphone |	405 |	PARAMETRO_INVALIDO |	 “Parâmetro ligar_para inválido, formato DDD + Número ex: 4832830151”
+webphone |	405 |	PARAMETRO_INVALIDO |	 “Parâmetro ligar_para inválido, formato DDD + Número ex: +5510999999999”
 webphone |	200 |	SUCESSO |	url webphone
 webphone |	200 |	SUCESSO |	url webphone
 webphone |	200 |	SUCESSO |	url webphone
