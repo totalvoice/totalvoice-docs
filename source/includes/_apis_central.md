@@ -2873,7 +2873,7 @@ https://voice-api.zenvia.com/did/chamada/{id}
     "ativa": false,
     "url_gravacao": "https://api.evoline.com.br/rec/sua-gravacao.mp3",
     "data_inicio": "2019-07-10T09:45:49-03:00",
-    "numero_destino": "552120182097",
+    "numero_destino": "+5510999999999",
     "numero_origem": "+5510999999999",
     "status": "sem resposta",
     "duracao_segundos": 18,
@@ -3283,7 +3283,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: +5510999999999
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -3293,7 +3293,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: +5510999999999
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -3484,7 +3484,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: +5510999999999
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -3494,7 +3494,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: +5510999999999
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>

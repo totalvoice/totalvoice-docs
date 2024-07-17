@@ -1033,7 +1033,7 @@ Você pode consultar as Chamadas enviadas. Basta informar o período desejado pa
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: +5510999999999
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -1043,7 +1043,7 @@ Você pode consultar as Chamadas enviadas. Basta informar o período desejado pa
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: +5510999999999
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
