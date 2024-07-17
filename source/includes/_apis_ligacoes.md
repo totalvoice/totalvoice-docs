@@ -490,7 +490,7 @@ Veja ao lado um exemplo de requisição. Utilize os campos abaixo para informar 
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número origem (perna A), recebe a chamada primeiro do número destino. Exemplo: +5510999999999
+                Número origem (perna A), recebe a chamada primeiro do número destino. Formato E.164: [+][DDI][DDD][Número] Exemplo: +5510999999999
              </td>
         </tr>
         <tr>
@@ -500,7 +500,7 @@ Veja ao lado um exemplo de requisição. Utilize os campos abaixo para informar 
                 <span class="attribute">string</span>
             </td>
             <td>
-               Número destino (perna B), recebe a chamada após o número origem atender. Exemplo: +5510999999999
+               Número destino (perna B), recebe a chamada após o número origem atender. Formato E.164: [+][DDI][DDD][Número] Exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -530,7 +530,7 @@ Veja ao lado um exemplo de requisição. Utilize os campos abaixo para informar 
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA que será apresentado na chamada para o número origem (perna A). Formato DDD + Número, exemplo: +5510999999999
+                Número de BINA que será apresentado na chamada para o número origem (perna A). Formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -540,7 +540,7 @@ Veja ao lado um exemplo de requisição. Utilize os campos abaixo para informar 
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA que será apresentado na chamada para o número destino (perna B). Formato DDD + Número, exemplo: +5510999999999
+                Número de BINA que será apresentado na chamada para o número destino (perna B). Formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -760,7 +760,7 @@ puts @client.chamada.buscar(123)
        "duracao_falada": "00:00:10",
        "preco": 0.1,
        "motivo_desconexao": "indefinido",
-       "bina_origem" : "+27921815114"
+       "bina_origem" : "+5510888888888 "
      },
      "destino": {
        "data_inicio": "2018-08-02T10:49:29-03:00",
@@ -775,7 +775,7 @@ puts @client.chamada.buscar(123)
        "duracao_falada": "00:00:28",
        "preco": 0.1,
        "motivo_desconexao": "indefinido",
-       "bina_destino" : "+73970934836"
+       "bina_destino" : "+5510888888888 "
      }
   }
 }
@@ -1013,7 +1013,7 @@ puts @client.chamada.relatorio(data_inicial, data_final, filtros)
           "duracao_falada": "00:00:00",
           "preco": 0,
           "motivo_desconexao": "indefinido",
-          "bina_origem" : "+27921815114"
+          "bina_origem" : "+5510888888888 "
         },
         "destino": {
           "data_inicio": "2018-08-02T10:32:22-03:00",
@@ -1028,7 +1028,7 @@ puts @client.chamada.relatorio(data_inicial, data_final, filtros)
           "duracao_falada": "00:00:08",
           "preco": 0,
           "motivo_desconexao": "indefinido",
-          "bina_destino" : "+73970934836"
+          "bina_destino" : "+5510888888888 "
 
         }
       }

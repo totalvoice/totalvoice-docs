@@ -15,7 +15,7 @@ https://voice-api.zenvia.com/did
     "id": 4844577,
     "cidade": "Rio de Janeiro",
     "estado": "RJ",
-    "numero": "552120182293"
+    "numero": "+5510999999999"
     }
 ```
 
@@ -122,7 +122,7 @@ Em construção
         "id": 123454,
         "cidade": "Rio de Janeiro",
         "estado": "RJ",
-        "numero": "552120128207"
+        "numero": "+5510999999999"
       }
     ]
   }
@@ -783,7 +783,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: +5510999999999
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número] Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -793,7 +793,7 @@ Você pode consultar as Chamadas recebidas por um DID. Basta informar o período
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: +5510999999999
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número] Ex.: +5510999999999
             </td>
         </tr>
         <tr>
