@@ -307,7 +307,7 @@ puts @client.tts.enviar("+5510999999999", "Olá, essa é a minha mensagem")
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número. Exemplo: +5510999999999.
+                Número do telefone que irá receber a chamada, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999.
              </td>
         </tr>
         <tr>
@@ -343,7 +343,7 @@ puts @client.tts.enviar("+5510999999999", "Olá, essa é a minha mensagem")
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número. Exemplo: +5510999999999
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999
             </td>
         </tr>
         <tr>

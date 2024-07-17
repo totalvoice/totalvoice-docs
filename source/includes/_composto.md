@@ -32,8 +32,8 @@ JSON DADOS do exemplo:
 		"acao": "transferir",
 		"opcao": 2,
 		"acao_dados": {
-						"numero_telefone": "1132830151",
-						 "bina": "1132830152" 
+						"numero_telefone": "+5510999999999",
+						 "bina": "+5510888888888" 
 					}
 	} 
 ]
@@ -476,7 +476,7 @@ Basta informar o número de destino válido e um JSON com o composto
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número exemplo: +5510999999999
+                Número do telefone que irá receber a chamada, formato E.164: [+][DDI][DDD][Número] exemplo: +5510999999999
              </td>
         </tr>
         <tr>
@@ -512,7 +512,7 @@ Basta informar o número de destino válido e um JSON com o composto
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: +5510999999999
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato E.164: [+][DDI][DDD][Número] exemplo: +5510999999999
             </td>
         </tr>
 		<tr>

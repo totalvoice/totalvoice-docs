@@ -315,7 +315,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número, exemplo: +5510999999999.
+                Número do telefone que irá receber a chamada, formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999.
              </td>
         </tr>
         <tr>
@@ -351,7 +351,7 @@ Basta informar o número de destino válido e a URL pública do arquivo.
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número, exemplo: +5510999999999.
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999.
             </td>
         </tr>
         <tr>

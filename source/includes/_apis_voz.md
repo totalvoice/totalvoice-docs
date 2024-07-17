@@ -730,7 +730,7 @@ Exemplos: quem entrou ou saiu da conferência, id da chamada, id da conferência
                 <span class="attribute">String</span>
             </td>
             <td>
-                Número do telefone que executou determinada ação na conferência, formato DDD + Número. Exemplo: +5510999999999.
+                Número do telefone que executou determinada ação na conferência, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999.
             </td>
         </tr> 
         <tr>
@@ -805,7 +805,7 @@ Os atributos são:
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número do telefone que irá receber o SMS, formato DDD + Número. Exemplo: +5510999999999.
+                Número do telefone que irá receber o SMS, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999.
             </td>
         </tr>
         <tr>
@@ -970,7 +970,7 @@ Os atributos são:
   "id": 1411,
   "ramal_id": 87787,
   "ramal": "9561",
-  "numero_telefone": "6136271444",
+  "numero_telefone": "+5510999999999",
   "data_mensagem": "2019-09-06T17:05:18-03:00",
   "duracao_segundos": 0,
   "url_gravacao": "https://api.evoline.com.br/recvm/?id=1411&x=094bba9d3a&cid=2150"
@@ -1007,7 +1007,7 @@ Esse Webhook informa quando houver um novo voicemail (mensagem de voz) na caixa 
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número do telefone que irá enviar o voicemail para o ramal, formato DDD + Número. Exemplo: +5510999999999.
+                Número do telefone que irá enviar o voicemail para o ramal, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999.
             </td>
         </tr>
         <tr>
