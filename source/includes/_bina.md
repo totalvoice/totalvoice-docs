@@ -310,7 +310,7 @@ Após a criação de uma bina, você poderá realizar a busca do registro pelo s
   "mensagem": "Dados retornados com sucesso",
   "dados": {
     "id": 1,
-    "numero_telefone": "+55108888888888",
+    "numero_telefone": "+5510888888888",
     "data_criacao": "2018-03-18T00:51:22.000Z",
     "fixo": false,
     "confirmado": true

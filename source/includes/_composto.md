@@ -84,7 +84,7 @@ As regras para o arquivo de áudio são as mesmas:
     "resposta": "8",
 	"tags": "clienteX",
     "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-    "bina": "+55108888888888"
+    "bina": "+5510888888888"
 }
 ```
 
@@ -638,7 +638,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
     }
 }
 ```
@@ -763,7 +763,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       },
       {
 	    "id": 433,
@@ -783,7 +783,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       }
     ]
   }

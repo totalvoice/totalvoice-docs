@@ -37,7 +37,7 @@ Você poderá enviar algumas opções adicionais, tais como aguardar uma respost
     "resposta": "1",
     "motivo_desconexao": null,
     "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
-    "bina": "+55108888888888"
+    "bina": "+5510888888888"
 }
 ```
 
@@ -495,7 +495,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
     "resposta": 2,
     "motivo_desconexao": "16. normal",
     "url_gravacao": "",
-    "bina": "+55108888888888"
+    "bina": "+5510888888888"
   }
 }
 ```
@@ -616,7 +616,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
         "resposta": null,
         "motivo_desconexao": "16. normal",
         "url_gravacao": "",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       },
       {
         "id": 13246578,
@@ -637,7 +637,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
         "resposta": null,
         "motivo_desconexao": "17. ocupado",
         "url_gravacao": "",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       }
     ]
   }
