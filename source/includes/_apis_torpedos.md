@@ -52,7 +52,7 @@ Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz com
     "resposta": "1",
     "motivo_desconexao": null,
     "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
-    "bina": "+55108888888888"
+    "bina": "+5510888888888"
 }
 ```
 
@@ -496,7 +496,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "8",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
     }
 }
 ```
@@ -625,7 +625,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "8",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       },
       {
         "id": 432,
@@ -646,7 +646,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       }
     ]
   }
@@ -798,7 +798,7 @@ O composto aceita um JSON com as seguintes opções:
     "resposta": "8",
 	"tags": "clienteX",
     "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-    "bina": "+55108888888888"
+    "bina": "+5510888888888"
 }
 ```
 
@@ -1371,7 +1371,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
     }
 }
 ```
@@ -1500,7 +1500,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       },
       {
 	    "id": 433,
@@ -1520,7 +1520,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       }
     ]
   }
@@ -1643,7 +1643,7 @@ https://voice-api.zenvia.com/tts
     "resposta": "1",
     "motivo_desconexao": null,
     "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
-    "bina": "+55108888888888"
+    "bina": "+5510888888888"
 }
 ```
 
@@ -2122,7 +2122,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
     "resposta": 2,
     "motivo_desconexao": "16. normal",
     "url_gravacao": "",
-    "bina": "+55108888888888"
+    "bina": "+5510888888888"
   }
 }
 ```
@@ -2248,7 +2248,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
         "resposta": null,
         "motivo_desconexao": "16. normal",
         "url_gravacao": "",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       },
       {
         "id": 13246578,
@@ -2269,7 +2269,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
         "resposta": null,
         "motivo_desconexao": "17. ocupado",
         "url_gravacao": "",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       }
     ]
   }

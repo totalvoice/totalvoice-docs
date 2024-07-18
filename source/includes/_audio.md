@@ -43,7 +43,7 @@ tais como, aguardar uma resposta do usuário, gravar o áudio da ligação ou co
     "resposta": "1",
     "motivo_desconexao": null,
     "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
-    "bina": "+55108888888888"
+    "bina": "+5510888888888"
 }
 ```
 
@@ -244,7 +244,7 @@ POST https://voice-api.zenvia.com/audio
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"+5510999999999", "bina": "+55108888888888" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
+             -d '{"numero_destino":"+5510999999999", "bina": "+5510888888888" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
              'https://voice-api.zenvia.com/audio'
 ```
 ```php
@@ -477,7 +477,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "8",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
     }
 }
 ```
@@ -601,7 +601,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "8",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       },
       {
         "id": 432,
@@ -622,7 +622,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+55108888888888"
+        "bina": "+5510888888888"
       }
     ]
   }

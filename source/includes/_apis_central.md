@@ -252,7 +252,7 @@ Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, en
     "id": 76498,
     "ramal": "3333",
     "login": "testee@zenvia.com",
-    "bina": "+55108888888888",
+    "bina": "+5510888888888",
     "webphone_key": "213kbbncs324454ASDcxzln123",
     "ligacao_externa": true,
     "ligacao_celular": true,
@@ -643,7 +643,7 @@ Em construção
     "id": 1234,
     "ramal": "4000",
     "login": "teste@zenvia.com",
-    "bina": "+55108888888888",
+    "bina": "+5510888888888",
     "webphone_key": "testefd3b268b3de8cateste44968",
     "ligacao_externa": true,
     "ligacao_celular": true,
@@ -1202,7 +1202,7 @@ Em construção
         "id": 1234,
         "ramal": "4000",
         "login": "teste@totalTeste.com.br",
-        "bina": "+55108888888888",
+        "bina": "+5510888888888",
         "webphone_key": "totalTesteb8af64668997totalTeste",
         "ligacao_externa": true,
         "ligacao_celular": true,
@@ -1217,7 +1217,7 @@ Em construção
         "id": 4567,
         "ramal": "4001",
         "login": "teste1@totalTeste.com.br",
-        "bina": "+55108888888888",
+        "bina": "+5510888888888",
         "webphone_key": "teste18e990a500a059a78teste1",
         "ligacao_externa": true,
         "ligacao_celular": true,
@@ -2873,7 +2873,7 @@ https://voice-api.zenvia.com/did/chamada/{id}
     "ativa": false,
     "url_gravacao": "https://api.evoline.com.br/rec/sua-gravacao.mp3",
     "data_inicio": "2019-07-10T09:45:49-03:00",
-    "numero_destino": "552120182097",
+    "numero_destino": "+5510999999999",
     "numero_origem": "+5510999999999",
     "status": "sem resposta",
     "duracao_segundos": 18,
@@ -3283,7 +3283,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: +5510999999999
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -3293,7 +3293,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: +5510999999999
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -3484,7 +3484,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: +5510999999999
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -3494,7 +3494,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: +5510999999999
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>

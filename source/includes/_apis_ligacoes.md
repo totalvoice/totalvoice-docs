@@ -403,8 +403,8 @@ curl -X POST --header 'Content-Type: application/json'
                     "numero_destino":"+5510999999999",
                     "data_criacao":"2021-04-08T17:21:20Z",
                     "gravar_audio":"true",
-                    "bina_origem":"+55108888888888",
-                    "bina_destino":"+55108888888888",
+                    "bina_origem":"+5510888888888",
+                    "bina_destino":"+5510888888888",
                     "tags":"clienteUm",
                     "detecta_caixa_origem":"true"
                  }' 
@@ -1072,7 +1072,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: +5510999999999
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -1082,7 +1082,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: +5510999999999
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
