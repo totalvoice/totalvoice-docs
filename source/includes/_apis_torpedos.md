@@ -35,7 +35,7 @@ Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz com
 ```json
 {
     "id": 12345678,
-    "numero_destino": "48912341234",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2019-05-22T09:18:44.000-03:00",
     "data_inicio": "2019-05-22T09:18:44.000-03:00",
     "tipo": "movel",
@@ -52,7 +52,7 @@ Usando esse recurso, você pode enviar um torpedo de voz ou mensagens de voz com
     "resposta": "1",
     "motivo_desconexao": null,
     "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
-    "bina": "+5548988888888"
+    "bina": "+5510888888888"
 }
 ```
 
@@ -267,7 +267,7 @@ POST https://voice-api.zenvia.com/audio
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"4888881111", "bina": "4811111111" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
+             -d '{"numero_destino":"+5510999999999", "bina": "+5510888888888" ,"url_audio":"http://sua.url.audio/audio.mp3"}' \
              'https://voice-api.zenvia.com/audio'
 ```
 ```php
@@ -276,13 +276,13 @@ require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
 $client = new TotalVoiceClient('seu-token');
-$response = $client->audio->enviar('4811111111', 'http://sua.url.audio/audio.mp3');
+$response = $client->audio->enviar('+5510888888888', 'http://sua.url.audio/audio.mp3');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
+client.audio.enviar("+5510999999999", "http://sua.url.audio/audio.mp3")
     .then(function(data) {
         console.log(data);
     })
@@ -292,26 +292,26 @@ client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Audio.Enviar("4811111111", "http://sua.url.audio/audio.mp3", false, "")
+ response, err := client.Audio.Enviar("+5510999999999", "http://sua.url.audio/audio.mp3", false, "")
 ```
 ```python
 from totalvoice.cliente import Cliente
 
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
+response = client.audio.enviar("+5510999999999", "http://sua.url.audio/audio.mp3")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Audio audio = new Audio(client);
 
-JSONObject response = audio.enviar("4811111111", "http://sua.url.audio/audio.mp3");
+JSONObject response = audio.enviar("+5510999999999", "http://sua.url.audio/audio.mp3");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.audio.enviar("4811111111", "http://sua.url.audio/audio.mp3")
+puts @client.audio.enviar("+5510999999999", "http://sua.url.audio/audio.mp3")
 ```
 > Response
 
@@ -350,7 +350,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número, exemplo: 4832830151.
+                Número do telefone que irá receber a chamada, formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999.
              </td>
         </tr>
         <tr>
@@ -386,7 +386,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número, exemplo: 4832830151.
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999.
             </td>
         </tr>
         <tr>
@@ -479,7 +479,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
     "mensagem": "dados retornados com sucesso",
     "dados": {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",
@@ -496,7 +496,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "8",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+5548988888888"
+        "bina": "+5510888888888"
     }
 }
 ```
@@ -608,7 +608,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
     "relatorio": [
       {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",
@@ -625,11 +625,11 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "8",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+5548988888888"
+        "bina": "+5510888888888"
       },
       {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",
@@ -646,7 +646,7 @@ puts @client.audio.enviar("NUMERO-DESTINO", "URL-AUDIO")
         "resposta": "",
         "motivo_desconexao": null,
         "url_gravacao": "",
-        "bina": "+5548988888888"
+        "bina": "+5510888888888"
       }
     ]
   }
@@ -748,8 +748,8 @@ https://voice-api.zenvia.com/composto
 		"acao": "transferir",
 		"opcao": 2,
 		"acao_dados": {
-						"numero_telefone": "1132830151",
-						 "bina": "1132830152" 
+						"numero_telefone": "+5510999999999",
+						 "bina": "+5510888888888" 
 					}
 	} 
 ]
@@ -782,7 +782,7 @@ O composto aceita um JSON com as seguintes opções:
 ```json
 {
     "id": 432,
-    "numero_destino": "4832830151",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2016-03-27T15:12:44+03:00",
     "data_inicio": "2016-03-27T15:12:49+03:00",
     "tipo": "fixo",
@@ -798,7 +798,7 @@ O composto aceita um JSON com as seguintes opções:
     "resposta": "8",
 	"tags": "clienteX",
     "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-    "bina": "+5548988888888"
+    "bina": "+5510888888888"
 }
 ```
 
@@ -1064,8 +1064,8 @@ curl -X POST --header 'Content-Type: application/json' \
 			 --header 'Accept: application/json' \
 			 --header 'Access-Token: seu-token' \
 			 -d '{
-                "numero_destino":"4888881111",
-                "bina": "4811111111",
+                "numero_destino":"+5510999999999",
+                "bina": "+5510888888888",
                 "dados":[
                     {  
                         "acao":"audio",
@@ -1085,8 +1085,8 @@ curl -X POST --header 'Content-Type: application/json' \
                         "acao":"transferir",
                         "opcao":1,
                         "acao_dados":{  
-                            "numero_telefone":"4832830151",
-                            "bina":"4832830152"
+                            "numero_telefone":"+5510999999999",
+                            "bina":"+5510888888888"
                         }
                     },
                         {  
@@ -1104,7 +1104,7 @@ curl -X POST --header 'Content-Type: application/json' \
 <?php
 $client = new TotalVoiceClient('seu-token');
 
-$dados	= '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]';
+$dados	= '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]';
 $bina	= '11987654321';
 $tags	= 'clienteY';
 
@@ -1116,7 +1116,7 @@ $response = $client->composto->enviar('NUMERO-DESTINO', $dados, $bina, $tags);
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags')
     .then(function(data) {
         console.log(data);
     })
@@ -1126,7 +1126,7 @@ client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_au
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+ response, err := client.Composto.Enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags')
 ```
 ```python
 from totalvoice.cliente import Cliente
@@ -1151,8 +1151,8 @@ dados =[
       "acao":"transferir",
       "opcao":1,
       "acao_dados":{  
-         "numero_telefone":"4832830151",
-         "bina":"4832830152"
+         "numero_telefone":"+5510999999999",
+         "bina":"+5510888888888"
       }
    },
     {  
@@ -1169,7 +1169,7 @@ response = client.composto.enviar("NUMERO-DESTINO", dados ,'BINA' , 'TAGS')
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Composto composto = new Composto(client);
 
-JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags');
+JSONObject response = composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags');
 ```
 
 ```ruby
@@ -1177,7 +1177,7 @@ require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]','11987654321' , 'tags')
+puts @client.composto.enviar("NUMERO-DESTINO", '[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]','11987654321' , 'tags')
 ```
 > Response
 
@@ -1214,7 +1214,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número exemplo: 4832830151
+                Número do telefone que irá receber a chamada, formato E.164: [+][DDI][DDD][Número] exemplo: +5510999999999
              </td>
         </tr>
         <tr>
@@ -1250,7 +1250,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato E.164: [+][DDI][DDD][Número] exemplo: +5510999999999
             </td>
         </tr>
 		<tr>
@@ -1355,7 +1355,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
     "mensagem": "dados retornados com sucesso",
     "dados": {
 	    "id": 432,
-	    "numero_destino": "4832830151",
+	    "numero_destino": "+5510999999999",
 	    "data_criacao": "2016-03-27T15:12:44+03:00",
 	    "data_inicio": "2016-03-27T15:12:49+03:00",
 	    "tipo": "fixo",
@@ -1371,7 +1371,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+5548988888888"
+        "bina": "+5510888888888"
     }
 }
 ```
@@ -1484,7 +1484,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
     "relatorio": [
       {
 	    "id": 432,
-	    "numero_destino": "4832830151",
+	    "numero_destino": "+5510999999999",
 	    "data_criacao": "2016-03-27T15:12:44+03:00",
 	    "data_inicio": "2016-03-27T15:12:49+03:00",
 	    "tipo": "fixo",
@@ -1500,11 +1500,11 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+5548988888888"
+        "bina": "+5510888888888"
       },
       {
 	    "id": 433,
-	    "numero_destino": "4832830151",
+	    "numero_destino": "+5510999999999",
 	    "data_criacao": "2016-03-27T15:12:44+03:00",
 	    "data_inicio": "2016-03-27T15:12:49+03:00",
 	    "tipo": "fixo",
@@ -1520,7 +1520,7 @@ puts @client.composto.enviar("NUMERO-DESTINO", "URL-AUDIO")
 	    "resposta": "8",
 	    "tags": "clienteX",
 	    "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-        "bina": "+5548988888888"
+        "bina": "+5510888888888"
       }
     ]
   }
@@ -1626,7 +1626,7 @@ https://voice-api.zenvia.com/tts
 
 {
     "id": 12345678,
-    "numero_destino": "48912341234",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2019-05-22T09:18:44.000-03:00",
     "data_inicio": "2019-05-22T09:18:44.000-03:00",
     "tipo": "movel",
@@ -1643,7 +1643,7 @@ https://voice-api.zenvia.com/tts
     "resposta": "1",
     "motivo_desconexao": null,
     "url_gravacao": "https://voice-api.zenvia.com/rec/123456789",
-    "bina": "+5548988888888"
+    "bina": "+5510888888888"
 }
 ```
 
@@ -1855,7 +1855,7 @@ POST https://voice-api.zenvia.com/tts
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero_destino":"4888881111", "bina": "4811111111", "mensagem":"Olá"}' \
+             -d '{"numero_destino":"+5510999999999", "bina": "+5510888888888", "mensagem":"Olá"}' \
              'https://voice-api.zenvia.com/tts'
 ```
 ```php
@@ -1864,13 +1864,13 @@ require_once "vendor/autoload.php";
 use TotalVoice\Client as TotalVoiceClient;
 
 $client = new TotalVoiceClient('seu-token');
-$response = $client->tts->enviar('4811111111', 'Olá, essa é a minha mensagem');
+$response = $client->tts->enviar('+5510999999999', 'Olá, essa é a minha mensagem');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
+client.tts.enviar("+5510999999999", "Olá, essa é a minha mensagem")
     .then(function(data) {
         console.log(data);
     })
@@ -1880,24 +1880,24 @@ client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Tts.Enviar("4811111111", "Olá, essa é a minha mensagem", false, "")
+ response, err := client.Tts.Enviar("+5510999999999", "Olá, essa é a minha mensagem", false, "")
 ```
 ```python
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
+response = client.tts.enviar("+5510999999999", "Olá, essa é a minha mensagem")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Tts tts = new Tts(client);
 
-JSONObject response = tts.enviar("4811111111", "Olá, essa é a minha mensagem");
+JSONObject response = tts.enviar("+5510999999999", "Olá, essa é a minha mensagem");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.tts.enviar("4811111111", "Olá, essa é a minha mensagem")
+puts @client.tts.enviar("+5510999999999", "Olá, essa é a minha mensagem")
 ```
 > Response
 
@@ -1935,7 +1935,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número. Exemplo: 4832830151.
+                Número do telefone que irá receber a chamada, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999.
              </td>
         </tr>
         <tr>
@@ -1971,7 +1971,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número. Exemplo: 4832830151
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -2105,7 +2105,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
   "mensagem": "dados retornados com sucesso",
   "dados": {
     "id": 123453,
-    "numero_destino": "4832830151",
+    "numero_destino": "+5510999999999",
     "data_criacao": "2019-07-09T10:59:42.000-03:00",
     "data_inicio": "2019-07-09T10:59:43.000-03:00",
     "tipo": "movel",
@@ -2122,7 +2122,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
     "resposta": 2,
     "motivo_desconexao": "16. normal",
     "url_gravacao": "",
-    "bina": "+5548988888888"
+    "bina": "+5510888888888"
   }
 }
 ```
@@ -2231,7 +2231,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
     "relatorio": [
       {
         "id": 12345679,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2019-07-09T10:59:42.000-03:00",
         "data_inicio": "2019-07-09T10:59:43.000-03:00",
         "tipo": "movel",
@@ -2248,11 +2248,11 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
         "resposta": null,
         "motivo_desconexao": "16. normal",
         "url_gravacao": "",
-        "bina": "+5548988888888"
+        "bina": "+5510888888888"
       },
       {
         "id": 13246578,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2019-07-09T15:33:01.000-03:00",
         "data_inicio": "2019-07-09T15:33:01.000-03:00",
         "tipo": "movel",
@@ -2269,7 +2269,7 @@ puts @client.tts.enviar("NUMERO-DESTINO", "MENSAGEM")
         "resposta": null,
         "motivo_desconexao": "17. ocupado",
         "url_gravacao": "",
-        "bina": "+5548988888888"
+        "bina": "+5510888888888"
       }
     ]
   }

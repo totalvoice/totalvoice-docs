@@ -399,12 +399,12 @@ curl -X POST --header 'Content-Type: application/json'
              --header 'Accept: application/json' 
              --header 'Access-Token: seu-token' 
              -d '{
-                    "numero_origem":"4811111111",
-                    "numero_destino":"4811111112",
+                    "numero_origem":"+5510999999999",
+                    "numero_destino":"+5510999999999",
                     "data_criacao":"2021-04-08T17:21:20Z",
                     "gravar_audio":"true",
-                    "bina_origem":"4832830151",
-                    "bina_destino":"4832830152",
+                    "bina_origem":"+5510888888888",
+                    "bina_destino":"+5510888888888",
                     "tags":"clienteUm",
                     "detecta_caixa_origem":"true"
                  }' 
@@ -414,13 +414,13 @@ curl -X POST --header 'Content-Type: application/json'
 <?php
 $client = new TotalVoiceClient('seu-token');
 
-$response = $client->chamada->ligar('4811111111', '4811111112');
+$response = $client->chamada->ligar('+5510999999999', '+5510999999999');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.chamada.ligar("4811111111", "4811111112")
+client.chamada.ligar("+5510999999999", "+5510999999999")
     .then(function(data) {
         console.log(data);
     })
@@ -430,26 +430,26 @@ client.chamada.ligar("4811111111", "4811111112")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Chamada.Criar("4811111111", "4811111112", nil)
+ response, err := client.Chamada.Criar("+5510999999999", "+5510999999999", nil)
 ```
 ```python
 from totalvoice.cliente import Cliente
 
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.chamada.enviar("4811111111", "4811111112")
+response = client.chamada.enviar("+5510999999999", "+5510999999999")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
 
-JSONObject response = chamada.ligar("4811111111", "4811111112");
+JSONObject response = chamada.ligar("+5510999999999", "+5510999999999");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.chamada.ligar("4811111111", "4811111112")
+puts @client.chamada.ligar("+5510999999999", "+5510999999999")
 ```
 > Response
 
@@ -490,7 +490,7 @@ Veja ao lado um exemplo de requisição. Utilize os campos abaixo para informar 
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número origem (perna A), recebe a chamada primeiro do número destino. Exemplo: 4832830151
+                Número origem (perna A), recebe a chamada primeiro do número destino. Formato E.164: [+][DDI][DDD][Número] Exemplo: +5510999999999
              </td>
         </tr>
         <tr>
@@ -500,7 +500,7 @@ Veja ao lado um exemplo de requisição. Utilize os campos abaixo para informar 
                 <span class="attribute">string</span>
             </td>
             <td>
-               Número destino (perna B), recebe a chamada após o número origem atender. Exemplo: 4832830151
+               Número destino (perna B), recebe a chamada após o número origem atender. Formato E.164: [+][DDI][DDD][Número] Exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -530,7 +530,7 @@ Veja ao lado um exemplo de requisição. Utilize os campos abaixo para informar 
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA que será apresentado na chamada para o número origem (perna A). Formato DDD + Número, exemplo: 4832830151
+                Número de BINA que será apresentado na chamada para o número origem (perna A). Formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -540,7 +540,7 @@ Veja ao lado um exemplo de requisição. Utilize os campos abaixo para informar 
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA que será apresentado na chamada para o número destino (perna B). Formato DDD + Número, exemplo: 4832830151
+                Número de BINA que será apresentado na chamada para o número destino (perna B). Formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -637,7 +637,7 @@ require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.chamada.encerrar("4811111111", "http://foo.bar/audio.mp3")
+puts @client.chamada.encerrar("+5510999999999", "http://foo.bar/audio.mp3")
 ```
 > Response
 
@@ -760,7 +760,7 @@ puts @client.chamada.buscar(123)
        "duracao_falada": "00:00:10",
        "preco": 0.1,
        "motivo_desconexao": "indefinido",
-       "bina_origem" : "+27921815114"
+       "bina_origem" : "+5510888888888 "
      },
      "destino": {
        "data_inicio": "2018-08-02T10:49:29-03:00",
@@ -775,7 +775,7 @@ puts @client.chamada.buscar(123)
        "duracao_falada": "00:00:28",
        "preco": 0.1,
        "motivo_desconexao": "indefinido",
-       "bina_destino" : "+73970934836"
+       "bina_destino" : "+5510888888888 "
      }
   }
 }
@@ -1013,7 +1013,7 @@ puts @client.chamada.relatorio(data_inicial, data_final, filtros)
           "duracao_falada": "00:00:00",
           "preco": 0,
           "motivo_desconexao": "indefinido",
-          "bina_origem" : "+27921815114"
+          "bina_origem" : "+5510888888888 "
         },
         "destino": {
           "data_inicio": "2018-08-02T10:32:22-03:00",
@@ -1028,7 +1028,7 @@ puts @client.chamada.relatorio(data_inicial, data_final, filtros)
           "duracao_falada": "00:00:08",
           "preco": 0,
           "motivo_desconexao": "indefinido",
-          "bina_destino" : "+73970934836"
+          "bina_destino" : "+5510888888888 "
 
         }
       }
@@ -1072,7 +1072,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: 4832830151
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -1082,7 +1082,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: 4832830151
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -1137,19 +1137,19 @@ GET https://voice-api.zenvia.com/chamada/{id}/escuta
 ```shell--curl
 curl -X POST --header 'Accept: application/json' \
              --header 'Access-Token: seu-token' \
-             -d '{"numero":"4811111111", "modo": 1}' \
+             -d '{"numero":"+5510999999999", "modo": 1}' \
              'https://voice-api.zenvia.com/chamada/123/escuta'
 ```
 ```php
 <?php
 $client = new TotalVoiceClient('seu-token');
-$response = $client->chamada->escutar(123, '4811111111', 1);
+$response = $client->chamada->escutar(123, '+5510999999999', 1);
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.chamada.escutar(123, "4811111111", 1)
+client.chamada.escutar(123, "+5510999999999", 1)
     .then(function(data) {
         console.log(data);
     })
@@ -1159,25 +1159,25 @@ client.chamada.escutar(123, "4811111111", 1)
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
-response, err := client.Chamada.Escutar(123, "4811111111", 1)
+response, err := client.Chamada.Escutar(123, "+5510999999999", 1)
 ```
 ```python
 from totalvoice.cliente import Cliente
 
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.chamada.escuta_chamada("123", '4811111111',"1")
+response = client.chamada.escuta_chamada("123", '+5510999999999',"1")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
-JSONObject response = chamada.escutar(123, "4811111111", 1);
+JSONObject response = chamada.escutar(123, "+5510999999999", 1);
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.chamada.escutar(123, "4811111111", 1)
+puts @client.chamada.escutar(123, "+5510999999999", 1)
 ```
 > Response
 
@@ -1250,19 +1250,19 @@ POST https://voice-api.zenvia.com/chamada/{id}/transfer
 ```shell--curl
 curl -X POST --header 'Accept: application/json' \
             --header 'Access-Token: seu-token' \
-            -d '{"numero":"4811111111", "perna": "destino"}' \
+            -d '{"numero":"+5510999999999", "perna": "destino"}' \
             'https://voice-api.zenvia.com/chamada/123/transfer'
 ```
 ```php
 <?php
 $client = new TotalVoiceClient('seu-token');
-$response = $client->chamada->transferir(123, '4811111111', 'destino');
+$response = $client->chamada->transferir(123, '+5510999999999', 'destino');
 ```
 ```javascript--node
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.chamada.transferir(123, "4811111111", "destino")
+client.chamada.transferir(123, "+5510999999999", "destino")
     .then(function(data) {
         console.log(data);
     })
@@ -1272,25 +1272,25 @@ client.chamada.transferir(123, "4811111111", "destino")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
-response, err := client.Chamada.Transferir(123, "4811111111", "destino")
+response, err := client.Chamada.Transferir(123, "+5510999999999", "destino")
 ```
 ```python
 from totalvoice.cliente import Cliente
 
 client = Cliente("seu-token", 'voice-api.zenvia.com')
-response = client.chamada.transferir("123", "4811111111", "destino")
+response = client.chamada.transferir("123", "+5510999999999", "destino")
 ```
 ```java
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Chamada chamada = new Chamada(client);
-JSONObject response = chamada.transferir(123, "4811111111", "destino");
+JSONObject response = chamada.transferir(123, "+5510999999999", "destino");
 ```
 ```ruby
 require 'totalvoice-ruby'
 include TotalVoice
 
 @client = TotalVoice::API.new("seu-token")
-puts @client.chamada.transferir(123, "4811111111", "destino")
+puts @client.chamada.transferir(123, "+5510999999999", "destino")
 ```
 > Response
 
@@ -1482,7 +1482,7 @@ Usando esse recurso, você poderá criar salas privadas e receber um ID para ser
                   "id": 46132,
                   "conferencia_id" : 432,
                   "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-                  "numero": "4832830151",
+                  "numero": "+5510999999999",
                   "data_criacao": "2016-03-27T15:12:44+03:00",
                   "cli": 3132,
                   "duracao": "00:00:45",
@@ -1555,7 +1555,7 @@ Para realizar a chamada, é necessário que esta contenha os parâmetros solicit
     "id": 46132,
     "conferencia_id" : 432,
     "url_gravacao": "http://fooooo.bar/gravacao.mp3",
-    "numero": "4832830151",
+    "numero": "+5510999999999",
     "data_criacao": "2016-03-27T15:12:44+03:00",
     "cli": 3132,
     "duracao": "00:00:45",
@@ -1700,7 +1700,7 @@ POST https://voice-api.zenvia.com/conferencia
 curl -X POST --header 'Content-Type: application/json' \
              --header 'Accept: application/json' \
              --header 'Access-Token: {{access-token}}' \
-             -d '{"numero_destino":"4811111111","url_conferencia":"http://foo.bar/conferencia.mp3"}' \
+             -d '{"numero_destino":"+5510999999999","url_conferencia":"http://foo.bar/conferencia.mp3"}' \
              'https://voice-api.zenvia.com/conferencia'
 ```
 ```php
@@ -1713,7 +1713,7 @@ $response = $client->conferencia->enviar('NUMERO-DESTINO', 'http://foo.bar/confe
 const totalvoice = require('totalvoice-node');
 const client = new totalvoice("seu-token");
 
-client.conferencia.enviar("4811111111", "http://foo.bar/conferencia.mp3")
+client.conferencia.enviar("+5510999999999", "http://foo.bar/conferencia.mp3")
     .then(function(data) {
         console.log(data);
     })
@@ -1723,7 +1723,7 @@ client.conferencia.enviar("4811111111", "http://foo.bar/conferencia.mp3")
 ```
 ```go
 client := totalvoice.NewTotalVoiceClient("seu-token")
- response, err := client.Conferencia.Enviar("4811111111", "http://foo.bar/conferencia.mp3", false, "")
+ response, err := client.Conferencia.Enviar("+5510999999999", "http://foo.bar/conferencia.mp3", false, "")
 ```
 ```python
 from totalvoice.cliente import Cliente
@@ -1736,7 +1736,7 @@ response = client.conferencia.cria_conferencia()
 TotalVoiceClient client = new TotalVoiceClient("seu-token");
 Conferencia conferencia = new Conferencia(client);
 
-JSONObject response = conferencia.enviar("4811111111", "http://foo.bar/conferencia.mp3");
+JSONObject response = conferencia.enviar("+5510999999999", "http://foo.bar/conferencia.mp3");
 ```
 > Response
 
@@ -1839,7 +1839,7 @@ JSONObject response = conferencia.buscar(123);
     "mensagem": "dados retornados com sucesso",
     "dados": {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",
@@ -1965,7 +1965,7 @@ JSONObject response = conferencia.relatorio(dataInicial, dataFinal);
     "relatorio": [
       {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",
@@ -1983,7 +1983,7 @@ JSONObject response = conferencia.relatorio(dataInicial, dataFinal);
       },
       {
         "id": 432,
-        "numero_destino": "4832830151",
+        "numero_destino": "+5510999999999",
         "data_criacao": "2016-03-27T15:12:44+03:00",
         "data_inicio": "2016-03-27T15:12:49+03:00",
         "tipo": "fixo",

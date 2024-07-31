@@ -13,7 +13,7 @@ api	| 501 |	NAO_IMPLEMENTADO |	 “não implementado”
 audio |	404 |	PARAMETRO_OBRIGATORIO |	 “qual audio? informar ID /audio/ID”
 audio |	404 |	ELEMENTO_NAO_ENCONTRADO |	 “audio não encontrado”
 audio |	200 |	SUCESSO |	dados retornados com sucesso
-audio |	405 |	PARAMETRO_INVALIDO |	 “numero_destino inválido, formato DDD + Número”
+audio |	405 |	PARAMETRO_INVALIDO |	 “numero_destino inválido, formato E.164: [+][DDI][DDD][Número]”
 audio |	405 |	PARAMETRO_OBRIGATORIO |	 “o parametro url_audio é obrigatório”
 audio |	405 |	PARAMETRO_INVALIDO |	 “o parametro url_audio é inválido, formato esperado http://foooo.bar/audio.mp3”
 audio |	200 |	SUCESSO |	audio criado com sucesso
@@ -21,17 +21,17 @@ chamada |	404 |	PARAMETRO_OBRIGATORIO |	 “qual chamada? informar ID /chamada/I
 chamada |	404 |	ELEMENTO_NAO_ENCONTRADO |	 “chamada não encontrada”
 chamada |	404 |	CHAMADA_SEM_GRAVACAO |	 “chamada sem gravação solicitada”
 chamada |	200 |	SUCESSO |	dados retornados com sucesso
-chamada |	405 |	PARAMETRO_INVALIDO |	 “numero_origem inválido, formato DDD + Número ex: 4832830151”
-chamada |	405 |	PARAMETRO_INVALIDO |	 “numero_destino inválido, formato DDD + Número ex: 4832830151”
+chamada |	405 |	PARAMETRO_INVALIDO |	 “numero_origem inválido, formato E.164: [+][DDI][DDD][Número] ex: +5510999999999”
+chamada |	405 |	PARAMETRO_INVALIDO |	 “numero_destino inválido, formato E.164: [+][DDI][DDD][Número] ex: +5510999999999”
 chamada |	200 |	SUCESSO |	chamada criada com sucesso
-chamada |	405 |	PARAMETRO_INVALIDO |	 “numero inválido, formato DDD + Número ex: 4832830151”
+chamada |	405 |	PARAMETRO_INVALIDO |	 “numero inválido, formato E.164: [+][DDI][DDD][Número] ex: +5510999999999”
 chamada |	405 |	PARAMETRO_INVALIDO |	 “modo inválido: 1=escuta, 2=sussurro, 3=conferência”
 chamada |	404 |	CHAMADA_NAO_ATIVA |	 “a chamada não está ativa”
 chamada |	200 |	SUCESSO |	escuta criada com sucesso
 chamada |	200 |	SUCESSO |	 “encerrando chamada”
 chamada |	404 |	CHAMADA_NAO_ATIVA |	 “a chamada não está ativa”
 chamada |	405 |	PARAMETRO_INVALIDO |	 “parametro inválido, informe perna ‘origem’ ou ‘destino'”
-chamada |	405 |	PARAMETRO_INVALIDO |	 “numero inválido, formato DDD + Número ex: 4832830151”
+chamada |	405 |	PARAMETRO_INVALIDO |	 “numero inválido, formato E.164: [+][DDI][DDD][Número] ex: +5510999999999”
 chamada |	200 |	SUCESSO |	transferindo chamada
 chamada |	404 |	CHAMADA_NAO_ATIVA |	a chamada não está ativa
 chamada |	404 |	ELEMENTO_NAO_ENCONTRADO |	 “chamada não encontrada”
@@ -75,7 +75,7 @@ ramal |	404 |	CHAMADA_NAO_ATIVA |	 “a chamada não está ativa”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “ramal inválido, informe o ramal com 3 ou 4 dígitos”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “login inválido”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “senha inválida”
-ramal |	405 |	PARAMETRO_INVALIDO |	 “número da bina inválido, informar segundo o exemplo: 4832830151”
+ramal |	405 |	PARAMETRO_INVALIDO |	 “número da bina inválido, informar segundo o exemplo: +5510999999999”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “login duplicado. Ja existe este login.”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “ramal inválido, já existe um ramal {ramal} cadastrado”
 ramal |	200 |	SUCESSO |	ramal criado com sucesso
@@ -83,7 +83,7 @@ ramal |	405 |	PARAMETRO_INVALIDO |	 “atenção, informe o id do ramal a ser at
 ramal |	405 |	PARAMETRO_INVALIDO |	 “ramal inválido, informe o ramal com 3 ou 4 dígitos”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “login inválido”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “senha inválida”
-ramal |	405 |	PARAMETRO_INVALIDO |	 “número da bina inválido, formato DDD + Número ex: 4832830151”
+ramal |	405 |	PARAMETRO_INVALIDO |	 “número da bina inválido, formato E.164: [+][DDI][DDD][Número] ex: +5510999999999”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “não é possível alterar o login do ramal administrador”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “não é possível alterar a senha do ramal administrador”
 ramal |	405 |	PARAMETRO_INVALIDO |	 “nada para atualizar”
@@ -95,7 +95,7 @@ sms |	404 |	PARAMETRO_OBRIGATORIO |	 “qual sms? informar ID /sms/ID”
 sms |	200 |	SUCESSO |	dados retornados com sucesso
 sms |	404 |	ELEMENTO_NAO_ENCONTRADO |	 “sms não encontrado”
 sms |	200 |	SUCESSO |	dados retornados com sucesso
-sms |	405 |	PARAMETRO_INVALIDO |	 “numero_destino {numero} inválido, formato DDD + Número”
+sms |	405 |	PARAMETRO_INVALIDO |	 “numero_destino {numero} inválido, formato E.164: [+][DDI][DDD][Número]”
 sms |	405 |	PARAMETRO_OBRIGATORIO |	 “o parametro mensagem é obrigatório”
 sms |	405 |	PARAMETRO_INVALIDO |	 “o parametro mensagem não pode conter mais de 160 caracteres”
 sms |	405 |	PARAMETRO_INVALIDO |	“o parametro mensagem não pode conter mais de 16000 caracteres”
@@ -108,7 +108,7 @@ tts |	404 |	ELEMENTO_NAO_ENCONTRADO |	 “tts não encontrado”
 tts |	200 |	SUCESSO |	dados retornados com sucesso
 tts |	200 |	SUCESSO |	dados retornados com sucesso
 tts |	200 |	SUCESSO |	dados retornados com sucesso
-tts |	405 |	PARAMETRO_INVALIDO |	 “numero_destino {numero} inválido, formato DDD + Número”
+tts |	405 |	PARAMETRO_INVALIDO |	 “numero_destino {numero} inválido, formato E.164: [+][DDI][DDD][Número]”
 tts |	405 |	PARAMETRO_OBRIGATORIO |	 “o parametro mensagem é obrigatório”
 tts |	200 |	SUCESSO |	tts criado com sucesso
 webhook |	200 |	SUCESSO |	dados retornados com sucesso
@@ -120,7 +120,7 @@ webhook |	200 |	SUCESSO |	 “webhook atualizado com sucesso”
 webhook |	405 |	PARAMETRO_OBRIGATORIO |	 “o parametro webhook é obrigatório”
 webhook |	405 |	PARAMETRO_INVALIDO |	 “o parametro webhook é inválido. Webhooks válidos: {lista_webhooks}”
 webhook |	200 |	SUCESSO |	 “webhook apagado com sucesso”
-webphone |	405 |	PARAMETRO_INVALIDO |	 “Parâmetro ligar_para inválido, formato DDD + Número ex: 4832830151”
+webphone |	405 |	PARAMETRO_INVALIDO |	 “Parâmetro ligar_para inválido, formato E.164: [+][DDI][DDD][Número] ex: +5510999999999”
 webphone |	200 |	SUCESSO |	url webphone
 webphone |	200 |	SUCESSO |	url webphone
 webphone |	200 |	SUCESSO |	url webphone
