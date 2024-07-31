@@ -1704,18 +1704,18 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"4811111111","nome_produto":"ZenAPI de Voz","tts":"true"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"+5510999999999","nome_produto":"ZenAPI de Voz","tts":"true"}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-api.zenvia.com/verificacao'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">verificacao</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'4811111111'</span><span class="p">,</span> <span class="s1">'ZenAPI de Voz'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">verificacao</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'+5510999999999'</span><span class="p">,</span> <span class="s1">'ZenAPI de Voz'</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">verificacao</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"ZenAPI de Voz"</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">verificacao</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"ZenAPI de Voz"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -1723,18 +1723,18 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
- </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">verificacao</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"ZenAPI de Voz"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="s">""</span><span class="p">)</span><span class="x">
+ </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">verificacao</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span><span class="x"> </span><span class="s">"ZenAPI de Voz"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="s">""</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">verificacao</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span> <span class="s">"ZenAPI de Voz"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">verificacao</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span> <span class="s">"ZenAPI de Voz"</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Verificacao</span> <span class="n">verificacao</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Verificacao</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">verificacao</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"4811111111"</span><span class="o">,</span> <span class="s">"ZenAPI de Voz"</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">verificacao</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"+5510999999999"</span><span class="o">,</span> <span class="s">"ZenAPI de Voz"</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">verificacao</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"ZenAPI de Voz"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">verificacao</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"ZenAPI de Voz"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -1947,14 +1947,14 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ativo"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T14:21:34"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"chamando"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"gravar_audio"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37794869</span><span class="p">,</span><span class="w">
   </span><span class="s2">"destino"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48966663333"</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"cliente_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2150</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
@@ -2259,7 +2259,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T18:48:05"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"evento_conferencia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Entrou"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"gravar_audio"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"conferencia_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">42874</span><span class="p">,</span><span class="w">
   </span><span class="s2">"chamada_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37823279"</span><span class="p">,</span><span class="w">
@@ -2314,7 +2314,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
                 <span class="attribute">String</span>
             </td>
             <td>
-                Número do telefone que executou determinada ação na conferência, formato DDD + Número. Exemplo: 4832830151.
+                Número do telefone que executou determinada ação na conferência, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999.
             </td>
         </tr> 
         <tr>
@@ -2344,7 +2344,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"37787430"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T14:00:38-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Olá ZenAPI"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
@@ -2384,7 +2384,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número do telefone que irá receber o SMS, formato DDD + Número. Exemplo: 4832830151.
+                Número do telefone que irá receber o SMS, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999.
             </td>
         </tr>
         <tr>
@@ -2533,7 +2533,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1411</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ramal_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">87787</span><span class="p">,</span><span class="w">
   </span><span class="s2">"ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9561"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6136271444"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T17:05:18-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.evoline.com.br/recvm/?id=1411&amp;x=094bba9d3a&amp;cid=2150"</span><span class="w">
@@ -2567,7 +2567,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número do telefone que irá enviar o voicemail para o ramal, formato DDD + Número. Exemplo: 4832830151.
+                Número do telefone que irá enviar o voicemail para o ramal, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999.
             </td>
         </tr>
         <tr>
@@ -2632,7 +2632,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"destino"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"preparando"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
@@ -2757,7 +2757,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37784550</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T13:34:57.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T13:34:58.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
@@ -2965,7 +2965,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"destino"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T11:19:11-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atendida"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w">
@@ -3112,7 +3112,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"destino"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T11:18:19-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocupado"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
@@ -3235,7 +3235,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37850704</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T16:38:50.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T16:38:55.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
@@ -3479,7 +3479,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
 <pre class="highlight json tab-json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">37785542</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48988888888"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T13:44:52.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-06T13:44:52.000-03:00"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
@@ -3707,7 +3707,7 @@ rápidos e seguros para uma experiência que conecta empresa e cliente.</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548911111111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-18T00:51:22.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"fixo"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"confirmado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
@@ -3815,7 +3815,7 @@ pelo seu ID. </p>
   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dados retornados com sucesso"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-18T00:51:22.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"fixo"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"confirmado"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
@@ -3894,7 +3894,7 @@ Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, en
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">76498</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3333"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testee@zenvia.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48999999999"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"webphone_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"213kbbncs324454ASDcxzln123"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ligacao_externa"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ligacao_celular"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -4251,7 +4251,7 @@ Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, en
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4000"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste@zenvia.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48999999999"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"webphone_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testefd3b268b3de8cateste44968"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ligacao_externa"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ligacao_celular"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -4730,7 +4730,7 @@ Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, en
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4000"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste@totalTeste.com.br"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48999999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"webphone_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"totalTesteb8af64668997totalTeste"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ligacao_externa"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ligacao_celular"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -4745,7 +4745,7 @@ Caso você deseje utilizar a API de Voz da ZenAPI para ligações receptivas, en
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4567</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ramal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4001"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste1@totalTeste.com.br"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48999999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"webphone_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste18e990a500a059a78teste1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ligacao_externa"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"ligacao_celular"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -5013,7 +5013,7 @@ Importante: Se você tiver um relatório com 350 pausas do ramal, na primeira p�
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-07T15:28:13-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.evoline.com.br/rec/?id=123445&amp;x=12345&amp;cid=1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48999999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atendida"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">369</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:06:09"</span><span class="p">,</span><span class="w">
@@ -5028,7 +5028,7 @@ Importante: Se você tiver um relatório com 350 pausas do ramal, na primeira p�
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-08T13:16:02-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.evoline.com.br/rec/?id=123456&amp;x=12345&amp;cid=1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48999999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"atendida"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">596</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:09:56"</span><span class="p">,</span><span class="w">
@@ -5799,8 +5799,8 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1324567</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554831810323"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4712344321"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-15T08:32:34.000-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Não atendida"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"atendida"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
@@ -5822,8 +5822,8 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43211234</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554831810323"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4840421210"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-15T09:02:47.000-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Atendida"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"atendida"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -5964,7 +5964,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4844577</span><span class="p">,</span><span class="w">
     </span><span class="s2">"cidade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rio de Janeiro"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RJ"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"552120182293"</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>O objeto é um modelo JSON. Para realizar a chamada, é necessário que esta contenha os parâmetros solicitados abaixo na tabela Atributos.  </p>
@@ -6052,7 +6052,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123454</span><span class="p">,</span><span class="w">
         </span><span class="s2">"cidade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rio de Janeiro"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RJ"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"552120128207"</span><span class="w">
+        </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -6188,8 +6188,8 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
     </span><span class="s2">"ativa"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.evoline.com.br/rec/sua-gravacao.mp3"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-10T09:45:49-03:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"552120182097"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4831810323"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sem resposta"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
@@ -6394,8 +6394,8 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
         </span><span class="s2">"ativa"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://url-gravacao/rec/?id=1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-27T16:35:15-03:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocupado"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:15"</span><span class="p">,</span><span class="w">
@@ -6499,8 +6499,8 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
         </span><span class="s2">"ativa"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://url-gravacao/rec/?id=1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-27T16:35:15-03:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocupado"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:15"</span><span class="p">,</span><span class="w">
@@ -6557,7 +6557,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: 4832830151
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -6567,7 +6567,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: 4832830151
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -6689,8 +6689,8 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
         </span><span class="s2">"ativa"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://url-gravacao/rec/?id=1"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-27T16:35:15-03:00"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"554811111111"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_origem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ocupado"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duracao_segundos"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
         </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:15"</span><span class="p">,</span><span class="w">
@@ -6738,7 +6738,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: 4832830151
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -6748,7 +6748,7 @@ Você só pode passar uma das opções: <strong>ura_id</strong> ou um <strong>ra
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: 4832830151
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -7620,7 +7620,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
     </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0000-00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zenvia@zenvia.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">999.99</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seu-token"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
@@ -7996,7 +7996,7 @@ A funcionalidade de Gerente de Contas é um acesso especial que precisa ser libe
         </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0000-00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zenvia@zenvia.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">999.99</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"seu-token"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
@@ -8340,7 +8340,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
         </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0000-00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zenvia@zenvia.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">999.99</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
@@ -8358,7 +8358,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
         </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00.000.000/0000-00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zenvia@zenvia.com"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">999.99</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testeM68PU1Izmb9chEdLzep7IwRymWO"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"preco_cel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.350"</span><span class="p">,</span><span class="w">
@@ -8684,7 +8684,7 @@ A funcionalidade de Crédito de Bônus é um limite especial configurado em sua 
     </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.123.123</span><span class="se">\/</span><span class="s2">0001-10"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste@zenvia.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">950.64</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234asdkgh1g23213nkbdfsh3v43"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_sms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.090"</span><span class="p">,</span><span class="w">
@@ -8801,7 +8801,7 @@ A funcionalidade de Crédito de Bônus é um limite especial configurado em sua 
     </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.123.123</span><span class="se">\/</span><span class="s2">0001-10"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste@zenvia.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">950.64</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234asdkgh1g23213nkbdfsh3v43"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_sms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.090"</span><span class="p">,</span><span class="w">
@@ -9024,7 +9024,7 @@ A funcionalidade de Crédito de Bônus é um limite especial configurado em sua 
     </span><span class="s2">"cpf_cnpj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.123.123</span><span class="se">\/</span><span class="s2">0001-10"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"teste@zenvia.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"saldo"</span><span class="p">:</span><span class="w"> </span><span class="mf">950.64</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234asdkgh1g23213nkbdfsh3v43"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_fixo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.060"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco_sms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.090"</span><span class="p">,</span><span class="w">
@@ -9762,12 +9762,12 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
              --header <span class="s1">'Accept: application/json'</span> 
              --header <span class="s1">'Access-Token: seu-token'</span> 
              -d <span class="s1">'{
-                    "numero_origem":"4811111111",
-                    "numero_destino":"4811111112",
+                    "numero_origem":"+5510999999999",
+                    "numero_destino":"+5510999999999",
                     "data_criacao":"2021-04-08T17:21:20Z",
                     "gravar_audio":"true",
-                    "bina_origem":"4832830151",
-                    "bina_destino":"4832830152",
+                    "bina_origem":"+5510888888888",
+                    "bina_destino":"+5510888888888",
                     "tags":"clienteUm",
                     "detecta_caixa_origem":"true"
                  }'</span> 
@@ -9775,11 +9775,11 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">chamada</span><span class="o">-&gt;</span><span class="na">ligar</span><span class="p">(</span><span class="s1">'4811111111'</span><span class="p">,</span> <span class="s1">'4811111112'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">chamada</span><span class="o">-&gt;</span><span class="na">ligar</span><span class="p">(</span><span class="s1">'+5510999999999'</span><span class="p">,</span> <span class="s1">'+5510999999999'</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">ligar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"4811111112"</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">ligar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"+5510999999999"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -9787,20 +9787,20 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
- </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Chamada</span><span class="o">.</span><span class="n">Criar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"4811111112"</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
+ </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Chamada</span><span class="o">.</span><span class="n">Criar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span><span class="x"> </span><span class="s">"+5510999999999"</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chamada</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span> <span class="s">"4811111112"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chamada</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span> <span class="s">"+5510999999999"</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Chamada</span> <span class="n">chamada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Chamada</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chamada</span><span class="o">.</span><span class="na">ligar</span><span class="o">(</span><span class="s">"4811111111"</span><span class="o">,</span> <span class="s">"4811111112"</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chamada</span><span class="o">.</span><span class="na">ligar</span><span class="o">(</span><span class="s">"+5510999999999"</span><span class="o">,</span> <span class="s">"+5510999999999"</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">ligar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"4811111112"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">ligar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"+5510999999999"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -9841,7 +9841,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número origem (perna A), recebe a chamada primeiro do número destino. Exemplo: 4832830151
+                Número origem (perna A), recebe a chamada primeiro do número destino. Formato E.164: [+][DDI][DDD][Número] Exemplo: +5510999999999
              </td>
         </tr>
         <tr>
@@ -9851,7 +9851,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
                 <span class="attribute">string</span>
             </td>
             <td>
-               Número destino (perna B), recebe a chamada após o número origem atender. Exemplo: 4832830151
+               Número destino (perna B), recebe a chamada após o número origem atender. Formato E.164: [+][DDI][DDD][Número] Exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -9881,7 +9881,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA que será apresentado na chamada para o número origem (perna A). Formato DDD + Número, exemplo: 4832830151
+                Número de BINA que será apresentado na chamada para o número origem (perna A). Formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -9891,7 +9891,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
                 <span class="attribute">string</span>
             </td>
             <td>
-                Número de BINA que será apresentado na chamada para o número destino (perna B). Formato DDD + Número, exemplo: 4832830151
+                Número de BINA que será apresentado na chamada para o número destino (perna B). Formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -9971,7 +9971,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">encerrar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"http://foo.bar/audio.mp3"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">encerrar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"http://foo.bar/audio.mp3"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -10076,7 +10076,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
        </span><span class="s2">"duracao_falada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:10"</span><span class="p">,</span><span class="w">
        </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
        </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"indefinido"</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"bina_origem"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"+27921815114"</span><span class="w">
+       </span><span class="s2">"bina_origem"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888 "</span><span class="w">
      </span><span class="p">},</span><span class="w">
      </span><span class="s2">"destino"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
        </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:49:29-03:00"</span><span class="p">,</span><span class="w">
@@ -10091,7 +10091,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
        </span><span class="s2">"duracao_falada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:28"</span><span class="p">,</span><span class="w">
        </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
        </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"indefinido"</span><span class="p">,</span><span class="w">
-       </span><span class="s2">"bina_destino"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"+73970934836"</span><span class="w">
+       </span><span class="s2">"bina_destino"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888 "</span><span class="w">
      </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -10291,7 +10291,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
           </span><span class="s2">"duracao_falada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:00"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
           </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"indefinido"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"bina_origem"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"+27921815114"</span><span class="w">
+          </span><span class="s2">"bina_origem"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888 "</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="s2">"destino"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02T10:32:22-03:00"</span><span class="p">,</span><span class="w">
@@ -10306,7 +10306,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
           </span><span class="s2">"duracao_falada"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:08"</span><span class="p">,</span><span class="w">
           </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
           </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"indefinido"</span><span class="p">,</span><span class="w">
-          </span><span class="s2">"bina_destino"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"+73970934836"</span><span class="w">
+          </span><span class="s2">"bina_destino"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888 "</span><span class="w">
 
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
@@ -10347,7 +10347,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de origem para filtrar. Ex.: 4832830151
+                Número de telefone de origem para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -10357,7 +10357,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
                 <span class="type">Query String</span>
             </td>
             <td>
-                Número de telefone de destino para filtrar. Ex.: 4832830151
+                Número de telefone de destino para filtrar. Formato E.164: [+][DDI][DDD][Número]. Ex.: +5510999999999
             </td>
         </tr>
         <tr>
@@ -10407,15 +10407,15 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero":"4811111111", "modo": 1}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero":"+5510999999999", "modo": 1}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-api.zenvia.com/chamada/123/escuta'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">chamada</span><span class="o">-&gt;</span><span class="na">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'4811111111'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">chamada</span><span class="o">-&gt;</span><span class="na">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'+5510999999999'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"4811111111"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -10423,19 +10423,19 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
-</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Chamada</span><span class="o">.</span><span class="n">Escutar</span><span class="p">(</span><span class="m">123</span><span class="p">,</span><span class="x"> </span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="m">1</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Chamada</span><span class="o">.</span><span class="n">Escutar</span><span class="p">(</span><span class="m">123</span><span class="p">,</span><span class="x"> </span><span class="s">"+5510999999999"</span><span class="p">,</span><span class="x"> </span><span class="m">1</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chamada</span><span class="o">.</span><span class="n">escuta_chamada</span><span class="p">(</span><span class="s">"123"</span><span class="p">,</span> <span class="s">'4811111111'</span><span class="p">,</span><span class="s">"1"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chamada</span><span class="o">.</span><span class="n">escuta_chamada</span><span class="p">(</span><span class="s">"123"</span><span class="p">,</span> <span class="s">'+5510999999999'</span><span class="p">,</span><span class="s">"1"</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Chamada</span> <span class="n">chamada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Chamada</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chamada</span><span class="o">.</span><span class="na">escutar</span><span class="o">(</span><span class="mi">123</span><span class="o">,</span> <span class="s">"4811111111"</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chamada</span><span class="o">.</span><span class="na">escutar</span><span class="o">(</span><span class="mi">123</span><span class="o">,</span> <span class="s">"+5510999999999"</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"4811111111"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">escutar</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -10502,15 +10502,15 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 </blockquote>
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
             --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-            -d <span class="s1">'{"numero":"4811111111", "perna": "destino"}'</span> <span class="se">\</span>
+            -d <span class="s1">'{"numero":"+5510999999999", "perna": "destino"}'</span> <span class="se">\</span>
             <span class="s1">'https://voice-api.zenvia.com/chamada/123/transfer'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">chamada</span><span class="o">-&gt;</span><span class="na">transferir</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'4811111111'</span><span class="p">,</span> <span class="s1">'destino'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">chamada</span><span class="o">-&gt;</span><span class="na">transferir</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s1">'+5510999999999'</span><span class="p">,</span> <span class="s1">'destino'</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">transferir</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"destino"</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">chamada</span><span class="p">.</span><span class="nx">transferir</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"destino"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -10518,19 +10518,19 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
-</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Chamada</span><span class="o">.</span><span class="n">Transferir</span><span class="p">(</span><span class="m">123</span><span class="p">,</span><span class="x"> </span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"destino"</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Chamada</span><span class="o">.</span><span class="n">Transferir</span><span class="p">(</span><span class="m">123</span><span class="p">,</span><span class="x"> </span><span class="s">"+5510999999999"</span><span class="p">,</span><span class="x"> </span><span class="s">"destino"</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chamada</span><span class="o">.</span><span class="n">transferir</span><span class="p">(</span><span class="s">"123"</span><span class="p">,</span> <span class="s">"4811111111"</span><span class="p">,</span> <span class="s">"destino"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chamada</span><span class="o">.</span><span class="n">transferir</span><span class="p">(</span><span class="s">"123"</span><span class="p">,</span> <span class="s">"+5510999999999"</span><span class="p">,</span> <span class="s">"destino"</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Chamada</span> <span class="n">chamada</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Chamada</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chamada</span><span class="o">.</span><span class="na">transferir</span><span class="o">(</span><span class="mi">123</span><span class="o">,</span> <span class="s">"4811111111"</span><span class="o">,</span> <span class="s">"destino"</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">chamada</span><span class="o">.</span><span class="na">transferir</span><span class="o">(</span><span class="mi">123</span><span class="o">,</span> <span class="s">"+5510999999999"</span><span class="o">,</span> <span class="s">"destino"</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">transferir</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"destino"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">chamada</span><span class="p">.</span><span class="nf">transferir</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"destino"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -10695,7 +10695,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
                   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">46132</span><span class="p">,</span><span class="w">
                   </span><span class="s2">"conferencia_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
                   </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="p">,</span><span class="w">
-                  </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
                   </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
                   </span><span class="s2">"cli"</span><span class="p">:</span><span class="w"> </span><span class="mi">3132</span><span class="p">,</span><span class="w">
                   </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:45"</span><span class="p">,</span><span class="w">
@@ -10762,7 +10762,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">46132</span><span class="p">,</span><span class="w">
     </span><span class="s2">"conferencia_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
     </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"cli"</span><span class="p">:</span><span class="w"> </span><span class="mi">3132</span><span class="p">,</span><span class="w">
     </span><span class="s2">"duracao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00:00:45"</span><span class="p">,</span><span class="w">
@@ -10901,7 +10901,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"4811111111","url_conferencia":"http://foo.bar/conferencia.mp3"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"+5510999999999","url_conferencia":"http://foo.bar/conferencia.mp3"}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-api.zenvia.com/conferencia'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
@@ -10910,7 +10910,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">conferencia</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"http://foo.bar/conferencia.mp3"</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">conferencia</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"http://foo.bar/conferencia.mp3"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -10918,7 +10918,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
- </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Conferencia</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"http://foo.bar/conferencia.mp3"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="s">""</span><span class="p">)</span><span class="x">
+ </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Conferencia</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span><span class="x"> </span><span class="s">"http://foo.bar/conferencia.mp3"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="s">""</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
@@ -10927,7 +10927,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Conferencia</span> <span class="n">conferencia</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Conferencia</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">conferencia</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"4811111111"</span><span class="o">,</span> <span class="s">"http://foo.bar/conferencia.mp3"</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">conferencia</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"+5510999999999"</span><span class="o">,</span> <span class="s">"http://foo.bar/conferencia.mp3"</span><span class="o">);</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -11017,7 +11017,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
@@ -11123,7 +11123,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
@@ -11141,7 +11141,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
@@ -11736,7 +11736,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345678</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48912341234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-22T09:18:44.000-03:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-22T09:18:44.000-03:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
@@ -11753,7 +11753,7 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
     </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://voice-api.zenvia.com/rec/123456789"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>O objeto é um modelo JSON que contém o arquivo de áudio. </p>
@@ -11966,18 +11966,18 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"4888881111", "bina": "4811111111" ,"url_audio":"http://sua.url.audio/audio.mp3"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"+5510999999999", "bina": "+5510888888888" ,"url_audio":"http://sua.url.audio/audio.mp3"}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-api.zenvia.com/audio'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">audio</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'4811111111'</span><span class="p">,</span> <span class="s1">'http://sua.url.audio/audio.mp3'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">audio</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'+5510888888888'</span><span class="p">,</span> <span class="s1">'http://sua.url.audio/audio.mp3'</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">audio</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"http://sua.url.audio/audio.mp3"</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">audio</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"http://sua.url.audio/audio.mp3"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -11985,20 +11985,20 @@ Retorna o objeto <a href="#respostas-da-api">resposta padrão</a> da API com suc
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
- </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Audio</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"http://sua.url.audio/audio.mp3"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="s">""</span><span class="p">)</span><span class="x">
+ </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Audio</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span><span class="x"> </span><span class="s">"http://sua.url.audio/audio.mp3"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="s">""</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">audio</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span> <span class="s">"http://sua.url.audio/audio.mp3"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">audio</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span> <span class="s">"http://sua.url.audio/audio.mp3"</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Audio</span> <span class="n">audio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Audio</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"4811111111"</span><span class="o">,</span> <span class="s">"http://sua.url.audio/audio.mp3"</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">audio</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"+5510999999999"</span><span class="o">,</span> <span class="s">"http://sua.url.audio/audio.mp3"</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">audio</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"http://sua.url.audio/audio.mp3"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">audio</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"http://sua.url.audio/audio.mp3"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -12039,7 +12039,7 @@ arquivo.</p>
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número, exemplo: 4832830151.
+                Número do telefone que irá receber a chamada, formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999.
              </td>
         </tr>
         <tr>
@@ -12075,7 +12075,7 @@ arquivo.</p>
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número, exemplo: 4832830151.
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato E.164: [+][DDI][DDD][Número], exemplo: +5510999999999.
             </td>
         </tr>
         <tr>
@@ -12153,7 +12153,7 @@ arquivo.</p>
     </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
@@ -12170,7 +12170,7 @@ arquivo.</p>
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -12264,7 +12264,7 @@ pelo seu ID. </p>
     </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
@@ -12281,11 +12281,11 @@ pelo seu ID. </p>
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
@@ -12302,7 +12302,7 @@ pelo seu ID. </p>
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
         </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -12396,8 +12396,8 @@ retorne os dados.</p>
         </span><span class="s2">"acao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transferir"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"opcao"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
         </span><span class="s2">"acao_dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                        </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1132830151"</span><span class="p">,</span><span class="w">
-                         </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1132830152"</span><span class="w"> 
+                        </span><span class="s2">"numero_telefone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
+                         </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w"> 
                     </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w"> 
 </span><span class="p">]</span><span class="w">
@@ -12428,7 +12428,7 @@ retorne os dados.</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
@@ -12444,7 +12444,7 @@ retorne os dados.</p>
     </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clienteX"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>O objeto é um modelo JSON que contém o arquivo de composto. </p>
@@ -12706,8 +12706,8 @@ retorne os dados.</p>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
              -d <span class="s1">'{
-                "numero_destino":"4888881111",
-                "bina": "4811111111",
+                "numero_destino":"+5510999999999",
+                "bina": "+5510888888888",
                 "dados":[
                     {  
                         "acao":"audio",
@@ -12727,8 +12727,8 @@ retorne os dados.</p>
                         "acao":"transferir",
                         "opcao":1,
                         "acao_dados":{  
-                            "numero_telefone":"4832830151",
-                            "bina":"4832830152"
+                            "numero_telefone":"+5510999999999",
+                            "bina":"+5510888888888"
                         }
                     },
                         {  
@@ -12742,7 +12742,7 @@ retorne os dados.</p>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
 
-<span class="nv">$dados</span>  <span class="o">=</span> <span class="s1">'[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]'</span><span class="p">;</span>
+<span class="nv">$dados</span>  <span class="o">=</span> <span class="s1">'[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]'</span><span class="p">;</span>
 <span class="nv">$bina</span>   <span class="o">=</span> <span class="s1">'11987654321'</span><span class="p">;</span>
 <span class="nv">$tags</span>   <span class="o">=</span> <span class="s1">'clienteY'</span><span class="p">;</span>
 
@@ -12750,7 +12750,7 @@ retorne os dados.</p>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">composto</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"NUMERO-DESTINO"</span><span class="p">,</span> <span class="s1">'[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]'</span><span class="p">,</span><span class="s1">'11987654321'</span> <span class="p">,</span> <span class="s1">'tags'</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">composto</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"NUMERO-DESTINO"</span><span class="p">,</span> <span class="s1">'[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]'</span><span class="p">,</span><span class="s1">'11987654321'</span> <span class="p">,</span> <span class="s1">'tags'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -12758,7 +12758,7 @@ retorne os dados.</p>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
- </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Composto</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"NUMERO-DESTINO"</span><span class="p">,</span><span class="x"> </span><span class="err">'</span><span class="p">[{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"audio"</span><span class="p">,</span><span class="s">"acao_dados"</span><span class="o">:</span><span class="p">{</span><span class="s">"url_audio"</span><span class="o">:</span><span class="s">"http://fooooo.bar/composto.mp3"</span><span class="p">}},{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"tts"</span><span class="p">,</span><span class="s">"acao_dados"</span><span class="o">:</span><span class="p">{</span><span class="s">"mensagem"</span><span class="o">:</span><span class="s">"lendo este texto"</span><span class="p">,</span><span class="s">"resposta_usuario"</span><span class="o">:</span><span class="s">"true"</span><span class="p">,</span><span class="s">"tipo_voz"</span><span class="o">:</span><span class="s">"br-Ricardo"</span><span class="p">}},{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"transferir"</span><span class="p">,</span><span class="s">"opcao"</span><span class="o">:</span><span class="m">1</span><span class="p">,</span><span class="s">"acao_dados"</span><span class="o">:</span><span class="p">{</span><span class="s">"numero_telefone"</span><span class="o">:</span><span class="s">"4832830151"</span><span class="p">,</span><span class="s">"bina"</span><span class="o">:</span><span class="s">"4832830152"</span><span class="p">}}]</span><span class="sc">','</span><span class="m">11987654321</span><span class="err">'</span><span class="x"> </span><span class="p">,</span><span class="x"> </span><span class="err">'</span><span class="n">tags</span><span class="err">'</span><span class="p">)</span><span class="x">
+ </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Composto</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"NUMERO-DESTINO"</span><span class="p">,</span><span class="x"> </span><span class="err">'</span><span class="p">[{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"audio"</span><span class="p">,</span><span class="s">"acao_dados"</span><span class="o">:</span><span class="p">{</span><span class="s">"url_audio"</span><span class="o">:</span><span class="s">"http://fooooo.bar/composto.mp3"</span><span class="p">}},{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"tts"</span><span class="p">,</span><span class="s">"acao_dados"</span><span class="o">:</span><span class="p">{</span><span class="s">"mensagem"</span><span class="o">:</span><span class="s">"lendo este texto"</span><span class="p">,</span><span class="s">"resposta_usuario"</span><span class="o">:</span><span class="s">"true"</span><span class="p">,</span><span class="s">"tipo_voz"</span><span class="o">:</span><span class="s">"br-Ricardo"</span><span class="p">}},{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"transferir"</span><span class="p">,</span><span class="s">"opcao"</span><span class="o">:</span><span class="m">1</span><span class="p">,</span><span class="s">"acao_dados"</span><span class="o">:</span><span class="p">{</span><span class="s">"numero_telefone"</span><span class="o">:</span><span class="s">"+5510999999999"</span><span class="p">,</span><span class="s">"bina"</span><span class="o">:</span><span class="s">"+5510888888888"</span><span class="p">}}]</span><span class="sc">','</span><span class="m">11987654321</span><span class="err">'</span><span class="x"> </span><span class="p">,</span><span class="x"> </span><span class="err">'</span><span class="n">tags</span><span class="err">'</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
@@ -12781,8 +12781,8 @@ retorne os dados.</p>
       <span class="s">"acao"</span><span class="p">:</span><span class="s">"transferir"</span><span class="p">,</span>
       <span class="s">"opcao"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
       <span class="s">"acao_dados"</span><span class="p">:{</span>  
-         <span class="s">"numero_telefone"</span><span class="p">:</span><span class="s">"4832830151"</span><span class="p">,</span>
-         <span class="s">"bina"</span><span class="p">:</span><span class="s">"4832830152"</span>
+         <span class="s">"numero_telefone"</span><span class="p">:</span><span class="s">"+5510999999999"</span><span class="p">,</span>
+         <span class="s">"bina"</span><span class="p">:</span><span class="s">"+5510888888888"</span>
       <span class="p">}</span>
    <span class="p">},</span>
     <span class="p">{</span>  
@@ -12797,12 +12797,12 @@ retorne os dados.</p>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Composto</span> <span class="n">composto</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Composto</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">composto</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"NUMERO-DESTINO"</span><span class="o">,</span> <span class="err">'</span><span class="o">[{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"audio"</span><span class="o">,</span><span class="s">"acao_dados"</span><span class="o">:{</span><span class="s">"url_audio"</span><span class="o">:</span><span class="s">"http://fooooo.bar/composto.mp3"</span><span class="o">}},{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"tts"</span><span class="o">,</span><span class="s">"acao_dados"</span><span class="o">:{</span><span class="s">"mensagem"</span><span class="o">:</span><span class="s">"lendo este texto"</span><span class="o">,</span><span class="s">"resposta_usuario"</span><span class="o">:</span><span class="s">"true"</span><span class="o">,</span><span class="s">"tipo_voz"</span><span class="o">:</span><span class="s">"br-Ricardo"</span><span class="o">}},{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"transferir"</span><span class="o">,</span><span class="s">"opcao"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span><span class="s">"acao_dados"</span><span class="o">:{</span><span class="s">"numero_telefone"</span><span class="o">:</span><span class="s">"4832830151"</span><span class="o">,</span><span class="s">"bina"</span><span class="o">:</span><span class="s">"4832830152"</span><span class="o">}}]</span><span class="sc">','</span><span class="mi">11987654321</span><span class="err">'</span> <span class="o">,</span> <span class="err">'</span><span class="n">tags</span><span class="err">'</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">composto</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"NUMERO-DESTINO"</span><span class="o">,</span> <span class="err">'</span><span class="o">[{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"audio"</span><span class="o">,</span><span class="s">"acao_dados"</span><span class="o">:{</span><span class="s">"url_audio"</span><span class="o">:</span><span class="s">"http://fooooo.bar/composto.mp3"</span><span class="o">}},{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"tts"</span><span class="o">,</span><span class="s">"acao_dados"</span><span class="o">:{</span><span class="s">"mensagem"</span><span class="o">:</span><span class="s">"lendo este texto"</span><span class="o">,</span><span class="s">"resposta_usuario"</span><span class="o">:</span><span class="s">"true"</span><span class="o">,</span><span class="s">"tipo_voz"</span><span class="o">:</span><span class="s">"br-Ricardo"</span><span class="o">}},{</span><span class="s">"acao"</span><span class="o">:</span><span class="s">"transferir"</span><span class="o">,</span><span class="s">"opcao"</span><span class="o">:</span><span class="mi">1</span><span class="o">,</span><span class="s">"acao_dados"</span><span class="o">:{</span><span class="s">"numero_telefone"</span><span class="o">:</span><span class="s">"+5510999999999"</span><span class="o">,</span><span class="s">"bina"</span><span class="o">:</span><span class="s">"+5510888888888"</span><span class="o">}}]</span><span class="sc">','</span><span class="mi">11987654321</span><span class="err">'</span> <span class="o">,</span> <span class="err">'</span><span class="n">tags</span><span class="err">'</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">composto</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"NUMERO-DESTINO"</span><span class="p">,</span> <span class="s1">'[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"4832830151","bina":"4832830152"}}]'</span><span class="p">,</span><span class="s1">'11987654321'</span> <span class="p">,</span> <span class="s1">'tags'</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">composto</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"NUMERO-DESTINO"</span><span class="p">,</span> <span class="s1">'[{"acao":"audio","acao_dados":{"url_audio":"http://fooooo.bar/composto.mp3"}},{"acao":"tts","acao_dados":{"mensagem":"lendo este texto","resposta_usuario":"true","tipo_voz":"br-Ricardo"}},{"acao":"transferir","opcao":1,"acao_dados":{"numero_telefone":"+5510999999999","bina":"+5510888888888"}}]'</span><span class="p">,</span><span class="s1">'11987654321'</span> <span class="p">,</span> <span class="s1">'tags'</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -12839,7 +12839,7 @@ retorne os dados.</p>
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número exemplo: 4832830151
+                Número do telefone que irá receber a chamada, formato E.164: [+][DDI][DDD][Número] exemplo: +5510999999999
              </td>
         </tr>
         <tr>
@@ -12875,7 +12875,7 @@ retorne os dados.</p>
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número exemplo: 4832830151
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato E.164: [+][DDI][DDD][Número] exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -12964,7 +12964,7 @@ retorne os dados.</p>
     </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
@@ -12980,7 +12980,7 @@ retorne os dados.</p>
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clienteX"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -13074,7 +13074,7 @@ pelo seu ID. </p>
     </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
@@ -13090,11 +13090,11 @@ pelo seu ID. </p>
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clienteX"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">433</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:44+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-27T15:12:49+03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fixo"</span><span class="p">,</span><span class="w">
@@ -13110,7 +13110,7 @@ pelo seu ID. </p>
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tags"</span><span class="p">:</span><span class="w"> </span><span class="s2">"clienteX"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://fooooo.bar/gravacao.mp3"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -13209,7 +13209,7 @@ retorne os dados.</p>
 
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345678</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48912341234"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-22T09:18:44.000-03:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-22T09:18:44.000-03:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
@@ -13226,7 +13226,7 @@ retorne os dados.</p>
     </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://voice-api.zenvia.com/rec/123456789"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>O objeto é um modelo JSON que contém a mensagem de texto enviada para ser convertida em uma mensagem de voz. </p>
@@ -13435,18 +13435,18 @@ retorne os dados.</p>
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: seu-token'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"4888881111", "bina": "4811111111", "mensagem":"Olá"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"+5510999999999", "bina": "+5510888888888", "mensagem":"Olá"}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-api.zenvia.com/tts'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="k">require_once</span> <span class="s2">"vendor/autoload.php"</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">TotalVoice\Client</span> <span class="k">as</span> <span class="nx">TotalVoiceClient</span><span class="p">;</span>
 
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">tts</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'4811111111'</span><span class="p">,</span> <span class="s1">'Olá, essa é a minha mensagem'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">tts</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'+5510999999999'</span><span class="p">,</span> <span class="s1">'Olá, essa é a minha mensagem'</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">tts</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"Olá, essa é a minha mensagem"</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">tts</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"Olá, essa é a minha mensagem"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -13454,18 +13454,18 @@ retorne os dados.</p>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
- </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Tts</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"Olá, essa é a minha mensagem"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="s">""</span><span class="p">)</span><span class="x">
+ </span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Tts</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span><span class="x"> </span><span class="s">"Olá, essa é a minha mensagem"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="s">""</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tts</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span> <span class="s">"Olá, essa é a minha mensagem"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tts</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span> <span class="s">"Olá, essa é a minha mensagem"</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 <span class="n">Tts</span> <span class="n">tts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Tts</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
 
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">tts</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"4811111111"</span><span class="o">,</span> <span class="s">"Olá, essa é a minha mensagem"</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">tts</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"+5510999999999"</span><span class="o">,</span> <span class="s">"Olá, essa é a minha mensagem"</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">tts</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"4811111111"</span><span class="p">,</span> <span class="s2">"Olá, essa é a minha mensagem"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">tts</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"Olá, essa é a minha mensagem"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -13505,7 +13505,7 @@ retorne os dados.</p>
                 <span class="required">Obrigatório</span>
             </td>
             <td>
-                Número do telefone que irá receber a chamada, formato DDD + Número. Exemplo: 4832830151.
+                Número do telefone que irá receber a chamada, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999.
              </td>
         </tr>
         <tr>
@@ -13541,7 +13541,7 @@ retorne os dados.</p>
                 <span class="optional">Opcional</span>
             </td>
             <td>
-                Número de telefone que aparecerá no identificador de quem receber a chamada, formato DDD + Número. Exemplo: 4832830151
+                Número de telefone que aparecerá no identificador de quem receber a chamada, formato E.164: [+][DDI][DDD][Número]. Exemplo: +5510999999999
             </td>
         </tr>
         <tr>
@@ -13660,7 +13660,7 @@ retorne os dados.</p>
   </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"dados"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123453</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-09T10:59:42.000-03:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-09T10:59:43.000-03:00"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
@@ -13677,7 +13677,7 @@ retorne os dados.</p>
     </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16. normal"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+    </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -13768,7 +13768,7 @@ pelo seu ID. </p>
     </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345679</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-09T10:59:42.000-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-09T10:59:43.000-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
@@ -13785,11 +13785,11 @@ pelo seu ID. </p>
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16. normal"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13246578</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4832830151"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-09T15:33:01.000-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_inicio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-09T15:33:01.000-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"tipo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movel"</span><span class="p">,</span><span class="w">
@@ -13806,7 +13806,7 @@ pelo seu ID. </p>
         </span><span class="s2">"resposta"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"motivo_desconexao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17. ocupado"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"url_gravacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5548988888888"</span><span class="w">
+        </span><span class="s2">"bina"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510888888888"</span><span class="w">
       </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
   </span><span class="p">}</span><span class="w">
@@ -13915,7 +13915,7 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">432</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48111111111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-18T00:51:22.000Z"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oi, tudo bem?"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"preco"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.09</span><span class="p">,</span><span class="w">
@@ -14111,15 +14111,15 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
 <pre class="highlight shell tab-shell--curl"><code>curl -X POST --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
              --header <span class="s1">'Access-Token: {{access-token}}'</span> <span class="se">\</span>
-             -d <span class="s1">'{"numero_destino":"48111111111","mensagem":"Ola tudo bem?"}'</span> <span class="se">\</span>
+             -d <span class="s1">'{"numero_destino":"+5510999999999","mensagem":"Ola tudo bem?"}'</span> <span class="se">\</span>
              <span class="s1">'https://voice-api.zenvia.com/sms'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TotalVoiceClient</span><span class="p">(</span><span class="s1">'seu-token'</span><span class="p">);</span>
-<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'48111111111'</span><span class="p">,</span> <span class="s1">'Ola tudo bem?'</span><span class="p">);</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">sms</span><span class="o">-&gt;</span><span class="na">enviar</span><span class="p">(</span><span class="s1">'+5510999999999'</span><span class="p">,</span> <span class="s1">'Ola tudo bem?'</span><span class="p">);</span>
 </code></pre><pre class="highlight javascript tab-javascript--node"><code><span class="kr">const</span> <span class="nx">totalvoice</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'totalvoice-node'</span><span class="p">);</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">totalvoice</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">);</span>
 
-<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"48111111111"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">sms</span><span class="p">.</span><span class="nx">enviar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">})</span>
@@ -14127,20 +14127,20 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Erro: '</span><span class="p">,</span> <span class="nx">error</span><span class="p">)</span>
     <span class="p">});</span>
 </code></pre><pre class="highlight go tab-go"><code><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">totalvoice</span><span class="o">.</span><span class="n">NewTotalVoiceClient</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">)</span><span class="x">
-</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"4811111111"</span><span class="p">,</span><span class="x"> </span><span class="s">"Ola tudo bem?"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
+</span><span class="n">response</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">SMS</span><span class="o">.</span><span class="n">Enviar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span><span class="x"> </span><span class="s">"Ola tudo bem?"</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">false</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
 </span></code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">totalvoice.cliente</span> <span class="kn">import</span> <span class="n">Cliente</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">Cliente</span><span class="p">(</span><span class="s">"seu-token"</span><span class="p">,</span> <span class="s">'voice-api.zenvia.com'</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"48111111111"</span><span class="p">,</span> <span class="s">"Ola tudo bem?"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sms</span><span class="o">.</span><span class="n">enviar</span><span class="p">(</span><span class="s">"+5510999999999"</span><span class="p">,</span> <span class="s">"Ola tudo bem?"</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">TotalVoiceClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TotalVoiceClient</span><span class="o">(</span><span class="s">"seu-token"</span><span class="o">);</span>
 
 <span class="n">Sms</span> <span class="n">sms</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Sms</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
-<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"48111111111"</span><span class="o">,</span> <span class="s">"Ola tudo bem?"</span><span class="o">);</span>
+<span class="n">JSONObject</span> <span class="n">response</span> <span class="o">=</span> <span class="n">sms</span><span class="o">.</span><span class="na">enviar</span><span class="o">(</span><span class="s">"+5510999999999"</span><span class="o">,</span> <span class="s">"Ola tudo bem?"</span><span class="o">);</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'totalvoice-ruby'</span>
 <span class="kp">include</span> <span class="no">TotalVoice</span>
 
 <span class="vi">@client</span> <span class="o">=</span> <span class="no">TotalVoice</span><span class="o">::</span><span class="no">API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"seu-token"</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"48111111111"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="vi">@client</span><span class="p">.</span><span class="nf">sms</span><span class="p">.</span><span class="nf">enviar</span><span class="p">(</span><span class="s2">"+5510999999999"</span><span class="p">,</span> <span class="s2">"Ola tudo bem?"</span><span class="p">)</span>
 </code></pre>
 <blockquote>
 <p>Response</p>
@@ -14313,7 +14313,7 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
    </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="s2">"dados retornados com sucesso"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"dados"</span><span class="p">:{</span><span class="w">  
       </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">25536757</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="s2">"48933445566"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="s2">"2019-05-29T17:49:00.000-03:00"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="s2">"Ola tudo bem?"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"preco"</span><span class="p">:</span><span class="mf">0.045</span><span class="p">,</span><span class="w">
@@ -14443,7 +14443,7 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
     </span><span class="s2">"relatorio"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">151</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4899999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-30T23:34:08-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_envio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mensagem de teste"</span><span class="p">,</span><span class="w">
@@ -14454,7 +14454,7 @@ Este endpoint foi descontinuado e não receberá novas atualizações e melhoria
       </span><span class="p">},</span><span class="w">
       </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">204</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4899999999"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"numero_destino"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+5510999999999"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_criacao"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-31T22:39:36-03:00"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"data_envio"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="s2">"mensagem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oi, tudo bem?"</span><span class="p">,</span><span class="w">
