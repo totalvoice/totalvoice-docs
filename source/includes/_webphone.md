@@ -26,8 +26,7 @@ Um webphone é vinculado diretamente a um Ramal.
 GET https://voice-api.zenvia.com/webphone
 ```
 
-Consulta a URL do Webphone de um determinado Ramal enviando os parâmetros para pré-configuração do webphone, a URL
-gerada vem com um código único para acesso daquele Webphone sem ser necessário login na plataforma da ZenAPI.
+Gera uma URL para acesso ao Webphone de um determinado ramal, permitindo o envio de parâmetros de pré-configuração. A URL inclui um código único que dispensa autenticação via plataforma da ZenAPI. Quando a configuração de segurança é habilitada no painel de voz, a URL também passa a ser assinada com um token e um tempo de expiração.
 
 > <br/>Request
 
@@ -89,7 +88,7 @@ JSONObject response = central.webphone(webphone_dados);
     "motivo": 0,
     "mensagem": "url webphone",
     "dados": {
-        "url": "https://voice-api.zenvia.com/w3/?key=XXXXXXXXXXXXXXXXXXXXXX83b3420&pop=1"
+        "url": "https://voice-api.zenvia.com/w3/?key=XXXXXXXXXXXXXXXXXXXXXX83b3420&pop=1&signature=f4100848e232d4a386203d527011524a5504dca91e0293e4f5124701df67603e&expires=1744301187"
     }
 }
 ```
