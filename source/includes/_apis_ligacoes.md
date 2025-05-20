@@ -2079,15 +2079,13 @@ Veja ao lado um exemplo de requisição. Os campos são:
 https://voice-api.zenvia.com/webphone
 ```
 
-Webphone é uma maneira de se conectar a um Ramal diretamente por um computador. Todo ramal tem uma URL pela qual é possível acessar o Webphone sem precisar se conectar à plataforma da ZenAPI. 
-
-Ele é muito utilizado em integrações para implementar ligações diretamente em um software ou sistema de uma maneira fácil.
+Webphone é uma maneira de se conectar a um Ramal diretamente por um computador, todo ramal tem uma URL na qual pode acessar o Webphone sem precisar se conectar a plataforma da ZenAPI, muito utilizado em integrações para implementar ligações diretamente em um software ou sistema de uma maneira fácil.
 
 Há três tipos de Webphone:
 
-1. Floating: quando você vai abrir o Webphone em um popup;
-2. Embedded: se o Webphone ficará embutido no site / sistema;
-3. Hidden: sem interface, apenas funções Javascript.
+- **Floating**: Quando você vai abrir o Webphone em um popup;
+- **Embedded**: Se o Webphone ficará embutido no site / sistema;
+- **Hidden**: Sem interface, apenas funções Javascript.
 
 Um webphone é vinculado diretamente a um Ramal.
 
@@ -2164,7 +2162,7 @@ JSONObject response = central.webphone(webphone_dados);
     "motivo": 0,
     "mensagem": "url webphone",
     "dados": {
-        "url": "https://voice-api.zenvia.com/w3/?key=XXXXXXXXXXXXXXXXXXXXXX83b3420&pop=1"
+        "url": "https://voice-api.zenvia.com/w3/?key=XXXXXXXXXXXXXXXXXXXXXX83b3420&pop=1&signature=f4100848e232d4a386203d527011524a5504dca91e0293e4f5124701df67603e&expires=1744301187"
     }
 }
 ```
