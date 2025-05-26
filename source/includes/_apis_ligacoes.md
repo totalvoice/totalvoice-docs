@@ -2079,7 +2079,7 @@ Veja ao lado um exemplo de requisição. Os campos são:
 https://voice-api.zenvia.com/webphone
 ```
 
-Webphone é uma maneira de se conectar a um Ramal diretamente por um computador, todo ramal tem uma URL na qual pode acessar o Webphone sem precisar se conectar a plataforma da ZenAPI, muito utilizado em integrações para implementar ligações diretamente em um software ou sistema de uma maneira fácil.
+Webphone é uma maneira de se conectar a um Ramal diretamente por um computador, todo ramal tem uma URL assinada temporária na qual pode acessar o Webphone sem precisar se conectar a plataforma da ZenAPI, muito utilizado em integrações para implementar ligações diretamente em um software ou sistema de uma maneira fácil.
 
 Há três tipos de Webphone:
 
@@ -2097,10 +2097,7 @@ Um webphone é vinculado diretamente a um Ramal.
 GET https://voice-api.zenvia.com/webphone
 ```
 
-Para consultar a URL do Webphone de um determinado Ramal, basta enviar os parâmetros para pré-configuração do webphone. 
-
-A URL gerada vem com um código único para acesso daquele Webphone, sem ser necessário login na plataforma da ZenAPI.
-
+Gera uma URL assinada para acesso ao Webphone de um determinado ramal, permitindo o envio de parâmetros de pré-configuração. A URL contém um token de assinatura, tempo de expiração e um código único de acesso, dispensando autenticação via plataforma da ZenAPI.
 
 > <br/>Request
 
